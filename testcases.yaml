@@ -1,8 +1,14 @@
+simple:
+  template: simple.mako
+  model: res.municipi
+  cases:
+     fiñana: 41
 canvisDePagadors:
   template: correu-canviPagador.mako
   model: giscedata.polissa
   cases:
     ambUnNoseque: 67
+    ambUnNosecuants: 66
 activacioM105:
   template: correuM105.mako
   model: giscedata.switching
