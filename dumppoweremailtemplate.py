@@ -31,6 +31,7 @@ tools.config['db_password'] = dbcfg.pwd
 tools.config['db_port'] = dbcfg.port
 tools.config['root_path'] = "../erp/server"
 tools.config['addons_path'] = "../erp/server/bin/addons"
+tools.config['verbose'] = False
 
 import pooler
 import osv
@@ -44,15 +45,13 @@ osv_ = osv.osv.osv_pool()
 db,pool = pooler.get_db_and_pool(tools.config['db_name'])
 netsvc.SERVICES['im_a_worker'] = True
 
-print "================================================================================================================="
-
 from contextlib import closing
 
 def renderMako(template, model, id):
 
 	with closing(db.cursor()) as cursor:
 
-		with codecs.open(makofile,'r','utf8') as f:
+		with codecs.open(template,'r','utf8') as f:
 			makoinput = f.read()
 
 		for obj in pool.get(model).browse(cursor,uid,[id]):
