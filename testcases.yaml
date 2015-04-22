@@ -1,0 +1,14 @@
+canvisDePagadors:
+  template: correu-canviPagador.mako
+  model: giscedata.polissa
+  cases:
+    ambUnNoseque: 67
+activacioM105:
+  template: correuM105.mako
+  model: giscedata.switching
+  cases:
+    20ACastella: 20033
+    20ACatala: 20033
+    30ACastella: 20033
+    30ACatala: 20033
+

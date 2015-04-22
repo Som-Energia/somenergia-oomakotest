@@ -3,21 +3,22 @@ import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin")))
 
-#from ooop import OOOP
 from cfg import config as cfg, dbconfig as dbcfg
 import codecs
 
-
+#from ooop import OOOP
 #O = OOOP(**config)
 
-model_id = 34987
-model_id = 1
-#pool = O.GiscedataSwitching
+
+model_id = 67
+model = 'giscedata.polissa'
+makofile = 'correu-canviPagador.mako'
+
+model_id = 20033
 model = 'giscedata.switching'
-model = 'res.users'
 makofile = 'correuM105.mako'
+
 uid=1
-contextid=1
 
 import netsvc
 #logger = netsvc.Logger()
@@ -32,39 +33,61 @@ tools.config['root_path'] = "../erp/server"
 tools.config['addons_path'] = "../erp/server/bin/addons"
 
 import pooler
-
-from tools import config
 import osv
-import workflow
-import report
-import service
-import sql_db
+
+#import workflow
+#import report
+#import service
+#import sql_db
+
 osv_ = osv.osv.osv_pool()
-db,pool = pooler.get_db_and_pool(config['db_name'])
+db,pool = pooler.get_db_and_pool(tools.config['db_name'])
 netsvc.SERVICES['im_a_worker'] = True
 
+print "================================================================================================================="
 
-cursor = db.cursor()
+from contextlib import closing
 
-with codecs.open(makofile,'r','utf8') as f:
-	makoinput = f.read()
+def renderMako(template, model, id):
 
-obj = pool.get(model).browse(cursor,uid,model_id)
-print obj, obj.fields_get()
+	with closing(db.cursor()) as cursor:
 
-env = {
-	'user':pool.get('res.users').browse(cursor,uid,uid),
-	'db': cfg.dbname,
-}
+		with codecs.open(makofile,'r','utf8') as f:
+			makoinput = f.read()
 
-import mako.template
+		for obj in pool.get(model).browse(cursor,uid,[id]):
+			print obj, obj.fields_get()
 
-reply = mako.template.Template(makoinput).render_unicode(
-	object=obj,
-	peobject=obj,
-	env=env,
-	format_exceptions=True,
-	)
-print reply
+			env = {
+				'user':pool.get('res.users').browse(cursor,uid,uid),
+				'db': cfg.dbname,
+			}
+			try:
+				import mako.template
+				return mako.template.Template(makoinput).render_unicode(
+					object=obj,
+					peobject=obj,
+					env=env,
+					format_exceptions=True,
+					)
+
+			except Exception as e:
+				return str(e)
+
+
+#print renderMako(makofile, model, model_id)
+
+
+from namespace import namespace as ns
+
+testcases = ns.load("testcases.yaml")
+
+for key, fixture in testcases.items() :
+	print key
+	for case, id in fixture.cases.items():
+		print key,case
+		output = renderMako(fixture.template, fixture.model, id)
+		print output
+
 
 
