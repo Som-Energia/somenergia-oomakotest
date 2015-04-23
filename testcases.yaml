@@ -1,10 +1,10 @@
 simple:
-  template: simple.mako
+  template: input/simple.mako
   model: res.municipi
   cases:
     finana: 41
-canvisDePagadors:
-  template: correu-canviPagador.mako
+canviDePagador:
+  template: input/correu-canviPagador.mako
   model: giscedata.polissa
   cases:
     2.0_ca: 8
@@ -17,7 +17,7 @@ canvisDePagadors:
     3.1_ca: 34078
 #    3.1_es: 41775 # Not yet in test data
 #activacioM105:
-#  template: correuM105.mako
+#  template: input/correu-activacioM105.mako
 #  model: giscedata.switching
 #  cases:
 #    20ACastella: 20033
