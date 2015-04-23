@@ -2,19 +2,26 @@ simple:
   template: simple.mako
   model: res.municipi
   cases:
-     fiñana: 41
+    finana: 41
 canvisDePagadors:
   template: correu-canviPagador.mako
   model: giscedata.polissa
   cases:
-    ambUnNoseque: 67
-    ambUnNosecuants: 66
-activacioM105:
-  template: correuM105.mako
-  model: giscedata.switching
-  cases:
-    20ACastella: 20033
-    20ACatala: 20033
-    30ACastella: 20033
-    30ACatala: 20033
+    2.0_ca: 8
+    DHA_ca: 14
+    DHA_es: 1028
+    DHS_ca: 21
+    DHS_es: 44930
+    3.0_ca: 1460
+    3.0_es: 21086
+    3.1_ca: 34078
+#    3.1_es: 41775 # Not yet in test data
+#activacioM105:
+#  template: correuM105.mako
+#  model: giscedata.switching
+#  cases:
+#    20ACastella: 20033
+#    20ACatala: 20033
+#    30ACastella: 20033
+#    30ACatala: 20032
 

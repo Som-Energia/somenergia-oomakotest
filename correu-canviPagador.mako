@@ -24,9 +24,29 @@ except:
   data_ultima_lectura = ''
 
 try:
-  ultima_lectura = '%s kWh'%(object.comptadors[0].lectures[0].lectura)
+  lectures = object.comptadors[0].lectures
 except:
-  utlima_lectura = ''
+  lectures = []
+
+def lecturesPn(*args):
+  return ', '.join((
+      'P%s %s kWh'%(i+1,lectures[l].lectura)
+      for i,l in enumerate(args)
+      ))
+
+try:
+  if 'DHA' in object.tarifa.name:
+    ultima_lectura = lecturesPn(0,1)
+  elif 'DHS' in object.tarifa.name:
+    ultima_lectura = lecturesPn(0,1,2)
+  elif '3.0A' in object.tarifa.name:
+    ultima_lectura = lecturesPn(0,2,4,6,8,10)
+  elif '3.1A' in object.tarifa.name:
+    ultima_lectura = lecturesPn(0,2,4)
+  else:
+    ultima_lectura = '%s kWh'%(lectures[0].lectura)
+except:
+  ultima_lectura = ''
 
 %>
 Hola${nom_pagador},
@@ -39,7 +59,7 @@ Tal i com ens heu sol·licitat, hem canviat la persona pagadora del següent con
 - CUPS: ${object.cups.name}
 - Adreça: ${object.cups.direccio}
 
-<b> Dades del canvi de pagador: </b>
+<b>Dades del canvi de pagador:</b>
 - Data del canvi: ${data_ultima_lectura}
 - Lectura comptador: ${ultima_lectura}  
 - Nova persona pagadora: ${object.pagador.name}
@@ -60,12 +80,12 @@ factura@somenergia.coop
 
 Tal y como nos habéis solicitado, hemos cambiado la persona pagadora del siguiente contrato:
 
-Datos del contrato:
+<b>Datos del contrato:</b>
 - Número:  ${object.name}
 - CUPS: ${object.cups.name}
 - Dirección: ${object.cups.direccio}
 
-Datos del cambio:
+<b>Datos del cambio:</b>
 - Fecha de cambio: ${data_ultima_lectura}
 - Lectura del contador: ${ultima_lectura}
 - Nova persona pagadora:  ${object.pagador.name}
