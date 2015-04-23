@@ -6,6 +6,7 @@ simple:
 canviDePagador:
   template: input/correu-canviPagador.mako
   model: giscedata.polissa
+  poweremailId: 43
   cases:
     2.0_ca: 8
     DHA_ca: 14
@@ -19,6 +20,7 @@ canviDePagador:
 #activacioM105:
 #  template: input/correu-activacioM105.mako
 #  model: giscedata.switching
+#  poweremailId: 41
 #  cases:
 #    20ACastella: 20033
 #    20ACatala: 20033
