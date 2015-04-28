@@ -17,6 +17,17 @@ canviDePagador:
     3.0_es: 21086
     3.1_ca: 34078
 #    3.1_es: 41775 # Not yet in test data
+acceptacioM102:
+  template: input/correu-acceptacioM102.mako
+  model: giscedata.switching
+  poweremailId: 40
+  cases:
+    canviTitular_ca: 1744
+    canviTitular_es: 1745
+    ambActuacio_ca: 3090
+    ambActuacio_es: 29669
+    3.0_ca: 14063
+    3.0_es: 24832
 #activacioM105:
 #  template: input/correu-activacioM105.mako
 #  model: giscedata.switching

@@ -1,14 +1,26 @@
 <!doctype html>
 <html>
-% if object.cups_polissa_id.titular.lang == "ca_ES":
-<head><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1> Titular: ${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
-% else:
-<head><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Titular:${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
-% endif
-<head></head>
+<head>
+<meta charset='utf-8'>
+</head>
 <body>
+<table width="100%" frame="below" bgcolor="#E8F1D4">
+% if object.cups_polissa_id.titular.lang == "ca_ES":
+<tr><td height=2px><font size=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font></td>
+<td valign=top rowspan="4" align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr>
+<tr><td height=2px><font size=2>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr>
+<tr><td height=2px><font size=2>Codi CUPS: ${object.cups_id.name}</font></td></tr>
+<tr><td height=2px width=100%><font size=2> Titular: ${object.cups_polissa_id.titular.name} </font></td></tr>
+% else:
+<tr><td height=2px><font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font></td>
+<td valign=top rowspan="4" align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr>
+<tr><td height=2px><font size=2>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr>
+<tr><td height=2px><font size=2>Código CUPS: ${object.cups_id.name}</font></td></tr>
+<tr><td height=2px width=100%><font size=2> Titular: ${object.cups_polissa_id.titular.name} </font></td></tr>
+% endif
+</table>
 <%
-
+pas2 = None
 for step in object.step_ids:
   model, res_id = step.pas_id.split(',')
   obj = object.pool.get(model).browse(object._cr, object._uid, int(res_id))
@@ -16,6 +28,9 @@ for step in object.step_ids:
     pas2 = obj
   if step.pas_id.startswith('giscedata.switching.m1.01'):
     pas1 = obj
+# TODO: Si el pas2 no existeix abortar el correu
+
+tarifaATR=dict(object.pool.get('giscedata.switching.m1.01').fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas1.tarifaATR]
 
 p_obj = object.pool.get('res.partner')
 if not object.vat_enterprise():
@@ -23,46 +38,62 @@ if not object.vat_enterprise():
 else:
   nom_titular = ''
 %>
+
 Hola${nom_titular}, 
 % if object.cups_polissa_id.titular.lang != "es_ES":
 
-La sol•licitud de la <FONT COLOR="green"><strong> modificació contractual ha estat acceptada</strong></FONT> per part de la distribuïdora.
-% if pas1.sollicitudadm == "N":
+La <font color="green"><strong> modificació contractual que vares sol·licitar ha estat acceptada</strong></font>.
 
-Durant <strong>els propers 15 dies, vindrà un tècnic de l’empresa distribuïdora per fer la modificació, si el comptador no està accesible es posaria en contacte amb tu.</strong>
+%if pas1.sollicitudadm == "S":
+El canvi de titular es veurà reflectit a la propera factura, i, en els següents dies, a la oficina virtual.
 
-La modificació serà efectiva a partir de la visita del tècnic. <strong>Uns dies més tard, rebràs un mail </strong>on t'indicarem la data exacta d'activació de la modificació.
-% elif pas1.sollicitudadm == "S":
+%elif pas1.sollicitudadm == "N":
+%if TarifaATR == '3.0A':
+El canvi s’efecturarà en el proper cicle de facturació.
 
-A la propera factura es veurà reflectit el canvi de titular,  i a la oficina virtual en els següents dies.
+%else: # no 3.0
+Durant els propers 15 dies vindrà un tècnic de l'empresa distribuïdora per fer-la efectiva.
+
+Recorda que si el comptador no està accessible el tècnic de l’empresa distribuïdora es posarà en contacta amb tu prèviament.
+
+%endif
+Uns dies més tard, rebràs un mail on t'indicarem la data exacta d'activació de la modificació.
+
 % endif
 
-Les dades del contracte  que s'ha fet la modificació contractual són les següents:
+Les dades del contracte modificat són les següents:
 - Adreça: ${object.cups_polissa_id.cups_direccio}
 - CUPS: ${object.cups_id.name}
+
 
 Atentament,
 
 Equip de Som Energia
 modifica@somenergia.coop
-<a href="www.somenergia.coop/ca">www.somenergia.coop</a>
+<a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES" and object.cups_polissa_id.titular.lang != "es_ES":
 ----------------------------------------------------------------------------------------------------
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
 
-Hace unos días solicitaste una modificación contractual. 
+La <font color="green"><strong> modificación contractual que solicitaste ha sido aceptada</strong></font>.
 
-La solicitud de  <FONT COLOR="green"><strong>la modificación contractual ha sido aceptada</strong></FONT>.
-% if pas1.sollicitudadm == "N":
+%if pas1.sollicitudadm == "S":
+El cambio de titular se verá reflejado en la próxima factura, y, durante los siguientes días, en la oficina virtual.
 
-Durante <strong>los próximos 15 días, vendrá alguien de la empresa distribuidora  para hacer la modificación, si el contador no está accesible se pondría en contacto contigo</strong>.
+%elif pas1.sollicitudadm == "N":
+%if TarifaATR == '3.0A':
+El cambio se efectuará en el siguiente ciclo de facturación.
 
-La modificación será efectiva a partir de la visita del técnico. <strong>Unos días más tarde, recibirás un correo</strong> donde te indicaremos la fecha exacta de la activación de la modificación.
-% elif pas1.sollicitudadm == "S":
+%else: # no 3.0
+Durante <strong>los próximos 15 días, vendrá un técnico de la empresa distribuidora  para hacerla efectiva.</strong>
 
-A la próxima factura podrás ver reflectido el cambio de titular, y en la oficina virtual en los siguientes días.
+Recuerda que si el contador no está accesible el técnico de la empresa distribuidora se pondrá en contacto contigo préviament.
+
+%endif
+Unos dias más tarde, recibirás un correo donde te indicaremos la fecha exacta de activación de la modificación.
+
 % endif
 
 Los datos del contrato son los siguientes:
