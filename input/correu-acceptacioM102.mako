@@ -26,9 +26,7 @@ else:
 Hola${nom_titular}, 
 % if object.cups_polissa_id.titular.lang != "es_ES":
 
-Fa uns dies vas sol•licitar una modificació contractual.
-
-La sol•licitud de la <FONT COLOR="green"><strong> modificació contractual ha estat acceptada</strong></FONT>.
+La sol•licitud de la <FONT COLOR="green"><strong> modificació contractual ha estat acceptada</strong></FONT> per part de la distribuïdora.
 % if pas1.sollicitudadm == "N":
 
 Durant <strong>els propers 15 dies, vindrà un tècnic de l’empresa distribuïdora per fer la modificació, si el comptador no està accesible es posaria en contacte amb tu.</strong>
@@ -80,4 +78,3 @@ modifica@somenergia.coop
 % endif
 </body>
 </html>
-
