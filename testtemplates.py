@@ -120,7 +120,7 @@ def download():
 			continue
 		template = O.PoweremailTemplates.get(fixture.poweremailId)
 		step("Fetching {}...".format(name))
-		with codecs.open(fixture.template, 'w', encoding='utf8') as f:
+		with codecs.open(fixture.template, 'w', 'utf8') as f:
 			f.write(template.def_body_text)
 		if fixture.get('model') != template.model_int_name:
 			warn("Compte, el model hauria de ser '{}'"
@@ -134,10 +134,24 @@ def upload():
 	for case in args.testcases:
 		fixture = testcases[case]
 		template = O.PoweremailTemplates.get(fixture.poweremailId)
-		with codecs.open(fixture.template, 'w', encoding='utf8') as f:
+		with codecs.open(fixture.template, 'r', 'utf8') as f:
 			newContent = f.read()
+		def write(filename, content):
+			with codecs.open(filename, 'w', 'utf8') as f:
+				f.write(content)
+		write("backup-{}.mako".format(case), template.def_body_text)
 		template.def_body_text = newContent
 		template.save()
+		for translation in O.IrTranslation.filter(
+				name='poweremail.templates,def_body_text',
+				res_id=template.id,
+				):
+			#write("backup-{}-translation-src-{}.mako".format(case,translation.lang), translation.src)
+			#translation.src=newContent
+			write("backup-{}-translation-{}.mako".format(case,translation.lang), translation.value)
+			translation.value=newContent
+			translation.save()
+
 
 def list():
 	for testCase, fixture, id in iterTestCases():
