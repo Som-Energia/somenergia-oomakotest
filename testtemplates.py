@@ -3,10 +3,11 @@
 
 from namespace import namespace as ns
 import sys
+import os
 import argparse
+import codecs
 
 testcases = ns.load("testcases.yaml")
-
 
 parser = argparse.ArgumentParser(
 	description=
@@ -19,53 +20,71 @@ subparsers = parser.add_subparsers(help='sub-command help', dest='subcommand')
 subparsers.add_parser('test', help="Executa els testos indicats contra l'entorn de proves")
 subparsers.add_parser('accept', help="Accepta les sortides dels testos indicats")
 subparsers.add_parser('upload', help="Puja a l'entorn de producció la plantilla indicada")
-subparsers.add_parser('download', help="Baixa de l'entorn de producció la plantilla indicada")
+downloadSubcommand=subparsers.add_parser('download', help="Baixa de l'entorn de producció la plantilla indicada")
 subparsers.add_parser('list', help="Lista els casos de test disponibles")
 subparsers.add_parser('status', help="Lista els casos de test disponibles")
-parser.add_argument(
+downloadSubcommand.add_argument(
 	'testcases',
 	metavar='TESTCASE',
 	nargs='*',
 	)
 
+def iterTestCases():
+	for testCaseName, fixture in testcases.items():
+		for testMethod, id in fixture.cases.items():
+			yield testCaseName+'.'+testMethod, fixture, id
+
 args = parser.parse_args(sys.argv[1:])
 
 sys.argv = sys.argv[:1]
 
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin")))
+if args.subcommand == 'list':
+	for testCase, fixture, id in iterTestCases():
+		print testCase
+	sys.exit(-1)
 
-from cfg import config as cfg, dbconfig as dbcfg
-import codecs
-
-uid=1
-
-import netsvc
-import tools
-tools.config.parse()
-tools.config['db_name'] = dbcfg.dbname
-tools.config['db_host'] = dbcfg.host
-tools.config['db_user'] = dbcfg.user
-tools.config['db_password'] = dbcfg.pwd
-tools.config['db_port'] = dbcfg.port
-tools.config['root_path'] = "../erp/server"
-tools.config['addons_path'] = "../erp/server/bin/addons"
-tools.config['log_level'] = 'warn'
-tools.config['log_file'] = open('/dev/null','w')
-#tools.config['log_handler'] = [':WARNING']
+from cfg import config as remotecfg
+from cfg import dbconfig as dbcfg
 
 
-import pooler
-import osv
 
-osv_ = osv.osv.osv_pool()
-db,pool = pooler.get_db_and_pool(tools.config['db_name'])
-netsvc.SERVICES['im_a_worker'] = True
+def loadErp(dbcfg):
+	sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin")))
 
-from contextlib import closing
+	import netsvc
+	import tools
+	tools.config.parse()
+	tools.config['db_name'] = dbcfg.dbname
+	tools.config['db_host'] = dbcfg.host
+	tools.config['db_user'] = dbcfg.user
+	tools.config['db_password'] = dbcfg.pwd
+	tools.config['db_port'] = dbcfg.port
+	tools.config['root_path'] = "../erp/server"
+	tools.config['addons_path'] = "../erp/server/bin/addons"
+	tools.config['log_level'] = 'warn'
+	tools.config['log_file'] = open('/dev/null','w')
+	#tools.config['log_handler'] = [':WARNING']
 
-def renderMako(template, model, id):
+	import pooler
+	import osv
 
+	osv_ = osv.osv.osv_pool()
+	db,pool = pooler.get_db_and_pool(tools.config['db_name'])
+	netsvc.SERVICES['im_a_worker'] = True
+
+	return db, pool
+
+db=None
+pool=None
+
+
+
+def renderMako(template, model, id, uid=1):
+	from contextlib import closing
+
+	global db, pool
+	if db is None or pool is None :
+		db, pool = loadErp(dbcfg)
 	with closing(db.cursor()) as cursor:
 
 		with codecs.open(template,'r','utf8') as f:
@@ -86,21 +105,46 @@ def renderMako(template, model, id):
 
 
 
-from consolemsg import step, error, success
+from consolemsg import step, error, success, fail, warn
 import glob
 import shutil
 import subprocess
 
 
-if args.subcommand in ('upload','download'):
+if args.subcommand in ('upload'):
 	sys.argv.remove(args.subcommand)
 	consolemsg.error("Command '{}' not yet implemented".format(args.subcommand))
 	sys.exit(-1)
 
+def download():
+	for case in args.testcases:
+		case in testcases or fail(
+			"El cas {} no esta a testcases.yaml"
+			.format(case))
 
-if args.subcommand == 'upload':
-	sys.argv.remove('download')
-	consolemsg.error("download command not yet implemented")
+	from ooop import OOOP
+	O = OOOP(**remotecfg)
+	for name, fixture in testcases.items():
+		if 'poweremailId' not in fixture: continue
+		if args.testcases and name not in args.testcases:
+			continue
+		template = O.PoweremailTemplates.get(fixture.poweremailId)
+		step("Fetching {}...".format(name))
+		with codecs.open(fixture.template, 'w', encoding='utf8') as f:
+			f.write(template.def_body_text)
+		if fixture.get('model') != template.model_int_name:
+			warn("Compte, el model hauria de ser '{}'"
+				.format(template.model_int_name))
+		
+	sys.exit(0)
+
+
+if args.subcommand == 'download':
+	download()
+
+
+
+
 
 if args.subcommand == 'accept':
 	for testCaseName, fixture in testcases.items() :
