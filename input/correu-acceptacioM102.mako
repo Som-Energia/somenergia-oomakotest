@@ -31,6 +31,7 @@ for step in object.step_ids:
 # TODO: Si el pas2 no existeix abortar el correu
 
 tarifaATR=dict(object.pool.get('giscedata.switching.m1.01').fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas1.tarifaATR]
+print "'{}'".format(tarifaATR)
 
 p_obj = object.pool.get('res.partner')
 if not object.vat_enterprise():
@@ -48,11 +49,11 @@ La <font color="green"><strong> modificació contractual que vares sol·licitar 
 El canvi de titular es veurà reflectit a la propera factura, i, en els següents dies, a la oficina virtual.
 
 %elif pas1.sollicitudadm == "N":
-%if TarifaATR == '3.0A':
+%if tarifaATR == '3.0A':
 El canvi s’efecturarà en el proper cicle de facturació.
 
 %else: # no 3.0
-Durant els propers 15 dies vindrà un tècnic de l'empresa distribuïdora per fer-la efectiva.
+<strong>Durant els propers 15 dies, vindrà un tècnic de l'empresa distribuïdora per fer-la efectiva.</strong>
 
 Recorda que si el comptador no està accessible el tècnic de l’empresa distribuïdora es posarà en contacta amb tu prèviament.
 
@@ -83,11 +84,11 @@ La <font color="green"><strong> modificación contractual que solicitaste ha sid
 El cambio de titular se verá reflejado en la próxima factura, y, durante los siguientes días, en la oficina virtual.
 
 %elif pas1.sollicitudadm == "N":
-%if TarifaATR == '3.0A':
+%if tarifaATR == '3.0A':
 El cambio se efectuará en el siguiente ciclo de facturación.
 
-%else: # no 3.0
-Durante <strong>los próximos 15 días, vendrá un técnico de la empresa distribuidora  para hacerla efectiva.</strong>
+%else:
+<strong>Durante los próximos 15 días, vendrá un técnico de la empresa distribuidora para hacerla efectiva.</strong>
 
 Recuerda que si el contador no está accesible el técnico de la empresa distribuidora se pondrá en contacto contigo préviament.
 
