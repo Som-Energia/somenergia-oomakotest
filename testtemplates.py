@@ -1,11 +1,17 @@
 #!/usr/bin/env python
 #--**-- encoding: utf-8 --**--
 
-from namespace import namespace as ns
 import sys
 import os
 import argparse
 import codecs
+import unittest
+from namespace import namespace as ns
+from consolemsg import step, error, success, fail, warn
+
+from cfg import config as remotecfg
+from cfg import dbconfig as dbcfg
+
 
 testcases = ns.load("testcases.yaml")
 
@@ -17,34 +23,27 @@ parser = argparse.ArgumentParser(
 		"Si no s'especifica cap testcase es fan tots",
 	)
 subparsers = parser.add_subparsers(help='sub-command help', dest='subcommand')
-subparsers.add_parser('test', help="Executa els testos indicats contra l'entorn de proves")
-subparsers.add_parser('accept', help="Accepta les sortides dels testos indicats")
-subparsers.add_parser('upload', help="Puja a l'entorn de producció la plantilla indicada")
-downloadSubcommand=subparsers.add_parser('download', help="Baixa de l'entorn de producció la plantilla indicada")
-subparsers.add_parser('list', help="Lista els casos de test disponibles")
-subparsers.add_parser('status', help="Lista els casos de test disponibles")
-downloadSubcommand.add_argument(
-	'testcases',
-	metavar='TESTCASE',
-	nargs='*',
-	)
+for nargs, command, help in [
+	('*', 'test', "Executa els testos indicats contra l'entorn de proves"),
+	('*', 'accept', "Accepta les sortides dels testos indicats"),
+	('+', 'upload', "Puja a l'entorn de producció la plantilla indicada"),
+	('+', 'download', "Descarrega plantilla de l'entorn de producció"),
+	('',  'list', "Llista els casos de test disponibles"),
+	('',  'listtemplates', "Lista els templates al servidor"),
+	('*', 'status', "Mostra l'estat dels casos"),
+	] :
+	sub = subparsers.add_parser(command, help=help)
+	if nargs:
+		sub.add_argument('testcases', metavar='TESTCASE', nargs=nargs,)
+
+args = parser.parse_args(sys.argv[1:])
+sys.argv = sys.argv[:1]
+
 
 def iterTestCases():
 	for testCaseName, fixture in testcases.items():
 		for testMethod, id in fixture.cases.items():
 			yield testCaseName+'.'+testMethod, fixture, id
-
-args = parser.parse_args(sys.argv[1:])
-
-sys.argv = sys.argv[:1]
-
-if args.subcommand == 'list':
-	for testCase, fixture, id in iterTestCases():
-		print testCase
-	sys.exit(-1)
-
-from cfg import config as remotecfg
-from cfg import dbconfig as dbcfg
 
 
 
@@ -78,7 +77,6 @@ db=None
 pool=None
 
 
-
 def renderMako(template, model, id, uid=1):
 	from contextlib import closing
 
@@ -105,16 +103,8 @@ def renderMako(template, model, id, uid=1):
 
 
 
-from consolemsg import step, error, success, fail, warn
-import glob
-import shutil
-import subprocess
-
-
-if args.subcommand in ('upload'):
-	sys.argv.remove(args.subcommand)
-	consolemsg.error("Command '{}' not yet implemented".format(args.subcommand))
-	sys.exit(-1)
+def test():
+	unittest.main()
 
 def download():
 	for case in args.testcases:
@@ -136,17 +126,32 @@ def download():
 			warn("Compte, el model hauria de ser '{}'"
 				.format(template.model_int_name))
 		
-	sys.exit(0)
+def upload():
+	from ooop import OOOP
+	O = OOOP(**remotecfg)
+	if not args.testcases:
+		fail("Cal especificar un o mes templates (pel nom de testCase.yaml)")
+	for case in args.testcases:
+		fixture = testcases[case]
+		template = O.PoweremailTemplates.get(fixture.poweremailId)
+		with codecs.open(fixture.template, 'w', encoding='utf8') as f:
+			newContent = f.read()
+		template.def_body_text = newContent
+		template.save()
+
+def list():
+	for testCase, fixture, id in iterTestCases():
+		print testCase
 
 
-if args.subcommand == 'download':
-	download()
+def listtemplates():
+	from ooop import OOOP
+	O = OOOP(**remotecfg)
+	for t in O.PoweremailTemplates.all():
+		print u'{} {} "{}"'.format(t.id, t.model_int_name, t.name)
 
-
-
-
-
-if args.subcommand == 'accept':
+def accept() :
+	import shutil
 	for testCaseName, fixture in testcases.items() :
 		for testMethod, id in fixture.cases.items():
 			testcase = testCaseName+'.'+testMethod
@@ -155,9 +160,6 @@ if args.subcommand == 'accept':
 			if not os.access(resultFilename, os.R_OK) : continue
 			step("Accepting "+testcase)
 			shutil.move(resultFilename, expectedFilename)
-	sys.exit()
-
-
 
 
 def makeB2bTestCase(testCaseName, id) :
@@ -193,7 +195,6 @@ def makeB2bTestCase(testCaseName, id) :
 
 	return b2bTestCase
 
-import unittest
 
 def addDataDrivenTestCases():
 	for testCase, fixture in testcases.items() :
@@ -215,7 +216,13 @@ addDataDrivenTestCases()
 
 
 if __name__ == '__main__' :
-	unittest.main()
+	if args.subcommand not in globals() :
+		error("Command '{}' not yet implemented".format(args.subcommand))
+		sys.exit(-1)
+
+	globals()[args.subcommand]()
+	sys.exit(0)
+
 
 
 
