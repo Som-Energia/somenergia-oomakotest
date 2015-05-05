@@ -34,6 +34,13 @@ enviarFacturaNormal:
     cases:
         normal_ca: 444848
         normal_es: 403834
+enviarAbonament:
+    template: input/correu-enviarAbonament.mako
+    model: giscedata.facturacio.factura
+    poweremailId: 12
+    cases:
+        normal_ca: 444848
+        normal_es: 403834
 acceptacioM102:
   template: input/correu-acceptacioM102.mako
   model: giscedata.switching
