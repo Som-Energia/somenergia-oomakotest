@@ -151,7 +151,9 @@ def upload():
 	O = OOOP(**remotecfg)
 	if not args.testcases:
 		fail("Cal especificar un o mes templates (pel nom de testCase.yaml)")
+	step("Uploading to {uri}:{port} as {user}".format(**remotecfg))
 	for case in args.testcases:
+		step("Uploading {}...".format(case))
 		fixture = testcases[case]
 		template = O.PoweremailTemplates.get(fixture.poweremailId)
 		with codecs.open(fixture.template, 'r', 'utf8') as f:
@@ -165,7 +167,8 @@ def upload():
 		for translation in O.IrTranslation.filter(
 				name='poweremail.templates,def_body_text',
 				res_id=template.id,
-				):
+				): 
+			step("Uploading {} translation {}...".format(case,translation.lang))
 			#write("backup-{}-translation-src-{}.mako".format(case,translation.lang), translation.src)
 			#translation.src=newContent
 			write("backup-{}-translation-{}.mako".format(case,translation.lang), translation.value)

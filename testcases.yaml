@@ -33,6 +33,7 @@ enviarFacturaNormal:
     poweremailId: 6
     cases:
         normal_ca: 444848
+        normal_es: 403834
 acceptacioM102:
   template: input/correu-acceptacioM102.mako
   model: giscedata.switching
