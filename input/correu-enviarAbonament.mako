@@ -1,4 +1,8 @@
-<!doctype html>
+<%
+import datetime
+data_inici = datetime.datetime.strptime(object.data_inici, '%Y-%m-%d').strftime('%d-%m-%Y')
+data_final = datetime.datetime.strptime(object.data_final, '%Y-%m-%d').strftime('%d-%m-%Y')
+%><!doctype html>
 <html>
 <head></head>
 <body>
@@ -41,7 +45,7 @@ Durant els propers dies rebràs la factura rectificada on hi consten les noves d
 - Titular: ${object.polissa_id.titular.name}
 - Número de factura: ${object.number}
 - Data factura: ${object.invoice_id.date_invoice}
-- Període del  ${object.data_inici} al  ${object.data_final}
+- Període del ${data_inici} al ${data_final}
 -<B> Import total: ${object.invoice_id.amount_total}</B>€ 
 
 I la setmana vinent realitzarem els moviments bancaris corresponents (retorn de l'abonament i cobrament de la factura rectificada).
@@ -76,7 +80,7 @@ Durante los próximos días recibirás la factura rectificada donde constan los 
 - Codigo CUPS: ${object.cups_id.name}
 - Número factura: ${object.number}
 - Fecha factura: ${object.invoice_id.date_invoice}
-- Periodo del  ${object.data_inici} al  ${object.data_final}
+- Periodo del ${data_inici} al ${data_final}
 - <B>Importe total: ${object.invoice_id.amount_total}</B>€
 
 Y la próxima semana realizaremos los movimientos bancarios correspondientes (retorno del abono y cobro de la factura rectificada).
