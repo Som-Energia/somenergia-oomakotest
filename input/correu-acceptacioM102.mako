@@ -31,7 +31,6 @@ for step in object.step_ids:
 # TODO: Si el pas2 no existeix abortar el correu
 
 tarifaATR=dict(object.pool.get('giscedata.switching.m1.01').fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas1.tarifaATR]
-print "'{}'".format(tarifaATR)
 
 p_obj = object.pool.get('res.partner')
 if not object.vat_enterprise():
