@@ -31,6 +31,7 @@ for nargs, command, help in [
 	('',  'list', "Llista els casos de test disponibles"),
 	('',  'listtemplates', "Lista els templates al servidor"),
 	('*', 'status', "Mostra l'estat dels casos"),
+	('*', 'import', "Importa els templates"),
 	] :
 	sub = subparsers.add_parser(command, help=help)
 	if nargs:
@@ -52,7 +53,6 @@ def loadErp(dbcfg):
 
 	import netsvc
 	import tools
-	tools.config.parse()
 	tools.config['db_name'] = dbcfg.dbname
 	tools.config['db_host'] = dbcfg.host
 	tools.config['db_user'] = dbcfg.user
@@ -126,6 +126,26 @@ def download():
 			warn("Compte, el model hauria de ser '{}'"
 				.format(template.model_int_name))
 		
+def download():
+	for case in args.testcases:
+		case in testcases or fail(
+			"El cas {} no esta a testcases.yaml"
+			.format(case))
+
+	from ooop import OOOP
+	O = OOOP(**remotecfg)
+	for name, fixture in testcases.items():
+		if 'poweremailId' not in fixture: continue
+		if args.testcases and name not in args.testcases:
+			continue
+		template = O.PoweremailTemplates.get(fixture.poweremailId)
+		step("Fetching {}...".format(name))
+		with codecs.open(fixture.template, 'w', 'utf8') as f:
+			f.write(template.def_body_text)
+		if fixture.get('model') != template.model_int_name:
+			warn("Compte, el model hauria de ser '{}'"
+				.format(template.model_int_name))
+
 def upload():
 	from ooop import OOOP
 	O = OOOP(**remotecfg)

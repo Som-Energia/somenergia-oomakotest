@@ -3,6 +3,16 @@ simple:
   model: res.municipi
   cases:
     finana: 41
+contracteEsborrany:
+  template: input/contracteEsborrany.mako
+  model: giscedata.polissa
+  poweremailId: 1
+  cases: {}
+nouSoci:
+  template: input/nouSoci.mako
+  model: res.partner.address
+  poweremailId: 2
+  cases: {}
 canviDePagador:
   template: input/correu-canviPagador.mako
   model: giscedata.polissa
@@ -17,6 +27,12 @@ canviDePagador:
     3.0_es: 21086
     3.1_ca: 34078
 #    3.1_es: 41775 # Not yet in test data
+enviarFacturaNormal:
+    template: input/correu-enviarFacturaNormal.mako
+    model: giscedata.facturacio.factura
+    poweremailId: 6
+    cases:
+        normal: 444848
 acceptacioM102:
   template: input/correu-acceptacioM102.mako
   model: giscedata.switching
