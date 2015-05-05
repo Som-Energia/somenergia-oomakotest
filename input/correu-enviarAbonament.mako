@@ -65,8 +65,10 @@ factura@somenergia.coop
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 
-Te enviamos el <B>abono</B> de una factura anterior de electricidad de Som Energia, ya que las lecturas facturadas no eran correctas. 
+Te enviamos el <B>abono</B> de una factura anterior de electricidad de Som Energia, ya que las lecturas facturadas no eran correctas.
+
 Esta factura de abono anula la que habíamos emitido anteriormente para el mismo periodo.
+Durante los próximos días recibirás la factura rectificada donde constan los nuevos datos de los que disponemos.
 
 <U>Resumen de la factura</U>
 - Dirección punto suministro: ${object.cups_id.direccio}
@@ -76,8 +78,6 @@ Esta factura de abono anula la que habíamos emitido anteriormente para el mismo
 - Fecha factura: ${object.invoice_id.date_invoice}
 - Periodo del  ${object.data_inici} al  ${object.data_final}
 - <B>Importe total: ${object.invoice_id.amount_total}</B>€
-
-Durante los próximos días recibirás la factura rectificada donde constan los nuevos datos de los que disponemos.
 
 Y la próxima semana realizaremos los movimientos bancarios correspondientes (retorno del abono y cobro de la factura rectificada).
 
