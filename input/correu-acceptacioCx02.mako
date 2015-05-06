@@ -50,7 +50,7 @@ Ens plau comunicar-te que la <strong>sol·licitud del canvi ha estat acceptada</
 
 % if falta_lectura:
 
-<HR width=80% align="left"><strong><u>Important<u></strong>: per tal que l’activació sigui efectiva, és necessari que comuniquis la lectura actual del comptador a la distribuïdora de la zona. 
+<HR width=80% align="left"><strong><u>Important</u></strong>: per tal que l’activació sigui efectiva, és necessari que comuniquis la lectura actual del comptador a la distribuïdora de la zona. 
 
 Telefons de les diferentes distribuïdores per comunicar la lectura:
 - Endesa Distribución 902 509600
@@ -98,7 +98,7 @@ Hola${nom_titular},
 Nos complace comunicarte que<strong> la solicitud del cambio ha sido aceptada</strong>.
 % if falta_lectura:
 
-<HR width=80% align="left"><strong><u>Importante<u></strong>: para que la activación sea efectiva, es necesario que comuniques la lectura actual del contador a la distribuidora de tu zona.
+<HR width=80% align="left"><strong><u>Importante</u></strong>: para que la activación sea efectiva, es necesario que comuniques la lectura actual del contador a la distribuidora de tu zona.
 
 Telefonos de las diferentes distribuidoras para comunicar la lectura:
 - Endesa Distribución 902 509600
