@@ -57,8 +57,17 @@ acceptacioCx02:
     model: giscedata.switching
     poweremailId: 18
     cases:
-        normal_es: 36352
-        normal_ca: 17479
+        nou: 102
+#        normal_es: 11795
+#        normal_ca: 17479
+#        senseLectura_es: 11795
+        senseLectura_ca: 17479
+        lecturaVella_es: 11795
+#        lecturaVella_ca: 17479
+#        sensecicle_es:
+#        sensecicle_ca:
+#        3.0_es:
+#        3.0_ca:
 #activacioM105:
 #  template: input/correu-activacioM105.mako
 #  model: giscedata.switching

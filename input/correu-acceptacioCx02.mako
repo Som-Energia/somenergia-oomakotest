@@ -12,12 +12,13 @@ try:
     if step.pas_id.startswith('giscedata.switching.c1.02') or step.pas_id.startswith('giscedata.switching.c2.02'):
       pas2 = obj
     if step.pas_id.startswith('giscedata.switching.c1.01') or step.pas_id.startswith('giscedata.switching.c2.01') :
-     pas1 = obj
+      pas1 = obj
   if pas1.activacio_cicle == 'N':
-    data_act = "La data de l’activació serà aproximadament el dia en uns 15 dies"
-    data_act_cast = "La fecha de activación será aproximadamente el día en unos 15 días"
+    data_act = "La data de l’activació serà aproximadament en uns 15 dies"
+    data_act_cast = "La fecha de activación será aproximadamente en unos 15 días"
   else: 
     from datetime import datetime, timedelta
+    # TODO: Cas pas2.data_ult_lect == False
     date = datetime.strptime(pas2.data_ult_lect, '%Y-%m-%d')
     if object.cups_polissa_id.tarifa_codi == "3.0A": 
       date += timedelta(40)
