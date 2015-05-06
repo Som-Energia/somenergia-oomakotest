@@ -39,7 +39,9 @@ T'enviem l'<B>abonament</B> d'una factura anterior d'electricitat de Som Energia
 Aquesta factura d'abonament anul·la la que havíem emès anteriorment per al mateix període.
 Durant els propers dies rebràs la factura rectificada on hi consten les noves dades de les que disposem.
 
-<U>Resum de la teva factura</U>
+La setmana vinent realitzarem els moviments bancaris corresponents (retorn de l'abonament i cobrament de la factura rectificada).
+
+<U>Resum de la factura ABONADA</U>
 - Adreça punt subministrament: ${object.cups_id.direccio}
 - Codi CUPS: ${object.cups_id.name}
 - Titular: ${object.polissa_id.titular.name}
@@ -47,8 +49,6 @@ Durant els propers dies rebràs la factura rectificada on hi consten les noves d
 - Data factura: ${object.invoice_id.date_invoice}
 - Període del ${data_inici} al ${data_final}
 -<B> Import total: ${object.invoice_id.amount_total}</B>€ 
-
-I la setmana vinent realitzarem els moviments bancaris corresponents (retorn de l'abonament i cobrament de la factura rectificada).
 
 Si tens qualsevol dubte, pots respondre aquest mateix correu.
 
@@ -74,7 +74,9 @@ Te enviamos el <B>abono</B> de una factura anterior de electricidad de Som Energ
 Esta factura de abono anula la que habíamos emitido anteriormente para el mismo periodo.
 Durante los próximos días recibirás la factura rectificada donde constan los nuevos datos de los que disponemos.
 
-<U>Resumen de la factura</U>
+La próxima semana realizaremos los movimientos bancarios correspondientes (retorno del abono y cobro de la factura rectificada).
+
+<U>Resumen de la factura ABONADA</U>
 - Dirección punto suministro: ${object.cups_id.direccio}
 - Titular: ${object.polissa_id.titular.name}
 - Codigo CUPS: ${object.cups_id.name}
@@ -82,8 +84,6 @@ Durante los próximos días recibirás la factura rectificada donde constan los 
 - Fecha factura: ${object.invoice_id.date_invoice}
 - Periodo del ${data_inici} al ${data_final}
 - <B>Importe total: ${object.invoice_id.amount_total}</B>€
-
-Y la próxima semana realizaremos los movimientos bancarios correspondientes (retorno del abono y cobro de la factura rectificada).
 
 Si tienes cualquier duda, puedes responder este mismo correo.
 
