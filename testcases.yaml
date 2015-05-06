@@ -52,6 +52,13 @@ acceptacioM102:
     ambActuacio_es: 29669
     3.0_ca: 14063
     3.0_es: 24832
+acceptacioCx02:
+    template: input/correu-acceptacioCx02.mako
+    model: giscedata.switching
+    poweremailId: 18
+    cases:
+        normal_es: 36352
+        normal_ca: 17479
 #activacioM105:
 #  template: input/correu-activacioM105.mako
 #  model: giscedata.switching
