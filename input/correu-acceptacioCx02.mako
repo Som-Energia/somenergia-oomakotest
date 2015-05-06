@@ -22,8 +22,8 @@ try:
     date = datetime.strptime(pas2.data_ult_lect, '%Y-%m-%d')
     if object.cups_polissa_id.tarifa_codi == "3.0A": 
       date += timedelta(40)
-      data_act= "el dia " + date.strftime('%d/%m/%Y')
-      data_act_cast = "el día " + date.strftime('%d/%m/%Y')
+      data_act= "La data de l’activació serà aproximadament el dia " + date.strftime('%d/%m/%Y')
+      data_act_cast = "La fecha de activación será aproximadamente el día " + date.strftime('%d/%m/%Y')
     else:
       date += timedelta(70)
       data_act = "La data de l’activació serà aproximadament el dia " + date.strftime('%d/%m/%Y')
