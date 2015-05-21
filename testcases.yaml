@@ -52,6 +52,15 @@ acceptacioM102:
     ambActuacio_es: 29669
     3.0_ca: 14063
     3.0_es: 24832
+activacioM105:
+  template: input/correu-activacioM105.mako
+  model: giscedata.switching
+  poweremailId: 41
+  cases:
+    20A_ca: 2628
+    20A_es: 2623
+    30A_ca: 14063
+    30A_es: 24832
 acceptacioCx02:
     template: input/correu-acceptacioCx02.mako
     model: giscedata.switching
@@ -68,13 +77,3 @@ acceptacioCx02:
 #        sensecicle_ca:
 #        3.0_es:
 #        3.0_ca:
-#activacioM105:
-#  template: input/correu-activacioM105.mako
-#  model: giscedata.switching
-#  poweremailId: 41
-#  cases:
-#    20ACastella: 20033
-#    20ACatala: 20033
-#    30ACastella: 20033
-#    30ACatala: 20032
-
