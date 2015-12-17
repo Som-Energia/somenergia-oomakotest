@@ -77,3 +77,17 @@ acceptacioCx02:
 #        sensecicle_ca:
 #        3.0_es:
 #        3.0_ca:
+verificacioDadesContractacio:
+  template: input/correu-verificacioDadesContractacio.mako
+  model: giscedata.polissa
+  poweremailId: 1
+  cases:
+    2.0_ca: 8
+    DHA_ca: 14
+    DHA_es: 1028
+    DHS_ca: 21
+    DHS_es: 44930
+    3.0_ca: 1460
+    3.0_es: 21086
+    3.1_ca: 34078
+    3.1_es: 41775 # Not yet in test data
