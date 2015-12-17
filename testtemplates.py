@@ -9,8 +9,8 @@ import unittest
 from namespace import namespace as ns
 from consolemsg import step, error, success, fail, warn
 
-from cfg import config as remotecfg
-from cfg import dbconfig as dbcfg
+from cfg import config as remoteErpConfig
+from cfg import psycopg as dbcfg
 
 
 testcases = ns.load("testcases.yaml")
@@ -53,16 +53,19 @@ def loadErp(dbcfg):
 
 	import netsvc
 	import tools
-	tools.config['db_name'] = dbcfg.dbname
+	tools.config['db_name'] = dbcfg.database
 	tools.config['db_host'] = dbcfg.host
 	tools.config['db_user'] = dbcfg.user
-	tools.config['db_password'] = dbcfg.pwd
+	tools.config['db_password'] = dbcfg.password
 	tools.config['db_port'] = dbcfg.port
 	tools.config['root_path'] = "../erp/server"
 	tools.config['addons_path'] = "../erp/server/bin/addons"
-	tools.config['log_level'] = 'warn'
+	tools.config['log_level'] = None #'warn'
 	tools.config['log_file'] = open('/dev/null','w')
 	#tools.config['log_handler'] = [':WARNING']
+	tools.config['init'] = []
+	tools.config['demo'] = []
+	tools.config['update'] = []
 
 	import pooler
 	import osv
@@ -91,7 +94,7 @@ def renderMako(template, model, id, uid=1):
 		for obj in pool.get(model).browse(cursor,uid,[id]):
 			env = {
 				'user':pool.get('res.users').browse(cursor,uid,uid),
-				'db': dbcfg.dbname,
+				'db': dbcfg.database,
 			}
 			import mako.template
 			return mako.template.Template(makoinput).render_unicode(
@@ -113,7 +116,7 @@ def download():
 			.format(case))
 
 	from ooop import OOOP
-	O = OOOP(**remotecfg)
+	O = OOOP(**remoteErpConfig)
 	for name, fixture in testcases.items():
 		if 'poweremailId' not in fixture: continue
 		if args.testcases and name not in args.testcases:
@@ -133,7 +136,7 @@ def download():
 			.format(case))
 
 	from ooop import OOOP
-	O = OOOP(**remotecfg)
+	O = OOOP(**remoteErpConfig)
 	for name, fixture in testcases.items():
 		if 'poweremailId' not in fixture: continue
 		if args.testcases and name not in args.testcases:
@@ -148,10 +151,10 @@ def download():
 
 def upload():
 	from ooop import OOOP
-	O = OOOP(**remotecfg)
+	O = OOOP(**remoteErpConfig)
 	if not args.testcases:
 		fail("Cal especificar un o mes templates (pel nom de testCase.yaml)")
-	step("Uploading to {uri}:{port} as {user}".format(**remotecfg))
+	step("Uploading to {uri}:{port} as {user}".format(**remoteErpConfig))
 	for case in args.testcases:
 		step("Uploading {}...".format(case))
 		fixture = testcases[case]
@@ -183,7 +186,7 @@ def list():
 
 def listtemplates():
 	from ooop import OOOP
-	O = OOOP(**remotecfg)
+	O = OOOP(**remoteErpConfig)
 	for t in O.PoweremailTemplates.all():
 		print u'{} {} "{}"'.format(t.id, t.model_int_name, t.name)
 
