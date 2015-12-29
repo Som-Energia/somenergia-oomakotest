@@ -107,6 +107,8 @@ def renderMako(template, model, id, uid=1):
 
 
 def test():
+	unittest.TestCase.__str__ = unittest.TestCase.id
+	sys.argv.append("--verbose"); print sys.argv
 	unittest.main()
 
 def download():
