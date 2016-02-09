@@ -47,6 +47,8 @@ El procés d’alta de subministrament consta dels següents passos:
 
 Enllaços d'interès:
 
+- <a href="https://www.generationkwh.org/ca/">Generació kWh:</a> Ara també pots generar la teva pròpia energia renovable de forma col·lectiva. A l'enllaç hi trobaràs un vídeo explicatiu.
+
 - <a href="https://oficinavirtual.somenergia.coop/ca">Oficina Virtual:</a> Aquí pots revisar l'estat del teu contracte i les factures que emetrem. <a href="http://ca.support.somenergia.coop/category/72-oficina-virtual">Ús de l'Oficina Virtual.</a>
 
 - <b><a href="http://ca.support.somenergia.coop/">Centre de Suport Som Energia:</a></b> Aquí hi trobaràs resolts els dubtes més freqüents, com per exemple: "Com puc fer un canvi de potència o tarifa?", "Com puc facilitar la lectura?", etc.
@@ -73,7 +75,7 @@ Este es el resumen de los datos facilitados en el formulario de contratación de
 - Dirección punto de suministro: ${object.cups_direccio}
 - Código CUPS: ${object.cups.name}
 
-% if 'proces: A3' not in object.observacions:
+% if not object.observacions or 'proces: A3' not in object.observacions:
 
 El proceso de cambio de comercializadora consta de los siguientes pasos:
 
@@ -99,10 +101,11 @@ El proceso de alta de suministro consta de los siguientes pasos:
 
 4. Posteriormente, en <b>la primera factura</b> se reflejará el coste del alta (que cobra la distribuidora) desglosado. Puedes consultar un cálculo orientativo en <a href="http://es.support.somenergia.coop/article/245-no-tengo-luz-actualmente-puedo-solicitar-un-nuevo-punto-de-consumo">este enlace</a>.
 
-
 % endif
 
 Enlaces de interés:
+
+- <a href="https://www.generationkwh.org/es/">Generación kWh:</a> Ahora también puedes generar tu propia energía renovable de forma colectiva. En el enlace encontrarás un vídeo explicativo.
 
 - <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a>: Aquí puedes revisar el estado de tu contrato y las facturas que emitiremos a través de nuestra Oficina Virtual.  <a href="http://es.support.somenergia.coop/category/141-uso-de-la-oficina-virtual">Uso de la Oficina Virtual.</a>
 
