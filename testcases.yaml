@@ -91,5 +91,30 @@ verificacioDadesContractacio:
     3.0_es: 21086
     3.1_ca: 34078
     3.1_es: 41775 # Not yet in test data
-#    A3_ca: 66599 
-#    A3_es: 66722
+    2.0_A3_ca: 66599 
+    2.0_A3_es: 68012
+notificacioAcceptacioA3:
+  template: input/correu-notificacioAcceptacioA3.mako
+  model: giscedata.switching
+  poweremailId: 63
+  cases:
+    2.x_ca: 42153
+    2.x_es: 37918
+notificacioRebuigA3:
+  template: input/correu-notificacioRebuigA3.mako
+  model: giscedata.switching
+  poweremailId: 64
+  cases:
+    ca: 42297
+    es: 42138
+notificacioActivacioA3:
+  template: input/correu-notificacioActivacioA3.mako
+  model: giscedata.switching
+  poweremailId: 65
+  cases:
+    2.x_ca: 42153
+    2.x_es: 37918
+
+
+
+
