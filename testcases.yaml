@@ -118,7 +118,7 @@ notificacioActivacioA3:
 genkwhAssignacio:
   template: input/correu-genkwhAssignacio.mako
   model: somenergia.soci
-  poweremailId: 68
+  poweremailId: 69
   cases:
     gis: 1
     garciacamas: 1951

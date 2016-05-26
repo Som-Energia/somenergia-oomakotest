@@ -1,8 +1,4 @@
-<!doctype html>
-<html>
-<head></head>
-<body>
-<div align="right"><img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
+<!doctype html><html><body><div align="right"><img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
 <%
 Contract = object.pool.get('giscedata.polissa')
 Assignment = object.pool.get('generationkwh.assignment')
@@ -84,14 +80,13 @@ En el teu cas no tens cap contracte on figuris com a persona titular o pagadora 
 Pots assignar energia a qualsevol contracte que estigui amb la cooperativa (no cal que estigui al teu nom), però per a cadascun d’ells, necessitarem saber el seu número de contracte o en el seu defecte el seu número de CUPS.
 
 
-
 Salutacions i seguim en contacte, amb encara més bona energia!
 
 Equip de Som Energia.
 <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
 <a href="http://www.generationkwh.org/ca">www.generationkwh.org</a>
 %elif object.lang != 'ca_ES':
-Nos alegra comunicarte que en breve tu inversión del Generation kWh comenzará a generar energía y ya se verá reflejada en tus facturas, o en las de aquellos contratos que nos indiques.
+Nos alegra comunicarte que en breve tu inversión del <em>Generation kWh<em> comenzará a generar energía y ya se verá reflejada en tus facturas, o en las de aquellos contratos que nos indiques.
 
 Por defecto, se te han asignado todos los contratos de los que eres la persona titular o pagadora. Se ha fijado un contrato como prioritario (aquel que nos consta con más uso eléctrico anual) y los kWh que cada mes no utilice este contrato, los podrán ir aprovechando el resto de contratos. 
 
@@ -108,7 +103,7 @@ ${ contractDescription(contracts[1:],'es') }
 
 Si quieres modificar esta asignación por defecto, puedes pedirlo contestando este mismo mensaje.
 %else:
-En tu caso no tienes ningún contrato donde figures como persona titular o pagadora y no se ha hecho ninguna asignación por defecto.
+En tu caso no tienes ningún contrato donde figuras como persona titular o pagadora y no se ha hecho ninguna asignación por defecto.
 
 <b>Para aprovechar tu inversión, te recomendamos que asignes al menos un contrato.</b> Puedes pedirlo contestando este mismo mensaje.
 %endif
@@ -116,13 +111,10 @@ En tu caso no tienes ningún contrato donde figures como persona titular o pagad
 Puedes asignar energía a cualquier contrato que esté con la cooperativa (no hace falta que esté a tu nombre), pero para cada uno de ellos, necesitaremos saber su número de contrato o en su defecto su número de CUPS.
 
 
+Saludos y seguimos en contacto, ¡con aún más buena energía!
 
-Salutacions i seguim en contacte, amb encara més bona energia!
-
-Equip de Som Energia.
-<a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
-<a href="http://www.generationkwh.org/ca">www.generationkwh.org</a>
+Equipo de Som Energia.
+<a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
+<a href="http://www.generationkwh.org/es">www.generationkwh.org</a>
 %endif
-
-</body>
-</html>
+</body></html>

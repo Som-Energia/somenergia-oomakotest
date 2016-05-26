@@ -131,26 +131,6 @@ def download():
 			warn("Compte, el model hauria de ser '{}'"
 				.format(template.model_int_name))
 		
-def download():
-	for case in args.testcases:
-		case in testcases or fail(
-			"El cas {} no esta a testcases.yaml"
-			.format(case))
-
-	from ooop import OOOP
-	O = OOOP(**remoteErpConfig)
-	for name, fixture in testcases.items():
-		if 'poweremailId' not in fixture: continue
-		if args.testcases and name not in args.testcases:
-			continue
-		template = O.PoweremailTemplates.get(fixture.poweremailId)
-		step("Fetching {}...".format(name))
-		with codecs.open(fixture.template, 'w', 'utf8') as f:
-			f.write(template.def_body_text)
-		if fixture.get('model') != template.model_int_name:
-			warn("Compte, el model hauria de ser '{}'"
-				.format(template.model_int_name))
-
 def upload():
 	from ooop import OOOP
 	O = OOOP(**remoteErpConfig)
