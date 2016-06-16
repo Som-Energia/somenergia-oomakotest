@@ -1,4 +1,4 @@
-<!doctype html><html><body><div align="right"><img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
+<!doctype html><html><body><div style="float: right"><img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
 <%
 Contract = object.pool.get('giscedata.polissa')
 Assignment = object.pool.get('generationkwh.assignment')
