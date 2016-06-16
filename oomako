@@ -6,7 +6,7 @@ import os
 import argparse
 import codecs
 import unittest
-from namespace import namespace as ns
+from yamlns import namespace as ns
 from consolemsg import step, error, success, fail, warn
 
 from cfg import config as remoteErpConfig
