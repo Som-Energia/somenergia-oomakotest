@@ -123,6 +123,14 @@ genkwhAssignacio:
     gis: 1
     garciacamas: 1951
     capcontracte: 537
-    
 
+genkwhAvancament:
+  template: input/correu-genkwhAvancament.mako
+  model: somenergia.soci
+  poweremailId: 700 # not set
+  cases:
+    # TODO: missing cases: spanish, multiple inversion, effective after today
+    gis: 1
+    # TODO: failing case: beyond the priced date, no investment
+    #garciacamas: 1951 # Fails, no investment
 
