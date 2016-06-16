@@ -1,8 +1,5 @@
 <!doctype html><html><head><meta charset="utf-8" /></head><body style='font-family:sans'><div style="float: right"><img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
 <%
-# Subject: Generation kWh: Et regalem un mes de retorn energètic [${object.ref[1:]}]
-# Subject: Generation kWh: Te regalamos un mes de retorno energético [${object.ref[1:]}]
-
 import datetime
 Investment = object.pool.get('generationkwh.investment')
 

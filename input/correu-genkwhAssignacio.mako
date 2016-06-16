@@ -55,7 +55,7 @@ def contractDescription(ids, idioma):
 Hola,
 
 %if object.lang != 'es_ES':
-Ens alegra comunicar-te que en breu la teva inversió del Generation kWh començarà a generar energia i ja es veurà reflectida a les teves factures, o a les d’aquells contractes que ens indiquis.
+Ens alegra comunicar-te que en breu la teva inversió del <em>Generation kWh</em> començarà a generar energia i ja es veurà reflectida a les teves factures, o a les d’aquells contractes que ens indiquis.
 
 Per defecte, se t’han assignat tots els contractes dels quals ets la persona titular o pagadora. S’ha fixat un contracte com a prioritari (aquell que ens consta amb més ús elèctric anual) i els kWh que cada mes no utilitzi aquest contracte, els podran anar aprofitant la resta de contractes. 
 
@@ -86,7 +86,7 @@ Equip de Som Energia.
 <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
 <a href="http://www.generationkwh.org/ca">www.generationkwh.org</a>
 %elif object.lang != 'ca_ES':
-Nos alegra comunicarte que en breve tu inversión del <em>Generation kWh<em> comenzará a generar energía y ya se verá reflejada en tus facturas, o en las de aquellos contratos que nos indiques.
+Nos alegra comunicarte que en breve tu inversión del <em>Generation kWh</em> comenzará a generar energía y ya se verá reflejada en tus facturas, o en las de aquellos contratos que nos indiques.
 
 Por defecto, se te han asignado todos los contratos de los que eres la persona titular o pagadora. Se ha fijado un contrato como prioritario (aquel que nos consta con más uso eléctrico anual) y los kWh que cada mes no utilice este contrato, los podrán ir aprovechando el resto de contratos. 
 
