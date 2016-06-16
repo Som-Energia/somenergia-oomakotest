@@ -97,12 +97,14 @@ def renderMako(template, model, id, uid=1):
 				'db': dbcfg.database,
 			}
 			import mako.template
-			return mako.template.Template(makoinput).render_unicode(
+			result = mako.template.Template(makoinput).render_unicode(
 				object=obj,
 				peobject=obj,
 				env=env,
 				format_exceptions=True,
 				)
+			result = '<br/>\n'.join(result.splitlines())
+			return result
 
 
 
