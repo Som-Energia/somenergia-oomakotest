@@ -127,7 +127,7 @@ genkwhAssignacio:
 genkwhAvancament:
   template: input/correu-genkwhAvancament.mako
   model: somenergia.soci
-  poweremailId: 700 # not set
+  poweremailId: 70
   cases:
     # TODO: missing cases: spanish, multiple inversion, effective after today
     gis: 1
