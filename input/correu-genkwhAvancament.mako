@@ -1,10 +1,9 @@
 <!doctype html><html><head><meta charset="utf-8" /></head><body style='font-family:sans'><div style="float: right"><img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
 <%
+# Subject: Generation kWh: Et regalem un mes de retorn energètic [${object.ref[1:]}]
+# Subject: Generation kWh: Te regalamos un mes de retorno energético [${object.ref[1:]}]
+
 import datetime
-
-# Subject: Generation kWh: Et regalem un mes de retorn energètic
-# Subject: Generation kWh: Te regalamos un mes de retorno energético
-
 Investment = object.pool.get('generationkwh.investment')
 
 investment_ids = Investment.search(
@@ -67,6 +66,10 @@ Així doncs, començarás a acumular els kWh produïts a la planta d’Alcolea a
 %endif
 
 <div style='text-align:center; font-size:160%'>Moltes gràcies i bona energia!!</div>
+
+Equip de Som Energia.
+<a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
+<a href="http://www.generationkwh.org/ca">www.generationkwh.org</a>
 %endif
 %if object.lang != 'ca_ES':
 <div style='text-align:center'>Ahora que la Generación kWh ha comenzado a producir, gracias a tu confianza, y a la de muchas otras personas,</div>
@@ -84,5 +87,9 @@ Así pues, comenzarás a acumular los kWh producidos en la planta de Alcolea a p
 %endif
 
 <div style='text-align:center; font-size:160%'>¡¡ Muchas gracias y buena energía !!</div>
+
+Equipo de Som Energia.
+<a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
+<a href="http://www.generationkwh.org/es">www.generationkwh.org</a>
 %endif
 </body></html>
