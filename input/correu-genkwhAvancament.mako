@@ -21,7 +21,7 @@ purchasedate = Investment.read(
     )['purchase_date']
 purchasedate = datetime.datetime.strptime(purchasedate, "%Y-%m-%d").date()
 
-lastbonuseddate = datetime.date(2016,5,23)
+lastbonuseddate = datetime.date(2016,4,26)
 
 if purchasedate > lastbonuseddate:
     raise Exception(
