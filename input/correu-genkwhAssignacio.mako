@@ -1,7 +1,37 @@
-<!doctype html><html><body><div style="float: right"><img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
+<!doctype html><html><head><meta charset="utf-8" /></head><body style='font-family:sans'><div style="float: right"><img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
 <%
 Contract = object.pool.get('giscedata.polissa')
 Assignment = object.pool.get('generationkwh.assignment')
+Investment = object.pool.get('generationkwh.investment')
+
+import datetime
+
+def slashdate(date):
+    return date.strftime('%d/%m/%Y')
+
+investment_ids = Investment.search(
+    object._cr, object._uid,
+    [
+    ('member_id', '=', object.id),
+    ('first_effective_date', '!=', False),
+    ],
+    order='first_effective_date ASC',
+)
+
+if investment_ids:
+    effectivedate = Investment.read(
+        object._cr, object._uid,
+        investment_ids[0],
+        ['first_effective_date'],
+        )['first_effective_date']
+else:
+    effectivedate = None
+
+if effectivedate:
+    effectivedate = datetime.datetime.strptime(effectivedate, "%Y-%m-%d").date()
+    effectivedate = slashdate(effectivedate)
+else:
+    effectivedate = "???"
 
 def assignedContracts():
     assignments_ids = Assignment.search(object._cr, object._uid, [
@@ -55,7 +85,7 @@ def contractDescription(ids, idioma):
 Hola,
 
 %if object.lang != 'es_ES':
-Ens alegra comunicar-te que en breu la teva inversió del <em>Generation kWh</em> començarà a generar energia i ja es veurà reflectida a les teves factures, o a les d’aquells contractes que ens indiquis.
+Ens alegra comunicar-te que a partir del dia ${ effectivedate } la teva inversió del <em>Generation kWh</em> començarà a generar energia i ja es veurà reflectida a les teves factures, o a les d’aquells contractes que ens indiquis.
 
 Per defecte, se t’han assignat tots els contractes dels quals ets la persona titular o pagadora. S’ha fixat un contracte com a prioritari (aquell que ens consta amb més ús elèctric anual) i els kWh que cada mes no utilitzi aquest contracte, els podran anar aprofitant la resta de contractes. 
 
@@ -86,7 +116,7 @@ Equip de Som Energia.
 <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
 <a href="http://www.generationkwh.org/ca">www.generationkwh.org</a>
 %elif object.lang != 'ca_ES':
-Nos alegra comunicarte que en breve tu inversión del <em>Generation kWh</em> comenzará a generar energía y ya se verá reflejada en tus facturas, o en las de aquellos contratos que nos indiques.
+Nos alegra comunicarte que el día ${ effectivedate } tu inversión del <em>Generation kWh</em> comenzará a generar energía y ya se verá reflejada en tus facturas, o en las de aquellos contratos que nos indiques.
 
 Por defecto, se te han asignado todos los contratos de los que eres la persona titular o pagadora. Se ha fijado un contrato como prioritario (aquel que nos consta con más uso eléctrico anual) y los kWh que cada mes no utilice este contrato, los podrán ir aprovechando el resto de contratos. 
 

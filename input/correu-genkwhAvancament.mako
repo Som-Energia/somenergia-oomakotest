@@ -12,7 +12,7 @@ investment_ids = Investment.search(
 )
 
 if not investment_ids:
-    raise Exception("No assigments for member {}".format(object.id))
+    raise Exception("No investments for member {}".format(object.id))
 
 purchasedate = Investment.read(
     object._cr, object._uid,
