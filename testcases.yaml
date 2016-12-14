@@ -134,3 +134,12 @@ genkwhAvancament:
     # TODO: failing case: beyond the priced date, no investment
     #garciacamas: 1951 # Fails, no investment
 
+facturacioEndarrerida:
+  template: input/correu-facturacioEndarrerida.mako
+  model: giscedata.polissa
+  poweremailId: 71
+  cases:
+    ca: 8
+
+
+
