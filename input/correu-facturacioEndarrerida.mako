@@ -14,12 +14,15 @@ try:
     nom_pagador = ''
 except:
   nom_pagador = ''
- 
+
+from datetime import datetime
+last_invoiced_date = datetime.strptime(object.data_ultima_lectura, '%Y-%m-%d')
+last_invoiced_date_formatted = last_invoiced_date.strftime('%d/%m/%Y')
 %>
 Hola${nom_pagador},
 
 % if object.titular.lang != "es_ES":
-<B>La facturació ha estat aturada durant aquests darrers mesos i no emetíem cap factura des de ${object.data_ultima_lectura.strftime('%Y/%m/%d')}. 
+<B>La facturació ha estat aturada durant aquests darrers mesos i no emetíem cap factura des de ${last_invoiced_date_formatted}. 
 Ara la posem al dia, fins a la darrera lectura que ens consta i t’enviem les factures.<B>
 
 Si vols que fem algun fraccionament del cobrament, ens ho pots demanar contestant aquest mateix correu, sinó carregarem l'import corresponent al teu número de compte durant els propers dies. 
@@ -43,7 +46,7 @@ factura@somenergia.coop
 ----------------------------------------------------------------------------------------------------
 % endif
 % if  object.titular.lang != "ca_ES":
-<B>La facturación ha estado parada durante estos últimos meses y no emitíamos ninguna factura desde ${object.data_ultima_lectura.strftime('%Y/%m/%d')}. 
+<B>La facturación ha estado parada durante estos últimos meses y no emitíamos ninguna factura desde ${last_invoiced_date_formatted}. 
 Ahora la ponemos al día, hasta la última lectura que nos consta y te enviamos las facturas.<B>
 
 Si quieres que hagamos algún fraccionamiento del cobro, nos lo puedes pedir contestando este mismo correo, sino cargaremos el importe correspondiente a tu número de cuenta en los próximos días.
