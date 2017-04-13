@@ -1,145 +1,155 @@
-simple:
-  template: input/simple.mako
-  model: res.municipi
-  cases:
-    finana: 41
-contracteEsborrany:
-  template: input/contracteEsborrany.mako
-  model: giscedata.polissa
-  poweremailId: 1
-  cases: {}
-nouSoci:
-  template: input/nouSoci.mako
-  model: res.partner.address
-  poweremailId: 2
-  cases: {}
-canviDePagador:
-  template: input/correu-canviPagador.mako
-  model: giscedata.polissa
-  poweremailId: 43
-  cases:
-    2.0_ca: 8
-    DHA_ca: 14
-    DHA_es: 1028
-    DHS_ca: 21
-    DHS_es: 44930
-    3.0_ca: 1460
-    3.0_es: 21086
-    3.1_ca: 34078
+#simple:
+#  template: input/simple.mako
+#  model: res.municipi
+#  cases:
+#    finana: 41
+#contracteEsborrany:
+#  template: input/contracteEsborrany.mako
+#  model: giscedata.polissa
+#  poweremailId: 1
+#  cases: {}
+#nouSoci:
+#  template: input/nouSoci.mako
+#  model: res.partner.address
+#  poweremailId: 2
+#  cases: {}
+#canviDePagador:
+#  template: input/correu-canviPagador.mako
+#  model: giscedata.polissa
+#  poweremailId: 43
+#  cases:
+#    2.0_ca: 8
+#    DHA_ca: 14
+#    DHA_es: 1028
+#    DHS_ca: 21
+#    DHS_es: 44930
+#    3.0_ca: 1460
+#    3.0_es: 21086
+#    3.1_ca: 34078
+##    3.1_es: 41775 # Not yet in test data
+#enviarFacturaNormal:
+#    template: input/correu-enviarFacturaNormal.mako
+#    model: giscedata.facturacio.factura
+#    poweremailId: 6
+#    cases:
+#        normal_ca: 444848
+#        normal_es: 403834
+#enviarAbonament:
+#    template: input/correu-enviarAbonament.mako
+#    model: giscedata.facturacio.factura
+#    poweremailId: 12
+#    cases:
+#        normal_ca: 444848
+#        normal_es: 403834
+#acceptacioM102:
+#  template: input/correu-acceptacioM102.mako
+#  model: giscedata.switching
+#  poweremailId: 40
+#  cases:
+#    canviTitular_ca: 1744
+#    canviTitular_es: 1745
+#    ambActuacio_ca: 3090
+#    ambActuacio_es: 29669
+#    3.0_ca: 14063
+#    3.0_es: 24832
+#activacioM105:
+#  template: input/correu-activacioM105.mako
+#  model: giscedata.switching
+#  poweremailId: 41
+#  cases:
+#    20A_ca: 2628
+#    20A_es: 2623
+#    30A_ca: 14063
+#    30A_es: 24832
+#acceptacioCx02:
+#    template: input/correu-acceptacioCx02.mako
+#    model: giscedata.switching
+#    poweremailId: 18
+#    cases:
+#        nou: 102
+##        normal_es: 11795
+##        normal_ca: 17479
+##        senseLectura_es: 11795
+#        senseLectura_ca: 17479
+#        lecturaVella_es: 11795
+##        lecturaVella_ca: 17479
+##        sensecicle_es:
+##        sensecicle_ca:
+##        3.0_es:
+##        3.0_ca:
+#verificacioDadesContractacio:
+#  template: input/correu-verificacioDadesContractacio.mako
+#  model: giscedata.polissa
+#  poweremailId: 1
+#  cases:
+#    2.0_ca: 8
+#    DHA_ca: 14
+#    DHA_es: 1028
+#    DHS_ca: 21
+#    DHS_es: 44930
+#    3.0_ca: 1460
+#    3.0_es: 21086
+#    3.1_ca: 34078
 #    3.1_es: 41775 # Not yet in test data
-enviarFacturaNormal:
-    template: input/correu-enviarFacturaNormal.mako
-    model: giscedata.facturacio.factura
-    poweremailId: 6
-    cases:
-        normal_ca: 444848
-        normal_es: 403834
-enviarAbonament:
-    template: input/correu-enviarAbonament.mako
-    model: giscedata.facturacio.factura
-    poweremailId: 12
-    cases:
-        normal_ca: 444848
-        normal_es: 403834
-acceptacioM102:
-  template: input/correu-acceptacioM102.mako
-  model: giscedata.switching
-  poweremailId: 40
-  cases:
-    canviTitular_ca: 1744
-    canviTitular_es: 1745
-    ambActuacio_ca: 3090
-    ambActuacio_es: 29669
-    3.0_ca: 14063
-    3.0_es: 24832
-activacioM105:
-  template: input/correu-activacioM105.mako
-  model: giscedata.switching
-  poweremailId: 41
-  cases:
-    20A_ca: 2628
-    20A_es: 2623
-    30A_ca: 14063
-    30A_es: 24832
-acceptacioCx02:
-    template: input/correu-acceptacioCx02.mako
-    model: giscedata.switching
-    poweremailId: 18
-    cases:
-        nou: 102
-#        normal_es: 11795
-#        normal_ca: 17479
-#        senseLectura_es: 11795
-        senseLectura_ca: 17479
-        lecturaVella_es: 11795
-#        lecturaVella_ca: 17479
-#        sensecicle_es:
-#        sensecicle_ca:
-#        3.0_es:
-#        3.0_ca:
-verificacioDadesContractacio:
-  template: input/correu-verificacioDadesContractacio.mako
-  model: giscedata.polissa
-  poweremailId: 1
-  cases:
-    2.0_ca: 8
-    DHA_ca: 14
-    DHA_es: 1028
-    DHS_ca: 21
-    DHS_es: 44930
-    3.0_ca: 1460
-    3.0_es: 21086
-    3.1_ca: 34078
-    3.1_es: 41775 # Not yet in test data
-    2.0_A3_ca: 66599 
-    2.0_A3_es: 68012
-notificacioAcceptacioA3:
-  template: input/correu-notificacioAcceptacioA3.mako
-  model: giscedata.switching
-  poweremailId: 63
-  cases:
-    2.x_ca: 42153
-    2.x_es: 37918
-notificacioRebuigA3:
-  template: input/correu-notificacioRebuigA3.mako
-  model: giscedata.switching
-  poweremailId: 64
-  cases:
-    ca: 42297
-    es: 42138
-notificacioActivacioA3:
-  template: input/correu-notificacioActivacioA3.mako
-  model: giscedata.switching
-  poweremailId: 65
-  cases:
-    2.x_ca: 42153
-    2.x_es: 37918
+#    2.0_A3_ca: 66599 
+#    2.0_A3_es: 68012
+#notificacioAcceptacioA3:
+#  template: input/correu-notificacioAcceptacioA3.mako
+#  model: giscedata.switching
+#  poweremailId: 63
+#  cases:
+#    2.x_ca: 42153
+#    2.x_es: 37918
+#notificacioRebuigA3:
+#  template: input/correu-notificacioRebuigA3.mako
+#  model: giscedata.switching
+#  poweremailId: 64
+#  cases:
+#    ca: 42297
+#    es: 42138
+#notificacioActivacioA3:
+#  template: input/correu-notificacioActivacioA3.mako
+#  model: giscedata.switching
+#  poweremailId: 65
+#  cases:
+#    2.x_ca: 42153
+#    2.x_es: 37918
+#
+#genkwhAssignacio:
+#  template: input/correu-genkwhAssignacio.mako
+#  model: somenergia.soci
+#  poweremailId: 69
+#  cases:
+#    gis: 1
+#    garciacamas: 1951
+#    capcontracte: 537
+#
+#genkwhAvancament:
+#  template: input/correu-genkwhAvancament.mako
+#  model: somenergia.soci
+#  poweremailId: 70
+#  cases:
+#    # TODO: missing cases: spanish, multiple inversion, effective after today
+#    gis: 1
+#    # TODO: failing case: beyond the priced date, no investment
+#    #garciacamas: 1951 # Fails, no investment
+#
+#facturacioEndarrerida:
+#  template: input/correu-facturacioEndarrerida.mako
+#  model: giscedata.polissa
+#  poweremailId: 71
+#  cases:
+#    ca: 8
 
-genkwhAssignacio:
-  template: input/correu-genkwhAssignacio.mako
-  model: somenergia.soci
-  poweremailId: 69
+validacioDadesModificacio:
+  template: input/correu-validacioDadesModificacio.mako
+  model: giscedata.switching
+  poweremailId: 80
   cases:
-    gis: 1
-    garciacamas: 1951
-    capcontracte: 537
-
-genkwhAvancament:
-  template: input/correu-genkwhAvancament.mako
-  model: somenergia.soci
-  poweremailId: 70
-  cases:
-    # TODO: missing cases: spanish, multiple inversion, effective after today
-    gis: 1
-    # TODO: failing case: beyond the priced date, no investment
-    #garciacamas: 1951 # Fails, no investment
-
-facturacioEndarrerida:
-  template: input/correu-facturacioEndarrerida.mako
-  model: giscedata.polissa
-  poweremailId: 71
-  cases:
-    ca: 8
+    3.0A_es: 24827
+    2.1DHAto3.0A_es: 3
+    2.1DHAto3.0A_ca: 50850
+    3.0A_ca: 34800
 
 
 

@@ -9,9 +9,10 @@ import unittest
 from yamlns import namespace as ns
 from consolemsg import step, error, success, fail, warn
 
-from cfg import config as remoteErpConfig
-from cfg import psycopg as dbcfg
+from configdb import ooop as remoteErpConfig
+from configdb import psycopg as dbcfg
 
+dbcfg = ns(dbcfg)
 
 testcases = ns.load("testcases.yaml")
 
