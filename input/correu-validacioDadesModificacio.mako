@@ -40,9 +40,10 @@ Datos de la solicitud:
 ${lineesDePotencia}
 %else:
 - Tipo de modificación: Reducción de potencia
-- Potencia deseada: ${potencia} kW
 - Tarifa deseada: ${tarifaATR}
+- Potencia deseada: ${potencia} kW
 %endif
+
 Teléfono de contacto: ${object.tel_pagador_polissa} (recuerda que este teléfono lo utilizará la distribuidora de tu zona para ponerse en contacto contigo en caso de que sea necesario).
 
 En los próximos días recibirás un correo electrónico en el que te informaremos del estado de tu solicitud.
@@ -74,9 +75,10 @@ Dades de la sol·licitud:
 ${lineesDePotencia}
 %else:
 - Tipus de modificació: Reducción de potencia
-- Potència desitjada: ${potencia} kW
 - Tarifa desijada: ${tarifaATR}
+- Potència desitjada: ${potencia} kW
 %endif
+
 Telèfon de contacte: ${object.tel_pagador_polissa} (recorda que aquest telèfon l'utilitzarà la distribuïdora de la teva zona per posar-se en contacte amb tu en el cas que sigui necessari).
 
 En els propers dies rebràs un correu electrònic en què t’informarem de l’estat de la teva sol·licitud. 
