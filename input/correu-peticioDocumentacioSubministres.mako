@@ -1,7 +1,8 @@
-% if object.lang=='ca_ES':
-Benvolgut/da ${object.name},
+<!doctype html><html><head><meta charset="utf-8"/></head><body><table width="100%" frame="below" bgcolor="#E8F1D4"><tr><td valign=TOP rowspan="4" align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr></table>
+% if object.titular.lang == "ca_ES":
+Benvolgut/da ${object.direccio_pagament.name.split(',')[-1]},
 
-Ens posem en contacte amb tu per informar-te que, segons ens ha comunicat l'empresa distribuïdora de la teva zona (ENDESA en el teu cas), el butlletí elèctric de la teva instal·lació està caducat (té més de 20 anys).
+Ens posem en contacte amb tu per informar-te que, segons ens ha comunicat l'empresa distribuïdora de la teva zona (ENDESA en el teu cas), el butlletí elèctric de la teva instal·lació con adreça ${object.cups_direccio} y CUPS ${object.cups.name} està caducat (té més de 20 anys).
 
 Pot ser, a més a més, que Endesa Distribució t'hagi demanat aquest butlletí perquè has fet alguna modificació contractual (potència, tarifa, titular). Amb l'avís que si no es presenta el document es traslladarà a l'autoritat competent.
 
@@ -32,9 +33,9 @@ Equip de Som Energia
 comercialitzacio@somenergia.coop
 www.somenergia.coop - facebook - twitter - youtube
 % else:
-Estimado/a ${object.name} ,
+Estimado/a ${object.direccio_pagament.name.split(',')[-1]},
 
-Nos ponemos en contacto contigo para informarte que, según nos ha comunicado la empresa distribuidora de tu zona (ENDESA en tu caso), el boletín eléctrico de tu instalación está caducado (tiene más de 20 años).
+Nos ponemos en contacto contigo para informarte que, según nos ha comunicado la empresa distribuidora de tu zona (ENDESA en tu caso), el boletín eléctrico de tu instalacióncon dirección ${object.cups_direccio} y CUPS ${object.cups.name} está caducado (tiene más de 20 años).
 
 Puede ser, además, que Endesa Distribución te haya pedido este boletín porque hiciste alguna modificación del año pasado (potencia, tarifa, titular). Con el aviso de que si no se presenta el documento se trasladará a la autoridad competente.
 
@@ -64,4 +65,4 @@ Esperamos haberte ayudado.
 Equipo de Som Energia
 comercialitzacio@somenergia.coop
 www.somenergia.coop - facebook - twitter - youtube
-% endif
+% endif:
