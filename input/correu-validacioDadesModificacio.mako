@@ -6,8 +6,13 @@ for step in object.step_ids:
   if step.pas_id.startswith('giscedata.switching.m1.01'):
     pas1 = obj
     break
-tarifaATR=dict(object.pool.get('giscedata.switching.m1.01').fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas1.tarifaATR]
+
+PasM101 = object.pool.get('giscedata.switching.m1.01')
+mapaTarifes=dict(PasM101.fields_get(object._cr, object._uid)['tarifaATR']['selection'])
+tarifaATR=mapaTarifes[pas1.tarifaATR]
 print "'{}'".format(tarifaATR)
+cont_telefon=pas1.cont_telefon or object.tel_pagador_polissa
+print "'{}'".format(cont_telefon)
 
 if tarifaATR == '3.0A':
   lineesDePotencia = '\n'.join((
@@ -44,7 +49,7 @@ ${lineesDePotencia}
 - Potencia deseada: ${potencia} kW
 %endif
 
-Teléfono de contacto: ${object.tel_pagador_polissa} (recuerda que este teléfono lo utilizará la distribuidora de tu zona para ponerse en contacto contigo en caso de que sea necesario).
+Teléfono de contacto: ${cont_telefon} (recuerda que este teléfono lo utilizará la distribuidora de tu zona para ponerse en contacto contigo en caso de que sea necesario).
 
 En los próximos días recibirás un correo electrónico en el que te informaremos del estado de tu solicitud.
 
@@ -79,7 +84,7 @@ ${lineesDePotencia}
 - Potència desitjada: ${potencia} kW
 %endif
 
-Telèfon de contacte: ${object.tel_pagador_polissa} (recorda que aquest telèfon l'utilitzarà la distribuïdora de la teva zona per posar-se en contacte amb tu en el cas que sigui necessari).
+Telèfon de contacte: ${cont_telefon} (recorda que aquest telèfon l'utilitzarà la distribuïdora de la teva zona per posar-se en contacte amb tu en el cas que sigui necessari).
 
 En els propers dies rebràs un correu electrònic en què t’informarem de l’estat de la teva sol·licitud. 
 
