@@ -151,12 +151,17 @@ validacioDadesModificacio:
     2.1DHAto3.0A_ca: 50850
     3.0A_ca: 34800
 
-peticioDocumentacioSubministres:
-  template: input/correu-peticioDocumentacioSubministres.mako
-  model: res.partner
-  poweemailId: 66
-  cases:
-    es: 100580
+#peticioDocumentacioSubministres:
+#  template: input/correu-peticioDocumentacioSubministres.mako
+#  model: res.partner
+#  poweemailId: 66
+#  cases:
+#    es: 100580
     
-
+resumAmortitzacioGenerationKWh:
+  template: input/correu-resumAmortitzacioGenerationKWh.mako
+  model: payment.line
+  poweremailId: 81
+  cases:
+    ca: 1397974 
 
