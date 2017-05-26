@@ -150,6 +150,7 @@ validacioDadesModificacio:
     2.1DHAto3.0A_es: 3
     2.1DHAto3.0A_ca: 50850
     3.0A_ca: 34800
+    webform_contact_phone_different_to_polissa: 107487    
 
 #peticioDocumentacioSubministres:
 #  template: input/correu-peticioDocumentacioSubministres.mako
@@ -164,4 +165,4 @@ resumAmortitzacioGenerationKWh:
   poweremailId: 81
   cases:
     ca: 1397974 
-
+   
