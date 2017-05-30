@@ -161,8 +161,8 @@ validacioDadesModificacio:
     
 resumAmortitzacioGenerationKWh:
   template: input/correu-resumAmortitzacioGenerationKWh.mako
-  model: payment.line
+  model: account.invoice
   poweremailId: 81
   cases:
-    ca: 1397974 
+    ca: 2391140 
    
