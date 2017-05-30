@@ -44,7 +44,7 @@ Datos de la solicitud:
 - Potencia deseada:
 ${lineesDePotencia}
 %else:
-- Tipo de modificación: Reducción de potencia
+Datos de la solicitud:
 - Tarifa deseada: ${tarifaATR}
 - Potencia deseada: ${potencia} kW
 %endif
@@ -79,7 +79,7 @@ Dades de la sol·licitud:
 - Potències desitjades:
 ${lineesDePotencia}
 %else:
-- Tipus de modificació: Reducción de potencia
+Dades de la sol·licitud:
 - Tarifa desijada: ${tarifaATR}
 - Potència desitjada: ${potencia} kW
 %endif
