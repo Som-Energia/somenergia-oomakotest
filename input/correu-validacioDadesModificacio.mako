@@ -46,7 +46,7 @@ ${lineesDePotencia}
 %else:
 Datos de la solicitud:
 - Tarifa deseada: ${tarifaATR}
-- Potencia deseada: ${potencia} kW
+- Potencia deseada: ${potencia} W
 %endif
 
 Teléfono de contacto: ${cont_telefon} (recuerda que este teléfono lo utilizará la distribuidora de tu zona para ponerse en contacto contigo en caso de que sea necesario).
@@ -81,7 +81,7 @@ ${lineesDePotencia}
 %else:
 Dades de la sol·licitud:
 - Tarifa desijada: ${tarifaATR}
-- Potència desitjada: ${potencia} kW
+- Potència desitjada: ${potencia} W
 %endif
 
 Telèfon de contacte: ${cont_telefon} (recorda que aquest telèfon l'utilitzarà la distribuïdora de la teva zona per posar-se en contacte amb tu en el cas que sigui necessari).
