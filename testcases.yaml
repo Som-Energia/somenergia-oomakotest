@@ -179,7 +179,7 @@ liquidacioTitolsParticipatius:
   model: account.invoice
   poweremailId: 15
   cases:
-    ca: 40
-    es: 4403
+    ca: 809864
+    es: 810046
 
 # vim: et ts=2 sw=2   

@@ -16,7 +16,7 @@ Titular: ${object.partner_id.name}
 Període del ${object.invoice_line[0].name.split(' ')[1]} al ${object.invoice_line[-1].name.split(' ')[3]}
 <strong>Import total: ${object.amount_total}€</strong>
 
-Núm. c.c.: ${(object.partner_bank.acc_number or '').replace(' ', '-')}
+Núm. IBAN: ${(object.partner_bank.iban or '')}
 
 Aprofitem per agrair-te una vegada més la teva implicació amb el nostre projecte.
 
@@ -46,7 +46,7 @@ Titular: ${object.partner_id.name}
 Período del ${object.invoice_line[0].name.split(' ')[1]} al ${object.invoice_line[-1].name.split(' ')[3]}
 <strong>Importe total: ${object.amount_total}€</strong>
 
-Nº c.c.: ${(object.partner_bank.acc_number or '').replace(' ', '-')}
+Nº IBAN: ${(object.partner_bank.iban or '')}
 
 Aprovechamos para agradecerte una vez más tu implicación con nuestro proyecto.
 
