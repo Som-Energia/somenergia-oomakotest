@@ -141,16 +141,16 @@
 #  cases:
 #    ca: 8
 
-validacioDadesModificacio:
-  template: input/correu-validacioDadesModificacio.mako
-  model: giscedata.switching
-  poweremailId: 80
-  cases:
-    3.0A_es: 24827
-    2.1DHAto3.0A_es: 3
-    2.1DHAto3.0A_ca: 50850
-    3.0A_ca: 34800
-    webform_contact_phone_different_to_polissa: 107487    
+#validacioDadesModificacio:
+#  template: input/correu-validacioDadesModificacio.mako
+#  model: giscedata.switching
+#  poweremailId: 80
+#  cases:
+#    3.0A_es: 24827
+#    2.1DHAto3.0A_es: 3
+#    2.1DHAto3.0A_ca: 50850
+#    3.0A_ca: 34800
+#    webform_contact_phone_different_to_polissa: 107487    
 
 #peticioDocumentacioSubministres:
 #  template: input/correu-peticioDocumentacioSubministres.mako
@@ -159,19 +159,27 @@ validacioDadesModificacio:
 #  cases:
 #    es: 100580
     
-resumAmortitzacioGenerationKWh:
-  template: input/correu-resumAmortitzacioGenerationKWh.mako
-  model: account.invoice
-  poweremailId: 81
-  cases:
-    ca: 2391140 
+#resumAmortitzacioGenerationKWh:
+#  template: input/correu-resumAmortitzacioGenerationKWh.mako
+#  model: account.invoice
+#  poweremailId: 81
+#  cases:
+#    ca: 2391140 
 
-peticioLecturaComptador:
-  template: input/correu-peticioLecturaComptador.mako
-  model: giscedata.polissa
-  poweremailId: 49
+#peticioLecturaComptador:
+#  template: input/correu-peticioLecturaComptador.mako
+#  model: giscedata.polissa
+#  poweremailId: 49
+#  cases:
+#    ca: 2374
+#    es: 69398
+
+liquidacioTitolsParticipatius:
+  template: input/correu-liquidacioTitolsParticipatius.mako
+  model: account.invoice
+  poweremailId: 15
   cases:
-    ca: 2374
-    es: 69398
+    ca: 40
+    es: 4403
 
 # vim: et ts=2 sw=2   
