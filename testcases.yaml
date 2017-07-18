@@ -165,4 +165,13 @@ resumAmortitzacioGenerationKWh:
   poweremailId: 81
   cases:
     ca: 2391140 
-   
+
+peticioLecturaComptador:
+  template: input/correu-peticioLecturaComptador.mako
+  model: giscedata.polissa
+  poweremailId: 49
+  cases:
+    ca: 2374
+    es: 69398
+
+# vim: et ts=2 sw=2   
