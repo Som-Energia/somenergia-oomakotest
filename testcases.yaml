@@ -182,11 +182,25 @@
 #    ca: 809864
 #    es: 810046
 
-facturaRetornadaGenerationKWh:
-  template: input/correu-facturaRetornadaGenerationKWh.mako
-  model: account.invoice
-  poweremailId: 82
+#facturaRetornadaGenerationKWh:
+#  template: input/correu-facturaRetornadaGenerationKWh.mako
+#  model: account.invoice
+#  poweremailId: 82
+#  cases:
+#    ca: 2401537
+
+generationKWhPas1:
+  template: input/correu-generationKWhPas1.mako
+  model: generationkwh.investment
+  poweremailId: 50
   cases:
-    ca: 2401537
+    ca: 6211 
+
+#generationKWhPas2:
+#  template: input/correu-generationKWhPas2.mako
+#  model: payment.line
+#  poweremailId: 51
+#  cases:
+#    ca: 1565508
 
 # vim: et ts=2 sw=2   
