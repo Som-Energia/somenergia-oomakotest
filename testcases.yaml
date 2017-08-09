@@ -174,12 +174,19 @@
 #    ca: 2374
 #    es: 69398
 
-liquidacioTitolsParticipatius:
-  template: input/correu-liquidacioTitolsParticipatius.mako
+#liquidacioTitolsParticipatius:
+#  template: input/correu-liquidacioTitolsParticipatius.mako
+#  model: account.invoice
+#  poweremailId: 15
+#  cases:
+#    ca: 809864
+#    es: 810046
+
+facturaRetornadaGenerationKWh:
+  template: input/correu-facturaRetornadaGenerationKWh.mako
   model: account.invoice
-  poweremailId: 15
+  poweremailId: 82
   cases:
-    ca: 809864
-    es: 810046
+    ca: 2401537
 
 # vim: et ts=2 sw=2   
