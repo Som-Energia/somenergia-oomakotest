@@ -189,20 +189,36 @@
 #  cases:
 #    ca: 2401537
 
-generationKWhPas1:
-  template: input/correu-generationKWhPas1.mako
-  model: generationkwh.investment
-  poweremailId: 50
-  cases:
-    ca: 6211
-    es: 6197
+#generationKWhPas1:
+#  template: input/correu-generationKWhPas1.mako
+#  model: generationkwh.investment
+#  poweremailId: 50
+#  cases:
+#    ca: 6211
+#    es: 6197
 
 #generationKWhPas2:
 #  template: input/correu-generationKWhPas2.mako
 #  model: account.invoice
 #  poweremailId: 51
 #  cases:
-#    ca: 3320635
+#    ca: 3320471
 # Test case s'ha de canviar per un de productiu quan hi hagi factures de generation
 
+
+generationKWhCreacio:
+  template: input/correu-generationKWhCreacio.mako
+  model: generationkwh.investment
+  poweremailId: 85
+  cases:
+    ca: 6211
+    es: 6197
+
+generationKWhPagament:
+  template: input/correu-generationKWhPagament.mako
+  model: account.invoice
+  poweremailId: 86
+  cases:
+    ca: 6211
+    es: 6197
 # vim: et ts=2 sw=2   
