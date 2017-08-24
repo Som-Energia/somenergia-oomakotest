@@ -14,8 +14,6 @@ amount_amortization = nominal_amount*4/100
 num_amortization = int(investment_obj[0]['amortized_amount']/amount_amortization)
 %>
 % if object.partner_id.lang == "es_ES":
-<img src="https://www.generationkwh.org/wp-content/uploads/logo.jpg" style="float:right;">
-
 
 Hola ${object.partner_id.name.split(',')[-1]},
 
@@ -37,7 +35,6 @@ Aprovechamos para agradecerte, una vez más, tu implicación con el objetivo com
 Salud y buena energía,
 
 
-<img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
 Som Energia, SCCL
 <a href="http://www.somenergia.coop">www.somenergia.coop</a>
 % endif
@@ -45,8 +42,6 @@ Som Energia, SCCL
 ----------------------------------------------------------------------------------------------------
 % endif
 % if object.partner_id.lang == "ca_ES":
-<img src="https://www.generationkwh.org/wp-content/uploads/logo.jpg" style="float:right;">
-
 
 Hola ${object.partner_id.name.split(',')[-1]},
 
@@ -68,7 +63,6 @@ Aprofitem per agrair-te, una vegada més, la teva implicació amb l’objectiu c
 Salut i bona energia,
 
 
-<img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
 Som Energia, SCCL
 <a href="http://www.somenergia.coop/ca/">www.somenergia.coop</a>
 % endif
