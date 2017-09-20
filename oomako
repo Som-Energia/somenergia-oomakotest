@@ -107,12 +107,24 @@ def renderMako(template, model, id, uid=1):
 			result = '<br/>\n'.join(result.splitlines())
 			return result
 
+def getId(O, fixture):
 
+    if type(fixture.poweremailId) == int:
+        return fixture.poweremailId
+
+    module, name = fixture.poweremailId.split('.')
+
+    model, id = O.IrModelData.get_object_reference(module, name)
+
+    return id
+
+def getTemplate(O, fixture):
+    return O.PoweremailTemplates.get(getId(O, fixture))
 
 def test():
-	unittest.TestCase.__str__ = unittest.TestCase.id
-	sys.argv.append("--verbose"); print sys.argv
-	unittest.main()
+    unittest.TestCase.__str__ = unittest.TestCase.id
+    sys.argv.append("--verbose"); print sys.argv
+    unittest.main()
 
 def download():
 	for case in args.testcases:
@@ -126,7 +138,7 @@ def download():
 		if 'poweremailId' not in fixture: continue
 		if args.testcases and name not in args.testcases:
 			continue
-		template = O.PoweremailTemplates.get(fixture.poweremailId)
+		template = getTemplate(O, fixture) 
 		step("Fetching {}...".format(name))
 		with codecs.open(fixture.template, 'w', 'utf8') as f:
 			f.write(template.def_body_text)
@@ -143,7 +155,7 @@ def upload():
 	for case in args.testcases:
 		step("Uploading {}...".format(case))
 		fixture = testcases[case]
-		template = O.PoweremailTemplates.get(fixture.poweremailId)
+		template = getTemplate(O, fixture) 
 		with codecs.open(fixture.template, 'r', 'utf8') as f:
 			newContent = f.read()
 		def write(filename, content):
