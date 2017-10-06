@@ -12,12 +12,16 @@ date = date.strftime('%d/%m/%Y')
 nominal_amount = investment_obj[0]['nshares']*100
 amount_amortization = nominal_amount*4/100
 num_amortization = int(investment_obj[0]['amortized_amount']/amount_amortization)
+partner_bank = object.partner_bank.iban
+bank_account = ' '.join(partner_bank[i:i+4] for i in xrange(0,len(partner_bank),4))
 %>
 % if object.partner_id.lang == "es_ES":
 
 Hola ${object.partner_id.name.split(',')[-1]},
 
-Te adjuntamos la primera liquidación correspondiente al retorno parcial del préstamo Generation kWh que hiciste el ${date}. El importe amortizado será transferido a esta cuenta bancaria en los próximos días: <u>${object.partner_bank.iban}</u>.
+Te adjuntamos la primera liquidación correspondiente al retorno parcial del préstamo Generation kWh que hiciste el ${date}. 
+
+El importe amortizado será transferido a esta cuenta bancaria en los próximos días: <b>${bank_account}</b>.
 
 Por favor, <b>verifica que el número de cuenta bancaria de abono es correcto</b>. En caso de no serlo, responde de forma urgente este correo indicando a qué cuenta quieres la transferencia.
 
@@ -45,7 +49,9 @@ Som Energia, SCCL
 
 Hola ${object.partner_id.name.split(',')[-1]},
 
-T'adjuntem la primera liquidació corresponent al retorn parcial del préstec Generation kWh que vas fer el ${date}. L'import amortitzat et serà transferit al següent compte bancari durant els propers dies: <u>${object.partner_bank.iban}</u>.
+T'adjuntem la primera liquidació corresponent al retorn parcial del préstec Generation kWh que vas fer el ${date}. 
+
+L'import amortitzat et serà transferit al següent compte bancari durant els propers dies: <b>${bank_account}</b>.
 
 Si us plau, <b>verifica que el número de compte bancari d’abonament és correcte</b>. En cas de no ser-ho, respon de forma urgent aquest correu indicant a quin compte vols que et fem la transferència.
 
