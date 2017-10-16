@@ -21,7 +21,7 @@ Hola ${object.partner_id.name.split(',')[-1]},
 
 Te adjuntamos la primera liquidación correspondiente al retorno parcial del préstamo Generation kWh que hiciste el ${date}. 
 
-El importe amortizado será transferido a esta cuenta bancaria en los próximos días: <b>${bank_account}</b>.
+El importe amortizado será transferido, el próximos días, a esta cuenta bancaria: <b>${bank_account}</b>.
 
 Por favor, <b>verifica que el número de cuenta bancaria de abono es correcto</b>. En caso de no serlo, responde de forma urgente este correo indicando a qué cuenta quieres la transferencia.
 
@@ -51,7 +51,7 @@ Hola ${object.partner_id.name.split(',')[-1]},
 
 T'adjuntem la primera liquidació corresponent al retorn parcial del préstec Generation kWh que vas fer el ${date}. 
 
-L'import amortitzat et serà transferit al següent compte bancari durant els propers dies: <b>${bank_account}</b>.
+L'import amortitzat et serà transferit, en els propers dies, al següent compte bancari: <b>${bank_account}</b>.
 
 Si us plau, <b>verifica que el número de compte bancari d’abonament és correcte</b>. En cas de no ser-ho, respon de forma urgent aquest correu indicant a quin compte vols que et fem la transferència.
 
