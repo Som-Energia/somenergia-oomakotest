@@ -21,7 +21,7 @@ Hola ${object.partner_id.name.split(',')[-1]},
 
 Te adjuntamos la primera liquidación correspondiente al retorno parcial del préstamo Generation kWh que hiciste el ${date}. 
 
-El importe amortizado será transferido, el próximos días, a esta cuenta bancaria: <b>${bank_account}</b>.
+El importe amortizado será transferido, en los próximos días, a esta cuenta bancaria: <b>${bank_account}</b>.
 
 Por favor, <b>verifica que el número de cuenta bancaria de abono es correcto</b>. En caso de no serlo, responde de forma urgente este correo indicando a qué cuenta quieres la transferencia.
 
