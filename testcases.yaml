@@ -189,6 +189,31 @@
 #  cases:
 #    ca: 2401537
 
+#generationKWhPas1:
+#  template: input/correu-generationKWhPas1.mako
+#  model: generationkwh.investment
+#  poweremailId: 50
+#  cases:
+#    ca: 6211
+#    es: 6197
+
+#generationKWhPas2:
+#  template: input/correu-generationKWhPas2.mako
+#  model: account.invoice
+#  poweremailId: 51
+#  cases:
+#    ca: 3320471
+# Test case s'ha de canviar per un de productiu quan hi hagi factures de generation
+
+
+#generationKWhCreacio:
+#  template: input/correu-generationKWhCreacio.mako
+#  model: generationkwh.investment
+#  poweremailId: 83
+#  cases:
+#    ca: 6211
+#    es: 6197
+
 
 #generationKWhPagament:
 #  template: input/correu-generationKWhPagament.mako
@@ -206,40 +231,65 @@
 #     ca: 6211
 #     es: 6197
 
+#generationKWhAmortitzacio:
+#  template: input/correu-generationKWhAmortitzacio.mako
+#  model: account.invoice
+#  poweremailId: 88
+#  cases:
+#    ca: 3324058
+#    es: 3324057
 # Test case s'ha de canviar per un de productiu quan hi hagi factures de generation
-generationKWHCreacio:
-   template: input/correu-generationKWhCreacio.mako
-   model: generationkwh.investment
-   poweremailId: som_generationkwh.generationkwh_mail_creacio
-   cases:
-     ca: 1644780
-     es: 1644784
 
-generationKWhPagament:
-   template: input/correu-generationKWhPagament.mako
-   model: account.invoice
-   poweremailId: som_generationkwh.generationkwh_mail_pagament
-   cases:
-     ca: 6211
-     es: 6197
+#generationKWHCreacio:
+#   template: input/correu-generationKWhCreacio.mako
+#   model: generationkwh.investment
+#   poweremailId: som_generationkwh.generationkwh_mail_creacio
+#   cases:
+#     ca: 1644780
+#     es: 1644784
 
-generationKWhImpagament:
-   template: input/correu-generationKWhImpagament.mako
-   model: account.invoice
-   poweremailId: som_generationkwh.generationkwh_mail_impagament
-   cases:
-     ca: 6211
-     es: 6197
+#generationKWhPagament:
+#   template: input/correu-generationKWhPagament.mako
+#   model: account.invoice
+#   poweremailId: som_generationkwh.generationkwh_mail_pagament
+#   cases:
+#     ca: 6211
+#     es: 6197
 
-generationKWhAmortitzacio:
-   template: input/correu-generationKWhAmortitzacio.mako
-   model: account.invoice
-   poweremailId: som_generationkwh.generationkwh_mail_amortitzacio
-   cases:
-     ca: 6211
-     es: 6197
+#generationKWhImpagament:
+#   template: input/correu-generationKWhImpagament.mako
+#   model: account.invoice
+#   poweremailId: som_generationkwh.generationkwh_mail_impagament
+#   cases:
+#     ca: 6211
+#     es: 6197
+
+#generationKWhAmortitzacio:
+#   template: input/correu-generationKWhAmortitzacio.mako
+#   model: account.invoice
+#   poweremailId: som_generationkwh.generationkwh_mail_amortitzacio
+#   cases:
+#     ca: 6211
+#     es: 6197
 
 
     
+
+
+aportacionsPas1:
+  template: input/correu-aportacionsPas1.mako
+  model: payment.line
+  poweremailId: 3
+  cases:
+    ca: 1707734
+    es: 1707735
+
+#aportacionsPas2:
+#  template: input/correu-aportacionsPas2.mako
+#  model: payment.line
+#  poweremailId: 4
+#  cases:
+#    ca: 1707734
+#    es: 1707735
 
 # vim: et ts=2 sw=2   
