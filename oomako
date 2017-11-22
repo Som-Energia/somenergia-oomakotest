@@ -145,6 +145,22 @@ def download():
 		if fixture.get('model') != template.model_int_name:
 			warn("Compte, el model hauria de ser '{}'"
 				.format(template.model_int_name))
+
+		headers = ns(
+			to=template.def_to,
+			cc=template.def_cc,
+			bcc=template.def_bcc,
+			subject=template.def_subject,
+			subject_translations=ns(),
+		)
+		for translation in O.IrTranslation.filter(
+				name='poweremail.templates,def_subject',
+				res_id=template.id,
+				):
+			headers.subject_translations[translation.lang] = translation.value
+
+		print ("HEADER:\n",  headers.dump())
+		headers.dump(fixture.template+'.yaml')
 		
 def upload():
 	from ooop import OOOP
@@ -174,6 +190,25 @@ def upload():
 			#translation.src=newContent
 			write("backup-{}-translation-{}.mako".format(case,translation.lang), translation.value)
 			translation.value=newContent
+			translation.save()
+
+		headers = ns.load(fixture.template+'.yaml')
+
+		template.def_to = headers.to
+		template.def_cc = headers.cc
+		template.def_bcc = headers.bcc
+		template.def_subject = headers.subject
+		template.save()
+
+		for translation in O.IrTranslation.filter(
+				name='poweremail.templates,def_subject',
+				res_id=template.id,
+				):
+			step("Uploading {} subject translation {}...".format(case,translation.lang))
+			#write("backup-{}-subject-translation-src-{}.mako".format(case,translation.lang), translation.src)
+			translation.src=headers.subject
+			write("backup-{}-subject-translation-{}.mako".format(case,translation.lang), translation.value)
+			translation.value=headers.subject_translations[translation.lang]
 			translation.save()
 
 
