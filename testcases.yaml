@@ -52,15 +52,56 @@
 #    ambActuacio_es: 29669
 #    3.0_ca: 14063
 #    3.0_es: 24832
-#activacioM105:
-#  template: input/correu-activacioM105.mako
-#  model: giscedata.switching
-#  poweremailId: 41
-#  cases:
+activacioC105:
+  template: input/correu-activacioC105.mako
+  model: giscedata.switching
+#  poweremailId: 19
+  poweremailId: giscedata_switching.notification_atr_C1_05
+  cases: {}
 #    20A_ca: 2628
 #    20A_es: 2623
 #    30A_ca: 14063
 #    30A_es: 24832
+activacioC205:
+  template: input/correu-activacioC205.mako
+  model: giscedata.switching
+#  poweremailId: 19
+  poweremailId: giscedata_switching.notification_atr_C2_05
+  cases: {}
+#    20A_ca: 2628
+#    20A_es: 2623
+#    30A_ca: 14063
+#    30A_es: 24832
+activacioencontraC106:
+  template: input/correu-activacioencontraC106.mako
+  model: giscedata.switching
+  #poweremailId: 21
+  poweremailId: giscedata_switching.notification_atr_C1_06
+  cases: {}
+#    20A_ca: 2628
+#    20A_es: 2623
+#    30A_ca: 14063
+#    30A_es: 24832
+activacioencontraC206:
+  template: input/correu-activacioencontraC206.mako
+  model: giscedata.switching
+  #poweremailId: 21
+  poweremailId: giscedata_switching.notification_atr_C2_06
+  cases: {}
+#    20A_ca: 2628
+#    20A_es: 2623
+#    30A_ca: 14063
+#    30A_es: 24832
+activacioM105:
+  template: input/correu-activacioM105.mako
+  model: giscedata.switching
+# poweremailId: 41
+  poweremailId: giscedata_switching.notification_atr_M1_05
+  cases:
+    20A_ca: 2628
+    20A_es: 2623
+    30A_ca: 14063
+    30A_es: 24832
 #acceptacioCx02:
 #    template: input/correu-acceptacioCx02.mako
 #    model: giscedata.switching
@@ -100,21 +141,23 @@
 #  cases:
 #    2.x_ca: 42153
 #    2.x_es: 37918
-#notificacioRebuigA3:
+##notificacioRebuigA3:
 #  template: input/correu-notificacioRebuigA3.mako
 #  model: giscedata.switching
 #  poweremailId: 64
 #  cases:
 #    ca: 42297
 #    es: 42138
-#notificacioActivacioA3:
-#  template: input/correu-notificacioActivacioA3.mako
-#  model: giscedata.switching
-#  poweremailId: 65
-#  cases:
-#    2.x_ca: 42153
-#    2.x_es: 37918
-#
+
+notificacioActivacioA3:
+  template: input/correu-notificacioActivacioA3.mako
+  model: giscedata.switching
+  #poweremailId: 65
+  poweremailId: giscedata_switching.notification_atr_A3_05
+  cases:
+    2.x_ca: 42153
+    2.x_es: 37918
+
 #genkwhAssignacio:
 #  template: input/correu-genkwhAssignacio.mako
 #  model: somenergia.soci
@@ -271,9 +314,6 @@
 #   cases:
 #     ca: 6211
 #     es: 6197
-
-
-    
 
 
 aportacionsPas1:

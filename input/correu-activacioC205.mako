@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 % if object.cups_polissa_id.titular.lang == "ca_ES":
 <head><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1> Titular: ${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
@@ -12,7 +13,7 @@ try:
   for step in object.step_ids:
     obj = step.pas_id
     model = obj._table_name
-    if model.startswith('giscedata.switching.a3.05'):
+    if model.startswith('giscedata.switching.c1.05') or model.startswith('giscedata.switching.c2.05') or model.startswith('giscedata.switching.c2.07'):
       pas5 = obj
   from datetime import datetime, timedelta
   date = datetime.strptime(pas5.data_activacio, '%Y-%m-%d')
@@ -30,7 +31,7 @@ else:
 Hola${nom_titular},
 
 % if object.cups_polissa_id.titular.lang != "es_ES":
-Ens plau comunicar-te que el procés d'alta de subministrament ha finalitzat,  <FONT COLOR="green"><strong>el contracte està activat amb Som Energia</strong></FONT> des del ${data_activacio}.
+Ens plau comunicar-te que el procés de canvi de comercialitzadora ha finalitzat,  <FONT COLOR="green"><strong>el contracte està activat amb Som Energia</strong></FONT> des del ${data_activacio}.
 
 Per a qualsevol consulta o aclariment, aquestes són les teves dades:
 <ul>
@@ -42,7 +43,8 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
 </ul>
-Aproximadament en el termini d’un mes, rebràs la primera factura, que inclourà els costos regulats per la tramitació de l’alta (i que cobra la distribuïdora).
+
+Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong> Si vols modificar-ho pots fer-ho a través de la pàgina principal de Som Energia.
 
 Pots consultar les dades del contracte, <a href="http://ca.support.somenergia.coop/article/265-puc-facilitar-jo-la-lectura">facilitar-nos les lectures</a> i  veure totes les teves factures a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.
 
@@ -59,7 +61,7 @@ comercialitzacio@somenergia.coop
 ----------------------------------------------------------------------------------------------------
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
-Nos complace informarte que el proceso de alta de suministro ha finalizado, <FONT COLOR="green"><strong>tu contrato con Som Energia está activado </strong></FONT> desde el ${data_activacio}.
+Nos complace informarte que el proceso de cambio de comercializadora ha finalizado, <FONT COLOR="green"><strong>tu contrato con Som Energia está activado </strong></FONT> desde el ${data_activacio}.
 
 Los datos del nuevo contrato son:
 <ul>
@@ -70,11 +72,13 @@ Los datos del nuevo contrato son:
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
 </ul>
-Aproximadamente en el plazo de un mes, recibirás la primera factura, que incluirá  los costes regulados de la tramitación del alta (y que cobra la distribuidora).
+
+Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con la anterior comercializadora. </strong> Si quieres modificarlo puedes hacerlo a través de la página de Som Energia.
 
 Puedes consultar los datos del contrato, <a href="http://es.support.somenergia.coop/article/535-como-puedo-facilitar-la-lectura">facilitarnos lecturas</a>  y ver todas tus facturas en la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>.
 
 Si tienes alguna duda, encontrarás las preguntas más frecuentes en el  <a href="http://es.support.somenergia.coop/">Centro de Ayuda</a> .
+
 
 
 Atentamente,

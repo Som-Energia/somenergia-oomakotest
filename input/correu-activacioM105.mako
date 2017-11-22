@@ -6,10 +6,10 @@
 <%
 
 for step in object.step_ids:
-  model, res_id = step.pas_id.split(',')
-  obj = object.pool.get(model).browse(object._cr, object._uid, int(res_id))
-  if step.pas_id.startswith('giscedata.switching.m1.05'):
-    pas5 = obj
+  obj = step.pas_id
+  model = obj._table_name
+  if model.startswith('giscedata.switching.m1.05'):
+    pas5 = obj 
     break
 
 from datetime import datetime, timedelta
