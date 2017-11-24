@@ -4,10 +4,14 @@
 <!doctype html><html><head><meta charset="utf-8"/></head><body> <table width="100%" frame="below" bgcolor="#E8F1D4"> <tr><td height=2px><font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font></td> <td valign=TOP rowspan="4" align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr> <tr><td height=2px><font size=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr> <tr><td height=2px><font size=1>Código CUPS: ${object.cups_id.name}</font></td></tr> <tr><td height=2px width=100%><font size=1>Titular:${object.cups_polissa_id.titular.name} </font></td></tr> </table>
 % endif
 <%
-
 for step in object.step_ids:
   obj = step.pas_id
-  model = obj._table_name
+  try:
+    model = obj._table_name
+  except:
+    # Deprecated method
+    model, res_id = step.pas_id.split(',')
+    obj = object.pool.get(model).browse(object._cr, object._uid, int(res_id))
   if model.startswith('giscedata.switching.m1.05'):
     pas5 = obj 
     break

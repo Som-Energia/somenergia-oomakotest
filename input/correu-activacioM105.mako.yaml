@@ -1,11 +1,6 @@
 cc: false
 to: ${object.cups_polissa_id.titular.address[0].email},${object.cups_polissa_id.pagador.address[0].email},${object.cups_polissa_id.direccio_notificacio.email}
-subject_translations:
-  en_US: ''
-  ca_ES: 'Som Energia: Modificació activada pel Contracte ${object.cups_polissa_id.name}.
-    Modificación activada para el contracte ${object.cups_polissa_id.name}'
-  es_ES: 'Som Energia: Modificació activada pel Contracte ${object.cups_polissa_id.name}.
-    Modificación activada para el contrato ${object.cups_polissa_id.name}'
+subject_translations: {}
 subject: 'Som Energia: Modificació activada pel Contracte ${object.cups_polissa_id.name}.
-  Modificación activada para el contracte ${object.cups_polissa_id.name}'
+  Modificación activada para el contrato ${object.cups_polissa_id.name}'
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
