@@ -117,22 +117,22 @@ activacioC105:
   model: giscedata.switching
 #  poweremailId: 19
   poweremailId: giscedata_switching.notification_atr_C1_05
-  cases: # TODO: Son casos d'un altre tipus!!
-    20A_ca: 2628
-    20A_es: 2623
-    30A_ca: 14063
-    30A_es: 24832
+  cases:
+    20A_ca: 232 #par 13346
+    20A_es: 102 #par 13510
+    30A_ca: 487 #par 13828
+    30A_es: 809 #par 14252
 
 activacioC205:
   template: input/correu-activacioC205.mako
   model: giscedata.switching
 #  poweremailId: 19
   poweremailId: giscedata_switching.notification_atr_C2_05
-  cases: # TODO: Son casos d'un altre tipus!!
-    20A_ca: 2628
-    20A_es: 2623
-    30A_ca: 14063
-    30A_es: 24832
+  cases:
+    20A_ca: 205   #par 6804
+    20A_es: 214   #par 13525
+    30A_ca: 19142 #par 27587
+    30A_es: 3699  #par 17345
 
 activacioencontraC106:
   template: input/correu-activacioencontraC106.mako
@@ -140,32 +140,32 @@ activacioencontraC106:
   #poweremailId: 21
   poweremailId: giscedata_switching.notification_atr_C1_06
   cases:
-    20A_ca: 489
-    20A_es: 9
-    30A_ca: 8166
-    30A_es: 11838
+    20A_ca: 489    #par 1469
+    20A_es: 9      #par 7821
+    30A_ca: 8166   #par 12802
+    30A_es: 11838  #par 20800
 
 activacioencontraC206:
   template: input/correu-activacioencontraC206.mako
   model: giscedata.switching
   #poweremailId: 21
   poweremailId: giscedata_switching.notification_atr_C2_06
-  cases: # TODO: Son casos d'un altre tipus!!
-    20A_ca: 1191
-    20A_es: 503
-    30A_ca: 21728
-    30A_es: 34150
+  cases:
+    20A_ca: 1191    #par 571
+    20A_es: 503     #par 3808
+    30A_ca: 21728   #par 17324
+    30A_es: 34150   #par 31097
 
 activacioM105:
   template: input/correu-activacioM105.mako
   model: giscedata.switching
 # poweremailId: 41 # old origin template
   poweremailId: giscedata_switching.notification_atr_M1_05
-  cases: # TODO: Son casos d'un altre tipus!!
-    20A_ca: 2628
-    20A_es: 2623
-    30A_ca: 14063
-    30A_es: 24832
+  cases:
+    20A_ca: 1582  #par 7101
+    20A_es: 1583  #par 11326
+    30A_ca: 3632  #par 5366
+    30A_es: 12696 #par 22212
 
 
 notificacioAcceptacioA3:
