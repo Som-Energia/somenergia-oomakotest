@@ -7,7 +7,12 @@
 <%
 for step in object.step_ids:
   obj = step.pas_id
-  model = obj._table_name
+  try:
+    model = obj._table_name
+  except:
+    # Deprecated method
+    model, res_id = step.pas_id.split(',')
+    obj = object.pool.get(model).browse(object._cr, object._uid, int(res_id))
   if model.startswith('giscedata.switching.c1.06') or model.startswith('giscedata.switching.c2.06'):
     pas6 = obj
 

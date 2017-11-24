@@ -151,10 +151,10 @@ activacioencontraC206:
   #poweremailId: 21
   poweremailId: giscedata_switching.notification_atr_C2_06
   cases: # TODO: Son casos d'un altre tipus!!
-    20A_ca: 2628
-    20A_es: 2623
-    30A_ca: 14063
-    30A_es: 24832
+    20A_ca: 1191
+    20A_es: 503
+    30A_ca: 21728
+    30A_es: 34150
 
 activacioM105:
   template: input/correu-activacioM105.mako
