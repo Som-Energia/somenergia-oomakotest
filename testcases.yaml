@@ -139,11 +139,11 @@ activacioencontraC106:
   model: giscedata.switching
   #poweremailId: 21
   poweremailId: giscedata_switching.notification_atr_C1_06
-  cases: # TODO: Son casos d'un altre tipus!!
-    20A_ca: 2628
-    20A_es: 2623
-    30A_ca: 14063
-    30A_es: 24832
+  cases:
+    20A_ca: 489
+    20A_es: 9
+    30A_ca: 8166
+    30A_es: 11838
 
 activacioencontraC206:
   template: input/correu-activacioencontraC206.mako
