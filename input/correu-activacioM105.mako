@@ -78,6 +78,7 @@ modifica@somenergia.coop
 ----------------------------------------------------------------------------------------------------
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
+
 Hola${nom_titular}, 
 
 La solicitud de  <font color="green"><strong>la modificación contractual ha sido ACTIVADA</strong></font> con fecha ${date}.
@@ -96,10 +97,10 @@ En la próxima factura se verá reflejada la modificación, y en la oficina virt
 
 Los datos del contrato son los siguientes:
 - Titular del contrato: ${object.cups_polissa_id.titular.name}
-- Soci/a Som Energia: ${object.cups_polissa_id.soci.name}
 - Dirección: ${object.cups_polissa_id.cups_direccio}
 - CUPS: ${object.cups_id.name}
 - Número de contrato con Som Energia: ${object.cups_polissa_id.name} 
+- Soci/a Som Energia: ${object.cups_polissa_id.soci.name}
 
 Estamos en contacto para cualquier duda o consulta.
 
