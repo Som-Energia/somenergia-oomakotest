@@ -42,17 +42,17 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:
 <li><strong>Número de contracte amb Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
 <li><strong>Direcció del punt de subministrament: </strong>${object.cups_id.direccio}</li>
-<li><strong>Número de pòlissa: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
 </ul>
 
-Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong> Si vols modificar-ho pots fer-ho a través de la pàgina principal de Som Energia.
+Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.
 
-Pots consultar les dades del contracte, <a href="http://ca.support.somenergia.coop/article/265-puc-facilitar-jo-la-lectura">facilitar-nos les lectures</a> i  veure totes les teves factures a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.
+A l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> també pots consultar les dades del contracte, <a href="http://ca.support.somenergia.coop/article/265-puc-facilitar-jo-la-lectura">facilitar-nos les lectures</a> i veure totes les teves factures.
 
 Si tens algun dubte, trobaràs les preguntes més freqüents al <a href="http://ca.support.somenergia.coop/">Centre de Suport</a>.
+
 
 
 Atentament,
@@ -72,17 +72,16 @@ Los datos del nuevo contrato son:
 <li><strong>Número de contrato con Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
 <li><strong>Dirección del punto de suministro: </strong>${object.cups_id.direccio}</li>
-<li><strong>Nùmero de pòliza: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
 </ul>
 
-Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con la anterior comercializadora. </strong> Si quieres modificarlo puedes hacerlo a través de la página de Som Energia.
+Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con el anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. 
 
-Puedes consultar los datos del contrato, <a href="http://es.support.somenergia.coop/article/535-como-puedo-facilitar-la-lectura">facilitarnos lecturas</a>  y ver todas tus facturas en la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>.
+En la <a href="https://oficinavirtual.somenergia.coop/es/login/"> Oficina Virtual </a> también puedes consultar los datos del contrato, <a href = "http://es.support.somenergia.coop/article/535-como-puedo-facilitar-la-lectura"> facilitarnos las lecturas </a> y ver todas tus facturas. 
 
-Si tienes alguna duda, encontrarás las preguntas más frecuentes en el  <a href="http://es.support.somenergia.coop/">Centro de Ayuda</a> .
+Si tienes alguna duda, encontrarás las preguntas más frecuentes en el <a href="http://es.support.somenergia.coop/"> Centro de Apoyo </a>.
 
 
 

@@ -16,7 +16,7 @@ for step in object.step_ids:
     # Deprecated method
     model, res_id = step.pas_id.split(',')
     obj = object.pool.get(model).browse(object._cr, object._uid, int(res_id))
-  if model == 'giscedata.switching.c2.05':
+  if model.startswith('giscedata.switching.c1.05') or model.startswith('giscedata.switching.c2.05') or model.startswith('giscedata.switching.c2.07'):
     pas5 = obj
     break
 try:
