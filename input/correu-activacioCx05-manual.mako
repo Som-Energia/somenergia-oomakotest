@@ -59,7 +59,7 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: ${TarifaATR}</strong></li>
+<li><strong> Tarifa: </strong>${TarifaATR}</li>
 %if TarifaATR == '3.0A':
 <li><strong> Potència: </strong>
 ${lineesDePotencia}</li>
@@ -96,7 +96,7 @@ Los datos del nuevo contrato son:
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: ${TarifaATR}</strong></li>
+<li><strong> Tarifa: </strong>${TarifaATR}</li>
 %if TarifaATR == '3.0A':
 <li><strong> Potencia: </strong>
 ${lineesDePotencia}</li>
