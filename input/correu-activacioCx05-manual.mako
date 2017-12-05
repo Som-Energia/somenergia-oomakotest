@@ -31,6 +31,20 @@ if not object.vat_enterprise():
   nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid, object.cups_polissa_id.titular.name)['nom']
 else:
   nom_titular = ''
+
+TarifaATR=dict(object.pool.get(model).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas5.tarifaATR]
+if TarifaATR == '3.0A':
+  lineesDePotencia = '\n'.join((
+    '\t- <strong> %s: </strong>%s W'%(p.name, p.potencia)
+    for p in pas5.header_id.pot_ids
+    if p.potencia != 0
+    ))
+else:
+  for p in pas5.header_id.pot_ids:
+    if p.potencia == 0: continue
+    potencia = p.potencia
+    break
+
 %>
 Hola${nom_titular},
 
@@ -45,6 +59,13 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
+<li><strong> Tarifa: ${TarifaATR}</strong></li>
+%if TarifaATR == '3.0A':
+<li><strong> Potència: </strong>
+${lineesDePotencia}</li>
+%else:
+<li><strong> Potència: $</strong>{potencia} W</li>
+%endif
 </ul>
 
 Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.
@@ -75,6 +96,13 @@ Los datos del nuevo contrato son:
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
+<li><strong> Tarifa: ${TarifaATR}</strong></li>
+%if TarifaATR == '3.0A':
+<li><strong> Potencia: </strong>
+${lineesDePotencia}</li>
+%else:
+<li><strong> Potència: </strong>${potencia} W</li>
+%endif
 </ul>
 
 Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con el anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. 
