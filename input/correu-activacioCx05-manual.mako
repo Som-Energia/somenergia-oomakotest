@@ -64,7 +64,7 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:
 <li><strong> Potència: </strong>
 ${lineesDePotencia}</li>
 %else:
-<li><strong> Potència: $</strong>{potencia} W</li>
+<li><strong> Potència: </strong>${potencia} W</li>
 %endif
 </ul>
 
