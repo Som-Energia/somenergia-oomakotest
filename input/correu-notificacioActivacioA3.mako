@@ -31,6 +31,20 @@ if not object.vat_enterprise():
   nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid, object.cups_polissa_id.titular.name)['nom']
 else:
   nom_titular = ''
+
+TarifaATR=dict(object.pool.get(model).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas5.tarifaATR]
+if TarifaATR == '3.0A':
+  lineesDePotencia = '\n'.join((
+    '\t- <strong> %s: </strong>%s W'%(p.name, p.potencia)
+    for p in pas5.header_id.pot_ids
+    if p.potencia != 0
+    ))
+else:
+  for p in pas5.header_id.pot_ids:
+    if p.potencia == 0: continue
+    potencia = p.potencia
+    break
+
 %>
 Hola${nom_titular},
 
@@ -45,10 +59,17 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
+<li><strong> Tarifa: </strong>${TarifaATR}</li>
+%if TarifaATR == '3.0A':
+<li><strong> Potència: </strong>
+${lineesDePotencia}</li>
+%else:
+<li><strong> Potència: </strong>${potencia} W</li>
+%endif
 </ul>
 Aproximadament en el termini d’un mes, rebràs la primera factura, que inclourà els costos regulats per la tramitació de l’alta (i que cobra la distribuïdora).
 
-Pots consultar les dades del contracte, <a href="http://ca.support.somenergia.coop/article/265-puc-facilitar-jo-la-lectura">facilitar-nos les lectures</a> i  veure totes les teves factures a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.
+A l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> pots consultar les dades del contracte, <a href="http://ca.support.somenergia.coop/article/265-puc-facilitar-jo-la-lectura">facilitar-nos les lectures</a> i veure totes les teves factures. També podràs sol·licitar modificar la potència o la tarifa contractada.
 
 Si tens algun dubte, trobaràs les preguntes més freqüents al <a href="http://ca.support.somenergia.coop/">Centre de Suport</a>.
 
@@ -73,10 +94,17 @@ Los datos del nuevo contrato son:
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
+<li><strong> Tarifa: </strong>${TarifaATR}</li>
+%if TarifaATR == '3.0A':
+<li><strong> Potencia: </strong>
+${lineesDePotencia}</li>
+%else:
+<li><strong> Potència: </strong>${potencia} W</li>
+%endif
 </ul>
 Aproximadamente en el plazo de un mes, recibirás la primera factura, que incluirá  los costes regulados de la tramitación del alta (y que cobra la distribuidora).
 
-Puedes consultar los datos del contrato, <a href="http://es.support.somenergia.coop/article/535-como-puedo-facilitar-la-lectura">facilitarnos lecturas</a>  y ver todas tus facturas en la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>.
+En la <a href="https://oficinavirtual.somenergia.coop/es/login/"> Oficina Virtual </a> puedes consultar los datos del contrato, <a href = "http://es.support.somenergia.coop/article/535-como-puedo-facilitar-la-lectura"> facilitarnos las lecturas </a> y ver todas tus facturas. También podrás solicitar modificar la potencia o la tarifa contratada.
 
 Si tienes alguna duda, encontrarás las preguntas más frecuentes en el  <a href="http://es.support.somenergia.coop/">Centro de Ayuda</a> .
 
