@@ -236,6 +236,8 @@ notificacioActivacioA3_manual:
   cases:
     2.x_ca: 42153
     2.x_es: 37918
+    3.x_ca: 87927
+    3.x_es: 93353
 
 
 notificacioActivacioA3_automatica:
@@ -246,6 +248,8 @@ notificacioActivacioA3_automatica:
   cases:
     2.x_ca: 42153
     2.x_es: 37918
+    3.x_ca: 87927
+    3.x_es: 93353
 
 #validacioDadesModificacio:
 #  template: input/correu-validacioDadesModificacio.mako
