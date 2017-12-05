@@ -125,7 +125,7 @@ activacioCX05_manual:
     30A_c1_es: 77717
     20A_c2_ca: 205   #par 6804
     20A_c2_es: 214   #par 13525
-    30A_c2_ca: 119789
+    30A_c2_ca: 105074
     30A_c2_es: 77717
     
 activacioC105_automatica:
@@ -147,7 +147,7 @@ activacioC205_automatica:
   cases:
     20A_ca: 205   #par 6804
     20A_es: 214   #par 13525
-    30A_ca: 19142 #par 27587
+    30A_ca: 105074 #par 27587
     30A_es: 3699  #par 17345
 
 activacioencontraCX06_manual:
