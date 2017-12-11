@@ -46,7 +46,7 @@ facturacioEndarrerida:
 # Gestió de contractes
 
 contracteEsborrany:
-  template: input/contracteEsborrany.mako
+  template: input/correu-contracteEsborrany.mako
   model: giscedata.polissa
   poweremailId: 1
   cases: {}
