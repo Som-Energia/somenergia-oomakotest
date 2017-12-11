@@ -423,4 +423,11 @@ liquidacioTitolsParticipatius:
     ca: 809864
     es: 810046
 
+baixa02:
+  template: input/correu-baixaTallSubministrament02.mako
+  model: giscedata.switching
+  poweremailId: 74
+  cases:
+    ca: 1447
+    es: 1636
 # vim: et ts=2 sw=2
