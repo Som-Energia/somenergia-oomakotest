@@ -100,12 +100,18 @@ rebuigM104:
   model: giscedata.switching
   poweremailId: 206
   cases:
-    2.0_ca: 132971
-    2.0_ca_e1: 132971
-    2.0_ca_e2: 130766
-    2.0_es: 132486
+    2.0_ca: 108303
+    2.0_ca_26: 116323
+    2.0_ca_31: 101030
+    2.0_ca_62: 119553
+    2.0_es: 122274
+    2.0_es_26: 113997
+    2.0_es_31: 127508
+    2.0_es_62: 69373
     3.0_ca: 135001
+    3.0_ca_26: 127421
     3.0_es: 129929
+    3.0_es_31: 75142
 
 acceptacioCx02:
     template: input/correu-acceptacioCx02.mako
