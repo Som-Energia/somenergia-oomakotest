@@ -1,0 +1,10 @@
+cc: false
+to: ${object.address_invoice_id.email}
+subject_translations:
+  es_ES: Liquidaciones intereses aportación voluntaria 2014 / Liquidacions interessos
+    aportació voluntària 2014
+  ca_ES: Liquidación intereses aportación voluntaria 2016 / Liquidació interessos
+    aportació voluntària 2016
+subject: Liquidaciones intereses aportación voluntaria 2015 / Liquidacions interessos
+  aportació voluntària 2015
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
