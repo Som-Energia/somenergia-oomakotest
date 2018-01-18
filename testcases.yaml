@@ -397,4 +397,32 @@ baixa02:
   cases:
     ca: 1447
     es: 1636
+
+#####################################################
+# Impagats
+
+impagament1erAvis:
+  template: input/correu-impagamentAvis.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 44
+  cases: {}
+
+impagament2onAvis:
+  template: input/correu-impagament2nAvis.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 56
+  cases: {}
+
+impagamentUltimAvis:
+  template: input/correu-impagamentUltimAvis.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 57
+  cases: {}
+
+impagamentTranferRebuda:
+  template: input/correu-impagamentTransferRebuda.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 73
+  cases: {}
+
 # vim: et ts=2 sw=2
