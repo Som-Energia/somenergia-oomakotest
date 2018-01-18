@@ -405,24 +405,48 @@ impagament1erAvis:
   template: input/correu-impagamentAvis.mako
   model: giscedata.facturacio.factura
   poweremailId: 44
-  cases: {}
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
 
 impagament2onAvis:
   template: input/correu-impagament2nAvis.mako
   model: giscedata.facturacio.factura
   poweremailId: 56
-  cases: {}
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
 
 impagamentUltimAvis:
   template: input/correu-impagamentUltimAvis.mako
   model: giscedata.facturacio.factura
   poweremailId: 57
-  cases: {}
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
 
 impagamentTranferRebuda:
   template: input/correu-impagamentTransferRebuda.mako
   model: giscedata.facturacio.factura
   poweremailId: 73
-  cases: {}
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
+
+impagamentRecordatoriPacteTransfer:
+  template: input/correu-impagamentRecordatoriPacteTransfer.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 87
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
+
+impagamentRecordatoriPacteFraccio:
+  template: input/correu-impagamentRecordatoriPacteFraccio.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 88
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
 
 # vim: et ts=2 sw=2
