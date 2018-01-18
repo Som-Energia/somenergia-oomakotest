@@ -1,9 +1,7 @@
 cc: ${object.polissa_id.titular.www_email}
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
-  es_ES: Rebut retornat Factura electricitat ${object.number} \ Recibo devuelto Factura
-    electricidad ${object.number}
+  es_ES: 2º AVISO / 2n AVÍS. Factura impagada ${object.number}
   ca_ES: 2º AVISO / 2n AVÍS. Factura impagada ${object.number}
-subject: Rebut retornat Factura electricitat ${object.number} \ Recibo devuelto Factura
-  electricidad ${object.number}
+subject: 2º AVISO / 2n AVÍS. Factura impagada ${object.number}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
