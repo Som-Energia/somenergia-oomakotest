@@ -82,6 +82,8 @@ Segon la informació que ens envia, no veu donar permís al tècnic per aplicar 
 Algún tècnic de la distribuidora s'ha posat en contacte amb vosaltres?
 
 Segon la informació que ens envia, no veu donar permís al tècnic per aplicar les modificacions. És així?
+%elif IsThisError(r,999999): # add new ca_ES errors here
+Undefined error.
 %endif
 
 %endfor
@@ -130,6 +132,8 @@ Según la información que nos envian, no habéis dado permiso al técnico para 
 ¿Se ha puesto en contacto con vosotros algún técnico de la distribuidora?
 
 Según la información que nos envian, no habéis dado permiso al técnico para aplicar las modificaciones. ¿Es asi?
+%elif IsThisError(r,999999): # add new es_ES errors here
+Undefined error.
 %endif
 
 %endfor
