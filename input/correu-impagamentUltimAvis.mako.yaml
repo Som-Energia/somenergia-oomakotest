@@ -1,0 +1,7 @@
+cc: false
+to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
+subject_translations:
+  es_ES: Ultimo Aviso/Últim Avís. Factura impagada ${object.number}
+  ca_ES: ULTIMO AVISO / ÚLTIM AVÍS. Factura impagada ${object.number}
+subject: Ultimo Aviso/Últim Avís. Factura impagada ${object.number}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
