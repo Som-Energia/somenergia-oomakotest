@@ -1,24 +1,31 @@
 <!doctype html>
 <html>
+% if object.cups_polissa_id.titular.lang == "ca_ES":
+<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1> Titular: ${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
+% else:
+<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Titular:${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
+% endif
 <head></head>
 <body>
-<div align="right"><img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
 <%
 try:
   falta_lectura = 0
   for step in object.step_ids:
-    model, res_id = step.pas_id.split(',')
-    obj = object.pool.get(model).browse(object._cr, object._uid, int(res_id))
-    if step.pas_id.startswith('giscedata.switching.c1.02') or step.pas_id.startswith('giscedata.switching.c2.02'):
+    obj = step.pas_id
+    try:
+        model = obj._table_name
+    except:
+        model, res_id = step.pas_id.split(',')
+        obj = object.pool.get(model).browse(object._cr, object._uid, int(res_id))
+    if model.startswith('giscedata.switching.c1.02') or model.startswith('giscedata.switching.c2.02'):
       pas2 = obj
-    if step.pas_id.startswith('giscedata.switching.c1.01') or step.pas_id.startswith('giscedata.switching.c2.01') :
+    if model.startswith('giscedata.switching.c1.01') or model.startswith('giscedata.switching.c2.01') :
       pas1 = obj
   if pas1.activacio_cicle == 'N':
     data_act = "La data de l’activació serà aproximadament en uns 15 dies"
     data_act_cast = "La fecha de activación será aproximadamente en unos 15 días"
   else: 
     from datetime import datetime, timedelta
-    # TODO: Cas pas2.data_ult_lect == False
     date = datetime.strptime(pas2.data_ult_lect, '%Y-%m-%d')
     if object.cups_polissa_id.tarifa_codi == "3.0A": 
       date += timedelta(40)
@@ -47,7 +54,6 @@ else:
 Hola${nom_titular},
 
 Ens plau comunicar-te que la <strong>sol·licitud del canvi ha estat acceptada</strong>.
-
 % if falta_lectura:
 
 <HR width=80% align="left"><strong><u>Important</u></strong>: per tal que l’activació sigui efectiva, és necessari que comuniquis la lectura actual del comptador a la distribuïdora de la zona. 
