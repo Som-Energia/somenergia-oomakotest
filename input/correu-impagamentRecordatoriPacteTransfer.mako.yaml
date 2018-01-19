@@ -1,7 +1,7 @@
 cc: false
 to: ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
-  ca_ES: [TRANSFER. SOM ENERGIA] Recordatori transferència / recordatorio transferencia 
-  es_ES: [TRANSFER. SOM ENERGIA] Recordatori transferència / recordatorio transferencia 
-subject: [TRANSFER. SOM ENERGIA] Recordatori transferència / recordatorio transferencia 
+  ca_ES: "[TRANSFER. SOM ENERGIA] Recordatori transferència / recordatorio transferencia"
+  es_ES: "[TRANSFER. SOM ENERGIA] Recordatori transferència / recordatorio transferencia"
+subject: "[TRANSFER. SOM ENERGIA] Recordatori transferència / recordatorio transferencia"
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net

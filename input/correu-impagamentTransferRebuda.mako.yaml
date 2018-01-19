@@ -1,7 +1,7 @@
 cc: false
 to: ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
-  ca_ES: cobro ${object.number}
-  es_ES: cobro ${object.number}
-subject: cobro ${object.number}
+  ca_ES: Factura pagada ${object.number}
+  es_ES: Factura pagada ${object.number}
+subject: Factura pagada ${object.number}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
