@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 % if object.titular.lang == "ca_ES":
-<head><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia nº ${object.name} :</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuïdora: ${object.distribuidora.name}</font></td></tr></table></head><body>
+<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia núm. ${object.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuïdora: ${object.distribuidora.name}</font></td></tr></table></head><body>
 % else:
-<head><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.name} : </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuidora: ${object.distribuidora.name}</font></td></tr></table></head><body>
+<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuidora: ${object.distribuidora.name}</font></td></tr></table></head><body>
 % endif
 <%
 try:
@@ -16,49 +16,48 @@ except:
   nom_pagador = ''
 
 from datetime import datetime
-last_invoiced_date = datetime.strptime(object.data_ultima_lectura, '%Y-%m-%d')
+last_invoiced_date = datetime.strptime(object.data_ultima_lectura or object.data_alta, '%Y-%m-%d')
 last_invoiced_date_formatted = last_invoiced_date.strftime('%d/%m/%Y')
 %>
 Hola${nom_pagador},
 
 % if object.titular.lang != "es_ES":
-<B>La facturació ha estat aturada durant aquests darrers mesos i no emetíem cap factura des de ${last_invoiced_date_formatted}. 
-Ara la posem al dia, fins a la darrera lectura que ens consta i t’enviem les factures.<B>
+T’escrivim en relació a la facturació del teu contracte ${object.name} amb Som Energia. A causa d’una incidència informàtica, la facturació va quedar encallada fa uns mesos.
 
-Si vols que fem algun fraccionament del cobrament, ens ho pots demanar contestant aquest mateix correu, sinó carregarem l'import corresponent al teu número de compte durant els propers dies. 
+Et demanem disculpes i ara solucionem la causa d’aquest bloqueig.
 
-Perdona les molèsties.
+En els propers 2-3 dies rebràs les factures que posen al dia la facturació. Et preguem que esperes a rebre-les totes per a revisar-les.
 
-Accedeix a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures, introduir les lectures del comptador i gestionar els teus contractes amb la cooperativa.
+Com que se t’han ajuntat vàries factures, pots demanar un fraccionament del cobrament, responent aquest correu abans de 10 dies.
 
-<h2 align="center">Vols produir electricitat verda de forma col·lectiva? 
-Participa en la <a href="http://www.generationkwh.org/ca/">Generació kWh</a> i suma't al canvi!</h2>
+Et recordem que a partir d’ara, donat que ja hem solucionat el problema, rebràs les factures mensualment com és el nostre procediment habitual.
+
+Recorda que, una vegada actualitzada la facturació, també podràs consultar les factures a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b>.
 
 Salutacions,
 
 Equip de Som Energia
-
-<a href="http://es.support.somenergia.coop/category/139-ya-tengo-la-luz-contratada">Centro de Ayuda</a>
+<a href="http://ca.support.somenergia.coop/category/183-ja-tinc-la-llum-contractada">Centre d'Ajuda</a>
 factura@somenergia.coop
-<a href="http://www.somenergia.coop">www.somenergia.coop</a>
+<a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
 % endif
 % if  object.titular.lang != "ca_ES" and  object.pagador.lang != "es_ES":
-----------------------------------------------------------------------------------------------------
+
 % endif
 % if  object.titular.lang != "ca_ES":
-<B>La facturación ha estado parada durante estos últimos meses y no emitíamos ninguna factura desde ${last_invoiced_date_formatted}. 
-Ahora la ponemos al día, hasta la última lectura que nos consta y te enviamos las facturas.<B>
+Te escribimos en relación a tu contrato ${object.name} con Som Energia. Debido a una incidencia informática, la facturación quedó bloqueada desde hace unos meses.
 
-Si quieres que hagamos algún fraccionamiento del cobro, nos lo puedes pedir contestando este mismo correo, sino cargaremos el importe correspondiente a tu número de cuenta en los próximos días.
+Te pedimos disculpas y ahora solucionamos la causa de este bloqueo.
 
-Perdona las molestias.
+En los próximos 2-3 días recibirás las facturas que ponen al día la facturación. Te pedimos que esperes a recibirlas todas para revisarlas.
 
-Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas, introducir las lecturas del contador y gestionar tus contratos de la cooperativa.
+Como se te habrán juntado varias facturas, puedes solicitar un fraccionamiento del pago, respondiendo a este correo antes de 10 días.
 
-<h2 align="center">¿Quieres producir electricidad verde de forma colectiva? 
-Participa en la <a href="http://www.generationkwh.org">Generación kWh</a> ¡y súmate al cambio!</h2>
+Te recordamos que a partir de ahora, dado que ya hemos solucionado el problema, recibirás las facturas mensualmente, como es nuestro procedimiento habitual.
 
-Saludos,
+Recuerda que, una vez actualizada la facturacióm, también podrás consultar las facturas en la <b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b>.
+
+Un saludo,
 
 Equipo de Som Energia
 <a href="http://es.support.somenergia.coop/category/139-ya-tengo-la-luz-contratada">Centro de Ayuda</a>
