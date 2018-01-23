@@ -17,7 +17,7 @@ except:
 Hola${nom_pagador},
 
 % if object.invoice_id.partner_id.lang != "es_ES":
-Tal i com havíem acordat, aquesta setmana està previst el pagament per liquidar la/les factura/es pendent/s. Esperem rebre la teva transferència durant els pròxims dies. Moltes gràcies.
+Tal i com havíem acordat, encara està pendent el pagament de la factura <b>${object.number}</b> amb import <b>${object.invoice_id.amount_total}€</b>. Esperem rebre la teva transferència durant els pròxims dies. Moltes gràcies.
 
 Et recordem el número de compte de Som Energia:
 
@@ -35,7 +35,7 @@ factura@somenergia.coop
 ----------------------------------------------------------------------------------------------------
 % endif
 % if object.partner_id.lang != "ca_ES":
-Tal como habíamos acordado, esta semana está previsto el pago para liquidar la/las factura/s pendiente/s. Esperamos recibir tu transferencia durante los próximos días. Muchas gracias.
+Tal como habíamos acordado, aun está pendiente el pago de la factura <b>${object.number}</b> de importe <b>${object.invoice_id.amount_total}€</b>. Esperamos recibir tu transferencia durante los próximos días. Muchas gracias.
 
 Te recordamos el número de cuenta de Som Energia:
 

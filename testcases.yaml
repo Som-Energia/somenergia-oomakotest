@@ -437,7 +437,7 @@ impagamentTranferRebuda:
 impagamentRecordatoriPacteTransfer:
   template: input/correu-impagamentRecordatoriPacteTransfer.mako
   model: giscedata.facturacio.factura
-  poweremailId: 87
+  poweremailId: 206
   cases:
     normal_ca: 444848
     normal_es: 403834
@@ -445,7 +445,7 @@ impagamentRecordatoriPacteTransfer:
 impagamentRecordatoriPacteFraccio:
   template: input/correu-impagamentRecordatoriPacteFraccio.mako
   model: giscedata.facturacio.factura
-  poweremailId: 88
+  poweremailId: 207
   cases:
     normal_ca: 444848
     normal_es: 403834
