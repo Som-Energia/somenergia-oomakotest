@@ -99,7 +99,7 @@ acceptacioM102:
 rebuigM104:
   template: input/correu-rebuigM104.mako
   model: giscedata.switching
-  poweremailId: 206
+  poweremailId: 209
   cases:
     2.0_ca: 108303
     2.0_ca_26: 116323
