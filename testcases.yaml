@@ -113,6 +113,11 @@ rebuigM104:
     3.0_ca_26: 127421
     3.0_es: 129929
     3.0_es_31: 75142
+    02_2.0_ca: 101151
+    02_2.0_ca_26: 101483
+    02_2.0_es: 101029
+    02_3.0_ca: 102293
+    02_3.0_es: 101692
 
 acceptacioCx02:
     template: input/correu-acceptacioCx02.mako

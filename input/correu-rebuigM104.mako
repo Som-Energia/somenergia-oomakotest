@@ -4,7 +4,7 @@
 <!doctype html><html><head><meta charset="utf-8"/></head><body> <table width="100%" frame="below" bgcolor="#E8F1D4"> <tr><td height=2px><font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font></td> <td valign=TOP rowspan="4" align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr> <tr><td height=2px><font size=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr> <tr><td height=2px><font size=1>Código CUPS: ${object.cups_id.name}</font></td></tr> <tr><td height=2px width=100%><font size=1>Titular:${object.cups_polissa_id.titular.name} </font></td></tr> </table>
 % endif
 <%
-model1 = pas1 = model4 = pas4 = None
+model1 = pas1 = model4 = pas4 = model2 =  pas2 = None
 for step in object.step_ids:
   obj = step.pas_id
   try:
@@ -17,8 +17,14 @@ for step in object.step_ids:
     model1 , pas1 = model , obj
   if model.startswith('giscedata.switching.m1.04'):
     model4 , pas4 = model , obj
-  if model1 and model4 and pas1 and pas4:
+  if model.startswith('giscedata.switching.m1.02'):
+    model2 , pas2 = model , obj
+  if model1 and model2 and model4 and pas1 and pas2 and pas4:
     break
+
+if not pas4:
+    model4 = model2
+    pas4 = pas2
 
 phone = pas1.cont_telefon
 TarifaATR=dict(object.pool.get(model1).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas1.tarifaATR]
