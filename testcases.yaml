@@ -450,4 +450,12 @@ impagamentRecordatoriPacteFraccio:
     normal_ca: 444848
     normal_es: 403834
 
+facturaMailEnBlanc:
+  template: input/correu-facturaEnBlanc.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 208
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
+
 # vim: et ts=2 sw=2
