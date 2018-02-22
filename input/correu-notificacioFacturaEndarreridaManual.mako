@@ -68,16 +68,13 @@ except:
 Hola${nom_pagador},
 
 % if object.titular.lang != "es_ES":
-La facturació ha estat aturada durant aquests darrers mesos a causa d'un error informàtic. Per posar-la al dia hem emès ${ total_factures}  factures amb un import total que suma ${diff_amount} €.
+La facturació ha estat aturada durant aquests darrers mesos a causa d'una incidència informàtica. Per posar-la al dia hem emès ${ total_factures}  factures amb un import total que suma ${diff_amount} €.
 
 Si vols que fem algun fraccionament del cobrament, ens ho pots demanar contestant aquest mateix correu, sinó carregarem l'import corresponent al teu número de compte durant els propers dies. 
 
 Perdona les molèsties.
 
 Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els teus contractes amb la cooperativa.
-
-<h2 align="center">Vols produir electricitat verda de forma col·lectiva? 
-Participa en la <a href="http://www.generationkwh.org/ca/">Generació kWh</a> i suma't al canvi!</h2>
 
 Salutacions,
 
@@ -91,16 +88,13 @@ factura@somenergia.coop
 ----------------------------------------------------------------------------------------------------
 % endif
 % if  object.titular.lang != "ca_ES":
-La facturación ha estado parada durante estos últimos meses debido a una averia informática. Para poner-la al dia hemos emitido ${ total_factures} facturas con un importe total que suma ${diff_amount} €.
+La facturación ha estado parada durante estos últimos meses debido a una incidencia informática. Para poner-la al día hemos emitido ${ total_factures} facturas con un importe total que suma ${diff_amount} €.
 
 Si quieres que hagamos algún fraccionamiento del cobro, nos lo puedes pedir contestando este mismo correo, sino cargaremos el importe correspondiente a tu número de cuenta en los próximos días.
 
 Perdona las molestias.
 
 Puedes acceder a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.
-
-<h2 align="center">¿Quieres producir electricidad verde de forma colectiva? 
-Participa en la <a href="http://www.generationkwh.org">Generación kWh</a> ¡y súmate al cambio!</h2>
 
 Saludos,
 
