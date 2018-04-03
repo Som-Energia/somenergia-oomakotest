@@ -1,9 +1,15 @@
 <%!
-    import time
-    ingres = time.strftime('%d/%m/%y')
+    from datetime import datetime
+
     def socifilter(text):
         return str(int(''.join([a for a in text if a.isdigit()])))
+
+    def dateFormat(text):
+        temp = datetime.strptime(text, '%Y-%m-%d')
+        return temp.strftime('%d/%m/%Y')
+
 %>
+
 <img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png">
 
 Benvingut/da a Som Energia! 
@@ -11,8 +17,8 @@ Benvingut/da a Som Energia!
 Ens complau que formis part de la cooperativa que construeix un model energètic renovable en mans de la ciutadania, des de la participació i la transparència. Esperem que junts puguem assolir els nostres objectius de transformar el model energètic apostant per les energies renovables i l'eficiència energètica.
 
 <table width="30%" align="center" border="0" cellspacing="0" cellpadding="0"><tr><td><fieldset><P ALIGN=center> Número de soci/a: <b>${object.partner_id.ref | socifilter}</b>
- Nom del soci/a: ${object.name}
- Data d'ingrés: ${ingres}
+ Nom del soci/a: ${object.partner_id.name}
+ Data d'ingrés: ${object.date | dateFormat} !
  Aportació al capital social: 100€</fieldset></td></tr></table>
 
 T'encoratgem que ens ajudis a difondre el projecte de Som Energia, fent-te amic al <a href="https://es-es.facebook.com/somenergia">Facebook</a>, seguint-nos al <a href="https://twitter.com/SomEnergia">Twitter</a> o enviant un enllaç de la <a href="www.somenergia.coop/ca">nostra pàgina web</a> a qui creguis pugui estar interessat/da.

@@ -1,5 +1,5 @@
 cc: false
-to: ${object.email}
+to: ${object.partner_id.address[0].email}
 subject_translations:
   ca_ES: Alta com a soci/a de Som Energia, SCCL
   es_ES: Alta como socio/a de Som Energia, SCCL

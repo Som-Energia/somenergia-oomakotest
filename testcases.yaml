@@ -10,12 +10,13 @@
 ######################################################
 ## Forms
 #
-#nouSoci:
-#  template: input/nouSoci.mako
-#  model: res.partner.address
-#  poweremailId: 2
-#  cases: {}
-#
+nouSoci:
+  template: input/correu-nouSoci.mako
+  model: somenergia.soci
+  poweremailId: 2
+  cases:
+    ca: 192
+
 #
 ######################################################
 ## Facturació
@@ -463,11 +464,11 @@
 #    normal_ca: 444848
 #    normal_es: 403834
 #
-notificacioFacturaEndarreridaManual:
-  template: input/correu-notificacioFacturaEndarreridaManual.mako
-  model: giscedata.polissa
-  poweremailId: 210
-  cases:
-    ca: 233
-    es: 133759
+#notificacioFacturaEndarreridaManual:
+#  template: input/correu-notificacioFacturaEndarreridaManual.mako
+#  model: giscedata.polissa
+#  poweremailId: 210
+#  cases:
+#    ca: 233
+#    es: 133759
 ## vim: et ts=2 sw=2
