@@ -36,14 +36,22 @@ nouSoci:
 #        normal_ca: 444848
 #        normal_es: 403834
 #
-#facturacioEndarrerida:
-#  template: input/correu-facturacioEndarrerida.mako
-#  model: giscedata.polissa
-#  poweremailId: 71
-#  cases:
-#    ca: 8
-#    es: 1028
-#
+facturacioEndarrerida:
+  template: input/correu-facturacioEndarrerida.mako
+  model: giscedata.polissa
+  poweremailId: 71
+  cases:
+    ca: 8
+    es: 1028
+
+facturacioEndarrerida_lot:
+  template: input/correu-facturacioEndarreridaLot.mako
+  model: giscedata.facturacio.contracte_lot
+  poweremailId: 212
+  cases:
+    ca: 297510
+    es: 297504
+
 ######################################################
 ## Gestió de contractes
 #
