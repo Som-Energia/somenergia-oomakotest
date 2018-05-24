@@ -26,7 +26,7 @@ T’escrivim en relació a la facturació del teu contracte ${object.polissa_id.
 
 Et demanem disculpes i ara solucionem la causa d’aquest bloqueig.
 
-En els propers 2-3 dies rebràs les factures que posen al dia la facturació. Et preguem que esperes a rebre-les totes per a revisar-les.
+En els propers 2-3 dies rebràs les factures que posen al dia la facturació. <b>Et preguem que esperes a rebre-les totes per a revisar-les abans de respondre aquest correu.</b>
 
 Com que se t’han ajuntat vàries factures, pots demanar un fraccionament del cobrament, responent aquest correu abans de 10 dies.
 
@@ -49,7 +49,7 @@ Te escribimos en relación a tu contrato ${object.polissa_id.name} con Som Energ
 
 Te pedimos disculpas y ahora solucionamos la causa de este bloqueo.
 
-En los próximos 2-3 días recibirás las facturas que ponen al día la facturación. Te pedimos que esperes a recibirlas todas para revisarlas.
+En los próximos 2-3 días recibirás las facturas que ponen al día la facturación. <b>Te pedimos que esperes a recibirlas todas para revisarlas antes de responder este correo. </b>
 
 Como se te habrán juntado varias facturas, puedes solicitar un fraccionamiento del pago, respondiendo a este correo antes de 10 días.
 
