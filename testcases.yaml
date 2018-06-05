@@ -10,12 +10,12 @@
 ######################################################
 ## Forms
 #
-nouSoci:
-  template: input/correu-nouSoci.mako
-  model: somenergia.soci
-  poweremailId: 2
-  cases:
-    ca: 192
+# nouSoci:
+#   template: input/correu-nouSoci.mako
+#   model: somenergia.soci
+#   poweremailId: 2
+#   cases:
+#     ca: 192
 
 #
 ######################################################
@@ -36,21 +36,21 @@ nouSoci:
 #        normal_ca: 444848
 #        normal_es: 403834
 #
-facturacioEndarrerida:
-  template: input/correu-facturacioEndarrerida.mako
-  model: giscedata.polissa
-  poweremailId: 71
-  cases:
-    ca: 8
-    es: 1028
-
-facturacioEndarrerida_lot:
-  template: input/correu-facturacioEndarreridaLot.mako
-  model: giscedata.facturacio.contracte_lot
-  poweremailId: 212
-  cases:
-    ca: 297510
-    es: 297504
+# facturacioEndarrerida:
+#   template: input/correu-facturacioEndarrerida.mako
+#   model: giscedata.polissa
+#   poweremailId: 71
+#   cases:
+#     ca: 8
+#     es: 1028
+#
+# facturacioEndarrerida_lot:
+#   template: input/correu-facturacioEndarreridaLot.mako
+#   model: giscedata.facturacio.contracte_lot
+#   poweremailId: 212
+#   cases:
+#     ca: 297510
+#     es: 297504
 
 ######################################################
 ## Gestió de contractes
@@ -90,7 +90,7 @@ facturacioEndarrerida_lot:
 #    3.0_es: 21086
 #    3.1_ca: 34078
 #    3.1_es: 41775 # Not yet in test data
-#    2.0_A3_ca: 66599 
+#    2.0_A3_ca: 66599
 #    2.0_A3_es: 68012
 #
 #acceptacioM102:
@@ -134,17 +134,30 @@ facturacioEndarrerida_lot:
 #    poweremailId: 18
 #    cases:
 #        nou: 102
-##        normal_es: 11795
-##        normal_ca: 17479
-##        senseLectura_es: 11795
+#        normal_es: 11795
+#        normal_ca: 17479
+#        senseLectura_es: 11795
 #        senseLectura_ca: 17479
 #        lecturaVella_es: 11795
-##        lecturaVella_ca: 17479
-##        sensecicle_es:
-##        sensecicle_ca:
-##        3.0_es:
-##        3.0_ca:
-#
+#        lecturaVella_ca: 17479
+#        sensecicle_es:
+#        sensecicle_ca:
+#        3.0_es:
+#        3.0_ca:
+acceptacioC102:
+    template: input/correu-acceptacioC102.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_C1_02_acceptacio
+    cases:
+        nou: 147950
+
+acceptacioC202:
+    template: input/correu-acceptacioC102.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
+    cases:
+        nou: 147916
+
 #activacioCX05_manual:
 #  template: input/correu-activacioCx05-manual.mako
 #  model: giscedata.switching
@@ -160,7 +173,7 @@ facturacioEndarrerida_lot:
 #    20A_c2_es: 214   #par 13525
 #    30A_c2_ca: 105074
 #    30A_c2_es: 77717
-#    
+#
 #activacioC105_automatica:
 #  template: input/correu-activacioC105.mako
 #  model: giscedata.switching
@@ -293,7 +306,7 @@ facturacioEndarrerida_lot:
 ##    2.1DHAto3.0A_es: 3
 ##    2.1DHAto3.0A_ca: 50850
 ##    3.0A_ca: 34800
-##    webform_contact_phone_different_to_polissa: 107487    
+##    webform_contact_phone_different_to_polissa: 107487
 #
 ##peticioDocumentacioSubministres:
 ##  template: input/correu-peticioDocumentacioSubministres.mako
@@ -301,13 +314,13 @@ facturacioEndarrerida_lot:
 ##  poweemailId: 66
 ##  cases:
 ##    es: 100580
-#    
+#
 ##resumAmortitzacioGenerationKWh:
 ##  template: input/correu-resumAmortitzacioGenerationKWh.mako
 ##  model: account.invoice
 ##  poweremailId: 81
 ##  cases:
-##    ca: 2391140 
+##    ca: 2391140
 #
 ##peticioLecturaComptador:
 ##  template: input/correu-peticioLecturaComptador.mako

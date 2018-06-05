@@ -161,7 +161,7 @@ def download():
 
 		print ("HEADER:\n",  headers.dump())
 		headers.dump(fixture.template+'.yaml')
-		
+
 def upload():
 	from ooop import OOOP
 	O = OOOP(**remoteErpConfig)
@@ -295,11 +295,3 @@ if __name__ == '__main__' :
 
 	globals()[args.subcommand]()
 	sys.exit(0)
-
-
-
-
-
-
-
-
