@@ -93,18 +93,6 @@
 #    2.0_A3_ca: 66599
 #    2.0_A3_es: 68012
 #
-#acceptacioM102:
-#  template: input/correu-acceptacioM102.mako
-#  model: giscedata.switching
-#  poweremailId: 40
-#  cases:
-#    canviTitular_ca: 1744
-#    canviTitular_es: 1745
-#    ambActuacio_ca: 3090
-#    ambActuacio_es: 29669
-#    3.0_ca: 14063
-#    3.0_es: 24832
-#
 #rebuigM104:
 #  template: input/correu-rebuigM104.mako
 #  model: giscedata.switching
@@ -128,22 +116,32 @@
 #    02_3.0_ca: 102293
 #    02_3.0_es: 101692
 #
-#acceptacioCx02:
-#    template: input/correu-acceptacioCx02.mako
-#    model: giscedata.switching
-#    poweremailId: 18
-#    cases:
-#        nou: 102
-#        normal_es: 11795
-#        normal_ca: 17479
-#        senseLectura_es: 11795
-#        senseLectura_ca: 17479
-#        lecturaVella_es: 11795
-#        lecturaVella_ca: 17479
-#        sensecicle_es:
-#        sensecicle_ca:
-#        3.0_es:
-#        3.0_ca:
+acceptacioB102:
+    template: input/correu-acceptacioB102.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_B1_02_acceptacio
+    cases:
+        altaNou_ca: 116275
+#
+acceptacioA302:
+    template: input/correu-acceptacioA302.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_A3_02_acceptacio
+    cases:
+        altaNou_ca: 116275
+#
+acceptacioM102:
+    template: input/correu-acceptacioM102.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_M1_02_acceptacio
+    cases:
+        canviTitular_ca: 1744
+#    canviTitular_es: 1745
+#    ambActuacio_ca: 3090
+#    ambActuacio_es: 29669
+#    3.0_ca: 14063
+#    3.0_es: 24832
+#
 acceptacioC102:
     template: input/correu-acceptacioC102.mako
     model: giscedata.switching
@@ -157,7 +155,6 @@ acceptacioC202:
     poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
     cases:
         nou: 147916
-
 #activacioCX05_manual:
 #  template: input/correu-activacioCx05-manual.mako
 #  model: giscedata.switching
