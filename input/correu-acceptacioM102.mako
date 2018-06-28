@@ -1,13 +1,12 @@
 <%
-
     is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
 
     is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
 
     p_obj = object.pool.get('res.partner')
-    nom_titular = p_obj.separa_cognoms(
+    nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
-    )['nom'] if not object.vat_enterprise() else ""
+    )['nom']) if not object.vat_enterprise() else ''
 %>
 
 
@@ -53,8 +52,6 @@
             %endif
         </table>
         <br>
-        Hola ${nom_titular},<br>
-        <br>
         %if is_pot_tar:
             ${pot_tar_cat()}
         %elif is_canvi_tit:
@@ -71,6 +68,8 @@
 </%def>
 
 <%def name="pot_tar_cat()">
+    Hola${nom_titular},<br>
+    <br>
     <strong> La modificació contractual que vares sol·licitar ha estat acceptada.</strong><br>
     <br>
     En cas que la telegestió del teu comptador no estigui activa, <strong>durant els propers 15 dies hàbils, vindrà un operari de <a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">l'empresa de distribució elèctrica</a></strong> de la teva zona per a realitzar la modificació sol·licitada.
@@ -85,6 +84,8 @@
 </%def>
 
 <%def name="canvi_tit_cat()">
+    Hola,<br>
+    <br>
     <strong> El canvi de titular que vares sol·licitar ha estat acceptat. </strong>.<br>
     <br>
     Aquest es veurà reflectit a la propera factura, i, en els següents dies, a l'oficina virtual.<br>
@@ -92,7 +93,6 @@
     Les dades del contracte modificat són les següents:<br>
     - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
     - CUPS: ${object.cups_id.name}<br>
-    - Titular actual:
 </%def>
 
 <%def name="correu_es()">
@@ -125,8 +125,6 @@
             %endif
         </table>
         <br>
-        Hola ${nom_titular},<br>
-        <br>
         %if is_pot_tar:
             ${pot_tar_es()}
         %elif is_canvi_tit:
@@ -144,6 +142,8 @@
 </%def>
 
 <%def name="pot_tar_es()">
+    Hola${nom_titular},<br>
+    <br>
     <strong> La modificación contractual que solicitaste ha sido aceptada. </strong><br>
     <br>
     En el caso que la telegestión de tu contador no esté activa, <strong>urante los próximos 15 días hábiles, vendrá un operario de la <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">la empresa de distribución eléctricaa</a></strong> de tu zona para realizar la modificación solicitada.
@@ -158,6 +158,8 @@
 </%def>
 
 <%def name="canvi_tit_es()">
+    Hola, <br>
+    <br>
     <strong> El cambio de titularidad que solicitaste ha sido aceptado. </strong>.<br>
     <br>
     Este cambio se verá reflejado en la próxima factura, y, durante los siguientes días, en la oficina virtual.<br>
@@ -165,5 +167,4 @@
     Los datos del contrato son los siguientes:<br>
     - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
     - CUPS: ${object.cups_id.name}<br>
-    - Titular actual:<br>
 </%def>
