@@ -52,6 +52,7 @@
             %endif
         </table>
         <br>
+        <br>
         %if is_pot_tar:
             ${pot_tar_cat()}
         %elif is_canvi_tit:
@@ -68,31 +69,40 @@
 </%def>
 
 <%def name="pot_tar_cat()">
-    Hola${nom_titular},<br>
-    <br>
-    <strong> La modificació contractual que vares sol·licitar ha estat acceptada.</strong><br>
-    <br>
-    En cas que la telegestió del teu comptador no estigui activa, <strong>durant els propers 15 dies hàbils, vindrà un operari de <a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">l'empresa de distribució elèctrica</a></strong> de la teva zona per a realitzar la modificació sol·licitada.
-    <br>
-    Si el comptador no està accessible, l’operari de l'empresa distribuïdora es posarà en contacte amb tu prèviament a través del telèfon de contacte que has facilitat mitjançant el formulari.<br>
-    <br>
-    Quan tinguem la confirmació per part de la distribuïdora t’enviarem un correu electrònic indicant la data exacta d'<strong>activació de la modificació.</strong><br>
-    <br>
-    Les dades del contracte modificat són les següents:<br>
-    - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
-    - CUPS: ${object.cups_id.name}<br>
+    <p>
+        Hola${nom_titular},<br>
+    </p>
+    <p>
+        <strong> La modificació contractual que vares sol·licitar ha estat acceptada.</strong><br>
+    </p>
+    <p>
+        En cas que la telegestió del teu comptador no estigui activa, <strong>durant els propers 15 dies hàbils, vindrà un operari de <a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">l'empresa de distribució elèctrica</a></strong> de la teva zona per a realitzar la modificació sol·licitada.
+        <br>
+        Si el comptador no està accessible, l’operari de l'empresa distribuïdora es posarà en contacte amb tu prèviament a través del telèfon de contacte que has facilitat mitjançant el formulari.<br>
+        <br>
+        Quan tinguem la confirmació per part de la distribuïdora t’enviarem un correu electrònic indicant la data exacta d'<strong>activació de la modificació.</strong><br>
+    </p>
+    <p>
+        Les dades del contracte modificat són les següents:<br>
+        - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
+        - CUPS: ${object.cups_id.name}<br>
+    </p>
 </%def>
 
 <%def name="canvi_tit_cat()">
-    Hola,<br>
+    <p>
+        Hola,<br>
+    </p>
+    <p>
+        <strong> El canvi de titular que vares sol·licitar ha estat acceptat. </strong>.<br>
     <br>
-    <strong> El canvi de titular que vares sol·licitar ha estat acceptat. </strong>.<br>
-    <br>
-    Aquest es veurà reflectit a la propera factura, i, en els següents dies, a l'oficina virtual.<br>
-    <br>
-    Les dades del contracte modificat són les següents:<br>
-    - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
-    - CUPS: ${object.cups_id.name}<br>
+        Aquest es veurà reflectit a la propera factura, i, en els següents dies, a l'oficina virtual.<br>
+    </p>
+    <p>
+        Les dades del contracte modificat són les següents:<br>
+        - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
+        - CUPS: ${object.cups_id.name}<br>
+    </p>
 </%def>
 
 <%def name="correu_es()">
@@ -125,6 +135,7 @@
             %endif
         </table>
         <br>
+        <br>
         %if is_pot_tar:
             ${pot_tar_es()}
         %elif is_canvi_tit:
@@ -142,29 +153,39 @@
 </%def>
 
 <%def name="pot_tar_es()">
-    Hola${nom_titular},<br>
-    <br>
-    <strong> La modificación contractual que solicitaste ha sido aceptada. </strong><br>
-    <br>
-    En el caso que la telegestión de tu contador no esté activa, <strong>urante los próximos 15 días hábiles, vendrá un operario de la <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">la empresa de distribución eléctricaa</a></strong> de tu zona para realizar la modificación solicitada.
-    <br>
-    Si el contador no está accesible el operario de la empresa distribuidora se pondrá en contacto contigo préviamente a través del teléfono de contacto facilitado mediante el formulario..<br>
-    <br>
-    En el momento que tengamos la confirmación por parte de la distribuidora, te enviaremos un correo electrónico indicando la fecha exacta de <strong>activación de la modificación.</strong><br>
-    <br>
-    Los datos del contrato son los siguientes:<br>
-    - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
-    - CUPS: ${object.cups_id.name}<br>
+    <p>
+        Hola${nom_titular},<br>
+    </p>
+    <p>
+        <strong> La modificación contractual que solicitaste ha sido aceptada. </strong><br>
+    </p>
+    <p>
+        En el caso que la telegestión de tu contador no esté activa, <strong>urante los próximos 15 días hábiles, vendrá un operario de la <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">la empresa de distribución eléctrica</a></strong> de tu zona para realizar la modificación solicitada.
+        <br>
+        Si el contador no está accesible el operario de la empresa distribuidora se pondrá en contacto contigo préviamente a través del teléfono de contacto facilitado mediante el formulario..<br>
+        <br>
+        En el momento que tengamos la confirmación por parte de la distribuidora, te enviaremos un correo electrónico indicando la fecha exacta de <strong>activación de la modificación.</strong><br>
+    </p>
+    <p>
+        Los datos del contrato son los siguientes:<br>
+        - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
+        - CUPS: ${object.cups_id.name}<br>
+    </p>
+
 </%def>
 
 <%def name="canvi_tit_es()">
-    Hola, <br>
-    <br>
-    <strong> El cambio de titularidad que solicitaste ha sido aceptado. </strong>.<br>
-    <br>
-    Este cambio se verá reflejado en la próxima factura, y, durante los siguientes días, en la oficina virtual.<br>
-    <br>
-    Los datos del contrato son los siguientes:<br>
-    - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
-    - CUPS: ${object.cups_id.name}<br>
+    <p>
+        Hola,<br>
+    </p>
+    <p>
+        <strong> El cambio de titularidad que solicitaste ha sido aceptado. </strong>.<br>
+        <br>
+        Este cambio se verá reflejado en la próxima factura, y, durante los siguientes días, en la oficina virtual.<br>
+    </p>
+    <p>
+        Los datos del contrato son los siguientes:<br>
+        - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
+        - CUPS: ${object.cups_id.name}<br>
+    </p>
 </%def>
