@@ -179,7 +179,7 @@
         Hola,<br>
     </p>
     <p>
-        <strong> El cambio de titularidad que solicitaste ha sido aceptado. </strong>.<br>
+        <strong> El cambio de titularidad que solicitaste ha sido aceptado.</strong><br>
         <br>
         Este cambio se verá reflejado en la próxima factura, y, durante los siguientes días, en la oficina virtual.<br>
     </p>

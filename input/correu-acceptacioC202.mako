@@ -56,7 +56,7 @@
         <br>
         <br>
         <p>
-            Hola ${nom_titular},<br>
+            Hola${nom_titular},<br>
             <br>
             Ens plau comunicar-te que <strong>la sol·licitud del canvi ha estat acceptada</strong>.<br>
         </p>
@@ -120,7 +120,7 @@
         <br>
         <br>
         <p>
-            Hola ${nom_titular},<br>
+            Hola${nom_titular},<br>
             <br>
             Nos complace comunicarte que <strong>la solicitud del cambio ha sido aceptada</strong>.<br>
         </p>
