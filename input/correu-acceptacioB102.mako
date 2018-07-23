@@ -49,21 +49,29 @@
         </table>
     </head>
     <body>
-        Hola ${nom_titular},<br>
         <br>
-        Hem sol·licitat la baixa amb tall de subministrament del contracte corresponent a ${object.cups_polissa_id.cups_direccio} i ha estat acceptada.<br>
         <br>
-        <a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">L'empresa de distribució elèctrica</a> té 5 dies hàbils per donar de baixa aquest punt de subministrament i que deixi d'haver-hi llum.<br>
-        <br>
-        Recorda que la cooperativa emetrà una última factura fins que la baixa sigui efectiva.<br>
-        <br>
-        De seguida que ens comuniquin la data, us n'informarem.<br>
+        <p>
+            Hola${nom_titular},<br>
+        </p>
+        <p>
+            Hem sol·licitat la baixa amb tall de subministrament del contracte corresponent a ${object.cups_polissa_id.cups_direccio} i ha estat acceptada.<br>
+        </p>
+        <p>
+            <a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">L'empresa de distribució elèctrica</a> té 5 dies hàbils per donar de baixa aquest punt de subministrament i que deixi d'haver-hi llum.<br>
+        </p>
+        <p>
+            Recorda que la cooperativa emetrà una última factura fins que la baixa sigui efectiva.<br>
+        </p>
+        <p>
+            De seguida que ens comuniquin la data, us n'informarem.<br>
+        </p>
         <br>
         <br>
         Atentament,<br>
         <br>
-        Equip de Som Energia
-        comercialitzacio@somenergia.coop
+        Equip de Som Energia <br>
+        comercialitzacio@somenergia.coop <br>
         <a href="www.somenergia.coop/ca">www.somenergia.coop</a>
     </body>
 </%def>
@@ -97,21 +105,29 @@
         </table>
     </head>
     <body>
-        Hola ${nom_titular},<br>
         <br>
-        Hemos solicitado la baja con corte de suministro del contrato correspondiente a la dirección ${object.cups_polissa_id.cups_direccio} y ha sido aceptada.<br>
         <br>
-        <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">La empresa de distribución eléctrica</a> tiene 5 días hábiles para dar de baja este punto de suministro y que deje de haber luz.<br>
-        <br>
-        Recuerda que la cooperativa emitirá una última factura hasta que la baja sea efectiva.<br>
-        <br>
-        En cuanto nos comuniquen la fecha exacta, os informaremos.<br>
+        <p>
+            Hola ${nom_titular},<br>
+        </p>
+        <p>
+            Hemos solicitado la baja con corte de suministro del contrato correspondiente a la dirección ${object.cups_polissa_id.cups_direccio} y ha sido aceptada.<br>
+        </p>
+        <p>
+            <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">La empresa de distribución eléctrica</a> tiene 5 días hábiles para dar de baja este punto de suministro y que deje de haber luz.<br>
+        </p>
+        <p>
+            Recuerda que la cooperativa emitirá una última factura hasta que la baja sea efectiva.<br>
+        </p>
+        <p>
+            En cuanto nos comuniquen la fecha exacta, os informaremos.<br>
+        </p>
         <br>
         <br>
         Atentamente,<br>
         <br>
-        Equipo de Som Energia
-        comercializacion@somenergia.coop
+        Equipo de Som Energia <br>
+        comercializacion@somenergia.coop <br>
         <a href="http://www.somenergia.coop">www.somenergia.coop</a>
     </body>
 </%def>
