@@ -53,30 +53,39 @@
         </table>
     </head>
     <body>
-        Hola ${nom_titular},<br>
         <br>
-        <strong>Ens plau comunicar-te que la sol·licitud d'alta de subministrament ha estat acceptada.</strong><br>
         <br>
-        En un termini d’entre 5 i 10 dies l’empresa distribuïdora realitzarà les gestions necessàries per fer efectiva l’alta de subministrament. Si fos necessari, la distribuïdora contactarà amb tu al telèfon que vares indicar en emplenar el formulari.<br>
-        <br>
-        <strong>T'enviarem un últim e-mail per comunicar-te  la data efectiva de l’alta de subministrament.</strong><br>
-        <br>
-        Les dades del contracte són les següents:<br>
-        - Número de contracte amb Som Energia: ${object.cups_polissa_id.name}<br>
-        - Titular del contracte: ${object.cups_polissa_id.titular.name}<br>
-        - Soci/a Som Energia: ${object.cups_polissa_id.soci.name}<br>
-        <br>
-        - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
-        - CUPS: ${object.cups_id.name}<br>
-        - Potència: ${object.cups_polissa_id.potencia} kW<br>
-        - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
+        <p>
+            Hola${nom_titular},<br>
+        </p>
+        <p>
+            <strong>Ens plau comunicar-te que la sol·licitud d'alta de subministrament ha estat acceptada.</strong><br>
+        </p>
+        <p>
+            L’empresa distribuïdora ens informa que entorn el día ${data_act} realitzarà les gestions necessàries per fer efectiva l’alta de subministrament. Si fos necessari, la distribuïdora contactarà amb tu al telèfon que vares indicar en emplenar el formulari.<br>
+            <br>
+        </p>
+        <p>
+            <strong>T'enviarem un últim e-mail per comunicar-te  la data efectiva de l’alta de subministrament.</strong><br>
+        </p>
+        <p>
+            Les dades del contracte són les següents:<br>
+            - Número de contracte amb Som Energia: ${object.cups_polissa_id.name}<br>
+            - Titular del contracte: ${object.cups_polissa_id.titular.name}<br>
+            - Soci/a Som Energia: ${object.cups_polissa_id.soci.name}<br>
+            <br>
+            - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
+            - CUPS: ${object.cups_id.name}<br>
+            - Potència: ${object.cups_polissa_id.potencia} kW<br>
+            - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
+        </p>
         <br>
         <br>
         Atentament,<br>
         <br>
-        Equip de Som Energia
-        comercialitzacio@somenergia.coop
-        <a href="www.somenergia.coop/ca">www.somenergia.coop</a>
+        Equip de Som Energia<br>
+        comercialitzacio@somenergia.coop<br>
+        <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
     </body>
 </%def>
 
@@ -109,29 +118,37 @@
         </table>
     </head>
     <body>
-        Hola ${nom_titular},
-
-        <strong>Nos complace comunicarte que la solicitud de alta de suministro ha sido aceptada.</strong><br>
         <br>
-        En un plazo máximo de entre 5 y 10 días la empresa distribuidora realizará las gestiones necesarias para hacer efectiva el alta de suministro. Si fuera necesario, la distribuidora contactará contigo en el teléfono que indicaste al rellenar el formulario.<br>
         <br>
-        <strong>Te enviaremos un último e-mail para comunicarte la fecha efectiva del alta.</strong><br>
-        <br>
-        Los datos del contrato son los siguientes:<br>
-        - Número de contrato con Som Energia: ${object.cups_polissa_id.name}<br>
-        - Titular del contrato: ${object.cups_polissa_id.titular.name}<br>
-        - Socio/a Som Energia: ${object.cups_polissa_id.soci.name}<br>
-        <br>
-        - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
-        - CUPS: ${object.cups_id.name}<br>
-        - Potencia: ${object.cups_polissa_id.potencia} kW<br>
-        - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
+        <p>
+            Hola${nom_titular},
+        </p>
+        <p>
+            <strong>Nos complace comunicarte que la solicitud de alta de suministro ha sido aceptada.</strong><br>
+        </p>
+        <p>
+            La empresa distribuidora nos informa que sobre el día ${data_act} realizará las gestiones necesarias para hacer efectiva el alta de suministro. Si fuera necesario, la distribuidora contactará contigo en el teléfono que indicaste al rellenar el formulario.<br>
+        </p>
+        <p>
+            <strong>Te enviaremos un último e-mail para comunicarte la fecha efectiva del alta.</strong><br>
+        </p>
+        <p>
+            Los datos del contrato son los siguientes:<br>
+            - Número de contrato con Som Energia: ${object.cups_polissa_id.name}<br>
+            - Titular del contrato: ${object.cups_polissa_id.titular.name}<br>
+            - Socio/a Som Energia: ${object.cups_polissa_id.soci.name}<br>
+            <br>
+            - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
+            - CUPS: ${object.cups_id.name}<br>
+            - Potencia: ${object.cups_polissa_id.potencia} kW<br>
+            - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
+        </p>
         <br>
         <br>
         Atentamente,<br>
         <br>
-        Equipo de Som Energia
-        comercializacion@somenergia.coop
+        Equipo de Som Energia<br>
+        comercializacion@somenergia.coop<br>
         <a href="http://www.somenergia.coop">www.somenergia.coop</a>
     </body>
 </%def>
