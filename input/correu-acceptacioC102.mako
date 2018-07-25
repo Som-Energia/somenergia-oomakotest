@@ -9,9 +9,9 @@
 
     p_obj = object.pool.get('res.partner')
 
-    nom_titular = p_obj.separa_cognoms(
+    nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
-    )['nom'] if not object.vat_enterprise() else ""
+    )['nom']) if not object.vat_enterprise() else ""
 %>
 
 <!doctype html>
@@ -83,7 +83,7 @@
         Atentament,<br>
         <br>
         Equip de Som Energia<br>
-        comercialitzacio@somenergia.coop<br>
+        <a href="mailto:comercialitzacio@somenergia.coop">comercialitzacio@somenergia.coop</a><br>
         <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
     </body>
 </%def>
@@ -93,9 +93,9 @@
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
-                    <font size=1><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font>
+                    <font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font>
                 </td>
-                <td VALIGN=TOP rowspan="4">
+                <td valign=top rowspan="4">
                     <align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
                 </td>
             </tr>
@@ -147,7 +147,7 @@
         Atentamente,<br>
         <br>
         Equipo de Som Energia<br>
-        comercializacion@somenergia.coop<br>
-        <a href="http://www.somenergia.coop">www.somenergia.coop</a>
+        <a href="mailto:comercializacion@somenergia.coop">comercializacion@somenergia.coop</a><br>
+        <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
     </body>
 </%def>
