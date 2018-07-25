@@ -5,18 +5,18 @@
 <%
     data_act = datetime.strptime(
         object.step_ids[1].pas_id.data_activacio, '%Y-%m-%d'
-    ).strftime('%d-%m-%Y') if len(object.step_ids) > 1 else ""
+    ).strftime('%d-%m-%Y') if len(object.step_ids) > 1 else ''
 
     p_obj = object.pool.get('res.partner')
 
-    nom_titular = p_obj.separa_cognoms(
+    nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
-    )['nom'] if not object.vat_enterprise() else ""
+    )['nom']) if not object.vat_enterprise() else ''
 %>
 
 <!doctype html>
 <html>
-% if object.cups_polissa_id.titular.lang == "ca_ES":
+% if object.cups_polissa_id.titular.lang == 'ca_ES':
     ${correu_cat()}
 % else:
     ${correu_es()}
@@ -37,17 +37,17 @@
             </tr>
             <tr>
                 <td height=2px>
-                    <font size=1><strong>Adreça punt subministrament: ${object.cups_id.direccio}</strong></font>
+                    <font size=1>Adreça punt subministrament: ${object.cups_id.direccio}</font>
                 </td>
             </tr>
             <tr>
                 <td height=2px>
-                    <font size=1><strong>Codi CUPS: ${object.cups_id.name}</strong></font>
+                    <font size=1>Codi CUPS: ${object.cups_id.name}</font>
                 </td>
             </tr>
             <tr>
                 <td height=2px width=100%>
-                    <font size=1><strong>Titular: ${object.cups_polissa_id.titular.name}</strong></font>
+                    <font size=1>Titular: ${object.cups_polissa_id.titular.name}</font>
                 </td>
             </tr>
         </table>
@@ -62,8 +62,7 @@
             <strong>Ens plau comunicar-te que la sol·licitud d'alta de subministrament ha estat acceptada.</strong><br>
         </p>
         <p>
-            L’empresa distribuïdora ens informa que entorn el día ${data_act} realitzarà les gestions necessàries per fer efectiva l’alta de subministrament. Si fos necessari, la distribuïdora contactarà amb tu al telèfon que vares indicar en emplenar el formulari.<br>
-            <br>
+            L’empresa distribuïdora ens informa que als voltants del dia ${data_act} realitzarà les gestions necessàries per fer efectiva l’alta de subministrament. Si fos necessari, la distribuïdora contactarà amb tu al telèfon que vares indicar en emplenar el formulari.<br>
         </p>
         <p>
             <strong>T'enviarem un últim e-mail per comunicar-te  la data efectiva de l’alta de subministrament.</strong><br>
@@ -84,7 +83,7 @@
         Atentament,<br>
         <br>
         Equip de Som Energia<br>
-        comercialitzacio@somenergia.coop<br>
+        <a href="mailto:comercialitzacio@somenergia.coop">comercialitzacio@somenergia.coop</a><br>
         <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
     </body>
 </%def>
@@ -94,25 +93,25 @@
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
-                    <font size=1><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font>
+                    <font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font>
                 </td>
-                <td VALIGN=TOP rowspan="4">
+                <td VALIGN=top rowspan="4">
                     <align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
                 </td>
             </tr>
             <tr>
                 <td height=2px>
-                    <font size=1><strong>Dirección punto suministro: ${object.cups_id.direccio}</strong></font>
+                    <font size=1>Dirección punto suministro: ${object.cups_id.direccio}</font>
                 </td>
             </tr>
             <tr>
                 <td height=2px>
-                    <font size=1><strong>Código CUPS: ${object.cups_id.name}</strong></font>
+                    <font size=1>Código CUPS: ${object.cups_id.name}</font>
                 </td>
             </tr>
             <tr>
-                <td height=2px width=100%><strong>
-                    <font size=1>Titular:${object.cups_polissa_id.titular.name}</strong></font>
+                <td height=2px width=100%>
+                    <font size=1>Titular: ${object.cups_polissa_id.titular.name}</font>
                 </td>
             </tr>
         </table>
@@ -148,7 +147,7 @@
         Atentamente,<br>
         <br>
         Equipo de Som Energia<br>
-        comercializacion@somenergia.coop<br>
-        <a href="http://www.somenergia.coop">www.somenergia.coop</a>
+        <a href="mailto:comercializacion@somenergia.coop">comercializacion@somenergia.coop</a><br>
+        <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
     </body>
 </%def>
