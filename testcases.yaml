@@ -130,6 +130,8 @@ acceptacioA302:
     cases:
         altaNou_ca: 116275
 #
+
+#
 acceptacioM102:
     template: input/correu-acceptacioM102.mako
     model: giscedata.switching
@@ -294,16 +296,16 @@ acceptacioC202:
 #    3.x_ca: 87927
 #    3.x_es: 93353
 #
-##validacioDadesModificacio:
-##  template: input/correu-validacioDadesModificacio.mako
-##  model: giscedata.switching
-##  poweremailId: 80
-##  cases:
-##    3.0A_es: 24827
-##    2.1DHAto3.0A_es: 3
-##    2.1DHAto3.0A_ca: 50850
-##    3.0A_ca: 34800
-##    webform_contact_phone_different_to_polissa: 107487
+validacioDadesModificacio:
+ template: input/correu-validacioDadesModificacio.mako
+ model: giscedata.switching
+ poweremailId: webforms.mail_validacio_m101
+ cases:
+   3.0A_es: 24827
+   2.1DHAto3.0A_es: 3
+   2.1DHAto3.0A_ca: 50850
+   3.0A_ca: 34800
+   webform_contact_phone_different_to_polissa: 107487
 #
 ##peticioDocumentacioSubministres:
 ##  template: input/correu-peticioDocumentacioSubministres.mako
