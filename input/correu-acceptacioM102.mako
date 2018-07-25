@@ -35,18 +35,18 @@
             </tr>
             <tr>
                 <td height=2px>
-                    <font size=2> Adreça punt subministrament: ${object.cups_id.direccio}</font>
+                    <font size=1> Adreça punt subministrament: ${object.cups_id.direccio}</font>
                 </td>
             </tr>
             <tr>
                 <td height=2px>
-                    <font size=2> Codi CUPS: ${object.cups_id.name}</font>
+                    <font size=1> Codi CUPS: ${object.cups_id.name}</font>
                 </td>
             </tr>
             %if is_pot_tar:
             <tr>
                 <td height=2px width=100%>
-                    <font size=2> Titular: ${object.cups_polissa_id.titular.name} </font>
+                    <font size=1> Titular: ${object.cups_polissa_id.titular.name}</font>
                 </td>
             </tr>
             %endif
@@ -63,7 +63,7 @@
         Atentament,<br>
         <br>
         Equip de Som Energia<br>
-        modifica@somenergia.coop<br>
+        <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
         <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
     </body>
 </%def>
@@ -118,18 +118,18 @@
             </tr>
             <tr>
                 <td height=2px>
-                    <font size=2>Dirección punto suministro: ${object.cups_id.direccio}</font>
+                    <font size=1>Dirección punto suministro: ${object.cups_id.direccio}</font>
                 </td>
             </tr>
             <tr>
                 <td height=2px>
-                    <font size=2>Código CUPS: ${object.cups_id.name}</font>
+                    <font size=1>Código CUPS: ${object.cups_id.name}</font>
                 </td>
             </tr>
             %if is_pot_tar:
             <tr>
                 <td height=2px width=100%>
-                    <font size=2> Titular: ${object.cups_polissa_id.titular.name}</font>
+                    <font size=1> Titular: ${object.cups_polissa_id.titular.name}</font>
                 </td>
             </tr>
             %endif
@@ -146,7 +146,7 @@
         Atentamente,<br>
         <br>
         Equipo de Som Energia<br>
-        modifica@somenergia.coop<br>
+        <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
         <a href="http://www.somenergia.coop">www.somenergia.coop</a>
 
     </body>
