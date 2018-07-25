@@ -1,111 +1,191 @@
-<!doctype html>
-<html>
-<head>
-<meta charset='utf-8'>
-</head>
-<body>
-<table width="100%" frame="below" bgcolor="#E8F1D4">
-% if object.cups_polissa_id.titular.lang == "ca_ES":
-<tr><td height=2px><font size=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font></td>
-<td valign=top rowspan="4" align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr>
-<tr><td height=2px><font size=2>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr>
-<tr><td height=2px><font size=2>Codi CUPS: ${object.cups_id.name}</font></td></tr>
-<tr><td height=2px width=100%><font size=2> Titular: ${object.cups_polissa_id.titular.name} </font></td></tr>
-% else:
-<tr><td height=2px><font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font></td>
-<td valign=top rowspan="4" align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr>
-<tr><td height=2px><font size=2>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr>
-<tr><td height=2px><font size=2>Código CUPS: ${object.cups_id.name}</font></td></tr>
-<tr><td height=2px width=100%><font size=2> Titular: ${object.cups_polissa_id.titular.name} </font></td></tr>
-% endif
-</table>
 <%
-pas2 = None
-for step in object.step_ids:
-  model, res_id = step.pas_id.split(',')
-  obj = object.pool.get(model).browse(object._cr, object._uid, int(res_id))
-  if step.pas_id.startswith('giscedata.switching.m1.02'):
-    pas2 = obj
-  if step.pas_id.startswith('giscedata.switching.m1.01'):
-    pas1 = obj
-# TODO: Si el pas2 no existeix abortar el correu
+    is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
 
-tarifaATR=dict(object.pool.get('giscedata.switching.m1.01').fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas1.tarifaATR]
+    is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
 
-p_obj = object.pool.get('res.partner')
-if not object.vat_enterprise():
-  nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid, object.cups_polissa_id.titular.name)['nom']
-else:
-  nom_titular = ''
+    p_obj = object.pool.get('res.partner')
+    nom_titular = ' {}'.format(p_obj.separa_cognoms(
+        object._cr, object._uid, object.cups_polissa_id.titular.name
+    )['nom']) if not object.vat_enterprise() else ''
 %>
 
-Hola${nom_titular}, 
-% if object.cups_polissa_id.titular.lang != "es_ES":
 
-La <font color="green"><strong> modificació contractual que vares sol·licitar ha estat acceptada</strong></font>.
-
-%if pas1.sollicitudadm == "S":
-El canvi de titular es veurà reflectit a la propera factura, i, en els següents dies, a la oficina virtual.
-
-%elif pas1.sollicitudadm == "N":
-%if tarifaATR == '3.0A':
-El canvi s’efecturarà en el proper cicle de facturació.
-
-%else: # no 3.0
-<strong>Durant els propers 15 dies, vindrà un tècnic de l'empresa distribuïdora per fer-la efectiva.</strong>
-
-Recorda que si el comptador no està accessible el tècnic de l’empresa distribuïdora es posarà en contacta amb tu prèviament.
-
-%endif
-Uns dies més tard, rebràs un mail on t'indicarem la data exacta d'activació de la modificació.
-
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+    </head>
+% if object.cups_polissa_id.titular.lang == "ca_ES":
+    ${correu_cat()}
+% else:
+    ${correu_es()}
 % endif
-
-Les dades del contracte modificat són les següents:
-- Adreça: ${object.cups_polissa_id.cups_direccio}
-- CUPS: ${object.cups_id.name}
-
-
-Atentament,
-
-Equip de Som Energia
-modifica@somenergia.coop
-<a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
-% endif
-% if object.cups_polissa_id.titular.lang != "ca_ES" and object.cups_polissa_id.titular.lang != "es_ES":
-----------------------------------------------------------------------------------------------------
-% endif
-% if object.cups_polissa_id.titular.lang != "ca_ES":
-
-La <font color="green"><strong> modificación contractual que solicitaste ha sido aceptada</strong></font>.
-
-%if pas1.sollicitudadm == "S":
-El cambio de titular se verá reflejado en la próxima factura, y, durante los siguientes días, en la oficina virtual.
-
-%elif pas1.sollicitudadm == "N":
-%if tarifaATR == '3.0A':
-El cambio se efectuará en el siguiente ciclo de facturación.
-
-%else:
-<strong>Durante los próximos 15 días, vendrá un técnico de la empresa distribuidora para hacerla efectiva.</strong>
-
-Recuerda que si el contador no está accesible el técnico de la empresa distribuidora se pondrá en contacto contigo préviament.
-
-%endif
-Unos dias más tarde, recibirás un correo donde te indicaremos la fecha exacta de activación de la modificación.
-
-% endif
-
-Los datos del contrato son los siguientes:
-- Dirección: ${object.cups_polissa_id.cups_direccio}
-- CUPS: ${object.cups_id.name}
-
-
-Atentamente,
-
-Equipo de Som Energia
-modifica@somenergia.coop
-<a href="http://www.somenergia.coop">www.somenergia.coop</a>
-% endif
-</body>
 </html>
+
+<%def name="correu_cat()">
+    <body>
+        <table width="100%" frame="below" bgcolor="#E8F1D4">
+            <tr>
+                <td height=2px>
+                    <font size=2><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
+                </td>
+                <td valign=top rowspan="4" align="right">
+                    <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
+                </td>
+            </tr>
+            <tr>
+                <td height=2px>
+                    <font size=1> Adreça punt subministrament: ${object.cups_id.direccio}</font>
+                </td>
+            </tr>
+            <tr>
+                <td height=2px>
+                    <font size=1> Codi CUPS: ${object.cups_id.name}</font>
+                </td>
+            </tr>
+            %if is_pot_tar:
+            <tr>
+                <td height=2px width=100%>
+                    <font size=1> Titular: ${object.cups_polissa_id.titular.name}</font>
+                </td>
+            </tr>
+            %endif
+        </table>
+        <br>
+        <br>
+        %if is_pot_tar:
+            ${pot_tar_cat()}
+        %elif is_canvi_tit:
+            ${canvi_tit_cat()}
+        %endif
+        <br>
+        <br>
+        Atentament,<br>
+        <br>
+        Equip de Som Energia<br>
+        <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
+        <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
+    </body>
+</%def>
+
+<%def name="pot_tar_cat()">
+    <p>
+        Hola${nom_titular},<br>
+    </p>
+    <p>
+        <strong> La modificació contractual que vares sol·licitar ha estat acceptada.</strong><br>
+    </p>
+    <p>
+        En cas que la telegestió del teu comptador no estigui activa, <strong>durant els propers 15 dies hàbils, vindrà un operari de <a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">l'empresa de distribució elèctrica</a></strong> de la teva zona per a realitzar la modificació sol·licitada.
+        <br>
+        Si el comptador no està accessible, l’operari de l'empresa distribuïdora es posarà en contacte amb tu prèviament a través del telèfon de contacte que has facilitat mitjançant el formulari.<br>
+        <br>
+        Quan tinguem la confirmació per part de la distribuïdora t’enviarem un correu electrònic indicant la data exacta d'<strong>activació de la modificació.</strong><br>
+    </p>
+    <p>
+        Les dades del contracte modificat són les següents:<br>
+        - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
+        - CUPS: ${object.cups_id.name}<br>
+    </p>
+</%def>
+
+<%def name="canvi_tit_cat()">
+    <p>
+        Hola,<br>
+    </p>
+    <p>
+        <strong> El canvi de titular que vares sol·licitar ha estat acceptat. </strong>.<br>
+    <br>
+        Aquest es veurà reflectit a la propera factura, i, en els següents dies, a l'oficina virtual.<br>
+    </p>
+    <p>
+        Les dades del contracte modificat són les següents:<br>
+        - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
+        - CUPS: ${object.cups_id.name}<br>
+    </p>
+</%def>
+
+<%def name="correu_es()">
+    <body>
+        <table width="100%" frame="below" bgcolor="#E8F1D4">
+            <tr>
+                <td height=2px>
+                    <font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font>
+                </td>
+                <td valign=top rowspan="4" align="right">
+                    <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
+                </td>
+            </tr>
+            <tr>
+                <td height=2px>
+                    <font size=1>Dirección punto suministro: ${object.cups_id.direccio}</font>
+                </td>
+            </tr>
+            <tr>
+                <td height=2px>
+                    <font size=1>Código CUPS: ${object.cups_id.name}</font>
+                </td>
+            </tr>
+            %if is_pot_tar:
+            <tr>
+                <td height=2px width=100%>
+                    <font size=1> Titular: ${object.cups_polissa_id.titular.name}</font>
+                </td>
+            </tr>
+            %endif
+        </table>
+        <br>
+        <br>
+        %if is_pot_tar:
+            ${pot_tar_es()}
+        %elif is_canvi_tit:
+            ${canvi_tit_es()}
+        %endif
+        <br>
+        <br>
+        Atentamente,<br>
+        <br>
+        Equipo de Som Energia<br>
+        <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
+        <a href="http://www.somenergia.coop">www.somenergia.coop</a>
+
+    </body>
+</%def>
+
+<%def name="pot_tar_es()">
+    <p>
+        Hola${nom_titular},<br>
+    </p>
+    <p>
+        <strong> La modificación contractual que solicitaste ha sido aceptada. </strong><br>
+    </p>
+    <p>
+        En el caso que la telegestión de tu contador no esté activa, <strong>urante los próximos 15 días hábiles, vendrá un operario de la <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">la empresa de distribución eléctrica</a></strong> de tu zona para realizar la modificación solicitada.
+        <br>
+        Si el contador no está accesible el operario de la empresa distribuidora se pondrá en contacto contigo préviamente a través del teléfono de contacto facilitado mediante el formulario..<br>
+        <br>
+        En el momento que tengamos la confirmación por parte de la distribuidora, te enviaremos un correo electrónico indicando la fecha exacta de <strong>activación de la modificación.</strong><br>
+    </p>
+    <p>
+        Los datos del contrato son los siguientes:<br>
+        - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
+        - CUPS: ${object.cups_id.name}<br>
+    </p>
+
+</%def>
+
+<%def name="canvi_tit_es()">
+    <p>
+        Hola,<br>
+    </p>
+    <p>
+        <strong> El cambio de titularidad que solicitaste ha sido aceptado.</strong><br>
+        <br>
+        Este cambio se verá reflejado en la próxima factura, y, durante los siguientes días, en la oficina virtual.<br>
+    </p>
+    <p>
+        Los datos del contrato son los siguientes:<br>
+        - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
+        - CUPS: ${object.cups_id.name}<br>
+    </p>
+</%def>

@@ -3,20 +3,16 @@
 %>
 
 <%
-    data_act = datetime.strptime(
-        object.step_ids[1].pas_id.data_activacio, '%Y-%m-%d'
-    ).strftime('%d-%m-%Y') if len(object.step_ids) > 1 else ""
-
     p_obj = object.pool.get('res.partner')
 
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
-    )['nom']) if not object.vat_enterprise() else ""
+    )['nom']) if not object.vat_enterprise() else ''
 %>
 
 <!doctype html>
 <html>
-% if object.cups_polissa_id.titular.lang == "ca_ES":
+% if object.cups_polissa_id.titular.lang == 'ca_ES':
     ${correu_cat()}
 % else:
     ${correu_es()}
@@ -57,34 +53,26 @@
         <br>
         <p>
             Hola${nom_titular},<br>
-            <br>
-            Ens plau comunicar-te que <strong>la sol·licitud del canvi ha estat acceptada</strong>.<br>
         </p>
         <p>
-            % if data_act:
-            La data de l’activació serà aproximadament el dia ${data_act}.<br>
-            <br>
-            % endif
-            T'enviarem un e-mail per comunicar-te que el contracte ja està actiu amb la cooperativa.<br>
-            <br>
-            Tingues en compte que encara t'arribarà una factura (la darrera) de la companyia actual.<br>
+            Hem sol·licitat la baixa amb tall de subministrament del contracte corresponent a ${object.cups_polissa_id.cups_direccio} i ha estat acceptada.<br>
         </p>
         <p>
-            Les dades del contracte són les següents:<br>
-            - Número de contracte amb Som Energia: ${object.cups_polissa_id.name}<br>
-            - Titular del contracte: ${object.cups_polissa_id.titular.name}<br>
-            - Soci/a Som Energia: ${object.cups_polissa_id.soci.name}<br>
-            <br>
-            - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
-            - CUPS: ${object.cups_id.name}<br>
+            <a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">L'empresa de distribució elèctrica</a> té 5 dies hàbils per donar de baixa aquest punt de subministrament i que deixi d'haver-hi llum.<br>
+        </p>
+        <p>
+            Recorda que la cooperativa emetrà una última factura fins que la baixa sigui efectiva.<br>
+        </p>
+        <p>
+            De seguida que ens comuniquin la data, us n'informarem.<br>
         </p>
         <br>
         <br>
         Atentament,<br>
         <br>
-        Equip de Som Energia<br>
-        <a href="mailto:comercialitzacio@somenergia.coop">comercialitzacio@somenergia.coop</a><br>
-        <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
+        Equip de Som Energia <br>
+        <a href="mailto:comercializacion@somenergia.coop">comercializacion@somenergia.coop</a><br>
+        <a href="www.somenergia.coop/ca">www.somenergia.coop</a>
     </body>
 </%def>
 
@@ -111,7 +99,7 @@
             </tr>
             <tr>
                 <td height=2px width=100%>
-                    <font size=1>Titular:${object.cups_polissa_id.titular.name}</font>
+                    <font size=1>Titular: ${object.cups_polissa_id.titular.name}</font>
                 </td>
             </tr>
         </table>
@@ -121,32 +109,24 @@
         <br>
         <p>
             Hola${nom_titular},<br>
-            <br>
-            Nos complace comunicarte que <strong>la solicitud del cambio ha sido aceptada</strong>.<br>
         </p>
         <p>
-            % if data_act:
-            La fecha de activación será aproximadamente el día ${data_act}.<br>
-            <br>
-            % endif
-            Cuando nos lo comuniquen, te enviaremos un e-mail indicando que el contrato ya es activo con la cooperativa.<br>
-            <br>
-            En cualquier caso, todavía te llegará una factura (la última) de la compañía actual.<br>
+            Hemos solicitado la baja con corte de suministro del contrato correspondiente a la dirección ${object.cups_polissa_id.cups_direccio} y ha sido aceptada.<br>
         </p>
         <p>
-            Los datos del contrato son los siguientes:<br>
-            - Número de contrato con Som Energia: ${object.cups_polissa_id.name}<br>
-            - Titular del contrato: ${object.cups_polissa_id.titular.name}<br>
-            - Socio/a Som Energia: ${object.cups_polissa_id.soci.name}<br>
-            <br>
-            - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
-            - CUPS: ${object.cups_id.name}<br>
+            <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">La empresa de distribución eléctrica</a> tiene 5 días hábiles para dar de baja este punto de suministro y que deje de haber luz.<br>
+        </p>
+        <p>
+            Recuerda que la cooperativa emitirá una última factura hasta que la baja sea efectiva.<br>
+        </p>
+        <p>
+            En cuanto nos comuniquen la fecha exacta, os informaremos.<br>
         </p>
         <br>
         <br>
         Atentamente,<br>
         <br>
-        Equipo de Som Energia<br>
+        Equipo de Som Energia <br>
         <a href="mailto:comercializacion@somenergia.coop">comercializacion@somenergia.coop</a><br>
         <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
     </body>

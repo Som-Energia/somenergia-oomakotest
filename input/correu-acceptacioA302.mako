@@ -5,18 +5,18 @@
 <%
     data_act = datetime.strptime(
         object.step_ids[1].pas_id.data_activacio, '%Y-%m-%d'
-    ).strftime('%d-%m-%Y') if len(object.step_ids) > 1 else ""
+    ).strftime('%d-%m-%Y') if len(object.step_ids) > 1 else ''
 
     p_obj = object.pool.get('res.partner')
 
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
-    )['nom']) if not object.vat_enterprise() else ""
+    )['nom']) if not object.vat_enterprise() else ''
 %>
 
 <!doctype html>
 <html>
-% if object.cups_polissa_id.titular.lang == "ca_ES":
+% if object.cups_polissa_id.titular.lang == 'ca_ES':
     ${correu_cat()}
 % else:
     ${correu_es()}
@@ -57,17 +57,15 @@
         <br>
         <p>
             Hola${nom_titular},<br>
-            <br>
-            Ens plau comunicar-te que <strong>la sol·licitud del canvi ha estat acceptada</strong>.<br>
         </p>
         <p>
-            % if data_act:
-            La data de l’activació serà aproximadament el dia ${data_act}.<br>
-            <br>
-            % endif
-            T'enviarem un e-mail per comunicar-te que el contracte ja està actiu amb la cooperativa.<br>
-            <br>
-            Tingues en compte que encara t'arribarà una factura (la darrera) de la companyia actual.<br>
+            <strong>Ens plau comunicar-te que la sol·licitud d'alta de subministrament ha estat acceptada.</strong><br>
+        </p>
+        <p>
+            L’empresa distribuïdora ens informa que als voltants del dia ${data_act} realitzarà les gestions necessàries per fer efectiva l’alta de subministrament. Si fos necessari, la distribuïdora contactarà amb tu al telèfon que vares indicar en emplenar el formulari.<br>
+        </p>
+        <p>
+            <strong>T'enviarem un últim e-mail per comunicar-te  la data efectiva de l’alta de subministrament.</strong><br>
         </p>
         <p>
             Les dades del contracte són les següents:<br>
@@ -77,6 +75,8 @@
             <br>
             - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
+            - Potència: ${object.cups_polissa_id.potencia} kW<br>
+            - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
         <br>
@@ -95,7 +95,7 @@
                 <td height=2px>
                     <font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font>
                 </td>
-                <td valign=top rowspan="4">
+                <td VALIGN=top rowspan="4">
                     <align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
                 </td>
             </tr>
@@ -111,7 +111,7 @@
             </tr>
             <tr>
                 <td height=2px width=100%>
-                    <font size=1>Titular:${object.cups_polissa_id.titular.name}</font>
+                    <font size=1>Titular: ${object.cups_polissa_id.titular.name}</font>
                 </td>
             </tr>
         </table>
@@ -120,18 +120,16 @@
         <br>
         <br>
         <p>
-            Hola${nom_titular},<br>
-            <br>
-            Nos complace comunicarte que <strong>la solicitud del cambio ha sido aceptada</strong>.<br>
+            Hola${nom_titular},
         </p>
         <p>
-            % if data_act:
-            La fecha de activación será aproximadamente el día ${data_act}.<br>
-            <br>
-            % endif
-            Cuando nos lo comuniquen, te enviaremos un e-mail indicando que el contrato ya es activo con la cooperativa.<br>
-            <br>
-            En cualquier caso, todavía te llegará una factura (la última) de la compañía actual.<br>
+            <strong>Nos complace comunicarte que la solicitud de alta de suministro ha sido aceptada.</strong><br>
+        </p>
+        <p>
+            La empresa distribuidora nos informa que sobre el día ${data_act} realizará las gestiones necesarias para hacer efectiva el alta de suministro. Si fuera necesario, la distribuidora contactará contigo en el teléfono que indicaste al rellenar el formulario.<br>
+        </p>
+        <p>
+            <strong>Te enviaremos un último e-mail para comunicarte la fecha efectiva del alta.</strong><br>
         </p>
         <p>
             Los datos del contrato son los siguientes:<br>
@@ -141,6 +139,8 @@
             <br>
             - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
+            - Potencia: ${object.cups_polissa_id.potencia} kW<br>
+            - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
         <br>

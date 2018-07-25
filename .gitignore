@@ -1,7 +1,6 @@
 # not to publish files
 cfg.py
 b2bdata/
-
 # vim swapps
 *.sw?
 
@@ -62,3 +61,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# files
+configdb.py
