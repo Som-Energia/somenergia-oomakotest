@@ -64,7 +64,7 @@
             Recorda que la cooperativa emetrà una última factura fins que la baixa sigui efectiva.<br>
         </p>
         <p>
-            De seguida que ens comuniquin la data, us n'informarem.<br>
+            De seguida que ens comuniquin la data, us informarem.<br>
         </p>
         <br>
         <br>
