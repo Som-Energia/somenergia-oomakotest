@@ -94,8 +94,8 @@
         Hola,<br>
     </p>
     <p>
-        <strong> El canvi de titular que vares sol·licitar ha estat acceptat. </strong>.<br>
-    <br>
+        <strong> El canvi de titular que vares sol·licitar ha estat acceptat. </strong><br>
+        <br>
         Aquest es veurà reflectit a la propera factura, i, en els següents dies, a l'oficina virtual.<br>
     </p>
     <p>
@@ -160,7 +160,7 @@
         <strong> La modificación contractual que solicitaste ha sido aceptada. </strong><br>
     </p>
     <p>
-        En el caso que la telegestión de tu contador no esté activa, <strong>urante los próximos 15 días hábiles, vendrá un operario de la <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">la empresa de distribución eléctrica</a></strong> de tu zona para realizar la modificación solicitada.
+        En el caso que la telegestión de tu contador no esté activa, <strong>durante los próximos 15 días hábiles, vendrá un operario de <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">la empresa de distribución eléctrica</a></strong> de tu zona para realizar la modificación solicitada.
         <br>
         Si el contador no está accesible el operario de la empresa distribuidora se pondrá en contacto contigo préviamente a través del teléfono de contacto facilitado mediante el formulario..<br>
         <br>
