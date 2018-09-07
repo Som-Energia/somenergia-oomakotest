@@ -1,0 +1,7 @@
+cc: false
+to: ${object.cups_polissa_id.titular.address[0].email},${object.cups_polissa_id.pagador.address[0].email},${object.cups_polissa_id.direccio_notificacio.email}
+subject_translations:
+    ca_ES: "Contracte Som Energia (${object.cups_polissa_id.name}): Sol·licitud d'alta rebutjada / Solicitud de alta rechazada"
+    es_ES: "Contracte Som Energia (${object.cups_polissa_id.name}): Sol·licitud d'alta rebutjada / Solicitud de alta rechazada"
+subject: "Contracte Som Energia (${object.cups_polissa_id.name}): Sol·licitud d'alta rebutjada / Solicitud de alta rechazada"
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

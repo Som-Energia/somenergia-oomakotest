@@ -24,8 +24,10 @@
         % endif
         ${notificacio_text}
         % if object.cups_polissa_id.titular.lang == "ca_ES":
+            ${sumistrament_cat_cat()}
             ${footer_cat()}
         % else:
+            ${sumistrament_cat_es()}
             ${footer_es()}
         % endif
     </body>
@@ -97,7 +99,7 @@
         Hola${nom_titular}, <br>
     </p>
     <p>
-        Fa uns dies vàrem iniciar els tràmits de canvi de comercialitzadora cap a Som Energia.
+        Fa uns dies vàrem iniciar la sol·licitud d'alta de subministrament.
     </p>
 </%def>
 
@@ -106,7 +108,19 @@
         Hola${nom_titular}, <br>
     </p>
     <p>
-        Hace unos días iniciamos la solicitud de cambio de comercializadora hacia Som Energia.<br>
+        Hace unos días iniciamos la solicitud de alta de suministro.
+    </p>
+</%def>
+
+<%def name="sumistrament_cat_cat()">
+    <p>
+        Si el teu punt de subministrament és de Catalunya i tens dubtes sobre quin document has de presentar, pots llegir <a href="https://ca.support.somenergia.coop/article/758-documentacio-necessaria-per-a-l-alta-de-subministrament-a-catalunya">aquest article del nostre centre de suport.</a><br>
+    </p>
+</%def>
+
+<%def name="sumistrament_cat_es()">
+    <p>
+        Si tu punto de suministro está en Catalunya y tienes dudas sobre qué documento debes presentar, puedes leer este <a href="https://es.support.somenergia.coop/article/759-documentacion-necesaria-para-el-alta-de-suministro-en-catalunaartículo">artículo en nuestro centro de ayuda.</a><br>
     </p>
 </%def>
 

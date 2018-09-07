@@ -130,6 +130,13 @@ rebuigC202:
     poweremailId: giscedata_switching.notification_atr_C2_02_rebuig
     cases:
       nou: 147916
+
+rebuigA302:
+    template: input/correu-rebuigA302.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
+    cases:
+      nou: 147916
 #
 # acceptacioB102:
 #     template: input/correu-acceptacioB102.mako
