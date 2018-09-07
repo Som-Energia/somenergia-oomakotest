@@ -112,19 +112,10 @@
     </p>
 </%def>
 
-<%def name="sumistrament_cat_cat()">
-    <p>
-        Si el teu punt de subministrament és de Catalunya i tens dubtes sobre quin document has de presentar, pots llegir <a href="https://ca.support.somenergia.coop/article/758-documentacio-necessaria-per-a-l-alta-de-subministrament-a-catalunya">aquest article del nostre centre de suport.</a><br>
-    </p>
-</%def>
-
-<%def name="sumistrament_cat_es()">
-    <p>
-        Si tu punto de suministro está en Catalunya y tienes dudas sobre qué documento debes presentar, puedes leer este <a href="https://es.support.somenergia.coop/article/759-documentacion-necesaria-para-el-alta-de-suministro-en-catalunaartículo">artículo en nuestro centro de ayuda.</a><br>
-    </p>
-</%def>
-
 <%def name="footer_cat()">
+    <p>
+        Gràcies per la teva atenció, estem en contacte per a qualsevol dubte o consulta.<br>
+    </p>
     Atentament,<br>
     <br>
     <br>
@@ -134,6 +125,9 @@
 </%def>
 
 <%def name="footer_es()">
+    <p>
+        Muchas gracias por tu atención, estamos en contacto para cualquier duda o consulta.
+    </p>
     Atentamente,<br>
     <br>
     <br>

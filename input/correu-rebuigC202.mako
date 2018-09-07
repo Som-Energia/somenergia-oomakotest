@@ -111,6 +111,9 @@
 </%def>
 
 <%def name="footer_cat()">
+    <p>
+        Gràcies per la teva atenció, estem en contacte per a qualsevol dubte o consulta.<br>
+    </p>
     Atentament,<br>
     <br>
     <br>
@@ -120,6 +123,9 @@
 </%def>
 
 <%def name="footer_es()">
+    <p>
+        Muchas gracias por tu atención, estamos en contacto para cualquier duda o consulta.
+    </p>
     Atentamente,<br>
     <br>
     <br>
