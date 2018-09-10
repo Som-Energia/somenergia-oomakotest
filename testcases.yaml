@@ -125,7 +125,7 @@ rebuigC102:
       nou: 147916
 #
 rebuigC202:
-    template: input/correu-rebuigC102.mako
+    template: input/correu-rebuigC202.mako
     model: giscedata.switching
     poweremailId: giscedata_switching.notification_atr_C2_02_rebuig
     cases:
