@@ -21,7 +21,7 @@
         Som Energia no pot oferir el bo social, per tant, si canvies a la cooperativa el teu contracte perdràs la bonificació actual.
     </p>
     <p>
-        Seguiu interessats amb el canvi?
+        Seguiu interessat amb el canvi?
     </p>
     <p>
         Quedem a l'espera de la teva resposta per iniciar de nou el procés o anular-lo.
@@ -33,10 +33,10 @@
         La distribuidora de tu zona nos comunica que tu contrato está acogido al <a href="https://es.support.somenergia.coop/article/208-que-es-el-bono-social">bono social</a>.
     </p>
     <p>
-        Som Energia no puede ofrecer el bono social por lo que si cambias a la cooperativa el contrato perderás la bonificación actual.
+        Som Energia no puede ofrecer el bono social; de modo que si cambias a la cooperativa el contrato perderás la bonificación actual.
     </p>
     <p>
-        Seguís interesados con el cambio?
+        Sigues interesado en el cambio?
     </p>
     <p>
         Quedamos a la espera de tu respuesta para iniciar de nuevo el proceso o anularlo.
