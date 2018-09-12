@@ -24,10 +24,8 @@
         % endif
         ${notificacio_text}
         % if object.cups_polissa_id.titular.lang == "ca_ES":
-            ${sumistrament_cat_cat()}
             ${footer_cat()}
         % else:
-            ${sumistrament_cat_es()}
             ${footer_es()}
         % endif
     </body>
@@ -126,7 +124,7 @@
 
 <%def name="footer_es()">
     <p>
-        Muchas gracias por tu atención, estamos en contacto para cualquier duda o consulta.
+        Muchas gracias por tu atención, estamos en contacto para cualquier duda o consulta.<br>
     </p>
     Atentamente,<br>
     <br>

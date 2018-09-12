@@ -119,7 +119,7 @@
     <br>
     Equip de Som Energia<br>
     <a href="mailto:comercialitzacio@somenergia.coop">comercialitzacio@somenergia.coop</a><br>
-    <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
+    <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a><br>
 </%def>
 
 <%def name="footer_es()">

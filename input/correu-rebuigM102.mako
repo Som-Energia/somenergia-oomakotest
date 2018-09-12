@@ -1,6 +1,9 @@
 <%
-    p_obj = object.pool.get('res.partner')
+    is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
 
+    is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
+
+    p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
     )['nom']) if not object.vat_enterprise() else ""
@@ -96,18 +99,30 @@
     <p>
         Hola${nom_titular}, <br>
     </p>
-    <p>
-        Fa uns dies vàrem iniciar els tràmits de canvi de comercialitzadora cap a Som Energia.
-    </p>
+    %if is_canvi_tit:
+        <p>
+            Fa uns dies vàrem iniciar els tràmits de canvi de titular del contracte.
+        </p>
+    %elif is_pot_tar:
+        <p>
+            Fa uns dies vàrem iniciar els tràmits de canvi de tarifa i/o potència del teu contracte.
+        </p>
+    %endif
 </%def>
 
 <%def name="salutacio_es()">
     <p>
         Hola${nom_titular}, <br>
     </p>
-    <p>
-        Hace unos días iniciamos la solicitud de cambio de comercializadora hacia Som Energia.<br>
-    </p>
+    %if is_canvi_tit:
+        <p>
+            Hace unos días iniciamos el trámite de cambio de titular del contrato
+        </p>
+    %elif is_pot_tar:
+        <p>
+            Hace unos días iniciamos el trámite de cambio de tarifa y/o potencia de tu contrato.
+        </p>
+    %endif
 </%def>
 
 <%def name="footer_cat()">
@@ -119,12 +134,12 @@
     <br>
     Equip de Som Energia<br>
     <a href="mailto:comercialitzacio@somenergia.coop">comercialitzacio@somenergia.coop</a><br>
-    <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a><br>
+    <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
 </%def>
 
 <%def name="footer_es()">
     <p>
-        Muchas gracias por tu atención, estamos en contacto para cualquier duda o consulta.
+        Muchas gracias por tu atención, estamos en contacto para cualquier duda o consulta.<br>
     </p>
     Atentamente,<br>
     <br>
