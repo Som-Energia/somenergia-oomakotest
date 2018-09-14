@@ -56,11 +56,13 @@
                     <font size=1>Codi CUPS: ${object.cups_id.name}</font>
                 </td>
             </tr>
-            <tr>
-                <td height=2px width=100%>
-                    <font size=1>Titular: ${object.cups_polissa_id.titular.name}</font>
-                </td>
-            </tr>
+            %if is_pot_tar:
+                <tr>
+                    <td height=2px width=100%>
+                        <font size=1>Titular: ${object.cups_polissa_id.titular.name}</font>
+                    </td>
+                </tr>
+            %endif
         </table>
     </head>
 </%def>
@@ -86,24 +88,29 @@
                     <font size=1>Código CUPS: ${object.cups_id.name}</font>
                 </td>
             </tr>
-            <tr>
-                <td height=2px width=100%>
-                    <font size=1>Titular:${object.cups_polissa_id.titular.name}</font>
-                </td>
-            </tr>
+            %if is_pot_tar:
+                <tr>
+                    <td height=2px width=100%>
+                        <font size=1>Titular:${object.cups_polissa_id.titular.name}</font>
+                    </td>
+                </tr>
+            %endif
         </table>
     </head>
 </%def>
 
 <%def name="salutacio_cat()">
-    <p>
-        Hola${nom_titular}, <br>
-    </p>
     %if is_canvi_tit:
+        <p>
+            Hola,
+        </p>
         <p>
             Fa uns dies vàrem iniciar els tràmits de canvi de titular del contracte.
         </p>
     %elif is_pot_tar:
+        <p>
+            Hola${nom_titular}, <br>
+        </p>
         <p>
             Fa uns dies vàrem iniciar els tràmits de canvi de tarifa i/o potència del teu contracte.
         </p>
@@ -111,14 +118,17 @@
 </%def>
 
 <%def name="salutacio_es()">
-    <p>
-        Hola${nom_titular}, <br>
-    </p>
     %if is_canvi_tit:
         <p>
-            Hace unos días iniciamos el trámite de cambio de titular del contrato
+            Hola,
+        </p>
+        <p>
+            Hace unos días iniciamos el trámite de cambio de titular del contrato.
         </p>
     %elif is_pot_tar:
+        <p>
+            Hola${nom_titular}, <br>
+        </p>
         <p>
             Hace unos días iniciamos el trámite de cambio de tarifa y/o potencia de tu contrato.
         </p>
