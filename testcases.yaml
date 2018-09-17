@@ -116,19 +116,48 @@
 #    02_3.0_ca: 102293
 #    02_3.0_es: 101692
 #
-acceptacioB102:
-    template: input/correu-acceptacioB102.mako
-    model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_B1_02_acceptacio
-    cases:
-        altaNou_ca: 116275
 #
-acceptacioA302:
-    template: input/correu-acceptacioA302.mako
+rebuigC102:
+    template: input/correu-rebuigC102.mako
     model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_A3_02_acceptacio
+    poweremailId: giscedata_switching.notification_atr_C1_02_rebuig
     cases:
-        altaNou_ca: 116275
+      nou: 147916
+#
+rebuigC202:
+    template: input/correu-rebuigC202.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_C2_02_rebuig
+    cases:
+      nou: 147916
+#
+rebuigA302:
+    template: input/correu-rebuigA302.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
+    cases:
+      nou: 147916
+#
+rebuigM102:
+    template: input/correu-rebuigM102.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_M1_02_rebuig
+    cases:
+      nou: 147916
+##
+# acceptacioB102:
+#     template: input/correu-acceptacioB102.mako
+#     model: giscedata.switching
+#     poweremailId: giscedata_switching.notification_atr_B1_02_acceptacio
+#     cases:
+#         altaNou_ca: 116275
+#
+# acceptacioA302:
+#     template: input/correu-acceptacioA302.mako
+#     model: giscedata.switching
+#     poweremailId: giscedata_switching.notification_atr_A3_02_acceptacio
+#     cases:
+#         altaNou_ca: 116275
 #
 
 #
@@ -144,19 +173,20 @@ acceptacioM102:
 #    3.0_ca: 14063
 #    3.0_es: 24832
 #
-acceptacioC102:
-    template: input/correu-acceptacioC102.mako
-    model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_C1_02_acceptacio
-    cases:
-        nou: 147950
+# acceptacioC102:
+#     template: input/correu-acceptacioC102.mako
+#     model: giscedata.switching
+#     poweremailId: giscedata_switching.notification_atr_C1_02_acceptacio
+#     cases:
+#         nou: 147950
+#
+# acceptacioC202:
+#     template: input/correu-acceptacioC102.mako
+#     model: giscedata.switching
+#     poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
+#     cases:
+#         nou: 147916
 
-acceptacioC202:
-    template: input/correu-acceptacioC102.mako
-    model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
-    cases:
-        nou: 147916
 #activacioCX05_manual:
 #  template: input/correu-activacioCx05-manual.mako
 #  model: giscedata.switching
@@ -296,16 +326,16 @@ acceptacioC202:
 #    3.x_ca: 87927
 #    3.x_es: 93353
 #
-validacioDadesModificacio:
- template: input/correu-validacioDadesModificacio.mako
- model: giscedata.switching
- poweremailId: webforms.mail_validacio_m101
- cases:
-   3.0A_es: 24827
-   2.1DHAto3.0A_es: 3
-   2.1DHAto3.0A_ca: 50850
-   3.0A_ca: 34800
-   webform_contact_phone_different_to_polissa: 107487
+# validacioDadesModificacio:
+#  template: input/correu-validacioDadesModificacio.mako
+#  model: giscedata.switching
+#  poweremailId: webforms.mail_validacio_m101
+#  cases:
+#    3.0A_es: 24827
+#    2.1DHAto3.0A_es: 3
+#    2.1DHAto3.0A_ca: 50850
+#    3.0A_ca: 34800
+#    webform_contact_phone_different_to_polissa: 107487
 #
 ##peticioDocumentacioSubministres:
 ##  template: input/correu-peticioDocumentacioSubministres.mako
