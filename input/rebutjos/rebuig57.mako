@@ -47,6 +47,6 @@
 
 <%def name="subministrament_cat_es()">
     <p>
-        Si tu punto de suministro está en Catalunya y tienes dudas sobre qué documento debes presentar, puedes leer este <a href="https://es.support.somenergia.coop/article/759-documentacion-necesaria-para-el-alta-de-suministro-en-catalunaartículo">artículo en nuestro centro de ayuda.</a><br>
+        Si tu punto de suministro está en Catalunya y tienes dudas sobre qué documento debes presentar, puedes leer este <a href="https://es.support.somenergia.coop/article/759-documentacion-necesaria-para-el-alta-de-suministro-en-cataluna">artículo en nuestro centro de ayuda.</a><br>
     </p>
 </%def>
