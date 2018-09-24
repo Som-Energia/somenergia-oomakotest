@@ -1,10 +1,4 @@
 <%
-    def strfy(thing):
-        try:
-            return '&nbsp;&nbsp;&nbsp;'+repr(thing) +'<br>'
-        except:
-            return '&nbsp;&nbsp;&nbsp; -- <br>'
-
     # getStep developed due error in this sentence:
     # cas.step_ids[0].pas_id.pot_ids[0].potencia
 
@@ -27,8 +21,6 @@
             return tbl_obj.read(swCase._cr, swCase._uid, ids[0],[field])[field]
 
     step01 = getStep01(cas)
-    is_canvi_tit = step01.sollicitudadm == 'S'
-    is_pot_tar = step01.sollicitudadm == 'N'
     newPower = step01.pot_ids[0].potencia
     trifasica = newPower in normalizedPowers
 
@@ -37,11 +29,6 @@
     
     CUPSAddress = cas.cups_id.direccio
     CUPSCode = cas.cups_id.name
-
-    varis = strfy(is_canvi_tit)
-    varis += strfy(is_pot_tar)
-    varis += strfy(newPower)
-    varis += strfy(trifasica)
 %>
 
 % if cas.cups_polissa_id.titular.lang == "ca_ES":
