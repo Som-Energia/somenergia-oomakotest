@@ -46,18 +46,17 @@
 % endif
 
 <%def name="correu_tri_cat()">
-    <p>
-        Recentment has sol·licitat una modificació de tarifa i/o potència del contracte de llum del carrer ${CUPSAddress} amb CUPS ${CUPSCode}.
-    </p>
     <ul>
-        <li>Potència desitjada: ${wantedPower}</li>
-        <li>Tarifa desitjada: ${wantedTarif}</li>
+        <li><font size=2><strong>Adreça de subministrament:</strong></font> ${CUPSAddress} </li>
+        <li><font size=2><strong>Codi CUPS:</strong></font> ${CUPSCode} </li>
+        <li><font size=2><strong>Potència desitjada:</strong></font> ${wantedPower} kW</li>
+        <li><font size=2><strong>Tarifa desitjada:</strong></font> ${wantedTarif}</li>
     </ul>
     <p>
         <a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">L’empresa distribuïdora</a> de la teva zona és l'encarregada d'acceptar i aplicar aquestes modificacions.
     </p>
     <p>
-        En el teu cas, la sol·licitud ha estat rebujada pel motiu <font size=2><strong>"Potència no normalitzada en Suministro Trifásico”</strong></font> perquè la potència que has sol·licitat <font size=2><strong>(${wantedPower}kW)</strong></font> correspon a una potència normalitzada per a instal·lació trifàsica de tensió normalitzada 3x230/400 i la teva instal·lació és trifàsica però amb <font size=2><strong>tensió poc habitual; 3x133/230 o bé 3x127/220</strong></font>.
+        En el teu cas, la sol·licitud ha estat rebujada pel motiu <font size=2><strong><i>"Potencia no normalitzada en Suministro Trifásico”</i></strong></font> perquè la potència que has sol·licitat <font size=2><strong>(${wantedPower}kW)</strong></font> correspon a una potència normalitzada per a instal·lació trifàsica de tensió normalitzada 3x230/400 i la teva instal·lació és trifàsica però amb <font size=2><strong>tensió poc habitual; 3x133/230 o bé 3x127/220</strong></font>.
     </p>
     <p>
         Aquesta tensió, que no és gaire comú, li corresponen unes potències normalitzades diferents a les habituals:
@@ -81,18 +80,17 @@
 </%def>
 
 <%def name="correu_tri_es()">
-    <p>
-        Recientemente has solicitado una modificación de tarifa y/o potencia del contrato de luz de la calle ${CUPSAddress} con CUPS ${CUPSCode}.
-    </p>
     <ul>
-        <li>Potencia deseada: ${wantedPower}</li>
-        <li>Tarifa deseada: ${wantedTarif}</li>
+        <li><font size=2><strong>Direccion de suministro:</strong></font> ${CUPSAddress} </li>
+        <li><font size=2><strong>Código CUPS:</strong></font> ${CUPSCode} </li>
+        <li><font size=2><strong>Potencia deseada:</strong></font> ${wantedPower}  kW</li>
+        <li><font size=2><strong>Tarifa deseada:</strong></font> ${wantedTarif}</li>
     </ul>
     <p>
         <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">La empresa distribuidora</a> de tu zona es la encargada de aceptar y aplicar estas modificaciones.
     </p>
     <p>
-        En tu caso, la solicitud ha sido rechazada por el siguiente motivo: <font size=2><strong>"Potència no normalitzada en Suministro Trifásico”</strong></font> porque la potencia que has solicitado <font size=2><strong>(${wantedPower}kW)</strong></font> corresponde a una potencia normalizada para instalaciones trifásicas de tensión normalizada 3x230/400 tu instalación es trifásica pero con <font size=2><strong>una tensión poco habitual; 3x133/230 o bien, 3x127/220</strong></font>.
+        En tu caso, la solicitud ha sido rechazada por el siguiente motivo: <font size=2><strong><i>"Potencia no normalitzada en Suministro Trifásico”</i></strong></font> porque la potencia que has solicitado <font size=2><strong>(${wantedPower}kW)</strong></font> corresponde a una potencia normalizada para instalaciones trifásicas de tensión normalizada 3x230/400 tu instalación es trifásica pero con <font size=2><strong>una tensión poco habitual; 3x133/230 o bien, 3x127/220</strong></font>.
     </p>
     <p>
         A esta tensión, que no es demasiado común, le corresponde unas potencias normalizadas diferentes a las habituales:
@@ -116,18 +114,17 @@
 </%def>
 
 <%def name="correu_no_tri_cat()">
-    <p>
-        Recentment has sol·licitat una modificació de tarifa i/o potència del contracte de llum del carrer ${CUPSAddress} amb CUPS ${CUPSCode}.
-    </p>
     <ul>
-        <li>Potència desitjada: ${wantedPower}</li>
-        <li>Tarifa desitjada: ${wantedTarif}</li>
+        <li><font size=2><strong>Adreça de subministrament:</strong></font> ${CUPSAddress} </li>
+        <li><font size=2><strong>Codi CUPS:</strong></font> ${CUPSCode} </li>
+        <li><font size=2><strong>Potència desitjada:</strong></font> ${wantedPower}  kW</li>
+        <li><font size=2><strong>Tarifa desitjada:</strong></font> ${wantedTarif}</li>
     </ul>
     <p>
         <a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">L’empresa distribuïdora</a> de la teva zona és l'encarregada d'acceptar i aplicar aquestes modificacions.
     </p>
     <p>
-        En el teu cas, la sol·licitud ha estat rebujada pel motiu <font size=2><strong>"Potència no normalitzada en Suministro Trifásico”</strong></font> perquè <font size=2><strong>la teva instal·lació és trifàsica</strong></font> i per tant has de triar un valor normalitzat per a aquest tipus d'instal·lacions.
+        En el teu cas, la sol·licitud ha estat rebujada pel motiu <font size=2><strong><i>"Potencia no normalitzada en Suministro Trifásico”</i></strong></font> perquè <font size=2><strong>la teva instal·lació és trifàsica</strong></font> i per tant has de triar un valor normalitzat per a aquest tipus d'instal·lacions.
     </p>
     <p>
         A l'article <a href="https://ca.support.somenergia.coop/article/269-com-puc-saber-la-potencia-que-necessito">Com puc saber la potencia que necessito?</a> trobaràs una llista de les potències normalitzades i informació molt útil per triar la potència que millor s'adapta a les teves necessitats.
@@ -141,18 +138,17 @@
 </%def>
 
 <%def name="correu_no_tri_es()">
-    <p>
-        Recientemente has solicitado una modificación de tarifa y/o potencia del contrato de luz de la calle ${CUPSAddress} con CUPS ${CUPSCode}.
-    </p>
     <ul>
-        <li>Potencia deseada: ${wantedPower}</li>
-        <li>Tarifa deseada: ${wantedTarif}</li>
+        <li><font size=2><strong>Direccion de suministro:</strong></font> ${CUPSAddress} </li>
+        <li><font size=2><strong>Código CUPS:</strong></font> ${CUPSCode} </li>
+        <li><font size=2><strong>Potencia deseada:</strong></font> ${wantedPower}  kW</li>
+        <li><font size=2><strong>Tarifa deseada:</strong></font> ${wantedTarif}</li>
     </ul>
     <p>
         <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">La empresa distribuidora</a> de tu zona es la encargada de aceptar y aplicar estas modificaciones.
     </p>
     <p>
-        En tu caso, la solicitud ha sido rechazada por el siguiente motivo: <font size=2><strong>"Potència no normalitzada en Suministro Trifásico”</strong></font> porque <font size=2><strong>tu instalación es trifásica</strong></font> y por lo tanto tienes que elegir un valor normalizado para este tipo de instalaciones. 
+        En tu caso, la solicitud ha sido rechazada por el siguiente motivo: <font size=2><strong><i>"Potencia no normalitzada en Suministro Trifásico”</i></strong></font> porque <font size=2><strong>tu instalación es trifásica</strong></font> y por lo tanto tienes que elegir un valor normalizado para este tipo de instalaciones. 
     </p>
     <p>
         En el artículo <a href="https://es.support.somenergia.coop/article/282-como-puedo-saber-la-potencia-que-necesito">¿Cómo puedo saber la potencia que necesito?</a> encontrarás una lista de las potencias normalizadas e información muy útil para escoger la potencia que mejor se adapte a tus necesidades.
