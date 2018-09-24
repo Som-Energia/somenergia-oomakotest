@@ -112,7 +112,7 @@
             Hola${nom_titular}, <br>
         </p>
         <p>
-            Fa uns dies vàrem iniciar els tràmits de canvi de tarifa i/o potència del teu contracte.
+            Fa uns dies vàrem iniciar els tràmits de canvi de tarifa i/o potència del teu contracte,
         </p>
     %endif
 </%def>
@@ -130,7 +130,7 @@
             Hola${nom_titular}, <br>
         </p>
         <p>
-            Hace unos días iniciamos el trámite de cambio de tarifa y/o potencia de tu contrato.
+            Hace unos días iniciamos el trámite de cambio de tarifa y/o potencia de tu contrato,
         </p>
     %endif
 </%def>
