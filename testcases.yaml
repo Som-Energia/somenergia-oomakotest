@@ -117,33 +117,47 @@
 #    02_3.0_es: 101692
 #
 #
-rebuigC102:
-    template: input/correu-rebuigC102.mako
+# rebuigC102:
+#     template: input/correu-rebuigC102.mako
+#     model: giscedata.switching
+#     poweremailId: giscedata_switching.notification_atr_C1_02_rebuig
+#     cases:
+#       nou: 147916
+#
+# rebuigC202:
+#     template: input/correu-rebuigC202.mako
+#     model: giscedata.switching
+#     poweremailId: giscedata_switching.notification_atr_C2_02_rebuig
+#     cases:
+#       nou: 147916
+#
+rebuigC104:
+    template: input/correu-rebuigC104.mako
     model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_C1_02_rebuig
+    poweremailId: giscedata_switching.notification_atr_C1_04
     cases:
       nou: 147916
 #
-rebuigC202:
-    template: input/correu-rebuigC202.mako
+rebuigC204:
+    template: input/correu-rebuigC204.mako
     model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_C2_02_rebuig
+    poweremailId: giscedata_switching.notification_atr_C2_04
     cases:
       nou: 147916
 #
-rebuigA302:
-    template: input/correu-rebuigA302.mako
-    model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
-    cases:
-      nou: 147916
+# rebuigA302:
+#     template: input/correu-rebuigA302.mako
+#     model: giscedata.switching
+#     poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
+#     cases:
+#       nou: 147916
 #
-rebuigM102:
-    template: input/correu-rebuigM102.mako
-    model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_M1_02_rebuig
-    cases:
-      nou: 147916
+# rebuigM102:
+#     template: input/correu-rebuigM102.mako
+#     model: giscedata.switching
+#     poweremailId: giscedata_switching.notification_atr_M1_02_rebuig
+#     cases:
+#       nou: 147916
 ##
 # acceptacioB102:
 #     template: input/correu-acceptacioB102.mako
@@ -159,14 +173,13 @@ rebuigM102:
 #     cases:
 #         altaNou_ca: 116275
 #
-
 #
-acceptacioM102:
-    template: input/correu-acceptacioM102.mako
-    model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_M1_02_acceptacio
-    cases:
-        canviTitular_ca: 1744
+# acceptacioM102:
+#     template: input/correu-acceptacioM102.mako
+#     model: giscedata.switching
+#     poweremailId: giscedata_switching.notification_atr_M1_02_acceptacio
+#     cases:
+#         canviTitular_ca: 1744
 #    canviTitular_es: 1745
 #    ambActuacio_ca: 3090
 #    ambActuacio_es: 29669
@@ -187,7 +200,7 @@ acceptacioM102:
 #     cases:
 #         nou: 147916
 
-#activacioCX05_manual:
+# activacioCX05_manual:
 #  template: input/correu-activacioCx05-manual.mako
 #  model: giscedata.switching
 #  poweremailId: 19
