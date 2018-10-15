@@ -114,7 +114,7 @@
     <p>
         Gràcies per la teva atenció, estem en contacte per a qualsevol dubte o consulta.<br>
     </p>
-    Atentament,<br>
+    Atentament,
     <br>
     <br>
     Equip de Som Energia<br>
@@ -126,7 +126,7 @@
     <p>
         Muchas gracias por tu atención, estamos en contacto para cualquier duda o consulta.
     </p>
-    Atentamente,<br>
+    Atentamente,
     <br>
     <br>
     Equipo de Som Energia<br>
