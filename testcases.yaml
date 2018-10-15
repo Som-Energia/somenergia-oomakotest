@@ -152,12 +152,25 @@ rebuigC204:
 #     cases:
 #       nou: 147916
 #
+rebuigA304:
+    template: input/correu-rebuigA304.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_A3_04
+    cases:
+      nou: 147916
+#
 # rebuigM102:
 #     template: input/correu-rebuigM102.mako
 #     model: giscedata.switching
 #     poweremailId: giscedata_switching.notification_atr_M1_02_rebuig
 #     cases:
 #       nou: 147916
+rebuigM104:
+    template: input/correu-rebuigM104.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_M1_04
+    cases:
+      nou: 147916
 ##
 # acceptacioB102:
 #     template: input/correu-acceptacioB102.mako
