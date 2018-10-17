@@ -22,7 +22,7 @@ Carregarem l'import d'aquesta factura al teu número de compte durant els proper
 <li>Període del  ${data_inici} al  ${data_final}</li>
 <li><B> Import total: ${object.invoice_id.amount_total}</B>€</li>
 </ul>
-Accedeix a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures, introduir les lectures del comptador i gestionar els teus contractes amb la cooperativa.
+Accedeix a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els teus contractes amb la cooperativa.
 
 <h2 align="center">Vols produir electricitat verda de forma col·lectiva? 
 Participa en la <a href="http://www.generationkwh.org/ca/">Generació kWh</a> i suma't al canvi!</h2>
@@ -55,7 +55,7 @@ Cargaremos el importe en tu cuenta bancaria durante los próximos días.
 <li><B>Importe total: ${object.invoice_id.amount_total}</B>€</li>
 </ul>
 
-Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas, introducir las lecturas del contador y gestionar tus contratos de la cooperativa.
+Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.
 
 <h2 align="center">¿Quieres producir electricidad verde de forma colectiva? 
 Participa en la <a href="http://www.generationkwh.org">Generación kWh</a> ¡y súmate al cambio!</h2>
