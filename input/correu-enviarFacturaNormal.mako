@@ -22,17 +22,15 @@ Carregarem l'import d'aquesta factura al teu número de compte durant els proper
 <li>Període del  ${data_inici} al  ${data_final}</li>
 <li><B> Import total: ${object.invoice_id.amount_total}</B>€</li>
 </ul>
+Accedeix a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures, introduir les lectures del comptador i gestionar els teus contractes amb la cooperativa.
 
-
-Pots consultar les dades del contracte i veure totes les teves factures a l’<a href="https://oficinavirtual.somenergia.coop">Oficina Virtual</a>
-
-Si tens algun dubte, trobaràs les preguntes més freqüents al <a href="http://ca.support.somenergia.coop/category/183-ja-tinc-la-llum-contractada">Centre de Suport</a>
-
-<div align="center"><b><h2>Recorda que pots <a href="https://www.somenergia.coop/ca/participa/campanyes/">Il·luminar amb bona energia</a> convidant a contractar a familiars i amics.</h2></b></div>
+<h2 align="center">Vols produir electricitat verda de forma col·lectiva? 
+Participa en la <a href="http://www.generationkwh.org/ca/">Generació kWh</a> i suma't al canvi!</h2>
 
 Atentament,
 
 Equip de Som Energia
+<a href="http://ca.support.somenergia.coop/category/183-ja-tinc-la-llum-contractada">Centre de Suport</a>
 factura@somenergia.coop
 <a href="www.somenergia.coop/ca">www.somenergia.coop</a>
 % endif
@@ -41,7 +39,7 @@ factura@somenergia.coop
 % endif
 % if object.partner_id.lang != "ca_ES":
 <p>
-<div align="right"><img src="https://www.somenergia.coop/templates/somenergia/images/logo_web.jpg"></div>Saludos,
+<div align="right"><img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>Saludos,
 
 Te enviamos la <B>factura</B> de electricidad de Som Energia. 
 
@@ -57,15 +55,15 @@ Cargaremos el importe en tu cuenta bancaria durante los próximos días.
 <li><B>Importe total: ${object.invoice_id.amount_total}</B>€</li>
 </ul>
 
-Puedes consultar los datos del contrato y ver todas tus facturas en la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>
+Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas, introducir las lecturas del contador y gestionar tus contratos de la cooperativa.
 
-Si tienes alguna duda, encontrarás las preguntas más frecuentes en el <a href="http://es.support.somenergia.coop/category/139-ya-tengo-la-luz-contratada">Centro de Ayuda</a>
-
-<div align="center"><b><h2>Recuerda que puedes <a href="https://www.somenergia.coop/participa/campanas/">Iluminar con buena energía</a> invitando a contratar a familiares y amigos.</h2></b></div>
+<h2 align="center">¿Quieres producir electricidad verde de forma colectiva? 
+Participa en la <a href="http://www.generationkwh.org">Generación kWh</a> ¡y súmate al cambio!</h2>
 
 Atentamente,
 
 Equipo de Som Energia
+<a href="http://es.support.somenergia.coop/category/139-ya-tengo-la-luz-contratada">Centro de Ayuda</a>
 factura@somenergia.coop
 <a href="http://www.somenergia.coop">www.somenergia.coop</a>
 % endif
