@@ -2,12 +2,20 @@
 import datetime
 data_inici = datetime.datetime.strptime(object.data_inici, '%Y-%m-%d').strftime('%d-%m-%Y')
 data_final = datetime.datetime.strptime(object.data_final, '%Y-%m-%d').strftime('%d-%m-%Y')
+id_soci_fact= object.polissa_id.soci.id
+id_soci_energetica = 38039
 %><!doctype html><html>
 <head><meta charset='utf8'></head>
 <body>
+% if id_soci_fact == id_soci_energetica:
+<div align="right"><img src="https://blog.somenergia.coop/wp-content/uploads/2018/10/som-energia-energetica-logos.jpg"></div>
+% endif:
+% if id_soci_fact != id_soci_energetica:
+<div align="right"><img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
+% endif:
 % if object.partner_id.lang != "es_ES":
 <p>
-<div align="right"><img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>Benvolgut/da,
+Benvolgut/da,
 
 T'enviem la <B>factura</B> d'electricitat de Som Energia. 
 
@@ -39,7 +47,7 @@ factura@somenergia.coop
 % endif
 % if object.partner_id.lang != "ca_ES":
 <p>
-<div align="right"><img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>Saludos,
+Saludos,
 
 Te enviamos la <B>factura</B> de electricidad de Som Energia. 
 

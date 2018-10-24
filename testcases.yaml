@@ -21,13 +21,14 @@
 ######################################################
 ## Facturació
 #
-#enviarFacturaNormal:
-#    template: input/correu-enviarFacturaNormal.mako
-#    model: giscedata.facturacio.factura
-#    poweremailId: 6
-#    cases:
-#        normal_ca: 444848
-#        normal_es: 403834
+enviarFacturaNormal:
+    template: input/correu-enviarFacturaNormal.mako
+    model: giscedata.facturacio.factura
+    poweremailId: 6
+    cases:
+        normal_ca: 444848
+        normal_es: 403834
+        energetica: 5084228 
 #enviarAbonament:
 #    template: input/correu-enviarAbonament.mako
 #    model: giscedata.facturacio.factura
@@ -131,46 +132,46 @@
 #     cases:
 #       nou: 147916
 #
-rebuigC104:
-    template: input/correu-rebuigC104.mako
-    model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_C1_04
-    cases:
-      nou: 147916
-#
-rebuigC204:
-    template: input/correu-rebuigC204.mako
-    model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_C2_04
-    cases:
-      nou: 147916
-#
-# rebuigA302:
-#     template: input/correu-rebuigA302.mako
-#     model: giscedata.switching
-#     poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
-#     cases:
-#       nou: 147916
-#
-rebuigA304:
-    template: input/correu-rebuigA304.mako
-    model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_A3_04
-    cases:
-      nou: 147916
-#
-# rebuigM102:
-#     template: input/correu-rebuigM102.mako
-#     model: giscedata.switching
-#     poweremailId: giscedata_switching.notification_atr_M1_02_rebuig
-#     cases:
-#       nou: 147916
-rebuigM104:
-    template: input/correu-rebuigM104.mako
-    model: giscedata.switching
-    poweremailId: giscedata_switching.notification_atr_M1_04
-    cases:
-      nou: 147916
+#rebuigC104:
+#    template: input/correu-rebuigC104.mako
+#    model: giscedata.switching
+#    poweremailId: giscedata_switching.notification_atr_C1_04
+#    cases:
+#      nou: 147916
+##
+#rebuigC204:
+#    template: input/correu-rebuigC204.mako
+#    model: giscedata.switching
+#    poweremailId: giscedata_switching.notification_atr_C2_04
+#    cases:
+#      nou: 147916
+##
+## rebuigA302:
+##     template: input/correu-rebuigA302.mako
+##     model: giscedata.switching
+##     poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
+##     cases:
+##       nou: 147916
+##
+#rebuigA304:
+#    template: input/correu-rebuigA304.mako
+#    model: giscedata.switching
+#    poweremailId: giscedata_switching.notification_atr_A3_04
+#    cases:
+#      nou: 147916
+##
+## rebuigM102:
+##     template: input/correu-rebuigM102.mako
+##     model: giscedata.switching
+##     poweremailId: giscedata_switching.notification_atr_M1_02_rebuig
+##     cases:
+##       nou: 147916
+#rebuigM104:
+#    template: input/correu-rebuigM104.mako
+#    model: giscedata.switching
+#    poweremailId: giscedata_switching.notification_atr_M1_04
+#    cases:
+#      nou: 147916
 ##
 # acceptacioB102:
 #     template: input/correu-acceptacioB102.mako
