@@ -4,7 +4,7 @@ Investment = object.pool.get('generationkwh.investment')
 investment_name = object.origin
 investment_id = Investment.search(object._cr, object._uid, [('name','=', investment_name)])
 investment_obj = Investment.read(object._cr, object._uid, investment_id)
-date_investment = investment_obj[0]['first_effective_date']
+date_investment = investment_obj[0]['purchase_date']
 from datetime import datetime, timedelta
 date = datetime.strptime(date_investment, '%Y-%m-%d')
 date = date.strftime('%d/%m/%Y')
@@ -19,7 +19,7 @@ bank_account = ' '.join(partner_bank[i:i+4] for i in xrange(0,len(partner_bank),
 
 Hola ${object.partner_id.name.split(',')[-1]},
 
-Te adjuntamos la primera liquidación correspondiente al retorno parcial del préstamo Generation kWh que hiciste el ${date}. 
+Te adjuntamos la liquidación ${num_amortization} de 24 correspondiente al retorno parcial del préstamo Generation kWh que hiciste el ${date}. 
 
 El importe amortizado será transferido, en los próximos días, a esta cuenta bancaria: <b>${bank_account}</b>.
 
@@ -49,7 +49,7 @@ Som Energia, SCCL
 
 Hola ${object.partner_id.name.split(',')[-1]},
 
-T'adjuntem la primera liquidació corresponent al retorn parcial del préstec Generation kWh que vas fer el ${date}. 
+T'adjuntem la liquidació ${num_amortization} de 24 corresponent al retorn parcial del préstec Generation kWh que vas fer el ${date}. 
 
 L'import amortitzat et serà transferit, en els propers dies, al següent compte bancari: <b>${bank_account}</b>.
 
