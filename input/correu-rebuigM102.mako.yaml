@@ -1,7 +1,7 @@
 cc: false
 to: ${object.cups_polissa_id.titular.address[0].email},${object.cups_polissa_id.pagador.address[0].email},${object.cups_polissa_id.direccio_notificacio.email}
 subject_translations:
-    ca_ES: "Som Energia: Sol·licitud rebutjada (Contrato ${object.cups_polissa_id.name}) / Solicitud rechazada (Contrato ${object.cups_polissa_id.name})"
-    es_ES: "Som Energia: Sol·licitud rebutjada (Contrato ${object.cups_polissa_id.name}) / Solicitud rechazada (Contrato ${object.cups_polissa_id.name})"
-subject: "Som Energia: Sol·licitud rebutjada (Contrato ${object.cups_polissa_id.name}) / Solicitud rechazada (Contrato ${object.cups_polissa_id.name})"
+    ca_ES: "Som Energia: Modificació contractual rebutjada / Modificación contractual rechazada (Contrato ${object.cups_polissa_id.name})"
+    es_ES: "Som Energia: Modificació contractual rebutjada / Modificación contractual rechazada (Contrato ${object.cups_polissa_id.name})"
+subject: "Som Energia: Modificació contractual rebutjada / Modificación contractual rechazada (Contrato ${object.cups_polissa_id.name})"
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
