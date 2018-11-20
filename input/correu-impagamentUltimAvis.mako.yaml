@@ -1,4 +1,4 @@
-cc: false
+cc: ${object.polissa_id.titular.www_email}
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
   es_ES: ULTIMO AVISO / ÚLTIM AVÍS. Factura impagada ${object.number}

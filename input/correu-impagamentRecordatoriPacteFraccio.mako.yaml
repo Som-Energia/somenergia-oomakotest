@@ -1,7 +1,7 @@
-cc: false
-to: ${object.polissa_id.direccio_notificacio.email}
+cc: ${object.polissa_id.titular.www_email}
+to: ${object.polissa_id.direccio_notificacio.email}, ${object.address_invoice_id.email}
 subject_translations:
-  ca_ES: "[FRACCIONAM. SOM ENERGIA] Recordatori transferència / recordatorio transferencia"
-  es_ES: "[FRACCIONAM. SOM ENERGIA] Recordatori transferència / recordatorio transferencia"
-subject: "[FRACCIONAM. SOM ENERGIA] Recordatori transferència / recordatorio transferencia"
+  ca_ES: '[FRACCIONAM. SOM ENERGIA] Recordatori transferència / recordatorio transferencia'
+  es_ES: '[FRACCIONAM. SOM ENERGIA] Recordatori transferència / recordatorio transferencia'
+subject: '[FRACCIONAM. SOM ENERGIA] Recordatori transferència / recordatorio transferencia'
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
