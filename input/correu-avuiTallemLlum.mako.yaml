@@ -1,0 +1,7 @@
+cc: ${object.polissa_id.titular.www_email}, correo@certificado.lleida.net
+to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
+subject_translations:
+  ca_ES: Corte de luz / Tall de llum
+  es_ES: Corte de luz / Tall de llum
+subject: Corte de luz / Tall de llum
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
