@@ -38,6 +38,8 @@ Si ho prefereixes, podem tornar a girar el rebut pel banc. En aquest cas, et dem
 - Període del  ${object.data_inici} al  ${object.data_final}
 - <B>Import total: ${object.invoice_id.amount_total}€</B> 
 
+Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop
+
 Salutacions,
 
 Equip de Som Energia
@@ -77,6 +79,8 @@ Si lo prefieres, podemos volver a pasar el recibo por el banco. En este caso, te
 - Fecha factura: ${object.invoice_id.date_invoice}
 - Periodo del  ${object.data_inici} al  ${object.data_final}
 - <B>Importe total: ${object.invoice_id.amount_total}</B>€
+
+Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop
 
 Un saludo,
 

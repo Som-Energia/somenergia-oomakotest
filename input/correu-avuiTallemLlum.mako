@@ -20,6 +20,8 @@ Hola ${nom_pagador},<br><br>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Ens posem en contacte amb tu per informar-te que a dia d’avui no s’han satisfet els imports del deute contret amb Som Energia de les factures pendents de subministrament elèctric. Per aquest motiu, l’empresa distribuïdora de la teva zona <b>tallarà la llum</b> del punt de subministrament amb adreça <b>${object.cups_id.direccio}</b> del qual ets titular. El tall es farà efectiu 48 hores després de l'enviament d'aquest correu. <br>
 <br>
+Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
+<br>
 Salutacions,<br>
 <br>
 Equip de Som Energia<br>
@@ -68,6 +70,8 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 Nos ponemos en contacto contigo para informarte que a día de hoy no se han satisfecho los importes de la deuda contraída con Som Energia de las facturas pendientes de suministro eléctrico. Por este motivo, la empresa distribuidora de tu zona procederá a <b>cortar la luz</b> del punto de suministro con dirección <b>${object.cups_id.direccio}</b> del cual eres titular.  El corte se hará efectivo 48 horas después del envío d'este correo.  <br>
+<br>
+Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br>
 <br>
 Para cualquier aclaración, seguimos en contacto. <br>
 <br>

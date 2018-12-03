@@ -21,14 +21,14 @@
 ######################################################
 ## Facturació
 #
-enviarFacturaNormal:
-    template: input/correu-enviarFacturaNormal.mako
-    model: giscedata.facturacio.factura
-    poweremailId: 6
-    cases:
-        normal_ca: 444848
-        normal_es: 403834
-        energetica: 5084228 
+#enviarFacturaNormal:
+#    template: input/correu-enviarFacturaNormal.mako
+#    model: giscedata.facturacio.factura
+#    poweremailId: 6
+#    cases:
+#        normal_ca: 444848
+#        normal_es: 403834
+#        energetica: 5084228
 #enviarAbonament:
 #    template: input/correu-enviarAbonament.mako
 #    model: giscedata.facturacio.factura
@@ -548,4 +548,11 @@ enviarFacturaNormal:
 #  cases:
 #    ca: 233
 #    es: 133759
-## vim: et ts=2 sw=2
+avuiTallemLlum:
+  template: input/correu-avuiTallemLlum.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 241
+  cases:
+    ca: 444848
+    es: 403834
+# vim: et ts=2 sw=2

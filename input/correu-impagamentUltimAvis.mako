@@ -36,6 +36,8 @@ Per tal de saldar aquest deute, has de transferir l'import de la factura al seg�
 - Període del  ${object.data_inici} al  ${object.data_final}
 - <B>Import total: ${object.invoice_id.amount_total}</B>€ 
 
+Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop
+
 Salutacions,
 
 Equip de Som Energia
@@ -73,6 +75,8 @@ Para saldar esta deuda, debes transferir el importe de la factura al siguiente n
 - Fecha factura: ${object.invoice_id.date_invoice}
 - Periodo del  ${object.data_inici} al  ${object.data_final}
 - <B>Importe total: ${object.invoice_id.amount_total}€</B>
+
+Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop
 
 Atentamente,
 

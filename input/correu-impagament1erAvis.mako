@@ -42,6 +42,8 @@ Per canviar de comercialitzadora pots fer el tràmit tu mateix contractant amb e
 - Període del  ${object.data_inici} al  ${object.data_final}
 -<B> Import total: ${object.invoice_id.amount_total}€</B> 
 
+Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br>
+
 Salutacions,
 
 Equip de Som Energia
@@ -114,6 +116,8 @@ Para cambiar de comercializadora puedes hacer el trámite tu mismo contactando c
 - Fecha factura: ${object.invoice_id.date_invoice}
 - Periodo del  ${object.data_inici} al  ${object.data_final}
 - <B>Importe total: ${object.invoice_id.amount_total}€</B>
+
+Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop
 
 Un saludo,
 

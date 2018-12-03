@@ -40,6 +40,8 @@ En cas de no abonar-se la quantitat deguda, en un termini de <b>2 mesos a partir
 El número de compte de Som Energia perquè facis la transferència és el següent:<br>
 <B>ES82 1491 0001 29 2027098223</B>
 <br>
+Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br>
+<br>
 Salutacions,<br>
 <br>
 Equip de Som Energia<br>
@@ -106,6 +108,8 @@ De no abonarse la cantidad adeudada en un plazo de 2 meses a partir de la notifi
 El número de cuenta de Som Energia para que realices la transferencia es el siguiente:<br>
 <br>
 <B>ES82 1491 0001 29 2027098223</B><br>
+<br>
+Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br>
 <br>
 Un saludo,<br>
 <br>
