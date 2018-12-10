@@ -56,7 +56,13 @@
 ######################################################
 ## Gestió de contractes
 #
-#contracteEsborrany:
+docu2avis:
+  template: input/correu-peticioDocumentacioSubministres-2avis.mako
+  model: giscedata.polissa
+  # poweremailId: 239 # Testing
+  poweremailId: 245 # Prod
+  cases: {}
+# Esborrany:
 #  template: input/correu-contracteEsborrany.mako
 #  model: giscedata.polissa
 #  poweremailId: 1
