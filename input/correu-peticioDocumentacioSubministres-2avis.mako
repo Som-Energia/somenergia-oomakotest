@@ -1,19 +1,14 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-    </head>
-
-    <body>
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
-            <tr>
-                <td valign=TOP rowspan="4" align="right">
-                    <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
-                </td>
-            </tr>
-        </table>
-        <br>
-        <br>
+   <head>
+    % if object.titular.lang == "ca_ES":
+        ${cabecera_cat()}
+    % else:
+        ${cabecera_es()}
+    % endif
+   </head>
+   <body>
+       <br>
         % if object.titular.lang == "ca_ES":
             ${correu_cat()}
         % else:
@@ -22,6 +17,61 @@
     </body>
 </html>
 
+<%def name="cabecera_cat()">
+    <table width="100%" frame="below" bgcolor="#E8F1D4">
+        <tr>
+            <td height=2px>
+                <font size=2><strong>Contracte Som Energia nº ${object.name}</strong></font>
+            </td>
+            <td valign=TOP rowspan="4" align="right">
+                <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
+            </td>
+        </tr>
+        <tr>
+            <td height=2px>
+                <font size=1>Adreça punt subministrament: ${object.cups.direccio}</font>
+            </td>
+        </tr>
+        <tr>
+            <td height=2px>
+                <font size=1>Codi CUPS: ${object.cups.name}</font>
+            </td>
+        </tr>
+        <tr>
+            <td height=2px width=100%>
+                <font size=1> Titular: ${object.titular.name} </font>
+            </td>
+        </tr>
+    </table>
+</%def>
+
+<%def name="cabecera_es()">
+    <table width="100%" frame="below" bgcolor="#E8F1D4">
+        <tr>
+            <td height=2px>
+                <font size=2><strong>Contracto Som Energia nº ${object.name}</strong></font>
+            </td>
+            <td valign=TOP rowspan="4" align="right">
+                <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
+            </td>
+        </tr>
+        <tr>
+            <td height=2px>
+                <font size=1>Dirección punto de subministro: ${object.cups.direccio}</font>
+            </td>
+        </tr>
+        <tr>
+            <td height=2px>
+                <font size=1>Código CUPS: ${object.cups.name}</font>
+            </td>
+        </tr>
+        <tr>
+            <td height=2px width=100%>
+                <font size=1> Titular: ${object.titular.name} </font>
+            </td>
+        </tr>
+    </table>
+</%def>
 
 <%def name="correu_cat()">
     <p>
@@ -45,7 +95,6 @@
     <p>
         Salutacions,
     </p>
-    <br>
     <br>
     Equip de Som Energia<br>
     <a href="mailto:comercialitzacio@somenergia.coop">comercialitzacio@somenergia.coop</a><br>
@@ -75,7 +124,6 @@
     <p>
         Saludos,
     </p>
-    <br>
     <br>
     Equipo de Som Energia<br>
     <a href="mailto:comercializacion@somenergia.coop">comercializacion@somenergia.coop</a><br>
