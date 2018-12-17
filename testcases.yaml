@@ -56,12 +56,12 @@
 ######################################################
 ## Gestió de contractes
 #
-docu2avis:
-  template: input/correu-peticioDocumentacioSubministres-2avis.mako
-  model: giscedata.polissa
-  # poweremailId: 239 # Testing
-  poweremailId: 245 # Prod
-  cases: {}
+#docu2avis:
+#  template: input/correu-peticioDocumentacioSubministres-2avis.mako
+#  model: giscedata.polissa
+#  # poweremailId: 239 # Testing
+#  poweremailId: 245 # Prod
+#  cases: {}
 # Esborrany:
 #  template: input/correu-contracteEsborrany.mako
 #  model: giscedata.polissa
@@ -491,54 +491,54 @@ docu2avis:
 ######################################################
 ## Impagats
 #
-impagament1erAvis:
-  template: input/correu-impagament1erAvis.mako
-  model: giscedata.facturacio.factura
-  poweremailId: 44
-  cases:
-    normal_ca: 444848
-    normal_es: 403834
-
-impagament2onAvis:
-  template: input/correu-impagament2nAvis.mako
-  model: giscedata.facturacio.factura
-  poweremailId: 56
-  cases:
-    normal_ca: 444848
-    normal_es: 403834
-
-impagamentUltimAvis:
-  template: input/correu-impagamentUltimAvis.mako
-  model: giscedata.facturacio.factura
-  poweremailId: 57
-  cases:
-    normal_ca: 444848
-    normal_es: 403834
-
-impagamentAnnex3:
-  template: input/correu-impagamentAnnex3.mako
-  model: giscedata.facturacio.factura
-  poweremailId: 237
-  cases:
-    normal_ca: 444848
-    normal_es: 403834
-
-impagamentAnnex2:
-  template: input/correu-impagamentAnnex2.mako
-  model: giscedata.facturacio.factura
-  poweremailId: 239
-  cases:
-    normal_ca: 444848
-    normal_es: 403834
-
-impagamentAnnex4:
-  template: input/correu-impagamentAnnex4.mako
-  model: giscedata.facturacio.factura
-  poweremailId: 240
-  cases:
-    normal_ca: 444848
-    normal_es: 403834
-
+#impagament1erAvis:
+#  template: input/correu-impagament1erAvis.mako
+#  model: giscedata.facturacio.factura
+#  poweremailId: 44
+#  cases:
+#    normal_ca: 444848
+#    normal_es: 403834
+#
+#impagament2onAvis:
+#  template: input/correu-impagament2nAvis.mako
+#  model: giscedata.facturacio.factura
+#  poweremailId: 56
+#  cases:
+#    normal_ca: 444848
+#    normal_es: 403834
+#
+#impagamentUltimAvis:
+#  template: input/correu-impagamentUltimAvis.mako
+#  model: giscedata.facturacio.factura
+#  poweremailId: 57
+#  cases:
+#    normal_ca: 444848
+#    normal_es: 403834
+#
+#impagamentAnnex3:
+#  template: input/correu-impagamentAnnex3.mako
+#  model: giscedata.facturacio.factura
+#  poweremailId: 237
+#  cases:
+#    normal_ca: 444848
+#    normal_es: 403834
+#
+#impagamentAnnex2:
+#  template: input/correu-impagamentAnnex2.mako
+#  model: giscedata.facturacio.factura
+#  poweremailId: 239
+#  cases:
+#    normal_ca: 444848
+#    normal_es: 403834
+#
+#impagamentAnnex4:
+#  template: input/correu-impagamentAnnex4.mako
+#  model: giscedata.facturacio.factura
+#  poweremailId: 240
+#  cases:
+#    normal_ca: 444848
+#    normal_es: 403834
+#
 #impagamentTranferRebuda:
 #  template: input/correu-impagamentTransferRebuda.mako
 #  model: giscedata.facturacio.factura
@@ -578,11 +578,22 @@ impagamentAnnex4:
 #  cases:
 #    ca: 233
 #    es: 133759
-avuiTallemLlum:
-  template: input/correu-avuiTallemLlum.mako
-  model: giscedata.facturacio.factura
-  poweremailId: 241
+#avuiTallemLlum:
+#  template: input/correu-avuiTallemLlum.mako
+#  model: giscedata.facturacio.factura
+#  poweremailId: 241
+#  cases:
+#    ca: 444848
+#    es: 403834
+#
+#########################################
+## Infoenergia
+#
+infoenergiaTancamentAny:
+  template: input/correu-infoenergiaTancamentAny.mako
+  model: giscedata.polissa
+  poweremailId: 246
   cases:
-    ca: 444848
-    es: 403834
+    ca: 17
+    es: 1028
 # vim: et ts=2 sw=2
