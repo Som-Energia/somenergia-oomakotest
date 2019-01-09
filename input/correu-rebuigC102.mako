@@ -34,6 +34,7 @@
 
 <%def name="cabecera_cat()">
     <head>
+        <meta charset='utf8'>
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=1px>
@@ -64,6 +65,7 @@
 
 <%def name="cabecera_es()">
     <head>
+        <meta charset='utf8'>
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
