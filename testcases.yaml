@@ -21,14 +21,14 @@
 ######################################################
 ## Facturació
 #
-enviarFacturaNormal:
-    template: input/correu-enviarFacturaNormal.mako
-    model: giscedata.facturacio.factura
-    poweremailId: 6
-    cases:
-        normal_ca: 444848
-        normal_es: 403834
-        energetica: 5084228 
+#enviarFacturaNormal:
+#    template: input/correu-enviarFacturaNormal.mako
+#    model: giscedata.facturacio.factura
+#    poweremailId: 6
+#    cases:
+#        normal_ca: 444848
+#        normal_es: 403834
+#        energetica: 5084228
 #enviarAbonament:
 #    template: input/correu-enviarAbonament.mako
 #    model: giscedata.facturacio.factura
@@ -117,14 +117,24 @@ enviarFacturaNormal:
 #    02_3.0_ca: 102293
 #    02_3.0_es: 101692
 #
-#
-# rebuigC102:
-#     template: input/correu-rebuigC102.mako
-#     model: giscedata.switching
-#     poweremailId: giscedata_switching.notification_atr_C1_02_rebuig
-#     cases:
-#       nou: 147916
-#
+#rebuig03NifNoCoincide:
+#    template: input/rebutjos/rebuig03.mako
+#    model: giscedata.switching.C1.02
+#    rejectid: 1234
+#    cases:
+#        es: 443704
+#        ca: 443704
+
+rebuigC102:
+    template: input/correu-rebuigC102.mako
+    model: giscedata.switching
+    poweremailId: giscedata_switching.notification_atr_C1_02_rebuig
+    data:
+        notificacio_text: "Lorem ipsum dolor sit amet consectetur adipiscing elit, maecenas mattis dui mollis feugiat himenaeos rutrum, volutpat sapien taciti euismod primis parturient. Nascetur sem lobortis urna mollis interdum conubia sollicitudin, magnis elementum pellentesque mattis nec hac curabitur quis, natoque proin purus cubilia id ligula. Cras mattis feugiat vitae lacus cursus risus faucibus duis, dictumst porttitor nam montes nisl ultrices ornare tempor fames, etiam nascetur ac felis libero himenaeos congue."
+    cases:
+      es: 193625
+      ca: 193625
+
 # rebuigC202:
 #     template: input/correu-rebuigC202.mako
 #     model: giscedata.switching
