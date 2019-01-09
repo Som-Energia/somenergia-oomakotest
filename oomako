@@ -81,7 +81,16 @@ db=None
 pool=None
 
 
-def renderMako(template, model, id, uid=1):
+def ___renderMako(template, data, model, id, uid=1):
+	#rejectioncCases = {'pas':, 'cas':}
+	#rejectionText = _renderMako(rejectionTemplate, {}, model, id, uid)
+	#externals = {'notificacio_text': rejectionText}
+
+	subtemplates = {'notificacio_text': "3.141516269"}
+	return _renderMako(template, subtemplates, model, id, uid)
+
+
+def renderMako(template, data, model, id, uid=1):
 	from contextlib import closing
 
 	global db, pool
@@ -103,6 +112,7 @@ def renderMako(template, model, id, uid=1):
 				peobject=obj,
 				env=env,
 				format_exceptions=True,
+				**data
 				)
 			result = '<br/>\n'.join(result.splitlines())
 			return result
@@ -243,7 +253,11 @@ def makeB2bTestCase(testCaseName, id) :
 		if os.access(resultFilename, os.R_OK) :
 			os.unlink(resultFilename)
 
-		output = renderMako(self.fixture.template, self.fixture.model, id)
+		output = renderMako(
+			self.fixture.template,
+			self.fixture.data,
+			self.fixture.model,
+			id)
 
 		try:
 			with codecs.open(expectedFilename,'r', 'utf8') as expectedfile:
