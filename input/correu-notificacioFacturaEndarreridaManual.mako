@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 % if object.titular.lang == "ca_ES":
-<head><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia núm. ${object.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuïdora: ${object.distribuidora.name}</font></td></tr></table></head><body>
+<head><meta charset='utf8'><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia núm. ${object.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuïdora: ${object.distribuidora.name}</font></td></tr></table></head><body>
 % else:
-<head><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuidora: ${object.distribuidora.name}</font></td></tr></table></head><body>
+<head><meta charset='utf8'><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuidora: ${object.distribuidora.name}</font></td></tr></table></head><body>
 % endif
 <%
 try:
@@ -68,13 +68,13 @@ except:
 Hola${nom_pagador},
 
 % if object.titular.lang != "es_ES":
-La facturació ha estat aturada durant aquests darrers mesos a causa d'una incidència informàtica. Per posar-la al dia hem emès ${ total_factures}  factures amb un import total que suma ${diff_amount} €.
+T’escrivim perquè hem detectat que la facturació del teu contracte havia quedat endarrerida a causa d'una incidència informàtica. Per tal de posar-la al dia, hem emès ${ total_factures} factures amb un import total que suma ${diff_amount} €.
 
-Si vols que fem algun fraccionament del cobrament, ens ho pots demanar contestant aquest mateix correu, sinó carregarem l'import corresponent al teu número de compte durant els propers dies. 
-
-Perdona les molèsties.
+Entenent que es tracta d'un error informàtic per part nostra, si ho prefereixes, podem oferir-te la possibilitat de realitzar un fraccionament del pagament. En aquest cas, ens ho pots indicar responent aquest mateix correu. Si no rebem cap comunicació per part teva en aquest sentit, sol·licitarem el cobrament domiciliat d'aquestes factures durant els pròxims dies i d'aquesta manera la situació quedarà regularitzada.
 
 Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els teus contractes amb la cooperativa.
+
+Moltes gràcies per la teva comprensió i disculpa les molèsties ocasionades.
 
 Salutacions,
 
@@ -88,13 +88,13 @@ factura@somenergia.coop
 ----------------------------------------------------------------------------------------------------
 % endif
 % if  object.titular.lang != "ca_ES":
-La facturación ha estado parada durante estos últimos meses debido a una incidencia informática. Para poner-la al día hemos emitido ${ total_factures} facturas con un importe total que suma ${diff_amount} €.
+Te escribimos porque hemos detectado que la facturación de tu contrato se había quedado atrasada debido a una incidencia informática. Para ponerla al día hemos emitido ${total_factures} facturas con un importe total que suma ${diff_amount} €.
 
-Si quieres que hagamos algún fraccionamiento del cobro, nos lo puedes pedir contestando este mismo correo, sino cargaremos el importe correspondiente a tu número de cuenta en los próximos días.
-
-Perdona las molestias.
+Entendiendo que se trata de un error informático por nuestra parte, si lo prefieres, podemos ofrecerte la posibilidad de realizar un pago fraccionado. En ese caso, nos lo puedes indicar respondiendo este mismo correo electrónico. Si no recibimos ninguna comunicación por tu parte en este sentido, durante los próximos días solicitaremos el cobro domiciliado de estas facturas y de esta manera la situación quedará regularizada.
 
 Puedes acceder a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.
+
+Muchas gracias por tu comprensión y disculpa las molestias causadas.
 
 Saludos,
 
