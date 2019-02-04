@@ -1,10 +1,29 @@
 <!doctype html>
 <html>
 % if object.titular.lang == "ca_ES":
-<head><meta charset='utf8'><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia núm. ${object.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuïdora: ${object.distribuidora.name}</font></td></tr></table></head><body>
+<head><meta charset='utf8'><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia núm. ${object.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuïdora: ${object.distribuidora.name}</font></td></tr></table></head>
 % else:
-<head><meta charset='utf8'><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuidora: ${object.distribuidora.name}</font></td></tr></table></head><body>
+<head><meta charset='utf8'><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuidora: ${object.distribuidora.name}</font></td></tr></table></head>
 % endif
+<body>
+<%
+from mako.template import Template
+def render(text_to_render, object_):
+    templ = Template(text_to_render)
+    return templ.render_unicode(
+        object=object_,
+        format_exceptions=True
+    )
+t_obj = object.pool.get('poweremail.templates')
+md_obj = object.pool.get('ir.model.data')
+template_id = md_obj.get_object_reference(
+                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+                )[1]
+text_legal = render(t_obj.read(
+    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+    object
+)
+%>
 <%
 try:
   p_obj = object.pool.get('res.partner')
@@ -65,43 +84,44 @@ except:
   diff_amount = "----"
 
 %>
-Hola${nom_pagador},
-
+Hola${nom_pagador},<br>
+<br>
 % if object.titular.lang != "es_ES":
-T’escrivim perquè hem detectat que la facturació del teu contracte havia quedat endarrerida a causa d'una incidència informàtica. Per tal de posar-la al dia, hem emès ${ total_factures} factures amb un import total que suma ${diff_amount} €.
-
-Entenent que es tracta d'un error informàtic per part nostra, si ho prefereixes, podem oferir-te la possibilitat de realitzar un fraccionament del pagament. En aquest cas, ens ho pots indicar responent aquest mateix correu. Si no rebem cap comunicació per part teva en aquest sentit, sol·licitarem el cobrament domiciliat d'aquestes factures durant els pròxims dies i d'aquesta manera la situació quedarà regularitzada.
-
-Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els teus contractes amb la cooperativa.
-
-Moltes gràcies per la teva comprensió i disculpa les molèsties ocasionades.
-
-Salutacions,
-
-Equip de Som Energia
-
-<a href="http://ca.support.somenergia.coop/category/183-ja-tinc-la-llum-contractada">Centre d'Ajuda</a>
-factura@somenergia.coop
-<a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
+T’escrivim perquè hem detectat que la facturació del teu contracte havia quedat endarrerida a causa d'una incidència informàtica. Per tal de posar-la al dia, hem emès ${ total_factures} factures amb un import total que suma ${diff_amount} €.<br>
+<br>
+Entenent que es tracta d'un error informàtic per part nostra, si ho prefereixes, podem oferir-te la possibilitat de realitzar un fraccionament del pagament. En aquest cas, ens ho pots indicar responent aquest mateix correu. Si no rebem cap comunicació per part teva en aquest sentit, sol·licitarem el cobrament domiciliat d'aquestes factures durant els pròxims dies i d'aquesta manera la situació quedarà regularitzada.<br>
+<br>
+Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els teus contractes amb la cooperativa.<br>
+<br>
+Moltes gràcies per la teva comprensió i disculpa les molèsties ocasionades.<br>
+<br>
+Salutacions,<br>
+<br>
+Equip de Som Energia<br>
+<br>
+<a href="http://ca.support.somenergia.coop/category/183-ja-tinc-la-llum-contractada">Centre d'Ajuda</a><br>
+factura@somenergia.coop<br>
+<a href="http://www.somenergia.coop/ca">www.somenergia.coop</a><br>
 % endif
 % if  object.titular.lang != "ca_ES" and  object.pagador.lang != "es_ES":
 ----------------------------------------------------------------------------------------------------
 % endif
 % if  object.titular.lang != "ca_ES":
-Te escribimos porque hemos detectado que la facturación de tu contrato se había quedado atrasada debido a una incidencia informática. Para ponerla al día hemos emitido ${total_factures} facturas con un importe total que suma ${diff_amount} €.
-
-Entendiendo que se trata de un error informático por nuestra parte, si lo prefieres, podemos ofrecerte la posibilidad de realizar un pago fraccionado. En ese caso, nos lo puedes indicar respondiendo este mismo correo electrónico. Si no recibimos ninguna comunicación por tu parte en este sentido, durante los próximos días solicitaremos el cobro domiciliado de estas facturas y de esta manera la situación quedará regularizada.
-
-Puedes acceder a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.
-
-Muchas gracias por tu comprensión y disculpa las molestias causadas.
-
-Saludos,
-
-Equipo de Som Energia
-<a href="http://es.support.somenergia.coop/category/139-ya-tengo-la-luz-contratada">Centro de Ayuda</a>
-factura@somenergia.coop
-<a href="http://www.somenergia.coop">www.somenergia.coop</a>
+Te escribimos porque hemos detectado que la facturación de tu contrato se había quedado atrasada debido a una incidencia informática. Para ponerla al día hemos emitido ${total_factures} facturas con un importe total que suma ${diff_amount} €.<br>
+<br>
+Entendiendo que se trata de un error informático por nuestra parte, si lo prefieres, podemos ofrecerte la posibilidad de realizar un pago fraccionado. En ese caso, nos lo puedes indicar respondiendo este mismo correo electrónico. Si no recibimos ninguna comunicación por tu parte en este sentido, durante los próximos días solicitaremos el cobro domiciliado de estas facturas y de esta manera la situación quedará regularizada.<br>
+<br>
+Puedes acceder a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.<br>
+<br>
+Muchas gracias por tu comprensión y disculpa las molestias causadas.<br>
+<br>
+Saludos,<br>
+<br>
+Equipo de Som Energia<br>
+<a href="http://es.support.somenergia.coop/category/139-ya-tengo-la-luz-contratada">Centro de Ayuda</a><br>
+factura@somenergia.coop<br>
+<a href="http://www.somenergia.coop">www.somenergia.coop</a><br>
 % endif
+${text_legal}
 </body>
 </html>
