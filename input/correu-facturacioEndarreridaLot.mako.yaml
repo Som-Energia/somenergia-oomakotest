@@ -1,5 +1,6 @@
 cc: false
 to: ${object.polissa_id.direccio_pagament.email},${object.polissa_id.direccio_notificacio.email}
 subject_translations: {}
-subject: Facturació endarrerida (contracte ${object.polissa_id.name})/Facturación atrasada (contrato ${object.polissa_id.name})
+subject: Facturació endarrerida (contracte ${object.polissa_id.name})/Facturación
+  atrasada (contrato ${object.polissa_id.name})
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
