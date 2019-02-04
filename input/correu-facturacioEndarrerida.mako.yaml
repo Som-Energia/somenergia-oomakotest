@@ -1,7 +1,10 @@
 cc: false
 to: ${object.direccio_pagament.email},${object.direccio_notificacio.email}
 subject_translations:
-  ca_ES: Facturació contracte ${object.name} / Facturación contrato ${object.name}
+  ca_ES: Facturació endarrerida (contracte ${object.name})/Facturación atrasada (contrato
+    ${object.name})
+  es_ES: Facturació endarrerida (contracte ${object.name})/Facturación atrasada (contrato
+    ${object.name})
 subject: Facturació endarrerida (contracte ${object.name})/Facturación atrasada (contrato
   ${object.name})
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
