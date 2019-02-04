@@ -1,10 +1,6 @@
-<%
-import datetime
-data_inici = datetime.datetime.strptime(object.data_inici, '%Y-%m-%d').strftime('%d-%m-%Y')
-data_final = datetime.datetime.strptime(object.data_final, '%Y-%m-%d').strftime('%d-%m-%Y')
-%><!doctype html>
+<!doctype html>
 <html>
-<head></head>
+<head><meta charset='utf8'></head>
 <body>
 <table width="100%" frame="below" BGCOLOR="#F2F2F2">
 % if object.invoice_id.partner_id.lang == "ca_ES":
@@ -22,6 +18,29 @@ data_final = datetime.datetime.strptime(object.data_final, '%Y-%m-%d').strftime(
 % endif
 </table>
 <%
+from mako.template import Template
+def render(text_to_render, object_):
+    templ = Template(text_to_render)
+    return templ.render_unicode(
+        object=object_,
+        format_exceptions=True
+    )
+t_obj = object.pool.get('poweremail.templates')
+md_obj = object.pool.get('ir.model.data')
+template_id = md_obj.get_object_reference(
+                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+                )[1]
+text_legal = render(t_obj.read(
+    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+    object
+)
+%>
+<%
+import datetime
+data_inici = datetime.datetime.strptime(object.data_inici, '%Y-%m-%d').strftime('%d-%m-%Y')
+data_final = datetime.datetime.strptime(object.data_final, '%Y-%m-%d').strftime('%d-%m-%Y')
+%>
+<%
 try:
   p_obj = object.pool.get('res.partner')
   if not p_obj.vat_es_empresa(object._cr, object._uid,'object.polissa_id.pagador.vat'):
@@ -31,74 +50,73 @@ try:
 except:
   nom_pagador = ''
 %>
-Hola${nom_pagador},
+Hola${nom_pagador},<br>
 % if object.invoice_id.partner_id.lang != "es_ES":
-
-T'enviem l'<B>abonament</B> d'una factura anterior d'electricitat de Som Energia, ja que les lectures facturades no eren correctes.
-
-Aquesta factura d'abonament anul·la la que havíem emès anteriorment per al mateix període.
-Durant els propers dies rebràs la factura rectificada on hi consten les noves dades de les que disposem.
-
-La setmana vinent realitzarem els moviments bancaris corresponents (retorn de l'abonament i cobrament de la factura rectificada).
-
-<U>Resum de la factura ABONADA</U>
-- Adreça punt subministrament: ${object.cups_id.direccio}
-- Codi CUPS: ${object.cups_id.name}
-- Titular: ${object.polissa_id.titular.name}
-- Número de factura: ${object.number}
-- Data factura: ${object.invoice_id.date_invoice}
-- Període del ${data_inici} al ${data_final}
--<B> Import total: ${object.invoice_id.amount_total}</B>€ 
-
-Si tens qualsevol dubte, pots respondre aquest mateix correu.
-
-Recorda que pots consultar totes les teves factures a l'Oficina Virtual.
-Enllaços que et poden ser d'ajuda:
-<a href="http://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">Com puc accedir a l’Oficina Virtual?</a>
-<a href="http://ca.support.somenergia.coop/article/267-on-puc-consultar-les-meves-factures">On puc consultar les meves factures?</a>
-
-
-Atentament,
-
-Equip de Som Energia
-factura@somenergia.coop
-<a href="www.somenergia.coop/ca">www.somenergia.coop</a>
+<br>
+T'enviem l'<B>abonament</B> d'una factura anterior d'electricitat de Som Energia, ja que les lectures facturades no eren correctes.<br>
+<br>
+Aquesta factura d'abonament anul·la la que havíem emès anteriorment per al mateix període.<br>
+<br>
+En cas d'haver-te cobrat la factura original, la setmana vinent realitzarem els moviments bancaris corresponents.<br>
+<br>
+<U>Resum de la factura ABONADA</U><br>
+- Adreça punt subministrament: ${object.cups_id.direccio}<br>
+- Codi CUPS: ${object.cups_id.name}<br>
+- Titular: ${object.polissa_id.titular.name}<br>
+- Número de factura: ${object.number}<br>
+- Data factura: ${object.invoice_id.date_invoice}<br>
+- Període del ${data_inici} al ${data_final}<br>
+-<B> Import total: ${object.invoice_id.amount_total}</B>€ <br>
+<br>
+Si tens qualsevol dubte, pots respondre aquest mateix correu.<br>
+<br>
+Recorda que pots consultar totes les teves factures a l'Oficina Virtual.<br>
+Enllaços que et poden ser d'ajuda:<br>
+<a href="http://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">Com puc accedir a l’Oficina Virtual?</a><br>
+<a href="http://ca.support.somenergia.coop/article/267-on-puc-consultar-les-meves-factures">On puc consultar les meves factures?</a><br>
+<br>
+<br>
+Atentament,<br>
+<br>
+Equip de Som Energia<br>
+factura@somenergia.coop<br>
+<a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES" and  object.invoice_id.partner_id.lang != "es_ES":
 <HR align="LEFT" size="1" width="400" color="Black" noshade>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
-
-Te enviamos el <B>abono</B> de una factura anterior de electricidad de Som Energia, ya que las lecturas facturadas no eran correctas.
-
-Esta factura de abono anula la que habíamos emitido anteriormente para el mismo periodo.
-Durante los próximos días recibirás la factura rectificada donde constan los nuevos datos de los que disponemos.
-
-La próxima semana realizaremos los movimientos bancarios correspondientes (retorno del abono y cobro de la factura rectificada).
-
-<U>Resumen de la factura ABONADA</U>
-- Dirección punto suministro: ${object.cups_id.direccio}
-- Titular: ${object.polissa_id.titular.name}
-- Codigo CUPS: ${object.cups_id.name}
-- Número factura: ${object.number}
-- Fecha factura: ${object.invoice_id.date_invoice}
-- Periodo del ${data_inici} al ${data_final}
-- <B>Importe total: ${object.invoice_id.amount_total}</B>€
-
-Si tienes cualquier duda, puedes responder este mismo correo.
-
-Recuerda que puedes consultar todas tus facturas en la Oficina Virtual.
-Enlaces que pueden ser útiles:
-<a href="http://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">¿Cómo puedo acceder a la Oficina Virtual?</a>
-<a href="http://es.support.somenergia.coop/article/280-donde-puedo-consultar-mis-facturas">¿Dónde puedo consultar mis facturas?</a>
-
-
-Atentamente,
-
-Equipo de Som Energia
-factura@somenergia.coop
-<a href="http://www.somenergia.coop/">www.somenergia.coop</a>
+<br>
+Te enviamos el <B>abono</B> de una factura anterior de electricidad de Som Energia, ya que las lecturas facturadas no eran correctas.<br>
+<br>
+Esta factura de abono anula la que habíamos emitido anteriormente para el mismo periodo.<br>
+<br>
+En caso de haber cobrado la factura original, la próxima semana realizaremos los movimientos bancarios correspondientes.<br>
+<br>
+<U>Resumen de la factura ABONADA</U><br>
+- Dirección punto suministro: ${object.cups_id.direccio}<br>
+- Titular: ${object.polissa_id.titular.name}<br>
+- Codigo CUPS: ${object.cups_id.name}<br>
+- Número factura: ${object.number}<br>
+- Fecha factura: ${object.invoice_id.date_invoice}<br>
+- Periodo del ${data_inici} al ${data_final}<br>
+- <B>Importe total: ${object.invoice_id.amount_total}</B>€<br>
+<br>
+Si tienes cualquier duda, puedes responder este mismo correo.<br>
+<br>
+Recuerda que puedes consultar todas tus facturas en la Oficina Virtual.<br>
+Enlaces que pueden ser útiles:<br>
+<a href="http://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">¿Cómo puedo acceder a la Oficina Virtual?</a><br>
+<a href="http://es.support.somenergia.coop/article/280-donde-puedo-consultar-mis-facturas">¿Dónde puedo consultar mis facturas?</a><br>
+<br>
+<br>
+Atentamente,<br>
+<br>
+Equipo de Som Energia<br>
+factura@somenergia.coop<br>
+<a href="http://www.somenergia.coop/">www.somenergia.coop</a><br>
 % endif
+${text_legal}
 </body>
 </html>
 </html>
