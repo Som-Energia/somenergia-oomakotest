@@ -1,0 +1,7 @@
+cc: false
+to: ${object.pagador_email}
+subject_translations:
+  ca_ES: Informe d’estiu de l’Infoenergia
+  es_ES: Informe de verano del Infoenergia
+subject: INFOENERGIA ${env['user']._context.get('period')} (${env['user']._context.get('empowering_channel')})
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
