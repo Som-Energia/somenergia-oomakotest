@@ -1,0 +1,7 @@
+cc: false
+to: ${object.pagador_email}
+subject_translations:
+  ca_ES: Segon Informe 2018 del Servei d’Infoenergia (contracte ${object.name})
+  es_ES: Segundo Informe 2018 del Servicio de Infoenergia (contrato ${object.name})
+subject: INFOENERGIA ${env['user']._context.get('period')} (${env['user']._context.get('empowering_channel')})
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
