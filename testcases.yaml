@@ -52,7 +52,27 @@
 #   cases:
 #     ca: 297510
 #     es: 297504
-
+#
+#peticioLecturaComptadorDistribuidora:
+#  template: input/correu-peticioLecturaComptadorDistribuidora.mako
+#  model: giscedata.polissa
+#  poweremailId: 16
+#  cases:
+#    altres_ca: 80
+#    endesa_ca: 62
+#    iberdr_ca: 122
+#    altres_es: 116
+#    endesa_es: 10
+#    iberdr_es: 66
+#
+# peticioLecturaComptador:
+#   template: input/correu-peticioLecturaComptador.mako
+#   model: giscedata.polissa
+#   poweremailId: 49
+#   cases:
+#     ca: 2374
+#     es: 69398
+#
 ######################################################
 ## Gestió de contractes
 #
@@ -383,15 +403,6 @@
 ##  poweremailId: 81
 ##  cases:
 ##    ca: 2391140
-#
-##peticioLecturaComptador:
-##  template: input/correu-peticioLecturaComptador.mako
-##  model: giscedata.polissa
-##  poweremailId: 49
-##  cases:
-##    ca: 2374
-##    es: 69398
-#
 #
 ######################################################
 ## Inversions
