@@ -1,0 +1,7 @@
+cc: false
+to: ${object.direccio_pagament.email}
+subject_translations:
+  ca_ES: Canvi de comptador / Cambio de contador
+  es_ES: Canvi de comptador / Cambio de contador
+subject: Canvi de comptador / Cambio de contador
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

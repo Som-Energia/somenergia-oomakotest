@@ -73,6 +73,14 @@
 #     ca: 2374
 #     es: 69398
 #
+#facturacioEstimadaCanviComptador:
+#   template: input/correu-facturacioEstimadaCanviComptador.mako
+#   model: giscedata.polissa
+#   poweremailId: 53
+#   cases:
+#     ca: 69398
+#     es: 116
+#
 ######################################################
 ## Gestió de contractes
 #
