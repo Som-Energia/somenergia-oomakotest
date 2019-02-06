@@ -89,6 +89,22 @@
 #     ca: 69398
 #     es: 116
 #
+#abonadoraPerEmail:
+#   template: input/correu-abonadoraPerEmail.mako
+#   model: giscedata.facturacio.factura
+#   poweremailId: 58
+#   cases:
+#    ca: 444848
+#    es: 403834
+#
+#resumFacturaPerEmail:
+#   template: input/correu-resumFacturaPerEmail.mako
+#   model: giscedata.polissa
+#   poweremailId: 59
+#   cases:
+#     ca: 69398
+#     es: 116
+
 ######################################################
 ## Gestió de contractes
 #

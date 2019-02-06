@@ -1,0 +1,6 @@
+cc: false
+to: ${object.direccio_pagament.email}
+subject_translations:
+  es_ES: Refacturación (contrato ${object.name})/
+subject: Refacturació (contracte ${object.name})/
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
