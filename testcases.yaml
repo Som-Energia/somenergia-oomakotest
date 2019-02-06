@@ -110,8 +110,12 @@
 #   model: giscedata.polissa
 #   poweremailId: 39
 #   cases:
-#     ca: 69398
-#     es: 116
+#    altres_ca: 80
+#    endesa_ca: 62
+#    iberdr_ca: 122
+#    altres_es: 116
+#    endesa_es: 10
+#    iberdr_es: 66
 #
 #enviarLecturesOVcapEnd:
 #   template: input/correu-enviarlecturesOVcapEnd.mako
