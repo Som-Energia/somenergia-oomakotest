@@ -81,6 +81,14 @@
 #     ca: 69398
 #     es: 116
 #
+#resumAbonadoresRecificadores:
+#   template: input/correu-resumAbonadoresRecificadores.mako
+#   model: giscedata.polissa
+#   poweremailId: 55
+#   cases:
+#     ca: 69398
+#     es: 116
+#
 ######################################################
 ## Gestió de contractes
 #
