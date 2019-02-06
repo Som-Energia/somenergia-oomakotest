@@ -1,0 +1,10 @@
+cc: false
+to: ${object.direccio_pagament.email},${object.direccio_notificacio.email}
+subject_translations:
+  ca_ES: 'Som Energia: Lectura de consum [Estimades] (contracte ${object.name}) /
+    Lectura de consumo [Estimadas] (contrato ${object.name}) '
+  es_ES: 'Som Energia: Lectura de consum [Estimades] (contracte ${object.name}) /
+    Lectura de consumo [Estimadas] (contrato ${object.name}) '
+subject: 'Som Energia: Lectura de consum [Estimades] (contracte ${object.name}) /
+  Lectura de consumo [Estimadas] (contrato ${object.name}) '
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

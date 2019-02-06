@@ -1,0 +1,7 @@
+cc: false
+to: lectura.cliente@endesa.es
+subject_translations:
+  ca_ES: 'Aportación lectura cliente. CUPS: ${object.cups.name}'
+  es_ES: 'Aportación lectura cliente. CUPS: ${object.cups.name}'
+subject: 'Aportación lectura cliente. CUPS: ${object.cups.name}'
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

@@ -104,7 +104,23 @@
 #   cases:
 #     ca: 69398
 #     es: 116
-
+#
+#peticioLecturacomptadorEndIbe:
+#   template: input/correu-peticioLecturacomptadorEndIbe.mako
+#   model: giscedata.polissa
+#   poweremailId: 39
+#   cases:
+#     ca: 69398
+#     es: 116
+#
+#enviarLecturesOVcapEnd:
+#   template: input/correu-enviarlecturesOVcapEnd.mako
+#   model: giscedata.polissa
+#   poweremailId: 42
+#   cases:
+#     ca: 69398
+#     es: 116
+#
 ######################################################
 ## Gestió de contractes
 #
