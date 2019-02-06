@@ -30,10 +30,10 @@
 <br> 
 Nos complace que formes parte de la cooperativa que construye un modelo energético renovable en manos de la ciudadanía, desde la participación y la transparencia. Esperamos que juntos podamos lograr nuestros objetivos de transformar el modelo energético apostando por las energías renovables y la eficiencia energética.<br> 
 <br> 
-<table width="30%" align="center" border="0" cellspacing="0" cellpadding="0"><tr><td><fieldset><P ALIGN=left>Número de socio/a: <b>${object.partner_id.ref | socifilter}</b>
-Nombre del socio/a: ${object.name}
-Fecha de ingreso: ${ingres}
-Aportación al capital social: 100€</fieldset></td></tr></table>
+<table width="30%" align="center" border="0" cellspacing="0" cellpadding="0"><tr><td><fieldset><P ALIGN=left>Número de socio/a: <b>${object.partner_id.ref | socifilter}</b><br>
+Nombre del socio/a: ${object.name}<br>
+Fecha de ingreso: ${ingres}<br>
+Aportación al capital social: 100€</fieldset></td></tr></table><br>
 <br> 
 Te animamos a que nos ayudes a difundir el proyecto de Som Energia, haciéndote amigo/a en <a href="https://es-es.facebook.com/somenergia">Facebook</a> siguiéndonos en <a href="https://twitter.com/SomEnergia">Twitter</a> o enviando un enlace de <a href="www.somenergia.coop">nuestra página web</a> a quien creas pueda estar interesado/a.<br>
 Si quieres participar de la cooperativa de una forma más activa puedes consultar en el apartado de <a href="http://www.somenergia.coop/participa/">participación de nuestra web</a>: formar parte de un grupo local, de la plataforma, consultar nuestro blog.<br> 
