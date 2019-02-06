@@ -53,6 +53,14 @@
 #     ca: 297510
 #     es: 297504
 #
+#notificacioFacturaEndarreridaManual:
+#  template: input/correu-notificacioFacturaEndarreridaManual.mako
+#  model: giscedata.polissa
+#  poweremailId: 210
+#  cases:
+#    ca: 233
+#    es: 133759
+#
 #peticioLecturaComptadorDistribuidora:
 #  template: input/correu-peticioLecturaComptadorDistribuidora.mako
 #  model: giscedata.polissa
@@ -634,13 +642,6 @@
 #    normal_ca: 444848
 #    normal_es: 403834
 #
-#notificacioFacturaEndarreridaManual:
-#  template: input/correu-notificacioFacturaEndarreridaManual.mako
-#  model: giscedata.polissa
-#  poweremailId: 210
-#  cases:
-#    ca: 233
-#    es: 133759
 #avuiTallemLlum:
 #  template: input/correu-avuiTallemLlum.mako
 #  model: giscedata.facturacio.factura
