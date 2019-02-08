@@ -1,10 +1,29 @@
-
-
 <!doctype html>
 <html>
-<head></head>
+% if object.titular.lang == "ca_ES":
+<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia núm. ${object.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuïdora: ${object.distribuidora.name}</font></td></tr></table></head>
+% else:
+<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuidora: ${object.distribuidora.name}</font></td></tr></table></head>
+% endif
 <body>
 <%
+from mako.template import Template
+def render(text_to_render, object_):
+    templ = Template(text_to_render)
+    return templ.render_unicode(
+        object=object_,
+        format_exceptions=True
+    )
+t_obj = object.pool.get('poweremail.templates')
+md_obj = object.pool.get('ir.model.data')
+template_id = md_obj.get_object_reference(
+                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+                )[1]
+text_legal = render(t_obj.read(
+    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+    object
+)
+
 try:
   p_obj = object.pool.get('res.partner')
   if not p_obj.vat_es_empresa(object._cr, object._uid,'object.pagador.vat'):
@@ -58,6 +77,7 @@ except:
   normal_amount = "----"
   diff_amount = "----"
 %>
+% if object.titular.lang != "es_ES":
 Benvolgut/da ${nom_pagador},
 
 Hem rectificat les últimes factures del teu contracte degut a modificacions a les lectures reals del teu comptador
@@ -76,5 +96,27 @@ El resultat final d'aquesta rectificació és una diferència de ${diff_amount} 
 Atentament,
 
 ${object.comercialitzadora.name}
+% endif
+% if object.titular.lang != "ca_ES":
+Estimado/da ${nom_pagador},
+
+Hemos rectificado las últimas facturas de tu contrato debido a modificaciones en las lecturas reales de tu contador
+
+Se han realizado las siguientes tareas:
+
+- Hemos anulado ${ab_num_factures} facturas, que van desde el ${ab_data_inici} hasta el ${ab_data_final}. Su importe suma ${ab_amount} €.
+- Hemos emitido ${normal_num_factures} factures nueves hasta el ${normal_data_final}, con las que regularizamos la facturación. El importe total de las nuevas facturas es de ${normal_amount} €.
+
+% if abonar:
+El resultado final de esta rectificación es una diferencia de ${diff_amount} €, que ingresaremos en su cuenta próximamente.
+% else:
+El resultado final de esta rectificación es una diferencia de ${diff_amount} €, que giraremos en su cuenta próximamente.
+% endif
+
+Atentamente,
+
+${object.comercialitzadora.name}
+% endif
+${text_legal}
 </body>
 </html>
