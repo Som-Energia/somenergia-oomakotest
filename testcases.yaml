@@ -8,6 +8,15 @@
 #    finana: 41
 #
 ######################################################
+## Common templates
+#
+# legal_footer:
+#    template: input/common/legal_footer.mako
+#    poweremailId: som_poweremail_common_templates.common_template_legal_footer
+#    cases: {}
+#
+#
+######################################################
 ## Forms
 #
 # nouSoci:
@@ -16,7 +25,6 @@
 #   poweremailId: 2
 #   cases:
 #     ca: 192
-
 #
 ######################################################
 ## Facturació
@@ -142,11 +150,12 @@
 #  # poweremailId: 239 # Testing
 #  poweremailId: 245 # Prod
 #  cases: {}
-# Esborrany:
-#  template: input/correu-contracteEsborrany.mako
-#  model: giscedata.polissa
-#  poweremailId: 1
-#  cases: {}
+# esborrany:
+#   template: input/correu-contracteEsborrany.mako
+#   model: giscedata.polissa
+#   poweremailId: 1
+#   cases:
+#       es: 297510
 #
 #canviDePagador:
 #  template: input/correu-canviPagador.mako
