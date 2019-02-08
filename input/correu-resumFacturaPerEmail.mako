@@ -78,44 +78,44 @@ except:
   diff_amount = "----"
 %>
 % if object.titular.lang != "es_ES":
-Benvolgut/da ${nom_pagador},
-
-Hem rectificat les últimes factures del teu contracte degut a modificacions a les lectures reals del teu comptador
-
-S'han realitzat les següents tasques:
-
-- Hem anul·lat ${ab_num_factures} factures, que van des del ${ab_data_inici} fins al ${ab_data_final}. El seu import suma ${ab_amount} €.
-- Hem emès ${normal_num_factures} factures noves fins al ${normal_data_final}, amb les que regularitzem la facturació. L'import total de les noves factures és de ${normal_amount} €.
-
+Benvolgut/da ${nom_pagador},<br>
+<br>
+Hem rectificat les últimes factures del teu contracte degut a modificacions a les lectures reals del teu comptador<br>
+<br>
+S'han realitzat les següents tasques:<br>
+<br>
+- Hem anul·lat ${ab_num_factures} factures, que van des del ${ab_data_inici} fins al ${ab_data_final}. El seu import suma ${ab_amount} €.<br>
+- Hem emès ${normal_num_factures} factures noves fins al ${normal_data_final}, amb les que regularitzem la facturació. L'import total de les noves factures és de ${normal_amount} €.<br>
+<br>
 % if abonar:
-El resultat final d'aquesta rectificació és una diferència de ${diff_amount} €, que ingressarem al teu compte properament.
+El resultat final d'aquesta rectificació és una diferència de ${diff_amount} €, que ingressarem al teu compte properament.<br>
 % else:
-El resultat final d'aquesta rectificació és una diferència de ${diff_amount} €, que girarem al teu compte properament.
+El resultat final d'aquesta rectificació és una diferència de ${diff_amount} €, que girarem al teu compte properament.<br>
 % endif
-
-Atentament,
-
-${object.comercialitzadora.name}
+<br>
+Atentament,<br>
+<br>
+${object.comercialitzadora.name}<br>
 % endif
 % if object.titular.lang != "ca_ES":
-Estimado/da ${nom_pagador},
-
-Hemos rectificado las últimas facturas de tu contrato debido a modificaciones en las lecturas reales de tu contador
-
-Se han realizado las siguientes tareas:
-
-- Hemos anulado ${ab_num_factures} facturas, que van desde el ${ab_data_inici} hasta el ${ab_data_final}. Su importe suma ${ab_amount} €.
-- Hemos emitido ${normal_num_factures} factures nueves hasta el ${normal_data_final}, con las que regularizamos la facturación. El importe total de las nuevas facturas es de ${normal_amount} €.
-
+Estimado/da ${nom_pagador},<br>
+<br>
+Hemos rectificado las últimas facturas de tu contrato debido a modificaciones en las lecturas reales de tu contador<br>
+<br>
+Se han realizado las siguientes tareas:<br>
+<br>
+- Hemos anulado ${ab_num_factures} facturas, que van desde el ${ab_data_inici} hasta el ${ab_data_final}. Su importe suma ${ab_amount} €.<br>
+- Hemos emitido ${normal_num_factures} factures nueves hasta el ${normal_data_final}, con las que regularizamos la facturación. El importe total de las nuevas facturas es de ${normal_amount} €.<br>
+<br>
 % if abonar:
-El resultado final de esta rectificación es una diferencia de ${diff_amount} €, que ingresaremos en su cuenta próximamente.
+El resultado final de esta rectificación es una diferencia de ${diff_amount} €, que ingresaremos en su cuenta próximamente.<br>
 % else:
-El resultado final de esta rectificación es una diferencia de ${diff_amount} €, que giraremos en su cuenta próximamente.
+El resultado final de esta rectificación es una diferencia de ${diff_amount} €, que giraremos en su cuenta próximamente.<br>
 % endif
-
-Atentamente,
-
-${object.comercialitzadora.name}
+<br>
+Atentamente,<br>
+<br>
+${object.comercialitzadora.name}<br>
 % endif
 ${text_legal}
 </body>
