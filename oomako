@@ -104,7 +104,7 @@ def renderMako(template, model, id, uid=1):
 				env=env,
 				format_exceptions=True,
 				)
-			result = '<br/>\n'.join(result.splitlines())
+			#result = '<br/>\n'.join(result.splitlines()) #Comment to avoid insert <br>
 			return result
 
 def getId(O, fixture):
