@@ -571,21 +571,21 @@
 ######################################################
 ## Impagats
 #
-#impagament1erAvis:
-#  template: input/correu-impagament1erAvis.mako
-#  model: giscedata.facturacio.factura
-#  poweremailId: 44
-#  cases:
-#    normal_ca: 444848
-#    normal_es: 403834
-#
-#impagament2onAvis:
-#  template: input/correu-impagament2nAvis.mako
-#  model: giscedata.facturacio.factura
-#  poweremailId: 56
-#  cases:
-#    normal_ca: 444848
-#    normal_es: 403834
+impagament1erAvis:
+  template: input/correu-impagament1erAvis.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 44
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
+
+impagament2onAvis:
+  template: input/correu-impagament2onAvis.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 56
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
 #
 #impagamentUltimAvis:
 #  template: input/correu-impagamentUltimAvis.mako
@@ -662,11 +662,11 @@
 #########################################
 ## Infoenergia
 #
-infoenergiaTancamentAny:
-  template: input/correu-infoenergiaTancamentAny.mako
-  model: giscedata.polissa
-  poweremailId: 246
-  cases:
-    ca: 17
-    es: 1028
+#infoenergiaTancamentAny:
+#  template: input/correu-infoenergiaTancamentAny.mako
+#  model: giscedata.polissa
+#  poweremailId: 246
+#  cases:
+#    ca: 17
+#    es: 1028
 # vim: et ts=2 sw=2
