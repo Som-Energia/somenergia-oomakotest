@@ -1,0 +1,10 @@
+cc: false
+to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
+subject_translations:
+  ca_ES: Abonament factura electricitat ${object.number} \ Abono factura electricidad
+    ${object.number}
+  es_ES: Abonament factura electricitat ${object.number} \ Abono factura electricidad
+    ${object.number}
+subject: Abonament factura electricitat ${object.number} \ Abono factura electricidad
+  ${object.number}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

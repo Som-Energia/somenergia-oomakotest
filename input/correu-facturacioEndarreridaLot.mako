@@ -38,6 +38,7 @@ from datetime import datetime
 last_invoiced_date = datetime.strptime(object.polissa_id.data_ultima_lectura or object.polissa_id.data_alta, '%Y-%m-%d')
 last_invoiced_date_formatted = last_invoiced_date.strftime('%d/%m/%Y')
 %>
+<br>
 Hola${nom_pagador},<br>
 <br>
 % if object.polissa_id.titular.lang != "es_ES":

@@ -41,16 +41,17 @@ except:
   data = "DATA NO ENCONTRATADA"
   lectura = "LECTURA NO FACILITADA POR EL CLIENTE"
 %>
+<br>
 Buenos días,<br>
 <br>
 De nuestro cliente con:<br>
-<ul><li>Contrato de suministro:  ${object.ref_dist}</li>
-<li>Contador: ${object.comptador}</li>
-<li>Número de CUPS: ${object.cups.name} </li></ul>
+<ul><li>Contrato de suministro:  ${object.ref_dist}</li><br>
+<li>Contador: ${object.comptador}</li><br>
+<li>Número de CUPS: ${object.cups.name} </li><br></ul>
 <br>
 Os aportamos la lectura que nos ha sido informada:<br>
-<ul><li>Lectura: ${lectura} </li>
-<li>Fecha: ${data}</li></ul>
+<ul><li>Lectura: ${lectura} </li><br>
+<li>Fecha: ${data}</li></ul><br>
 <br>
 Agradecemos su colaboración y le saludamos atentamente.<br>
 <br>

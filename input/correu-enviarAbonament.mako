@@ -50,6 +50,7 @@ try:
 except:
   nom_pagador = ''
 %>
+<br>
 Hola${nom_pagador},<br>
 % if object.invoice_id.partner_id.lang != "es_ES":
 <br>

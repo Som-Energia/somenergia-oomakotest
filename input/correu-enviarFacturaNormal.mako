@@ -33,7 +33,7 @@ text_legal = render(t_obj.read(
 <div align="right"><img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
 % endif:
 % if object.partner_id.lang != "es_ES":
-<p>
+<p><br>
 Benvolgut/da,<br>
 <br>
 T'enviem la <B>factura</B> d'electricitat de Som Energia. <br>
@@ -42,12 +42,12 @@ Carregarem l'import d'aquesta factura al teu número de compte durant els proper
 </p>
 <br>
 <U><B>Resum de la factura</B></U><br>
-<ul><li>Número de factura: ${object.number}</li>
-<li>Codi CUPS: ${object.cups_id.name}</li>
-<li>Adreça punt subministrament: ${object.cups_id.direccio}</li>
-<li>Titular: ${object.polissa_id.titular.name}</li>
-<li>Període del  ${data_inici} al  ${data_final}</li>
-<li><B> Import total: ${object.invoice_id.amount_total}</B>€</li>
+<ul><li>Número de factura: ${object.number}</li><br>
+<li>Codi CUPS: ${object.cups_id.name}</li><br>
+<li>Adreça punt subministrament: ${object.cups_id.direccio}</li><br>
+<li>Titular: ${object.polissa_id.titular.name}</li><br>
+<li>Període del  ${data_inici} al  ${data_final}</li><br>
+<li><B> Import total: ${object.invoice_id.amount_total}</B>€</li><br>
 </ul><br>
 Accedeix a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els teus contractes amb la cooperativa.<br>
 <br>
@@ -65,7 +65,7 @@ factura@somenergia.coop<br>
 ----------------------------------------------------------------------------------------------------
 % endif
 % if object.partner_id.lang != "ca_ES":
-<p>
+<p><br>
 Saludos,<br>
 <br>
 Te enviamos la <B>factura</B> de electricidad de Som Energia. <br>
@@ -74,12 +74,12 @@ Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
 </p>
 <br>
 <U>Resumen de la factura</U><br>
-<ul><li>Número factura: ${object.number}</li>
-<li>Codigo CUPS: ${object.cups_id.name}</li>
-<li>Dirección punto suministro: ${object.cups_id.direccio}</li>
-<li>Titular: ${object.polissa_id.titular.name}</li>
-<li>Periodo del  ${data_inici} al  ${data_final}</li>
-<li><B>Importe total: ${object.invoice_id.amount_total}</B>€</li>
+<ul><li>Número factura: ${object.number}</li><br>
+<li>Codigo CUPS: ${object.cups_id.name}</li><br>
+<li>Dirección punto suministro: ${object.cups_id.direccio}</li><br>
+<li>Titular: ${object.polissa_id.titular.name}</li><br>
+<li>Periodo del  ${data_inici} al  ${data_final}</li><br>
+<li><B>Importe total: ${object.invoice_id.amount_total}</B>€</li><br>
 </ul><br>
 <br>
 Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.<br>

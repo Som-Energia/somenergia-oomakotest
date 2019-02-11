@@ -77,6 +77,7 @@ except:
   normal_amount = "----"
   diff_amount = "----"
 %>
+<br>
 % if object.titular.lang != "es_ES":
 Benvolgut/da ${nom_pagador},<br>
 <br>

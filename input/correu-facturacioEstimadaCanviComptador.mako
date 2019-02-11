@@ -100,6 +100,7 @@ except:
   
 
 %>
+<br>
 Hola${nom_pagador},<br>
 % if  object.pagador.lang != "es_ES":
 <br>

@@ -32,7 +32,7 @@ text_legal = render(t_obj.read(
     object
 )
 %>
-
+<br>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Benvolgut/da ${object.polissa_id.direccio_pagament.name},<br>
 <br>

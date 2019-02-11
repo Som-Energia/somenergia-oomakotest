@@ -42,6 +42,7 @@ try:
 except:
   data_ultima_lectura = 'Error'
 %>
+<br>
 Hola${nom_titular},<br>
 <br>
 % if object.titular.lang != "es_ES":

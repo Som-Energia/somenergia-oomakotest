@@ -1,0 +1,10 @@
+cc: false
+to: ${object.direccio_pagament.email},${object.direccio_notificacio.email}
+subject_translations:
+  es_ES: Petició Lectura comptador (contracte ${object.name})/ Petición Lectura contador
+    (contrato ${object.name})
+  ca_ES: Petició lectura comptador (contracte ${object.name})/ Petición Lectura contador
+    (contrato ${object.name})
+subject: Petició Lectura comptador (contracte ${object.name})/ Petición Lectura contador
+  (contrato ${object.name})
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

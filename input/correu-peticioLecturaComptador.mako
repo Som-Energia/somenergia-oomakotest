@@ -41,6 +41,7 @@ try:
 except:
   data_alta = u"Error: no tenim d'alta alta registrada"
 %>
+<br>
 Hola${nom_pagador},<br>
 <br>
 % if  object.pagador.lang != "es_ES":

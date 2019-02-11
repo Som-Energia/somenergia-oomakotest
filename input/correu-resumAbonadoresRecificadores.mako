@@ -74,6 +74,7 @@ except:
   normal_amount = "----"
   diff_amount = "----"
 %>
+<br>
 Hola${nom_pagador},<br>
 <br>
 % if object.titular.lang != "es_ES":
