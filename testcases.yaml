@@ -212,6 +212,18 @@
 #    02_3.0_ca: 102293
 #    02_3.0_es: 101692
 #
+#rebuig03NifNoCoincide:
+#    template: input/rebutjos/rebuig03.mako
+#    model: giscedata.switching
+#    rejectId: 1234
+#    cases:
+#        es:
+#            id: 733
+#            pas: 1
+#        ca:
+#            id: 723
+#            pas: 1
+#
 #rebuigC102:
 #    template: input/correu-rebuigC102.mako
 #    model: giscedata.switching
