@@ -1,51 +1,69 @@
 <!doctype html>
 <html>
-<head><meta charset="utf-8"/></head><br/>
 <body>
 <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
+<%
+from mako.template import Template
+def render(text_to_render, object_):
+    templ = Template(text_to_render)
+    return templ.render_unicode(
+        object=object_,
+        format_exceptions=True
+    )
+t_obj = object.pool.get('poweremail.templates')
+md_obj = object.pool.get('ir.model.data')
+template_id = md_obj.get_object_reference(
+                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+                )[1]
+text_legal = render(t_obj.read(
+    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+    object
+)
+%>
 % if object.partner_id.lang != "es_ES":
-
-Benvolgut/da ${object.partner_id.name.split(',')[-1]},
-
-Volem informar-te que a data d'avui hem girat el rebut corresponent a la teva aportació voluntària al capital social de la cooperativa Som Energia SCCL i per tant, en dos o tres dies (laborables) es realitzarà el càrrec al teu compte. 
-
-T'adjuntem les condicions de la teva inversió i et recordem que per a qualsevol dubte o aclariment en relació a l’aportació realitzada pots enviar una mail a <a href="mailto:invertir@somenergia.coop">invertir@somenergia.coop</a> o consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a>. 
-
+<br/>
+Benvolgut/da ${object.partner_id.name.split(',')[-1]},<br/>
+<br/>
+Volem informar-te que a data d'avui hem girat el rebut corresponent a la teva aportació voluntària al capital social de la cooperativa Som Energia SCCL i per tant, en dos o tres dies (laborables) es realitzarà el càrrec al teu compte. <br/>
+<br/>
+T'adjuntem les condicions de la teva inversió i et recordem que per a qualsevol dubte o aclariment en relació a l’aportació realitzada pots enviar una mail a <a href="mailto:invertir@somenergia.coop">invertir@somenergia.coop</a> o consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a>. <br/>
+<br/>
 Aprofitem per agrair-te, una vegada més, la teva implicació amb l’objectiu compartit d’assolir un model energètic 100% renovable!
-Recorda que també pots participar de la Generació kWh per generar la teva energia a partir de nous projectes col·lectius de generació. Consulta el web <a href="https://www.generationkwh.org/ca">www.generationkwh.org</a>.
-
-Pots fer córrer la veu explicant el projecte a familiars i amics/gues. Com més siguem, més energia verda generarem!
-
-Moltes gràcies i bona energia!
-
-Atentament,
-
-Som Energia, SCCL
-<a href="www.somenergia.coop/ca">www.somenergia.coop</a>
+Recorda que també pots participar de la Generació kWh per generar la teva energia a partir de nous projectes col·lectius de generació. Consulta el web <a href="https://www.generationkwh.org/ca">www.generationkwh.org</a>.<br/>
+<br/>
+Pots fer córrer la veu explicant el projecte a familiars i amics/gues. Com més siguem, més energia verda generarem!<br/>
+<br/>
+Moltes gràcies i bona energia!<br/>
+<br/>
+Atentament,<br/>
+<br/>
+Som Energia, SCCL<br/>
+<a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 % endif
 % if  object.partner_id.lang != "ca_ES" and  object.partner_id.lang != "es_ES":
-<HR align="LEFT" size="1" width="400" color="Black" noshade>
+<br/><HR align="LEFT" size="1" width="400" color="Black" noshade><br/>
 % endif
 % if  object.partner_id.lang != "ca_ES":
-
-Apreciado/a ${object.partner_id.name.split(',')[-1]},
-
-Queremos informarte que a fecha de hoy hemos girado el recibo correspondiente a tu aportación voluntaria al capital social de la cooperativa Som EnergiaSCCL y en dos o tres días (laborables) se realizará el cargo a tu cuenta.
-
-Adjuntamos el contrato con las condiciones de tu inversión y te recordamos que para cualquier duda o aclaración en relación a la aportación realizada puedes enviar una mail a <a href="mailto:invertir@somenergia.coop">invertir@somenergia.coop</a> o consultar la web <a href="https://www.somenergia.coop">www.somenergia.coop</a>. 
-
+<br/>
+Apreciado/a ${object.partner_id.name.split(',')[-1]},<br/>
+<br/>
+Queremos informarte que a fecha de hoy hemos girado el recibo correspondiente a tu aportación voluntaria al capital social de la cooperativa Som EnergiaSCCL y en dos o tres días (laborables) se realizará el cargo a tu cuenta.<br/>
+<br/>
+Adjuntamos el contrato con las condiciones de tu inversión y te recordamos que para cualquier duda o aclaración en relación a la aportación realizada puedes enviar una mail a <a href="mailto:invertir@somenergia.coop">invertir@somenergia.coop</a> o consultar la web <a href="https://www.somenergia.coop">www.somenergia.coop</a>. <br/>
+<br/>
 Aprovechamos para agradecerte, una vez más, tu implicación con el objetivo compartido de lograr un modelo energético 100% renovable.
-Recuerda que también puedes participar de la Generación kWh para generar tu energía con nuevos proyectos colectivos de generación. Consulta la web <a href="https://www.generationkwh.org/es">www.generationkwh.org</a>.
-
-Haz que corra la voz explicando el proyecto a familiares y amigos. Cuantos/as más seamos, más energía verde generaremos.
-
-¡Muchas gracias y buena energía!
-
-Atentamente,
-
-Som Energia, SCCL
-<a href="http://www.somenergia.coop">www.somenergia.coop</a>
+Recuerda que también puedes participar de la Generación kWh para generar tu energía con nuevos proyectos colectivos de generación. Consulta la web <a href="https://www.generationkwh.org/es">www.generationkwh.org</a>.<br/>
+<br/>
+Haz que corra la voz explicando el proyecto a familiares y amigos. Cuantos/as más seamos, más energía verde generaremos.<br/>
+<br/>
+¡Muchas gracias y buena energía!<br/>
+<br/>
+Atentamente,<br/>
+<br/>
+Som Energia, SCCL<br/>
+<a href="https://www.somenergia.coop">www.somenergia.coop</a><br/>
 % endif
+<br/>
+${text_legal}
 </body>
-</html>
 </html>
