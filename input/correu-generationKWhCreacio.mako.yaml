@@ -1,0 +1,7 @@
+cc: false
+to: ${object.member_id.partner_id.address[0].email}
+subject_translations:
+  ca_ES: Generation kWh Som Energia Ref. ${object.name}
+  es_ES: Generation kWh Som Energia Ref. ${object.name}
+subject: Generation kWh Som Energia Ref. ${object.name}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
