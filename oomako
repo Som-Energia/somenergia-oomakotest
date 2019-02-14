@@ -169,6 +169,7 @@ def test():
     sys.argv.append("--verbose"); print sys.argv
     unittest.main()
 
+
 def download():
 	for case in args.testcases:
 		case in testcases or fail(
@@ -217,8 +218,8 @@ def download():
 		else:
 			step("Download not implemented for {}...".format(name))
 
-def upload():
 
+def upload():
 	def write(filename, content):
 		with codecs.open(filename, 'w', 'utf8') as f:
 			f.write(content)
@@ -290,7 +291,7 @@ def listtemplates():
 	from ooop import OOOP
 	O = OOOP(**remoteErpConfig)
 	for t in O.PoweremailTemplates.all():
-		print u'{} {} "{}"'.format(t.id, t.model_int_name, t.name)
+		print u'{:<3} {} "{}"'.format(t.id, t.model_int_name, t.name)
 
 
 def listrejecttemplates():
@@ -299,6 +300,7 @@ def listrejecttemplates():
 	O = OOOP(**remoteErpConfig)
 	for t in O.GiscedataSwitchingNotify.all():
 		print u'{:<3} {} {} "{}"'.format(t.id, t.proces_id.name, t.step_id.name, t.info_rebuig)
+
 
 def accept() :
 	import shutil
