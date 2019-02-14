@@ -31,6 +31,7 @@ for nargs, command, help in [
 	('+', 'download', "Descarrega plantilla de l'entorn de producció"),
 	('',  'list', "Llista els casos de test disponibles"),
 	('',  'listtemplates', "Lista els templates al servidor"),
+	('',  'listrejecttemplates', "Llista els templates de rebuig al servidor"),
 	('*', 'status', "Mostra l'estat dels casos"),
 	('*', 'import', "Importa els templates"),
 	] :
@@ -290,6 +291,14 @@ def listtemplates():
 	O = OOOP(**remoteErpConfig)
 	for t in O.PoweremailTemplates.all():
 		print u'{} {} "{}"'.format(t.id, t.model_int_name, t.name)
+
+
+def listrejecttemplates():
+	print "id pas cas info del rebuig"
+	from ooop import OOOP
+	O = OOOP(**remoteErpConfig)
+	for t in O.GiscedataSwitchingNotify.all():
+		print u'{:<3} {} {} "{}"'.format(t.id, t.proces_id.name, t.step_id.name, t.info_rebuig)
 
 def accept() :
 	import shutil
