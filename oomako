@@ -143,12 +143,15 @@ def renderMako(template, model, id, data, uid=1):
 			#result = '<br/>\n'.join(result.splitlines()) #Comment to avoid insert <br>
 			return result
 
-def getId(O, fixture):
+def getId(O, fixture, idLabel='poweremailId'):
 
-    if type(fixture.poweremailId) == int:
-        return fixture.poweremailId
+    if idLabel not in fixture:
+        return None
 
-    module, name = fixture.poweremailId.split('.')
+    if type(fixture[idLabel]) == int:
+        return fixture[idLabel]
+
+    module, name = fixture[idLabel].split('.')
 
     model, id = O.IrModelData.get_object_reference(module, name)
 
@@ -156,6 +159,9 @@ def getId(O, fixture):
 
 def getTemplate(O, fixture):
     return O.PoweremailTemplates.get(getId(O, fixture))
+
+def getRejectTemplate(O, fixture):
+    return O.GiscedataSwitchingNotify.get(getId(O, fixture, 'rejectId'))
 
 def test():
     unittest.TestCase.__str__ = unittest.TestCase.id
@@ -171,32 +177,40 @@ def download():
 	from ooop import OOOP
 	O = OOOP(**remoteErpConfig)
 	for name, fixture in testcases.items():
-		if 'poweremailId' not in fixture: continue
-		if args.testcases and name not in args.testcases:
-			continue
-		template = getTemplate(O, fixture)
-		step("Fetching {}...".format(name))
-		with codecs.open(fixture.template, 'w', 'utf8') as f:
-			f.write(template.def_body_text)
-		if fixture.get('model') != template.model_int_name:
-			warn("Compte, el model hauria de ser '{}'"
-				.format(template.model_int_name))
+		if 'poweremailId' in fixture:
+			if args.testcases and name not in args.testcases:
+				continue
+			template = getTemplate(O, fixture)
+			step("Fetching {}...".format(name))
+			with codecs.open(fixture.template, 'w', 'utf8') as f:
+				f.write(template.def_body_text)
+			if fixture.get('model') != template.model_int_name:
+				warn("Compte, el model hauria de ser '{}'"
+					.format(template.model_int_name))
 
-		headers = ns(
-			to=template.def_to,
-			cc=template.def_cc,
-			bcc=template.def_bcc,
-			subject=template.def_subject,
-			subject_translations=ns(),
-		)
-		for translation in O.IrTranslation.filter(
-				name='poweremail.templates,def_subject',
-				res_id=template.id,
-				):
-			headers.subject_translations[translation.lang] = translation.value
+			headers = ns(
+				to=template.def_to,
+				cc=template.def_cc,
+				bcc=template.def_bcc,
+				subject=template.def_subject,
+				subject_translations=ns(),
+			)
+			for translation in O.IrTranslation.filter(
+					name='poweremail.templates,def_subject',
+					res_id=template.id,
+					):
+				headers.subject_translations[translation.lang] = translation.value
 
-		print ("HEADER:\n",  headers.dump())
-		headers.dump(fixture.template+'.yaml')
+			print ("HEADER:\n",  headers.dump())
+			headers.dump(fixture.template+'.yaml')
+		if 'rejectId' in fixture:
+			if args.testcases and name not in args.testcases:
+				continue
+			template = getRejectTemplate(O, fixture)
+			step("Fetching {}...".format(name))
+			with codecs.open(fixture.template, 'w', 'utf8') as f:
+				f.write(template.notify_text)
+			step("Done in {}...".format(fixture.template))
 
 def upload():
 	from ooop import OOOP
