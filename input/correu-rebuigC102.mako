@@ -1,9 +1,12 @@
 <%
-    p_obj = object.pool.get('res.partner')
-
-    nom_titular = ' {}'.format(p_obj.separa_cognoms(
-        object._cr, object._uid, object.cups_polissa_id.titular.name
-    )['nom']) if not object.vat_enterprise() else ""
+try:
+  p_obj = object.pool.get('res.partner')
+  if not object.vat_enterprise():
+    nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.cups_polissa_id.titular.name)['nom']
+  else:
+    nom_titular = ''
+except:
+  nom_titular = ''
 %>
 
 
@@ -34,6 +37,7 @@
 
 <%def name="cabecera_cat()">
     <head>
+        <meta charset='utf8'>
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=1px>
@@ -64,6 +68,7 @@
 
 <%def name="cabecera_es()">
     <head>
+        <meta charset='utf8'>
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
