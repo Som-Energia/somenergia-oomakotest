@@ -144,6 +144,13 @@
 ######################################################
 ## Gestió de contractes
 #
+#avisCanviHora:
+#   template: input/correu-avisCanviHora.mako
+#   model: giscedata.polissa
+#   poweremailId: 47
+#   cases:
+#     ca: 69398
+#     es: 116
 #docu2avis:
 #  template: input/correu-peticioDocumentacioSubministres-2avis.mako
 #  model: giscedata.polissa
