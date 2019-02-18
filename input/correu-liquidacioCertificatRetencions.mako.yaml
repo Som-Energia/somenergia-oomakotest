@@ -1,0 +1,9 @@
+cc: false
+to: ${object.partner_id.address[0].email}
+subject_translations:
+  es_ES: Certificado retenciones intereses aportaciones voluntarias 2014 / Certificat
+    retencions interessos aportacions voluntàries 2014
+  ca_ES: Certificat IRPF 2017 aportacions voluntaries - Som Energia
+subject: Certificado retenciones intereses aportaciones voluntarias 2014 / Certificat
+  retencions interessos aportacions voluntàries 2014
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
