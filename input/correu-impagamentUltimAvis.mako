@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 % if object.invoice_id.partner_id.lang == "ca_ES":
-<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia nº ${object.polissa_id.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Titular: ${object.polissa_id.titular.name}</font></td></tr></table></head>
+<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><font SIZE=2><strong>Contracte Som Energia nº ${object.polissa_id.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><font SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><font SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><font SIZE=1>Titular: ${object.polissa_id.titular.name}</font></td></tr></table></head>
 % else:
-<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.polissa_id.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Titular: ${object.polissa_id.titular.name}</font></td></tr></table></head>
+<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><font SIZE=2><strong>Contrato Som Energia nº ${object.polissa_id.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><font SIZE=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><font SIZE=1>Código CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><font SIZE=1>Titular: ${object.polissa_id.titular.name}</font></td></tr></table></head>
 % endif
 <body>
 <%
@@ -45,16 +45,16 @@ Si no rebem cap comunicació per part teva, entendrem que no hi ha voluntat de p
 <br/>
 Per tal de saldar aquest deute, has de transferir l'import de la factura al següent número de compte. Recorda d’indicar, si us plau, el número de factura o el número de contracte en el concepte.<br/>
 <br/>
-<B>ES82 1491 0001 29 2027098223</B><br/>
+<b>ES82 1491 0001 29 2027098223</b><br/>
 <br/>
-<U>Resum de la teva factura</U><br/>
+<u>Resum de la teva factura</u><br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
 - Codi CUPS: ${object.cups_id.name}<br/>
-- Número de factura: <B>${object.number}</B><br/>
+- Número de factura: <b>${object.number}</b><br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
-- <B>Import total: ${object.invoice_id.amount_total}</B>€ <br/>
+- <b>Import total: ${object.invoice_id.amount_total}</b>€ <br/>
 <br/>
 Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
@@ -62,7 +62,7 @@ Salutacions,<br/>
 <br/>
 Equip de Som Energia<br/>
 factura@somenergia.coop<br/>
-<a href="www.somenergia.coop/ca">www.somenergia.coop</a><br/>
+<a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 <br/>
 <font size="2">Avís a les persones en situació de <b>RISC D'EXCLUSIÓ RESIDENCIAL</b>:<br/>
 Les persones que presenten una mancança de recursos econòmics poden obtenir ajudes de les administracions públiques (locals i autonòmiques) que els hi permeti seguir tenint accés als subministraments bàsics: aigua potable, gas i electricitat.<br/>
@@ -74,7 +74,7 @@ La persona titular del contracte pot acollir-se al mercat regulat (PVPC) on, en 
 <br/>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES" and  object.invoice_id.partner_id.lang != "es_ES":
-<br/><HR align="LEFT" size="1" width="400" color="Black" noshade><br/>
+<br/><hr align="LEFT" size="1" width="400" color="Black" noshade><br/>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 A pesar del envío de varios correos de reclamación, todavía no hemos recibido respuesta alguna, por lo que te requerimos, una vez más, el pago de esta factura.<br/>
@@ -85,16 +85,16 @@ En el supuesto de que no recibamos ninguna comunicación por tu parte, entendere
 <br/>
 Para saldar esta deuda, debes transferir el importe de la factura al siguiente número de cuenta. Recuerda indicar, por favor, el número de factura o el número de contrato en el concepto.<br/>
 <br/>
-<B>ES82 1491 0001 29 2027098223</B><br/>
+<b>ES82 1491 0001 29 2027098223</b><br/>
 <br/>
-<U>Resumen de la factura</U><br/>
+<u>Resumen de la factura</u><br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
 - Codigo CUPS: ${object.cups_id.name}<br/>
-- Número factura: <B>${object.number}</B><br/>
+- Número factura: <b>${object.number}</b><br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
-- <B>Importe total: ${object.invoice_id.amount_total}€</B><br/>
+- <b>Importe total: ${object.invoice_id.amount_total}€</b><br/>
 <br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>
@@ -104,9 +104,9 @@ Un saludo,<br/>
 <br/>
 Equipo de Som Energia<br/>
 factura@somenergia.coop<br/>
-<a href="http://www.somenergia.coop">www.somenergia.coop</a><br/>
+<a href="https://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
-<font size="2">Aviso a las personas en situación de <B>RIESGO DE EXCLUSIÓN RESIDENCIAL</B>:<br/>
+<font size="2">Aviso a las personas en situación de <b>RIESGO DE EXCLUSIÓN RESIDENCIAL</b>:<br/>
 Las personas que presentan una falta de recursos económicos pueden obtener ayudas de las administraciones públicas (locales o autonómicas) que les permitan seguir teniendo acceso a los suministros básicos: agua potable, gas y electricidad.<br/>
 Si te encuentras en esta situación, te recomendamos que contactes con los servicios sociales de tu municipio; ellos te informarán de estas ayudas y qué pasos debes seguir para poder beneficiarte.<br/>
 Antes de dar aviso para que corten el suministro eléctrico solicitaremos a Servicios Sociales del ayuntamiento donde vives que nos informen si eres usuario/a de estos servicios o si te encuentras en alguna de las situaciones de riesgo de exclusión residencial.<br/>
