@@ -1,0 +1,10 @@
+cc: false
+to: ${object.partner_id.address[0].email}
+subject_translations:
+  es_ES: Liquidaciones intereses titulos participativos / Liquidacions interessos
+    títols participatius
+  ca_ES: Liquidacions interessos títols participatius / Liquidaciones intereses titulos
+    participativos
+subject: Liquidaciones intereses titulos participativos / Liquidacions interessos
+  títols participatius
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
