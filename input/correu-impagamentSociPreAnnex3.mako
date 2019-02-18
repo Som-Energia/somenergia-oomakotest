@@ -66,14 +66,14 @@ Salutacions,<br/>
 <br/>
 Equip de Som Energia<br/>
 factura@somenergia.coop<br/>
-<a href="www.somenergia.coop/ca">www.somenergia.coop</a><br/>
+<a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
 Si compliu els requisits per ser consumidor vulnerable, podeu sol·licitar a una de les empreses comercialitzadores de referència acollir-se al bo social, que suposa un descompte sobre el preu voluntari per al petit consumidor (PVPC). El canvi de modalitat en el contracte per passar a PVPC, sempre que no es modifiquin els paràmetres que recull el contracte d’accés de tercers a la xarxa, s’ha de portar a terme sense cap tipus de penalització ni cost addicional. Una vegada acollit al PVPC, i sempre que s’hagin acreditat els requisits per ser consumidor vulnerable, el termini perquè se us pugui suspendre el subministrament d’electricitat, en cas que no s’hagi abonat la quantitat deguda, passa a ser de 4 mesos (comptats sempre des de la recepció del requeriment fefaent de pagament). <br/>
 <br/>
 L’enllaç a la pàgina web de la CNMC, en la qual trobareu les dades necessàries per contactar amb la comercialitzadora de referència, és el següent: <a href="https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados">https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados</a><br/>
 <br/>
-Addicionalment, si compliu els requisits per ser vulnerable sever, us podeu posar en contacte amb els serveis socials del municipi i la comunitat autònoma en què residiu perquè us informin sobre la possibilitat d’atendre el pagament del vostre subministrament d’electricitat. Els requisits per ser consumidor vulnerable es recullen a l’article 3 del Reial decret 897/2017, de 6 d’octubre, pel qual es regula la figura del consumidor vulnerable, el bo social i altres mesures de protecció per als consumidors domèstics d’energia elèctrica, del qual us remetem un extracte.<br/>
+Addicionalment,, si compliu els requisits per ser vulnerable sever, us podeu posar en contacte amb els serveis socials del municipi i la comunitat autònoma en què residiu perquè us informin sobre la possibilitat d’atendre el pagament del vostre subministrament d’electricitat. Els requisits per ser consumidor vulnerable es recullen a l’article 3 del Reial decret 897/2017, de 6 d’octubre, pel qual es regula la figura del consumidor vulnerable, el bo social i altres mesures de protecció per als consumidors domèstics d’energia elèctrica, del qual us remetem un extracte.<br/>
 <br/>
 Article 3. Definició de consumidor vulnerable.<br/>
 <br/>
@@ -101,12 +101,12 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 <a href="https://blog.somenergia.coop/grupos-locales/aragon/2018/03/el-nuevo-bono-social/">El nuevo Bono Social</a><br/>
 <a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">Acceso a las tablas de pensiones mínimas</a><br/>
 <a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">¿Qué es el PVPC?</a><br/>
-<a href="http://www.minetad.gob.es/energia/bono-social/Paginas/preguntas-fr<br/>ecuentes-bono-social.aspx#contenido">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br/>
+<a href="https://www.minetad.gob.es/energia/bono-social/Paginas/preguntas-fr<br/>ecuentes-bono-social.aspx#contenido">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br/>
 </font>
 <br/>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES" and  object.invoice_id.partner_id.lang != "es_ES":
-<hr align="LEFT" size="1" width="400" color="Black" noshade>
+<HR align="LEFT" size="1" width="400" color="Black" noshade>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 Te informamos que si te encuentras en una situación de vulnerabilidad económica, y en cumplimiento de la legislación vigente (Real Decreto 897/2017, de 6 de octubre, por el cual se regula la figura del consumidor vulnerable, el bono social y otras medidas de protección para los consumidores domésticos de energía eléctrica), tu contrato tendría que pasar a la comercializadora de referencia para poderte acoger al bono social y al PVPC. Som Energia no lo puede aplicar por ley, a pesar de que lo financia. <br/>
@@ -136,7 +136,7 @@ Un saludo,<br/>
 <br/>
 Equipo de Som Energia<br/>
 factura@somenergia.coop<br/>
-<a href="http://www.somenergia.coop">www.somenergia.coop</a><br/>
+<a href="https://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
 Si usted cumple los requisitos para ser consumidor vulnerable, puede solicitar a una de las empresas comercializadoras de referencia acogerse al bono social, que supone un descuento sobre el precio voluntario para el pequeño consumidor (PVPC). El cambio de modalidad en el contrato para pasar a PVPC, siempre que no se modifiquen los parámetros recogidos en el contrato de acceso de terceros a la red, se llevará a cabo sin ningún tipo de penalización ni coste adicional. Una vez acogido al PVPC, y siempre que se hayan acreditado los requisitos para ser consumidor vulnerable, el plazo para que su suministro de electricidad pueda ser suspendido, de no haber sido abonada la cantidad adeudada, pasará a ser 4 meses (contados siempre desde la recepción del requerimiento fehaciente de pago). <br/>
@@ -170,7 +170,7 @@ En el caso de que un consumidor que cumpla los requisitos para percibir el bono 
 <a href="https://blog.somenergia.coop/grupos-locales/aragon/2018/03/el-nuevo-bono-social/">El nuevo Bono Social</a><br/>
 <a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">Acceso a las tablas de pensiones mínimas</a><br/>
 <a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">¿Qué es el PVPC?</a><br/>
-<a href="http://www.minetad.gob.es/energia/bono-social/Paginas/preguntas-frecuentes-bono-social.aspx#contenido">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br/>
+<a href="https://www.minetad.gob.es/energia/bono-social/Paginas/preguntas-frecuentes-bono-social.aspx#contenido">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br/>
 </font><br/>
 <br/>
 % endif
