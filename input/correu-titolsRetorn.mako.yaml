@@ -1,0 +1,7 @@
+cc: false
+to: ${object.partner_id.address[0].email}
+subject_translations:
+  ca_ES: Retorn títols participatius / Retorno títulos participativos Som Energia
+  es_ES: Retorn títols participatius / Retorno títulos participativos Som Energia
+subject: Retorn títols participatius / Retorno títulos participativos Som Energia
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

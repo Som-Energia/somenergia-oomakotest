@@ -1,0 +1,7 @@
+cc: false
+to: ${object.partner_id.address[0].email}
+subject_translations:
+  ca_ES: Càrrec compra títols Som Energia Ref. petició ${object.name}
+  es_ES: Cargo compra títulos Som Energia Ref. petición ${object.name}
+subject: Càrrec compra títols Som Energia
+bcc: invertir@somenergia.coop, support.17062.b8d9f4469fa4d856@helpscout.net

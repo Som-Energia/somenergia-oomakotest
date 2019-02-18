@@ -582,21 +582,38 @@
 #    ca: 809864
 #    es: 810046
 #
-liquidacioAportacioVoluntaria:
-  template: input/correu-liquidacioAportacioVoluntaria.mako
-  model: account.invoice
-  poweremailId: 11
+#liquidacioAportacioVoluntaria:
+#  template: input/correu-liquidacioAportacioVoluntaria.mako
+#  model: account.invoice
+#  poweremailId: 11
+#  cases:
+#    ca: 809864
+#    es: 810046
+#
+#liquidacioCertificatRetencions:
+#  template: input/correu-liquidacioCertificatRetencions.mako
+#  model: account.invoice
+#  poweremailId: 14
+#  cases:
+#    ca: 809864
+#    es: 810046
+#
+titolsRetorn:
+  template: input/correu-titolsRetorn.mako
+  model: payment.line
+  poweremailId: 7
   cases:
-    ca: 809864
-    es: 810046
+    ca: 1707734
+    es: 1707735
 
-liquidacioCertificatRetencions:
-  template: input/correu-liquidacioCertificatRetencions.mako
-  model: account.invoice
-  poweremailId: 14
+titolsPas2:
+  template: input/correu-titolsPas2.mako
+  model: payment.line
+  poweremailId: 8
   cases:
-    ca: 809864
-    es: 810046
+    ca: 1707734
+    es: 1707735
+
 #baixa02:
 #  template: input/correu-baixaTallSubministrament02.mako
 #  model: giscedata.switching
