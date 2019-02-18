@@ -92,7 +92,6 @@ Salutacions,<br>
 Equip de Som Energia<br>
 factura@somenergia.coop<br>
 <a href="www.somenergia.coop">www.somenergia.coop</a><br>
-<div align="center"><img src="https://www.somenergia.coop/images/stories/moduls/ca/energia-verda.jpg" border=0></div>
 % endif
 % if  object.titular.lang != "ca_ES" and  object.pagador.lang != "es_ES":
 ----------------------------------------------------------------------------------------------------
@@ -118,7 +117,6 @@ Atentamente,<br>
 Equipo de Som Energia<br>
 factura@somenergia.coop<br>
 <a href="http://www.somenergia.coop/es/">www.somenergia.coop</a><br>
-<div align="center"><img src="https://www.somenergia.coop/images/stories/moduls/es/energia-verda-cast.jpg" border=0></div>
 % endif
 ${text_legal}
 </body>
