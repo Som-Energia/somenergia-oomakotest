@@ -1,5 +1,5 @@
 cc: ${object.polissa_id.titular.www_email}
-to: ${object.polissa_id.direccio_notificacio.email}, ${object.address_invoice_id.email}
+to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
   ca_ES: '[TRANSFER. SOM ENERGIA] Recordatori transferència / recordatorio transferencia'
   es_ES: '[TRANSFER. SOM ENERGIA] Recordatori transferència / recordatorio transferencia'
