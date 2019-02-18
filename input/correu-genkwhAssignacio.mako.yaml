@@ -1,0 +1,7 @@
+cc: false
+to: ${object.www_email}
+subject_translations:
+  ca_ES: 'Generation kWh: Comencem a rebre energia! [${object.ref[1:]}]'
+  es_ES: 'Generation kWh: ¡Empezamos a recibir energía! [${object.ref[1:]}]'
+subject: 'Generation kWh: ¡Empezamos a recibir energía! [${object.ref[1:]}]'
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

@@ -1,0 +1,5 @@
+cc: false
+to: ${object.partner_id.address[0].email}
+subject_translations: {}
+subject: Cargo / Càrrec Generation kWh Ref. ${object.name}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

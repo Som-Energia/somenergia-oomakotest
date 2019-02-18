@@ -106,7 +106,7 @@ Un saludo,<br/>
 <br/>
 Equipo de Som Energia<br/>
 factura@somenergia.coop<br/>
-<a href="http://www.somenergia.coop">www.somenergia.coop</a><br/>
+<a href="https://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
 <font size="2">Aviso a las personas en situación de <B>RIESGO DE EXCLUSIÓN RESIDENCIAL</B>:<br/>
 Las personas que presentan una falta de recursos económicos pueden obtener ayudas de las administraciones públicas (locales o autonómicas) que les permitan seguir teniendo acceso a los suministros básicos: agua potable, gas y electricidad.<br/>

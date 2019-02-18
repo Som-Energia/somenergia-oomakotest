@@ -593,30 +593,30 @@
 ######################################################
 ## Impagats
 #
-#impagament1erAvis:
-#  template: input/correu-impagament1erAvis.mako
-#  model: giscedata.facturacio.factura
-#  poweremailId: 44
-#  cases:
-#    normal_ca: 444848
-#    normal_es: 403834
-#
-#impagament2onAvis:
-#  template: input/correu-impagament2onAvis.mako
-#  model: giscedata.facturacio.factura
-#  poweremailId: 56
-#  cases:
-#    normal_ca: 444848
-#    normal_es: 403834
-#
-#impagamentUltimAvis:
-#  template: input/correu-impagamentUltimAvis.mako
-#  model: giscedata.facturacio.factura
-#  poweremailId: 57
-#  cases:
-#    normal_ca: 444848
-#    normal_es: 403834
-#
+impagament1erAvis:
+  template: input/correu-impagament1erAvis.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 44
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
+
+impagament2onAvis:
+  template: input/correu-impagament2onAvis.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 56
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
+
+impagamentUltimAvis:
+  template: input/correu-impagamentUltimAvis.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 57
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
+
 #impagamentAnnex3:
 #  template: input/correu-impagamentAnnex3.mako
 #  model: giscedata.facturacio.factura
