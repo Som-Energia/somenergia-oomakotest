@@ -262,14 +262,16 @@
 #    poweremailId: giscedata_switching.notification_atr_C2_04
 #    cases:
 #      nou: 147916
-##
-## rebuigA302:
-##     template: input/correu-rebuigA302.mako
-##     model: giscedata.switching
-##     poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
-##     cases:
-##       nou: 147916
-##
+#
+rebuigA302:
+  template: input/correu-rebuigA302.mako
+  model: giscedata.switching
+  poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
+  data:
+    notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+  cases:
+    nou: 147916
+#
 #rebuigA304:
 #    template: input/correu-rebuigA304.mako
 #    model: giscedata.switching
@@ -297,12 +299,12 @@
 #     cases:
 #         altaNou_ca: 116275
 #
-# acceptacioA302:
-#     template: input/correu-acceptacioA302.mako
-#     model: giscedata.switching
-#     poweremailId: giscedata_switching.notification_atr_A3_02_acceptacio
-#     cases:
-#         altaNou_ca: 116275
+#acceptacioA302:
+#    template: input/correu-acceptacioA302.mako
+#    model: giscedata.switching
+#    poweremailId: giscedata_switching.notification_atr_A3_02_acceptacio
+#    cases:
+#        altaNou_ca: 116275
 #
 #
 # acceptacioM102:
@@ -598,22 +600,22 @@
 #    ca: 809864
 #    es: 810046
 #
-titolsRetorn:
-  template: input/correu-titolsRetorn.mako
-  model: payment.line
-  poweremailId: 7
-  cases:
-    ca: 1707734
-    es: 1707735
-
-titolsPas2:
-  template: input/correu-titolsPas2.mako
-  model: payment.line
-  poweremailId: 8
-  cases:
-    ca: 1707734
-    es: 1707735
-
+#titolsRetorn:
+#  template: input/correu-titolsRetorn.mako
+#  model: payment.line
+#  poweremailId: 7
+#  cases:
+#    ca: 1707734
+#    es: 1707735
+#
+#titolsPas2:
+#  template: input/correu-titolsPas2.mako
+#  model: payment.line
+#  poweremailId: 8
+#  cases:
+#    ca: 1707734
+#    es: 1707735
+#
 #baixa02:
 #  template: input/correu-baixaTallSubministrament02.mako
 #  model: giscedata.switching
@@ -728,6 +730,14 @@ titolsPas2:
 #  template: input/correu-infoenergiaTancamentAny.mako
 #  model: giscedata.polissa
 #  poweremailId: 246
+#  cases:
+#    ca: 17
+#    es: 1028
+#
+#infoenergiaEnviamentA1:
+#  template: input/correu-infoenergiaEnviamentA1.mako
+#  model: giscedata.polissa
+#  poweremailId: 243
 #  cases:
 #    ca: 17
 #    es: 1028
