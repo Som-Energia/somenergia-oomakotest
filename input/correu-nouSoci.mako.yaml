@@ -1,7 +1,5 @@
 cc: false
-to: ${object.partner_id.address[0].email}
-subject_translations:
-  ca_ES: Alta com a soci/a de Som Energia, SCCL
-  es_ES: Alta como socio/a de Som Energia, SCCL
-subject: Nou soci
+to: ${object.address[0].email}
+subject_translations: {}
+subject: Alta com a soci/a de Som Energia, SCCL
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
