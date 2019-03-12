@@ -749,4 +749,11 @@ pagamentGenericN57:
 #  cases:
 #    ca: 17
 #    es: 1028
+infoenergiaM2Enviament:
+  template: input/correu-infoenergiaM2Enviament.mako
+  model: giscedata.polissa
+  poweremailId: 60
+  cases:
+    ca: 17
+    es: 1028
 # vim: et ts=2 sw=2
