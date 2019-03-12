@@ -723,6 +723,14 @@ rebuigA302:
 #    ca: 444848
 #    es: 403834
 #
+pagamentGenericN57:
+  template: input/correu-pagamentGenericN57.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 249
+  cases:
+    ca: 444848
+    es: 403834
+#
 #########################################
 ## Infoenergia
 #
