@@ -26,7 +26,7 @@ text_legal = render(t_obj.read(
 <br>
 Hola ${object.direccio_pagament.name.split(',')[-1]},<br>
 <br>
-${env['user']._context.get('body_personal')}.<br>
+${env['user']._context.get('body_personal')}
 <br>
 Moltes gràcies per la teva confiança i qualsevol comentari, observació o suggeriment ens el pots fer arribar responent a aquest mateix correu.<br>
 <br>
@@ -37,7 +37,7 @@ Bona Energia!<br>
 <br>
 Hola ${object.direccio_pagament.name.split(',')[-1]},<br>
 <br>
-${env['user']._context.get('body_personal')}.<br>
+${env['user']._context.get('body_personal')}
 <br>
 Muchas gracias por tu confianza y cualquier comentario, observación o sugerencia nos lo puedes hacer llegar respondiendo a este mismo correo.<br>
 <br>
