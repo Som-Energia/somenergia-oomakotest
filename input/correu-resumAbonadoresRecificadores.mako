@@ -78,9 +78,9 @@ except:
 Hola${nom_pagador},<br>
 <br>
 % if object.titular.lang != "es_ES":
-T'escrivim perquè hem rectificat les últimes factures del teu contracte, a causa d'una manca de lectures reals del teu comptador o perquè la nostra estimació del consum era més alta que la real.<br>
+T'escrivim perquè hem revisat les últimes factures del teu contracte i hem detectat que han estat incorrectes a causa d'una estimació incorrecta.<br>
 <br>
-Si fa més de dos mesos que no rebies cap factura de Som Energia, aprofitem aquests moviments per posar la facturació al dia fins la darrera lectura que ens consta a la nostra base de dades. <br>
+Si fa més de dos mesos que no rebies cap factura de Som Energia, aprofitem aquests moviments per posar la facturació al dia fins la darrera lectura que ens consta a la nostra base de dades.<br>
 <br>
 Per posar en ordre la situació hem fet el següent:<br>
 <br>
@@ -89,11 +89,11 @@ Per posar en ordre la situació hem fet el següent:<br>
 <br>
 En resum, el resultat final d'aquesta rectificació és una diferència de ${diff_amount} €. La següent setmana, podràs veure els moviments en el teu compte bancari.<br>
 <br>
-En cas de tractar-se d’un pagament i del que vols un fraccionament, només ens has de contestar aquest correu electrònic sol·licitant-ho.<br>
+En el cas que prefereixis efectuar el pagament de forma esglaonada (en terminis), et demanem que responguis aquest mateix correu el més aviat possible i ens ho demanis.<br>
 <br>
 Et recordem que a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> podràs consultar totes les factures que s'han generat, per si les vols revisar.<br>
 <br>
-Et demanem disculpes i seguim en contacte per a qualsevol dubte.<br>
+Moltes gràcies per la teva comprensió i disculpa les molèsties ocasionades. Seguim en contacte per a qualsevol dubte.<br>
 <br>
 Salutacions,<br>
 <br>
@@ -105,7 +105,7 @@ factura@somenergia.coop<br>
 ----------------------------------------------------------------------------------------------------
 % endif
 % if  object.titular.lang != "ca_ES":
-Te escribimos porque hemos rectificado las últimas facturas de tu contrato, debido a una falta de lecturas reales de tu contador o a que nuestra estimación del consumo era más alta que la real.<br>
+Te escribimos porque hemos revisado las últimas facturas de tu contrato y hemos detectado que han sido incorrectas debido a una estimación incorrecta.<br>
 <br>
 Si hace más de dos meses que no recibes ninguna factura de Som Energia, aprovechamos estos movimientos para poner la facturación al día hasta la última lectura que nos consta en nuestra base de datos.<br>
 <br>
@@ -116,11 +116,11 @@ Para poner en orden la situación hemos hecho lo siguiente:<br>
 <br>
 En resumen, el resultado final de esta rectificación es una diferencia de ${diff_amount} €. La siguiente semana podrás ver los movimientos en tu cuenta bancaria.<br>
 <br>
-En el caso de tratarse de un pago y del que quieres un fraccionamiento, sólo nos tienes que contestar este correo electrónico solicitándolo.<br>
+En el caso que prefieras efectuar el pago de forma escalonada (en plazos), te pedimos que respondas este mismo correo con la mayor brevedad posible y nos lo solicites.<br>
 <br>
 Te recordamos que en la <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> podrás consultar todas las facturas que se han generado, por si las quieres revisar.<br>
 <br>
-Te pedimos disculpas y seguimos en contacto para cualquier duda.<br>
+Muchas gracias por tu comprensión y disculpa las molestias ocasionadas. Seguimos en contacto para cualquier duda.<br>
 <br>
 Saludos,<br>
 <br>
