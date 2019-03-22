@@ -23,8 +23,6 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
-%>
-<%
 try:
   p_obj = object.pool.get('res.partner')
   if not p_obj.vat_es_empresa(object._cr, object._uid,'object.pagador.vat'):
@@ -88,13 +86,15 @@ except:
 Hola${nom_pagador},<br>
 <br>
 % if object.titular.lang != "es_ES":
-T’escrivim perquè hem detectat que la facturació del teu contracte havia quedat endarrerida a causa d'una incidència informàtica. Per tal de posar-la al dia, hem emès ${ total_factures} factures amb un import total que suma ${diff_amount} €.<br>
+Ens posem en contacte amb tu perquè hem revisat el teu contracte i hem detectat que la facturació ha estat aturada durant els últims mesos.<br>
 <br>
-Entenent que es tracta d'un error informàtic per part nostra, si ho prefereixes, podem oferir-te la possibilitat de realitzar un fraccionament del pagament. En aquest cas, ens ho pots indicar responent aquest mateix correu. Si no rebem cap comunicació per part teva en aquest sentit, sol·licitarem el cobrament domiciliat d'aquestes factures durant els pròxims dies i d'aquesta manera la situació quedarà regularitzada.<br>
+Ho hem solucionat i hem emès les factures dels últims mesos, que sumen ${diff_amount} €.<br>
 <br>
-Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els teus contractes amb la cooperativa.<br>
+Durant els pròxims dies sol·licitarem el cobrament domiciliat d’aquestes factures i d’aquesta manera la situació quedarà regularitzada. Si prefereixes efectuar el pagament de forma esglaonada (en terminis), si us plau, respon aquest correu tan aviat com sigui possible i fes-nos-ho saber.<br>
 <br>
-Moltes gràcies per la teva comprensió i disculpa les molèsties ocasionades.<br>
+Pots consultar totes les factures emeses a la teva <b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b>.<br>
+<br>
+Moltes gràcies per la comprensió i disculpa les molèsties ocasionades.<br>
 <br>
 Salutacions,<br>
 <br>
@@ -108,15 +108,17 @@ factura@somenergia.coop<br>
 ----------------------------------------------------------------------------------------------------
 % endif
 % if  object.titular.lang != "ca_ES":
-Te escribimos porque hemos detectado que la facturación de tu contrato se había quedado atrasada debido a una incidencia informática. Para ponerla al día hemos emitido ${total_factures} facturas con un importe total que suma ${diff_amount} €.<br>
+Nos ponemos en contacto contigo porque hemos revisado tu contrato y hemos detectado que la facturación ha estado parada durante los últimos meses.<br>
 <br>
-Entendiendo que se trata de un error informático por nuestra parte, si lo prefieres, podemos ofrecerte la posibilidad de realizar un pago fraccionado. En ese caso, nos lo puedes indicar respondiendo este mismo correo electrónico. Si no recibimos ninguna comunicación por tu parte en este sentido, durante los próximos días solicitaremos el cobro domiciliado de estas facturas y de esta manera la situación quedará regularizada.<br>
+Lo hemos solucionado y hemos emitido las facturas de los últimos meses, que suman ${diff_amount} €.<br>
 <br>
-Puedes acceder a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.<br>
+Durante los próximos días solicitaremos el cobro domiciliado de estas facturadas de forma agrupada en un solo cargo y de esta manera la situación quedará regularizada. Si prefieres efectuar el pago de forma escalonada (en plazos), por favor, responde este correo con la mayor brevedad posible solicitándolo.<br>
 <br>
-Muchas gracias por tu comprensión y disculpa las molestias causadas.<br>
+Puedes consultar todas las facturas emitidas en tu <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b>.<br>
 <br>
-Saludos,<br>
+Muchas gracias por tu comprensión y disculpa las molestias ocasionadas.<br>
+<br>
+Un saludo,<br>
 <br>
 Equipo de Som Energia<br>
 <a href="http://es.support.somenergia.coop/category/139-ya-tengo-la-luz-contratada">Centro de Ayuda</a><br>
