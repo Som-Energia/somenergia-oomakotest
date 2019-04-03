@@ -105,6 +105,35 @@
 #     ca: 69398
 #     es: 116
 #
+#resumAbonadoresRecificadoresNegatives:
+#  template: input/correu-resumAbonadoresRecificadoresNegatives.mako
+#  model: giscedata.polissa
+#  poweremailId: 250
+#  cases:
+#    ca: 69398
+#    es: 116
+#    ca_ab: 14730
+#
+#resumAbonadoresRecificadoresManual:
+#  template: input/correu-resumAbonadoresRecificadoresManual.mako
+#  model: giscedata.polissa
+#  poweremailId: 251
+#  cases:
+#    ca_4_1_2: 55666
+#    ca_1_2_0: 162167
+#    ca_1_1_0: 35271
+#    es_5_1_0: 61823
+#    es_1_2_1: 112738
+#    es_1_2_0: 188333
+#
+#notificacioFacturaEndarreridaAvancem:
+#  template: input/correu-notificacioFacturaEndarreridaAvancem.mako
+#  model: giscedata.polissa
+#  poweremailId: 252
+#  cases:
+#    ca: 55666
+#    es: 61823
+#
 #abonadoraPerEmail:
 #   template: input/correu-abonadoraPerEmail.mako
 #   model: giscedata.facturacio.factura
