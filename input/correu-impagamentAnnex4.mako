@@ -7,23 +7,19 @@
 % endif
 <body>
 <br/>
-<br/>
 <%
 from mako.template import Template
-
 def render(text_to_render, object_):
     templ = Template(text_to_render)
     return templ.render_unicode(
         object=object_,
         format_exceptions=True
     )
-
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
 template_id = md_obj.get_object_reference(
                     object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
                 )[1]
-
 text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
@@ -32,7 +28,6 @@ text_legal = render(t_obj.read(
 <%
 import datetime
 data_venciment = (datetime.date.today() + datetime.timedelta(days=20)).strftime("%d-%m-%Y")
-
 try:
   p_obj = object.pool.get('res.partner')
   if not p_obj.vat_es_empresa(object._cr, object._uid,'object.polissa_id.pagador.vat'):
@@ -42,6 +37,7 @@ try:
 except:
   nom_pagador = ''
 %>
+<br/>
 Hola ${nom_pagador},<br/>
 <br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
@@ -51,6 +47,7 @@ A dia d’avui, no has satisfet el pagament de la factura emesa a continuació d
 <br/>
 En cas de no abonar-se la quantitat deguda, a partir del dia <b>${data_venciment}</b> l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
+Sempre prevaldrà la data de notificació del primer requeriment de factura impagada.<br/>
 <br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
@@ -61,9 +58,7 @@ En cas de no abonar-se la quantitat deguda, a partir del dia <b>${data_venciment
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
 - <b>Import total: ${object.invoice_id.amount_total}€</b> <br/>
 <br/>
-<br/>
-El número de compte de Som Energia perquè facis la transferència és el següent:<br/>
-<b>ES82 1491 0001 29 2027098223</b>
+Has de fer el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
 Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
@@ -120,7 +115,7 @@ A día de hoy no has satisfecho el pago de la factura emitida a continuación de
 <br/>
 De no abonarse la cantidad adeudada, a partir del día <b>${data_venciment}</b> la empresa distribuidora podrá suspender tu suministro de electricidad.
 <br/>
-<br/>
+Siempre prevaldrá la fecha de notificación del primer requerimiento de factura impagada.<br/>
 <br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
@@ -131,9 +126,7 @@ De no abonarse la cantidad adeudada, a partir del día <b>${data_venciment}</b> 
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
 - <b>Importe total: ${object.invoice_id.amount_total}</b>€<br/>
 <br/>
-El número de cuenta de Som Energia para que realices la transferencia es el siguiente:<br/>
-<br/>
-<b>ES82 1491 0001 29 2027098223</b><br/>
+Tienes que hacer el pago mediante el documento adjunto con código de barras. Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www1.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
 <br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>

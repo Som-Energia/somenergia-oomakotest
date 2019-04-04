@@ -34,20 +34,16 @@ try:
 except:
   nom_pagador = ''
 %>
+<br/>
+<br/>
 Hola${nom_pagador},<br/>
 <br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Vam enviar el rebut de la factura d'electricitat a la teva entitat bancària però ens l’ha retornat.<br/>
 <br/>
-T‘agrairem que contestis aquest correu i ens indiquis com i quan es pagarà aquesta factura. Per fer-ho, tens dues opcions:<br/>
-<br/>
-Pots fer una transferència per l’import de la factura al següent número de compte corrent de Som Energia:<br/>
-<br/>
-<B>ES82 1491 0001 29 2027098223</B><br/>
+Realitzar el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
 O si ho prefereixes, podem tornar a passar pel banc aquesta factura sempre que t’asseguris que hi ha saldo suficient i que no hi hagi cap problema amb la domiciliació.<br/>
-<br/>
-Si tries fer el pagament per transferència bancària, indica, si us plau, el número de la factura o el número de contracte al concepte de la transferència.<br/>
 <br/>
 T’informem que si et trobes en una situació de vulnerabilitat econòmica, i en compliment de la legislació vigent (Reial decret 897/2017, de 6 d’octubre, pel qual es regula la figura del consumidor vulnerable, el bo social i altres mesures de protecció per als consumidors domèstics d’energia elèctrica), el teu contracte hauria de passar a la comercialitzadora de referència per poder-te acollir al bo social. Som Energia no el pot aplicar per llei, malgrat que el financi.<br/>
 <br/>
@@ -68,7 +64,7 @@ Salutacions,<br/>
 <br/>
 Equip de Som Energia<br/>
 factura@somenergia.coop<br/>
-<a href="www.somenergia.coop/ca">www.somenergia.coop</a><br/>
+<a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
 Si compliu els requisits per ser consumidor vulnerable, podeu sol·licitar a una de les empreses comercialitzadores de referència acollir-se al bo social, que suposa un descompte sobre el preu voluntari per al petit consumidor (PVPC). El canvi de modalitat en el contracte per passar a PVPC, sempre que no es modifiquin els paràmetres que recull el contracte d’accés de tercers a la xarxa, s’ha de portar a terme sense cap tipus de penalització ni cost addicional. Una vegada acollit al PVPC, i sempre que s’hagin acreditat els requisits per ser consumidor vulnerable, el termini perquè se us pugui suspendre el subministrament d’electricitat, en cas que no s’hagi abonat la quantitat deguda, passa a ser de 4 mesos (comptats sempre des de la recepció del requeriment fefaent de pagament).<br/>
@@ -115,11 +111,7 @@ Hace unos días enviamos el recibo de tu factura de electricidad a tu entidad ba
 <br/>
 Te agradeceremos que respondas a este correo y nos indiques cómo y cuándo se pagará esta factura. Para ello, tienes dos opciones:<br/>
 <br/>
-Puedes realizar una transferencia por el importe de la factura al siguiente número de cuenta de Som Energia:<br/>
-<br/>
-<B>ES82 1491 0001 29 2027098223</B><br/>
-<br/>
-O si lo prefieres, podemos volver a pasar por el banco esta factura siempre que te asegures que hay saldo suficiente y que no haya ningún problema con la domiciliación.<br/>
+Realizar el pago mediante el documento adjunto con código de barras. Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www1.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
 <br/>
 Si escoges realizar el pago mediante transferencia bancaria, indica, por favor, el número de la factura o el número de contrato en el concepto de la transferencia.<br/>
 <br/>

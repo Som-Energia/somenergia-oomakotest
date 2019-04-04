@@ -40,9 +40,7 @@ Hola ${nom_pagador},<br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Per regularitzar la següent factura, has fer el pagament mitjançant el document adjunt amb codi de barres. <br/>
 <br/>
-Pots realitzar-lo des del següent <a href="https://www1.caixabank.es/apl/pagos/index_ca.html?CODCPR=90INI001">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. <br/>
-<br/>
-Si tens qualsevol dubte consulta l’enllaç: Com fer el pagament mitjançant codi de barres?  [futur enllaç al Centre d’Ajuda]<br/>
+Pots realitzar-lo des del següent  <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
 Resum de la teva factura<br/>
 <br/>
@@ -69,9 +67,7 @@ factura@somenergia.coop<br/>
 <br/>
 Para regularizar la siguiente factura, debes hacer el pago mediante el documento adjunto con código de barras.<br/>
 <br/>
-Puedes realizarlo desde el siguiente <a href="https://www1.caixabank.es/apl/pagos/index_es.html?CODCPR=90INI001">enlace</a> o bien en los cajeros de la entidad <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>.<br/>
-<br/>
-Si tienes cualquier duda consulta el enlace: Cómo hacer el pago mediante código de barras? [Futuro enlace al Centro de Ayuda]<br/>
+Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
 <br/>
 Resumen de tu factura<br/>
 <br/>

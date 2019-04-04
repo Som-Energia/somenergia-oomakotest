@@ -45,6 +45,7 @@ A dia d’avui, no has satisfet el pagament de la/les factura/es emesa/es a cont
 <br/>
 En cas de no abonar-se la quantitat deguda, en un termini de <b>2 mesos a partir de la notificació</b> d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
+Sempre prevaldrà la data de notificació del primer requeriment de factura impagada.<br/>
 <br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
@@ -56,8 +57,7 @@ En cas de no abonar-se la quantitat deguda, en un termini de <b>2 mesos a partir
 - <B>Import total: ${object.invoice_id.amount_total}€</B> <br/>
 <br/>
 <br/>
-El número de compte de Som Energia perquè facis la transferència és el següent:<br/>
-<B>ES82 1491 0001 29 2027098223</B>
+Has de fer el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
 Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
@@ -114,6 +114,7 @@ A día de hoy no has satisfecho el pago de las facturas emitidas a continuación
 <br/>
 De no abonarse la cantidad adeudada en un plazo de 2 meses a partir de la notificación del presente requerimiento, la empresa distribuidora podrá suspender tu suministro de electricidad.<br/>
 <br/>
+Siempre prevaldrá la fecha de notificación del primer requerimiento de factura impagada.<br/>
 <br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
@@ -124,9 +125,7 @@ De no abonarse la cantidad adeudada en un plazo de 2 meses a partir de la notifi
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
 - <B>Importe total: ${object.invoice_id.amount_total}</B>€<br/>
 <br/>
-El número de cuenta de Som Energia para que realices la transferencia es el siguiente:<br/>
-<br/>
-<B>ES82 1491 0001 29 2027098223</B><br/>
+Tienes que hacer el pago mediante el documento adjunto con código de barras. Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www1.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
 <br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>
