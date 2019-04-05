@@ -19,12 +19,15 @@
         object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
     )
+    for step in object.step_ids:
+      obj = step.pas_id
+      model = obj._table_name
+      if model.startswith('giscedata.switching.b1.05'):
+        pas5 = obj
+        break
 
-    p_obj = object.pool.get('res.partner')
-
-    nom_titular = ' {}'.format(p_obj.separa_cognoms(
-        object._cr, object._uid, object.cups_polissa_id.titular.name
-    )['nom']) if not object.vat_enterprise() else ''
+    date = datetime.strptime(pas5.data_activacio, '%Y-%m-%d')
+    date = date.strftime('%d/%m/%Y')
 %>
 
 <!doctype html>
@@ -40,6 +43,7 @@ ${text_legal}
 
 <%def name="correu_cat()">
     <head>
+        <meta charset="utf-8"/>
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=1px>
@@ -67,36 +71,37 @@ ${text_legal}
         </table>
     </head>
     <body>
-        <br>
-        <br>
         <p>
-            Hola${nom_titular},<br>
+            Hola,
         </p>
+
         <p>
-            Hem sol·licitat la baixa amb tall de subministrament del contracte corresponent a ${object.cups_polissa_id.cups_direccio} i ha estat acceptada.<br>
+            Des de l'empresa distribuïdora ens ha arribat la confirmació que la baixa amb tall de subministrament del contracte de l’adreça <b>${object.cups_polissa_id.cups_direccio}</b> es va fer efectiva el dia <b>${date}</b>.
         </p>
+
         <p>
-            <a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">L'empresa de distribució elèctrica</a> té 5 dies hàbils per donar de baixa aquest punt de subministrament i que deixi d'haver-hi llum.<br>
+            Durant els propers dies generarem l'última factura d'aquest contracte, si no l’has rebuda ja, que serà fins a la data que ha deixat d'estar actiu.
         </p>
+
         <p>
-            Recorda que la cooperativa emetrà una última factura fins que la baixa sigui efectiva.<br>
+            T’informem que com a titular del contracte tens dret a que et facin el retorn del dipòsit de garantia si es va facilitar en el moment de tramitar l’alta del subministrament. Per tal de saber si et correspon i que et facin aquest retorn has de contactar directament amb <a href="http://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">la distribuïdora de la teva zona</a> i t’indicaran els passos a seguir.
         </p>
+
         <p>
-            De seguida que ens comuniquin la data, us informarem.<br>
+            Seguim en contacte.
         </p>
-        <br>
-        <br>
+
         <p>
-            Atentament,
+            Salutacions,
         </p>
-        <br>
         <p>
             Equip de Som Energia <br>
-            <a href="mailto:comercializacion@somenergia.coop">comercializacion@somenergia.coop</a><br>
-            <a href="www.somenergia.coop/ca">www.somenergia.coop</a>
+            <a href="mailto:comercialitzacio@somenergia.coop">comercialitzacio@somenergia.coop</a><br>
+            <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a>
         </p>
     </body>
 </%def>
+
 
 <%def name="correu_es()">
     <head>
@@ -127,31 +132,29 @@ ${text_legal}
         </table>
     </head>
     <body>
-        <br>
-        <br>
         <p>
-            Hola${nom_titular},<br>
+            Hola,
         </p>
         <p>
-            Hemos solicitado la baja con corte de suministro del contrato correspondiente a la dirección ${object.cups_polissa_id.cups_direccio} y ha sido aceptada.<br>
+            Desde la empresa distribuidora nos ha llegado la confirmación de que la baja con corte de suministro del contrato de la dirección <b>${object.cups_polissa_id.cups_direccio}</b> se hizo efectiva el día <b>${date}</b>.
         </p>
         <p>
-            <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">La empresa de distribución eléctrica</a> tiene 5 días hábiles para dar de baja este punto de suministro y que deje de haber luz.<br>
+            Durante los próximos días generaremos la última factura de este contrato,  si no la has recibido ya, que será hasta la fecha que ha dejado de estar activo.
         </p>
         <p>
-            Recuerda que la cooperativa emitirá una última factura hasta que la baja sea efectiva.<br>
+            Te informamos que como titular del contrato tienes derecho a que te hagan el retorno del depósito de garantía si se facilitó en el momento de tramitar el alta del suministro. Para saber si te corresponde y que te hagan esta devolución debes contactar directamente con <a href="http://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">la distribuidora de tu zona</a> y te indicarán los pasos a seguir.
         </p>
         <p>
-            En cuanto nos comuniquen la fecha exacta, os informaremos.<br>
+            Seguimos en contacto.
         </p>
         <p>
-            Atentamente,
+            Saludos,
         </p>
-        <br>
+
         <p>
             Equipo de Som Energia <br>
             <a href="mailto:comercializacion@somenergia.coop">comercializacion@somenergia.coop</a><br>
-            <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
+            <a href="https://www.somenergia.coop/es">www.somenergia.coop</a>
         </p>
     </body>
 </%def>
