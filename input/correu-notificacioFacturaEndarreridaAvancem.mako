@@ -138,7 +138,7 @@ Entenent que s’han ajuntat més d’una factura, et proposem efectuar el pagam
 - ${date_due}: cobrament de ${amount} €<br>
 % endfor
 <br>
-Tingues present que, a partir del mes vinent, aquests cobraments coincidiran amb els de les factures del mes vigent. D’ara endavant esperem poder emetre-les mensualment i sense més incidències.<br>
+Tingues present que, a partir del mes vinent, aquests cobraments coincidiran amb els de les factures del mes vigent. D’ara endavant esperem poder facturar mensualment i sense més incidències.<br>
 <br>
 En el cas que prefereixis regularitzar la situació amb un sol pagament o bé en unes altres dates, ens ho pots comunicar responent aquest mateix correu.<br>
 <br>
@@ -168,7 +168,7 @@ Entendiendo que se han juntado más de una factura, te proponemos efectuar el pa
 - ${date_due}: cobro de ${amount} €<br>
 % endfor
 <br>
-Ten en cuenta que a partir del próximo mes estos cobros coincidirán con los de las facturas del mes vigente. De ahora en adelante esperamos poder emitirlas mensualmente y sin más incidencias.<br>
+Ten en cuenta que a partir del próximo mes estos cobros coincidirán con los de las facturas del mes vigente. De ahora en adelante esperamos poder facturar mensualmente y sin más incidencias.<br>
 <br>
 En el caso que prefieras regularizar la situación con un solo pago o en otras fechas, nos lo puedes comunicar respondiendo este mismo correo.<br>
 <br>

@@ -129,12 +129,12 @@ Si fa més de dos mesos que no reps cap factura nostra, aprofitem aquests movime
 <br>
 Per posar en ordre la situació hem fet el següent:<br>
 <br>
-- Hem anul·lat ${ab_num_factures} factures, que van des del ${ab_data_inici} fins al ${ab_data_final}. El seu import suma ${ab_amount} €.<br>
+- Hem anul·lat ${ab_num_factures} factures, que van des del ${ab_data_inici} fins el ${ab_data_final}. El seu import suma ${ab_amount} €.<br>
 - Hem emès ${normal_num_factures} factures noves que corresponen al consum realitzat fins el ${normal_data_final}, amb què regularitzem la facturació. L'import total de les noves factures és de ${normal_amount} €.<br>
 <br>
 En resum, el resultat final d'aquesta rectificació és una diferència de ${diff_amount} €.<br>
 <br>
-Entenent que es tracta d'un import elevat, et proposem efectuar el pagament de manera esglaonada durant aquests propers ${payment_moths} mesos. La proposta quedaria així:<br>
+Per tal de facilitar la gestió, et proposem efectuar el pagament de manera esglaonada durant aquests propers ${payment_moths} mesos. La proposta quedaria així:<br>
 <br>
 % for date_due,amount in due_date_list:
 - ${date_due}: cobrament de ${amount} €<br>
@@ -169,7 +169,7 @@ Para poner en orden la situación hemos hecho lo siguiente:<br>
 <br>
 En resumen, el resultado final de esta rectificación es una diferencia de ${diff_amount} €.<br>
 <br>
-Entendiendo que se trata de un importe elevado, te proponemos efectuar el pago de manera escalonada durante los próximos ${payment_moths} meses. La propuesta es la siguiente:<br>
+Para facilitar la gestión, te proponemos efectuar el pago de manera escalonada durante los próximos ${payment_moths} meses. La propuesta es la siguiente:<br>
 <br>
 % for date_due,amount in due_date_list:
 - ${date_due}: cobro de ${amount} €<br>

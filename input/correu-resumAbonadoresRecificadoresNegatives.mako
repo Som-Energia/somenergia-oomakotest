@@ -126,7 +126,7 @@ factura@somenergia.coop<br>
 % if  object.titular.lang != "ca_ES":
 Nos ponemos en contacto contigo porque hemos revisado tu contrato y hemos detectado un error en la facturación a causa de XXXXXXX.<br>
 <br>
-Si hace más de dos meses que no recibes ninguna factura de Som Energia, aprovechamos estos movimientos para poner la facturación al día hasta la última lectura que nos consta en nuestra base de datos.<br>
+Si hace más de dos meses que no recibes ninguna factura de Som Energia, aprovechamos estos movimientos para poner la facturación al día hasta la última lectura que consta en nuestra base de datos.<br>
 <br>
 Para poner en orden la situación hemos hecho lo siguiente:<br>
 <br>
