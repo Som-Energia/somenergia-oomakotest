@@ -41,6 +41,8 @@ Hola${nom_pagador},<br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Vam enviar el rebut de la factura d'electricitat a la teva entitat bancària però ens l’ha retornat.<br/>
 <br/>
+T’oferim dues opcions per abonar aquesta factura:<br/>
+<br/>
 Realitzar el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
 O si ho prefereixes, podem tornar a passar pel banc aquesta factura sempre que t’asseguris que hi ha saldo suficient i que no hi hagi cap problema amb la domiciliació.<br/>
@@ -113,7 +115,7 @@ Te agradeceremos que respondas a este correo y nos indiques cómo y cuándo se p
 <br/>
 Realizar el pago mediante el documento adjunto con código de barras. Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www1.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
 <br/>
-Si escoges realizar el pago mediante transferencia bancaria, indica, por favor, el número de la factura o el número de contrato en el concepto de la transferencia.<br/>
+O si lo prefieres, podemos volver a pasar por el banco esta factura siempre que te asegures que hay saldo suficiente y que no haya ningún problema con la domiciliación.<br/>
 <br/>
 Te informamos que si te encuentras en una situación de vulnerabilidad económica, y en cumplimiento de la legislación vigente (Real Decreto 897/2017, de 6 de ocutbre, por el cual se regula la figura del consumidor vulnerable, el bono social y otras medidas de protección para los consumidores domésticos de energía eléctrica), tu contrato tendría que pasar a la comercializadora de referencia para poderte acoger al bono social. Som Energia no lo puede aplicar por ley, a pesar de que lo financia.<br/>
 <br/>
