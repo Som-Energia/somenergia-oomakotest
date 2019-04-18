@@ -83,7 +83,7 @@ try:
   diff_amount = normal_amount - ab_amount
 
   data_inici = min(ab_data_inici,normal_data_inici)
-  data_final = min(ab_data_final,normal_data_final)
+  data_final = max(ab_data_final,normal_data_final)
   if data_inici != '2100-01-01' and data_final != '1900-01-01':
     data_inici_dt = datetime.strptime(data_inici,'%Y-%m-%d')
     data_final_dt = datetime.strptime(data_final,'%Y-%m-%d')

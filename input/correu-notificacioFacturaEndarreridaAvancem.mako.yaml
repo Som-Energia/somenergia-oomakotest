@@ -1,7 +1,7 @@
 cc: false
-to: ${object.titular.address[0].email}
-subject_translations: 
-  es_ES: Facturació contracte ${object.name} / Facturación contrato ${object.name}
+to: ${object.direccio_pagament.email},${object.direccio_notificacio.email}
+subject_translations:
   ca_ES: Facturació contracte ${object.name} / Facturación contrato ${object.name}
+  es_ES: Facturació contracte ${object.name} / Facturación contrato ${object.name}
 subject: Facturació contracte ${object.name} / Facturación contrato ${object.name}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
