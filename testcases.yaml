@@ -170,6 +170,38 @@
 #     ca: 69398
 #     es: 116
 #
+#oberturaR101:
+#  template: input/correu-oberturaR101.mako
+#  model: giscedata.switching
+#  poweremailId: 192
+#  #poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
+#  cases:
+#    env_ca: 117859
+#    env_es: 77917
+#    enc_ca: 218877
+#    enc_es: 62489
+#    ibd_ca: 168850
+#    ibd_es: 134589
+#    fen_es: 159405
+#    var_ca: 172828
+#    var_es: 215371
+#
+#acceptacioR102:
+#  template: input/correu-acceptacioR102.mako
+#  model: giscedata.switching
+#  poweremailId: 194
+#  #poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
+#  cases:
+#    env_ca: 162027
+#    env_es: 123147
+#    enc_ca: 171645
+#    enc_es: 167188
+#    ibd_ca: 200158
+#    ibd_es: 73931
+#    fen_es: 170898
+#    var_ca: 177249
+#    var_es: 198304
+#
 ######################################################
 ## Gestió de contractes
 #
