@@ -53,7 +53,7 @@ ${text_legal}
         <br>
         La distribuïdora elèctrica a la teva zona ha obert el procediment de revisió i li ha atorgat aquest número de referència: ${object.codi_sollicitud}. <br>
         <br>
-        Tan bon punt tinguem novetats, us ho comunicarem. La distribuïdora té un termini màxim per resoldre la reclamació de 5 mesos (tot i que sol ser abans).<br>
+        Tan bon punt tinguem novetats, us ho comunicarem.<br>
         <br>
     </body>
 </%def>
@@ -68,7 +68,7 @@ ${text_legal}
         <br>
         La distribuidora eléctrica de tu zona ha abierto el procedimiento de revisión y le ha otorgado este número de referencia: ${object.codi_sollicitud}<br>
         <br>
-        Tan pronto tengamos novedades, os lo comunicaremos. La distribuidora tiene un plazo máximo para resolver la reclamación de 5 meses (aunque suele ser antes).<br>
+        Tan pronto tengamos novedades, os lo comunicaremos.<br>
         <br>
     </body>
 </%def>
