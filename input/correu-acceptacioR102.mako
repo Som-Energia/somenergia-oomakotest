@@ -56,7 +56,7 @@
     try:
         pas01 = get_object(object.step_ids[0].pas_id)
         subtipus = pas01.subtipus_id.name
-        subtipus_txt = subtipus_msg[subtipus][object.cups_polissa_id.pagador.lang]
+        subtipus_txt = '"' + subtipus_msg[subtipus][object.cups_polissa_id.pagador.lang] + '"'
     except:
         subtipus_txt = ""
 %>
@@ -82,7 +82,7 @@ ${text_legal}
         <br>
         Hola${nom_pagador},<br>
         <br>
-        Recentment i seguint les teves indicacions, hem tramitat la reclamació "${subtipus_txt}" pel punt de subministrament situat a <b>${object.cups_id.direccio}</b>.<br>
+        Recentment i seguint les teves indicacions, hem tramitat la reclamació ${subtipus_txt} pel punt de subministrament situat a <b>${object.cups_id.direccio}</b>.<br>
         <br>
         La distribuïdora elèctrica a la teva zona ha obert el procediment de revisió i li ha atorgat aquest número de referència: ${object.codi_sollicitud}. <br>
         <br>
@@ -97,7 +97,7 @@ ${text_legal}
         <br>
         Hola${nom_pagador},<br>
         <br>
-        Recientemente y siguiendo tus indicaciones, hemos tramitado la reclamación "${subtipus_txt}" para el punto de suministro situado en <b>${object.cups_id.direccio}</b>.<br>
+        Recientemente y siguiendo tus indicaciones, hemos tramitado la reclamación ${subtipus_txt} para el punto de suministro situado en <b>${object.cups_id.direccio}</b>.<br>
         <br>
         La distribuidora eléctrica de tu zona ha abierto el procedimiento de revisión y le ha otorgado este número de referencia: ${object.codi_sollicitud}<br>
         <br>
