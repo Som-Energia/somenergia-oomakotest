@@ -1,5 +1,4 @@
 <%!
-    from datetime import datetime
     from mako.template import Template
 %>
 
@@ -28,6 +27,38 @@
             nom_pagador = ''
     except:
         nom_pagador = ''
+
+    subtipus_msg = {}
+    subtipus_msg['003'] = {'ca_ES':u"Incidència en equips de mesura", 'es_ES':u'Incidencia en equipos de medida'}
+    subtipus_msg['004'] = {'ca_ES':u"Danys originats per equips de mesura", 'es_ES':u'Daños originados por equipo de medida'}
+    subtipus_msg['005'] = {'ca_ES':u"Comptador a factura no correspon amb l'instal·lat", 'es_ES':u'Contador en factura no corresponde con instalado'}
+    subtipus_msg['020'] = {'ca_ES':u"Qualitat d'ona", 'es_ES':u'Calidad de onda'}
+    subtipus_msg['021'] = {'ca_ES':u"Reclamacions amb petició d'indemnització", 'es_ES':u'Con petición de indemnización'}
+    subtipus_msg['022'] = {'ca_ES':u"Reclmacions sense petició d'indemnització", 'es_ES':u'Sin petición de indemnización'}
+    subtipus_msg['023'] = {'ca_ES':u"Endarreriment en l'abonament de la indemnització", 'es_ES':u'Retraso en pago indemnización'}
+    subtipus_msg['024'] = {'ca_ES':u"Danys a tercers per instal·lacions", 'es_ES':u'Daños a terceros por instalaciones'}
+    subtipus_msg['026'] = {'ca_ES':u"Reclamacions sobre instal·lacions de distribució", 'es_ES':u'Reclamaciones sobre instalaciones de distribución'}
+    subtipus_msg['028'] = {'ca_ES':u"Execució indeguda de tall de subminsitrament", 'es_ES':u'Ejecución indebida de corte'}
+    subtipus_msg['029'] = {'ca_ES':u"Retràs en l'atenció a reclamacions", 'es_ES':u'Retraso en la atención a reclamaciones'}
+    subtipus_msg['039'] = {'ca_ES':u"Sol·licitud de certificat - informe de qualitat", 'es_ES':u'Solicitud de certificado / informe de calidad'}
+    subtipus_msg['041'] = {'ca_ES':u"Sol·licitud d'actuació sobre instal·lacions", 'es_ES':u'Solicitud de actuación sobre instalaciones'}
+    subtipus_msg['042'] = {'ca_ES':u"Sol·licitud de descàrrec", 'es_ES':u'Solicitud de descargo'}
+    subtipus_msg['043'] = {'ca_ES':u"Petició de precintat-desprecintat d'equips de mesura", 'es_ES':u'Petición de precintado / desprecintado de equipos'}
+    subtipus_msg['045'] = {'ca_ES':u"Actualització de punt de subministrament", 'es_ES':u'Actualización dirección punto de suministro'}
+    subtipus_msg['046'] = {'ca_ES':u"Certificat de lectura", 'es_ES':u'Certificado de lectura'}
+    subtipus_msg['067'] = {'ca_ES':u"Verificació de comptador", 'es_ES':u'Verificación de contador'}
+
+    def get_object(text_object):
+        model,id = text_object.split(',')
+        model_obj = object.pool.get(model)
+        return model_obj.browse(object._cr, object._uid, int(id))
+
+    try:
+        pas01 = get_object(object.step_ids[0].pas_id)
+        subtipus = pas01.subtipus_id.name
+        subtipus_txt = subtipus_msg[subtipus][object.cups_polissa_id.pagador.lang]
+    except:
+        subtipus_txt = ""
 %>
 
 <!doctype html>
@@ -49,7 +80,7 @@ ${text_legal}
         <br>
         Hola${nom_pagador},<br>
         <br>
-        Recentment i seguint les teves indicacions, hem tramitat la reclamació "Comptador a factura no correspon amb l'instal·lat" pel punt de subministrament situat a <b>${object.cups_id.direccio}</b>.<br>
+        Recentment i seguint les teves indicacions, hem tramitat la reclamació "${subtipus_txt}" pel punt de subministrament situat a <b>${object.cups_id.direccio}</b>.<br>
         <br>
         La distribuïdora elèctrica a la teva zona ha obert el procediment de revisió i li ha atorgat aquest número de referència: ${object.codi_sollicitud}. <br>
         <br>
@@ -64,7 +95,7 @@ ${text_legal}
         <br>
         Hola${nom_pagador},<br>
         <br>
-        Recientemente y siguiendo tus indicaciones, hemos tramitado la reclamación "Contador en factura no corresponde con instalado" para el punto de suministro situado en <b>${object.cups_id.direccio}</b>.<br>
+        Recientemente y siguiendo tus indicaciones, hemos tramitado la reclamación "${subtipus_txt}" para el punto de suministro situado en <b>${object.cups_id.direccio}</b>.<br>
         <br>
         La distribuidora eléctrica de tu zona ha abierto el procedimiento de revisión y le ha otorgado este número de referencia: ${object.codi_sollicitud}<br>
         <br>
