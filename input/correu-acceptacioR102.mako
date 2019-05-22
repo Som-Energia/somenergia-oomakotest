@@ -66,9 +66,11 @@
 % if object.cups_polissa_id.pagador.lang == 'ca_ES':
     ${header_cat()}
     ${correu_cat()}
+    ${footer_cat()}
 % else:
     ${header_es()}
     ${correu_es()}
+    ${footer_es()}
 % endif
 ${text_legal}
 </html>
@@ -100,6 +102,30 @@ ${text_legal}
         La distribuidora eléctrica de tu zona ha abierto el procedimiento de revisión y le ha otorgado este número de referencia: ${object.codi_sollicitud}<br>
         <br>
         Tan pronto tengamos novedades, os lo comunicaremos.<br>
+        <br>
+    </body>
+</%def>
+
+<%def name="footer_cat()">
+    <body>
+        Atentament,<br>
+        <br>
+        Equip de Som Energia<br>
+        <a href="http://ca.support.somenergia.coop">Centre de Suport</a><br>
+        reclama@somenergia.coop<br>
+        <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
+        <br>
+    </body>
+</%def>
+
+<%def name="footer_es()">
+    <body>
+        Atentamente,<br>
+        <br>
+        Equipo de Som Energia<br>
+        <a href="http://es.support.somenergia.coop">Centro de Ayuda</a><br>
+        reclama@somenergia.coop<br>
+        <a href="http://www.somenergia.coop">www.somenergia.coop</a><br>
         <br>
     </body>
 </%def>
