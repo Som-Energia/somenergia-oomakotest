@@ -18,7 +18,9 @@
         object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
     )
+%>
 
+<%
     try:
         p_obj = object.pool.get('res.partner')
         if not p_obj.vat_es_empresa(object._cr, object._uid,'object.pagador.vat'):
@@ -27,7 +29,9 @@
             nom_pagador = ''
     except:
         nom_pagador = ''
+%>
 
+<%
     subtipus_msg = {}
     subtipus_msg['003'] = {'ca_ES':u"Incidència en equips de mesura", 'es_ES':u'Incidencia en equipos de medida'}
     subtipus_msg['004'] = {'ca_ES':u"Danys originats per equips de mesura", 'es_ES':u'Daños originados por equipo de medida'}
