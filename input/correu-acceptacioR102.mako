@@ -18,7 +18,9 @@
         object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
     )
+%>
 
+<%
     try:
         p_obj = object.pool.get('res.partner')
         if not p_obj.vat_es_empresa(object._cr, object._uid,'object.pagador.vat'):
@@ -27,7 +29,9 @@
             nom_pagador = ''
     except:
         nom_pagador = ''
+%>
 
+<%
     subtipus_msg = {}
     subtipus_msg['003'] = {'ca_ES':u"Incidència en equips de mesura", 'es_ES':u'Incidencia en equipos de medida'}
     subtipus_msg['004'] = {'ca_ES':u"Danys originats per equips de mesura", 'es_ES':u'Daños originados por equipo de medida'}
@@ -61,6 +65,25 @@
         subtipus_txt = ""
 %>
 
+<%
+    endesaCodes = ['0031','0023','0024','0029','0030','0120','0224','0232','0259','0288','0359','0363','0396','0401','0407','0418']
+    iberdrolaCodes = ['0021']
+    fenosaCodes = ['0022']
+    viesgoCodes = ['0027']
+    edpCodes = ['0026']
+    distri = None
+    if object.cups_polissa_id.distribuidora.ref in endesaCodes:
+        distri = {'name':u'Endesa distribución eléctrica' , 'phone':'800 760 706'}
+    if object.cups_polissa_id.distribuidora.ref in iberdrolaCodes:
+        distri = {'name':u'Iberdrola' , 'phone':'XXX YYY ZZZ'}
+    if object.cups_polissa_id.distribuidora.ref in fenosaCodes:
+        distri = {'name':u'Fenosa' , 'phone':'XXX YYY ZZZ'}
+    if object.cups_polissa_id.distribuidora.ref in viesgoCodes:
+        distri = {'name':u'Viesgo' , 'phone':'XXX YYY ZZZ'}
+    if object.cups_polissa_id.distribuidora.ref in edpCodes:
+        distri = {'name':u'EDP / HC' , 'phone':'XXX YYY ZZZ'}
+%>
+
 <!doctype html>
 <html>
 % if object.cups_polissa_id.pagador.lang == 'ca_ES':
@@ -86,6 +109,10 @@ ${text_legal}
         <br>
         La distribuïdora elèctrica a la teva zona ha obert el procediment de revisió i li ha atorgat aquest número de referència: ${object.codi_sollicitud}. <br>
         <br>
+        %if distri:
+        (${distri['name']}: tel. ${distri['phone']})<br>
+        <br>
+        %endif
         Tan bon punt tinguem novetats, us ho comunicarem.<br>
         <br>
     </body>
@@ -101,6 +128,10 @@ ${text_legal}
         <br>
         La distribuidora eléctrica de tu zona ha abierto el procedimiento de revisión y le ha otorgado este número de referencia: ${object.codi_sollicitud}<br>
         <br>
+        %if distri:
+        (${distri['name']}: tel. ${distri['phone']})<br>
+        <br>
+        %endif
         Tan pronto tengamos novedades, os lo comunicaremos.<br>
         <br>
     </body>
