@@ -73,15 +73,15 @@
     edpCodes = ['0026']
     distri = None
     if object.cups_polissa_id.distribuidora.ref in endesaCodes:
-        distri = {'name':u'Endesa distribución eléctrica' , 'phone':'800 760 706'}
+        distri = {'name':u'Endesa DE' , 'phone':'800 760 333'}
     if object.cups_polissa_id.distribuidora.ref in iberdrolaCodes:
-        distri = {'name':u'Iberdrola' , 'phone':'XXX YYY ZZZ'}
+        distri = {'name':u'Iberdrola' , 'phone':'900 171 171'}
     if object.cups_polissa_id.distribuidora.ref in fenosaCodes:
-        distri = {'name':u'Fenosa' , 'phone':'XXX YYY ZZZ'}
+        distri = {'name':u'UDFenosa' , 'phone':'900 111 999'}
     if object.cups_polissa_id.distribuidora.ref in viesgoCodes:
-        distri = {'name':u'Viesgo' , 'phone':'XXX YYY ZZZ'}
+        distri = {'name':u'Viesgo' , 'phone':'900 505 249'}
     if object.cups_polissa_id.distribuidora.ref in edpCodes:
-        distri = {'name':u'EDP / HC' , 'phone':'XXX YYY ZZZ'}
+        distri = {'name':u'EREDES-EDP' , 'phone':'900 907 003'}
 %>
 
 <!doctype html>
