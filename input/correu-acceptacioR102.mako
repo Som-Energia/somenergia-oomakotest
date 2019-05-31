@@ -57,12 +57,24 @@
         model_obj = object.pool.get(model)
         return model_obj.browse(object._cr, object._uid, int(id))
 
+    def get_switching_step(step_name):
+        for s_step in object.step_ids:
+            if s_step.step_id.name == step_name:
+                return get_object(s_step.pas_id)
+        return None
+
     try:
-        pas01 = get_object(object.step_ids[0].pas_id)
+        pas01 = get_switching_step('01')
         subtipus = pas01.subtipus_id.name
         subtipus_txt = '"' + subtipus_msg[subtipus][object.cups_polissa_id.pagador.lang] + '"'
     except:
         subtipus_txt = ""
+
+    try:
+        pas02 = get_switching_step('02')
+        reclamacio = pas02.codi_reclamacio_distri if pas02.codi_reclamacio_distri else ""
+    except:
+        reclamacio = ""
 %>
 
 <%
@@ -107,7 +119,7 @@ ${text_legal}
         <br>
         Recentment i seguint les teves indicacions, hem tramitat la reclamació ${subtipus_txt} pel punt de subministrament situat a <b>${object.cups_id.direccio}</b>.<br>
         <br>
-        La distribuïdora elèctrica a la teva zona ha obert el procediment de revisió i li ha atorgat aquest número de referència: ${object.codi_sollicitud}. <br>
+        La distribuïdora elèctrica a la teva zona ha obert el procediment de revisió i li ha atorgat aquest número de referència: ${reclamacio}. <br>
         <br>
         %if distri:
         (${distri['name']}: tel. ${distri['phone']})<br>
@@ -126,13 +138,13 @@ ${text_legal}
         <br>
         Recientemente y siguiendo tus indicaciones, hemos tramitado la reclamación ${subtipus_txt} para el punto de suministro situado en <b>${object.cups_id.direccio}</b>.<br>
         <br>
-        La distribuidora eléctrica de tu zona ha abierto el procedimiento de revisión y le ha otorgado este número de referencia: ${object.codi_sollicitud}<br>
+        La distribuidora eléctrica de tu zona ha abierto el procedimiento de revisión y le ha otorgado este número de referencia: ${reclamacio}<br>
         <br>
         %if distri:
         (${distri['name']}: tel. ${distri['phone']})<br>
         <br>
         %endif
-        Tan pronto tengamos novedades, os lo comunicaremos.<br>
+        Tan pronto como tengamos novedades, os lo comunicaremos.<br>
         <br>
     </body>
 </%def>
