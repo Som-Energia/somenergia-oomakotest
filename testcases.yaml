@@ -174,33 +174,33 @@
 #  template: input/correu-oberturaR101.mako
 #  model: giscedata.switching
 #  poweremailId: 192
-#  #poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
+#  #poweremailId: giscedata_switching.notification_atr_R1_01
 #  cases:
-#    env_ca: 117859
-#    env_es: 77917
-#    enc_ca: 218877
-#    enc_es: 62489
-#    ibd_ca: 168850
-#    ibd_es: 134589
-#    fen_es: 159405
-#    var_ca: 172828
-#    var_es: 215371
+#    non_ca: 218877
+#    non_es: 62489
+#    021_ca: 117859
+#    021_es: 170415
+#    005_ca: 149698
+#    005_es: 134941
+#    043_ca: 121415
+#    043_es: 190986
 #
 #acceptacioR102:
 #  template: input/correu-acceptacioR102.mako
 #  model: giscedata.switching
 #  poweremailId: 194
-#  #poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
+#  #poweremailId: giscedata_switching.notification_atr_R1_02_acceptacio
 #  cases:
-#    env_ca: 162027
-#    env_es: 123147
-#    enc_ca: 171645
-#    enc_es: 167188
-#    ibd_ca: 200158
-#    ibd_es: 73931
-#    fen_es: 170898
-#    var_ca: 177249
-#    var_es: 198304
+#    non_ca: 184237
+#    non_es: 179580
+#    021_ca: 230999
+#    021_es: 142640
+#    041_ca: 223003
+#    041_es: 214943
+#    005_ca: 165905
+#    005_es: 165906
+#    043_ca: 222506
+#    043_es: 219872
 #
 ######################################################
 ## Gestió de contractes
