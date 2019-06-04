@@ -8,10 +8,16 @@
             object=object_,
             format_exceptions=True
     )
+
+    def get_contract_number_by_cups(object_, cups):
+        Polissa = object_.pool.get('giscedata.polissa')
+        new_contract_id = Polissa.search(
+            object_._cr, object_._uid, [('cups.name', '=', cups)]
+        )[-1]
+        return Polissa.read(object_._cr, object_._uid, new_contract_id, [])['name']
 %>
 
 <%
-    Polissa = object.pool.get('giscedata.polissa')
     M105 = object.pool.get('giscedata.switching.m1.05')
     pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
 
@@ -23,7 +29,7 @@
 
     if tarifaATR == '3.0A':
         lineesDePotencia = '\n'.join((
-            '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
+            '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
             for p in pas05.header_id.pot_ids
             if p.potencia != 0
         ))
@@ -40,12 +46,8 @@
         object._cr, object._uid, object.cups_polissa_id.titular.name
         )['nom']) if not object.vat_enterprise() else ''
 
-    new_contract_id = Polissa.search(
-        object._cr, object._uid, [('cups.name', '=', object.cups_id.name)]
-    )[-1]
 
-    new_contract_number = Polissa.read(object._cr, object._uid, new_contract_id, [])['name']
-
+    new_contract_number = get_contract_number_by_cups(object, object.cups_id.name)
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
 
@@ -104,8 +106,6 @@
             </tr>
             %endif
         </table>
-        <br>
-        <br>
         <p>
             Hola${nom_titular},
         </p>
@@ -114,8 +114,6 @@
         %elif is_canvi_tit:
             ${canvi_tit_cat()}
         %endif
-        <br>
-        <br>
         Atentament,<br>
         <br>
         Equip de Som Energia<br>
@@ -126,18 +124,18 @@
 
 <%def name="pot_tar_cat()">
     <p>
-        La sol·licitud de la <font color="green"><strong> modificació contractual ha estat ACTIVADA</strong></font>, amb data ${date}.
+        La sol·licitud de la <font color="green"><strong> modificació contractual ha estat ACTIVADA</strong></font>, amb data ${date_activacio}.
     </p>
 
     <p>
         Les <b>condicions contractuals actuals</b> del teu contracte amb Som Energia són:<br>
         <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; <strong> Tarifa: ${TarifaATR}</strong> <br>
-        %if TarifaATR == '3.0A':
-            <strong> Potència: </strong>
-            ${lineesDePotencia}
+        &nbsp;&nbsp; <strong> Tarifa: ${tarifaATR}</strong> <br>
+        %if tarifaATR == '3.0A':
+            &nbsp;&nbsp; <strong> Potència: </strong> <br>
+            ${pot_deseada}
         %else:
-             <strong> Potència: ${potencia} W</strong>
+            &nbsp;&nbsp; <strong> Potència: ${pot_deseada} W</strong><br>
         %endif
     </p>
 
@@ -163,7 +161,7 @@
         El <b>canvi de titular del contracte ${new_contract_number}</b> i adreça de subministrament ${object.cups_polissa_id.cups_direccio} ha estat realitzat amb èxit.
     </p>
     <p>
-        Així doncs, de del <b>${date_activacio}</b> ets la nova persona titular del contracte. Ho veuràs reflectit en las factures i a la teva Oficina Virtual en els propers dies.
+        Així doncs, des del <b>${date_activacio}</b> ets la nova persona titular del contracte. Ho veuràs reflectit en las factures i a la teva Oficina Virtual en els propers dies.
     </p>
 </%def>
 
@@ -197,8 +195,6 @@
             </tr>
             %endif
         </table>
-        <br>
-        <br>
         <p>
             Hola${nom_titular},
         </p>
@@ -207,8 +203,6 @@
         %elif is_canvi_tit:
             ${canvi_tit_es()}
         %endif
-        <br>
-        <br>
         Atentamente,<br>
         <br>
         Equipo de Som Energia<br>
@@ -219,24 +213,24 @@
 
 <%def name="pot_tar_es()">
     <p>
-        La solicitud de  <font color="green"><strong>la modificación contractual ha sido ACTIVADA</strong></font> con fecha ${date}.
+        La solicitud de  <font color="green"><strong>la modificación contractual ha sido ACTIVADA</strong></font> con fecha ${date_activacio}.
     </p>
     <p>
-        Las <b>condiciones contractuales actuales</b> de tu contrato con Som Energia son:
+        Las <b>condiciones contractuales actuales</b> de tu contrato con Som Energia son:<br>
 
-        <strong> Tarifa: ${TarifaATR}</strong>
-        %if TarifaATR == '3.0A':
-            <strong> Potencia: </strong>
-            ${lineesDePotencia}
+        &nbsp;&nbsp;<strong> Tarifa: ${tarifaATR}</strong><br>
+        %if tarifaATR == '3.0A':
+            &nbsp;&nbsp;<strong> Potencia: </strong><br>
+            ${pot_deseada}
         %else:
-            <strong> Potencia: ${potencia} W</strong>
+            &nbsp;&nbsp;<strong> Potencia: ${pot_deseada} W</strong>
         %endif
     </p>
     <p>
         En la próxima factura se verá reflejada la modificación, y en la oficina virtual en los siguientes días.
     </p>
     <p>
-        Los datos del contrato son los siguientes:
+        Los datos del contrato son los siguientes:<br>
         &nbsp;&nbsp;- Titular del contrato: ${object.cups_polissa_id.titular.name}<br>
         &nbsp;&nbsp;- Dirección: ${object.cups_polissa_id.cups_direccio}<br>
         &nbsp;&nbsp;- CUPS: ${object.cups_id.name}<br>
