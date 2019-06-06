@@ -139,6 +139,12 @@ def renderMako(template, model, id, data, uid=1):
             #result = '<br/>\n'.join(result.splitlines()) #Comment to avoid insert <br>
             return result
 
+def test():
+    unittest.TestCase.__str__ = unittest.TestCase.id
+    sys.argv.append("--verbose"); print sys.argv
+    unittest.main()
+
+
 def getId(O, fixture, idLabel='poweremailId'):
 
     if idLabel not in fixture:
@@ -159,23 +165,35 @@ def getTemplate(O, fixture):
 def getRejectTemplate(O, fixture):
     return O.GiscedataSwitchingNotify.get(getId(O, fixture, 'rejectId'))
 
-def test():
-    unittest.TestCase.__str__ = unittest.TestCase.id
-    sys.argv.append("--verbose"); print sys.argv
-    unittest.main()
+def downloadTemplate(name, fixture):
+    return None
+
+def downloadRejectionTemplate(name, fixture):
+    return None
+
+def uploadTemplate(name, fixture):
+    return None
+
+def uploadRejectionTemplate(name, fixture):
+    return None
+
+def filterArgsnotInTestcases():
+    notFound = set(args.testcases).difference(set(testcases.keys()))
+    if notFound:
+        fail("Els cassos {} no estan a testcases.yaml"
+            .format(', '.join(notFound)))
 
 
 def download():
-    for case in args.testcases:
-        case in testcases or fail(
-            "El cas {} no esta a testcases.yaml"
-            .format(case))
-
+    filterArgsnotInTestcases()
     O = GetOOOP()
     for name, fixture in testcases.items():
+        if args.testcases and name not in args.testcases:
+            continue
+
         if 'poweremailId' in fixture:
-            if args.testcases and name not in args.testcases:
-                continue
+            downloadTemplate(name, fixture)
+
             template = getTemplate(O, fixture)
             step("Fetching {}...".format(name))
             with codecs.open(fixture.template, 'w', 'utf8') as f:
@@ -201,8 +219,7 @@ def download():
             headers.dump(fixture.template+'.yaml')
 
         elif 'rejectId' in fixture:
-            if args.testcases and name not in args.testcases:
-                continue
+            downloadRejectionTemplate(name, fixture)
             template = getRejectTemplate(O, fixture)
             step("Fetching {}...".format(name))
             with codecs.open(fixture.template, 'w', 'utf8') as f:
@@ -212,20 +229,23 @@ def download():
         else:
             step("Download not implemented for {}...".format(name))
 
-
 def upload():
     def write(filename, content):
         with codecs.open(filename, 'w', 'utf8') as f:
             f.write(content)
 
-    O = GetOOOP()
     if not args.testcases:
         fail("Cal especificar un o mes templates (pel nom de testCase.yaml)")
+    filterArgsnotInTestcases()
+
+    O = GetOOOP()
+
     step("Uploading to {uri}:{port} as {user}".format(**remoteErpConfig))
     for case in args.testcases:
         step("Uploading {}...".format(case))
         fixture = testcases[case]
         if 'poweremailId' in fixture:
+            uploadTemplate(case, fixture)
             template = getTemplate(O, fixture)
             with codecs.open(fixture.template, 'r', 'utf8') as f:
                 newContent = f.read()
@@ -264,6 +284,9 @@ def upload():
                 translation.save()
 
         elif 'rejectId' in fixture:
+            uploadRejectionTemplate(case, fixture)
+
+
             template = getRejectTemplate(O, fixture)
             with codecs.open(fixture.template, 'r', 'utf8') as f:
                 newContent = f.read()
@@ -272,7 +295,7 @@ def upload():
             template.save()
 
         else:
-            step("Upload not implemented for {}...".format(name))
+            step("Upload not implemented for {}...".format(case))
 
 
 def listtemplates():
