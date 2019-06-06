@@ -183,7 +183,6 @@ def filterArgsnotInTestcases():
         fail("Els cassos {} no estan a testcases.yaml"
             .format(', '.join(notFound)))
 
-
 def download():
     filterArgsnotInTestcases()
     O = GetOOOP()
@@ -234,8 +233,6 @@ def upload():
         with codecs.open(filename, 'w', 'utf8') as f:
             f.write(content)
 
-    if not args.testcases:
-        fail("Cal especificar un o mes templates (pel nom de testCase.yaml)")
     filterArgsnotInTestcases()
 
     O = GetOOOP()
