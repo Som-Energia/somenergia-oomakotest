@@ -276,6 +276,7 @@ def upload():
 def listtemplates():
     from ooop import OOOP
     O = OOOP(**remoteErpConfig)
+    success('List of available erp templates:')
     for t in O.PoweremailTemplates.all():
         print u'{:<3} {} "{}"'.format(t.id, t.model_int_name, t.name)
 
@@ -354,7 +355,6 @@ def makeB2bTestCase(testCaseName, id) :
 
     return b2bTestCase
 
-
 def addDataDrivenTestCases():
     for testCase, fixture in testcases.items() :
         klassname = 'Test_B2B_{0}'.format(testCase)
@@ -369,6 +369,7 @@ def addDataDrivenTestCases():
                 ('fixture', fixture),
             ])
 
+        step("creating test class for: {}",klassname)
         globals()[klassname] = type( klassname, (unittest.TestCase,), testMethods)
 
 addDataDrivenTestCases()
