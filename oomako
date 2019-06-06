@@ -41,13 +41,6 @@ args = parser.parse_args(sys.argv[1:]) # Warning: if no arguments does exit
 sys.argv = sys.argv[:1]
 
 
-def iterTestCases():
-    for testCaseName, fixture in testcases.items():
-        for testMethod, id in fixture.cases.items():
-            yield testCaseName+'.'+testMethod, fixture, id
-
-
-
 def loadErp(dbcfg):
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin")))
 
@@ -280,11 +273,6 @@ def upload():
             step("Upload not implemented for {}...".format(name))
 
 
-def list():
-    for testCase, fixture, id in iterTestCases():
-        print testCase
-
-
 def listtemplates():
     from ooop import OOOP
     O = OOOP(**remoteErpConfig)
@@ -296,20 +284,30 @@ def listrejecttemplates():
     print "id pas cas info del rebuig"
     from ooop import OOOP
     O = OOOP(**remoteErpConfig)
+    success('List of available erp rejetion templates:')
     for t in O.GiscedataSwitchingNotify.all():
         print u'{:<3} {} {} "{}"'.format(t.id, t.proces_id.name, t.step_id.name, t.info_rebuig)
 
 
-def accept() :
-    import shutil
-    for testCaseName, fixture in testcases.items() :
+def iterTestCases():
+    for testCaseName, fixture in testcases.items():
         for testMethod, id in fixture.cases.items():
-            testcase = testCaseName+'.'+testMethod
-            resultFilename = os.path.join('b2bdata',testcase+'-result.html')
-            expectedFilename = os.path.join('b2bdata',testcase+'-expected.html')
-            if not os.access(resultFilename, os.R_OK) : continue
-            step("Accepting "+testcase)
-            shutil.move(resultFilename, expectedFilename)
+            yield testCaseName+'.'+testMethod, fixture, id
+
+def list():
+    success('List of available test cases:')
+    for testCase, fixture, id in iterTestCases():
+        print testCase
+
+def accept():
+    import shutil
+    success('Accepting test cases:')
+    for testcase, fixture, id in iterTestCases():
+        resultFilename = os.path.join('b2bdata',testcase+'-result.html')
+        expectedFilename = os.path.join('b2bdata',testcase+'-expected.html')
+        if not os.access(resultFilename, os.R_OK) : continue
+        step("Accepting "+testcase)
+        shutil.move(resultFilename, expectedFilename)
 
 
 def makeB2bTestCase(testCaseName, id) :
