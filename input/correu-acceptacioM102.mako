@@ -120,7 +120,7 @@ ${text_legal}
         El <b>canvi de titular del contracte ${object.cups_polissa_id.name}</b> i adreça de subministrament ${object.cups_polissa_id.cups_direccio} ha estat realitzat amb èxit.
     </p>
     <p>
-        Així doncs, des del <b>${data_activacio}</b> ets la nova persona titular del contracte. Ho veuràs reflectit en las factures i a la teva Oficina Virtual en els propers dies.
+        Així doncs, des del <b>${data_activacio}</b> ets la nova persona titular del contracte. Ho veuràs reflectit en les factures i a la teva Oficina Virtual en els propers dies.
     </p>
 </%def>
 
@@ -195,6 +195,6 @@ ${text_legal}
         El <b>cambio de titular del contrato ${object.cups_polissa_id.name}</b> y dirección de suministro ${object.cups_polissa_id.cups_direccio} ha sido llevado a cabo con éxito.
     </p>
     <p>
-        Así pues, desde la fecha ${data_activacio} eres la nueva persona titular del contrato. Lo verás reflejado en las próximas facturas y en tu Oficina Virtual durante los próximos días.
+        Así pues, desde la fecha <b>${data_activacio}</b> eres la nueva persona titular del contrato. Lo verás reflejado en las próximas facturas y en tu Oficina Virtual durante los próximos días.
     </p>
 </%def>
