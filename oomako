@@ -40,6 +40,10 @@ for nargs, command, help in [
 args = parser.parse_args(sys.argv[1:]) # Warning: if no arguments does exit
 sys.argv = sys.argv[:1]
 
+def GetOOOP():
+    from ooop import OOOP
+    return OOOP(**remoteErpConfig)
+
 
 def loadErp(dbcfg):
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin")))
@@ -167,8 +171,7 @@ def download():
             "El cas {} no esta a testcases.yaml"
             .format(case))
 
-    from ooop import OOOP
-    O = OOOP(**remoteErpConfig)
+    O = GetOOOP()
     for name, fixture in testcases.items():
         if 'poweremailId' in fixture:
             if args.testcases and name not in args.testcases:
@@ -215,8 +218,7 @@ def upload():
         with codecs.open(filename, 'w', 'utf8') as f:
             f.write(content)
 
-    from ooop import OOOP
-    O = OOOP(**remoteErpConfig)
+    O = GetOOOP()
     if not args.testcases:
         fail("Cal especificar un o mes templates (pel nom de testCase.yaml)")
     step("Uploading to {uri}:{port} as {user}".format(**remoteErpConfig))
@@ -274,8 +276,7 @@ def upload():
 
 
 def listtemplates():
-    from ooop import OOOP
-    O = OOOP(**remoteErpConfig)
+    O = GetOOOP()
     success('List of available erp templates:')
     for t in O.PoweremailTemplates.all():
         print u'{:<3} {} "{}"'.format(t.id, t.model_int_name, t.name)
@@ -283,8 +284,7 @@ def listtemplates():
 
 def listrejecttemplates():
     print "id pas cas info del rebuig"
-    from ooop import OOOP
-    O = OOOP(**remoteErpConfig)
+    O = GetOOOP()
     success('List of available erp rejetion templates:')
     for t in O.GiscedataSwitchingNotify.all():
         print u'{:<3} {} {} "{}"'.format(t.id, t.proces_id.name, t.step_id.name, t.info_rebuig)
