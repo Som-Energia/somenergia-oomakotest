@@ -32,14 +32,12 @@ for nargs, command, help in [
     ('',  'list', "Llista els casos de test disponibles"),
     ('',  'listtemplates', "Lista els templates al servidor"),
     ('',  'listrejecttemplates', "Llista els templates de rebuig al servidor"),
-    ('*', 'status', "Mostra l'estat dels casos"),
-    ('*', 'import', "Importa els templates"),
     ] :
     sub = subparsers.add_parser(command, help=help)
     if nargs:
         sub.add_argument('testcases', metavar='TESTCASE', nargs=nargs,)
 
-args = parser.parse_args(sys.argv[1:])
+args = parser.parse_args(sys.argv[1:]) # Warning: if no arguments does exit
 sys.argv = sys.argv[:1]
 
 
