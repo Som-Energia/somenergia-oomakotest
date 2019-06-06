@@ -17,132 +17,132 @@ dbcfg = ns(dbcfg)
 testcases = ns.load("testcases.yaml")
 
 parser = argparse.ArgumentParser(
-	description=
-		"Manega els testos d'esquena contra esquena (b2b) de "
-		"les plantilles en Mako de correu de l'OpenERP",
-	epilog=
-		"Si no s'especifica cap testcase es fan tots",
-	)
+    description=
+        "Manega els testos d'esquena contra esquena (b2b) de "
+        "les plantilles en Mako de correu de l'OpenERP",
+    epilog=
+        "Si no s'especifica cap testcase es fan tots",
+    )
 subparsers = parser.add_subparsers(help='sub-command help', dest='subcommand')
 for nargs, command, help in [
-	('*', 'test', "Executa els testos indicats contra l'entorn de proves"),
-	('*', 'accept', "Accepta les sortides dels testos indicats"),
-	('+', 'upload', "Puja a l'entorn de producció la plantilla indicada"),
-	('+', 'download', "Descarrega plantilla de l'entorn de producció"),
-	('',  'list', "Llista els casos de test disponibles"),
-	('',  'listtemplates', "Lista els templates al servidor"),
-	('',  'listrejecttemplates', "Llista els templates de rebuig al servidor"),
-	('*', 'status', "Mostra l'estat dels casos"),
-	('*', 'import', "Importa els templates"),
-	] :
-	sub = subparsers.add_parser(command, help=help)
-	if nargs:
-		sub.add_argument('testcases', metavar='TESTCASE', nargs=nargs,)
+    ('*', 'test', "Executa els testos indicats contra l'entorn de proves"),
+    ('*', 'accept', "Accepta les sortides dels testos indicats"),
+    ('+', 'upload', "Puja a l'entorn de producció la plantilla indicada"),
+    ('+', 'download', "Descarrega plantilla de l'entorn de producció"),
+    ('',  'list', "Llista els casos de test disponibles"),
+    ('',  'listtemplates', "Lista els templates al servidor"),
+    ('',  'listrejecttemplates', "Llista els templates de rebuig al servidor"),
+    ('*', 'status', "Mostra l'estat dels casos"),
+    ('*', 'import', "Importa els templates"),
+    ] :
+    sub = subparsers.add_parser(command, help=help)
+    if nargs:
+        sub.add_argument('testcases', metavar='TESTCASE', nargs=nargs,)
 
 args = parser.parse_args(sys.argv[1:])
 sys.argv = sys.argv[:1]
 
 
 def iterTestCases():
-	for testCaseName, fixture in testcases.items():
-		for testMethod, id in fixture.cases.items():
-			yield testCaseName+'.'+testMethod, fixture, id
+    for testCaseName, fixture in testcases.items():
+        for testMethod, id in fixture.cases.items():
+            yield testCaseName+'.'+testMethod, fixture, id
 
 
 
 def loadErp(dbcfg):
-	sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin")))
+    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin")))
 
-	import netsvc
-	import tools
-	tools.config['db_name'] = dbcfg.database
-	tools.config['db_host'] = dbcfg.host
-	tools.config['db_user'] = dbcfg.user
-	tools.config['db_password'] = dbcfg.password
-	tools.config['db_port'] = dbcfg.port
-	tools.config['root_path'] = "../erp/server"
-	tools.config['addons_path'] = "../erp/server/bin/addons"
-	tools.config['log_level'] = None #'warn'
-	tools.config['log_file'] = open('/dev/null','w')
-	#tools.config['log_handler'] = [':WARNING']
-	tools.config['init'] = []
-	tools.config['demo'] = []
-	tools.config['update'] = []
+    import netsvc
+    import tools
+    tools.config['db_name'] = dbcfg.database
+    tools.config['db_host'] = dbcfg.host
+    tools.config['db_user'] = dbcfg.user
+    tools.config['db_password'] = dbcfg.password
+    tools.config['db_port'] = dbcfg.port
+    tools.config['root_path'] = "../erp/server"
+    tools.config['addons_path'] = "../erp/server/bin/addons"
+    tools.config['log_level'] = None #'warn'
+    tools.config['log_file'] = open('/dev/null','w')
+    #tools.config['log_handler'] = [':WARNING']
+    tools.config['init'] = []
+    tools.config['demo'] = []
+    tools.config['update'] = []
 
-	import pooler
-	import osv
+    import pooler
+    import osv
 
-	osv_ = osv.osv.osv_pool()
-	db,pool = pooler.get_db_and_pool(tools.config['db_name'])
-	netsvc.SERVICES['im_a_worker'] = True
+    osv_ = osv.osv.osv_pool()
+    db,pool = pooler.get_db_and_pool(tools.config['db_name'])
+    netsvc.SERVICES['im_a_worker'] = True
 
-	return db, pool
+    return db, pool
 
 db=None
 pool=None
 
 
 def get_case_step(case, step_idx, pool, cursor, uid):
-	if step_idx >= len(case.step_ids):
-		error("El cas només te {} passos, fora de rang.".format(len(case.step_ids)))
-		return {}
-	sub_model, sub_id = case.step_ids[step_idx].pas_id.split(',')
-	sub_obj= pool.get(sub_model)
-	return sub_obj.browse(cursor,uid,sub_id)
+    if step_idx >= len(case.step_ids):
+        error("El cas només te {} passos, fora de rang.".format(len(case.step_ids)))
+        return {}
+    sub_model, sub_id = case.step_ids[step_idx].pas_id.split(',')
+    sub_obj= pool.get(sub_model)
+    return sub_obj.browse(cursor,uid,sub_id)
 
 def renderMakoReject(template, model, id, data, uid=1):
-	from contextlib import closing
+    from contextlib import closing
 
-	global db, pool
-	if db is None or pool is None :
-		db, pool = loadErp(dbcfg)
-	with closing(db.cursor()) as cursor:
+    global db, pool
+    if db is None or pool is None :
+        db, pool = loadErp(dbcfg)
+    with closing(db.cursor()) as cursor:
 
-		with codecs.open(template,'r','utf8') as f:
-			makoinput = f.read()
+        with codecs.open(template,'r','utf8') as f:
+            makoinput = f.read()
 
-		for obj in pool.get(model).browse(cursor,uid,[id['id']]):
-			env = {
-				'user':pool.get('res.users').browse(cursor,uid,uid),
-				'db': dbcfg.database,
-			}
-			import mako.template
-			result = mako.template.Template(makoinput).render_unicode(
-				cas=obj,
-				pas=get_case_step(obj, id['pas'], pool, cursor, uid),
-				env=env,
-				format_exceptions=True,
-				**data
-				)
-			#result = '<br/>\n'.join(result.splitlines()) #Comment to avoid insert <br>
-			return result
+        for obj in pool.get(model).browse(cursor,uid,[id['id']]):
+            env = {
+                'user':pool.get('res.users').browse(cursor,uid,uid),
+                'db': dbcfg.database,
+            }
+            import mako.template
+            result = mako.template.Template(makoinput).render_unicode(
+                cas=obj,
+                pas=get_case_step(obj, id['pas'], pool, cursor, uid),
+                env=env,
+                format_exceptions=True,
+                **data
+                )
+            #result = '<br/>\n'.join(result.splitlines()) #Comment to avoid insert <br>
+            return result
 
 def renderMako(template, model, id, data, uid=1):
-	from contextlib import closing
+    from contextlib import closing
 
-	global db, pool
-	if db is None or pool is None :
-		db, pool = loadErp(dbcfg)
-	with closing(db.cursor()) as cursor:
+    global db, pool
+    if db is None or pool is None :
+        db, pool = loadErp(dbcfg)
+    with closing(db.cursor()) as cursor:
 
-		with codecs.open(template,'r','utf8') as f:
-			makoinput = f.read()
+        with codecs.open(template,'r','utf8') as f:
+            makoinput = f.read()
 
-		for obj in pool.get(model).browse(cursor,uid,[id]):
-			env = {
-				'user':pool.get('res.users').browse(cursor,uid,uid),
-				'db': dbcfg.database,
-			}
-			import mako.template
-			result = mako.template.Template(makoinput).render_unicode(
-				object=obj,
-				peobject=obj,
-				env=env,
-				format_exceptions=True,
-				**data
-				)
-			#result = '<br/>\n'.join(result.splitlines()) #Comment to avoid insert <br>
-			return result
+        for obj in pool.get(model).browse(cursor,uid,[id]):
+            env = {
+                'user':pool.get('res.users').browse(cursor,uid,uid),
+                'db': dbcfg.database,
+            }
+            import mako.template
+            result = mako.template.Template(makoinput).render_unicode(
+                object=obj,
+                peobject=obj,
+                env=env,
+                format_exceptions=True,
+                **data
+                )
+            #result = '<br/>\n'.join(result.splitlines()) #Comment to avoid insert <br>
+            return result
 
 def getId(O, fixture, idLabel='poweremailId'):
 
@@ -171,217 +171,219 @@ def test():
 
 
 def download():
-	for case in args.testcases:
-		case in testcases or fail(
-			"El cas {} no esta a testcases.yaml"
-			.format(case))
+    for case in args.testcases:
+        case in testcases or fail(
+            "El cas {} no esta a testcases.yaml"
+            .format(case))
 
-	from ooop import OOOP
-	O = OOOP(**remoteErpConfig)
-	for name, fixture in testcases.items():
-		if 'poweremailId' in fixture:
-			if args.testcases and name not in args.testcases:
-				continue
-			template = getTemplate(O, fixture)
-			step("Fetching {}...".format(name))
-			with codecs.open(fixture.template, 'w', 'utf8') as f:
-				f.write(template.def_body_text)
-			if fixture.get('model') != template.model_int_name:
-				warn("Compte, el model hauria de ser '{}'"
-					.format(template.model_int_name))
+    from ooop import OOOP
+    O = OOOP(**remoteErpConfig)
+    for name, fixture in testcases.items():
+        if 'poweremailId' in fixture:
+            if args.testcases and name not in args.testcases:
+                continue
+            template = getTemplate(O, fixture)
+            step("Fetching {}...".format(name))
+            with codecs.open(fixture.template, 'w', 'utf8') as f:
+                f.write(template.def_body_text)
+            if fixture.get('model') != template.model_int_name:
+                warn("Compte, el model hauria de ser '{}'"
+                    .format(template.model_int_name))
 
-			headers = ns(
-				to=template.def_to,
-				cc=template.def_cc,
-				bcc=template.def_bcc,
-				subject=template.def_subject,
-				subject_translations=ns(),
-			)
-			for translation in O.IrTranslation.filter(
-					name='poweremail.templates,def_subject',
-					res_id=template.id,
-					):
-				headers.subject_translations[translation.lang] = translation.value
+            headers = ns(
+                to=template.def_to,
+                cc=template.def_cc,
+                bcc=template.def_bcc,
+                subject=template.def_subject,
+                subject_translations=ns(),
+            )
+            for translation in O.IrTranslation.filter(
+                    name='poweremail.templates,def_subject',
+                    res_id=template.id,
+                    ):
+                headers.subject_translations[translation.lang] = translation.value
 
-			print ("HEADER:\n",  headers.dump())
-			headers.dump(fixture.template+'.yaml')
+            print ("HEADER:\n",  headers.dump())
+            headers.dump(fixture.template+'.yaml')
 
-		elif 'rejectId' in fixture:
-			if args.testcases and name not in args.testcases:
-				continue
-			template = getRejectTemplate(O, fixture)
-			step("Fetching {}...".format(name))
-			with codecs.open(fixture.template, 'w', 'utf8') as f:
-				f.write(template.notify_text)
-			step("Done in {}...".format(fixture.template))
+        elif 'rejectId' in fixture:
+            if args.testcases and name not in args.testcases:
+                continue
+            template = getRejectTemplate(O, fixture)
+            step("Fetching {}...".format(name))
+            with codecs.open(fixture.template, 'w', 'utf8') as f:
+                f.write(template.notify_text)
+            step("Done in {}...".format(fixture.template))
 
-		else:
-			step("Download not implemented for {}...".format(name))
+        else:
+            step("Download not implemented for {}...".format(name))
 
 
 def upload():
-	def write(filename, content):
-		with codecs.open(filename, 'w', 'utf8') as f:
-			f.write(content)
+    def write(filename, content):
+        with codecs.open(filename, 'w', 'utf8') as f:
+            f.write(content)
 
-	from ooop import OOOP
-	O = OOOP(**remoteErpConfig)
-	if not args.testcases:
-		fail("Cal especificar un o mes templates (pel nom de testCase.yaml)")
-	step("Uploading to {uri}:{port} as {user}".format(**remoteErpConfig))
-	for case in args.testcases:
-		step("Uploading {}...".format(case))
-		fixture = testcases[case]
-		if 'poweremailId' in fixture:
-			template = getTemplate(O, fixture)
-			with codecs.open(fixture.template, 'r', 'utf8') as f:
-				newContent = f.read()
-			write("backup-{}.mako".format(case), template.def_body_text)
-			template.def_body_text = newContent
-			template.save()
+    from ooop import OOOP
+    O = OOOP(**remoteErpConfig)
+    if not args.testcases:
+        fail("Cal especificar un o mes templates (pel nom de testCase.yaml)")
+    step("Uploading to {uri}:{port} as {user}".format(**remoteErpConfig))
+    for case in args.testcases:
+        step("Uploading {}...".format(case))
+        fixture = testcases[case]
+        if 'poweremailId' in fixture:
+            template = getTemplate(O, fixture)
+            with codecs.open(fixture.template, 'r', 'utf8') as f:
+                newContent = f.read()
+            write("backup-{}.mako".format(case), template.def_body_text)
+            template.def_body_text = newContent
+            template.save()
 
-			for translation in O.IrTranslation.filter(
-					name='poweremail.templates,def_body_text',
-					res_id=template.id,
-					):
-				step("Uploading {} translation {}...".format(case,translation.lang))
-				#write("backup-{}-translation-src-{}.mako".format(case,translation.lang), translation.src)
-				#translation.src=newContent
-				write("backup-{}-translation-{}.mako".format(case,translation.lang), translation.value)
-				translation.value=newContent
-				translation.save()
+            for translation in O.IrTranslation.filter(
+                    name='poweremail.templates,def_body_text',
+                    res_id=template.id,
+                    ):
+                step("Uploading {} translation {}...".format(case,translation.lang))
+                #write("backup-{}-translation-src-{}.mako".format(case,translation.lang), translation.src)
+                #translation.src=newContent
+                write("backup-{}-translation-{}.mako".format(case,translation.lang), translation.value)
+                translation.value=newContent
+                translation.save()
 
-			headers = ns.load(fixture.template+'.yaml')
+            headers = ns.load(fixture.template+'.yaml')
 
-			template.def_to = headers.to
-			template.def_cc = headers.cc
-			template.def_bcc = headers.bcc
-			template.def_subject = headers.subject
-			template.save()
+            template.def_to = headers.to
+            template.def_cc = headers.cc
+            template.def_bcc = headers.bcc
+            template.def_subject = headers.subject
+            template.save()
 
-			for translation in O.IrTranslation.filter(
-					name='poweremail.templates,def_subject',
-					res_id=template.id,
-					):
-				step("Uploading {} subject translation {}...".format(case,translation.lang))
-				#write("backup-{}-subject-translation-src-{}.mako".format(case,translation.lang), translation.src)
-				translation.src=headers.subject
-				write("backup-{}-subject-translation-{}.mako".format(case,translation.lang), translation.value)
-				translation.value=headers.subject_translations[translation.lang]
-				translation.save()
+            for translation in O.IrTranslation.filter(
+                    name='poweremail.templates,def_subject',
+                    res_id=template.id,
+                    ):
+                step("Uploading {} subject translation {}...".format(case,translation.lang))
+                #write("backup-{}-subject-translation-src-{}.mako".format(case,translation.lang), translation.src)
+                translation.src=headers.subject
+                write("backup-{}-subject-translation-{}.mako".format(case,translation.lang), translation.value)
+                translation.value=headers.subject_translations[translation.lang]
+                translation.save()
 
-		elif 'rejectId' in fixture:
-			template = getRejectTemplate(O, fixture)
-			with codecs.open(fixture.template, 'r', 'utf8') as f:
-				newContent = f.read()
-			write("backup-{}.mako".format(case), template.notify_text)
-			template.notify_text = newContent
-			template.save()
+        elif 'rejectId' in fixture:
+            template = getRejectTemplate(O, fixture)
+            with codecs.open(fixture.template, 'r', 'utf8') as f:
+                newContent = f.read()
+            write("backup-{}.mako".format(case), template.notify_text)
+            template.notify_text = newContent
+            template.save()
 
-		else:
-			step("Upload not implemented for {}...".format(name))
+        else:
+            step("Upload not implemented for {}...".format(name))
 
 
 def list():
-	for testCase, fixture, id in iterTestCases():
-		print testCase
+    for testCase, fixture, id in iterTestCases():
+        print testCase
 
 
 def listtemplates():
-	from ooop import OOOP
-	O = OOOP(**remoteErpConfig)
-	for t in O.PoweremailTemplates.all():
-		print u'{:<3} {} "{}"'.format(t.id, t.model_int_name, t.name)
+    from ooop import OOOP
+    O = OOOP(**remoteErpConfig)
+    for t in O.PoweremailTemplates.all():
+        print u'{:<3} {} "{}"'.format(t.id, t.model_int_name, t.name)
 
 
 def listrejecttemplates():
-	print "id pas cas info del rebuig"
-	from ooop import OOOP
-	O = OOOP(**remoteErpConfig)
-	for t in O.GiscedataSwitchingNotify.all():
-		print u'{:<3} {} {} "{}"'.format(t.id, t.proces_id.name, t.step_id.name, t.info_rebuig)
+    print "id pas cas info del rebuig"
+    from ooop import OOOP
+    O = OOOP(**remoteErpConfig)
+    for t in O.GiscedataSwitchingNotify.all():
+        print u'{:<3} {} {} "{}"'.format(t.id, t.proces_id.name, t.step_id.name, t.info_rebuig)
 
 
 def accept() :
-	import shutil
-	for testCaseName, fixture in testcases.items() :
-		for testMethod, id in fixture.cases.items():
-			testcase = testCaseName+'.'+testMethod
-			resultFilename = os.path.join('b2bdata',testcase+'-result.html')
-			expectedFilename = os.path.join('b2bdata',testcase+'-expected.html')
-			if not os.access(resultFilename, os.R_OK) : continue
-			step("Accepting "+testcase)
-			shutil.move(resultFilename, expectedFilename)
+    import shutil
+    for testCaseName, fixture in testcases.items() :
+        for testMethod, id in fixture.cases.items():
+            testcase = testCaseName+'.'+testMethod
+            resultFilename = os.path.join('b2bdata',testcase+'-result.html')
+            expectedFilename = os.path.join('b2bdata',testcase+'-expected.html')
+            if not os.access(resultFilename, os.R_OK) : continue
+            step("Accepting "+testcase)
+            shutil.move(resultFilename, expectedFilename)
 
 
 def makeB2bTestCase(testCaseName, id) :
-	def b2bTestCase(self):
-		self.maxDiff = None
-		resultFilename = os.path.join('b2bdata',testCaseName+'-result.html')
-		expectedFilename = os.path.join('b2bdata',testCaseName+'-expected.html')
-		if os.access(resultFilename, os.R_OK) :
-			os.unlink(resultFilename)
+    def b2bTestCase(self):
+        self.maxDiff = None
+        resultFilename = os.path.join('b2bdata',testCaseName+'-result.html')
+        expectedFilename = os.path.join('b2bdata',testCaseName+'-expected.html')
+        if os.access(resultFilename, os.R_OK) :
+            os.unlink(resultFilename)
 
-		if 'rejectId' in self.fixture:
-			output = renderMakoReject(
-				self.fixture.template,
-				self.fixture.model,
-				id,
-				self.fixture.get('data', {}))
-		else:
-			output = renderMako(
-				self.fixture.template,
-				self.fixture.model,
-				id,
-				self.fixture.get('data', {}))
+        if 'rejectId' in self.fixture:
+            output = renderMakoReject(
+                self.fixture.template,
+                self.fixture.model,
+                id,
+                self.fixture.get('data', {}))
+        else:
+            output = renderMako(
+                self.fixture.template,
+                self.fixture.model,
+                id,
+                self.fixture.get('data', {}))
 
-		try:
-			with codecs.open(expectedFilename,'r', 'utf8') as expectedfile:
-				expected = expectedfile.read()
-		except:
-			expected = None
+        try:
+            with codecs.open(expectedFilename,'r', 'utf8') as expectedfile:
+                expected = expectedfile.read()
+        except:
+            expected = None
 
-		if expected != output :
-			with codecs.open(resultFilename,'w', 'utf8') as outputfile:
-				outputfile.write(output)
+        if expected != output :
+            with codecs.open(resultFilename,'w', 'utf8') as outputfile:
+                outputfile.write(output)
 
-		if expected is None :
-			self.fail(
-				"No expectation for the testMethod, use the 'accept' "
-				"subcommand to accept the current result as good '{}'"
-				.format(resultFilename))
+        if expected is None :
+            self.fail(
+                "No expectation for the testMethod, use the 'accept' "
+                "subcommand to accept the current result as good '{}'"
+                .format(resultFilename))
 
-		self.assertMultiLineEqual(expected, output,
-			"B2B data missmatch, use the 'accept' "
-			"subcommand to accept the current result as good '{}'"
-			.format(resultFilename))
+        self.assertMultiLineEqual(expected, output,
+            "B2B data missmatch, use the 'accept' "
+            "subcommand to accept the current result as good '{}'"
+            .format(resultFilename))
 
-	return b2bTestCase
+    return b2bTestCase
 
 
 def addDataDrivenTestCases():
-	for testCase, fixture in testcases.items() :
-		klassname = 'Test_B2B_{0}'.format(testCase)
-		# Dynamically create a TestCase Subclass with all the test
-		testMethods = dict([
-			('test_{0}'.format(testMethod),
-				makeB2bTestCase(
-					testCase+'.'+testMethod, data))
-			for testMethod, data in fixture.cases.items()
-			]+[
-				('longMessage', True),
-				('fixture', fixture),
-			])
+    for testCase, fixture in testcases.items() :
+        klassname = 'Test_B2B_{0}'.format(testCase)
+        # Dynamically create a TestCase Subclass with all the test
+        testMethods = dict([
+            ('test_{0}'.format(testMethod),
+                makeB2bTestCase(
+                    testCase+'.'+testMethod, data))
+            for testMethod, data in fixture.cases.items()
+            ]+[
+                ('longMessage', True),
+                ('fixture', fixture),
+            ])
 
-		globals()[klassname] = type( klassname, (unittest.TestCase,), testMethods)
+        globals()[klassname] = type( klassname, (unittest.TestCase,), testMethods)
 
 addDataDrivenTestCases()
 
 
 if __name__ == '__main__' :
-	if args.subcommand not in globals() :
-		error("Command '{}' not yet implemented".format(args.subcommand))
-		sys.exit(-1)
+    if args.subcommand not in globals() :
+        error("Command '{}' not yet implemented".format(args.subcommand))
+        sys.exit(-1)
 
-	globals()[args.subcommand]()
-	sys.exit(0)
+    globals()[args.subcommand]()
+    sys.exit(0)
+
+# vim: et ts=4 sw=4
