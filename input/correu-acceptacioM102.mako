@@ -1,3 +1,15 @@
+<%!
+    from mako.template import Template
+    from datetime import datetime
+
+    def render(text_to_render, object_):
+        templ = Template(text_to_render)
+        return templ.render_unicode(
+            object=object_,
+            format_exceptions=True
+        )
+%>
+
 <%
     is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
 
@@ -7,6 +19,22 @@
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
     )['nom']) if not object.vat_enterprise() else ''
+
+    data_activacio = datetime.strptime(
+        object.step_ids[-1].pas_id.data_activacio, '%Y-%m-%d'
+    ).strftime('%d/%m/%Y')
+
+    t_obj = object.pool.get('poweremail.templates')
+    md_obj = object.pool.get('ir.model.data')
+
+    template_id = md_obj.get_object_reference(
+    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+    )[1]
+
+    text_legal = render(t_obj.read(
+        object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+        object
+    )
 %>
 
 
@@ -20,6 +48,7 @@
 % else:
     ${correu_es()}
 % endif
+${text_legal}
 </html>
 
 <%def name="correu_cat()">
@@ -52,14 +81,14 @@
             %endif
         </table>
         <br>
-        <br>
+        <p>
+            Hola${nom_titular},<br>
+        </p>
         %if is_pot_tar:
             ${pot_tar_cat()}
         %elif is_canvi_tit:
             ${canvi_tit_cat()}
         %endif
-        <br>
-        <br>
         Atentament,<br>
         <br>
         Equip de Som Energia<br>
@@ -69,9 +98,6 @@
 </%def>
 
 <%def name="pot_tar_cat()">
-    <p>
-        Hola${nom_titular},<br>
-    </p>
     <p>
         <strong> La modificació contractual que vares sol·licitar ha estat acceptada.</strong><br>
     </p>
@@ -91,17 +117,10 @@
 
 <%def name="canvi_tit_cat()">
     <p>
-        Hola,<br>
+        El <b>canvi de titular del contracte ${object.cups_polissa_id.name}</b> i adreça de subministrament ${object.cups_polissa_id.cups_direccio} ha estat realitzat amb èxit.
     </p>
     <p>
-        <strong> El canvi de titular que vares sol·licitar ha estat acceptat. </strong><br>
-        <br>
-        Aquest es veurà reflectit a la propera factura, i, en els següents dies, a l'oficina virtual.<br>
-    </p>
-    <p>
-        Les dades del contracte modificat són les següents:<br>
-        - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
-        - CUPS: ${object.cups_id.name}<br>
+        Així doncs, des del <b>${data_activacio}</b> ets la nova persona titular del contracte. Ho veuràs reflectit en las factures i a la teva Oficina Virtual en els propers dies.
     </p>
 </%def>
 
@@ -135,14 +154,14 @@
             %endif
         </table>
         <br>
-        <br>
+        <p>
+            Hola${nom_titular},<br>
+        </p>
         %if is_pot_tar:
             ${pot_tar_es()}
         %elif is_canvi_tit:
             ${canvi_tit_es()}
         %endif
-        <br>
-        <br>
         Atentamente,<br>
         <br>
         Equipo de Som Energia<br>
@@ -153,9 +172,6 @@
 </%def>
 
 <%def name="pot_tar_es()">
-    <p>
-        Hola${nom_titular},<br>
-    </p>
     <p>
         <strong> La modificación contractual que solicitaste ha sido aceptada. </strong><br>
     </p>
@@ -176,16 +192,9 @@
 
 <%def name="canvi_tit_es()">
     <p>
-        Hola,<br>
+        El <b>cambio de titular del contrato ${object.cups_polissa_id.name}</b> y dirección de suministro ${object.cups_polissa_id.cups_direccio} ha sido llevado a cabo con éxito.
     </p>
     <p>
-        <strong> El cambio de titularidad que solicitaste ha sido aceptado.</strong><br>
-        <br>
-        Este cambio se verá reflejado en la próxima factura, y, durante los siguientes días, en la oficina virtual.<br>
-    </p>
-    <p>
-        Los datos del contrato son los siguientes:<br>
-        - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
-        - CUPS: ${object.cups_id.name}<br>
+        Así pues, desde la fecha ${data_activacio} eres la nueva persona titular del contrato. Lo verás reflejado en las próximas facturas y en tu Oficina Virtual durante los próximos días.
     </p>
 </%def>
