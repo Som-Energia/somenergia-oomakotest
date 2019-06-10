@@ -331,21 +331,19 @@ def upload():
         else:
             step("Upload not implemented for {}...".format(case))
 
-
 def listtemplates():
     O = GetOOOP()
     success('List of available erp templates:')
+    print "id model nom"
     for t in O.PoweremailTemplates.all():
         print u'{:<3} {} "{}"'.format(t.id, t.model_int_name, t.name)
 
-
 def listrejecttemplates():
-    print "id pas cas info del rebuig"
     O = GetOOOP()
     success('List of available erp rejetion templates:')
+    print "id pas cas info del rebuig"
     for t in O.GiscedataSwitchingNotify.all():
         print u'{:<3} {} {} "{}"'.format(t.id, t.proces_id.name, t.step_id.name, t.info_rebuig)
-
 
 def iterTestCases():
     for testCaseName, fixture in testcases.items():
