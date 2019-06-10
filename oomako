@@ -189,6 +189,7 @@ def addDataDrivenTestCases():
         globals()[klassname] = type( klassname, (unittest.TestCase,), testMethods)
 
 def test():
+    filterEmptyTestcases()
     addDataDrivenTestCases()
     global db, pool
     if db is None or pool is None :
@@ -303,7 +304,12 @@ def filterArgsnotInTestcases():
         fail("Els cassos {} no estan a testcases.yaml"
             .format(', '.join(notFound)))
 
+def filterEmptyTestcases():
+    if not testcases:
+        fail("El fitxer testcases.yaml esta buit")
+
 def download():
+    filterEmptyTestcases()
     filterArgsnotInTestcases()
     O = GetOOOP()
     for name, fixture in testcases.items():
@@ -318,6 +324,7 @@ def download():
             step("Download not implemented for {}...".format(name))
 
 def upload():
+    filterEmptyTestcases()
     filterArgsnotInTestcases()
     O = GetOOOP()
     step("Uploading to {uri}:{port} as {user}".format(**remoteErpConfig))
@@ -351,11 +358,13 @@ def iterTestCases():
             yield testCaseName+'.'+testMethod, fixture, id
 
 def list():
+    filterEmptyTestcases()
     success('List of available test cases:')
     for testCase, fixture, id in iterTestCases():
         print testCase
 
 def accept():
+    filterEmptyTestcases()
     import shutil
     success('Accepting test cases:')
     for testcase, fixture, id in iterTestCases():
