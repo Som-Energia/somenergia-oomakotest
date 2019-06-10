@@ -88,13 +88,8 @@ def get_case_step(case, step_idx, pool, cursor, uid):
 def renderMakoReject(template, model, id, data, uid=1):
     from contextlib import closing
 
-    global db, pool
-    if db is None or pool is None :
-        db, pool = loadErp(dbcfg)
     with closing(db.cursor()) as cursor:
-
-        with codecs.open(template,'r','utf8') as f:
-            makoinput = f.read()
+        makoinput = templateRead(template)
 
         for obj in pool.get(model).browse(cursor,uid,[id['id']]):
             env = {
@@ -109,19 +104,13 @@ def renderMakoReject(template, model, id, data, uid=1):
                 format_exceptions=True,
                 **data
                 )
-            #result = '<br/>\n'.join(result.splitlines()) #Comment to avoid insert <br>
             return result
 
 def renderMako(template, model, id, data, uid=1):
     from contextlib import closing
 
-    global db, pool
-    if db is None or pool is None :
-        db, pool = loadErp(dbcfg)
     with closing(db.cursor()) as cursor:
-
-        with codecs.open(template,'r','utf8') as f:
-            makoinput = f.read()
+        makoinput = templateRead(template)
 
         for obj in pool.get(model).browse(cursor,uid,[id]):
             env = {
@@ -136,14 +125,77 @@ def renderMako(template, model, id, data, uid=1):
                 format_exceptions=True,
                 **data
                 )
-            #result = '<br/>\n'.join(result.splitlines()) #Comment to avoid insert <br>
             return result
 
+def makeB2bTestCase(testCaseName, id) :
+    def b2bTestCase(self):
+        self.maxDiff = None
+        resultFilename = os.path.join('b2bdata',testCaseName+'-result.html')
+        expectedFilename = os.path.join('b2bdata',testCaseName+'-expected.html')
+        if os.access(resultFilename, os.R_OK) :
+            os.unlink(resultFilename)
+
+        if 'rejectId' in self.fixture:
+            output = renderMakoReject(
+                self.fixture.template,
+                self.fixture.model,
+                id,
+                self.fixture.get('data', {}))
+        else:
+            output = renderMako(
+                self.fixture.template,
+                self.fixture.model,
+                id,
+                self.fixture.get('data', {}))
+
+        try:
+            with codecs.open(expectedFilename,'r', 'utf8') as expectedfile:
+                expected = expectedfile.read()
+        except:
+            expected = None
+
+        if expected != output :
+            with codecs.open(resultFilename,'w', 'utf8') as outputfile:
+                outputfile.write(output)
+
+        if expected is None :
+            self.fail(
+                "No expectation for the testMethod, use the 'accept' "
+                "subcommand to accept the current result as good '{}'"
+                .format(resultFilename))
+
+        self.assertMultiLineEqual(expected, output,
+            "B2B data missmatch, use the 'accept' "
+            "subcommand to accept the current result as good '{}'"
+            .format(resultFilename))
+
+    return b2bTestCase
+
+def addDataDrivenTestCases():
+    for testCase, fixture in testcases.items() :
+        klassname = 'Test_B2B_{0}'.format(testCase)
+        # Dynamically create a TestCase Subclass with all the test
+        testMethods = dict([
+            ('test_{0}'.format(testMethod),
+                makeB2bTestCase(
+                    testCase+'.'+testMethod, data))
+            for testMethod, data in fixture.cases.items()
+            ]+[
+                ('longMessage', True),
+                ('fixture', fixture),
+            ])
+
+        step("creating test class for: {}",klassname)
+        globals()[klassname] = type( klassname, (unittest.TestCase,), testMethods)
+
 def test():
+    addDataDrivenTestCases()
+    global db, pool
+    if db is None or pool is None :
+        db, pool = loadErp(dbcfg)
     unittest.TestCase.__str__ = unittest.TestCase.id
     sys.argv.append("--verbose"); print sys.argv
     unittest.main()
-
 
 def getId(O, fixture, idLabel='poweremailId'):
 
@@ -314,71 +366,6 @@ def accept():
         if not os.access(resultFilename, os.R_OK) : continue
         step("Accepting "+testcase)
         shutil.move(resultFilename, expectedFilename)
-
-
-def makeB2bTestCase(testCaseName, id) :
-    def b2bTestCase(self):
-        self.maxDiff = None
-        resultFilename = os.path.join('b2bdata',testCaseName+'-result.html')
-        expectedFilename = os.path.join('b2bdata',testCaseName+'-expected.html')
-        if os.access(resultFilename, os.R_OK) :
-            os.unlink(resultFilename)
-
-        if 'rejectId' in self.fixture:
-            output = renderMakoReject(
-                self.fixture.template,
-                self.fixture.model,
-                id,
-                self.fixture.get('data', {}))
-        else:
-            output = renderMako(
-                self.fixture.template,
-                self.fixture.model,
-                id,
-                self.fixture.get('data', {}))
-
-        try:
-            with codecs.open(expectedFilename,'r', 'utf8') as expectedfile:
-                expected = expectedfile.read()
-        except:
-            expected = None
-
-        if expected != output :
-            with codecs.open(resultFilename,'w', 'utf8') as outputfile:
-                outputfile.write(output)
-
-        if expected is None :
-            self.fail(
-                "No expectation for the testMethod, use the 'accept' "
-                "subcommand to accept the current result as good '{}'"
-                .format(resultFilename))
-
-        self.assertMultiLineEqual(expected, output,
-            "B2B data missmatch, use the 'accept' "
-            "subcommand to accept the current result as good '{}'"
-            .format(resultFilename))
-
-    return b2bTestCase
-
-def addDataDrivenTestCases():
-    for testCase, fixture in testcases.items() :
-        klassname = 'Test_B2B_{0}'.format(testCase)
-        # Dynamically create a TestCase Subclass with all the test
-        testMethods = dict([
-            ('test_{0}'.format(testMethod),
-                makeB2bTestCase(
-                    testCase+'.'+testMethod, data))
-            for testMethod, data in fixture.cases.items()
-            ]+[
-                ('longMessage', True),
-                ('fixture', fixture),
-            ])
-
-        step("creating test class for: {}",klassname)
-        globals()[klassname] = type( klassname, (unittest.TestCase,), testMethods)
-
-addDataDrivenTestCases()
-
 
 if __name__ == '__main__' :
     if args.subcommand not in globals() :
