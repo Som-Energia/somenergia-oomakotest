@@ -1,0 +1,7 @@
+cc: false
+to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
+subject_translations:
+  ca_ES: Correcció de la factura emesa ${object.number}
+  es_ES: Corrección de la factura emitida ${object.number}
+subject: Correcció de la factura emesa/Corrección de la factura emitida ${object.number}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

@@ -170,6 +170,15 @@
 #     ca: 69398
 #     es: 116
 #
+#numeroFacturaDuplicada:
+#  template: input/correu-numeroFacturaDuplicada.mako
+#  model: giscedata.facturacio.factura
+#  poweremailId: 253
+#  cases:
+#    normal_ca: 444848
+#    normal_es: 403834
+#    energetica: 5084228
+#
 #oberturaR101:
 #  template: input/correu-oberturaR101.mako
 #  model: giscedata.switching
