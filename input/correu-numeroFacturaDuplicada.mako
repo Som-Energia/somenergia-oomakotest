@@ -52,7 +52,7 @@ Hola${nom_pagador},<br>
 <br>
 Ens posem en contacte amb tu perquè hem detectat una incidència informàtica que ha generat factures amb el número de factura erroni.<br>
 <br>
-Aquest és el cas de la factura ${object.number} que has rebut recentment. <br>
+La factura que has rebut recentment és una de les afectades per aquesta incidència.<br>
 <br>
 L’hem rectificat, canviant tan sols el número de factura, la resta és exactament igual. T’adjuntem en aquest correu la factura corregida.<br>
 <br>
@@ -61,7 +61,7 @@ Disculpa les molèsties.<br>
 Per a qualsevol qüestió, seguim en contacte.<br>
 <br>
 <br>
-Atentament,<br>
+Salutacions,<br>
 <br>
 Equip de Som Energia<br>
 factura@somenergia.coop<br>
@@ -74,7 +74,7 @@ factura@somenergia.coop<br>
 <br>
 Nos ponemos en contacto contigo porque hemos detectado una incidencia informática que ha generado facturas con el número de factura erróneo.<br>
 <br>
-Este es el caso de la factura ${object.number} que ha recibido recientemente.<br>
+La factura que ha recibido recientemente es una de las afectadas por esta incidencia.<br>
 <br>
 Lo hemos rectificado, cambiando únicamente el número de factura, el resto es exactamente igual. Te adjuntamos en este correo la factura corregida.<br>
 <br>
@@ -83,7 +83,7 @@ Disculpa las molestias.<br>
 Para cualquier cuestión, seguimos en contacto.<br>
 <br>
 <br>
-Atentamente,<br>
+Saludos,<br>
 <br>
 Equipo de Som Energia<br>
 factura@somenergia.coop<br>
