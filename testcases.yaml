@@ -490,16 +490,15 @@ rebuigA302:
 #    30A_ca: 3632  #par 5366
 #    30A_es: 12696 #par 22212
 #
-#activacioM105_automatica:
-#  template: input/correu-activacioM105.mako
-#  model: giscedata.switching
-## poweremailId: 41 # old origin template
-#  poweremailId: giscedata_switching.notification_atr_M1_05
-#  cases:
-#    20A_ca: 1582  #par 7101
-#    20A_es: 1583  #par 11326
-#    30A_ca: 3632  #par 5366
-#    30A_es: 12696 #par 22212
+activacioM105_automatica:
+  template: input/correu-activacioM105.mako
+  model: giscedata.switching
+  poweremailId: giscedata_switching.notification_atr_M1_05
+  cases:
+    20A_ca: 1582  #par 7101
+    20A_es: 1583  #par 11326
+    30A_ca: 3632  #par 5366
+    30A_es: 12696 #par 22212
 #
 #
 #notificacioAcceptacioA3:
