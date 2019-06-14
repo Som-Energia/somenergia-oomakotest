@@ -81,9 +81,6 @@ ${text_legal}
             %endif
         </table>
         <br>
-        <p>
-            Hola${nom_titular},<br>
-        </p>
         %if is_pot_tar:
             ${pot_tar_cat()}
         %elif is_canvi_tit:
@@ -98,6 +95,9 @@ ${text_legal}
 </%def>
 
 <%def name="pot_tar_cat()">
+    <p>
+        Hola${nom_titular},<br>
+    </p>
     <p>
         <strong> La modificació contractual que vares sol·licitar ha estat acceptada.</strong><br>
     </p>
@@ -116,6 +116,9 @@ ${text_legal}
 </%def>
 
 <%def name="canvi_tit_cat()">
+    <p>
+        Hola,<br>
+    </p>
     <p>
         El <b>canvi de titular del contracte ${object.cups_polissa_id.name}</b> i adreça de subministrament ${object.cups_polissa_id.cups_direccio} ha estat realitzat amb èxit.
     </p>
@@ -154,9 +157,6 @@ ${text_legal}
             %endif
         </table>
         <br>
-        <p>
-            Hola${nom_titular},<br>
-        </p>
         %if is_pot_tar:
             ${pot_tar_es()}
         %elif is_canvi_tit:
@@ -172,6 +172,9 @@ ${text_legal}
 </%def>
 
 <%def name="pot_tar_es()">
+    <p>
+        Hola${nom_titular},<br>
+    </p>
     <p>
         <strong> La modificación contractual que solicitaste ha sido aceptada. </strong><br>
     </p>
@@ -191,6 +194,9 @@ ${text_legal}
 </%def>
 
 <%def name="canvi_tit_es()">
+    <p>
+        Hola,<br>
+    </p>
     <p>
         El <b>cambio de titular del contrato ${object.cups_polissa_id.name}</b> y dirección de suministro ${object.cups_polissa_id.cups_direccio} ha sido llevado a cabo con éxito.
     </p>
