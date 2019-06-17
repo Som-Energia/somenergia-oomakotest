@@ -200,8 +200,8 @@
 #  poweremailId: 194
 #  #poweremailId: giscedata_switching.notification_atr_R1_02_acceptacio
 #  cases:
-#    non_ca: 184237
-#    non_es: 179580
+#    non_ca: 63129
+#    non_es: 70289
 #    021_ca: 230999
 #    021_es: 142640
 #    041_ca: 223003
@@ -210,6 +210,9 @@
 #    005_es: 165906
 #    043_ca: 222506
 #    043_es: 219872
+#    003_ca: 230908
+#    003_es: 222728
+#    067_ca: 226122
 #
 ######################################################
 ## Gestió de contractes

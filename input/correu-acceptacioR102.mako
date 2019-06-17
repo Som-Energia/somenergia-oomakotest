@@ -119,7 +119,7 @@ ${text_legal}
         <br>
         Recentment i seguint les teves indicacions, hem tramitat la reclamació ${subtipus_txt} pel punt de subministrament situat a <b>${object.cups_id.direccio}</b>.<br>
         <br>
-        La distribuïdora elèctrica a la teva zona ha obert el procediment de revisió i li ha atorgat aquest número de referència: ${reclamacio}. <br>
+        La distribuïdora elèctrica a la teva zona ha obert el procediment de revisió i li ha atorgat aquest número de referència: ${reclamacio}<br>
         <br>
         %if distri:
         (${distri['name']}: tel. ${distri['phone']})<br>
