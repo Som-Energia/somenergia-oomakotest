@@ -41,9 +41,11 @@
 
     pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
 
+    polissa = object.polissa_ref_id if is_canvi_tit else object.cups_polissa_id
+
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
-        object._cr, object._uid, object.polissa_ref_id.titular.name
+        object._cr, object._uid, polissa.titular.name
         )['nom']) if not object.vat_enterprise() else ''
 
 
@@ -251,3 +253,4 @@
         Así pues, desde la fecha <b>${date_activacio}</b> eres la nueva persona titular del contrato. Lo verás reflejado en las próximas facturas y en tu Oficina Virtual durante los próximos días.
     </p>
 </%def>
+

@@ -1,5 +1,5 @@
 cc: false
-to: ${object.polissa_ref_id.titular.address[0].email}
+to: "<% mail = '{}'.format(context['object'].cups_polissa_id.titular.address[0].email if context['object'].step_ids[0].pas_id.sollicitudadm == 'N' else context['object'].polissa_ref_id.titular.address[0].email)%> ${mail}"
 subject_translations:
   en_US: ''
   ca_ES: 'Som Energia: Modificació activada pel Contracte ${object.cups_polissa_id.name}.
