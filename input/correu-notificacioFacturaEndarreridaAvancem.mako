@@ -87,7 +87,7 @@ try:
   if data_inici != '2100-01-01' and data_final != '1900-01-01':
     data_inici_dt = datetime.strptime(data_inici,'%Y-%m-%d')
     data_final_dt = datetime.strptime(data_final,'%Y-%m-%d')
-    payment_moths = (data_final_dt.year - data_inici_dt.year) *12 + data_final_dt.month - data_inici_dt.month + 1
+    payment_moths = max((data_final_dt.year - data_inici_dt.year) *12 + data_final_dt.month - data_inici_dt.month , 1)
   else:
     payment_moths = 0
 
