@@ -132,13 +132,13 @@ Ens posem en contacte amb tu perquè hem revisat el teu contracte i hem detectat
 <br>
 Ho hem solucionat i hem emès les factures dels ${payment_moths} últims mesos, que sumen ${diff_amount} €.<br>
 <br>
-Entenent que s’han ajuntat més d’una factura, et proposem efectuar el pagament de manera esglaonada durant aquests propers mesos. La proposta quedaria així:<br>
+Entenent que s’han ajuntat més d’una factura, et proposem efectuar el pagament de manera esglaonada durant aquests propers mesos. La proposta quedaria així (les dates de cobrament són aproximades):<br>
 <br>
 % for date_due,amount in due_date_list:
-- ${date_due}: cobrament de ${amount} €<br>
+- A partir del ${date_due}: cobrament de ${amount} €<br>
 % endfor
 <br>
-Tingues present que, a partir del mes vinent, aquests cobraments coincidiran amb els de les factures del mes vigent. D’ara endavant esperem poder facturar mensualment i sense més incidències.<br>
+Tingues present que, a partir del mes vinent, aquests cobraments coincidiran amb els de les factures del mes vigent. D’ara endavant esperem poder emetre-les mensualment i sense més incidències.<br>
 <br>
 En el cas que prefereixis regularitzar la situació amb un sol pagament o bé en unes altres dates, ens ho pots comunicar responent aquest mateix correu.<br>
 <br>
@@ -158,17 +158,17 @@ factura@somenergia.coop<br>
 ----------------------------------------------------------------------------------------------------
 % endif
 % if  object.titular.lang != "ca_ES":
-Nos ponemos en contacto contigo porque hemos revisado tu contrato y hemos detectado que la facturación ha estado parada durante los últimos meses a causa de XXXXXXXXXXXXXXXXXX​​.<br>
+Nos ponemos en contacto contigo porque hemos revisado tu contrato y hemos detectado que la facturación ha estado parada durante los últimos meses a causa de XXXXXXXXXXXXXXXXXX.<br>
 <br>
 Hemos solucionado la incidencia y hemos emitido las facturas de los ${payment_moths} últimos meses, que suman ${diff_amount} €.<br>
 <br>
-Entendiendo que se han juntado más de una factura, te proponemos efectuar el pago de manera escalonada durante los próximos meses. La propuesta es la siguiente:<br>
+Entendiendo que se han juntado más de una factura, te proponemos efectuar el pago de manera escalonada durante los próximos meses. La propuesta es la siguiente (las fechas de cobro son aproximadas):<br>
 <br>
 % for date_due,amount in due_date_list:
-- ${date_due}: cobro de ${amount} €<br>
+- A partir del ${date_due}: cobro de ${amount} €<br>
 % endfor
 <br>
-Ten en cuenta que a partir del próximo mes estos cobros coincidirán con los de las facturas del mes vigente. De ahora en adelante esperamos poder facturar mensualmente y sin más incidencias.<br>
+Ten en cuenta que a partir del próximo mes estos cobros coincidirán con los de las facturas del mes vigente. De ahora en adelante esperamos poder emitirlas mensualmente y sin más incidencias.<br>
 <br>
 En el caso que prefieras regularizar la situación con un solo pago o en otras fechas, nos lo puedes comunicar respondiendo este mismo correo.<br>
 <br>
@@ -179,6 +179,7 @@ Muchas gracias por tu comprensión y disculpa las molestias ocasionadas.<br>
 Un saludo,<br>
 <br>
 Equipo de Som Energia<br>
+<br>
 <a href="http://es.support.somenergia.coop/category/139-ya-tengo-la-luz-contratada">Centro de Ayuda</a><br>
 factura@somenergia.coop<br>
 <a href="http://www.somenergia.coop">www.somenergia.coop</a><br>
