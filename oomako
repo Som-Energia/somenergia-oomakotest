@@ -160,6 +160,7 @@ def renderMakoPdf_not_working_against_own_erp_instance_WIP(template, model, id, 
                 'db': dbcfg.database,
             }
             return ""
+    # hint erp/server/bin/report/interface.py search the erpPeek behaviour 
 
 def renderMakoPdf_temptative_not_working_WIP(template, model, id, data, uid=1):
     from contextlib import closing
