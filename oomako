@@ -141,12 +141,22 @@ def makeB2bTestCase(testCaseName, id) :
                 self.fixture.model,
                 id,
                 self.fixture.get('data', {}))
-        else:
+        elif 'poweremailId' in self.fixture:
             output = renderMako(
                 self.fixture.template,
                 self.fixture.model,
                 id,
                 self.fixture.get('data', {}))
+        elif 'reportXmlId' in self.fixture:
+            output = renderMakoPdf(
+                self.fixture.template,
+                self.fixture.model,
+                id,
+                self.fixture.get('data', {}))
+        else:
+            warn("No suitable renderer found for {}"
+                .format(testCaseName))
+            output = ""
 
         try:
             with codecs.open(expectedFilename,'r', 'utf8') as expectedfile:
@@ -257,6 +267,9 @@ def downloadRejectionTemplate(O, name, fixture):
     templateWrite(fixture.template,template.notify_text)
     step("Done in {}...".format(fixture.template))
 
+def downloadPdfTemplate(O, case, fixture):
+    warn("WIP")
+
 def uploadTemplate(O, case, fixture):
     template = getTemplate(O, fixture)
     newContent = templateRead(fixture.template)
@@ -298,6 +311,9 @@ def uploadRejectionTemplate(O, case, fixture):
     template.notify_text = newContent
     template.save()
 
+def uploadPdfTemplate(O, case, fixture):
+    warn("WIP")
+
 def filterArgsnotInTestcases():
     notFound = set(args.testcases).difference(set(testcases.keys()))
     if notFound:
@@ -320,6 +336,8 @@ def download():
             downloadTemplate(O, name, fixture)
         elif 'rejectId' in fixture:
             downloadRejectionTemplate(O, name, fixture)
+        elif 'reportXmlId' in fixture:
+            downloadPdfTemplate(O, name, fixture)
         else:
             step("Download not implemented for {}...".format(name))
 
@@ -335,6 +353,8 @@ def upload():
             uploadTemplate(O, case, fixture)
         elif 'rejectId' in fixture:
             uploadRejectionTemplate(O, case, fixture)
+        elif 'reportXmlId' in fixture:
+            uploadPdfTemplate(O, name, fixture)
         else:
             step("Upload not implemented for {}...".format(case))
 
