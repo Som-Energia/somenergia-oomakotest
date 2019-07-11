@@ -127,6 +127,86 @@ def renderMako(template, model, id, data, uid=1):
                 )
             return result
 
+def renderMakoPdf(template, model, id, data, uid=1):
+    #return renderMakoPdf_working_example_agains_remote_WIP(template, model, id, data, uid)
+    #return renderMakoPdf_not_working_against_own_erp_instance_WIP(template, model, id, data, uid)
+    #return renderMakoPdf_temptative_not_working_WIP(template, model, id, data, uid)
+    return ""
+
+def renderMakoPdf_working_example_agains_remote_WIP(template, model, id, data, uid=1):
+    print template
+    print model
+    print id
+    print data
+    print uid
+
+    O = GetOOOP()
+    print O
+    report_item = O.report(model, [id])
+
+    with open('report.pdf','w') as f:
+        f.write(report_item)
+
+    return report_item
+
+
+def renderMakoPdf_not_working_against_own_erp_instance_WIP(template, model, id, data, uid=1):
+    from contextlib import closing
+
+    with closing(db.cursor()) as cursor:
+        for obj in pool.get(model).browse(cursor,uid,[id]):
+            env = {
+                'user':pool.get('res.users').browse(cursor,uid,uid),
+                'db': dbcfg.database,
+            }
+            return ""
+
+def renderMakoPdf_temptative_not_working_WIP(template, model, id, data, uid=1):
+    from contextlib import closing
+
+    with closing(db.cursor()) as cursor:
+        makoinput = templateRead(template)
+
+        for obj in pool.get(model).browse(cursor,uid,[id]):
+            env = {
+                'user':pool.get('res.users').browse(cursor,uid,uid),
+                'db': dbcfg.database,
+            }
+
+            from c2c_webkit_report import webkit_report
+            from report import report_sxw
+
+            class report_webkit_oomakotest(report_sxw.rml_parse):
+                def __init__(self, cursor, uid, name, context):
+                    super(report_webkit_html, self).__init__(cursor, uid, name,
+                                                             context=context)
+                    self.localcontext.update({
+                        'cursor': cursor,
+                        'uid': uid,
+                        'addons_path': '/home/usuario/somenergia/erp/addons/gisce/Extrareports/giscedata_facturacio_comer_som/report',
+                    })
+
+            render = webkit_report.WebKitParser(
+                'report.giscedata.facturacio.factura',
+                'giscedata.facturacio.factura',
+                'giscedata_facturacio_comer_som/report/report_giscedata_facturacio_factura_comer.mako',
+                parser=report_webkit_oomakotest
+            )
+            render.create_single_pdf()
+            return ""
+
+            #import mako.template
+            #result = mako.template.Template(makoinput).render_unicode(
+            #    objects=[obj],
+            #    cursor=cursor,
+            #    uid=uid,
+            #    addons_path='/home/usuario/somenergia/erp/addons/gisce/Extrareports/giscedata_facturacio_comer_som/report',
+            #    env=env,
+            #    format_exceptions=True,
+            #    **data
+            #    )
+            #return result
+
 def makeB2bTestCase(testCaseName, id) :
     def b2bTestCase(self):
         self.maxDiff = None
