@@ -232,6 +232,28 @@ mailEnviarFacturaComptabilitat:
     es: 7043159
     ca: 6956113
 
+facturaPrincipal:
+  template: input/facturaPrincipal/report_giscedata_facturacio_factura_comer.mako
+  model: giscedata.facturacio.factura
+  reportXmlId: 400
+  cases:
+    20A_ca: 5809185
+#    20A_es: 5748876
+#    20DHA_ca:
+#    20DHA_es:
+#    20DHS_ca:
+#    20DHS_es:
+#    21A_ca:
+#    21A_es:
+#    21DHA_ca:
+#    21DHA_es:
+#    21DHS_ca:
+#    21DHS_es:
+#    30A_ca:
+#    30A_es:
+#    31A_ca:
+#    31A_es:
+#
 ######################################################
 ## Gestió de contractes
 #
