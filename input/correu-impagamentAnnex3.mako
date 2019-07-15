@@ -45,6 +45,10 @@ A dia d’avui, no has satisfet el pagament de la/les factura/es emesa/es a cont
 <br/>
 En cas de no abonar-se la quantitat deguda, en un termini de <b>2 mesos a partir de la notificació</b> d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
+Sempre prevaldrà la data de notificació del primer requeriment de factura impagada.<br/>
+<br/>
+Et comuniquem que s'aplicarà un càrrec de 3€+IVA en concepte de despeses de Gestió de l'Impagament, a través de la nostra factura.<br/>
+<br/>
 <br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
@@ -113,6 +117,10 @@ Mediante la presente se te requiere el pago de las cantidades adeudadas en conce
 A día de hoy no has satisfecho el pago de las facturas emitidas a continuación detalladas.<br/>
 <br/>
 De no abonarse la cantidad adeudada en un plazo de 2 meses a partir de la notificación del presente requerimiento, la empresa distribuidora podrá suspender tu suministro de electricidad.<br/>
+<br/>
+Siempre prevaldrá la fecha de notificación del primer requerimiento de factura impagada.<br/>
+<br/>
+Te comunicamos que se aplicará un cargo de 3€+IVA en concepto de gastos por la Gestión del Impago, a través de nuestra factura.<br/>
 <br/>
 <br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>
