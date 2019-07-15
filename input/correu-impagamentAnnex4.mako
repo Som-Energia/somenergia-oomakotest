@@ -51,7 +51,12 @@ A dia d’avui, no has satisfet el pagament de la factura emesa a continuació d
 <br/>
 En cas de no abonar-se la quantitat deguda, a partir del dia <b>${data_venciment}</b> l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
-<br/>
+% if object.pending_state.process_id.id == 3:
+En cas que aquest impagament s'allargui fins a les 48h prèvies a la data de Tall de Subministrament s'aplicarà un segon càrrec de 3€+IVA.<br/>
+% else:
+Et comuniquem que s'aplicarà un càrrec de 3€+IVA en concepte de despeses de Gestió de l'Impagament, a través de la nostra factura.
+% endif
+<br/><br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
 - Codi CUPS: ${object.cups_id.name}<br/>
@@ -120,6 +125,11 @@ A día de hoy no has satisfecho el pago de la factura emitida a continuación de
 <br/>
 De no abonarse la cantidad adeudada, a partir del día <b>${data_venciment}</b> la empresa distribuidora podrá suspender tu suministro de electricidad.
 <br/>
+% if object.pending_state.process_id.id == 3:
+En el caso que el impago se alargue hasta las 48h previas a la fecha del Corte de Suministro se aplicará un segundo cargo de 3€+IVA.<br/>
+% else:
+Te comunicamos que se aplicará un cargo de 3€+IVA en concepto de gastos por la Gestión del Impago, a través de nuestra factura.<br/>
+% endif
 <br/>
 <br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>
