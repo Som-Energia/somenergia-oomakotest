@@ -179,6 +179,16 @@
 #    normal_es: 403834
 #    energetica: 5084228
 #
+#avisSuplementTerr2019:
+#  template: input/avisSuplementTerr2019.mako
+#  model: giscedata.suplements.territorials.2013.tec271.comer
+#  poweremailId: 254
+#  cases:
+#    cat_ca: 1
+#    cat_es: 2
+#    res_ca: 3
+#    res_es: 4
+#
 #oberturaR101:
 #  template: input/correu-oberturaR101.mako
 #  model: giscedata.switching
