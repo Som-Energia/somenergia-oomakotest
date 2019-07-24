@@ -1,7 +1,7 @@
 cc: false
 to: <%p_obj = object.pool.get('giscedata.polissa');p_ids = p_obj.search(object._cr, object._uid,[('cups','like',object.cups[:20])]);p = p_obj.browse(object._cr, object._uid,p_ids[0])%>${p.direccio_pagament.email},${p.direccio_notificacio.email}
 subject_translations:
-  ca_ES: Suplement Territorial TEC 271
-  es_ES: Suplemento Territorial TEC 271
-subject: Suplemento Territorial TEC 271 / Suplement Territorial TEC 271
+  ca_ES: Informació sobre la regularització del suplement por tributs autonòmics de la Comunitat Autònoma de l'any 2013
+  es_ES: Información sobre la regularización del suplemento por tributos autonómicos de la Comunidad Autónoma del año 2013
+subject: Información sobre la regularización del suplemento por tributos autonómicos de la Comunidad Autónoma del año 2013 / Informació sobre la regularització del suplement por tributs autonòmics de la Comunitat Autònoma de l'any 2013
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
