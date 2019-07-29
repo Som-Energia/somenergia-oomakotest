@@ -224,6 +224,14 @@
 #    003_es: 222728
 #    067_ca: 226122
 #
+mailEnviarFacturaComptabilitat:
+  template: input/correu-mailEnviarFacturaComptabilitat.mako
+  model: account.invoice
+  poweremailId: 255
+  cases:
+    es: 7043159
+    ca: 6956113
+
 ######################################################
 ## Gestió de contractes
 #
