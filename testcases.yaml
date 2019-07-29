@@ -346,14 +346,14 @@
 #    cases:
 #      nou: 147916
 #
-rebuigA302:
-  template: input/correu-rebuigA302.mako
-  model: giscedata.switching
-  poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
-  data:
-    notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-  cases:
-    nou: 147916
+# rebuigA302:
+#   template: input/correu-rebuigA302.mako
+#   model: giscedata.switching
+#   poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
+#   data:
+#     notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+#   cases:
+#     nou: 147916
 #
 #rebuigA304:
 #    template: input/correu-rebuigA304.mako
@@ -503,15 +503,15 @@ rebuigA302:
 #    30A_ca: 3632  #par 5366
 #    30A_es: 12696 #par 22212
 #
-activacioM105_automatica:
-  template: input/correu-activacioM105.mako
-  model: giscedata.switching
-  poweremailId: giscedata_switching.notification_atr_M1_05
-  cases:
-    20A_ca: 1582  #par 7101
-    20A_es: 1583  #par 11326
-    30A_ca: 3632  #par 5366
-    30A_es: 12696 #par 22212
+# activacioM105_automatica:
+#   template: input/correu-activacioM105.mako
+#   model: giscedata.switching
+#   poweremailId: giscedata_switching.notification_atr_M1_05
+#   cases:
+#     20A_ca: 1582  #par 7101
+#     20A_es: 1583  #par 11326
+#     30A_ca: 3632  #par 5366
+#     30A_es: 12696 #par 22212
 #
 #
 #notificacioAcceptacioA3:
@@ -805,15 +805,17 @@ activacioM105_automatica:
 #    ca: 444848
 #    es: 403834
 #
-pagamentGenericN57:
-  template: input/correu-pagamentGenericN57.mako
-  model: giscedata.facturacio.factura
-  poweremailId: 249
-  cases:
-    ca: 444848
-    es: 403834
+#pagamentGenericN57:
+#  template: input/correu-pagamentGenericN57.mako
+#  model: giscedata.facturacio.factura
+#  poweremailId: 249
+#  cases:
+#    ca: 444848
+#    es: 403834
+#    es_baixa: 6850168
+#    ca_baixa: 6906042 
 #
-#########################################
+########################################
 ## Infoenergia
 #
 #infoenergiaTancamentAny:
@@ -831,11 +833,11 @@ pagamentGenericN57:
 #  cases:
 #    ca: 17
 #    es: 1028
-infoenergiaM2Enviament:
-  template: input/correu-infoenergiaM2Enviament.mako
-  model: giscedata.polissa
-  poweremailId: 60
-  cases:
-    ca: 17
-    es: 1028
+# infoenergiaM2Enviament:
+#   template: input/correu-infoenergiaM2Enviament.mako
+#   model: giscedata.polissa
+#   poweremailId: 60
+#   cases:
+#     ca: 17
+#     es: 1028
 # vim: et ts=2 sw=2
