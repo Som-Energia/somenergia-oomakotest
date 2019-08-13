@@ -1,5 +1,5 @@
 cc: false
-to: ${object.titular.address[0].email}
+to: ${object.direccio_pagament.email}
 subject_translations:
   ca_ES: Contractació Som Energia ${object.name}
   es_ES: Contratación Som Energia ${object.name}
