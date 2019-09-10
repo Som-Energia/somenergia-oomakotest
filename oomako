@@ -131,7 +131,56 @@ def renderMakoPdf(template, model, id, data, uid=1):
     #return renderMakoPdf_working_example_agains_remote_WIP(template, model, id, data, uid)
     #return renderMakoPdf_not_working_against_own_erp_instance_WIP(template, model, id, data, uid)
     #return renderMakoPdf_temptative_not_working_WIP(template, model, id, data, uid)
+    return renderMakoPdf_Test(template, model, id, data, uid)
     return ""
+
+def renderMakoPdf_Test(template, model, id, data, uid=1):
+
+    from contextlib import closing
+
+    with closing(db.cursor()) as cursor:
+
+        ctx = {'lang': 'ca_ES', 'active_ids': [], 'tz': 'Europe/Madrid', 'active_id': False}
+        report_id = 400
+        data = {'model': model, 'id': id, 'report_type': 'webkit'}
+
+        ir_obj = pool.get('ir.actions.report.xml')
+        report_xml = ir_obj.browse(cursor, uid, report_id, context=ctx)
+
+        report_xml.report_rml = None
+        report_xml.report_rml_content = None
+        report_xml.report_sxw_content_data = None
+
+        #report_xml.webkit_debug = True # enables html output
+
+
+        from c2c_webkit_report import webkit_report
+        from report import report_sxw
+        from tools import config
+
+        class report_webkit_html(report_sxw.rml_parse):
+            def __init__(self, cursor, uid, name, context):
+                super(report_webkit_html, self).__init__(cursor, uid, name,
+                                                         context=context)
+                self.localcontext.update({
+                    'cursor': cursor,
+                    'uid': uid,
+                    'addons_path': config['addons_path'],
+                })
+
+        wk = webkit_report.WebKitParser(
+            'report.giscedata.facturacio.factura',
+            'giscedata.facturacio.factura',
+            'giscedata_facturacio_comer_som/report/report_giscedata_facturacio_factura_comer.mako',#template,
+            parser=report_webkit_html
+        )
+
+        result = wk.create_single_pdf(cursor, uid, [id], data, report_xml, ctx)
+
+        with open('theReport.pdf','w') as f:
+            f.write(result[0])
+
+        return result[0]
 
 def renderMakoPdf_working_example_agains_remote_WIP(template, model, id, data, uid=1):
     print template

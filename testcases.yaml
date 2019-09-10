@@ -237,7 +237,8 @@ facturaPrincipal:
   model: giscedata.facturacio.factura
   reportXmlId: 400
   cases:
-    20A_ca: 5809185
+    test: 7152113
+#    20A_ca: 5809185
 #    20A_es: 5748876
 #    20DHA_ca:
 #    20DHA_es:
