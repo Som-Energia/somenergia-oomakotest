@@ -48,6 +48,10 @@ def GetOOOP():
 def loadErp(dbcfg):
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin")))
 
+    root_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server"))
+    addons_path =  os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin/addons"))
+    oomako_path =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
+
     import netsvc
     import tools
     tools.config['db_name'] = dbcfg.database
@@ -55,10 +59,9 @@ def loadErp(dbcfg):
     tools.config['db_user'] = dbcfg.user
     tools.config['db_password'] = dbcfg.password
     tools.config['db_port'] = dbcfg.port
-    #tools.config['root_path'] = "../erp/server"
-    tools.config['root_path'] = "/home/usuario/somenergia/erp/server"
-    #tools.config['addons_path'] = "../erp/server/bin/addons"
-    tools.config['addons_path'] = "/home/usuario/somenergia/erp/server/bin/addons"
+    tools.config['root_path'] = root_path
+    tools.config['addons_path'] = addons_path
+    tools.config['oomako_path'] = oomako_path
     tools.config['log_level'] = None #'warn'
     tools.config['log_file'] = open('/dev/null','w')
     #tools.config['log_handler'] = [':WARNING']
@@ -129,32 +132,18 @@ def renderMako(template, model, id, data, uid=1):
                 )
             return result
 
-def renderMakoPdf(template, model, id, data, uid=1):
-    #return renderMakoPdf_working_example_agains_remote_WIP(template, model, id, data, uid)
-    #return renderMakoPdf_not_working_against_own_erp_instance_WIP(template, model, id, data, uid)
-    #return renderMakoPdf_temptative_not_working_WIP(template, model, id, data, uid)
-    return ("",renderMakoPdf_Test(template, model, id, data, uid))
-    return ""
-
-def renderMakoPdf_Test(template, model, id, data, uid=1):
+def renderMakoPdf(template, report_id, id, data, uid=1):
 
     from contextlib import closing
 
     with closing(db.cursor()) as cursor:
-
-        ctx = {'lang': 'ca_ES', 'active_ids': [], 'tz': 'Europe/Madrid', 'active_id': False}
-        report_id = 400
-        data = {'model': model, 'id': id, 'report_type': 'webkit'}
-
+        ctx = {}
         ir_obj = pool.get('ir.actions.report.xml')
         report_xml = ir_obj.browse(cursor, uid, report_id, context=ctx)
-
         report_xml.report_rml = None
         report_xml.report_rml_content = None
         report_xml.report_sxw_content_data = None
-
-        #report_xml.webkit_debug = True # enables html output
-
+        m_data = {'model': report_xml.model, 'id': id, 'report_type': 'webkit'}
 
         from c2c_webkit_report import webkit_report
         from report import report_sxw
@@ -170,94 +159,21 @@ def renderMakoPdf_Test(template, model, id, data, uid=1):
                     'addons_path': config['addons_path'],
                 })
 
+        # forcing to use our .mako template
+        report_xml.report_webkit = os.path.join(config['oomako_path'],template)
+
         wk = webkit_report.WebKitParser(
-            'report.giscedata.facturacio.factura',
-            'giscedata.facturacio.factura',
-            'giscedata_facturacio_comer_som/report/report_giscedata_facturacio_factura_comer.mako',#template,
+            "report."+report_xml.report_name,
+            report_xml.model,
+            None,
             parser=report_webkit_html
         )
+        pdf = wk.create_single_pdf(cursor, uid, [id], m_data, report_xml, ctx)
 
-        result = wk.create_single_pdf(cursor, uid, [id], data, report_xml, ctx)
+        report_xml.webkit_debug = True
+        html = wk.create_single_pdf(cursor, uid, [id], m_data, report_xml, ctx)
 
-        with open('theReport.pdf','w') as f:
-            f.write(result[0])
-
-        return result[0]
-
-def renderMakoPdf_working_example_agains_remote_WIP(template, model, id, data, uid=1):
-    print template
-    print model
-    print id
-    print data
-    print uid
-
-    O = GetOOOP()
-    print O
-    report_item = O.report(model, [id])
-
-    with open('report.pdf','w') as f:
-        f.write(report_item)
-
-    return report_item
-
-
-def renderMakoPdf_not_working_against_own_erp_instance_WIP(template, model, id, data, uid=1):
-    from contextlib import closing
-
-    with closing(db.cursor()) as cursor:
-        for obj in pool.get(model).browse(cursor,uid,[id]):
-            env = {
-                'user':pool.get('res.users').browse(cursor,uid,uid),
-                'db': dbcfg.database,
-            }
-            return ""
-    # hint erp/server/bin/report/interface.py search the erpPeek behaviour 
-
-def renderMakoPdf_temptative_not_working_WIP(template, model, id, data, uid=1):
-    from contextlib import closing
-
-    with closing(db.cursor()) as cursor:
-        makoinput = templateRead(template)
-
-        for obj in pool.get(model).browse(cursor,uid,[id]):
-            env = {
-                'user':pool.get('res.users').browse(cursor,uid,uid),
-                'db': dbcfg.database,
-            }
-
-            from c2c_webkit_report import webkit_report
-            from report import report_sxw
-
-            class report_webkit_oomakotest(report_sxw.rml_parse):
-                def __init__(self, cursor, uid, name, context):
-                    super(report_webkit_html, self).__init__(cursor, uid, name,
-                                                             context=context)
-                    self.localcontext.update({
-                        'cursor': cursor,
-                        'uid': uid,
-                        'addons_path': '/home/usuario/somenergia/erp/addons/gisce/Extrareports/giscedata_facturacio_comer_som/report',
-                    })
-
-            render = webkit_report.WebKitParser(
-                'report.giscedata.facturacio.factura',
-                'giscedata.facturacio.factura',
-                'giscedata_facturacio_comer_som/report/report_giscedata_facturacio_factura_comer.mako',
-                parser=report_webkit_oomakotest
-            )
-            render.create_single_pdf()
-            return ""
-
-            #import mako.template
-            #result = mako.template.Template(makoinput).render_unicode(
-            #    objects=[obj],
-            #    cursor=cursor,
-            #    uid=uid,
-            #    addons_path='/home/usuario/somenergia/erp/addons/gisce/Extrareports/giscedata_facturacio_comer_som/report',
-            #    env=env,
-            #    format_exceptions=True,
-            #    **data
-            #    )
-            #return result
+        return html[0],pdf[0]
 
 def makeB2bTestCase(testCaseName, id) :
     def b2bTestCase(self):
@@ -280,15 +196,14 @@ def makeB2bTestCase(testCaseName, id) :
                 id,
                 self.fixture.get('data', {}))
         elif 'reportXmlId' in self.fixture:
-            output = renderMakoPdf(
+            output,pdf = renderMakoPdf(
                 self.fixture.template,
-                self.fixture.model,
+                self.fixture.reportXmlId,
                 id,
                 self.fixture.get('data', {}))
 
             with open('theReport.pdf','w') as f:
-                f.write(output[1])
-            output = output[0]
+                f.write(pdf)
 
         else:
             warn("No suitable renderer found for {}"
