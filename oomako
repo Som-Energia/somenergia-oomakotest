@@ -16,6 +16,8 @@ dbcfg = ns(dbcfg)
 
 testcases = ns.load("testcases.yaml")
 
+oomako_path =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
+
 parser = argparse.ArgumentParser(
     description=
         "Manega els testos d'esquena contra esquena (b2b) de "
@@ -50,7 +52,6 @@ def loadErp(dbcfg):
 
     root_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server"))
     addons_path =  os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin/addons"))
-    oomako_path =  os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
 
     import netsvc
     import tools
