@@ -26,24 +26,19 @@ for page in ${TMPDIR}/input_a/page_*.pdf; do
 
     step generating "$diff"
     run compare -metric AE "$a" "$b" -compose src "$diff"
-#       -verbose \
-#       -debug coder \
-#       -log "%u %m:%l %e" \
-
     error="$?"
 
     if [ "$error" != "0" ] ; then
         warn "Diff found ($error) in page $page"
         DIFFFOND=1
     fi
-    
+
     step generating "$merged"
     run pdftk "$diff" background "$b" output "$merged"
-
 done
-
 
 run pdftk "${TMPDIR}"/merged/*.pdf cat output $OUTPUT
 
-exit $DIFFFOND
+rm -rf "${TMPDIR}"
 
+exit $DIFFFOND
