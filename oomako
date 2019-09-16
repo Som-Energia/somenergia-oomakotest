@@ -6,6 +6,7 @@ import os
 import argparse
 import codecs
 import unittest
+import subprocess
 from yamlns import namespace as ns
 from consolemsg import step, error, success, fail, warn
 
@@ -176,13 +177,23 @@ def renderMakoPdf(template, report_id, id, data, uid=1):
 
         return html[0],pdf[0]
 
+def deleteIfExists(filename):
+    if os.access(filename, os.R_OK) :
+        os.unlink(filename)
+
 def makeB2bTestCase(testCaseName, id) :
     def b2bTestCase(self):
+        exit_code = 0
         self.maxDiff = None
         resultFilename = os.path.join('b2bdata',testCaseName+'-result.html')
         expectedFilename = os.path.join('b2bdata',testCaseName+'-expected.html')
-        if os.access(resultFilename, os.R_OK) :
-            os.unlink(resultFilename)
+        resultPdf = os.path.join('b2bdata',testCaseName+'-result.pdf')
+        expectedPdf = os.path.join('b2bdata',testCaseName+'-expected.pdf')
+        diffPdf = os.path.join('b2bdata',testCaseName+'-diff.pdf')
+
+        deleteIfExists(resultFilename)
+        deleteIfExists(resultPdf)
+        deleteIfExists(diffPdf)
 
         if 'rejectId' in self.fixture:
             output = renderMakoReject(
@@ -203,8 +214,16 @@ def makeB2bTestCase(testCaseName, id) :
                 id,
                 self.fixture.get('data', {}))
 
-            with open('theReport.pdf','w') as f:
+            with open(resultPdf,'wb') as f:
                 f.write(pdf)
+
+            if not os.path.exists(expectedPdf):
+                fail("No expectation found, to accept: mv {} {}".format(resultPdf, expectedPdf))
+
+            exit_code = subprocess.call([os.path.join(oomako_path,'pdfcmp.sh'),expectedPdf,resultPdf,diffPdf])
+            if exit_code == 0: # identical
+                deleteIfExists(resultPdf)
+                deleteIfExists(diffPdf)
 
         else:
             warn("No suitable renderer found for {}"
@@ -231,6 +250,11 @@ def makeB2bTestCase(testCaseName, id) :
             "B2B data missmatch, use the 'accept' "
             "subcommand to accept the current result as good '{}'"
             .format(resultFilename))
+
+        self.assertFalse(exit_code,
+            "B2B PDF data missmatch, use the 'accept' "
+            "subcommand to accept the current result as good '{}'"
+            .format(resultPdf))
 
     return b2bTestCase
 
@@ -443,9 +467,14 @@ def accept():
     for testcase, fixture, id in iterTestCases():
         resultFilename = os.path.join('b2bdata',testcase+'-result.html')
         expectedFilename = os.path.join('b2bdata',testcase+'-expected.html')
-        if not os.access(resultFilename, os.R_OK) : continue
-        step("Accepting "+testcase)
-        shutil.move(resultFilename, expectedFilename)
+        resultPdf = os.path.join('b2bdata',testcase+'-result.pdf')
+        expectedPdf = os.path.join('b2bdata',testcase+'-expected.pdf')
+        if os.access(resultFilename, os.R_OK):
+            step("Accepting "+testcase)
+            shutil.move(resultFilename, expectedFilename)
+        if os.access(resultPdf, os.R_OK):
+            step("Accepting pdf "+testcase)
+            shutil.move(resultPdf, expectedPdf)
 
 if __name__ == '__main__' :
     if args.subcommand not in globals() :
