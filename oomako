@@ -218,12 +218,12 @@ def makeB2bTestCase(testCaseName, id) :
                 f.write(pdf)
 
             if not os.path.exists(expectedPdf):
-                fail("No expectation found, to accept: mv {} {}".format(resultPdf, expectedPdf))
-
-            exit_code = subprocess.call([os.path.join(oomako_path,'pdfcmp.sh'),expectedPdf,resultPdf,diffPdf])
-            if exit_code == 0: # identical
-                deleteIfExists(resultPdf)
-                deleteIfExists(diffPdf)
+                warn("No expectation for the testMethod (pdf), use the 'accept' subcommand to accept the current result as good '{}'",expectedPdf)
+            else:
+                exit_code = subprocess.call([os.path.join(oomako_path,'pdfcmp.sh'),expectedPdf,resultPdf,diffPdf])
+                if exit_code == 0: # identical
+                    deleteIfExists(resultPdf)
+                    deleteIfExists(diffPdf)
 
         else:
             warn("No suitable renderer found for {}"
