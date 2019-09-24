@@ -12,6 +12,8 @@ OUTPUT="$3"
 TMPDIR="$(mktemp -d)"
 DIFFFOND=0
 
+# Requires texlive-extra-utils poppler-utils
+
 split() {
     # Receives a pdf and splits pages as vectorial (pdf) and raster (png)
 
@@ -24,19 +26,24 @@ split() {
     run rm ${2%_%03d.png}_000.png
 }
 rasterdiff() {
-    run compare -alpha on -metric AE "$a" "$b" -compose Src -highlight-color white -lowlight-color black PNG32:"$diff"
-    #run convert "$1" -fill white -opaque none +matte "$2"
-    #run compare -metric AE "$a" "$b" -compose src "$diff"
+    # -alpha on: if not used, black is used as background and all letters blend
+    # -compose src: default would be to output 
+    # colors are set to create a b/w mask instead a red on white image
+    run compare -alpha on -metric AE "$a" "$b" \
+        -compose Src \
+        -highlight-color white \
+        -lowlight-color black \
+        PNG32:"$diff"
 }
 highlight() {
-    # Receives a mask with the differences in black the rest in white
+    # Receives a mask with the differences in white in a black bg
     # It draws a red outline and
     # sets a semi transparent white background to dimm the document
     run convert "$1" \
-    	-morphology Dilate Octagon -negate -edge 3 \
-    	-channel rgb -fill "red" -opaque white \
-    	-channel rgba -fill "rgba(255,255,255,.3)" -opaque black \
-    	"$1"
+        -morphology Dilate Octagon -negate -edge 3 \
+        -channel rgb -fill "red" -opaque white \
+        -channel rgba -fill "rgba(255,255,255,.4)" -opaque black \
+        "$1"
 }
 overlay() {
     #run convert "$2" "$1" +swap -composite "$3"
@@ -48,7 +55,7 @@ sidebyside() {
 }
 join() {
     run pdfjoin "${@:2}" -o "$1" 
-    #run pdftk "${TMPDIR}"/merged/*.pdf cat output "$1"
+    #run pdftk "${@:2}" cat output "$1"
 }
 
 mkdir -p "${TMPDIR}/input_a"
@@ -81,7 +88,6 @@ for page in ${TMPDIR}/input_a/page_*.png; do
         DIFFFOND=1
     fi
     run highlight "$diff" "$diff"
-    # TODO: Use the PDF but is differently numbered
     run overlay "$apdf" "$diff" "$merged_a"
     run overlay "$bpdf" "$diff" "$merged_b"
     run sidebyside "$merged_a" "$merged_b" "$merged"
