@@ -20,10 +20,7 @@ split() {
     run pdfseparate "$1" "${2%png}pdf"
     #run pdftk  "$1"  burst  output "$2"
 
-    # Little hack to make indexes 1 based as pdf splitters do
-    # add a dummy page rose: and delete it
-    run convert rose: "$1" -fill white -opaque none +matte "$2"
-    run rm ${2%_%03d.png}_000.png
+    run convert -scene 1 "$1" -fill white -opaque none +matte "$2"
 }
 rasterdiff() {
     # -alpha on: if not used, black is used as background and all letters blend
