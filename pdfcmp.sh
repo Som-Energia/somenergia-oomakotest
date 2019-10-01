@@ -1,9 +1,13 @@
 #!/bin/bash
 
+showsemanticcommands=0
+
+verbose=false
+
 step() { echo -e "\033[34;1m== "$@"\033[0m"; }
 warn() { echo -e "\033[33m== "$@"\033[0m"; }
-run() { echo -e "\033[35;1m> "$@"\033[0m"; "$@"; }
-skip() { echo -e "\033[33;1mSkipped: > "$@"\033[0m"; }
+run() { $verbose && echo -e "\033[35;1m> "$@"\033[0m"; "$@"; }
+skip() { $verbose && echo -e "\033[33;1mSkipped: > "$@"\033[0m"; }
 
 INPUT_A="$1"
 INPUT_B="$2"
@@ -37,7 +41,7 @@ highlight() {
     # It draws a red outline and
     # sets a semi transparent white background to dimm the document
     run convert "$1" \
-        -morphology Dilate Octagon -negate -edge 3 \
+        -morphology Dilate Square:2 -negate -edge 3 \
         -channel rgb -fill "red" -opaque white \
         -channel rgba -fill "rgba(255,255,255,.4)" -opaque black \
         "$1"
@@ -54,6 +58,9 @@ join() {
     run pdfjoin "${@:2}" -o "$1" 
     #run pdftk "${@:2}" cat output "$1"
 }
+rasterjoin() {
+	convert "${@:2}" "$1"
+}
 
 mkdir -p "${TMPDIR}/input_a"
 mkdir -p "${TMPDIR}/input_b"
@@ -66,7 +73,7 @@ run split  "${INPUT_A}"  "${TMPDIR}/input_a/page_%03d.png"
 run split  "${INPUT_B}"  "${TMPDIR}/input_b/page_%03d.png"
 
 for page in ${TMPDIR}/input_a/page_*.png; do
-    step "Processing $(basename $page .png)..."
+    $verbose && step "Comparing $(basename $page .png)..."
     a="$page"
     b="${page/input_a/input_b}"
 
@@ -83,15 +90,37 @@ for page in ${TMPDIR}/input_a/page_*.png; do
     if [ "$error" != "0" ] ; then
         warn "Diff found ($error) in page $page"
         DIFFFOND=1
+	else
+		run rm "$diff"
     fi
-    run highlight "$diff" "$diff"
-    run overlay "$apdf" "$diff" "$merged_a"
-    run overlay "$bpdf" "$diff" "$merged_b"
-    run sidebyside "$merged_a" "$merged_b" "$merged"
 done
+if [ "$DIFFFOND" != "0" ]; then
+	for page in ${TMPDIR}/input_a/page_*.png; do
+		step "Processing $(basename $page .png)..."
+		a="$page"
+		b="${page/input_a/input_b}"
 
-run join "$OUTPUT" "${TMPDIR}"/merged/*.pdf 
+		apdf="${a/.png/.pdf}"
+		bpdf="${b/.png/.pdf}"
 
-run rm -rf "${TMPDIR}"
+		diff="${page/input_a/diff}"
+		merged_a="${apdf/input_a/merged_a}"
+		merged_b="${bpdf/input_b/merged_b}"
+		merged="${apdf/input_a/merged}"
+
+		if [ -e "$diff" ]; then
+			run highlight "$diff" "$diff"
+		else
+			run convert label:Identicos "$diff"
+		fi
+		run overlay "$apdf" "$diff" "$merged_a"
+		run overlay "$bpdf" "$diff" "$merged_b"
+		run sidebyside "$merged_a" "$merged_b" "$merged"
+	done
+	run join "$OUTPUT" "${TMPDIR}"/merged/*.pdf 
+fi
+
+
+skip run rm -rf "${TMPDIR}"
 
 exit $DIFFFOND
