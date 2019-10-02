@@ -8,10 +8,26 @@ import sys
 from pathlib import Path
 from itertools import zip_longest
 
-from consolemsg import step, warn
+from consolemsg import step, warn, out
 
 def step(*args): pass
 
+def tmpchanges(context):
+	"""Control uncleaned temporary files"""
+	current = set(Path('/tmp').glob('*'))
+	tmpchanges.initial = tmpchanges.initial if hasattr(tmpchanges, 'previous') else current
+	previous = tmpchanges.previous if hasattr(tmpchanges, 'previous') else set()
+	added = current - previous
+	removed = previous - current
+	if not added and not removed: return
+	if tmpchanges.initial == current: return
+	warn("{}: Temporary files left behind:\n{}", context, [
+		"+ {}".format(tmp) for tmp in added] + [
+		"- {}".format(tmp) for tmp in removed] + [
+		"  {}".format(tmp) for tmp in current-tempchanges.initial-added] + [
+	])
+	tmpchanges.previous = current
+	
 
 def buildDiffPdf(a, b, overlay, output, **params):
 	import PyPDF2
@@ -43,12 +59,17 @@ def buildDiffPdf(a, b, overlay, output, **params):
 
 		for apage, bpage, diffpage in zip_longest(pages(areader), pages(breader), pages(diffreader)):
 			step(" Building page")
+			missingA = not apage
+			missingB = not bpage
+			assert diffpage
 			apage = apage or blankLike(bpage)
 			bpage = bpage or blankLike(apage)
 			xoffset = apage.mediaBox.getUpperRight_x()
 			apage.mergeTranslatedPage(bpage, xoffset, 0, True)
-			apage.mergeTranslatedPage(diffpage, 0, 0, True)
-			apage.mergeTranslatedPage(diffpage, xoffset, 0, True)
+			if not missingB:
+				apage.mergeTranslatedPage(diffpage, 0, 0, True)
+			if not missingA:
+				apage.mergeTranslatedPage(diffpage, xoffset, 0, True)
 			writer.addPage(apage)
 		step(" Writing pdf")
 		writer.write(outputfile)
@@ -61,22 +82,40 @@ def centeredText(page, text):
 	with Drawing() as draw:
 		draw.fill_color='rgba(255,0,0,1)'
 		draw.stroke_color='grey'
+		draw.stroke_width = 2
 		draw.font_size=40
+		draw.font_weight = 700
 		draw.gravity='center'
+		draw.text(0,0,text)
+		draw.stroke_color = 'transparent'
 		draw.text(0,0,text)
 		draw(page)
 
 def highlightDifferences(diffimage):
+	# expand diffed dots to fill holes and having a margin
 	diffimage.morphology(method='dilate',kernel='square:2')
+	# invert to compute the edge arround them
 	diffimage.negate()
+	# find the edte of a 
 	diffimage.edge(2)
+	# say we wanna have effect on alpha as well
 	diffimage.channel='argb'
+	# needed for?
 	diffimage.fill_color='red'
+	# excange the white color by red
 	diffimage.opaque_paint('white', 'red')
+	# activate the alpha channel
 	diffimage.alpha_channel='activate'
+	# exchange the black color by semitransparent white
 	diffimage.opaque_paint('black', 'rgba(240,255,255,.4)', channel='all_channels')
 
-def visualDifferences(a, b, diff=None, **params):
+def rasterize(pdfimage):
+	pdfimage.background_color='white'
+	pdfimage.alpha_channel='remove'
+	pdfimage.format = 'png'
+	return len(pdfimage.sequence)
+
+def visualEqual(a, b, outputdiff=None, **params):
 
 	from wand.image import Image
 	from wand.display import display
@@ -87,73 +126,72 @@ def visualDifferences(a, b, diff=None, **params):
 	step("Comparing pdfs")
 	step(" Loading pdfs")
 
-	with \
-			Image(filename=str(a)) as aimage,\
-			Image(filename=str(b)) as bimage:
+	with Image() as overlay:
+		overlay.alpha_channel='set'
 
-		step(" Rasterizing pdfs")
-		aimage.background_color='white'
-		aimage.alpha_channel='remove'
-		aimage.format = 'png'
-		aPages=len(aimage.sequence)
+		with \
+				Image(filename=str(a)) as aimage,\
+				Image(filename=str(b)) as bimage:
 
-		bimage.background_color='white'
-		bimage.alpha_channel='remove'
-		bimage.format = 'png'
-		bPages=len(bimage.sequence)
-		# TODO: should be max and handle shorter pdf's
-		diffpages = []
+			step(" Rasterizing pdfs")
+			nPagesA = rasterize(aimage)
+			nPagesB = rasterize(bimage)
 
-		for i in range(min(aPages,bPages)):
-			step(" Page {}", i)
-			with \
-					aimage.sequence[i] as apage, \
-					bimage.sequence[i] as bpage  \
-					:
-				diffpage, ndiffs = apage.compare(bpage,
-					metric='absolute',
-					highlight='white',
-					lowlight='black',
-					)
+			if nPagesA != nPagesB:
+				hasdifferences=True
+				if not outputdiff:
+					warn("Number of pages differ: {} has {} while {} has {}", a, nPagesA, b, nPagesB)
+					return False
 
-				# Not generating diff? be expeditive
-				if not diff:
-					if ndiffs: return False
-					continue
+			for i in range(min(nPagesA,nPagesB)):
+				step(" Page {}", i)
+				with \
+						aimage.sequence[i] as apage, \
+						bimage.sequence[i] as bpage  \
+						:
+					diffpage, ndiffs = apage.compare(bpage,
+						metric='absolute',
+						highlight='white',
+						lowlight='black',
+						)
+					with diffpage:
+						# Not generating outputdiff? be expeditive
+						if not outputdiff:
+							if ndiffs: return False
+							continue
 
-				if ndiffs:
-					hasdifferences=True
-					warn("Page {} contains {:,.0f} different pixels", i, ndiffs)
-					highlightDifferences(diffpage)
-				if not ndiffs:
-					centeredText(diffpage, "NO DIFFERENCES")
-				diffpages.append(diffpage)
+						if ndiffs:
+							hasdifferences=True
+							warn("Page {} contains {:,.0f} different pixels", i, ndiffs)
+							highlightDifferences(diffpage)
+						if not ndiffs:
+							centeredText(diffpage, "NO DIFFERENCES")
 
-		def single(page, text):
-			diffpage = Image(background='black', height=apage.height, width=apage.width)
-			centeredText(diffpage, "ONLY IN A")
-			return diffpage
+						overlay.sequence.append(diffpage)
 
-		for i in range(min(aPages,bPages),aPages):
-			warn("Page {} only available in {}", i, a)
-			apage = aimage.sequence[i]
-			diffpages.append(single(apage, "ONLY IN A"))
 
-		for i in range(min(aPages,bPages),bPages):
-			warn("Page {} only available in {}", i, b)
-			bpage = bimage.sequence[i]
-			diffpages.append(single(bpage, "ONLY IN B"))
+			def addMissingPageOverlay(overlay, page):
+				with Image(background='black', height=page.height, width=page.width) as missingOverlay:
+					centeredText(missingOverlay, "MISSING\nPAGE")
+					overlay.sequence.append(missingOverlay)
 
-	if not hasdifferences: return True
-	if not diff: return False
 
-	with Image() as diffimage:
-		diffimage.alpha_channel='set'
-		diffimage.sequence += diffpages
-		diffimage.format='pdf'
-		diff_overlay = diffimage.make_blob()
+			for i in range(min(nPagesA,nPagesB),nPagesA):
+				warn("Page {} only available in {}", i, a)
+				addMissingPageOverlay(overlay, aimage.sequence[i])
 
-	buildDiffPdf(a,b,diff_overlay,diff)
+			for i in range(min(nPagesA,nPagesB),nPagesB):
+				warn("Page {} only available in {}", i, b)
+				addMissingPageOverlay(overlay, bimage.sequence[i])
+		
+
+		if not outputdiff: return hasdifferences
+
+		overlay.format='pdf'
+		diff_overlay = overlay.make_blob()
+
+		if not hasdifferences: return True
+		buildDiffPdf(a,b,diff_overlay,outputdiff)
 
 	return False
 
@@ -163,10 +201,11 @@ ejemplos=Path('ejemplos')
 a,b = ejemplos.glob('mantenimientos-2018*pdf')
 a,b = ejemplos.glob('factura*pdf')
 a,b = (Path(x) for x in sys.argv[1:3])
-diff = ejemplos / 'diff.pdf'
 output = Path('output.pdf')
 
-print(visualDifferences(a,b,output))
+tmpchanges("start")
+print(visualEqual(a,b,output))
+tmpchanges("end")
 
 
 
