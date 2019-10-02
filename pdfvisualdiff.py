@@ -197,11 +197,8 @@ def visualEqual(a, b, outputdiff=None, **params):
 
 
 
-ejemplos=Path('ejemplos')
-a,b = ejemplos.glob('mantenimientos-2018*pdf')
-a,b = ejemplos.glob('factura*pdf')
 a,b = (Path(x) for x in sys.argv[1:3])
-output = Path('output.pdf')
+output = Path(sys.argv[3]) if len(sys.argv)>3 else None
 
 tmpchanges("start")
 print(visualEqual(a,b,output))
