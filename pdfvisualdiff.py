@@ -15,18 +15,18 @@ def step(*args): pass
 def tmpchanges(context):
 	"""Control uncleaned temporary files"""
 	current = set(Path('/tmp').glob('*'))
-	tmpchanges.initial = tmpchanges.initial if hasattr(tmpchanges, 'previous') else current
+	tmpchanges.initial = tmpchanges.initial if hasattr(tmpchanges, 'initial') else current
 	previous = tmpchanges.previous if hasattr(tmpchanges, 'previous') else set()
 	added = current - previous
 	removed = previous - current
+	tmpchanges.previous = current
 	if not added and not removed: return
 	if tmpchanges.initial == current: return
-	warn("{}: Temporary files left behind:\n{}", context, [
+	warn("{}: Temporary files left behind:\n{}", context, '\n'.join([
 		"+ {}".format(tmp) for tmp in added] + [
 		"- {}".format(tmp) for tmp in removed] + [
-		"  {}".format(tmp) for tmp in current-tempchanges.initial-added] + [
-	])
-	tmpchanges.previous = current
+		"  {}".format(tmp) for tmp in current-tmpchanges.initial-added] + [
+	]))
 	
 
 def buildDiffPdf(a, b, overlay, output, **params):
@@ -183,7 +183,6 @@ def visualEqual(a, b, outputdiff=None, **params):
 			for i in range(min(nPagesA,nPagesB),nPagesB):
 				warn("Page {} only available in {}", i, b)
 				addMissingPageOverlay(overlay, bimage.sequence[i])
-		
 
 		if not outputdiff: return hasdifferences
 
@@ -196,13 +195,13 @@ def visualEqual(a, b, outputdiff=None, **params):
 	return False
 
 
+if __name__ == '__main__':
+	a,b = (Path(x) for x in sys.argv[1:3])
+	output = Path(sys.argv[3]) if len(sys.argv)>3 else None
 
-a,b = (Path(x) for x in sys.argv[1:3])
-output = Path(sys.argv[3]) if len(sys.argv)>3 else None
-
-tmpchanges("start")
-print(visualEqual(a,b,output))
-tmpchanges("end")
+	tmpchanges("start")
+	print(visualEqual(a,b,output))
+	tmpchanges("end")
 
 
 
