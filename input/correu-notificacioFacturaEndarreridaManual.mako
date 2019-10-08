@@ -112,7 +112,7 @@ Nos ponemos en contacto contigo porque hemos revisado tu contrato y hemos detect
 <br>
 Lo hemos solucionado y hemos emitido las facturas de los últimos meses, que suman ${diff_amount} €.<br>
 <br>
-Durante los próximos días solicitaremos el cobro domiciliado de estas facturadas de forma agrupada en un solo cargo y de esta manera la situación quedará regularizada. Si prefieres efectuar el pago de forma escalonada (en plazos), por favor, responde este correo con la mayor brevedad posible solicitándolo.<br>
+Durante los próximos días solicitaremos el cobro domiciliado de estas facturas de forma agrupada en un solo cargo y de esta manera la situación quedará regularizada. Si prefieres efectuar el pago de forma escalonada (en plazos), por favor, responde este correo con la mayor brevedad posible solicitándolo.<br>
 <br>
 Puedes consultar todas las facturas emitidas en tu <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b>.<br>
 <br>
