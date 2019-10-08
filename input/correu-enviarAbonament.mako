@@ -88,7 +88,7 @@ factura@somenergia.coop<br>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 <br>
-Te enviamos el <B>abono</B> de una factura anterior de electricidad de Som Energia, ya que las lecturas facturadas no eran correctas.<br>
+Te enviamos la <B>factura abonadora</B> de una factura anterior de electricidad de Som Energia, ya que las lecturas facturadas no eran correctas.<br>
 <br>
 Esta factura de abono anula la que habíamos emitido anteriormente para el mismo periodo.<br>
 <br>
