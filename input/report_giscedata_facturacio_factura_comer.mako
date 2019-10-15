@@ -77,6 +77,7 @@ def get_origen_lectura(cursor, uid, lectura):
     origen_comer_obj = lectura.pool.get('giscedata.lectures.origen_comer')
 
     estimada_id = origen_obj.search(cursor, uid, [('codi', '=', '40')])[0]
+    sin_lectura_id = origen_obj.search(cursor, uid, [('codi', '=', '99')])[0]
     estimada_som_id = origen_comer_obj.search(cursor, uid,
                                               [('codi', '=', 'ES')])[0]
 
@@ -97,11 +98,11 @@ def get_origen_lectura(cursor, uid, lectura):
                                      ['name', 'origen_comer_id', 'origen_id'])
         for lect in lect_vals:
             # En funció dels origens, escrivim el text
-            # Si Estimada (40) i Estimada (ES): Estimada Somenergia
-            # Si Estimada (40) i F1/Q1/etc...(!ES): Estimada distribuïdora
+            # Si Estimada (40) o Sin Lectura (99) i Estimada (ES): Estimada Somenergia
+            # Si Estimada (40) o Sin Lectura (99) i F1/Q1/etc...(!ES): Estimada distribuïdora
             # La resta: Real
             origen_txt = _(u"real")
-            if lect['origen_id'][0] == estimada_id:
+            if lect['origen_id'][0] in [ estimada_id, sin_lectura_id ]:
                 if lect['origen_comer_id'][0] == estimada_som_id:
                     origen_txt = _(u"calculada per Som Energia")
                 else:
@@ -324,12 +325,12 @@ for lectura in factura.lectures_energia_ids:
                                             origens[lectura.data_actual],
                                             lectura.ajust,
                                             ))
-        lectura_real = sorted([lectura_real for lectura_real in lectura.comptador_id.pool_lectures if lectura_real.tipus == "A" and "{} ({})".format(lectura_real.periode.tarifa.name,lectura_real.periode.product_id.name) == lectura.name and lectura_real.origen_id.id not in [7,22,23] and datetime.strptime(lectura_real.name, '%Y-%m-%d')<datetime.strptime(lectura.data_actual, '%Y-%m-%d')], reverse=True, key=lambda l:l.name)
+        lectura_real = sorted([lectura_real for lectura_real in lectura.comptador_id.pool_lectures if lectura_real.tipus == "A" and "{} ({})".format(lectura_real.periode.tarifa.name,lectura_real.periode.product_id.name) == lectura.name and lectura_real.origen_id.id not in [7,9,22,23] and datetime.strptime(lectura_real.name, '%Y-%m-%d')<datetime.strptime(lectura.data_actual, '%Y-%m-%d')], reverse=True, key=lambda l:l.name)
         lectures_real_a.setdefault(lectura.comptador,[])
         if len(lectura_real)>0:
             lectures_real_a[lectura.comptador].append((lectura.name[-3:-1],lectura_real[0].lectura,lectura_real[0].name))
         else:
-            lectura_real = sorted([lectura_real for lectura_real in lectura.comptador_id.lectures if lectura_real.tipus == "A" and  "{} ({})".format(lectura_real.periode.tarifa.name,lectura_real.periode.product_id.name) == lectura.name and lectura_real.origen_id.id not in [7,22,23] and datetime.strptime(lectura_real.name, '%Y-%m-%d')<datetime.strptime(lectura.data_actual, '%Y-%m-%d')], reverse=True, key=lambda l:l.name)
+            lectura_real = sorted([lectura_real for lectura_real in lectura.comptador_id.lectures if lectura_real.tipus == "A" and  "{} ({})".format(lectura_real.periode.tarifa.name,lectura_real.periode.product_id.name) == lectura.name and lectura_real.origen_id.id not in [7,9,22,23] and datetime.strptime(lectura_real.name, '%Y-%m-%d')<datetime.strptime(lectura.data_actual, '%Y-%m-%d')], reverse=True, key=lambda l:l.name)
             if len(lectura_real)>0:
                 lectures_real_a[lectura.comptador].append((lectura.name[-3:-1],lectura_real[0].lectura,lectura_real[0].name))
 
