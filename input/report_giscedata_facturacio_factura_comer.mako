@@ -476,7 +476,7 @@ dades_reparto = [
               </div>
         % endif
         <h1 style="background-color: ${invoice_data_background};">${_(u"DADES DE LA FACTURA")}</h1>
-         <div style="font-weight: 900;font-size: 1.3em">${_("IMPORT DE LA FACTURA:  %s &euro;") % formatLang(factura.amount_total)}
+         <div style="font-weight: 900;font-size: 1.3em">${_(u"IMPORT DE LA FACTURA:  %s &euro;") % formatLang(factura.amount_total)}
          % if factura.invoice_id.type == 'out_refund':
              (${_(u"ABONAMENT")})
          % endif
@@ -486,7 +486,7 @@ dades_reparto = [
             ${_(u"Aquesta factura anul·la la factura")} ${factura.ref.number} <br />
         % endif
         ${_(u"Data de la factura:")} <span style="font-weight: bold;">${factura.date_invoice}</span> <br />
-        ${_(u"Període facturat:")} <span style="font-weight: bold;">${_("del %s al %s") % (factura.data_inici, factura.data_final)}</span> <br />
+        ${_(u"Període facturat:")} <span style="font-weight: bold;">${_(u"del %s al %s") % (factura.data_inici, factura.data_final)}</span> <br />
         ${_(u"Núm. de contracte:")} <span style="font-weight: bold;">${polissa.name}</span> <br />
         ${_(u"Adreça de subministrament:")} <span style="font-weight: bold;">${factura.cups_id.direccio}</span> <br />
         </p>
@@ -510,12 +510,12 @@ dades_reparto = [
         <tr><td>${_(u"Excés de potència")}</td><td class="e">${"%s &euro;" % formatLang(total_exces_consumida)}</td></tr>
     % endif
     % if factura.total_reactiva > 0:
-        <tr><td>${_("Penalització per energia reactiva")}</td><td class="e">${"%s &euro;" % formatLang(factura.total_reactiva)}</td></tr>
+        <tr><td>${_(u"Penalització per energia reactiva")}</td><td class="e">${"%s &euro;" % formatLang(factura.total_reactiva)}</td></tr>
     % endif
         <tr><td>${_(u"Impost d'electricitat")}</td><td class="e">${"%s &euro;" % formatLang(iese)}</td></tr>
         <tr><td>${_(u"Lloguer del comptador")}</td><td class="e">${"%s &euro;" % formatLang(factura.total_lloguers)}</td></tr>
     % if (total_altres + total_bosocial) != 0:
-        <tr><td>${_("Altres conceptes")}</td><td class="e">${"%s &euro;" % formatLang(total_altres + total_bosocial)}</td></tr>
+        <tr><td>${_(u"Altres conceptes")}</td><td class="e">${"%s &euro;" % formatLang(total_altres + total_bosocial)}</td></tr>
     % endif
     % for n, v in impostos.items():
         % if "IVA" in n or "IGIC" in n:
@@ -619,7 +619,7 @@ dades_reparto = [
             </table>
             <div style="text-align: center"><p>${_(u"La despesa diària és de %s € que correspon a %s kWh/dia (%s dies).") % (formatLang(diari_factura_actual_eur), formatLang(diari_factura_actual_kwh), dies_factura or 1)}</p></div>
             % if hi_ha_ajust:
-                <div style="text-align: center"><p>${_("* Aquesta factura recull un ajust de consum de períodes anteriors per part de la distribuïdora.")}</p></div>
+                <div style="text-align: center"><p>${_(u"* Aquesta factura recull un ajust de consum de períodes anteriors per part de la distribuïdora.")}</p></div>
             % endif
         </div>
         <div class="chart_consum_container">
@@ -753,7 +753,7 @@ ${emergency_complaints(factura)}
                   % endfor
                 </tr>
                 <tr>
-                  <th>${_(u"Darrera lectura real ")}<span style="font-weight: 100">(${lectures_real_r[comptador][0][2]})</span></th>
+                  <th>${_(u"Darrera lectura real ")}texlive-extra-utils poppler-utils<span style="font-weight: 100">(${lectures_real_r[comptador][0][2]})</span></th>
                   % for periode in periodes_r:
                     % if periode not in [lectura_real[0] for lectura_real in lectures_real_r[comptador]]:
                       <td></td>
@@ -969,9 +969,9 @@ ${emergency_complaints(factura)}
         ${_(u"Els preus del lloguer dels comptadors són els establerts a ORDRE ITC/3860/2007.")}<br />
         ${_(u"Totes les comercialitzadores estan obligades a finançar el bo social que només poden oferir les comercialitzadores de referència ")}
         %if factura.lang_partner == 'ca_ES':
-            <a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2017/08/el-bo-social-a-les-factures-de-som-energia/">${_("(més informació).")}</a>
+            <a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2017/08/el-bo-social-a-les-factures-de-som-energia/">${_(u"(més informació).")}</a>
         %else:
-            <a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2017/08/el-bono-social-en-las-facturas-de-som-energia/">${_("(més informació).")}</a>
+            <a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2017/08/el-bono-social-en-las-facturas-de-som-energia/">${_(u"(més informació).")}</a>
         %endif
     </p>
 % if factura.has_tec271_line():
@@ -1019,7 +1019,7 @@ ${emergency_complaints(factura)}
         <hr />
         <div class="mix">
             <div class="mix_som">
-                <div class="titol" style="width: 100%"><span>${_("Mix Som Energia, SCCL")}</span></div>
+                <div class="titol" style="width: 100%"><span>${_(u"Mix Som Energia, SCCL")}</span></div>
                 <div class="graf" style="text-align:center;width: 100%">
                     <img src="${addons_path}/giscedata_facturacio_comer_som/report/graf2_html.png"/>
                 </div>
@@ -1037,33 +1037,33 @@ ${emergency_complaints(factura)}
             <table>
                 <thead>
                     <tr>
-                        <th>${_("Origen")}</th><th style="width: 30%">Som Energia, SCCL</th><th style="width: 30%">${_("Mix producció en el sistema elèctric espanyol {year}").format(year=year_graph)}</th>
+                        <th>${_(u"Origen")}</th><th style="width: 30%">Som Energia, SCCL</th><th style="width: 30%">${_(u"Mix producció en el sistema elèctric espanyol {year}").format(year=year_graph)}</th>
                     </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>${_("Renovable")}</td><td>100%</td><td>38,2%</td>
+                    <td>${_(u"Renovable")}</td><td>100%</td><td>38,2%</td>
                 </tr>
                 <tr>
-                    <td>${_("Cogeneració alta eficiència")}</td><td>0%</td><td>4,4%</td>
+                    <td>${_(u"Cogeneració alta eficiència")}</td><td>0%</td><td>4,4%</td>
                 </tr>
                 <tr>
-                    <td>${_("Cogeneració")}</td><td>0%</td><td>6,9%</td>
+                    <td>${_(u"Cogeneració")}</td><td>0%</td><td>6,9%</td>
                 </tr>
                 <tr>
-                    <td>${_("CC Gas natural")}</td><td>0%</td><td>11,7%</td>
+                    <td>${_(u"CC Gas natural")}</td><td>0%</td><td>11,7%</td>
                 </tr>
                 <tr>
-                    <td>${_("Carbó")}</td><td>0%</td><td>14,5%</td>
+                    <td>${_(u"Carbó")}</td><td>0%</td><td>14,5%</td>
                 </tr>
                 <tr>
-                    <td>${_("Fuel/Gas")}</td><td>0%</td><td>2,6%</td>
+                    <td>${_(u"Fuel/Gas")}</td><td>0%</td><td>2,6%</td>
                 </tr>
                 <tr>
-                    <td>${_("Nuclear")}</td><td>0%</td><td>20,7%</td>
+                    <td>${_(u"Nuclear")}</td><td>0%</td><td>20,7%</td>
                 </tr>
                 <tr>
-                    <td>${_("Altres")}</td><td>0%</td><td>1,0%</td>
+                    <td>${_(u"Altres")}</td><td>0%</td><td>1,0%</td>
                 </tr>
                 </tbody>
             </table>
