@@ -54,7 +54,7 @@ except:
 Hola${nom_pagador},<br>
 % if object.invoice_id.partner_id.lang != "es_ES":
 <br>
-T'enviem l'<B>abonament</B> d'una factura anterior d'electricitat de Som Energia, ja que les lectures facturades no eren correctes.<br>
+T'enviem la <B>factura d'abonament</B> d'una factura anterior d'electricitat de Som Energia, ja que les lectures facturades no eren correctes.<br>
 <br>
 Aquesta factura d'abonament anul·la la que havíem emès anteriorment per al mateix període.<br>
 <br>
@@ -88,7 +88,7 @@ factura@somenergia.coop<br>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 <br>
-Te enviamos el <B>abono</B> de una factura anterior de electricidad de Som Energia, ya que las lecturas facturadas no eran correctas.<br>
+Te enviamos la <B>factura abonadora</B> de una factura anterior de electricidad de Som Energia, ya que las lecturas facturadas no eran correctas.<br>
 <br>
 Esta factura de abono anula la que habíamos emitido anteriormente para el mismo periodo.<br>
 <br>

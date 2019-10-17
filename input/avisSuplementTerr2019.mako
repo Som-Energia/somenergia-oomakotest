@@ -80,8 +80,10 @@ ${text_legal}
         <br>
         Hola${nom_pagador},<br>
         <br>
-        Ens posem en contacte amb tu per fer-te saber que, per tal de donar compliment a la normativa vigent, en la propera factura d’electricitat procedirem al cobrament dels suplements territorials, segons estableix l’ordre TEC/271/2019 dictada pel Ministeri de Transició Energètica.<br>
+        Ens posem en contacte amb tu per fer-te saber que, per tal de donar compliment a la normativa vigent, en la propera factura d’electricitat procedirem al cobrament dels suplements territorials, segons estableix l’ordre TEC/271/2019 dictada pel Ministeri per a la Transició Ecològica.<br>
         En el cas que aquest import sigui superior a 2 €, aquest es cobrarà de forma fraccionada en diverses factures, durant les properes mensualitats.<br>
+	<br>
+	A continuació t’adjuntem la comunicació que el Ministeri per a la Transició Ecològica ens ha enviat per tal que us la transmetem:<br>
         <br>
         <i>
         SOM ENERGIA S.C.C.L.<br>
@@ -103,8 +105,10 @@ ${text_legal}
         <br>
         Hola${nom_pagador},<br>
         <br>
-        Nos ponemos en contacto contigo para hacerte saber que, a fin de dar cumplimiento a la normativa vigente, en la próxima factura de electricidad procederemos al cobro de los suplementos territoriales, según establece la orden TEC/271/2019, dictada por el Ministerio de Transición Energética.<br>
+        Nos ponemos en contacto contigo para hacerte saber que, a fin de dar cumplimiento a la normativa vigente, en la próxima factura de electricidad procederemos al cobro de los suplementos territoriales, según establece la orden TEC/271/2019, dictada por el Ministerio para la Transición Ecológica.<br>
         En el caso que este importe sea superior a 2 €, éste se cobrará de forma fraccionada en varias facturas, durante las próximas mensualidades.<br>
+	<br>
+	A continuación te adjuntamos la comunicación que el Ministerio para la Transición Ecológica nos ha enviado para que os la transmitamos:<br>
         <br>
         <i>
         SOM ENERGIA S.C.C.L.<br>
@@ -126,8 +130,10 @@ ${text_legal}
         <br>
         Hola${nom_pagador},<br>
         <br>
-        Ens posem en contacte amb tu per fer-te saber que,  per tal de donar compliment a la normativa vigent, en la propera factura d’electricitat procedirem al cobrament dels suplements territorials, segons estableix l’ordre TEC/271/2019 dictada pel Ministeri de Transició Energètica.<br>
+        Ens posem en contacte amb tu per fer-te saber que,  per tal de donar compliment a la normativa vigent, en la propera factura d’electricitat procedirem al cobrament dels suplements territorials, segons estableix l’ordre TEC/271/2019 dictada pel Ministeri per a la Transició Ecològica.<br>
         En el cas que aquest import sigui superior a 2 €, aquest es cobrarà de forma fraccionada en diverses factures, durant les properes mensualitats.<br>
+	<br>
+	A continuació t’adjuntem la comunicació que el Ministeri per a la Transició Ecològica ens ha enviat per tal que us la transmetem:<br>
         <br>
         <i>
         SOM ENERGIA S.C.C.L.<br>
@@ -148,9 +154,11 @@ ${text_legal}
         <br>
         Hola${nom_pagador},<br>
         <br>
-        Nos ponemos en contacto contigo para hacerte saber que, a fin de dar cumplimiento a la normativa vigente, en la próxima factura de electricidad procederemos al cobro de los suplementos territoriales, según establece la orden TEC/271/2019, dictada por el Ministerio de Transición Energética.<br>
+        Nos ponemos en contacto contigo para hacerte saber que, a fin de dar cumplimiento a la normativa vigente, en la próxima factura de electricidad procederemos al cobro de los suplementos territoriales, según establece la orden TEC/271/2019, dictada por el Ministerio para la Transición Ecológica.<br>
         En el caso que este importe sea superior a 2 €, éste se cobrará de forma fraccionada en varias facturas, durante las próximas mensualidades.<br>
         <br>
+	A continuación te adjuntamos la comunicación que el Ministerio para la Transición Ecológica nos ha enviado para que os la transmitamos:<br>
+	<br>
         <i>
         SOM ENERGIA S.C.C.L.<br>
         <br>
