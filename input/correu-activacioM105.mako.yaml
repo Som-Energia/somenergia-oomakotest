@@ -1,8 +1,8 @@
-cc: false
-to: "<% mail = '{}'.format(context['object'].cups_polissa_id.titular.address[0].email if context['object'].step_ids[0].pas_id.sollicitudadm == 'N' else context['object'].polissa_ref_id.titular.address[0].email)%> ${mail}"
+cc: "<% mail = '{}'.format(object.polissa_ref_id.titular.address[0].email if object.polissa_ref_id.titular != object.polissa_ref_id.pagador else '') %> ${mail}"
+to: ${object.polissa_ref_id.direccio_pagament.email}
 subject_translations:
-  en_US: "Som Energia: Modificació activada pel Contracte ${polissa_ref_id.name}. Modificación activada para el contrato ${polissa_ref_id.name}"
-  ca_ES: "Som Energia: Modificació activada pel Contracte ${polissa_ref_id.name}. Modificación activada para el contrato ${polissa_ref_id.name}"
-  es_ES: "Som Energia: Modificació activada pel Contracte ${polissa_ref_id.name}. Modificación activada para el contrato ${polissa_ref_id.name}"
-subject: "Som Energia: Modificació activada pel Contracte ${polissa_ref_id.name}. Modificación activada para el contrato ${polissa_ref_id.name}"
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net,${object.cups_polissa_id.direccio_notificacio.email}
+  en_US: "Som Energia: Modificació activada pel Contracte ${object.polissa_ref_id.name}. Modificación activada para el contrato ${object.polissa_ref_id.name}"
+  ca_ES: "Som Energia: Modificació activada pel Contracte ${object.polissa_ref_id.name}. Modificación activada para el contrato ${object.polissa_ref_id.name}"
+  es_ES: "Som Energia: Modificació activada pel Contracte ${object.polissa_ref_id.name}. Modificación activada para el contrato ${object.polissa_ref_id.name}"
+subject: "Som Energia: Modificació activada pel Contracte ${object.polissa_ref_id.name}. Modificación activada para el contrato ${object.polissa_ref_id.name}"
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
