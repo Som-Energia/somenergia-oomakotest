@@ -90,7 +90,7 @@ factura@somenergia.coop<br>
 <br>
 Te enviamos la <B>factura abonadora</B> de una factura anterior de electricidad de Som Energia, ya que las lecturas facturadas no eran correctas.<br>
 <br>
-Esta factura de abono anula la que habíamos emitido anteriormente para el mismo periodo.<br>
+Esta factura abonadora anula la que habíamos emitido anteriormente para el mismo periodo.<br>
 <br>
 En caso de haber cobrado la factura original, la próxima semana realizaremos los movimientos bancarios correspondientes.<br>
 <br>
