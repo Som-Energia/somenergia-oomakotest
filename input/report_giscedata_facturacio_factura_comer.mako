@@ -1023,6 +1023,13 @@ has_autoconsum_colectiu = False
         ${_(u"Potència contractada (kW):")} <span style="font-weight: bold;">${"%s (%s)" % (locale.str(locale.atof(formatLang(polissa.potencia, digits=3))),fact_pot_txt)}</span> <br />
         ${_(u"Tarifa contractada:")} <span style="font-weight: bold;">${polissa.tarifa.name}</span> <br />
         ${_(u"CUPS:")} <span style="font-weight: bold;">${factura.cups_id.name}</span> <br />
+        %if has_autoconsum:
+            ${_(u"Contracte amb autopoducció tipus:")} <span style="font-weight: bold;">${autoconsum_tipus}</span> <br />
+            %if has_autoconsum_colectiu:
+                ${_(u"Percentatge de repartiment de l'autoproducció compartida:")} <span style="font-weight: bold;">${autoconsum_compartit} %</span> <br />
+                ${_(u"Codi d'autoconsum unificat (CAU):")} <span style="font-weight: bold;">${factura.polissa_id.autoconsum_id.cau}</span> <br />
+            %endif
+        %endif
         ${_(u"Comptador telegestionat:")} <span style="font-weight: bold;">${polissa.tg in ['1','3'] and _(u'Sí') or _(u'No')}</span> <br />
         ${_(u"CNAE:")} <span style="font-weight: bold;">${polissa.cnae.name}</span> <br />
         ${_(u'Data d\'alta del contracte: <span style="font-weight: bold;">%s</span>, sense condicions de permanència') % polissa.data_alta} <br />
