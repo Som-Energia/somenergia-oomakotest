@@ -584,6 +584,24 @@ dades_reparto = [
      [[rep_BOE['i'] , rep_BOE['i'] + rep_BOE['c']], 'c', _(u"Cost de xarxes de distribució i transport"), formatLang(reparto['c'])] ,
      [[rep_BOE['i'] + rep_BOE['c'], 100.00], 'o', _(u"Altres costos regulats (inclosa anualitat del dèficit)"), formatLang(reparto['o'])]
     ]
+
+has_autoconsum = True
+has_autoconsum_colectiu = True
+if has_autoconsum:
+    from gestionatr.defs import TABLA_113
+    TABLA_113_dict = { t[0]:t[1] for t in TABLA_113}
+    autoconsum_tipus = TABLA_113_dict[factura.polissa_id.autoconsumo]
+    autoconsum_compartit = 30.0
+
+
+#has_autoconsum = factura.polissa_id.autoconsum_id and factura.polissa_id.autoconsum_id.active and factura.polissa_id.autoconsum_id.data_alta < factura.data_inici
+# TODO has_autoconsum esta determinat per l'existencia de factura.linies_generacio
+#if has_autoconsum:
+#    has_autoconsum_colectiu = polissa.autoconsum_id.collectiu
+
+has_autoconsum = False
+has_autoconsum_colectiu = False
+
 %>
 <%def name="emergency_complaints(factura)">
     <%
