@@ -1,9 +1,12 @@
 <% from operator import attrgetter
 from datetime import datetime, timedelta
 import json
+import csv
 from collections import Counter
 import locale
 import calendar
+from collections import namedtuple
+from giscedata_facturacio_indexada.report.report_indexada_helpers import getCsvData, colorPicker, getAxisAndData
 locale.setlocale(locale.LC_NUMERIC,'es_ES.utf-8')
 year_graph = 2018
 pool = objects[0].pool
@@ -200,6 +203,45 @@ ORDER BY mes ASC"""
 # Repartiment segons BOE
 rep_BOE = {'i': 39.44, 'c': 40.33 ,'o': 20.23}
 
+green_deg = ['#ddffdd', '#aaffaa', '#77ff77', '#33ff33', '#00ff00']
+Mode = namedtuple('Mode', ['title', 'colors', 'factor'])
+modes = {
+    'graph': Mode(
+            title=_(u'Evolució horaria'),
+            colors=['#0000aa', '#ff0000',],
+            factor=1,
+    ),
+    'curvegraph': Mode(
+            title=_(u'Consum'),
+            colors=['#00aa00', '#ff0000',],
+            factor=1,
+    ),
+    'phf': Mode(
+            title=_(u'Preu Horari Final (cts. de €)'),
+            colors=['#00aa00', '#88aa88', '#ffffff', '#ffff00', '#ff8f00'],
+            factor=100,
+        ),
+    'curve': Mode(
+            title=_(u'Consum Horari (kWh)'),
+            colors=green_deg,
+            factor=1,
+        ),
+    'pmd': Mode(
+            title=_(u'Preu OMIE €/kWh'),
+            colors=green_deg,
+            factor=1,
+        ),
+    'pc3_ree': Mode(
+            title=_(u'Pagament per capacitat mig (€/kWh'),
+            colors=green_deg,
+            factor=1,
+        ),
+    'perdues': Mode(
+            title=_(u'Pèrdues (%)'),
+            colors=green_deg,
+            factor=1,
+        ),
+}
 %>
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
@@ -207,10 +249,124 @@ rep_BOE = {'i': 39.44, 'c': 40.33 ,'o': 20.23}
 <head>
 <link rel="stylesheet" href="${addons_path}/giscedata_facturacio_comer_som/report/pie.css"/>
 <link rel="stylesheet" href="${addons_path}/giscedata_facturacio_comer_som/report/consum.css"/>
+<link rel="stylesheet" href="${addons_path}/giscedata_facturacio_indexada/report/js/c3.min.css">
+<link rel="stylesheet" href="${addons_path}/giscedata_facturacio_comer_som/report/detalle_factura_indexada.css"/>
 <link rel="stylesheet" href="${addons_path}/giscedata_facturacio_comer_som/report/giscedata_facturacio_comer_som.css"/>
 <script src="${addons_path}/giscedata_facturacio_comer/report/assets/d3.min.js"></script>
 </head>
 <body>
+<script src="${addons_path}/giscedata_facturacio_comer_som/report/d3.min.js"></script>
+<script>
+    d3_antic = d3
+    window.d3 = null
+</script>
+<script src="${addons_path}/giscedata_facturacio_indexada/report/js/d3.min.js"></script>
+<script src="${addons_path}/giscedata_facturacio_indexada/report/js/c3.min.js"></script>
+<%def name="continguts(mode)">\
+    <div>
+        <%
+            modeObj = modes[mode]
+            colors = modeObj.colors
+            factor = modeObj.factor
+            data_csv = getCsvData(factura, user, mode)
+            if data_csv:
+                helper.getTable(data_csv, colors, factor)
+            else:
+                notFound()
+        %>
+    </div>
+</%def>
+<%def name="graph(nom, mode1, mode2)">
+    <%
+        GraphModeObj = modes[nom]
+        data = []
+        colors = ['#abb439', '#c58700']
+        titles = []
+        index = 0
+        for mode_str in [mode1, mode2]:
+            mode
+            data.append([])
+            ModeObj = modes[mode_str]
+            data_csv = getCsvData(objects[0], user, mode_str)
+            csv_lines = csv.reader(data_csv, delimiter=';')
+            rows = []
+            for row in csv_lines:
+                rows.append((row[0], float(row[1])))
+            collection = dict(rows)
+            if index == 0 and nom=='curvegraph':
+                axis, data[index] = getAxisAndData(collection, 'dayly')
+            else:
+                axis, data[index] = getAxisAndData(collection)
+            colors.append(GraphModeObj.colors[index])
+            titles.append(ModeObj.title)
+            index += 1
+        styles = ['area-step', 'spline']
+        titles = [_('Consums totals per dies (kWh)'), _('Curva horaria de potencia (kW)')]
+    %>
+    <div id="${nom}"></div>
+    <script>
+    var axis = [${axis}]; // [["2018-01-01 01", "2018-01-01 02",...]]
+    var data = [
+        ${data[0]},
+        ${data[1]},
+    ];
+    var titles = ${json.dumps(titles)};
+    var colors = ${colors};
+    var styles = ${styles};
+    try {
+    var chart = c3.generate({
+        bindto: '#${nom}',
+        size: {
+            height: 200,
+            width: 700,
+        },
+        data: {
+            x: 'x',
+            columns: [
+                ['x'].concat(axis[0]),
+                ['data1'].concat(data[0]),
+                ['data2'].concat(data[1]),
+            ],
+            axes: {
+                data2: 'y2',
+            },
+            types: {
+                data1: styles[0],
+                data2: styles[1],
+            },
+            xFormat: '%Y-%m-%d %H',
+            names: {
+                data1: titles[0],
+                data2: titles[1],
+            },
+            colors: {
+               data1: colors[0],
+               data2: colors[1],
+            }
+        },
+        point: {
+            show: false
+        },
+        axis: {
+          x: {
+             type: 'timeseries',
+             tick: {
+                     count: axis[0].length / 24,
+                     format: '%d/%m',
+             }
+          },
+          y2: {
+            show: true}
+        }
+    });
+    }
+    catch(err) {
+        document.writeln(err.message);
+    }
+    </script>
+</%def>
+
+
 %for factura in objects:
 <% setLang(factura.lang_partner)
 
@@ -430,14 +586,28 @@ dades_reparto = [
     ]
 %>
 <%def name="emergency_complaints(factura)">
-    <div class="emergency">
-        <h1>${_(u"AVARIES I URGÈNCIES")}</h1>
-        <p style="line-height: 1.0;">${_(u"Empresa distribuïdora:")} <span style="font-weight: bold;">${polissa.distribuidora.name}</span> <br />
-        ${_(u"Núm. de contracte de la distribuïdora:")} <span style="font-weight: bold;">${polissa.ref_dist or ''}</span> <br />
-        ${_(u"AVARIES I URGÈNCIES DEL SUBMINISTRAMENT (distribuïdora): %s (24 hores)") % distri_phone}<br />
-        </p>
+    <%
+        fixed_height = ''
+    %>
+    % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
+    <div class="row">
+        <div class="column">
+        <%
+            fixed_height = 'style="height: 100px"'
+        %>
+    % endif
+            <div class="emergency" ${fixed_height}>
+                <h1>${_(u"AVARIES I URGÈNCIES")}</h1>
+                <p style="line-height: 1.0;">${_(u"Empresa distribuïdora:")} <span style="font-weight: bold;">${polissa.distribuidora.name}</span> <br />
+                ${_(u"Núm. contracte distribuïdora:")} <span style="font-weight: bold;">${polissa.ref_dist or ''}</span> <br />
+                ${_(u"AVARIES I URGÈNCIES DEL SUBMINISTRAMENT (distribuïdora): %s (24 hores)") % distri_phone}<br />
+                </p>
+            </div>
+    % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
     </div>
-    <div class="complaints">
+    <div class="column">
+    % endif
+    <div class="complaints" ${fixed_height}>
         <h1>${_(u"RECLAMACIONS")}</h1>
         <p style="line-height: 1.0;">${_(u"RECLAMACIONS COMERCIALITZACIÓ (SOM ENERGIA): Horari d'atenció de 9 a 14 h. 900 103 605 (cost de la trucada per a la cooperativa).<br />"
                u"Si tens tarifa plana, pots contactar igualment al %s, sense cap cost.<br />"
@@ -448,6 +618,11 @@ dades_reparto = [
                % endif
         </p>
     </div>
+    % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
+        </div>
+        </div>
+    % endif
+
 </%def>
 <div class="lateral_container">
     <div class="lateral" style="top: 250px;">${text_lateral}</div>
@@ -559,107 +734,258 @@ dades_reparto = [
     <!-- LECTURES ACTIVA i GRÀFIC BARRES -->
     <div class="energy_info">
         <h1>${_(u"INFORMACIÓ DEL CONSUM ELÈCTRIC")}</h1>
-        <div class="lectures${len(periodes_a)>3 and '30' or ''}">
-            <table>
-            <tr><th>&nbsp;</th>
-% for periode in periodes_a:
-            <th style="text-align: center;">${periode}</th>
-% endfor
-            </tr>
-<%
-    ajust_periode = []
-    hi_ha_ajust = False
-%>
-% for comptador in sorted(lectures_a):
-            <tr>
-                <th>${_(u"Núm. de comptador")}</th>
-            % for p in periodes_a:
-                <td style="font-weight: normal;text-align: center;">${comptador}</td>
-            % endfor
-            </tr>
-            <tr>
-                <th>${_(u"Lectura anterior")}<span style="font-weight: 100">&nbsp;(${lectures_a[comptador][0][4]})<br/>(${lectures_a[comptador][0][6]})</span></th>
-    <!--%for lectura in lectures_a[comptador]:-->
-    % for periode in periodes_a:
-                  <%
-                    for lectura in lectures_a[comptador]:
-                        if lectura[8] == 0:
-                            ajust_periode.append(False)
-                        else:
-                            ajust_periode.append(True)
-                            hi_ha_ajust = True
-                  %>
-                  % if periode not in [lectura[0] for lectura in lectures_a[comptador]]:
-                      <td></td>
-                  % else:
-                      <td style="text-align: center;">${int([lectura[1] for lectura in lectures_a[comptador] if lectura[0] == periode][0])} kWh</td>
-                  % endif
-    %endfor
-            </tr>
-                <th>${_(u"Lectura final")}<span style="font-weight: 100">&nbsp;(${lectures_a[comptador][0][5]})<br/>(${lectures_a[comptador][0][7]})</span></th>
-    % for periode in periodes_a:
-                  % if periode not in [lectura[0] for lectura in lectures_a[comptador]]:
-                      <td></td>
-                  % else:
-                      <td style="text-align: center;">${int([lectura[2] for lectura in lectures_a[comptador] if lectura[0] == periode][0])} kWh</td>
-                  % endif
-    %endfor
-            </tr>
-% endfor
-            <tr>
-                <th style="border-top: 1px solid #4c4c4c">${_(u"Total període")}</th>
-    %for p in periodes_a:
-                <td style="border-top: 1px solid #4c4c4c; text-align: center;">${formatLang(total_lectures_a[p], digits=0)} kWh
-                    % if ajust_periode[periodes_a.index(p)]:
-                        *
-                    %endif
-                </td>
-    %endfor
-            </tr>
-            </table>
-            <div style="text-align: center"><p>${_(u"La despesa diària és de %s € que correspon a %s kWh/dia (%s dies).") % (formatLang(diari_factura_actual_eur), formatLang(diari_factura_actual_kwh), dies_factura or 1)}</p></div>
-            % if hi_ha_ajust:
-                <div style="text-align: center"><p>${_(u"* Aquesta factura recull un ajust de consum de períodes anteriors per part de la distribuïdora.")}</p></div>
-            % endif
-        </div>
-        <div class="chart_consum_container">
-            <div class="chart_consum" id="chart_consum_${factura.id}"></div>
-            <div class="chart_estadistica"><p>${(_(u"La despesa mitjana diària en els últims %.0f mesos (%s dies) ha estat de <b>%s</b> €, que corresponen a <b>%s</b> kWh/dia.")
-                       % ((historic_dies*1.0 / 30), historic_dies or 1.0, formatLang((total_historic_eur * 1.0) / (historic_dies or 1.0)), formatLang((total_historic_kw * 1.0) / (historic_dies or 1.0))))}<br />
-                    ${_(u"L'electricitat utilitzada durant el darrer any: <b>%s</b> kWh.") % formatLang(total_any, digits=0)}
-                 </p></div>
-        </div>
-        %if any([lectures_a[comptador][0][7] != "real" for comptador in sorted(lectures_a) if len(lectures_real_a[comptador])>0]):
+        % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
+            <!--
+                "comptadors" es un dicconario con la siguiente estructura:
+                    - Clave: tupla con 3 valores: (Número de serie, fecha actual, fecha anterior)
+                    - Valor: lista con 3 elementos:
+                        * Primer elemento: lecturas activa
+                        * Segundo elemento: lecturas reactiva
+                        * Tercer elemento: potencia maxímetro
+            -->
+            <%
+                periodes_act = sorted(sorted(
+                    list([lectura for lectura in factura.lectures_energia_ids
+                                    if lectura.tipus == 'activa']),
+                    key=attrgetter('name')
+                    ), key=attrgetter('comptador'), reverse=True
+                )
+                periodes_rea = sorted(sorted(
+                    list([lectura for lectura in factura.lectures_energia_ids
+                                if lectura.tipus == 'reactiva']),
+                    key=attrgetter('name')
+                    ), key=attrgetter('comptador'), reverse=True
+                )
+                periodes_max = sorted(sorted(
+                    list([lectura for lectura in factura.lectures_potencia_ids]),
+                    key=attrgetter('name')
+                    ), key=attrgetter('comptador'), reverse=True
+                )
+                lectures=map(None, periodes_act, periodes_rea, periodes_max)
+                comptador_actual = None
+                comptador_anterior = None
+                comptadors = {}
+                llista_lect = []
+                data_actual = None
+                for lect in lectures:
+                    if lect[0]:
+                        comptador_actual = lect[0].comptador
+                        data_ant = lect[0].data_anterior
+                        data_act = lect[0].data_actual
+                    elif lect[1]:
+                        comptador_actual = lect[1].comptador
+                        data_ant = lect[1].data_anterior
+                        data_act = lect[1].data_actual
+                    elif lect[2]:
+                        comptador_actual = lect[2].comptador
+                        data_ant = lect[2].data_anterior
+                        data_act = lect[2].data_actual
+                    if comptador_anterior and comptador_actual != comptador_anterior:
+                        comptadors[(comptador_anterior, data_actual_pre, data_ant_pre)] = llista_lect
+                        llista_lect = []
+                    if data_act:
+                        comptadors[(comptador_actual, data_act, data_ant)] = llista_lect
+                        llista_lect.append((lect[0], lect[1], lect[2]))
+                        comptador_anterior = comptador_actual
+                        data_actual_pre = data_act
+                        data_ant_pre = data_ant
+            %>
+            <div class="" style="padding: 10px;">
+                <div class="lectures">
+                    %for key in comptadors.keys():
+                        <%
+                            tipus_lectura = ''
+                            if comptadors[key][0][0].origen_id.codi == '40':
+                                tipus_lectura = _("(estimada)")
+                            elif comptadors[key][0][0].origen_id.codi == '99':
+                                tipus_lectura = _("(sense lectura)")
+                            else:
+                                tipus_lectura = _("(real)")
+                        %>
+                        <table style="border: 1px #c1c1c1 solid;">
+                            <tr>
+                                <td>&nbsp;</td>
+                                <th class="center">${_("Lectura anterior")}<br/> ${tipus_lectura}
+                                <br/>${key[2]}</th>
+                                <th class="center">${_("Lectura actual")}<br/> ${tipus_lectura}
+                                <br/>${key[1]}</th>
+                                <th class="center">${_("Consum")} <br/> ${_("en el període")}</th>
+                            </tr>
+                            <%
+                                period_counter = 1
+                            %>
+                            %for lectures in comptadors[key]:
+                                <!-- Recorremos las lecturas del contador actual -->
+                                <%
+                                    comptador = 0
+                                %>
+                                <tr>
+                                    <th class="center">P${period_counter}</th>
+                                    %for lectura in lectures:
+                                        <!--
+                                            Recorremos cada lectura individual. El contador (comptador) es utilizado
+                                            para conocer cual de los 3 elementos estamos recorriendo (activa, reactiva o maxímetro).
+                                        -->
+                                        %if comptador in (0, 1) and lectura:
+                                            %if comptador == 0:
+                                                %if period_counter == 4:
+                                                    <td class="center">${formatLang(int(lectura.lect_anterior), 0)} kWh</td>
+                                                    <td class="center">${formatLang(int(lectura.lect_actual), 0)} kWh
+                                                %else:
+                                                    <td class="center">${formatLang(int(lectura.lect_anterior), 0)} kWh</td>
+                                                    <td class="center">${formatLang(int(lectura.lect_actual), 0)} kWh
+                                                %endif
+                                            %endif
+                                            %if lectura.ajust and not ajust_fet:
+                                                ${str(lectura.ajust) + "*"}
+                                            %endif
+                                            <%
+                                            if lectura.motiu_ajust and not ajust_fet == '':
+                                                ajust_fet = True
+                                                motiu_ajust = lectura.motiu_ajust
+                                            %>
+                                            </td>
+                                            %if comptador == 0:
+                                                %if period_counter == 4:
+                                                    <td class="center">${formatLang(int(lectura.consum), 0)} kWh</td>
+                                                %else:
+                                                    <td class="center">${formatLang(int(lectura.consum), 0)} kWh</td>
+                                                %endif
+                                            %endif
+                                        %endif
+                                        <%
+                                            comptador += 1
+                                        %>
+                                    %endfor
+                                </tr>
+                                <%
+                                    period_counter += 1
+                                %>
+                            %endfor
+                        </table>
+                    %endfor
+                <div style="text-align: center"><p>${_(u"La despesa diària és de %s € que correspon a %s kWh/dia (%s dies).") % (formatLang(diari_factura_actual_eur), formatLang(diari_factura_actual_kwh), dies_factura or 1)}</p></div>
+                </div>
+                <div class="column">
+                    <div class="chart_consum_container">
+                        <div class="chart_consum" id="chart_consum_${factura.id}"></div>
+                            <div class="chart_estadistica">
+                                <p>
+                                    ${(_(u"La despesa mitjana diària en els últims %.0f mesos (%s dies) ha estat de <b>%s</b> €, que corresponen a  <b>%s</b> kWh/dia.")
+                                    % ((historic_dies*1.0 / 30), historic_dies or 1.0, formatLang((total_historic_eur * 1.0) / (historic_dies or 1.0)), formatLang((total_historic_kw * 1.0) / (historic_dies or 1.0))))}<br />
+                                    ${_(u"L'electricitat utilitzada durant el darrer any: <b>%s</b> kWh.") % formatLang(total_any, digits=0)}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        % else:
             <div class="lectures${len(periodes_a)>3 and '30' or ''}">
                 <table>
-                % for comptador in sorted(lectures_real_a):
-                  % if len(lectures_real_a[comptador])>0:  
-                      <tr>
+                    <tr>
                         <th>&nbsp;</th>
                         % for periode in periodes_a:
-                          <th style="text-align: center;">${periode}</th>
+                            <th style="text-align: center;">${periode}</th>
                         % endfor
-                      </tr>
-                      <tr>
-                        <th>${_(u"Núm. de comptador")}</th>
-                        % for p in periodes_a:
-                          <td style="font-weight: normal;text-align: center;">${comptador}</td>
-                        % endfor
-                      </tr>
-                      <tr>
-                        <th>${_(u"Darrera lectura real ")}<span style="font-weight: 100">(${lectures_real_a[comptador][0][2]})</span></th>
-                        % for periode in periodes_a:
-                          % if periode not in [lectura_real[0] for lectura_real in lectures_real_a[comptador]]:
-                            <td></td>
-                          % else:
-                            <td style="text-align: center;">${int([lectura_real[1] for lectura_real in lectures_real_a[comptador] if lectura_real[0] == periode][0])} KWh</td>
-                          % endif
-                        % endfor
-                      </tr>
-                  %endif
-                % endfor
+                    </tr>
+                    <%
+                        ajust_periode = []
+                        hi_ha_ajust = False
+                    %>
+                    % for comptador in sorted(lectures_a):
+                        <tr>
+                            <th>${_(u"Núm. de comptador")}</th>
+                            % for p in periodes_a:
+                                <td style="font-weight: normal;text-align: center;">${comptador}</td>
+                            % endfor
+                        </tr>
+                        <tr>
+                            <th>${_(u"Lectura anterior")}<span style="font-weight: 100">&nbsp;(${lectures_a[comptador][0][4]})<br/>(${lectures_a[comptador][0][6]})</span></th>
+                            <!--%for lectura in lectures_a[comptador]:-->
+                            % for periode in periodes_a:
+                                <%
+                                    for lectura in lectures_a[comptador]:
+                                        if lectura[8] == 0:
+                                            ajust_periode.append(False)
+                                        else:
+                                            ajust_periode.append(True)
+                                            hi_ha_ajust = True
+                                %>
+                                % if periode not in [lectura[0] for lectura in lectures_a[comptador]]:
+                                    <td></td>
+                                % else:
+                                    <td style="text-align: center;">${int([lectura[1] for lectura in lectures_a[comptador] if lectura[0] == periode][0])} kWh</td>
+                                % endif
+                            %endfor
+                        </tr>
+                            <th>${_(u"Lectura final")}<span style="font-weight: 100">&nbsp;(${lectures_a[comptador][0][5]})<br/>(${lectures_a[comptador][0][7]})</span></th>
+                            % for periode in periodes_a:
+                                % if periode not in [lectura[0] for lectura in lectures_a[comptador]]:
+                                    <td></td>
+                                % else:
+                                    <td style="text-align: center;">${int([lectura[2] for lectura in lectures_a[comptador] if lectura[0] == periode][0])} kWh</td>
+                                % endif
+                            % endfor
+                        </tr>
+                    % endfor
+                    <tr>
+                        <th style="border-top: 1px solid #4c4c4c">${_(u"Total període")}</th>
+                        %for p in periodes_a:
+                            <td style="border-top: 1px solid #4c4c4c; text-align: center;">${formatLang(total_lectures_a[p], digits=0)} kWh
+                            % if ajust_periode[periodes_a.index(p)]:
+                                *
+                            %endif
+                            </td>
+                        %endfor
+                    </tr>
                 </table>
+                <div style="text-align: center"><p>${_(u"La despesa diària és de %s € que correspon a %s kWh/dia (%s dies).") % (formatLang(diari_factura_actual_eur), formatLang(diari_factura_actual_kwh), dies_factura or 1)}</p></div>
+                % if hi_ha_ajust:
+                    <div style="text-align: center"><p>${_("* Aquesta factura recull un ajust de consum de períodes anteriors per part de la distribuïdora.")}</p></div>
+                % endif
             </div>
+            <div class="chart_consum_container">
+                <div class="chart_consum" id="chart_consum_${factura.id}"></div>
+                <div class="chart_estadistica">
+                    <p>
+                        ${(_(u"La despesa mitjana diària en els últims %.0f mesos (%s dies) ha estat de <b>%s</b> €, que corresponen a <b>%s</b> kWh/dia.")
+                            % ((historic_dies*1.0 / 30), historic_dies or 1.0, formatLang((total_historic_eur * 1.0) / (historic_dies or 1.0)), formatLang((total_historic_kw * 1.0) / (historic_dies or 1.0))))}<br />
+                        ${_(u"L'electricitat utilitzada durant el darrer any: <b>%s</b> kWh.") % formatLang(total_any, digits=0)}
+                    </p>
+                </div>
+            </div>
+            %if any([lectures_a[comptador][0][7] != "real" for comptador in sorted(lectures_a) if len(lectures_real_a[comptador])>0]):
+                <div class="lectures${len(periodes_a)>3 and '30' or ''}">
+                    <table>
+                        % for comptador in sorted(lectures_real_a):
+                            % if len(lectures_real_a[comptador])>0:  
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    % for periode in periodes_a:
+                                        <th style="text-align: center;">${periode}</th>
+                                    % endfor
+                                </tr>
+                                <tr>
+                                    <th>${_(u"Núm. de comptador")}</th>
+                                    % for p in periodes_a:
+                                        <td style="font-weight: normal;text-align: center;">${comptador}</td>
+                                    % endfor
+                                </tr>
+                                <tr>
+                                    <th>${_(u"Darrera lectura real ")}<span style="font-weight: 100">(${lectures_real_a[comptador][0][2]})</span></th>
+                                    % for periode in periodes_a:
+                                        % if periode not in [lectura_real[0] for lectura_real in lectures_real_a[comptador]]:
+                                            <td></td>
+                                        % else:
+                                            <td style="text-align: center;">${int([lectura_real[1] for lectura_real in lectures_real_a[comptador] if lectura_real[0] == periode][0])} KWh</td>
+                                        % endif
+                                    % endfor
+                                </tr>
+                            %endif
+                        % endfor
+                    </table>
+                </div>
+            %endif
         %endif
     </div>
     <div class="contract_data">
@@ -675,7 +1001,7 @@ dades_reparto = [
         ${_(u'Data de renovació automàtica: <span style="font-weight: bold;">%s</span>') % datetime.strptime(polissa.data_alta, '%Y-%m-%d').replace(datetime.now().year + 1).strftime('%Y-%m-%d')}
         </p>
     </div>
-% if len(periodes_a) <= 3:
+% if len(periodes_a) <= 3 or polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
 ${emergency_complaints(factura)}
 % endif
     <p style="page-break-after:always"></p>
@@ -690,208 +1016,243 @@ ${emergency_complaints(factura)}
 % endif
     </div>
 % endif
+
+
+
 <!-- LECTURES REACTIVA I MAXÍMETRE -->
 % if len(periodes_r) or te_maximetre:
-    <div class="other_measures">
+    <%
+        css_class = ''
+    %>
+    % if len(periodes_r) and te_maximetre:
+        <%
+            css_class = 'side_by_side'
+        %>
+    % endif
+    <div class="other_measures ${css_class}">
         % if len(periodes_r):
-        <div class="lectures_reactiva${len(periodes_r)>3 and '30' or ''}">
-        <h1>${_(u"ENERGIA REACTIVA")}</h1>
-            <table style="margin: 1em">
-            <tr><th>&nbsp;</th>
-% for periode in periodes_r:
-            <th style="text-align: center;">${periode}</th>
-% endfor
-            </tr>
-% for comptador in sorted(lectures_r):
-            <tr>
-                <th>${_(u"Núm. de comptador")}</th>
-            % for p in periodes_r:
-                <td style="font-weight: normal;text-align: center;">${comptador}</td>
-            % endfor
-            </tr>
-            <tr>
-                <th>${_(u"Lectura anterior")}<span style="font-weight: 100">&nbsp;(${lectures_r[comptador][0][4]})<br/>(${lectures_r[comptador][0][6]})</span></th>
-   % for periode in periodes_r:
-                  % if periode not in [lectura[0] for lectura in lectures_r[comptador]]:
-                      <td></td>
-                  % else:
-                      <td style="text-align: center;">${int([lectura[1] for lectura in lectures_r[comptador] if lectura[0] == periode][0])} kVArh</td>
-                  % endif
-    %endfor
-            </tr>
-                <th>${_(u"Lectura final")}<span style="font-weight: 100">&nbsp;(${lectures_r[comptador][0][5]})<br/>(${lectures_r[comptador][0][7]})</span></th>
-    % for periode in periodes_r:
-                  % if periode not in [lectura[0] for lectura in lectures_r[comptador]]:
-                      <td></td>
-                  % else:
-                      <td style="text-align: center;">${int([lectura[2] for lectura in lectures_r[comptador] if lectura[0] == periode][0])} kVArh</td>
-                  % endif
-    %endfor
-            </tr>
-% endfor
-            <tr>
-                <th style="border-top: 1px solid #4c4c4c">${_(u"Total període")}</th>
-    %for p in periodes_r:
-                <td style="border-top: 1px solid #4c4c4c; text-align: center;">${formatLang(total_lectures_r[p], digits=0)} kVArh</td>
-    %endfor
-            </tr>
-            </table>
-        %if any([lectures_r[comptador][0][7] != "real" for comptador in sorted(lectures_r) if len(lectures_real_r[comptador])>0]):
-            <table style="margin: 1em">
-            % for comptador in sorted(lectures_real_r):
-              % if len(lectures_real_r[comptador])>0:
-                <tr>
-                  <th>&nbsp;</th>
-                  % for periode in periodes_a:
-                    <th style="text-align: center;">${periode}</th>
-                  % endfor
-                </tr>
-                <tr>
-                  <th>${_(u"Núm. de comptador")}</th>
-                  % for p in periodes_a:
-                    <td style="font-weight: normal;text-align: center;">${comptador}</td>
-                  % endfor
-                </tr>
-                <tr>
-                  <th>${_(u"Darrera lectura real ")}texlive-extra-utils poppler-utils<span style="font-weight: 100">(${lectures_real_r[comptador][0][2]})</span></th>
-                  % for periode in periodes_r:
-                    % if periode not in [lectura_real[0] for lectura_real in lectures_real_r[comptador]]:
-                      <td></td>
-                    % else:
-                      <td style="text-align: center;">${int([lectura_real[1] for lectura_real in lectures_real_r[comptador] if lectura_real[0] == periode][0])} KVArh</td>
-                    % endif
-                  % endfor
-              % endif
-            %endfor
-                </tr>
-            </table>
-        %endif
-
-        </div>
-    % endif
-    % if te_maximetre:
-    <div class="lectures_max${len(periodes_r)>3 and '30' or ''}">
-        <h1>${_(u"MAXÍMETRE")}</h1>
-            <table style="margin: 1em">
-            <tr><th>&nbsp;</th>
-% for periode in periodes_m:
-            <th style="text-align: center;">${periode}</th>
-% endfor
-            </tr>
-            <tr><th>${_(u"Potència contractada")}</th>
-% for lectura in lectures_m:
-            <td style="text-align: center;">${locale.str(locale.atof(formatLang(lectura[1], digits=3)))}</td>
-% endfor
-            </tr>
-            <tr><th>${_(u"Lectura maxímetre")}</th>
-% for lectura in lectures_m:
-            <td style="text-align: center;">${locale.str(locale.atof(formatLang(lectura[2], digits=3)))}</td>
-% endfor
-            </tr>
-            <tr><th>${_(u"Potència facturada")}</th>
-% for periode in sorted(fact_potencia):
-            <td style="text-align: center;">${locale.str(locale.atof(formatLang(fact_potencia[periode], digits=3)))}</td>
-% endfor
-            </tr>
-% if exces_potencia:
-            <tr><th>${_(u"Quantitat excedida")}</th>
-% for periode in sorted(fact_potencia):
-    <% trobat = False %>
-    % for exces in exces_potencia:
-        % if exces.name == periode:
-            <td style="text-align: center;">${int(exces.quantity)}</td>
-            <% trobat = True %>
+            <div class="lectures_reactiva${len(periodes_r)>3 and '30' or ''} ${css_class + '_react'}">
+                <h1>${_(u"ENERGIA REACTIVA")}</h1>
+                <table style="margin: 1em">
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th style="text-align: center;">
+                            Comptador
+                        </th>
+                        <% comptador = sorted(lectures_r)[0] %>
+                        <th style="text-align: center;">
+                            Lectura anterior <br/>
+                            <span style="font-weight: 100">&nbsp;(${lectures_r[comptador][0][4]})<br/>(${lectures_r[comptador][0][6]})</span>
+                        </th>
+                        <th style="text-align: center;">
+                            Lectura final <br/>
+                            <span style="font-weight: 100">&nbsp;(${lectures_r[comptador][0][5]})<br/>(${lectures_r[comptador][0][7]})</span>
+                        </th>
+                        <th style="text-align: center;">
+                            Total període
+                        </th>
+                        ##<th style="text-align: center;">
+                        ##    Import reactiva €
+                        ##</th>
+                    </tr>
+                    % for periode in periodes_r:
+                        <% comptador = sorted(lectures_r)[0] %>
+                        <tr>
+                            <th style="text-align: center;">${periode}</th>
+                            <td style="text-align: center;">${comptador}</td>
+                            % if periode not in [lectura[0] for lectura in lectures_r[comptador]]:
+                                <td></td>
+                            % else:
+                                <td style="text-align: center;">${int([lectura[1] for lectura in lectures_r[comptador] if lectura[0] == periode][0])} kVArh</td>
+                            % endif
+                            % if periode not in [lectura[0] for lectura in lectures_r[comptador]]:
+                                <td></td>
+                            % else:
+                                <td style="text-align: center;">${int([lectura[2] for lectura in lectures_r[comptador] if lectura[0] == periode][0])} kVArh</td>
+                            % endif
+                            <td style="text-align: center;">${formatLang(total_lectures_r[periode], digits=0)} kVArh</td>
+                        </tr>
+                    % endfor
+                </table>
+                %if any([lectures_r[comptador][0][7] != "real" for comptador in sorted(lectures_r) if len(lectures_real_r[comptador])>0]):
+                    <table style="margin: 1em">
+                        % for comptador in sorted(lectures_real_r):
+                            % if len(lectures_real_r[comptador])>0:
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    % for periode in periodes_a:
+                                        <th style="text-align: center;">${periode}</th>
+                                    % endfor
+                                </tr>
+                                <tr>
+                                    <th>${_(u"Núm. de comptador")}</th>
+                                    % for p in periodes_a:
+                                        <td style="font-weight: normal;text-align: center;">${comptador}</td>
+                                    % endfor
+                                </tr>
+                                <tr>
+                                    <th>${_(u"Darrera lectura real ")}<span style="font-weight: 100">(${lectures_real_r[comptador][0][2]})</span></th>
+                                    % for periode in periodes_r:
+                                        % if periode not in [lectura_real[0] for lectura_real in lectures_real_r[comptador]]:
+                                            <td></td>
+                                        % else:
+                                            <td style="text-align: center;">${int([lectura_real[1] for lectura_real in lectures_real_r[comptador] if lectura_real[0] == periode][0])} KVArh</td>
+                                        % endif
+                                    % endfor
+                                </tr>
+                            % endif
+                        %endfor
+                    </table>
+                %endif
+            </div>
         % endif
-    % endfor
-    % if not trobat:
-        <td style="text-align:center;">0</td>
-    % endif
-% endfor
-            </tr>
-            <tr><th>${_(u"Import excés de Potència(€)")}</th>
-% for periode in sorted(fact_potencia):
-    <% trobat = False %>
-    % for exces in exces_potencia:
-        % if exces.name == periode:
-            <td style="text-align: center;">${formatLang(exces.price_subtotal)}</td>
-            <% trobat = True %>
-        % endif
-    % endfor
-    % if not trobat:
-        <td style="text-align:center;">0</td>
-    % endif
-% endfor
-            </tr>
-% endif
-            </table>
-        </div>
+        % if te_maximetre:
+            <div class="lectures_max${len(periodes_r)>3 and '30' or ''} ${css_class + '_maxi'}">
+                <h1>${_(u"MAXÍMETRE")}</h1>
+                <table style="margin: 1em">
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th style="text-align: center;">Potència contractada</th>
+                        <th style="text-align: center;">Lectura maxímetre</th>
+                        <th style="text-align: center;">Potència facturada</th>
+                        % if exces_potencia:
+                            <th style="text-align: center;">Quantitat excedida</th>
+                            <th style="text-align: center;">Import excés de Poténcia <br/> (en Euros)</th>
+                        % endif
+                    </tr>
+                    <%
+                        iteracio = 0
+                        total_iteracion = len(periodes_m) 
+                    %>
+                    % for periode in periodes_m:
+                        <tr>
+                            <th style="text-align: center;">${periode}</th>
+                            <td style="text-align: center;">${locale.str(locale.atof(formatLang(lectures_m[iteracio][1], digits=3)))}</td>
+                            <td style="text-align: center;">${locale.str(locale.atof(formatLang(lectures_m[iteracio][2], digits=3)))}</td>
+                            <td style="text-align: center;">${locale.str(locale.atof(formatLang(fact_potencia[sorted(fact_potencia)[iteracio]], digits=3)))}</td>
+                            % if exces_potencia:
+                                <% trobat = False %>
+                                % for exces in exces_potencia:
+                                    % if exces.name == periode:
+                                        <td style="text-align: center;">${int(exces.quantity)}</td>
+                                        <% trobat = True %>
+                                    % endif
+                                % endfor
+                                % if not trobat:
+                                    <td style="text-align:center;">0</td>
+                                % endif
+                                <% trobat = False %>
+                                % for exces in exces_potencia:
+                                    % if exces.name == periode:
+                                        <td style="text-align: center;">${formatLang(exces.price_subtotal)}</td>
+                                        <% trobat = True %>
+                                    % endif
+                                % endfor
+                                % if not trobat:
+                                    <td style="text-align:center;">0</td>
+                                % endif
+                            % endif
+                        </tr>
+                       <% iteracio = iteracio + 1 %>
+                    % endfor
+                </table>
+            </div>
         % endif
     </div>
-    % endif
-
-
-
+% endif
 
 <!-- DETALL FACTURA -->
     <div class="invoice_detail">
         <h1>${_(u"DETALL DE LA FACTURA")}</h1>
-        <!-- POTÈNCIA -->
-        <p><span style="font-weight: bold;">${_(u"Facturació per potència contractada")}</span> <br />
-            ${_(u"Detall del càlcul del cost segons potència contractada:")} <br /></p>
-        % for l in sorted(sorted(factura.linies_potencia, key=attrgetter('data_desde')), key=attrgetter('name')):
-        <% dies_any = calendar.isleap(datetime.strptime(l.data_desde, '%Y-%m-%d').year) and 366 or 365 %>
-         <div style="float: left;width:50%;margin: 0px 10px;">
-             <div style="font-weight: bold;float:left">${_(u"(%s) %s kW x %s €/kW i any x (%.f/%d) dies") % (l.name, locale.str(locale.atof(formatLang(l.quantity, digits=3))), locale.str(locale.atof(formatLang(get_atr_price(cursor, uid, tarifa_elect_som,l), digits=6))),int(l.multi), dies_any)}</div>
-             <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.price_subtotal)}</div>
-         </div><br />
-        % endfor
-        <p>${_(u"Tot aquest import correspon al cost per peatges d'accés, ja que a Som Energia no afegim cap marge sobre aquest concepte.")}
-        </p>
-        <br />
-        <hr />
-        <!-- ENERGIA -->
-        <p><span style="font-weight: bold;">${_(u"Facturació per electricitat utilitzada")}</span> <br />
-            ${_(u"Detall del càlcul del cost segons l'energia utilitzada:")} <br /></p>
-        % for l in sorted(sorted(factura.linies_energia, key=attrgetter('data_desde')), key=attrgetter('name')):
-         <div style="float: left;width:50%;margin: 0px 10px;">
-             <div style="border: 1px;font-weight: bold;float:left;width: 15%">${_(u"(%s)") % (l.name,)}</div>
-             <div style="border: 1px;font-weight: bold;float:left;width: 35%">${_(u"%s kWh x %s €/kWh") % (int(l.quantity), locale.str(locale.atof(formatLang(l.price_unit_multi, digits=6))))}</div>
-             <div style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; border: 1px;font-weight: bold;float:left;width: 30%">${get_gkwh_owner(cursor, uid, l)}</div>
-             <div style="border: 1px;font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.price_subtotal)}</div>
-         </div><br />
-        % endfor
+        % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
+        <div class="row">
+            <div class="column">
+        %endif
+                <!-- POTÈNCIA -->
+                <p><span style="font-weight: bold;">${_(u"Facturació per potència contractada")}</span> <br />
+                ${_(u"Detall del càlcul del cost segons potència contractada:")} <br /></p>
+                % for l in sorted(sorted(factura.linies_potencia, key=attrgetter('data_desde')), key=attrgetter('name')):
+                    <% dies_any = calendar.isleap(datetime.strptime(l.data_desde, '%Y-%m-%d').year) and 366 or 365 %>
+                    <div style="float: left;width:90%;margin: 0px 10px;">
+                    <div style="font-weight: bold;float:left">${_(u"(%s) %s kW x %s €/kW i any x (%.f/%d) dies") % (l.name, locale.str(locale.atof(formatLang(l.quantity, digits=3))), locale.str(locale.atof(formatLang(get_atr_price(cursor, uid, tarifa_elect_som,l), digits=6))),int(l.multi), dies_any)}</div>
+                    <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.price_subtotal)}</div>
+                    </div><br />
+                % endfor
+                <br/>
+                % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
+                    <div style="float: left;width:90%;margin: 0px 10px;">
+                        <div style="font-weight: bold;float:left">
+                            ${_(u"Import Excés de Potència")}
+                        </div>
+                        <div style="font-weight: bold; float:right;">34 €</div>
+                    </div>
+                %endif
+                <br/>
+                <p>
+                    ${_(u"Tot aquest import correspon al cost per peatges d'accés, ja que a Som Energia no afegim cap marge sobre aquest concepte")}
+                </p>
+                <hr/>
+                <!-- ENERGIA -->
+                <p><span style="font-weight: bold;">${_(u"Facturació per electricitat utilitzada")}</span> <br />
+                        ${_(u"Detall del càlcul del cost segons l'energia utilitzada:")} </p>
+                        % for l in sorted(sorted(factura.linies_energia, key=attrgetter('data_desde')), key=attrgetter('name')):
+                            <div style="float: left;width:90%;margin: 0px 10px;">
+                                <div style="border: 1px;font-weight: bold;float:left;width: 10%">
+                                    ${_(u"(%s)") % (l.name,)}
+                                </div>
+                                <div style="border: 1px;font-weight: bold;float:left;width: 40%">
+                                    ${_(u"%s kWh x %s €/kWh") % (int(l.quantity), locale.str(locale.atof(formatLang(l.price_unit_multi, digits=6))))}
+                                </div>
+                                <div style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; border: 1px;font-weight: bold;float:left;width: 30%">
+                                    ${get_gkwh_owner(cursor, uid, l)}
+                                </div>
+                                <div style="border: 1px;font-weight: bold; float:right;">
+                                    ${_(u"%s €") % formatLang(l.price_subtotal)}
+                                </div>
+                            </div><br />
+                        % endfor
 
-        % if polissa.tarifa.codi_ocsum not in ('012', '013', '014', '015', '016', '017'):
-            <p>${_(u"D'aquest import, el cost per peatge d'accés ha estat de:")}
-            </p>
-
-            % for k, l in sorted(atr_linies_energia.items()):
-                <div style="float: left;width:50%;margin: 0px 10px;">
-                    <div style="font-weight: bold;float:left">${_(u"(%s) %s kWh x %s €/kWh") % (k, int(l['quantity']), locale.str(locale.atof(formatLang(l['price'], digits=6))))}</div>
-                    <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l['atrprice_subtotal'])}</div>
-                </div><br />
-            % endfor
-        % endif
-
-
-
-        <p>${_(u"En el terme d'energia, afegim el marge necessari per a desenvolupar la nostra activitat de comercialització. Donem més pes al terme variable de la factura, que depèn del nostre ús de l'energia. Busquem incentivar l'estalvi i l'eficiència energètica de les persones sòcies i clientes.")}
-        </p>
-        <hr />
+                        <p>
+                            ${_(u"D'aquest import, el cost per peatge d'accés ha estat de:")}
+                        </p>
+                        <% print sorted(atr_linies_energia.items()) %>
+                        % for k, l in sorted(atr_linies_energia.items()):
+                            <div style="float: left;width:90%;margin: 0px 10px;">
+                                <div style="font-weight: bold;float:left">${_(u"(%s) %s kWh x %s €/kWh") % (k, int(l['quantity']), locale.str(locale.atof(formatLang(l['price'], digits=6))))}</div>
+                                <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l['atrprice_subtotal'])}</div>
+                            </div><br />
+                        % endfor
+                <br/>
+                <p>
+                    ${_(u"En el terme d'energia, afegim el marge necessari per a desenvolupar la nostra activitat de comercialització. Donem un major pes al terme variable de la factura, que depèn del nostre ús de l'energia. Busquem incentivar l'estalvi i l'eficiència energètica dels nostres socis/es i clients")}
+                </p>
+                <hr/>
+        % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
+            </div>
+        </div>
+        <div class="pl_15">
+           <h1 style="background-color: ${invoice_data_background};">${_(u"Ús elèctric i curva horària")}</h1>
+            <%
+                mode = "curvegraph"
+                graph(mode, 'curve', 'curve')
+            %>
+            <div style="clear: both;"></div>
+        </div>
+        %endif
     % if factura.total_reactiva:
         <!-- REACTIVA -->
         <p><span style="font-weight: bold;">${_(u"Facturació per penalització de reactiva")}</span> <br />
             ${_(u"Detall del càlcul del cost segons la penalització per reactiva:")} <br /></p>
         % for l in sorted(sorted(factura.linies_reactiva, key=attrgetter('data_desde')), key=attrgetter('name')):
-         <div style="float: left;width:50%;margin: 0px 10px;">
+         <div style="float: left;width:90%;margin: 0px 10px;">
              <div style="font-weight: bold;float:left">${_(u"(%s) %s kVArh x %s €/kVArh") % (l.name, formatLang(l.quantity), locale.str(locale.atof(formatLang(l.price_unit_multi, digits=6))))}</div>
-             <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.price_subtotal)}</div>
+             <div style="font-weight: bold; float:right">${_(u"%s €") % formatLang(l.price_subtotal)}</div>
          </div><br />
         % endfor
         <p>${_(u"Detall del cost per peatge de penalització de reactiva inclós en l'import resultant:")}
         </p>
         % for l in sorted(sorted(factura.linies_reactiva, key=attrgetter('data_desde')), key=attrgetter('name')):
-         <div style="float: left;width:50%;margin: 0px 10px;">
+         <div style="float: left;width:90%;margin: 0px 10px;">
              <div style="font-weight: bold;float:left">${_(u"(%s) %s kVArh x %s €/kVArh") % (l.name, formatLang(l.quantity), locale.str(locale.atof(formatLang(get_atr_price(cursor, uid, tarifa_elect_atr,l), digits=6))))}</div>
              <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.atrprice_subtotal)}</div>
          </div><br />
@@ -902,49 +1263,49 @@ ${emergency_complaints(factura)}
         <!-- ALTRES -->
         <p>${_(u"A aquests imports hauràs de sumar els altres costos que detallem a continuació:")}<br /></p>
         % for l in bosocial_lines:
-        <div style="float: left;width:75%;margin: 0px 10px;">
+        <div style="float: left;width:89%;margin: 0px 10px;">
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"Bo social (RD 7/2016 23 desembre)")}</div>
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"%s dies x %s €/dia") % (int(l.quantity), locale.str(locale.atof(formatLang(l.price_unit, digits=3))))}</div>
             <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.price_subtotal)}</div>
         </div>
         % endfor
         % for l in iese_lines:
-        <div style="float: left;width:75%;margin: 0px 10px;">
+        <div style="float: left;width:89%;margin: 0px 10px;">
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"Impost de l'electricitat")}</div>
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"%s x 5,11269%%") % (formatLang(l.base_amount))}</div>
             <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.tax_amount)}</div>
         </div>
         % endfor
         % for l in lloguer_lines:
-        <div style="float: left;width:75%;margin: 0px 10px;">
+        <div style="float: left;width:89%;margin: 0px 10px;">
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"Lloguer de comptador")}</div>
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"%s dies x %s €/dia") % (int(l.quantity), locale.str(locale.atof(formatLang(l.price_unit, digits=6))))}</div>
             <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.price_subtotal)}</div>
         </div>
         % endfor
         % for l in altres_lines:
-        <div style="float: left;width:75%;margin: 0px 10px;">
+        <div style="float: left;width:89%;margin: 0px 10px;">
             <div style="font-weight: bold; float:left; width: 25em;">${l.name}</div>
             <div style="font-weight: bold; float:left; width: 25em;">&nbsp;</div>
             <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.price_subtotal)}</div>
         </div>
         % endfor
         % for l in iva_lines:
-        <div style="float: left;width:75%;margin: 0px 10px;">
+        <div style="float: left;width:89%;margin: 0px 10px;">
             <div style="font-weight: bold; float:left; width: 25em;">${l.name}</div>
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"%s €") % (formatLang(l.base))}${_(u"(BASE IMPOSABLE)")}</div>
             <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.amount)}</div>
         </div>
         % endfor
         % for l in igic_lines:
-        <div style="float: left;width:75%;margin: 0px 10px;">
+        <div style="float: left;width:89%;margin: 0px 10px;">
             <div style="font-weight: bold; float:left; width: 25em;">${l.name}</div>
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"%s €") % (formatLang(l.base))}${_(u"(BASE IMPOSABLE)")}</div>
             <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.amount)}</div>
         </div>
         % endfor
         % for l in donatiu_lines:
-        <div style="float: left;width:75%;margin: 2em 10px 0px 10px;">
+        <div style="float: left;width:89%;margin: 2em 10px 0px 10px;">
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"Donatiu voluntari (exempt d'IVA)")}</div>
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"%s kWh x %s €/kWh" % (formatLang(l.quantity), formatLang(l.price_unit_multi)))}</div>
             <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.price_subtotal)}</div>
@@ -953,7 +1314,7 @@ ${emergency_complaints(factura)}
         <p></p>
         <br />
         <div style="float: left; margin-top: 1em; width:100%;"><hr /></div>
-        <div style="float: left;width:75%;margin: .5em 10px .5em 10px;">
+        <div style="float: left;width:89%;margin: .5em 10px .5em 10px;">
             <div style="font-weight: bold; float:left; width: 25em;">${_(u"TOTAL IMPORT FACTURA")}</div>
             <div style="font-weight: bold; float:left; width: 25em;">&nbsp;</div>
             <div style="font-weight: bold; float:right;">${_(u"%s &euro;") % formatLang(factura.amount_total)}</div>
@@ -998,7 +1359,8 @@ ${emergency_complaints(factura)}
             </div>
         </div>
 % endif
-% if len(periodes_a) > 3:
+
+% if len(periodes_a) > 3 and not polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
     ${emergency_complaints(factura)}
 % endif
     <p style="page-break-after:always"></p>
@@ -1019,7 +1381,7 @@ ${emergency_complaints(factura)}
         <hr />
         <div class="mix">
             <div class="mix_som">
-                <div class="titol" style="width: 100%"><span>${_(u"Mix Som Energia, SCCL")}</span></div>
+                <div class="titol" style="width: 100%"><span>${_("Mix Som Energia, SCCL")}</span></div>
                 <div class="graf" style="text-align:center;width: 100%">
                     <img src="${addons_path}/giscedata_facturacio_comer_som/report/graf2_html.png"/>
                 </div>
@@ -1161,6 +1523,7 @@ var dades_reparto = ${json.dumps(dades_reparto)}
 var factura_id = ${factura.id}
 var data_consum = ${json.dumps(historic_js)}
 var es30 = ${len(periodes_a)>3 and 'true' or 'false'}
+var esgran = ${(polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017')) and 'true' or 'false'}
 
 </script>
 <script src="${addons_path}/giscedata_facturacio_comer_som/report/consum.js"></script>
