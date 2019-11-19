@@ -663,9 +663,20 @@ has_autoconsum_colectiu = False
     ${_(u"Adreça electrònica:")} ${factura.company_id.partner_id.address[0].email}
     </div>
     <div class="invoice_data">
-        % if factura.is_gkwh:
-              <div class="logo_gkwh">
-                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_gkwh.png" width="95px"/>
+        % if has_autoconsum and factura.is_gkwh:
+              <div class="logo_little_left">
+                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_auto_little.png" width="65px"/>
+              </div>
+              <div class="logo_little_right">
+                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_gkwh_little.png" width="65px"/>
+              </div>
+        % elif has_autoconsum:
+              <div class="logo_little_center">
+                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_auto_little.png" width="65px"/>
+              </div>
+        % elif factura.is_gkwh:
+              <div class="logo_little_center">
+                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_gkwh_little.png" width="65px"/>
               </div>
         % endif
         <h1 style="background-color: ${invoice_data_background};">${_(u"DADES DE LA FACTURA")}</h1>
