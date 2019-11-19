@@ -257,36 +257,36 @@
 #    es: 7612922
 #    ca: 7612850
 #
-#facturaPrincipal:
-#  template: input/report_giscedata_facturacio_factura_comer.mako
-#  model: giscedata.facturacio.factura
-#  reportXmlId: 400
-#  cases:
-#    test: 7152113
-#    o_sense_l1: 7205811
-#    o_sense_l2: 7060199
-#    20A_ca: 7230520
-#    20A_es: 7224867
-#    20DHA_ca: 7224846
-#    20DHA_es: 7224767
-#    20DHS_ca: 7162193
-#    20DHS_es: 7173396
-#    20A_e_g_es : 7126127
-#    20DHA_g_ca : 7174080
-#    20DHS_g_ca : 7154332
-#    20DHS_g_es : 7163693
-#    21A_ca: 7174268
-#    21A_es: 7173702
-#    21DHA_ca: 7174119
-#    21DHA_es: 7174028
-#    21DHS_ca: 7117144
-#    21DHS_es: 7130922
-#    30A_ca: 7211816
-#    30A_es: 7195651
-#    31A_ca: 7125818
-#    31A_es: 7118249
-#    61A : 7099377
-#
+facturaPrincipal:
+  template: input/report_giscedata_facturacio_factura_comer.mako
+  model: giscedata.facturacio.factura
+  reportXmlId: 400
+  cases:
+    test: 7152113
+    o_sense_l1: 7205811
+    o_sense_l2: 7060199
+    20A_ca: 7230520
+    20A_es: 7224867
+    20DHA_ca: 7224846
+    20DHA_es: 7224767
+    20DHS_ca: 7162193
+    20DHS_es: 7173396
+    20A_e_g_es : 7126127
+    20DHA_g_ca : 7174080
+    20DHS_g_ca : 7154332
+    20DHS_g_es : 7163693
+    21A_ca: 7174268
+    21A_es: 7173702
+    21DHA_ca: 7174119
+    21DHA_es: 7174028
+    21DHS_ca: 7117144
+    21DHS_es: 7130922
+    30A_ca: 7211816
+    30A_es: 7195651
+    31A_ca: 7125818
+    31A_es: 7118249
+    61A : 7099377
+
 ######################################################
 ## Gestió de contractes
 #
