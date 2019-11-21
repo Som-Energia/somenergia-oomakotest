@@ -715,7 +715,7 @@ if has_autoconsum:
         <table>
         <tr><td>${_(u"Per energia utilitzada")}</td><td class="e">${"%s &euro;" % formatLang(factura.total_energia)}</td></tr>
     % if has_autoconsum:
-        <tr><td>${_(u"Per energia excedentaria")}</td><td class="e">${"%s &euro;" % formatLang(factura.total_energia)}</td></tr>
+        <tr><td>${_(u"Per energia excedentaria")}</td><td class="e">${"%s &euro;" % formatLang(factura.total_energia * -1.0)}</td></tr>
     % endif
         <tr><td>${_(u"Per potència contractada")}</td><td class="e">${"%s &euro;" % formatLang(factura.total_potencia)}</td></tr>
     % if exces_potencia:
