@@ -1040,8 +1040,9 @@ autoconsum_compartit = -666.0
                 ${_(u"Percentatge de repartiment de l'autoproducció compartida:")} <span style="font-weight: bold;">${autoconsum_compartit} %</span> <br />
                 ${_(u"Codi d'autoconsum unificat (CAU):")} <span style="font-weight: bold;">${factura.polissa_id.autoconsum_id.cau}</span> <br />
             %endif
+        %else:
+            ${_(u"Comptador telegestionat:")} <span style="font-weight: bold;">${polissa.tg in ['1','3'] and _(u'Sí') or _(u'No')}</span> <br />
         %endif
-        ${_(u"Comptador telegestionat:")} <span style="font-weight: bold;">${polissa.tg in ['1','3'] and _(u'Sí') or _(u'No')}</span> <br />
         ${_(u"CNAE:")} <span style="font-weight: bold;">${polissa.cnae.name}</span> <br />
         ${_(u'Data d\'alta del contracte: <span style="font-weight: bold;">%s</span>, sense condicions de permanència') % polissa.data_alta} <br />
         ${_(u'Forma de pagament: rebut domiciliat')} <br />
