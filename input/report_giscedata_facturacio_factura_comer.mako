@@ -720,6 +720,9 @@ autoconsum_compartit = -666.0
         <h1>${_(u"RESUM DE LA FACTURA")}</h1>
         <table>
         <tr><td>${_(u"Per energia utilitzada")}</td><td class="e">${"%s &euro;" % formatLang(factura.total_energia)}</td></tr>
+    % if has_autoconsum:
+        <tr><td>${_(u"Per energia excedentaria")}</td><td class="e">${"%s &euro;" % formatLang(factura.total_energia)}</td></tr>
+    % endif
         <tr><td>${_(u"Per potència contractada")}</td><td class="e">${"%s &euro;" % formatLang(factura.total_potencia)}</td></tr>
     % if exces_potencia:
         <tr><td>${_(u"Excés de potència")}</td><td class="e">${"%s &euro;" % formatLang(total_exces_consumida)}</td></tr>
