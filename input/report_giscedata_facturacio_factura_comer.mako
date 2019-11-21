@@ -588,6 +588,9 @@ dades_reparto = [
 def has_polissa_autoconsum(f):
     return f.polissa_id.autoconsum_id and f.polissa_id.autoconsum_id.active and f.polissa_id.autoconsum_id.data_alta < f.data_inici
 
+def has_polissa_autoconsum_colectiu(f):
+    return has_polissa_autoconsum(f) and f.polissa_id.autoconsum_id.collectiu
+
 def has_autoconsum_readings(f):
     from gestionatr.defs import MAGNITUD
     for reading in f.lectures_energia_ids:
@@ -595,23 +598,14 @@ def has_autoconsum_readings(f):
             return True
     return False
 
-has_autoconsum = len(factura.linies_generacio) > 0 or has_autoconsum_readings(factura) or has_polissa_autoconsum(factura)
-
+has_autoconsum = len(factura.linies_generacio) > 0 and has_autoconsum_readings(factura) and has_polissa_autoconsum(factura)
+has_autoconsum_colectiu = has_polissa_autoconsum_colectiu(factura)
+autoconsum_colectiu_repartiment = factura.polissa_id.coef_repartiment # not sure
 if has_autoconsum:
     from gestionatr.defs import TABLA_113
     TABLA_113_dict = { t[0]:t[1] for t in TABLA_113}
     autoconsum_tipus = TABLA_113_dict[factura.polissa_id.autoconsumo]
-
-
-
-
-
-has_autoconsum_colectiu = False
-autoconsum_compartit = -666.0
-#    has_autoconsum_colectiu = polissa.autoconsum_id.collectiu
-
-
-
+    autoconsum_cau = factura.polissa_id.autoconsum_id.cau
 
 %>
 <%def name="emergency_complaints(factura)">
@@ -1040,8 +1034,8 @@ autoconsum_compartit = -666.0
         %if has_autoconsum:
             ${_(u"Contracte amb autopoducció tipus:")} <span style="font-weight: bold;">${autoconsum_tipus}</span> <br />
             %if has_autoconsum_colectiu:
-                ${_(u"Percentatge de repartiment de l'autoproducció compartida:")} <span style="font-weight: bold;">${autoconsum_compartit} %</span> <br />
-                ${_(u"Codi d'autoconsum unificat (CAU):")} <span style="font-weight: bold;">${factura.polissa_id.autoconsum_id.cau}</span> <br />
+                ${_(u"Percentatge de repartiment de l'autoproducció compartida:")} <span style="font-weight: bold;">${autoconsum_colectiu_repartiment} %</span> <br />
+                ${_(u"Codi d'autoconsum unificat (CAU):")} <span style="font-weight: bold;">${autoconsum_cau}</span> <br />
             %endif
         %else:
             ${_(u"Comptador telegestionat:")} <span style="font-weight: bold;">${polissa.tg in ['1','3'] and _(u'Sí') or _(u'No')}</span> <br />
