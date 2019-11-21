@@ -585,22 +585,33 @@ dades_reparto = [
      [[rep_BOE['i'] + rep_BOE['c'], 100.00], 'o', _(u"Altres costos regulats (inclosa anualitat del dèficit)"), formatLang(reparto['o'])]
     ]
 
-has_autoconsum = True
-has_autoconsum_colectiu = True
+def has_polissa_autoconsum(f):
+    return f.polissa_id.autoconsum_id and f.polissa_id.autoconsum_id.active and f.polissa_id.autoconsum_id.data_alta < f.data_inici
+
+def has_autoconsum_readings(f):
+    from gestionatr.defs import MAGNITUD
+    for reading in f.lectures_energia_ids:
+        if reading.magnitud == MAGNITUD[1][0]:
+            return True
+    return False
+
+has_autoconsum = len(factura.linies_generacio) > 0 or has_autoconsum_readings(factura) or has_polissa_autoconsum(factura)
+
 if has_autoconsum:
     from gestionatr.defs import TABLA_113
     TABLA_113_dict = { t[0]:t[1] for t in TABLA_113}
     autoconsum_tipus = TABLA_113_dict[factura.polissa_id.autoconsumo]
-    autoconsum_compartit = 30.0
 
 
-#has_autoconsum = factura.polissa_id.autoconsum_id and factura.polissa_id.autoconsum_id.active and factura.polissa_id.autoconsum_id.data_alta < factura.data_inici
-# TODO has_autoconsum esta determinat per l'existencia de factura.linies_generacio
-#if has_autoconsum:
+
+
+
+has_autoconsum_colectiu = False
+autoconsum_compartit = -666.0
 #    has_autoconsum_colectiu = polissa.autoconsum_id.collectiu
 
-has_autoconsum = False
-has_autoconsum_colectiu = False
+
+
 
 %>
 <%def name="emergency_complaints(factura)">
