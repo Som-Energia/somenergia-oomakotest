@@ -1272,6 +1272,28 @@ ${emergency_complaints(factura)}
                     ${_(u"En el terme d'energia, afegim el marge necessari per a desenvolupar la nostra activitat de comercialització. Donem un major pes al terme variable de la factura, que depèn del nostre ús de l'energia. Busquem incentivar l'estalvi i l'eficiència energètica dels nostres socis/es i clients")}
                 </p>
                 <hr/>
+                % if has_autoconsum:
+                    <!-- GENERACIO -->
+                    <p><span style="font-weight: bold;">${_(u"Compensació per electricitat autoproduïda")}</span> <br />
+                            ${_(u"Detall del càlcul de l'energia compensada:")} </p>
+                            % for l in sorted(sorted(factura.linies_generacio, key=attrgetter('data_desde')), key=attrgetter('name')):
+                                <div style="float: left;width:90%;margin: 0px 10px;">
+                                    <div style="border: 1px;font-weight: bold;float:left;width: 10%">
+                                        ${_(u"(%s)") % (l.name,)}
+                                    </div>
+                                    <div style="border: 1px;font-weight: bold;float:left;width: 40%">
+                                        ${_(u"%s kWh x %s €/kWh") % (int(l.quantity), locale.str(locale.atof(formatLang(l.price_unit_multi, digits=6))))}
+                                    </div>
+                                    <div style="border: 1px;font-weight: bold; float:right;">
+                                        ${_(u"%s €") % formatLang(l.price_subtotal)}
+                                    </div>
+                                </div><br />
+                            % endfor
+                    <p>
+                        ${_(u"Segons estableix el Reial Decret 244/2019 aquest import no serà mai superior a l'import per energia utilitzada. En cas que la compensació sigui superior a l'energia utilitzada, el terme d'energia serà igual a 0€")}
+                    </p>
+                    <hr/>
+                % endif
         % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
             </div>
         </div>
