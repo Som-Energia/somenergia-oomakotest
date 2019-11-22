@@ -1290,6 +1290,7 @@ ${emergency_complaints(factura)}
                                     </div>
                                 </div><br />
                             % endfor
+                    <br/>
                     <p>
                         ${_(u"Segons estableix el Reial Decret 244/2019 aquest import no serà mai superior a l'import per energia utilitzada. En cas que la compensació sigui superior a l'energia utilitzada, el terme d'energia serà igual a 0€")}
                     </p>
