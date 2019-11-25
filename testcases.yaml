@@ -170,6 +170,13 @@
 #     ca: 69398
 #     es: 116
 #
+#validacioDadesOV:
+#  template: input/correu-validacioDadesOV.mako
+#  model: giscedata.switching
+#  poweremailId: 80
+#  cases:
+#    ca_tarif: 253965
+#
 #numeroFacturaDuplicada:
 #  template: input/correu-numeroFacturaDuplicada.mako
 #  model: giscedata.facturacio.factura
@@ -603,6 +610,14 @@
 #    3.0A_ca: 34800
 #    webform_contact_phone_different_to_polissa: 107487
 #
+#notificacioAltaAutoconsum:
+#  template: input/correu-notificacioAltaAutoconsum.mako
+#  model: giscedata.switching
+#  #poweremailId: 65
+#  poweremailId: giscedata_switching.notification_atr_D1_01
+#  cases:
+#    es: 240260
+#
 ##peticioDocumentacioSubministres:
 ##  template: input/correu-peticioDocumentacioSubministres.mako
 ##  model: res.partner
@@ -747,13 +762,13 @@
 ######################################################
 ## Impagats
 #
-#impagament1erAvis:
-#  template: input/correu-impagament1erAvis.mako
-#  model: giscedata.facturacio.factura
-#  poweremailId: 44
-#  cases:
-#    normal_ca: 444848
-#    normal_es: 403834
+impagament1erAvis:
+  template: input/correu-impagament1erAvis.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 44
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
 #
 #impagament2onAvis:
 #  template: input/correu-impagament2onAvis.mako
