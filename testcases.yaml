@@ -175,7 +175,17 @@
 #  model: giscedata.switching
 #  poweremailId: 80
 #  cases:
-#    ca_tarif: 253965
+#    ca_tarif: 253740
+#
+validacioDadesOVCanviTitus:
+  template: input/correu-validacioDadesOVCanviTitus.mako
+  model: giscedata.switching
+  poweremailId: 260
+  cases:
+    ca_ambsoci: 249766
+    es_sensesoci: 253716
+    ca_sensesoci: 170827
+    es_ambsoci: 243142
 #
 #numeroFacturaDuplicada:
 #  template: input/correu-numeroFacturaDuplicada.mako
@@ -762,13 +772,13 @@
 ######################################################
 ## Impagats
 #
-impagament1erAvis:
-  template: input/correu-impagament1erAvis.mako
-  model: giscedata.facturacio.factura
-  poweremailId: 44
-  cases:
-    normal_ca: 444848
-    normal_es: 403834
+#impagament1erAvis:
+#  template: input/correu-impagament1erAvis.mako
+#  model: giscedata.facturacio.factura
+#  poweremailId: 44
+#  cases:
+#    normal_ca: 444848
+#    normal_es: 403834
 #
 #impagament2onAvis:
 #  template: input/correu-impagament2onAvis.mako
