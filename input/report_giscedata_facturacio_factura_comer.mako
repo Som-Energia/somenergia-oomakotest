@@ -600,7 +600,7 @@ def has_autoconsum_readings(f):
 
 has_autoconsum = len(factura.linies_generacio) > 0 and has_autoconsum_readings(factura) and has_polissa_autoconsum(factura)
 has_autoconsum_colectiu = has_polissa_autoconsum_colectiu(factura)
-autoconsum_colectiu_repartiment = factura.polissa_id.coef_repartiment # not sure
+autoconsum_colectiu_repartiment = float(factura.polissa_id.coef_repartiment) * 100.0 # not sure
 if has_autoconsum:
     from gestionatr.defs import TABLA_113
     TABLA_113_dict = { t[0]:t[1] for t in TABLA_113}
@@ -1028,24 +1028,30 @@ if has_autoconsum:
     </div>
     <div class="contract_data">
         <h1>${_(u"DADES DEL CONTRACTE")}</h1>
-        <p>${_(u"Adreça de subministrament:")} <span style="font-weight: bold;">${factura.cups_id.direccio}</span> <br />
-        ${_(u"Potència contractada (kW):")} <span style="font-weight: bold;">${"%s (%s)" % (locale.str(locale.atof(formatLang(polissa.potencia, digits=3))),fact_pot_txt)}</span> <br />
-        ${_(u"Tarifa contractada:")} <span style="font-weight: bold;">${polissa.tarifa.name}</span> <br />
-        ${_(u"CUPS:")} <span style="font-weight: bold;">${factura.cups_id.name}</span> <br />
-        %if has_autoconsum:
-            ${_(u"Contracte amb autopoducció tipus:")} <span style="font-weight: bold;">${autoconsum_tipus}</span> <br />
-            %if has_autoconsum_colectiu:
-                ${_(u"Percentatge de repartiment de l'autoproducció compartida:")} <span style="font-weight: bold;">${autoconsum_colectiu_repartiment} %</span> <br />
-                ${_(u"Codi d'autoconsum unificat (CAU):")} <span style="font-weight: bold;">${autoconsum_cau}</span> <br />
+        <div class="contract_data_container">
+            <div class="contract_data_main">
+                <p>${_(u"Adreça de subministrament:")} <span style="font-weight: bold;">${factura.cups_id.direccio}</span> <br />
+                ${_(u"Potència contractada (kW):")} <span style="font-weight: bold;">${"%s (%s)" % (locale.str(locale.atof(formatLang(polissa.potencia, digits=3))),fact_pot_txt)}</span> <br />
+                ${_(u"Tarifa contractada:")} <span style="font-weight: bold;">${polissa.tarifa.name}</span> <br />
+                ${_(u"CUPS:")} <span style="font-weight: bold;">${factura.cups_id.name}</span> <br />
+                ${_(u"Comptador telegestionat:")} <span style="font-weight: bold;">${polissa.tg in ['1','3'] and _(u'Sí') or _(u'No')}</span> <br />
+                ${_(u"CNAE:")} <span style="font-weight: bold;">${polissa.cnae.name}</span> <br />
+                ${_(u'Data d\'alta del contracte: <span style="font-weight: bold;">%s</span>, sense condicions de permanència') % polissa.data_alta} <br />
+                ${_(u'Forma de pagament: rebut domiciliat')} <br />
+                ${_(u'Data de renovació automàtica: <span style="font-weight: bold;">%s</span>') % datetime.strptime(polissa.data_alta, '%Y-%m-%d').replace(datetime.now().year + 1).strftime('%Y-%m-%d')}
+                </p>
+            </div>
+            %if has_autoconsum:
+            <div class="contract_data_auto">
+                <p>${_(u"Autoproducció tipus:")} <span style="font-weight: bold;">${autoconsum_tipus}</span> <br />
+                ${_(u"Codi d'autoconsum unificat (CAU):")} <span style="font-weight: bold;">${autoconsum_cau}</span> 
+                %if has_autoconsum_colectiu:
+                    <br />${_(u"Percentatge de repartiment de l'autoproducció compartida:")} <span style="font-weight: bold;">${autoconsum_colectiu_repartiment} %</span>
+                %endif
+                </p>
+            </div>
             %endif
-        %else:
-            ${_(u"Comptador telegestionat:")} <span style="font-weight: bold;">${polissa.tg in ['1','3'] and _(u'Sí') or _(u'No')}</span> <br />
-        %endif
-        ${_(u"CNAE:")} <span style="font-weight: bold;">${polissa.cnae.name}</span> <br />
-        ${_(u'Data d\'alta del contracte: <span style="font-weight: bold;">%s</span>, sense condicions de permanència') % polissa.data_alta} <br />
-        ${_(u'Forma de pagament: rebut domiciliat')} <br />
-        ${_(u'Data de renovació automàtica: <span style="font-weight: bold;">%s</span>') % datetime.strptime(polissa.data_alta, '%Y-%m-%d').replace(datetime.now().year + 1).strftime('%Y-%m-%d')}
-        </p>
+        </div>
     </div>
 % if len(periodes_a) <= 3 or polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
 ${emergency_complaints(factura)}
