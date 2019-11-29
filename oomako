@@ -469,12 +469,15 @@ def accept():
         expectedFilename = os.path.join('b2bdata',testcase+'-expected.html')
         resultPdf = os.path.join('b2bdata',testcase+'-result.pdf')
         expectedPdf = os.path.join('b2bdata',testcase+'-expected.pdf')
+        diffPdf = os.path.join('b2bdata',testcase+'-diff.pdf')
         if os.access(resultFilename, os.R_OK):
             step("Accepting "+testcase)
             shutil.move(resultFilename, expectedFilename)
         if os.access(resultPdf, os.R_OK):
             step("Accepting pdf "+testcase)
             shutil.move(resultPdf, expectedPdf)
+            deleteIfExists(diffPdf)
+
 
 if __name__ == '__main__' :
     if args.subcommand not in globals() :
