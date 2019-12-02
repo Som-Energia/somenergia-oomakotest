@@ -264,6 +264,23 @@ facturaPrincipal:
     20DHA_auto_no_es: 7762694
     20DHA_auto_es: 7762703
     61A : 7099377
+    m_nou_20A_nomax_ca: 6693310
+    m_ant_20A_nomax_ca: 5842065
+    m_ant_20A_nomax_e_nocon_est_ca: 6012212
+    m_ant_20A_max_ca: 6704585
+    m_nou_2DHA_nomax_es: 6686391
+    m_ant_2DHA_nomax_es: 6646034
+    m_ant_2DHA_simax_supl_cat: 7715339
+    m_ant_21A_nomax_ca: 6656944
+    m_ant_21A_simax_ca: 6690828
+    m_ant_21DHA_nomax_ca: 6686682
+    m_ant_21DHA_simax_ca: 6698195
+    m_ant_2HS_nomax_g_d_ca: 4399776
+    m_nou_30_nomax_ca: 6657832
+    m_ant_30_nomax_ca: 6702199
+    m_ant_30_simax_reactiva_cat: 6773256
+    m_nou_31_e_es: 6648703
+    m_61_consum0_ca: 6726457
 
 ######################################################
 ## Gestió de contractes
