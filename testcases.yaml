@@ -177,15 +177,15 @@
 #  cases:
 #    ca_tarif: 253740
 #
-validacioDadesOVCanviTitus:
-  template: input/correu-validacioDadesOVCanviTitus.mako
-  model: giscedata.switching
-  poweremailId: 260
-  cases:
-    ca_ambsoci: 249766
-    es_sensesoci: 253716
-    ca_sensesoci: 170827
-    es_ambsoci: 243142
+#validacioDadesOVCanviTitus:
+#  template: input/correu-validacioDadesOVCanviTitus.mako
+#  model: giscedata.switching
+#  poweremailId: 260
+#  cases:
+#    ca_ambsoci: 249766
+#    es_sensesoci: 253716
+#    ca_sensesoci: 170827
+#    es_ambsoci: 243142
 #
 #numeroFacturaDuplicada:
 #  template: input/correu-numeroFacturaDuplicada.mako
@@ -249,6 +249,13 @@ validacioDadesOVCanviTitus:
 #    es: 7043159
 #    ca: 6956113
 #
+#mailAccountInvoicePagada:
+#  template: input/correu-emailNotifAccountInvoicePagada.mako
+#  model: account.invoice
+#  poweremailId: 263
+#  cases:
+#    es: 7612922
+#    ca: 7612850
 #facturaPrincipal:
 #  template: input/report_giscedata_facturacio_factura_comer.mako
 #  model: giscedata.facturacio.factura
