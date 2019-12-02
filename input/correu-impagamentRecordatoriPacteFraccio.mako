@@ -37,13 +37,15 @@ except:
 Hola${nom_pagador},<br />
 <br />
 % if object.invoice_id.partner_id.lang != "es_ES":
-Tal i com havíem acordat, aquesta setmana està previst el pagament corresponent al fraccionament pactat de la/les factura/es pendent/s. Esperem rebre la teva transferència durant els pròxims dies. Moltes gràcies.<br />
+Tal i com havíem acordat,està pendent el pagament corresponent al fraccionament pactat de la/les factura/es pendent/s. Esperem rebre la teva transferència durant els pròxims dies.<br />
+<br />
+Un cop rebem la teva transferència t'enviarem un correu de confirmació.<br />
 <br />
 Et recordem el número de compte de Som Energia:<br />
 <br />
 <B>ES82 1491 0001 29 2027098223</B><br />
 <br />
-Per a qualsevol dubte o incidència, t’agrairem que et posis en contacte.<br />
+Si tens algun dubte, posa’t en contacte amb nosaltres.<br />
 <br />
 Salutacions,<br />
 <br />
@@ -55,7 +57,9 @@ factura@somenergia.coop<br />
 <br />----------------------------------------------------------------------------------------------------<br />
 % endif
 % if object.partner_id.lang != "ca_ES":
-Tal como habíamos acordado, esta semana está previsto el pago correspondiente al fraccionamiento pactado de la/s factura/s pendiente/s. Esperamos recibir tu transferencia durante los próximos días. Muchas gracias.<br />
+Tal como habíamos acordado, está pendiente el pago correspondiente al fraccionamiento pactado de la/s factura/s pendiente/s. Esperamos recibir tu transferencia durante los próximos días.<br />
+<br />
+Una vez recibamos tu transferencia, te mandaremos un correo de confirmación.<br />
 <br />
 Te recordamos el número de cuenta de Som Energia:<br />
 <br />
