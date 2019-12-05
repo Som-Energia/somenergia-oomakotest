@@ -50,7 +50,7 @@ Si tens algun dubte, posa’t en contacte amb nosaltres.<br />
 Salutacions,<br />
 <br />
 Equip de Som Energia<br />
-factura@somenergia.coop<br />
+cobraments@somenergia.coop<br />
 <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br />
 % endif
 % if object.partner_id.lang != "ca_ES" and object.partner_id.lang != "es_ES":
@@ -70,7 +70,7 @@ Para cualquier duda o incidencia, agradeceremos que te pongas en contacto.<br />
 Un saludo,<br />
 <br />
 Equipo de Som Energia<br />
-factura@somenergia.coop<br />
+cobraments@somenergia.coop<br />
 <a href="https://www.somenergia.coop">www.somenergia.coop</a><br />
 % endif
 <br />

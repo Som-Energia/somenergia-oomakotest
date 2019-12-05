@@ -30,7 +30,7 @@ Salutacions,
 
 Equip de Som Energia
 <a href="http://ca.support.somenergia.coop/category/183-ja-tinc-la-llum-contractada">Centre de Suport</a>
-factura@somenergia.coop
+cobraments@somenergia.coop
 <a href="www.somenergia.coop/ca">www.somenergia.coop</a>
 % endif
 % if object.lang_partner != "ca_ES" and object.lang_partner != "es_ES":
@@ -44,7 +44,7 @@ Para cualquier duda o consulta seguimos en contacto.
 Un saludo,
 Equipo de Som Energia
 <a href="http://es.support.somenergia.coop/category/139-ya-tengo-la-luz-contratada">Centro de Ayuda</a>
-factura@somenergia.coop
+cobraments@somenergia.coop
 <a href="http://www.somenergia.coop">www.somenergia.coop</a>
 % endif
 </body>
