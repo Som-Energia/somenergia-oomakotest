@@ -1,0 +1,7 @@
+cc: false
+to: ${object.partner_id.address[0].email}
+subject_translations:
+  ca_ES: Factura ${object.number}
+  es_ES: Factura ${object.number}
+subject: Factura ${object.number}
+bcc: false

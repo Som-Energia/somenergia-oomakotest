@@ -252,10 +252,11 @@
 #mailAccountInvoicePagada:
 #  template: input/correu-emailNotifAccountInvoicePagada.mako
 #  model: account.invoice
-#  poweremailId: 263
+#  poweremailId: account_invoice_som.email_notif_account_invoice_pagada 
 #  cases:
 #    es: 7612922
 #    ca: 7612850
+#
 #facturaPrincipal:
 #  template: input/report_giscedata_facturacio_factura_comer.mako
 #  model: giscedata.facturacio.factura
@@ -910,4 +911,15 @@
 #   cases:
 #     ca: 17
 #     es: 1028
+#
+########################################
+## Autoproduccio
+#
+#emailInscripcioCompraCollectiva:
+#  template: input/correu-emailInscripcioCompraCollectiva.mako
+#  model: account.invoice
+#  poweremailId: account_invoice_som.email_self_consumption_registration
+#  cases:
+#    es: 7556301
+#    ca: 7514512
 # vim: et ts=2 sw=2
