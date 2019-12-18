@@ -585,6 +585,32 @@ dades_reparto = [
      [[rep_BOE['i'] + rep_BOE['c'], 100.00], 'o', _(u"Altres costos regulats (inclosa anualitat del dèficit)"), formatLang(reparto['o'])]
     ]
 
+TABLA_113_dict = { # Table extracted from gestionatr.defs TABLA_113, not imported due translations issues
+    '00': _(u"Sense Autoconsum"), # Sin Autoconsumo
+    '01': _(u"Autoconsum Tipus 1"), # Autoconsumo Tipo 1
+    '2A': _(u"Autoconsum tipus 2 (segons l'Art. 13. 2. a) RD 900/2015)"), # Autoconsumo tipo 2 (según el Art. 13. 2. a) RD 900/2015)
+    '2B': _(u"Autoconsum tipus 2 (segons l'Art. 13. 2. b) RD 900/2015)"), # Autoconsumo tipo 2 (según el Art. 13. 2. b) RD 900/2015)
+    '2G': _(u"Serveis auxiliars de generació lligada a un autoconsum tipus 2"), # Servicios auxiliares de generación ligada a un autoconsumo tipo 2
+    '31': _(u"Sense Excedents Individual - Consum"), # Sin Excedentes Individual – Consumo
+    '32': _(u"Sense Excedents Col·lectiu - Consum"), # Sin Excedentes Colectivo – Consumo
+    '41': _(u"Amb excedents i compensació Individual - Consum"), # Con excedentes y compensación Individual - Consumo 
+    '42': _(u"Amb excedents i compensació Col·lectiu- Consum"), # Con excedentes y compensación Colectivo– Consumo
+    '51': _(u"Amb excedents sense compensació Individual sense cte. de Serv. Aux. en Xarxa Interior- Consum"), # Con excedentes sin compensación Individual sin cto de SSAA en Red Interior– Consumo
+    '52': _(u"Amb excedents sense compensació Col·lectiu sense cte. de Serv. Aux. en Xarxa Interior- Consum"), # Con excedentes sin compensación Colectivo sin cto de SSAA en Red Interior– Consumo
+    '53': _(u"Amb excedents sense compensació Individual amb cte. de Serv. Aux. en Xarxa Interior- Consum"), # Con excedentes sin compensación Individual con cto SSAA en Red Interior– Consumo
+    '54': _(u"Amb excedents sense compensació individual amb cte. de Serv. Aux. en Xarxa Interior- Serv. Aux."), # Con excedentes sin compensación individual con cto SSAA en Red Interior– SSAA
+    '55': _(u"Amb excedents sense compensació Col·lectiu / en Xarxa Interior- Consum"), # Con excedentes sin compensación Colectivo/en Red Interior– Consumo
+    '56': _(u"Amb excedents sense compensació Col·lectiu / en Xarxa Interior - Serv. Aux."), # Con excedentes sin compensación Colectivo/en Red Interior - SSAA
+    '61': _(u"Amb excedents sense compensació Individual amb cte. de Serv. Aux. a través de xarxa - Consum"), # Con excedentes sin compensación Individual con cto SSAA a través de red – Consumo
+    '62': _(u"Amb excedents sense compensació individual amb cte. de Serv. Aux. a través de xarxa - Serv. Aux."), # Con excedentes sin compensación individual con cto SSAA a través de red – SSAA
+    '63': _(u"Amb excedents sense compensació Col·lectiu a través de xarxa - Consum"), # Con excedentes sin compensación Colectivo a través de red – Consumo
+    '64': _(u"Amb excedents sense compensació Col·lectiu a través de xarxa - Serv. Aux."), # Con excedentes sin compensación Colectivo a través de red - SSAA
+    '71': _(u"Amb excedents sense compensació Individual amb cte. de Serv. Aux. a través de xarxa i xarxa interior - Consum"), # Con excedentes sin compensación Individual con cto SSAA a través de red y red interior – Consumo
+    '72': _(u"Amb excedents sense compensació individual amb cte. de Serv. Aux. a través de xarxa i xarxa interior - Serv. Aux."), # Con excedentes sin compensación individual con cto SSAA a través de red y red interior – SSAA
+    '73': _(u"Amb excedents sense compensació Col·lectiu amb cte. de Serv. Aux. a través de xarxa i xarxa interior - Consum"), # Con excedentes sin compensación Colectivo con cto de SSAA  a través de red y red interior – Consumo
+    '74': _(u"Amb excedents sense compensació Col·lectiu amb cte. de Serv. Aux. a través de xarxa i xarxa interior - SSAA"), # Con excedentes sin compensación Colectivo con cto de SSAA a través de red y red interior - SSAA
+}
+
 def has_polissa_autoconsum(f):
     return f.polissa_id.autoconsum_id and f.polissa_id.autoconsum_id.active and f.polissa_id.autoconsum_id.data_alta < f.data_inici
 
@@ -602,8 +628,6 @@ has_autoconsum = len(factura.linies_generacio) > 0 and has_autoconsum_readings(f
 has_autoconsum_colectiu = has_polissa_autoconsum_colectiu(factura)
 autoconsum_colectiu_repartiment = float(factura.polissa_id.coef_repartiment) * 100.0 # not sure
 if has_autoconsum:
-    from gestionatr.defs import TABLA_113
-    TABLA_113_dict = { t[0]:t[1] for t in TABLA_113}
     autoconsum_tipus = TABLA_113_dict[factura.polissa_id.autoconsumo]
     autoconsum_cau = factura.polissa_id.autoconsum_id.cau
     autoconsum_total_compensada = sum([l.price_subtotal for l in factura.linies_generacio])
