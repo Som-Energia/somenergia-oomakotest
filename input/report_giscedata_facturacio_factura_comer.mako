@@ -593,13 +593,13 @@ TABLA_113_dict = { # Table extracted from gestionatr.defs TABLA_113, not importe
     '2G': _(u"Serveis auxiliars de generació lligada a un autoconsum tipus 2"), # Servicios auxiliares de generación ligada a un autoconsumo tipo 2
     '31': _(u"Sense Excedents Individual - Consum"), # Sin Excedentes Individual – Consumo
     '32': _(u"Sense Excedents Col·lectiu - Consum"), # Sin Excedentes Colectivo – Consumo
-    '41': _(u"Amb excedents i compensació Individual - Consum"), # Con excedentes y compensación Individual - Consumo 
-    '42': _(u"Amb excedents i compensació Col·lectiu- Consum"), # Con excedentes y compensación Colectivo– Consumo
-    '51': _(u"Amb excedents sense compensació Individual sense cte. de Serv. Aux. en Xarxa Interior- Consum"), # Con excedentes sin compensación Individual sin cto de SSAA en Red Interior– Consumo
-    '52': _(u"Amb excedents sense compensació Col·lectiu sense cte. de Serv. Aux. en Xarxa Interior- Consum"), # Con excedentes sin compensación Colectivo sin cto de SSAA en Red Interior– Consumo
-    '53': _(u"Amb excedents sense compensació Individual amb cte. de Serv. Aux. en Xarxa Interior- Consum"), # Con excedentes sin compensación Individual con cto SSAA en Red Interior– Consumo
-    '54': _(u"Amb excedents sense compensació individual amb cte. de Serv. Aux. en Xarxa Interior- Serv. Aux."), # Con excedentes sin compensación individual con cto SSAA en Red Interior– SSAA
-    '55': _(u"Amb excedents sense compensació Col·lectiu / en Xarxa Interior- Consum"), # Con excedentes sin compensación Colectivo/en Red Interior– Consumo
+    '41': _(u"Amb excedents i compensació Individual-Consum"), # Con excedentes y compensación Individual - Consumo 
+    '42': _(u"Amb excedents i compensació Col·lectiu-Consum"), # Con excedentes y compensación Colectivo– Consumo
+    '51': _(u"Amb excedents sense compensació Individual sense cte. de Serv. Aux. en Xarxa Interior - Consum"), # Con excedentes sin compensación Individual sin cto de SSAA en Red Interior– Consumo
+    '52': _(u"Amb excedents sense compensació Col·lectiu sense cte. de Serv. Aux. en Xarxa Interior - Consum"), # Con excedentes sin compensación Colectivo sin cto de SSAA en Red Interior– Consumo
+    '53': _(u"Amb excedents sense compensació Individual amb cte. de Serv. Aux. en Xarxa Interior - Consum"), # Con excedentes sin compensación Individual con cto SSAA en Red Interior– Consumo
+    '54': _(u"Amb excedents sense compensació individual amb cte. de Serv. Aux. en Xarxa Interior - Serv. Aux."), # Con excedentes sin compensación individual con cto SSAA en Red Interior– SSAA
+    '55': _(u"Amb excedents sense compensació Col·lectiu / en Xarxa Interior - Consum"), # Con excedentes sin compensación Colectivo/en Red Interior– Consumo
     '56': _(u"Amb excedents sense compensació Col·lectiu / en Xarxa Interior - Serv. Aux."), # Con excedentes sin compensación Colectivo/en Red Interior - SSAA
     '61': _(u"Amb excedents sense compensació Individual amb cte. de Serv. Aux. a través de xarxa - Consum"), # Con excedentes sin compensación Individual con cto SSAA a través de red – Consumo
     '62': _(u"Amb excedents sense compensació individual amb cte. de Serv. Aux. a través de xarxa - Serv. Aux."), # Con excedentes sin compensación individual con cto SSAA a través de red – SSAA
