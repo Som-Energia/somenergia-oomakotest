@@ -1,5 +1,5 @@
 cc: false
-to: ${object.step_ids[0].pas_id.fiscal_address_id.email}
+to: -- definit en codi --
 subject_translations:
     ca_ES: "Som Energia: Canvi de titular. Verificació de dades. Contracte ${object.cups_polissa_id.name} / Cambio de titular. Verificación de datos. Contrato ${object.cups_polissa_id.name}"
     es_ES: "Som Energia: Canvi de titular. Verificació de dades. Contracte ${object.cups_polissa_id.name} / Cambio de titular. Verificación de datos. Contrato ${object.cups_polissa_id.name}"

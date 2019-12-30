@@ -20,18 +20,22 @@
 
         return name_normal_form
 
+    def hide_code(code, start, hidden_factor):
+        return code[start:].replace(code[-hidden_factor:], '*' * hidden_factor)
 %>
 <%
 
     pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
-    
-    nom_antic_tiular = get_name_normal_form(object.cups_polissa_id.titular.name) 
-    
+
+    nom_antic_tiular = get_name_normal_form(object.cups_polissa_id.titular.name)
+
     nom_nou_titular = get_name_normal_form(pas01.fiscal_address_id.name)
-    
+
     nom_soci = get_name_normal_form(object.polissa_ref_id.soci.name)\
                if object.polissa_ref_id.soci else 'Encara sense persona sòcia vinculada'
-
+    cut_vat = hide_code(object.polissa_ref_id.titular_nif, 2, 4)
+    cut_iban = hide_code(object.polissa_ref_id.bank.iban, 0, 8)
+    
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
 
@@ -42,7 +46,8 @@
     text_legal = render(
         t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
-    )
+        )
+
 
 %>
 
@@ -93,14 +98,14 @@
             <b>Si tot és correcte no és necessari que contesteu</b> i la gestió es durà a terme en un màxim de cinc dies hàbils.<br>
             És important tenir en compte que en les properes setmanes, la persona que ha estat titular fins ara, rebrà una última factura fins a la data d’activació del contracte amb la nova persona titular.<br>
         </p>
-		<p>
-		    Les dades del nou titular són:<br>
-		    - Nom: ${nom_nou_titular}<br/>
-		    - NIF, NIE o CIF: ****<br>
-		    - Número de compte: **** **** **** **** ****<br>
-		</p>
+		    <p>
+		        Les dades del nou titular són:<br>
+		        - Nom: ${nom_nou_titular}<br/>
+		        - NIF, NIE o CIF: ${cut_vat}<br>
+		        - Número de compte: ${cut_iban}<br>
+		    </p>
         <p>
-		  El contracte estarà associat al soci/a: ${nom_soci}.<br>
+		        El contracte estarà associat al soci/a: ${nom_soci}.<br>
         </p>
         Salutacions,<br>
         <br>
@@ -137,24 +142,24 @@
             Estimados/as,
         </p>
         <p>
-		    Os informamos que hemos recibido correctamente la solicitud de cambio de titular del contrato número ${object.cups_polissa_id.name} con el CUPS: ${object.cups_id.name} y del cual, hasta ahora el titular es ${object.cups_polissa_id.titular.name}.
-		</p>
+		        Os informamos que hemos recibido correctamente la solicitud de cambio de titular del contrato número ${object.cups_polissa_id.name} con el CUPS: ${object.cups_id.name} y del cual, hasta ahora el titular es ${object.cups_polissa_id.titular.name}.
+		    </p>
         <p>
-		    Si se trata de un cambio de titularidad debido a la defunción de la persona titular actual o bien detectáis un error en el resumen de datos siguiente, contestad este correo.<br/>
-		    <b>Si todo es correcto no es necesario que lo hagáis</b> y la gestión se llevará a cabo en un plazo máximo de cinco días hábiles.<br/>
-		    Es importante tener en cuenta que en las próximas semanas, la persona que ha sido titular hasta ahora, recibirá una última factura hasta la fecha de activación del contrato con la nueva persona titular.<br/>
+		        Si se trata de un cambio de titularidad debido a la defunción de la persona titular actual o bien detectáis un error en el resumen de datos siguiente, contestad este correo.<br/>
+		        <b>Si todo es correcto no es necesario que lo hagáis</b> y la gestión se llevará a cabo en un plazo máximo de cinco días hábiles.<br/>
+		        Es importante tener en cuenta que en las próximas semanas, la persona que ha sido titular hasta ahora, recibirá una última factura hasta la fecha de activación del contrato con la nueva persona titular.<br/>
         </p>
         <p>
-		    Los datos del nuevo titular son:<br/>
-		    - Nombre: ${nom_nou_titular}<br/>
-		    - NIF, NIE o CIF: ****<br/>
-		    - Número de cuenta: **** **** **** **** ****<br/>
+		        Los datos del nuevo titular son:<br/>
+		        - Nombre: ${nom_nou_titular}<br/>
+		        - NIF, NIE o CIF: ${cut_vat}<br/>
+		        - Número de cuenta: ${cut_iban}<br/>
         </p>
         <p>
             El contrato estará asociado al socio/a ${nom_soci}.<br>
         </p>
-		Saludos,<br/>
-		<br/>
+		    Saludos,<br/>
+		    <br/>
         Equipo de Som Energia<br>
         <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
         <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
