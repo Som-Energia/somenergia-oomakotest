@@ -612,7 +612,7 @@ TABLA_113_dict = { # Table extracted from gestionatr.defs TABLA_113, not importe
 }
 
 def has_polissa_autoconsum(f):
-    return f.polissa_id.autoconsum_id and f.polissa_id.autoconsum_id.active and f.polissa_id.autoconsum_id.data_alta < f.data_inici
+    return f.polissa_id.autoconsum_id and f.polissa_id.autoconsum_id.active and f.polissa_id.autoconsum_id.data_alta <= f.data_inici
 
 def has_polissa_autoconsum_colectiu(f):
     return has_polissa_autoconsum(f) and f.polissa_id.autoconsum_id.collectiu
