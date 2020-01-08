@@ -617,14 +617,7 @@ def has_polissa_autoconsum(f):
 def has_polissa_autoconsum_colectiu(f):
     return has_polissa_autoconsum(f) and f.polissa_id.autoconsum_id.collectiu
 
-def has_autoconsum_readings(f):
-    from gestionatr.defs import MAGNITUD
-    for reading in f.lectures_energia_ids:
-        if reading.magnitud == MAGNITUD[1][0]:
-            return True
-    return False
-
-has_autoconsum = len(factura.linies_generacio) > 0 and has_autoconsum_readings(factura) and has_polissa_autoconsum(factura)
+has_autoconsum = len(factura.linies_generacio) > 0 and has_polissa_autoconsum(factura)
 has_autoconsum_colectiu = has_polissa_autoconsum_colectiu(factura)
 autoconsum_colectiu_repartiment = float(factura.polissa_id.coef_repartiment) * 100.0 # not sure
 if has_autoconsum:
