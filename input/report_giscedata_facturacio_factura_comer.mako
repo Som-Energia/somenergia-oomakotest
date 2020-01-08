@@ -547,7 +547,7 @@ atr_linies_energia = {}
 
 for l in sorted(sorted(factura.linies_energia, key=attrgetter('data_desde')), key=attrgetter('name')):
     l_count = Counter({
-        'quantity': int(l.quantity),
+        'quantity': l.quantity,
         'atrprice_subtotal': l.atrprice_subtotal
     })
     l_name = l.name[:2]
@@ -1274,7 +1274,7 @@ ${emergency_complaints(factura)}
                                     ${_(u"(%s)") % (l.name,)}
                                 </div>
                                 <div style="border: 1px;font-weight: bold;float:left;width: 40%">
-                                    ${_(u"%s kWh x %s €/kWh") % (int(l.quantity), locale.str(locale.atof(formatLang(l.price_unit_multi, digits=6))))}
+                                    ${_(u"%s kWh x %s €/kWh") % (locale.str(locale.atof(formatLang(l.quantity, digits=6))), locale.str(locale.atof(formatLang(l.price_unit_multi, digits=6))))}
                                 </div>
                                 <div style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; border: 1px;font-weight: bold;float:left;width: 30%">
                                     ${get_gkwh_owner(cursor, uid, l)}
@@ -1291,7 +1291,7 @@ ${emergency_complaints(factura)}
                         <% print sorted(atr_linies_energia.items()) %>
                         % for k, l in sorted(atr_linies_energia.items()):
                             <div style="float: left;width:90%;margin: 0px 10px;">
-                                <div style="font-weight: bold;float:left">${_(u"(%s) %s kWh x %s €/kWh") % (k, int(l['quantity']), locale.str(locale.atof(formatLang(l['price'], digits=6))))}</div>
+                                <div style="font-weight: bold;float:left">${_(u"(%s) %s kWh x %s €/kWh") % (k, locale.str(locale.atof(formatLang(l['quantity'], digits=6))), locale.str(locale.atof(formatLang(l['price'], digits=6))))}</div>
                                 <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l['atrprice_subtotal'])}</div>
                             </div><br />
                         % endfor
@@ -1310,7 +1310,7 @@ ${emergency_complaints(factura)}
                                         ${_(u"(%s)") % (l.name,)}
                                     </div>
                                     <div style="border: 1px;font-weight: bold;float:left;width: 40%">
-                                        ${_(u"%s kWh x %s €/kWh") % (int(l.quantity), locale.str(locale.atof(formatLang(l.price_unit_multi, digits=6))))}
+                                        ${_(u"%s kWh x %s €/kWh") % (locale.str(locale.atof(formatLang(l.quantity, digits=6))), locale.str(locale.atof(formatLang(l.price_unit_multi, digits=6))))}
                                     </div>
                                     <div style="border: 1px;font-weight: bold; float:right;">
                                         ${_(u"%s €") % formatLang(l.price_subtotal)}
