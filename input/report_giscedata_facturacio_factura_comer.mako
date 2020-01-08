@@ -996,7 +996,11 @@ if has_autoconsum:
                 </table>
                 <div style="text-align: center"><p>${_(u"La despesa diària és de %s € que correspon a %s kWh/dia (%s dies).") % (formatLang(diari_factura_actual_eur), formatLang(diari_factura_actual_kwh), dies_factura or 1)}</p></div>
                 % if hi_ha_ajust:
-                    <div style="text-align: center"><p>${_("* Aquesta factura recull un ajust de consum de períodes anteriors per part de la distribuïdora.")}</p></div>
+                    % if has_autoconsum:
+                        <div style="text-align: center"><p>${_("* Aquest consum té l'ajust corresponent al balanç horari.")}</p></div>
+                    % else:
+                        <div style="text-align: center"><p>${_("* Aquesta factura recull un ajust de consum de períodes anteriors per part de la distribuïdora.")}</p></div>
+                    %endif
                 % endif
             </div>
             <div class="chart_consum_container">
