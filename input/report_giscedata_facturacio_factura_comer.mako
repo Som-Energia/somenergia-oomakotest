@@ -469,7 +469,7 @@ lectures_real_r = {}
 
 for lectura in factura.lectures_energia_ids:
     origens = get_origen_lectura(cursor, uid, lectura)
-    if lectura.tipus == 'activa':
+    if lectura.tipus == 'activa' and lectura.magnitud == 'AE':
         lectures_a.setdefault(lectura.comptador,[])
         lectures_a[lectura.comptador].append((lectura.name[-3:-1],
                                             lectura.lect_anterior,
