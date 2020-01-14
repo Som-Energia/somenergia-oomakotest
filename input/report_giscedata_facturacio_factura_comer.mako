@@ -997,7 +997,13 @@ if has_autoconsum:
                 <div style="text-align: center"><p>${_(u"La despesa diària és de %s € que correspon a %s kWh/dia (%s dies).") % (formatLang(diari_factura_actual_eur), formatLang(diari_factura_actual_kwh), dies_factura or 1)}</p></div>
                 % if hi_ha_ajust:
                     % if has_autoconsum:
-                        <div style="text-align: center"><p>${_("* Aquest consum té l'ajust corresponent al balanç horari.")}</p></div>
+                        <div style="text-align: center"><p>${_("* Aquest consum té l'ajust corresponent al balanç horari.")}
+                            %if factura.lang_partner == 'ca_ES':
+                                <a href="https://ca.support.somenergia.coop/article/849-autoproduccio-que-es-el-balanc-net-horari">${_(u"(més informació).")}</a>
+                            %else:
+                                <a href="https://es.support.somenergia.coop/article/850-autoproduccion-que-es-el-balance-neto-horario">${_(u"(més informació).")}</a>
+                            %endif
+                        </p></div>
                     % else:
                         <div style="text-align: center"><p>${_("* Aquesta factura recull un ajust de consum de períodes anteriors per part de la distribuïdora.")}</p></div>
                     %endif
