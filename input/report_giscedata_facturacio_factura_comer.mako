@@ -620,10 +620,13 @@ def has_polissa_autoconsum_colectiu(f):
 has_autoconsum = has_polissa_autoconsum(factura)
 has_autoconsum_colectiu = has_polissa_autoconsum_colectiu(factura)
 autoconsum_colectiu_repartiment = float(factura.polissa_id.coef_repartiment) * 100.0 # not sure
+autoconsum_excedents_product = None
 if has_autoconsum:
     autoconsum_tipus = TABLA_113_dict[factura.polissa_id.autoconsumo]
     autoconsum_cau = factura.polissa_id.autoconsum_id.cau
     autoconsum_total_compensada = sum([l.price_subtotal for l in factura.linies_generacio])
+    model_obj = objects[0].pool.get('ir.model.data')
+    autoconsum_excedents_product_id = model_obj.get_object_reference(cursor, uid, 'giscedata_facturacio_comer', 'saldo_excedents_autoconsum')[1]
 
 %>
 <%def name="emergency_complaints(factura)">
@@ -1311,17 +1314,19 @@ ${emergency_complaints(factura)}
                     <p><span style="font-weight: bold;">${_(u"Compensació per electricitat autoproduïda")}</span> <br />
                             ${_(u"Detall del càlcul de l'energia compensada:")} </p>
                             % for l in sorted(sorted(factura.linies_generacio, key=attrgetter('data_desde')), key=attrgetter('name')):
-                                <div style="float: left;width:90%;margin: 0px 10px;">
-                                    <div style="border: 1px;font-weight: bold;float:left;width: 10%">
-                                        ${_(u"(%s)") % (l.name,)}
-                                    </div>
-                                    <div style="border: 1px;font-weight: bold;float:left;width: 40%">
-                                        ${_(u"%s kWh x %s €/kWh") % (locale.str(locale.atof(formatLang(l.quantity, digits=6))), locale.str(locale.atof(formatLang(l.price_unit_multi, digits=6))))}
-                                    </div>
-                                    <div style="border: 1px;font-weight: bold; float:right;">
-                                        ${_(u"%s €") % formatLang(l.price_subtotal)}
-                                    </div>
-                                </div><br />
+                                % if not l.product_id or l.product_id.id != autoconsum_excedents_product_id:
+                                    <div style="float: left;width:90%;margin: 0px 10px;">
+                                        <div style="border: 1px;font-weight: bold;float:left;width: 10%">
+                                            ${_(u"(%s)") % (l.name,)}
+                                        </div>
+                                        <div style="border: 1px;font-weight: bold;float:left;width: 40%">
+                                            ${_(u"%s kWh x %s €/kWh") % (locale.str(locale.atof(formatLang(l.quantity, digits=6))), locale.str(locale.atof(formatLang(l.price_unit_multi, digits=6))))}
+                                        </div>
+                                        <div style="border: 1px;font-weight: bold; float:right;">
+                                            ${_(u"%s €") % formatLang(l.price_subtotal)}
+                                        </div>
+                                    </div><br />
+                                % endif
                             % endfor
                     <br/>
                     <p>
