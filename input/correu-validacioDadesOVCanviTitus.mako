@@ -30,8 +30,8 @@
 
     nom_nou_titular = get_nom_cognoms(object, pas01.dades_client)
 
-    nom_soci = get_nom_cognoms(object, object.polissa_ref_id.soci) if object.polissa_ref_id.soci else u'Encara sense persona sòcia vinculada'
-    
+    nom_soci = get_nom_cognoms(object, object.polissa_ref_id.soci) if object.polissa_ref_id.soci else False
+
     cut_vat = hide_code(object.polissa_ref_id.titular_nif, 2, 4)
     cut_iban = hide_code(object.polissa_ref_id.bank.iban, 0, 8)
 
@@ -102,7 +102,7 @@
 		        - Número de compte: ${cut_iban}<br>
 		    </p>
         <p>
-		        El contracte estarà associat al soci/a: ${nom_soci}.<br>
+		        El contracte estarà associat al soci/a: ${nom_soci or u'Encara sense persona sòcia vinculada'}.<br>
         </p>
         Salutacions,<br>
         <br>
@@ -153,7 +153,7 @@
 		        - Número de cuenta: ${cut_iban}<br/>
         </p>
         <p>
-            El contrato estará asociado al socio/a ${nom_soci}.<br>
+            El contrato estará asociado al socio/a: ${nom_soci or u'Todavía sin persona socia asociada'}.<br>
         </p>
 		    Saludos,<br/>
 		    <br/>
