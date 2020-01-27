@@ -15,6 +15,13 @@
             object_._cr, object_._uid, [('cups.name', '=', cups)]
         )[-1]
         return Polissa.read(object_._cr, object_._uid, new_contract_id, [])['name']
+
+    def get_autoconsum_description(object_, auto_consum, lang):
+        M105 = object_.pool.get('giscedata.switching.m1.05')
+        tipus_autoconsum = dict(M105.fields_get(['tipus_autoconsum'], {'lang': lang})['tipus_autoconsum']['selection'])
+
+        return tipus_autoconsum[auto_consum]
+
 %>
 
 <%
@@ -41,17 +48,17 @@
 
     pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
 
-    polissa = object.polissa_ref_id if is_canvi_tit else object.cups_polissa_id
-
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
-        object._cr, object._uid, polissa.titular.name
+        object._cr, object._uid, object.polissa_ref_id.titular.name
         )['nom']) if not object.vat_enterprise() else ''
 
 
     # new_contract_number = get_contract_number_by_cups(object, object.cups_id.name)
     new_contract_number = object.polissa_ref_id.name
     date_activacio = datetime.strptime(pas05.data_activacio, '%Y-%m-%d').strftime('%d/%m/%Y')
+
+    autoconsum_description = get_autoconsum_description(object, pas05.tipus_autoconsum, object.polissa_ref_id.titular.lang)
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
@@ -139,6 +146,11 @@
             ${pot_deseada}
         %else:
             &nbsp;&nbsp; <strong> Potència: ${pot_deseada} W</strong><br>
+        %endif
+
+        %if object.polissa_ref_id.autoconsumo != '00':
+            &nbsp;&nbsp;<strong> Autoconsum: </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong>
         %endif
     </p>
 
@@ -228,6 +240,10 @@
         %else:
             &nbsp;&nbsp;<strong> Potencia: ${pot_deseada} W</strong>
         %endif
+        %if object.polissa_ref_id.autoconsumo != '00':
+            &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong>
+        %endif
     </p>
     <p>
         En la próxima factura se verá reflejada la modificación, y en la oficina virtual en los siguientes días.
@@ -253,4 +269,3 @@
         Así pues, desde la fecha <b>${date_activacio}</b> eres la nueva persona titular del contrato. Lo verás reflejado en las próximas facturas y en tu Oficina Virtual durante los próximos días.
     </p>
 </%def>
-
