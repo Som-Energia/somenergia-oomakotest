@@ -18,7 +18,7 @@
 
     def get_autoconsum_description(object_, auto_consum, lang):
         M105 = object_.pool.get('giscedata.switching.m1.05')
-        tipus_autoconsum = dict(M105.fields_get(['tipus_autoconsum'], {'lang': lang})['tipus_autoconsum']['selection'])
+        tipus_autoconsum = dict(M105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
 
         return tipus_autoconsum[auto_consum]
 
@@ -150,7 +150,7 @@
             &nbsp;&nbsp; <strong> Potència: ${pot_deseada} W</strong><br>
         %endif
 
-        %if object.polissa_ref_id.autoconsumo != '00':
+        %if pas05.tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsum: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong>
         %endif
@@ -240,9 +240,10 @@
             &nbsp;&nbsp;<strong> Potencia: </strong><br>
             ${pot_deseada}
         %else:
-            &nbsp;&nbsp;<strong> Potencia: ${pot_deseada} W</strong>
+            &nbsp;&nbsp;<strong> Potencia: ${pot_deseada} W</strong><br>
         %endif
-        %if object.polissa_ref_id.autoconsumo != '00':
+
+        %if pas05.tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong>
         %endif
