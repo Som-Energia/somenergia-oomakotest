@@ -48,9 +48,11 @@
 
     pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
 
+    polissa = object.polissa_ref_id if is_canvi_tit else object.cups_polissa_id
+
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
-        object._cr, object._uid, object.polissa_ref_id.titular.name
+        object._cr, object._uid, polissa.titular.name
         )['nom']) if not object.vat_enterprise() else ''
 
 
@@ -92,7 +94,7 @@
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
-                    <font size=2><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
+                    <font size=2><strong> Contracte Som Energia nº ${polissa.name}</strong></font>
                 </td>
                 <td valign=top rowspan="4" align="right">
                     <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
@@ -176,7 +178,7 @@
         El <b>canvi de titular del contracte ${new_contract_number}</b> i adreça de subministrament ${object.cups_polissa_id.cups_direccio} ha estat realitzat amb èxit.
     </p>
     <p>
-        Així doncs, des del <b>${date_activacio}</b> ets la nova persona titular del contracte. Ho veuràs reflectit en las factures i a la teva Oficina Virtual en els propers dies.
+        Així doncs, des del <b>${date_activacio}</b> ets la nova persona titular del contracte. Ho veuràs reflectit en les factures i a la teva Oficina Virtual en els propers dies.
     </p>
 </%def>
 
@@ -186,7 +188,7 @@
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
-                    <font size=2><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
+                    <font size=2><strong> Contracte Som Energia nº ${polissa.name}</strong></font>
                 </td>
                 <td valign=top rowspan="4" align="right">
                     <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
