@@ -20,7 +20,7 @@
         M105 = object_.pool.get('giscedata.switching.m1.05')
         tipus_autoconsum = dict(M105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
 
-        return tipus_autoconsum[auto_consum]
+        return auto_consum + " - " + tipus_autoconsum[auto_consum]
 
 %>
 
