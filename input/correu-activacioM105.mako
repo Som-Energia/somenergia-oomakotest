@@ -15,6 +15,13 @@
             object_._cr, object_._uid, [('cups.name', '=', cups)]
         )[-1]
         return Polissa.read(object_._cr, object_._uid, new_contract_id, [])['name']
+
+    def get_autoconsum_description(object_, auto_consum, lang):
+        M105 = object_.pool.get('giscedata.switching.m1.05')
+        tipus_autoconsum = dict(M105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
+
+        return auto_consum + " - " + tipus_autoconsum[auto_consum]
+
 %>
 
 <%
@@ -53,6 +60,8 @@
     new_contract_number = object.polissa_ref_id.name
     date_activacio = datetime.strptime(pas05.data_activacio, '%Y-%m-%d').strftime('%d/%m/%Y')
 
+    autoconsum_description = get_autoconsum_description(object, pas05.tipus_autoconsum, object.polissa_ref_id.titular.lang)
+
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
 
@@ -85,7 +94,7 @@
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
-                    <font size=2><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
+                    <font size=2><strong> Contracte Som Energia nº ${polissa.name}</strong></font>
                 </td>
                 <td valign=top rowspan="4" align="right">
                     <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
@@ -140,6 +149,11 @@
         %else:
             &nbsp;&nbsp; <strong> Potència: ${pot_deseada} W</strong><br>
         %endif
+
+        %if pas05.tipus_autoconsum != '00':
+            &nbsp;&nbsp;<strong> Autoconsum: </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong>
+        %endif
     </p>
 
     <p>
@@ -164,7 +178,7 @@
         El <b>canvi de titular del contracte ${new_contract_number}</b> i adreça de subministrament ${object.cups_polissa_id.cups_direccio} ha estat realitzat amb èxit.
     </p>
     <p>
-        Així doncs, des del <b>${date_activacio}</b> ets la nova persona titular del contracte. Ho veuràs reflectit en las factures i a la teva Oficina Virtual en els propers dies.
+        Així doncs, des del <b>${date_activacio}</b> ets la nova persona titular del contracte. Ho veuràs reflectit en les factures i a la teva Oficina Virtual en els propers dies.
     </p>
 </%def>
 
@@ -174,7 +188,7 @@
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
-                    <font size=2><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
+                    <font size=2><strong> Contracte Som Energia nº ${polissa.name}</strong></font>
                 </td>
                 <td valign=top rowspan="4" align="right">
                     <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
@@ -226,7 +240,12 @@
             &nbsp;&nbsp;<strong> Potencia: </strong><br>
             ${pot_deseada}
         %else:
-            &nbsp;&nbsp;<strong> Potencia: ${pot_deseada} W</strong>
+            &nbsp;&nbsp;<strong> Potencia: ${pot_deseada} W</strong><br>
+        %endif
+
+        %if pas05.tipus_autoconsum != '00':
+            &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong>
         %endif
     </p>
     <p>
@@ -253,4 +272,3 @@
         Así pues, desde la fecha <b>${date_activacio}</b> eres la nueva persona titular del contrato. Lo verás reflejado en las próximas facturas y en tu Oficina Virtual durante los próximos días.
     </p>
 </%def>
-
