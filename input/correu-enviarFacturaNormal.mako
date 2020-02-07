@@ -53,7 +53,7 @@ Accedeix a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Ofici
 <br>
 Aprofitem l’avinentesa per informar-te que, tal com ha regulat la Comissió Nacional dels Mercats i la Competència, a partir de novembre de 2020, entrarà en vigor un canvi en la tarificació de les factures de subministrament elèctric.<br>
 <br>
-A aquesta <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2020/01/com-canviara-la-factura-delectricitat/">notícia del nostre blog</a></b> trobaràs més informació sobre els canvis.<br>
+En aquesta <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2020/01/com-canviara-la-factura-delectricitat/">notícia del nostre blog</a></b> trobaràs més informació sobre els canvis.<br>
 <br>
 <h2 align="center">Vols produir electricitat verda de forma col·lectiva? <br>
 Participa en la <a href="http://www.generationkwh.org/ca/">Generació kWh</a> i suma't al canvi!</h2><br>
@@ -89,7 +89,7 @@ Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficin
 <br>
 Aprovechamos la ocasión para informarte de que, tal como ha regulado la Comisión Nacional de los Mercados y la Competencia, a partir de noviembre de 2020, entrará en vigor un cambio en la tarificación de las facturas de suministro eléctrico.<br>
 <br>
-En esta <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2020/01/como-cambiara-la-factura-de-electricidad/">noticia de nuestro blog</a></b> encontrarás más información sobre els cambios.<br>
+En esta <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2020/01/como-cambiara-la-factura-de-electricidad/">noticia de nuestro blog</a></b> encontrarás más información sobre los cambios.<br>
 <br>
 <h2 align="center">¿Quieres producir electricidad verde de forma colectiva? <br>
 Participa en la <a href="http://www.generationkwh.org">Generación kWh</a> ¡y súmate al cambio!</h2><br>
