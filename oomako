@@ -32,6 +32,7 @@ for nargs, command, help in [
     ('*', 'accept', "Accepta les sortides dels testos indicats"),
     ('+', 'upload', "Puja a l'entorn de producció la plantilla indicada"),
     ('+', 'download', "Descarrega plantilla de l'entorn de producció"),
+    ('',  'clean', "Neteja la cache del servidor remot"),
     ('',  'list', "Llista els casos de test disponibles"),
     ('',  'listtemplates', "Lista els templates al servidor"),
     ('',  'listrejecttemplates', "Llista els templates de rebuig al servidor"),
@@ -381,6 +382,8 @@ def uploadTemplate(O, case, fixture):
         translation.value=headers.subject_translations[translation.lang]
         translation.save()
 
+    cleanRemoteCache(O)
+
 def uploadRejectionTemplate(O, case, fixture):
     template = getRejectTemplate(O, fixture)
     newContent = templateRead(fixture.template)
@@ -388,8 +391,21 @@ def uploadRejectionTemplate(O, case, fixture):
     template.notify_text = newContent
     template.save()
 
+    cleanRemoteCache(O)
+
 def uploadPdfTemplate(O, case, fixture):
     warn("WIP")
+
+def cleanRemoteCache(O):
+    wiz_obj = O.WizardCleanCache
+    wiz_id = wiz_obj.create({})
+    wiz_obj.action_clean_cache([wiz_id])
+    result = wiz_obj.read(wiz_id,['info'])
+    success("Remote Erp cache cleaned with message: {}",result[0]['info'])
+
+def clean():
+    O = GetOOOP()
+    cleanRemoteCache(O)
 
 def filterArgsnotInTestcases():
     notFound = set(args.testcases).difference(set(testcases.keys()))
