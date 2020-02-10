@@ -9,33 +9,32 @@
             format_exceptions=True
     )
 
-    def get_name_normal_form(name):
-        try:
-            name_normal_form = '{0} {1}'.format(
-                name.split(',')[-1],
-                name.split(',')[0]
-            )
-        except IndexError:
-            name_normal_form = name
 
-        return name_normal_form
+    def get_nom_cognoms(object_, owner):
+        partner_obj = object_.pool.get('res.partner')
+        name_dict = partner_obj.separa_cognoms(object_._cr, object_._uid, owner.name)
+
+        if partner_obj.vat_es_empresa(object_._cr, object_._uid, owner.vat):
+            return name_dict['nom']
+
+        return "{0} {1}".format(name_dict['nom'], ' '.join(name_dict['cognoms']))
+
 
     def hide_code(code, start, hidden_factor):
         return code[start:].replace(code[-hidden_factor:], '*' * hidden_factor)
 %>
+
 <%
-
     pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
+    nom_antic_tiular = get_nom_cognoms(object, object.cups_polissa_id.titular)
 
-    nom_antic_tiular = get_name_normal_form(object.cups_polissa_id.titular.name)
+    nom_nou_titular = get_nom_cognoms(object, pas01.dades_client)
 
-    nom_nou_titular = get_name_normal_form(pas01.fiscal_address_id.name)
+    nom_soci = get_nom_cognoms(object, object.polissa_ref_id.soci) if object.polissa_ref_id.soci else False
 
-    nom_soci = get_name_normal_form(object.polissa_ref_id.soci.name)\
-               if object.polissa_ref_id.soci else 'Encara sense persona sòcia vinculada'
     cut_vat = hide_code(object.polissa_ref_id.titular_nif, 2, 4)
     cut_iban = hide_code(object.polissa_ref_id.bank.iban, 0, 8)
-    
+
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
 
@@ -46,9 +45,7 @@
     text_legal = render(
         t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
-        )
-
-
+    )
 %>
 
 <!doctype html>
@@ -105,7 +102,7 @@
 		        - Número de compte: ${cut_iban}<br>
 		    </p>
         <p>
-		        El contracte estarà associat al soci/a: ${nom_soci}.<br>
+		        El contracte estarà associat al soci/a: ${nom_soci or u'Encara sense persona sòcia vinculada'}.<br>
         </p>
         Salutacions,<br>
         <br>
@@ -156,7 +153,7 @@
 		        - Número de cuenta: ${cut_iban}<br/>
         </p>
         <p>
-            El contrato estará asociado al socio/a ${nom_soci}.<br>
+            El contrato estará asociado al socio/a: ${nom_soci or u'Todavía sin persona socia asociada'}.<br>
         </p>
 		    Saludos,<br/>
 		    <br/>
