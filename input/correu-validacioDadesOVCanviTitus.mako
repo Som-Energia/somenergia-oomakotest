@@ -2,6 +2,7 @@
     from mako.template import Template
     from datetime import datetime, timedelta
 
+
     def render(text_to_render, object_):
         templ = Template(text_to_render)
         return templ.render_unicode(
@@ -22,6 +23,14 @@
 
     def hide_code(code, start, hidden_factor):
         return code[start:].replace(code[-hidden_factor:], '*' * hidden_factor)
+
+
+    def is_soci(object_, partner_id):
+        soci_obj = object_.pool.get('somenergia.soci')
+        return bool(search([
+            ('partner_id','=',partner_id),
+        ]))
+
 %>
 
 <%
@@ -32,8 +41,8 @@
 
     nom_soci = get_nom_cognoms(object, object.polissa_ref_id.soci) if object.polissa_ref_id.soci else False
 
-    cut_vat = hide_code(object.polissa_ref_id.titular_nif, 2, 4)
-    cut_iban = hide_code(object.polissa_ref_id.bank.iban, 0, 8)
+    cut_vat = hide_code(pas01.codi_document, 2, 4)
+    cut_iban = hide_code(pas01.bank.iban, 0, 8)
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
@@ -96,7 +105,7 @@
             És important tenir en compte que en les properes setmanes, la persona que ha estat titular fins ara, rebrà una última factura fins a la data d’activació del contracte amb la nova persona titular.<br>
         </p>
 		    <p>
-		        Les dades del nou titular són:<br>
+		        Les dades de la nova persona titular són:<br>
 		        - Nom: ${nom_nou_titular}<br/>
 		        - NIF, NIE o CIF: ${cut_vat}<br>
 		        - Número de compte: ${cut_iban}<br>
@@ -147,7 +156,7 @@
 		        Es importante tener en cuenta que en las próximas semanas, la persona que ha sido titular hasta ahora, recibirá una última factura hasta la fecha de activación del contrato con la nueva persona titular.<br/>
         </p>
         <p>
-		        Los datos del nuevo titular son:<br/>
+		        Los datos de la nueva persona titular son:<br/>
 		        - Nombre: ${nom_nou_titular}<br/>
 		        - NIF, NIE o CIF: ${cut_vat}<br/>
 		        - Número de cuenta: ${cut_iban}<br/>
