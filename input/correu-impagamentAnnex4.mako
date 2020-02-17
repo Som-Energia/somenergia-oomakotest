@@ -60,6 +60,9 @@ En cas de no abonar-se la quantitat deguda, a partir del dia <b>${data_venciment
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
 - <b>Import total: ${object.invoice_id.amount_total}€</b> <br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- <B>Import pendent: ${object.invoice_id.residual}€</B><br/>
+% endif
 <br/>
 <br/>
 El número de compte de Som Energia perquè facis la transferència és el següent:<br/>
@@ -130,6 +133,9 @@ De no abonarse la cantidad adeudada, a partir del día <b>${data_venciment}</b> 
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
 - <b>Importe total: ${object.invoice_id.amount_total}</b>€<br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- <B>Importe pendiente: ${object.invoice_id.residual}€</B><br/>
+% endif
 <br/>
 El número de cuenta de Som Energia para que realices la transferencia es el siguiente:<br/>
 <br/>

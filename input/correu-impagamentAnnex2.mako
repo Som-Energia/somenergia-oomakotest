@@ -53,6 +53,9 @@ En cas de no abonar-se la quantitat deguda, en un termini de  <b>2 mesos a parti
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
 - <B>Import total: ${object.invoice_id.amount_total}€</B> <br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- <B>Import pendent: ${object.invoice_id.residual}€</B><br/>
+% endif
 <br/>
 El número de compte de Som Energia perquè facis la transferència és el següent:<br/>
 <B>ES82 1491 0001 29 2027098223</B><br/>
@@ -121,6 +124,9 @@ De no abonarse la cantidad adeudada en un plazo de 2 meses  a partir de la recep
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
 - <B>Importe total: ${object.invoice_id.amount_total}</B>€<br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- <B>Importe pendiente: ${object.invoice_id.residual}€</B><br/>
+% endif
 <br/>
 El número de cuenta de Som Energia para que realices la transferencia es el siguiente:<br/>
 <b>ES82 1491 0001 29 2027098223</b><br/>

@@ -58,6 +58,9 @@ Et comuniquem que s'aplicarà un càrrec de 3€+IVA en concepte de despeses de 
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
 - <B>Import total: ${object.invoice_id.amount_total}€</B> <br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- <B>Import pendent: ${object.invoice_id.residual}€</B><br/>
+% endif
 <br/>
 <br/>
 El número de compte de Som Energia perquè facis la transferència és el següent:<br/>
@@ -131,6 +134,9 @@ Te comunicamos que se aplicará un cargo de 3€+IVA en concepto de gastos por l
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
 - <B>Importe total: ${object.invoice_id.amount_total}</B>€<br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- <B>Importe pendiente: ${object.invoice_id.residual}€</B><br/>
+% endif
 <br/>
 El número de cuenta de Som Energia para que realices la transferencia es el siguiente:<br/>
 <br/>
