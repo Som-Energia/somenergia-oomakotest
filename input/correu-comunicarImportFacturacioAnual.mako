@@ -5,6 +5,7 @@
     trimestre_2 = object.second_quarter
     trimestre_3 = object.third_quarter
     trimestre_4 = object.fourth_quarter
+    limit = object.operations_limit
     total = object.amount
     report_obj = object.pool.get('l10n.es.aeat.mod347.report')
     report = report_obj.browse(object._cr, object._uid, object.report_id)
@@ -98,48 +99,45 @@
 
 <%def name="missatge_cat()">
     <p>
-    Resum de la facturació anual agrupada per trimestres l'any: ${any_exercici}, <br>
+        Bon dia,
     </p>
     <p>
-    ${nom_partner} amb CIF: ${cif_partner} <br>
+        Us informem de l'import de les ${"compres" if object.operation_key == "A" else "vendes"} (iva inclòs) realitzades per SOM ENERGIA a ${nom_partner}, amb NIF ${cif_partner} durant l'exercici ${any_exercici}, pel compliment del resum anual Model 347 (declaració de clients i proveïdors, amb volum superior a ${limit} euros):
     </p>
     <p>
-    Per tal de donar compliment a la disposició vigent del ministeri d'Hisenda, en la relació dels nostres clients en la qual la nostra facturació hagi superat l'import de 3.005,06€ durant l'any ${any_exercici}, indiquem a continuació el total que tenim enregistrat: <br>
-    Trimestre 1:    ${trimestre_1}€<br>
-    Trimestre 2:    ${trimestre_2}€<br>
-    Trimestre 3:    ${trimestre_3}€<br>
-    Trimestre 4:    ${trimestre_4}€<br>
-    <br>
-    <b>Total:    ${total}€</b>
-    <br>
+        Trimestre 1:    ${trimestre_1} €<br>
+        Trimestre 2:    ${trimestre_2} €<br>
+        Trimestre 3:    ${trimestre_3} €<br>
+        Trimestre 4:    ${trimestre_4} €<br>
+        <br>
+        <b>Import anual:    ${total} €</b>
+        <br><br>
+        Les nostres dades fiscals són: SOM ENERGIA SCCL
+        NIF F55091367
     </p>
-    
 </%def>
 
 <%def name="missatge_es()">
     <p>
-    Resum de la facturació anual agrupada per trimestres l'any: ${any_exercici}, <br>
+        Buenos días,
     </p>
     <p>
-    ${nom_partner} amb CIF: ${cif_partner} <br>
+        Os informamos del importe de las ${"compras" if object.operation_key == "A" else "ventas"} (iva incluido) efectuadas por SOM ENERGIA a ${nom_partner}, con NIF ${cif_partner} durante el ejercicio ${any_exercici}, para la cumplimentación del resumen anual Modelo 347 (declaración de clientes y proveedores con volumen superior a ${limit} euros):
     </p>
     <p>
-    Per tal de donar compliment a la disposició vigent del ministeri d'Hisenda, en la relació dels nostres clients en la qual la nostra facturació hagi superat l'import de 3.005,06€ durant l'any ${any_exercici}, indiquem a continuació el total que tenim enregistrat: <br>
-    Trimestre 1:    ${trimestre_1}€<br>
-    Trimestre 2:    ${trimestre_2}€<br>
-    Trimestre 3:    ${trimestre_3}€<br>
-    Trimestre 4:    ${trimestre_4}€<br>
-    <br>
-    <b>Total:    ${total}€</b>
-    <br>
+        Trimestre 1:    ${trimestre_1} €<br>
+        Trimestre 2:    ${trimestre_2} €<br>
+        Trimestre 3:    ${trimestre_3} €<br>
+        Trimestre 4:    ${trimestre_4} €<br>
+        <br>
+        <b>Importe anual:    ${total} €</b>
+        <br><br>
+        Nuestros datos fiscales son: SOM ENERGIA SCCL
+        CIF F55091367
     </p>
-
 </%def>
 
 <%def name="footer_cat()">
-    <p>
-    Els agrairíem que en cas de no coincidir amb el seu registres, ens ho notifiquin el més aviat possible.<br>
-    </p>
     Atentament,<br>
     <br>
     <br>
@@ -149,9 +147,6 @@
 </%def>
 
 <%def name="footer_es()">
-    <p>
-    Els agrairíem que en cas de no coincidir amb el seu registres, ens ho notifiquin el més aviat possible.<br>
-    </p>
     Atentamente,<br>
     <br>
     <br>
