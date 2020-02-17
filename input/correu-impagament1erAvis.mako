@@ -55,6 +55,7 @@ Per canviar de comercialitzadora pots fer el tràmit tu mateix contractant amb e
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
 - Codi CUPS: ${object.cups_id.name}<br/>
+<br/>
 - Número de factura: <B>${object.number}</B><br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
@@ -128,6 +129,7 @@ Para cambiar de comercializadora puedes hacer el trámite tu mismo contactando c
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
 - Código CUPS: ${object.cups_id.name}<br/>
+<br/>
 - Número factura: <B>${object.number}</B><br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
