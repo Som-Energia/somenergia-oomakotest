@@ -5,12 +5,11 @@
     trimestre_2 = object.second_quarter
     trimestre_3 = object.third_quarter
     trimestre_4 = object.fourth_quarter
-    limit = object.operations_limit
     total = object.amount
     report_obj = object.pool.get('l10n.es.aeat.mod347.report')
     report = report_obj.browse(object._cr, object._uid, object.report_id)
     any_exercici = object.report_id.fiscalyear_id.name
-  
+    limit = object.report_id.operations_limit
 %>
 
 
