@@ -27,8 +27,8 @@ text_legal = render(t_obj.read(
 <%
 try:
   p_obj = object.pool.get('res.partner')
-  if not p_obj.vat_es_empresa(object._cr, object._uid,'object.polissa_id.pagador.vat'):
-    nom_pagador =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.polissa_id.pagador.name)['nom']
+  if not p_obj.vat_es_empresa(object._cr, object._uid,'object.partner_id.vat'):
+    nom_pagador =' ' + object.partner_id.name.split(',')[1].lstrip()
   else:
     nom_pagador = ''
 except:
@@ -41,7 +41,7 @@ Hola${nom_pagador},<br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Vam enviar el rebut de la factura d'electricitat a la teva entitat bancària però ens l’ha retornat.<br/>
 <br/>
-T’oferim dues opcions per abonar aquesta factura:<br/>
+T‘agrairem que contestis aquest correu i ens indiquis com i quan es pagarà aquesta factura. Per fer-ho, tens dues opcions:<br/>
 <br/>
 Realitzar el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>

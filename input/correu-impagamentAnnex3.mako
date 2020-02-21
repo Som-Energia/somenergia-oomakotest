@@ -139,6 +139,7 @@ Te comunicamos que se aplicará un cargo de 3€+IVA en concepto de gastos por l
 % endif
 <br/>
 El número de cuenta de Som Energia para que realices la transferencia es el siguiente:<br/>
+<br/>
 <B>ES82 1491 0001 29 2027098223</B><br/>
 <br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>

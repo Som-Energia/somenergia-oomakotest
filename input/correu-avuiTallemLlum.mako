@@ -28,8 +28,8 @@ text_legal = render(t_obj.read(
 <%
 try:
   p_obj = object.pool.get('res.partner')
-  if not p_obj.vat_es_empresa(object._cr, object._uid,'object.polissa_id.pagador.vat'):
-    nom_pagador =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.polissa_id.pagador.name)['nom']
+  if not p_obj.vat_es_empresa(object._cr, object._uid,'object.partner_id.vat'):
+    nom_pagador =' ' + object.partner_id.name.split(',')[1].lstrip()
   else:
     nom_pagador = ''
 except:
@@ -38,7 +38,11 @@ except:
 Hola ${nom_pagador},<br />
 <br />
 % if object.invoice_id.partner_id.lang != "es_ES":
-Ens posem en contacte amb tu per informar-te que a dia d’avui no s’han satisfet els imports del deute contret amb Som Energia de les factures pendents de subministrament elèctric. Per aquest motiu, l’empresa distribuïdora de la teva zona <b>tallarà la llum</b> del punt de subministrament amb adreça <b>${object.cups_id.direccio}</b> del qual ets titular. El tall es farà efectiu 48 hores després de l'enviament d'aquest correu. <br />
+Ens posem en contacte amb tu per informar-te que a dia d’avui no s’han satisfet els imports del deute contret amb Som Energia de les factures pendents de subministrament elèctric. Per aquest motiu, l’empresa distribuïdora de la teva zona <b>tallarà la llum</b> del punt de subministrament amb adreça <b>${object.cups_id.direccio}</b> del qual ets titular. Avisarem l’empresa distribuïdora, perquè faci efectiu el tall de subministrament, 48h després de l’enviament d’aquest correu.<br />
+<br />
+Has de fer el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
+<br/>
+Et comuniquem que s'aplicarà un càrrec de 3€+IVA en concepte de despeses de Gestió de l'Impagament.<br/>
 <br />
 <U>Resum de la teva factura</U><br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
@@ -104,7 +108,11 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 <HR align="LEFT" size="1" width="400" color="Black" noshade>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
-Nos ponemos en contacto contigo para informarte que a día de hoy no se han satisfecho los importes de la deuda contraída con Som Energia de las facturas pendientes de suministro eléctrico. Por este motivo, la empresa distribuidora de tu zona procederá a <b>cortar la luz</b> del punto de suministro con dirección <b>${object.cups_id.direccio}</b> del cual eres titular.  El corte se hará efectivo 48 horas después del envío d'este correo.  <br />
+Nos ponemos en contacto contigo para informarte que a día de hoy no se han satisfecho los importes de la deuda contraída con Som Energia de las facturas pendientes de suministro eléctrico. Por este motivo, la empresa distribuidora de tu zona procederá a <b>cortar la luz</b> del punto de suministro con dirección <b>${object.cups_id.direccio}</b> del cual eres titular. Daremos aviso a la empresa distribuidora para que haga efectivo el corte de suministro, 48h después del envío de este correo.<br/>
+<br />
+Tienes que hacer el pago mediante el documento adjunto con código de barras. Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www1.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
+<br/>
+Te comunicamos que se aplicará un cargo de 3€+IVA en concepto de gastos de Gestión del Impago de la factura vinculada a la fecha de Corte de Suministro Eléctrico.<br/>
 <br/>
 <U>Resumen de la factura</U><br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>

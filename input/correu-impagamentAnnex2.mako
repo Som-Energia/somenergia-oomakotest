@@ -28,8 +28,8 @@ text_legal = render(t_obj.read(
 <%
 try:
   p_obj = object.pool.get('res.partner')
-  if not p_obj.vat_es_empresa(object._cr, object._uid,'object.polissa_id.pagador.vat'):
-    nom_pagador =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.polissa_id.pagador.name)['nom']
+  if not p_obj.vat_es_empresa(object._cr, object._uid,'object.partner_id.vat'):
+    nom_pagador =' ' + object.partner_id.name.split(',')[1].lstrip()
   else:
     nom_pagador = ''
 except:
@@ -57,8 +57,7 @@ En cas de no abonar-se la quantitat deguda, en un termini de  <b>2 mesos a parti
 - <B>Import pendent: ${object.invoice_id.residual}€</B><br/>
 % endif
 <br/>
-El número de compte de Som Energia perquè facis la transferència és el següent:<br/>
-<B>ES82 1491 0001 29 2027098223</B><br/>
+Has de fer el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
 Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
@@ -128,8 +127,7 @@ De no abonarse la cantidad adeudada en un plazo de 2 meses  a partir de la recep
 - <B>Importe pendiente: ${object.invoice_id.residual}€</B><br/>
 % endif
 <br/>
-El número de cuenta de Som Energia para que realices la transferencia es el siguiente:<br/>
-<b>ES82 1491 0001 29 2027098223</b><br/>
+Tienes que hacer el pago mediante el documento adjunto con código de barras. Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www1.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
 <br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>
