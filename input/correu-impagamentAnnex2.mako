@@ -42,7 +42,7 @@ T’informem que ha vençut el període de pagament de la factura emesa a contin
 <br/>
 Com a conseqüència, aviat se’t pot remetre un requeriment fefaent de pagament.<br/>
 <br/>
-En cas de no abonar-se la quantitat deguda, en un termini de  <b>2 mesos a partir de la notificació</b> a partir de la recepció d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
+En cas de no abonar-se la quantitat deguda, en un termini de  <b>2 mesos a partir de la notificació</b> d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
 <br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
