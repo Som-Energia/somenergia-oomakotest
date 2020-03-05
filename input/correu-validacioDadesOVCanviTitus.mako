@@ -41,7 +41,7 @@
 
     nom_soci = get_nom_cognoms(object, object.polissa_ref_id.soci) if object.polissa_ref_id.soci else False
 
-    cut_vat = hide_code(pas01.codi_document, 2, 4)
+    cut_vat = hide_code(pas01.codi_document, 0, 4)
     cut_iban = hide_code(pas01.bank.iban, 0, 8)
 
     t_obj = object.pool.get('poweremail.templates')
