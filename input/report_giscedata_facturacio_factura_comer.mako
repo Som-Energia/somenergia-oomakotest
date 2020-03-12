@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 import json
 import csv
 from collections import Counter
+from dateutil.relativedelta import relativedelta
 import locale
 import calendar
 from collections import namedtuple
@@ -1005,7 +1006,7 @@ dades_reparto = [
         ${_(u"CNAE:")} <span style="font-weight: bold;">${polissa.cnae.name}</span> <br />
         ${_(u'Data d\'alta del contracte: <span style="font-weight: bold;">%s</span>, sense condicions de permanència') % polissa.data_alta} <br />
         ${_(u'Forma de pagament: rebut domiciliat')} <br />
-        ${_(u'Data de renovació automàtica: <span style="font-weight: bold;">%s</span>') % datetime.strptime(polissa.data_alta, '%Y-%m-%d').replace(datetime.now().year + 1).strftime('%Y-%m-%d')}
+        ${_(u'Data de renovació automàtica: <span style="font-weight: bold;">%s</span>') % (datetime.strptime(polissa.data_alta, '%Y-%m-%d') + relativedelta(years=1)).strftime('%Y-%m-%d')}
         </p>
     </div>
 % if len(periodes_a) <= 3 or polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
