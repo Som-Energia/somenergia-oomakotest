@@ -322,6 +322,13 @@
 #
 ######################################################
 ## Gestió de contractes
+#reportContracte:
+#  template: input/report-Polissa.mako
+#  model: giscedata.polissa
+#  reportXmlId: 527
+#  cases:
+#    ca: 69398
+#    es: 116
 #
 #avisCanviHora:
 #   template: input/correu-avisCanviHora.mako
