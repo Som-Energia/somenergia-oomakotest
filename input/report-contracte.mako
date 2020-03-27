@@ -67,7 +67,9 @@
                         <%
                             data_inici = ''
                             data_final = ''
+                            mark = ''
                             if 'form' in data.keys():
+                                mark = ':'
                                 form = data['form']
                                 data_inici = form['polissa_date']
                                 modcon_obj = pool.get('giscedata.polissa.modcontractual')
@@ -81,9 +83,11 @@
                                 data_final = polissa.modcontractual_activa.data_final
                         %>
                         ${_("Des de")}
+                        ${mark}
                         ${formatLang(data_inici, date=True)}
                         <br>
                         ${_("Fins a")}
+                        ${mark}
                         ${formatLang(data_final, date=True)}
                         <br>
                     </div>
@@ -480,7 +484,6 @@
                     </div>
                 </div>
                 <div class="observacions">
-                    ${polissa.print_observations or ""}
                 </div>
             </div>
             <%
