@@ -51,10 +51,47 @@
         if not code:
             return "Sin excedentes"
         return get_description(code,'TABLA_128')
+
+    def getStep01(swCase):
+        return getStep(swCase,'01')
+
+    def getStep(swCase,step_name):
+        for case_step_id in swCase.step_ids:
+            step_obj_name,step_id = case_step_id.pas_id.split(',')
+            if step_obj_name.endswith(step_name):
+                step_obj = swCase.pool.get(step_obj_name)
+                return step_obj.browse(swCase._cr, swCase._uid, int(step_id))
+
+    def getSomething(swCase,model,data,value,field):
+        tbl_obj = swCase.pool.get(model)
+        ids = tbl_obj.search(swCase._cr, swCase._uid,[(data,'=',value)])
+        if ids:
+            return tbl_obj.read(swCase._cr, swCase._uid, ids[0],[field])[field]
+
+
+
 %>
 <%
-    d = object.step_ids[0].pas_id
+    logger = netsvc.Logger()
+    var_print = 0
     polissa = object.cups_polissa_id
+    GiscedataPolissa = object.pool.get('giscedata.polissa')
+    partner_polissa = GiscedataPolissa.read(object._cr, object._uid, polissa.id, ['partner_id'])
+    d = getStep01(object)
+    d.id
+    GiscedataAutoconsum = object.pool.get('giscedata.autoconsum')
+    ga_ids = GiscedataAutoconsum.search(object._cr, object._uid, [('cups_id','=',d.cups)])
+    GiscedataAutoconsumGenerador = object.pool.get('giscedata.autoconsum.generador')
+    if ga_ids:
+        generadors_ids = GiscedataAutoconsumGenerador.search(object._cr, object._uid, [('autoconsum_id','=',ga_ids[0])])
+        var_print = [d.cau, d.id, ga_ids] 
+        if generadors_ids:
+            generador_data = GiscedataAutoconsumGenerador.read(object._cr, object._uid, generadors_ids[0])
+            if generador_data['partner_id'] == partner_polissa:
+                var_print = "Parnter igual"
+            else:
+                var_print = "Partner diferent"
+
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
     template_id = md_obj.get_object_reference(
@@ -67,6 +104,7 @@
     )
 
 %>
+${var_print}
 <!doctype html>
 <html>
     <head>
