@@ -2,6 +2,8 @@
     from mako.template import Template
     from datetime import datetime, timedelta
     from gestionatr.utils import get_description
+    import netsvc
+
 
     def render(text_to_render, object_):
         templ = Template(text_to_render)
@@ -76,21 +78,15 @@
     var_print = 0
     polissa = object.cups_polissa_id
     GiscedataPolissa = object.pool.get('giscedata.polissa')
-    partner_polissa = GiscedataPolissa.read(object._cr, object._uid, polissa.id, ['partner_id'])
+    polissa_nif = GiscedataPolissa.read(object._cr, object._uid, polissa.id, ['titular_nif'])['titular_nif']
     d = getStep01(object)
-    d.id
-    GiscedataAutoconsum = object.pool.get('giscedata.autoconsum')
-    ga_ids = GiscedataAutoconsum.search(object._cr, object._uid, [('cups_id','=',d.cups)])
-    GiscedataAutoconsumGenerador = object.pool.get('giscedata.autoconsum.generador')
-    if ga_ids:
-        generadors_ids = GiscedataAutoconsumGenerador.search(object._cr, object._uid, [('autoconsum_id','=',ga_ids[0])])
-        var_print = [d.cau, d.id, ga_ids] 
-        if generadors_ids:
-            generador_data = GiscedataAutoconsumGenerador.read(object._cr, object._uid, generadors_ids[0])
-            if generador_data['partner_id'] == partner_polissa:
-                var_print = "Parnter igual"
-            else:
-                var_print = "Partner diferent"
+    if d.generadors:
+        nif_generador = d.generadors[0].identificador
+        var_print = [nif_generador,polissa_niff]
+        if nif_generador == polissa_nif:
+            var_print = ["Partner igual", nif_generador,polissa_nif]
+        else:
+            var_print = ["Partner diferent", nif_generador,polissa_nif]
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
