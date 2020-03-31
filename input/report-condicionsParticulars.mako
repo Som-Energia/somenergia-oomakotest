@@ -38,15 +38,15 @@ def clean_text(text):
     <link rel="stylesheet" href="${addons_path}/som_polissa_condicions_generals/report/condicions_particulars.css"/>
 </head>
 <body>
-<%def name="clean(text)">
-    ${text or ''}
-</%def>
-<%def name="enviament(diferent, text)">
-    %if diferent:
-        ${clean(text)}
-    %endif
-</%def>
-%for polissa in objects:
+    <%def name="clean(text)">
+        ${text or ''}
+    </%def>
+    <%def name="enviament(diferent, text)">
+        %if diferent:
+            ${clean(text)}
+        %endif
+    </%def>
+    %for polissa in objects:
         <%
             lang = polissa.titular.lang
             if lang not in ['ca_ES', 'es_ES']:
@@ -301,6 +301,9 @@ def clean_text(text):
         <h3> ${_("TARIFES D'ELECTRICITAT")}
         %if not polissa.llista_preu:
             <span style="font-size: 10px; color: orange">${_(" (Tarifa vigent en el moment d'activació del contracte)")}
+                <br/> ${_("Per a més informació:")}
+            </span>
+            <a href="${_(u"https://www.somenergia.coop/ca/tarifes-d-electricitat/")}">${_(u"https://www.somenergia.coop/ca/tarifes-d-electricitat/")}</a>
         %endif
         </h3>
         <%
@@ -407,22 +410,22 @@ def clean_text(text):
                         %if polissa.llista_preu:
                             %if polissa.autoconsumo != '00':
                                 <td style="width: 60px;" class="center">
-                                    <span class="">${formatLang(get_atr_price(cursor, uid, polissa, p, 'ac', ctx)[0], digits=6)}</span>
+                                    <span>${formatLang(get_atr_price(cursor, uid, polissa, p, 'ac', ctx)[0], digits=6)}</span>
                                 </td>
                             %else:
-                                <td style="width: 60px;" class="">
+                                <td style="width: 60px;">
                                     &nbsp;
                                 </td>
                             %endif
                         %else:
-                            <td style="width: 60px;" class="">
+                            <td style="width: 60px;">
                                 &nbsp;
                             </td>
                         %endif
                     %endfor
                     %if len(periodes_energia) < 6:
                         %for p in range(0, 6-len(periodes_energia)):
-                            <td style="width: 60px;" class="">
+                            <td style="width: 60px;">
                                 &nbsp;
                             </td>
                         %endfor
@@ -507,20 +510,12 @@ def clean_text(text):
                 </div>
             </div>
         </div>
-##            <p style="text-align: center;">
-##                <b>${_("Nota: ")}</b>${_("Amb aquest contracte ens autoritzes a dur a terme els tràmits per sol·licitar al teu nom el subministrament d'electricitat amb l'empresa distribuïdora.")}
-##                ${_("T'informarem per correu electrònic quan formalitzem el contracte d'accés, moment en el qual, segons les condicions generals, s'inicia el subministrament.")}
-##                ${_("Als preus s'han de sumar impostos i altres conceptes segons la legislació vigent, tal com s'indica a la pàgina de tarifes del web i a les condicions generals.")}
-##            </p>
         <hr/>
 
+        %if polissa != objects[-1]:
+            <p style="page-break-after:always;"></p>
+        %endif
 
-
-
-%if polissa != objects[-1]:
-    <p style="page-break-after:always;"></p>
-%endif
-
-%endfor
+    %endfor
 </body>
 </html>
