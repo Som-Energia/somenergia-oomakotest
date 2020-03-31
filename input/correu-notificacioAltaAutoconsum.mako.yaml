@@ -1,5 +1,7 @@
 cc: false
 to: ${object.cups_polissa_id.direccio_notificacio.email}
-subject_translations: {}
+subject_translations:
+  ca_ES: Confirmació dades inst.autoproducció CUPS ${object.cups_id.name}
+  es_ES: Confirmación datos inst.autoproducción CUPS ${object.cups_id.name}
 subject: '${object.company_id.name}: Sol·licitada alta per la Comercialitzadora ${object.partner_id.name}'
-bcc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

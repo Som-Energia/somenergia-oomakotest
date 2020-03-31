@@ -75,18 +75,15 @@
 %>
 <%
     logger = netsvc.Logger()
-    var_print = 0
+    partner_diferent = False
     polissa = object.cups_polissa_id
     GiscedataPolissa = object.pool.get('giscedata.polissa')
     polissa_nif = GiscedataPolissa.read(object._cr, object._uid, polissa.id, ['titular_nif'])['titular_nif']
     d = getStep01(object)
     if d.generadors:
         nif_generador = d.generadors[0].identificador
-        var_print = [nif_generador,polissa_niff]
-        if nif_generador == polissa_nif:
-            var_print = ["Partner igual", nif_generador,polissa_nif]
-        else:
-            var_print = ["Partner diferent", nif_generador,polissa_nif]
+        if nif_generador != polissa_nif:
+            partner_diferent = True
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
@@ -100,7 +97,6 @@
     )
 
 %>
-${var_print}
 <!doctype html>
 <html>
     <head>
@@ -160,6 +156,10 @@ ${var_print}
 	<b>Tipus instal·lació:</b> ${get_auto_type_name(object, d.generadors[0].tipus_installacio)}<br>
 	<b>Serveis auxiliars:</b> No<br>
 	<br>
+        % if partner_diferent:
+Ens informen també que la persona titular de la instal·lació generadora és una persona diferent de la titular del contracte.<br>
+	<br>
+        % endif
 	Si és correcte cal que ens ho confirmis responent aquest mateix correu, <b>indicant expressament que vols que demanem la modificació corresponent a la modalitat d’autoproducció triada a la distribuïdora</b> per aplicar-ho al teu contracte i a la teva facturació mensual tal com s’estableix a les <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">CONDICIONS GENERALS</a>. <b>En cas que es tracti d’una instal·lació registrada a la Comunitat Autònoma de Catalunya cal que també ens facis arribar el Certificat d’Instal·lació Elèctrica i el document de la declaració responsable complert de la instal·lació generadora en aquest mateix correu</b><br>
 	El preu que estableix la cooperativa per els kWh d’energia excedentària és de 0,056€/kWh. <br>
 	<br>
@@ -224,6 +224,10 @@ ${var_print}
 	<b>Tipo instalación:</b> ${get_auto_type_name(object, d.generadors[0].tipus_installacio)}<br>
 	<b>Servicios auxiliares:</b> No<br>
 	<br>
+        % if partner_diferent:
+Nos informan también que la persona titular de la instalación generadora es una persona diferente a la titular del contrato.
+	<br>
+        % endif
 	Si es correcto es necesario que nos lo confirmes respondiendo este mismo correo, <b>indicando en él expresamente que deseas que solicitemos la modificación correspondiente a la modalidad de autoproducción elegida a la distribuidora</b> para aplicarlo a tu contrato y en tu facturación mensual tal como se establece en las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">CONDICIONES GENERALES</a>.  <b>En caso de que se trate de una instalación registrada en la Comunidad Autónoma de Cataluña es necesario también que nos hagas llegar el Certificado de Instalación Eléctrica y el documento de la Declaración responsable completo de la Instalación generadora en el mismo correo.</b><br>
         El precio que establece la cooperativa para los kWh de energía excedentaria es de 0,056€/kWh.
 	<br>
