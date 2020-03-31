@@ -177,7 +177,7 @@
 #  cases:
 #    ca_tarif: 253740
 #
-# validacioDadesOVCanviTitus:
+#validacioDadesOVCanviTitus:
 #   template: input/correu-validacioDadesOVCanviTitus.mako
 #   model: giscedata.switching
 #   poweremailId: giscedata_switching.notification_atr_M1_01
@@ -186,16 +186,16 @@
 #     es_sensesoci: 253716
 #     ca_sensesoci: 170827
 #     es_ambsoci: 243142
-
-# notificacioAnticTitular:
-#   template: input/correu-notificacioAnticTitular.mako
-#   model: giscedata.switching
-#   poweremailId: 261
-#   cases:
-#     ca_ambsoci: 249766
-#     es_sensesoci: 253716
-#     ca_sensesoci: 170827
-#     es_ambsoci: 243142  
+#
+#notificacioAnticTitular:
+#  template: input/correu-notificacioAnticTitular.mako
+#  model: giscedata.switching
+#  poweremailId: 261
+#  cases:
+#    ca_ambsoci: 249766
+#    es_sensesoci: 253716
+#    ca_sensesoci: 170827
+#    es_ambsoci: 243142  
 #
 #numeroFacturaDuplicada:
 #  template: input/correu-numeroFacturaDuplicada.mako
@@ -657,13 +657,13 @@
 #    3.0A_ca: 34800
 #    webform_contact_phone_different_to_polissa: 107487
 #
-#notificacioAltaAutoconsum:
-#  template: input/correu-notificacioAltaAutoconsum.mako
-#  model: giscedata.switching
-#  #poweremailId: 65
-#  poweremailId: giscedata_switching.notification_atr_D1_01
-#  cases:
-#    es: 240260
+notificacioAltaAutoconsum:
+  template: input/correu-notificacioAltaAutoconsum.mako
+  model: giscedata.switching
+  poweremailId: giscedata_switching.notification_atr_D1_01
+  cases:
+    ca_auto_tit_diff: 277496
+    ca_auto_tit_equal: 280714
 #
 ##peticioDocumentacioSubministres:
 ##  template: input/correu-peticioDocumentacioSubministres.mako
@@ -959,4 +959,11 @@
 #    es: 7556301
 #    ca: 7514512
 #
+#
+#contrateAportacio:
+#  template: input/report_contracte_apo.mako
+#  model: account.invoice
+#  reportXmlId: 1507
+#  cases:
+#    ca: 7641957
 # vim: et ts=2 sw=2
