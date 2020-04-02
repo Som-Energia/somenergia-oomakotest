@@ -119,8 +119,9 @@ def renderMako(template, model, id, data, uid=1):
 
     with closing(db.cursor()) as cursor:
         makoinput = templateRead(template)
-
-        for obj in pool.get(model).browse(cursor,uid,[id]):
+        #browse last param is OpenERP dict Context. The 'browse_reference' variable to True
+        #force get all references in object (even one2many fields)
+        for obj in pool.get(model).browse(cursor,uid,[id], {'browse_reference': True}):
             env = {
                 'user':pool.get('res.users').browse(cursor,uid,uid),
                 'db': dbcfg.database,
