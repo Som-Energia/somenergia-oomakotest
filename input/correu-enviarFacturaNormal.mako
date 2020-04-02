@@ -40,7 +40,7 @@ T'enviem la <B>factura</B> d'electricitat de Som Energia. <br>
 <br>
 Carregarem l'import d'aquesta factura al teu número de compte durant els propers dies.<br>
 <br>
-Si la crisi del <B>Covid-19</B> t’està afectant econòmicament, t’oferim la possibilitat d’ajornar el pagament d’aquesta factura fins d’aquí a un mes. Si així ho necessites, ens ho pots sol·licitar responent aquest mateix correu.<br>
+Si la crisi del <B>Covid-19</B> t’està afectant econòmicament, t’oferim la possibilitat d’ajornar el pagament d’aquesta factura fins que finalitzi l'estat d'alarma. Si així ho necessites, ens ho pots sol·licitar responent aquest mateix correu.<br>
 </p>
 <br>
 <U><B>Resum de la factura</B></U><br>
@@ -78,7 +78,7 @@ Te enviamos la <B>factura</B> de electricidad de Som Energia. <br>
 <br>
 Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
 <br>
-Si la crisis del <B>Covid-19</B> te está afectando económicamente, te ofrecemos la posibilidad de aplazar el pago de esta factura hasta dentro de un mes. Si así lo necesitas, nos lo puedes solicitar respondiendo este mismo correo.<br>
+Si la crisis del <B>Covid-19</B> te está afectando económicamente, te ofrecemos la posibilidad de aplazar el pago de esta factura hasta que finalice el estado de alarma. Si así lo necesitas, nos lo puedes solicitar respondiendo este mismo correo.<br>
 </p>
 <br>
 <U><B>Resumen de la factura</B></U><br>
