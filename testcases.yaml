@@ -336,14 +336,15 @@
 #   cases:
 #     ca: 69398
 #     es: 265122
-# reportCondicionsParticularsM101:
-#   template: input/report-condicionsParticularsM101.mako
-#   model: giscedata.switching
-#   reportXmlId: 527
-#   cases:
-#     ca: 69398
-#     es: 265122
-#avisCanviHora:
+reportCondicionsParticularsM101:
+  template: input/report-condicionsParticularsM101.mako
+  model: giscedata.switching
+  reportXmlId: 999
+  cases:
+    ca_N: 274549
+    catala_s_s: 282778
+    catala_persona_f: 282717
+# avisCanviHora:
 #   template: input/correu-avisCanviHora.mako
 #   model: giscedata.polissa
 #   poweremailId: 47

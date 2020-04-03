@@ -10,6 +10,14 @@ from giscedata_polissa.report.utils import localize_period, datetime_to_date
 
 def clean_text(text):
     return text or ''
+
+def get_pas01(cas):
+    for step_id in cas.step_ids:
+        proces_name = step_id.proces_id.name
+        step_name = step_id.step_id.name
+        if proces_name == "M1" and step_name == "01":
+            return step_id
+    return None
 %>
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
@@ -46,8 +54,11 @@ def clean_text(text):
             ${clean(text)}
         %endif
     </%def>
-    %for polissa in objects:
+    %for cas in objects:
         <%
+            pool = cas.pool
+            polissa = cas.cups_polissa_id
+            pas01 = get_pas01(cas)
             lang = polissa.titular.lang
             if lang not in ['ca_ES', 'es_ES']:
                 lang = 'es_ES'
@@ -108,7 +119,12 @@ def clean_text(text):
         %endif
 
         <%
-            direccio_titular = polissa.titular.address[0]
+            dades_client = pas01.pas_id.dades_client
+            es_ct_subrogacio = pas01.pas_id.sollicitudadm == "S" and pas01.pas_id.canvi_titular == "S"
+
+            client_name = dades_client.name if es_ct_subrogacio and dades_client else polissa.titular.name
+            client_vat = dades_client.vat if es_ct_subrogacio and dades_client else polissa.titular.vat
+            direccio_titular = dades_client.address[0] if es_ct_subrogacio and dades_client else polissa.titular.address[0]
             direccio_envio = polissa.direccio_notificacio
             diferent = (polissa.direccio_notificacio != direccio_titular)
             periodes_energia, periodes_potencia = [], []
@@ -118,9 +134,9 @@ def clean_text(text):
         <table class="taula_custom" style="margin-top: 5px;">
             <tr>
                 <td class="label">${_(u"Nom/Raó social:")}</td>
-                <td class="field">${polissa.titular.name}</td>
+                <td class="field">${client_name}</td>
                 <td class="label">${_(u"NIF/CIF:")}</td>
-                <td class="field">${polissa.titular and (polissa.titular.vat or '').replace('ES', '')}</td>
+                <td class="field">${client_vat.replace('ES', '')}</td>
             </tr>
         </table>
         <table class="taula_custom">
