@@ -329,13 +329,14 @@
 #   cases:
 #     ca: 69398
 #     es: 265122
-# reportCondicionsParticulars:
-#   template: input/report-condicionsParticulars.mako
-#   model: giscedata.polissa
-#   reportXmlId: 527
-#   cases:
-#     ca: 69398
-#     es: 265122
+reportCondicionsParticulars:
+  template: input/report-condicionsParticulars.mako
+  model: giscedata.polissa
+  reportXmlId: 527
+  cases:
+    ca_N: 240991
+    catala_s_s: 207474
+    catala_persona_f: 128907
 reportCondicionsParticularsM101:
   template: input/report-condicionsParticularsM101.mako
   model: giscedata.switching

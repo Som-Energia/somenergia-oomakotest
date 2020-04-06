@@ -306,7 +306,7 @@ def get_pas01(cas):
                     <td style="width: 60px;">
                     %if p[1] and p[1].potencia:
                         <span class="label">${"P{0}".format(p[0])}</span>
-                        <span class="field">${p[1] and p[1].potencia or ' '}</span>
+                        <span class="field">${p[1].potencia / 1000.0 if es_canvi_tecnic else p[1].potencia}</span>
                     </td>
                     %endif
                 %endfor
@@ -525,7 +525,7 @@ def get_pas01(cas):
                         <img src="${addons_path}/som_polissa_condicions_generals/report/assets/acceptacio_digital_es.png"/>
                     %endif
 
-                    <div style="position:absolute; bottom: 0px; min-width:100%;">${polissa.pagador.name}</div>
+                    <div style="position:absolute; bottom: 0px; min-width:100%;">${client_name}</div>
                 </div>
                 <div class="signatura">
                     <div style="position:absolute; top: 0px; min-width:100%;">${_(u"LA COMERCIALITZADORA")}</div>
