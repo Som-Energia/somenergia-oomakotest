@@ -271,18 +271,29 @@ def get_pas01(cas):
         </table>
 
         <h3> ${_("PEATGE D'ACCÉS (Definit al RD 1164/2001)")} </h3>
+	<%
+            es_canvi_tecnic = pas01.pas_id.sollicitudadm == "N"
 
+            tarifa_contractada = polissa.tarifa_codi
+            if es_canvi_tecnic and pas01.pas_id.tarifaATR:
+                gpt_obj = pool.get("giscedata.polissa.tarifa")
+                tarifa_id = gpt_obj.search(cursor, uid, [("codi_ocsum", "=", pas01.pas_id.tarifaATR)])
+                if len(tarifa_id) == 1:
+                    tarifa_contractada = gpt_obj.read(cursor, uid, tarifa_id, ["name"])[0]["name"]
+            potencies = pas01.pas_id.pot_ids if es_canvi_tecnic else polissa.potencies_periode 
+            autoconsum = pas01.pas_id.tipus_autoconsum if es_canvi_tecnic else polissa.autoconsumo
+            
+	%>
         <table style="margin-top: 5px;">
             <tr>
                 <td class="label">${_(u"Tarifa contractada:")}</td>
-                <td class="field">${clean(polissa.tarifa_codi)}</td>
+                <td class="field">${clean(tarifa_contractada)}</td>
             </tr>
         </table>
         <table class="taula_custom">
             <tr>
                 <td class="label">${_(u"Potència contractada (kW):")} </div></td>
                 <%
-                    potencies = polissa.potencies_periode
                     periodes = []
                     for i in range(0, 6):
                         if i < len(potencies):
@@ -304,7 +315,6 @@ def get_pas01(cas):
         <table>
             <tr>
                 <%
-                    autoconsum = polissa.autoconsumo
                     if autoconsum:
                         autoconsum = dict(TIPO_AUTOCONSUMO)[autoconsum]
                 %>
@@ -456,16 +466,17 @@ def get_pas01(cas):
             %endif
         </span>
         <%
+            bank = pas01.pas_id.bank if pas01.pas_id.bank else polissa.bank
             owner_b = ''
-            if polissa.bank.owner_name:
-                owner_b = polissa.bank.owner_name
+            if bank.owner_name:
+                owner_b = bank.owner_name
             nif = ''
             bank_obj = pool.get('res.partner.bank')
             field = ['owner_id']
             exist_field = bank_obj.fields_get(
                 cursor, uid, field)
             if exist_field:
-                owner = polissa.bank.owner_id
+                owner = bank.owner_id
                 if owner:
                     nif = owner.vat or ''
                 nif = nif.replace('ES', '')
@@ -482,7 +493,7 @@ def get_pas01(cas):
             </tr>
         </table>
         <table class="taula_custom" style="margin-top: 5px;">
-            <% iban = polissa.bank and polissa.bank.iban[4:] or '' %>
+            <% iban = bank and bank.iban[4:] or '' %>
             <tr>
                 <td class="label">${_(u"Entitat financera:")}</td>
                 <td class="field">${iban[0:4]}</td>
