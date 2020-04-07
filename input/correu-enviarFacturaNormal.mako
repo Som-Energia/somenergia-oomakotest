@@ -40,14 +40,9 @@ T'enviem la <B>factura</B> d'electricitat de Som Energia. <br>
 <br>
 Carregarem l'import d'aquesta factura al teu número de compte durant els propers dies.<br>
 <br>
-Si tens dificultats per afrontar el pagament d’aquesta factura arran de la crisi de la <B>COVID-19</B>, t'oferim la possibilitat d'ajornar-lo un mes. Per fer-ho, ens ho pots sol·licitar responent aquest mateix correu.
+Si tens dificultats per afrontar el pagament d’aquesta factura arran de la crisi de la <B>COVID-19</B>, pots sol·licitar l’ajornament del pagament fins que acabi l’estat d’alarma responent aquest mateix correu. Quan finalitzi l’estat d’alarma estudiarem quina pot ser la millor manera per tal que, qui s’hi hagi acollit, pugui saldar el deute pendent.<br>
 <br>
-Si ja has ajornat el pagament d’alguna factura anterior i segueixes tenint dificultats, podem oferir-te el fraccionament del deute.
-<br>
-Si aquesta factura correspon al contracte d’una empresa, també pots respondre aquest correu i demanar el fraccionament del pagament de les factures que es generin mentre duri l’estat d’alarma, tal i com regula el <a href="https://boe.es/buscar/pdf/2020/BOE-A-2020-4208-consolidado.pdf">Reial Decret-llei 11/2020</a>.
-<br>
-Si ets autònom o autònoma, també pots acollir-te a aquest pagament fraccionat però, en aquest cas, necessitem que ens enviïs una còpia del Justificant d’Alta en el Règim Especial de Treballadors Autònoms de la Seguretat Social (RETA) amb la teva petició.
-<br>
+Si ets autònom o autònoma, necessitarem que ens enviïs una còpia del Justificant d’Alta en el Règim Especial de Treballadors Autònoms de la Seguretat Social (RETA) amb la teva petició.<br>
 </p>
 <br>
 <U><B>Resum de la factura</B></U><br>
@@ -85,14 +80,9 @@ Te enviamos la <B>factura</B> de electricidad de Som Energia. <br>
 <br>
 Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
 <br>
-Si tienes dificultades para afrontar el pago de esta factura a raíz de la crisis de la <B>COVID-19</B>, te ofrecemos la posibilidad de aplazarlo un mes. Para ello, puedes solicitarlo respondiendo este mismo correo.
+Si tienes dificultades para afrontar el pago de esta factura a raíz de la crisis de la <B>COVID-19</B>, puedes aplazar el pago hasta que acabe el estado de alarma respondiendo este mismo correo. Cuando finalice el estado de alarma estudiaremos cual puede ser la mejor manera para que, quien se haya acogido a esta medida, pueda saldar la deuda pendiente.<br>
 <br>
-Si ya has aplazado el pago de alguna factura anterior y sigues teniendo dificultades, podemos ofrecerte el fraccionamiento de la deuda.
-<br>
-Si esta factura corresponde al contrato de una empresa, también puedes responder este correo y pedir el pago fraccionado de las facturas que se generen mientras dure el estado de alarma, tal como regula el <a href="https://boe.es/buscar/pdf/2020/BOE-A-2020-4208-consolidado.pdf">Real Decreto-ley 11/2020</a>.
-<br>
-Si eres autónomo o autónoma, también puedes acogerte a este pago fraccionado pero, en este caso, necesitamos que nos envíes una copia del Justificante de Alta en el Régimen Especial de Trabajadores Autónomos de la Seguridad Social (RETA) con tu petición.
-<br>
+Si eres autónomo o autónoma, necesitaremos que nos envíes una copia del Justificante de Alta en el Régimen Especial de Trabajadores Autónomos de la Seguridad Social (RETA) con tu petición.<br>
 </p>
 <br>
 <U><B>Resumen de la factura</B></U><br>
