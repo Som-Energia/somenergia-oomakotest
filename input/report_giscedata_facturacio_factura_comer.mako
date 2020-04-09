@@ -611,11 +611,23 @@ TABLA_113_dict = { # Table extracted from gestionatr.defs TABLA_113, not importe
     '74': _(u"Amb excedents sense compensació Col·lectiu amb cte. de Serv. Aux. a través de xarxa i xarxa interior - SSAA"), # Con excedentes sin compensación Colectivo con cto de SSAA a través de red y red interior - SSAA
 }
 
+TENEN_AUTOCONSUM = [x for x in TABLA_113_dict.keys() if x not in ['00', '01', '2A', '2B', '2G']]
+
+def findAutoconsumModContractual(p):
+    for m in p.modcontractuals_ids:
+        if m.autoconsum_id or m.autoconsumo in TENEN_AUTOCONSUM:
+            return m
+    return None
+
 def has_polissa_autoconsum(f):
-    return f.polissa_id.autoconsum_id and f.polissa_id.autoconsum_id.active and f.polissa_id.autoconsum_id.data_alta <= f.data_inici
+    if f.polissa_id.autoconsum_id:
+        return f.polissa_id.autoconsum_id.active and f.polissa_id.autoconsum_id.data_alta <= f.data_inici
+
+    m = findAutoconsumModContractual(f.polissa_id)
+    return m and m.data_inici <= f.data_inici
 
 def has_polissa_autoconsum_colectiu(f):
-    return has_polissa_autoconsum(f) and f.polissa_id.autoconsum_id.collectiu
+    return has_polissa_autoconsum(f) and f.polissa_id.autoconsum_id and f.polissa_id.autoconsum_id.collectiu
 
 has_autoconsum = has_polissa_autoconsum(factura)
 has_autoconsum_colectiu = has_polissa_autoconsum_colectiu(factura)
@@ -623,7 +635,7 @@ autoconsum_colectiu_repartiment = float(factura.polissa_id.coef_repartiment) * 1
 autoconsum_excedents_product = None
 if has_autoconsum:
     autoconsum_tipus = TABLA_113_dict[factura.polissa_id.autoconsumo]
-    autoconsum_cau = factura.polissa_id.autoconsum_id.cau
+    autoconsum_cau = factura.polissa_id.autoconsum_id.cau if factura.polissa_id.autoconsum_id else ''
     autoconsum_total_compensada = sum([l.price_subtotal for l in factura.linies_generacio])
     model_obj = objects[0].pool.get('ir.model.data')
     autoconsum_excedents_product_id = model_obj.get_object_reference(cursor, uid, 'giscedata_facturacio_comer', 'saldo_excedents_autoconsum')[1]
