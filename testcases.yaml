@@ -295,9 +295,12 @@
 #    30A_es: 7195651
 #    31A_ca: 7125818
 #    31A_es: 7118249
-#    20A_auto_ca: 7762689
-#    20DHA_auto_no_es: 7762694
-#    20DHA_auto_es: 7762703
+#    20A_auto_ca: 8764312
+#    20A_auto_es: 8729453
+#    20DHA_auto_es: 8761828
+#    20DHA_auto_ca: 8765011
+#    20A_auto_directe_es: 8658592
+#    20DHA_auto_g_es: 8673624
 #    61A : 7099377
 #    m_nou_20A_nomax_ca: 6693310
 #    m_ant_20A_nomax_ca: 5842065
@@ -657,17 +660,17 @@
 #    3.0A_ca: 34800
 #    webform_contact_phone_different_to_polissa: 107487
 #
-notificacioAltaAutoconsum:
-  template: input/correu-notificacioAltaAutoconsum.mako
-  model: giscedata.switching
-  poweremailId: giscedata_switching.notification_atr_D1_01
-  cases:
-    ca_auto_tit_diff: 277496
-    ca_auto_tit_equal: 280714
-    es_auto_tit_equal: 282857
-    es_auto_tit_diff: 282561
-    ca_noauto: 282878
-    es_noauto: 281207
+#notificacioAltaAutoconsum:
+#  template: input/correu-notificacioAltaAutoconsum.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_D1_01
+#  cases:
+#    ca_auto_tit_diff: 277496
+#    ca_auto_tit_equal: 280714
+#    es_auto_tit_equal: 282857
+#    es_auto_tit_diff: 282561
+#    ca_noauto: 282878
+#    es_noauto: 281207
 #
 #peticioDocumentacioSubministres:
 #  template: input/correu-peticioDocumentacioSubministres.mako
