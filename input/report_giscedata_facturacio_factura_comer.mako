@@ -629,6 +629,27 @@ if has_autoconsum:
     autoconsum_excedents_product_id = model_obj.get_object_reference(cursor, uid, 'giscedata_facturacio_comer', 'saldo_excedents_autoconsum')[1]
 
 %>
+<%
+def is_leap_year(year):
+    if year % 4 == 0:
+        if year % 100 == 0:
+            return year % 400 == 0
+        else:
+            return True
+    return False
+
+def leap_replace(data,year):
+    if data.month == 2 and data.day == 29 and not is_leap_year(year):
+        return datetime(year,2,28)
+    return datetime(year,data.month,data.day)
+
+def get_renovation_date(data_alta , today):
+    alta = datetime.strptime(data_alta, '%Y-%m-%d')
+    reno = leap_replace(alta, today.year)
+    if reno < today:
+        reno = leap_replace(alta, today.year +1)
+    return reno.strftime('%Y-%m-%d')
+%>
 <%def name="emergency_complaints(factura)">
     <%
         fixed_height = ''
@@ -653,12 +674,19 @@ if has_autoconsum:
     % endif
     <div class="complaints" ${fixed_height}>
         <h1>${_(u"RECLAMACIONS")}</h1>
-        <p style="line-height: 1.0;">${_(u"RECLAMACIONS COMERCIALITZACIÓ (SOM ENERGIA): Horari d'atenció de 9 a 14 h. 900 103 605 (cost de la trucada per a la cooperativa).<br />"
-               u"Si tens tarifa plana, pots contactar igualment al %s, sense cap cost.<br />"
-               u"Adreça electrònica: reclama@somenergia.coop<br />"
-               u"Adreça postal: C/ Pic de Peguera, 11, A 2 8. Edifici Giroemprèn. 17003 - Girona<br />") % (comer_phone,)}
-               % if agreementPartner:
-                   ${_ (u"Som Energia és la teva comercialitzadora elèctrica a mercè de l'acord firmat amb")} ${polissa.soci.name} <br />
+        <p style="line-height: 1.0;">
+               % if agreementPartner and agreementPartner['ref'] == "S019753":
+                   ${_(u"RECLAMACIONES COMERCIALIZACIÓN (ENERGÉTICA/SOM ENERGIA): Lunes a viernes, de 10 a 14h. (tardes, previa cita) 983 660 112")} <br/>
+                   ${_(u"Correo electrónico: info@energetica.coop")} <br/>
+                   ${_(u"Dirección postal: Avda. Ramón Pradera 12, bajo trasera; 47009-Valladolid")}
+               % else:
+                   ${_(u"RECLAMACIONS COMERCIALITZACIÓ (SOM ENERGIA): Horari d'atenció de 9 a 14 h. 900 103 605 (cost de la trucada per a la cooperativa).<br />"
+                   u"Si tens tarifa plana, pots contactar igualment al %s, sense cap cost.<br />"
+                   u"Adreça electrònica: reclama@somenergia.coop<br />"
+                   u"Adreça postal: C/ Pic de Peguera, 11, A 2 8. Edifici Giroemprèn. 17003 - Girona<br />") % (comer_phone,)}
+                   % if agreementPartner:
+                       ${_ (u"Som Energia és la teva comercialitzadora elèctrica a mercè de l'acord firmat amb")} ${polissa.soci.name} <br />
+                   % endif
                % endif
         </p>
     </div>
@@ -1068,7 +1096,7 @@ if has_autoconsum:
                 ${_(u"CNAE:")} <span style="font-weight: bold;">${polissa.cnae.name}</span> <br />
                 ${_(u'Data d\'alta del contracte: <span style="font-weight: bold;">%s</span>, sense condicions de permanència') % polissa.data_alta} <br />
                 ${_(u'Forma de pagament: rebut domiciliat')} <br />
-                ${_(u'Data de renovació automàtica: <span style="font-weight: bold;">%s</span>') % datetime.strptime(polissa.data_alta, '%Y-%m-%d').replace(datetime.now().year + 1).strftime('%Y-%m-%d')}
+                ${_(u'Data de renovació automàtica: <span style="font-weight: bold;">%s</span>') % get_renovation_date(polissa.data_alta,datetime.now())}
                 </p>
             </div>
             %if has_autoconsum:
@@ -1266,11 +1294,11 @@ ${emergency_complaints(factura)}
                         <div style="font-weight: bold;float:left">
                             ${_(u"Import Excés de Potència")}
                         </div>
-                        <div style="font-weight: bold; float:right;">34 €</div>
+                        <div style="font-weight: bold; float:right;">${"%s &euro;" % formatLang(total_exces_consumida)}</div>
                     </div>
                 %endif
                 <br/>
-                <p>
+                <p style="display:block;clear:both;">
                     ${_(u"Tot aquest import correspon al cost per peatges d'accés, ja que a Som Energia no afegim cap marge sobre aquest concepte")}
                 </p>
                 <hr/>
@@ -1297,14 +1325,12 @@ ${emergency_complaints(factura)}
                         <p>
                             ${_(u"D'aquest import, el cost per peatge d'accés ha estat de:")}
                         </p>
-                        <% print sorted(atr_linies_energia.items()) %>
                         % for k, l in sorted(atr_linies_energia.items()):
                             <div style="float: left;width:90%;margin: 0px 10px;">
                                 <div style="font-weight: bold;float:left">${_(u"(%s) %s kWh x %s €/kWh") % (k, locale.str(locale.atof(formatLang(l['quantity'], digits=6))), locale.str(locale.atof(formatLang(l['price'], digits=6))))}</div>
                                 <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l['atrprice_subtotal'])}</div>
                             </div><br />
                         % endfor
-                <br/>
                 <p>
                     ${_(u"En el terme d'energia, afegim el marge necessari per a desenvolupar la nostra activitat de comercialització. Donem un major pes al terme variable de la factura, que depèn del nostre ús de l'energia. Busquem incentivar l'estalvi i l'eficiència energètica dels nostres socis/es i clients")}
                 </p>
@@ -1378,9 +1404,23 @@ ${emergency_complaints(factura)}
         % endfor
         % for l in iese_lines:
         <div style="float: left;width:89%;margin: 0px 10px;">
-            <div style="font-weight: bold; float:left; width: 25em;">${_(u"Impost de l'electricitat")}</div>
-            <div style="font-weight: bold; float:left; width: 25em;">${_(u"%s x 5,11269%%") % (formatLang(l.base_amount))}</div>
-            <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.tax_amount)}</div>
+            % if factura.fiscal_position and 'IESE' in factura.fiscal_position.name and '%' in factura.fiscal_position.name:
+                <%
+                    excempcio = factura.fiscal_position.tax_ids[0].tax_dest_id.name
+                    excempcio = excempcio[excempcio.find("(")+1:excempcio.find(")")]
+                %>
+                <div style="font-weight: bold; float:left; width: 25em;">${_(u"Impost d'electricitat")}</div>
+                <div style="font-weight: bold; float:left; width: 45em;">
+                    ${_(u"%s x 5,11269%%") % (formatLang(l.base_amount))}
+                    ${_(u" (amb l'exempció del ")}
+                    ${_(excempcio)})
+                </div>
+                <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.tax_amount)}</div>
+            % else:
+                <div style="font-weight: bold; float:left; width: 25em;">${_(u"Impost de l'electricitat")}</div>
+                <div style="font-weight: bold; float:left; width: 25em;">${_(u"%s x 5,11269%%") % (formatLang(l.base_amount))}</div>
+                <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.tax_amount)}</div>
+            % endif
         </div>
         % endfor
         % for l in lloguer_lines:
