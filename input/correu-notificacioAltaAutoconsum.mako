@@ -2,8 +2,6 @@
     from mako.template import Template
     from datetime import datetime, timedelta
     from gestionatr.utils import get_description
-    import netsvc
-
 
     def render(text_to_render, object_):
         templ = Template(text_to_render)
@@ -25,7 +23,7 @@
             nom_titular =' ' + p_obj.separa_cognoms(object_._cr, object_._uid, object_.cups_polissa_id.titular.name)['nom']
         else:
             nom_titular = ''
-	return nom_titular
+        return nom_titular
 
     def get_auto_code_name(object_, code):
         if not code:
@@ -53,37 +51,19 @@
         if not code:
             return "Sin excedentes"
         return get_description(code,'TABLA_128')
-
-    def getStep01(swCase):
-        return getStep(swCase,'01')
-
-    def getStep(swCase,step_name):
-        for case_step_id in swCase.step_ids:
-            step_obj_name,step_id = case_step_id.pas_id.split(',')
-            if step_obj_name.endswith(step_name):
-                step_obj = swCase.pool.get(step_obj_name)
-                return step_obj.browse(swCase._cr, swCase._uid, int(step_id))
-
-    def getSomething(swCase,model,data,value,field):
-        tbl_obj = swCase.pool.get(model)
-        ids = tbl_obj.search(swCase._cr, swCase._uid,[(data,'=',value)])
-        if ids:
-            return tbl_obj.read(swCase._cr, swCase._uid, ids[0],[field])[field]
-
-
-
 %>
 <%
-    logger = netsvc.Logger()
     partner_diferent = False
     polissa = object.cups_polissa_id
     GiscedataPolissa = object.pool.get('giscedata.polissa')
     polissa_nif = GiscedataPolissa.read(object._cr, object._uid, polissa.id, ['titular_nif'])['titular_nif']
-    d = getStep01(object)
-    if d.generadors:
-        nif_generador = d.generadors[0].identificador
-        if nif_generador != polissa_nif:
-            partner_diferent = True
+
+    d = object.step_ids[0].pas_id
+    if d.motiu_canvi == '04':
+        if d.generadors:
+            nif_generador = d.generadors[0].identificador
+            if nif_generador != polissa_nif:
+                partner_diferent = True
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
@@ -102,7 +82,11 @@
     <head>
         <meta charset='utf-8'>
     </head>
-    % if object.cups_polissa_id.titular.lang == "ca_ES":
+    % if d.motiu_canvi == '01' and object.cups_polissa_id.titular.lang == "ca_ES":
+        ${correu_ca_motiu_01()}
+    % elif d.motiu_canvi == '01' and object.cups_polissa_id.titular.lang == "es_ES":
+        ${correu_es_motiu_01()}
+    % elif object.cups_polissa_id.titular.lang == "ca_ES":
         ${correu_cat()}
     % else:
         ${correu_es()}
@@ -176,14 +160,12 @@ Ens informen també que la persona titular de la instal·lació generadora és u
         <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
     </body>
 </%def>
-
-
 <%def name="correu_es()">
     <body>
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
-                    <font size=2><strong> Contracte Som Energia nº ${polissa.name}</strong></font>
+                    <font size=2><strong> Contrato Som Energia nº ${polissa.name}</strong></font>
                 </td>
                 <td valign=top rowspan="4" align="right">
                     <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
@@ -196,7 +178,7 @@ Ens informen també que la persona titular de la instal·lació generadora és u
             </tr>
             <tr>
                 <td height=2px>
-                    <font size=1> Codigo CUPS: ${object.cups_id.name}</font>
+                    <font size=1> Código CUPS: ${object.cups_id.name}</font>
                 </td>
             </tr>
             %if is_pot_tar:
@@ -225,7 +207,7 @@ Ens informen també que la persona titular de la instal·lació generadora és u
 	<b>Servicios auxiliares:</b> No<br>
 	<br>
         % if partner_diferent:
-Nos informan también que la persona titular de la instalación generadora es una persona diferente a la titular del contrato.
+Nos informan también que la persona titular de la instalación generadora es una persona diferente a la titular del contrato.<br>
 	<br>
         % endif
 	Si es correcto es necesario que nos lo confirmes respondiendo este mismo correo, <b>indicando en él expresamente que deseas que solicitemos la modificación correspondiente a la modalidad de autoproducción elegida a la distribuidora</b> para aplicarlo a tu contrato y en tu facturación mensual tal como se establece en las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">CONDICIONES GENERALES</a>.  <b>En caso de que se trate de una instalación registrada en la Comunidad Autónoma de Cataluña es necesario también que nos hagas llegar el Certificado de Instalación Eléctrica y el documento de la Declaración responsable completo de la Instalación generadora en el mismo correo.</b><br>
@@ -234,6 +216,92 @@ Nos informan también que la persona titular de la instalación generadora es un
 	Si la información que nos trasladan no es correcta nos lo debes notificar para comunicarlo a la distribuidora y también debes dirigirte al organismo correspondiente de tu Comunidad Autónoma para que modifiquen/verifiquen la información que les consta y vuelvan a pasar la información correctamente a la empresa distribuidora.<br>
 	<br>
 	Cuando lo hayan hecho nos volverán a enviar la información actualizada y te informaremos nuevamente.<br>
+	<br>
+	Cualquier duda seguimos en contacto.<br>
+	<br>
+	Saludos,<br>
+        <br>
+        Equipo de Som Energia<br>
+        <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
+        <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
+    </body>
+</%def>
+<%def name="correu_ca_motiu_01()">
+    <body>
+        <table width="100%" frame="below" bgcolor="#E8F1D4">
+            <tr>
+                <td height=2px>
+                    <font size=2><strong> Contracte Som Energia nº ${polissa.name}</strong></font>
+                </td>
+                <td valign=top rowspan="4" align="right">
+                    <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
+                </td>
+            </tr>
+            <tr>
+                <td height=2px>
+                    <font size=1> Adreça punt subministrament: ${object.cups_id.direccio}</font>
+                </td>
+            </tr>
+            <tr>
+                <td height=2px>
+                    <font size=1> Codi CUPS: ${object.cups_id.name}</font>
+                </td>
+            </tr>
+            %if is_pot_tar:
+            <tr>
+                <td height=2px width=100%>
+                    <font size=1> Titular: ${object.cups_polissa_id.titular.name}</font>
+                </td>
+            </tr>
+            %endif
+        </table>
+        <p>
+            Hola${get_partner_name(object)},
+        </p>
+	L’empresa de distribució elèctrica ens ha confirmat que ha activat la telegestió operativa amb CCH mensual.<br>
+	<br>
+	Qualsevol dubte seguim en contacte.<br>
+	<br>
+	Salutacions,<br>
+        <br>
+        Equip de Som Energia<br>
+        <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
+        <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
+    </body>
+</%def>
+<%def name="correu_es_motiu_01()">
+    <body>
+        <table width="100%" frame="below" bgcolor="#E8F1D4">
+            <tr>
+                <td height=2px>
+                    <font size=2><strong> Contrato Som Energia nº ${polissa.name}</strong></font>
+                </td>
+                <td valign=top rowspan="4" align="right">
+                    <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
+                </td>
+            </tr>
+            <tr>
+                <td height=2px>
+                    <font size=1> Dirección del punto de suministro: ${object.cups_id.direccio}</font>
+                </td>
+            </tr>
+            <tr>
+                <td height=2px>
+                    <font size=1> Código CUPS: ${object.cups_id.name}</font>
+                </td>
+            </tr>
+            %if is_pot_tar:
+            <tr>
+                <td height=2px width=100%>
+                    <font size=1> Titular: ${object.cups_polissa_id.titular.name}</font>
+                </td>
+            </tr>
+            %endif
+        </table>
+        <p>
+            Hola${get_partner_name(object)},
+        </p>
+	La empresa de distribución eléctrica nos ha confirmado que ha activado la telegestión operativa con CCH mensual.<br>
 	<br>
 	Cualquier duda seguimos en contacto.<br>
 	<br>
