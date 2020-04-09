@@ -660,17 +660,17 @@
 #    3.0A_ca: 34800
 #    webform_contact_phone_different_to_polissa: 107487
 #
-notificacioAltaAutoconsum:
-  template: input/correu-notificacioAltaAutoconsum.mako
-  model: giscedata.switching
-  poweremailId: giscedata_switching.notification_atr_D1_01
-  cases:
-    ca_auto_tit_diff: 277496
-    ca_auto_tit_equal: 280714
-    es_auto_tit_equal: 282857
-    es_auto_tit_diff: 282561
-    ca_noauto: 282878
-    es_noauto: 281207
+#notificacioAltaAutoconsum:
+#  template: input/correu-notificacioAltaAutoconsum.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_D1_01
+#  cases:
+#    ca_auto_tit_diff: 277496
+#    ca_auto_tit_equal: 280714
+#    es_auto_tit_equal: 282857
+#    es_auto_tit_diff: 282561
+#    ca_noauto: 282878
+#    es_noauto: 281207
 #
 #peticioDocumentacioSubministres:
 #  template: input/correu-peticioDocumentacioSubministres.mako
