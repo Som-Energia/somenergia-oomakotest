@@ -664,13 +664,17 @@ notificacioAltaAutoconsum:
   cases:
     ca_auto_tit_diff: 277496
     ca_auto_tit_equal: 280714
+    es_auto_tit_equal: 282857
+    es_auto_tit_diff: 282561
+    ca_noauto: 282878
+    es_noauto: 281207
 #
-##peticioDocumentacioSubministres:
-##  template: input/correu-peticioDocumentacioSubministres.mako
-##  model: res.partner
-##  poweemailId: 66
-##  cases:
-##    es: 100580
+#peticioDocumentacioSubministres:
+#  template: input/correu-peticioDocumentacioSubministres.mako
+#  model: res.partner
+#  poweemailId: 66
+#  cases:
+#    es: 100580
 #
 ##resumAmortitzacioGenerationKWh:
 ##  template: input/correu-resumAmortitzacioGenerationKWh.mako
