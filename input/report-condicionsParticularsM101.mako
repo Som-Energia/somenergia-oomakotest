@@ -57,7 +57,8 @@ def get_pas01(cas):
     %for cas in objects:
         <%
             pool = cas.pool
-            polissa = cas.cups_polissa_id
+            pol_obj = pool.get('giscedata.polissa')
+            polissa = pol_obj.browse(cas._cr, cas._uid, cas.cups_polissa_id.id)
             pas01 = get_pas01(cas)
             lang = polissa.titular.lang
             if lang not in ['ca_ES', 'es_ES']:
