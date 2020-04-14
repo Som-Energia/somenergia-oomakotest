@@ -49,11 +49,6 @@ def get_pas01(cas):
     <%def name="clean(text)">
         ${text or ''}
     </%def>
-    <%def name="enviament(diferent, text)">
-        %if diferent:
-            ${clean(text)}
-        %endif
-    </%def>
     %for cas in objects:
         <%
             pool = cas.pool
@@ -127,7 +122,6 @@ def get_pas01(cas):
             client_vat = dades_client.vat if es_ct_subrogacio and dades_client else polissa.titular.vat
             direccio_titular = dades_client.address[0] if es_ct_subrogacio and dades_client else polissa.titular.address[0]
             direccio_envio = polissa.direccio_notificacio
-            diferent = (polissa.direccio_notificacio != direccio_titular)
             periodes_energia, periodes_potencia = [], []
         %>
 
@@ -165,61 +159,6 @@ def get_pas01(cas):
             </tbody>
         </table>
 
-        %if diferent:
-        <h3> ${_("DADES DE CONTACTE")} </h3>
-        <table style="margin-top: 5px;">
-            <tr>
-                <td class="label">${_(u"Nom/Raó social:")}</td>
-                <td class="field">${enviament(diferent, direccio_envio.name)}</td>
-            </tr>
-        </table>
-        <table style="margin-top: 5px;">
-            <tr>
-                <td class="label">${_(u"Adreça:")}</td>
-                <td class="field">${enviament(diferent, direccio_envio.street)}</td>
-            </tr>
-            <tr>
-                <td class="label">${_(u"Codi postal i municipi:")} </td>
-                <td class="field">
-                    ${enviament(diferent,
-                        '{0} {1}'.format(
-                            clean_text(direccio_envio.zip), clean_text(direccio_envio.city)
-                        )
-                    )}
-                </td>
-                <td class="label">${_(u"Província i país:")} </td>
-                <td class="field">
-                    ${enviament(diferent,
-                        '{0} {1}'.format(
-                            clean_text(direccio_envio.state_id.name), clean_text(direccio_envio.country_id.name)
-                        )
-                    )}
-                </td>
-            </tr>
-        </table>
-        <table class="taula_custom" style="margin-top: 5px;">
-            <tr>
-                <td class="label">${_(u"Adreça electrònica:")} </td>
-                <td class="field">${enviament(diferent,
-                        '{0}'.format(
-                            clean_text(direccio_envio.email)
-                        )
-                    )}</td>
-                <td class="label">${_(u"Telèfon:")}</td>
-                <td class="field">${enviament(diferent,
-                        '{0}'.format(
-                            clean_text(direccio_envio.mobile)
-                        )
-                    )}</td>
-                <td class="label">${_(u"Telèfon 2:")}</td>
-                <td class="field">${enviament(diferent,
-                        '{0}'.format(
-                            clean_text(direccio_envio.phone)
-                        )
-                    )}</td>
-            </tr>
-        </table>
-        %endif
         <div class="titol">
             <h2 class="center" style="font-size: 13px;">${_(u"CONDICIONS TÈCNIQUES I ECONÒMIQUES")}</h2>
         </div>
