@@ -141,7 +141,7 @@ def renderMakoPdf(template, report_id, id, data, uid=1):
     from contextlib import closing
 
     with closing(db.cursor()) as cursor:
-        ctx = {}
+        ctx = {'browse_reference': True}
         ir_obj = pool.get('ir.actions.report.xml')
         report_xml = ir_obj.browse(cursor, uid, report_id, context=ctx)
         report_xml.report_rml = None
