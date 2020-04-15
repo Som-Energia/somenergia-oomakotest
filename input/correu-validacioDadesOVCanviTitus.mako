@@ -62,7 +62,7 @@
     <head>
         <meta charset='utf-8'>
     </head>
-    % if object.cups_polissa_id.titular.lang == "ca_ES":
+    % if pas01.dades_client and pas01.dades_client.lang == "ca_ES":
         ${correu_cat()}
     % else:
         ${correu_es()}
@@ -110,9 +110,7 @@
 		        - NIF, NIE o CIF: ${cut_vat}<br>
 		        - Número de compte: ${cut_iban}<br>
 		    </p>
-        <p>
-		        El contracte estarà associat al soci/a: ${nom_soci or u'Encara sense persona sòcia vinculada'}.<br>
-        </p>
+        <br>
         Salutacions,<br>
         <br>
         Equip de Som Energia<br>
@@ -161,9 +159,7 @@
 		        - NIF, NIE o CIF: ${cut_vat}<br/>
 		        - Número de cuenta: ${cut_iban}<br/>
         </p>
-        <p>
-            El contrato estará asociado al socio/a: ${nom_soci or u'Todavía sin persona socia asociada'}.<br>
-        </p>
+        <br>
 		    Saludos,<br/>
 		    <br/>
         Equipo de Som Energia<br>
