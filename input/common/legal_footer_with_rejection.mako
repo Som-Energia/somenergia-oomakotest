@@ -13,7 +13,6 @@
         </p>
     </p>
     <br>
-    <br>
     <p>
         <p>
             [ES] <b>Derecho de desistimiento.</b> Todas las personas consumidoras de la cooperativa disponen de 14 días naturales desde la fecha del contrato para desistir de los servicios. Si quieres desistir, es necesario que nos notifiques tu decisión por correo electrónico a <a href="mailto:comercializacion@somenergia.coop">comercializacion@somenergia.coop</a>, o por correo postal a SOM ENERGIA SCCL c/Pic de Peguera 11, 17003 Girona. Para hacerlo, puedes utilizar el texto que figura <b><a href="https://docs.google.com/document/d/1KOnlw370Fkv8VX8mw2qfC7zvPKnAmptcGsvXU-4tMCc/edit">en esta plantilla</a></b>. <br>

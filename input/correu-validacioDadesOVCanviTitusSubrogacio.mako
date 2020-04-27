@@ -40,8 +40,6 @@
 
     nom_nou_titular = get_nom_cognoms(object, pas01.dades_client)
 
-    nom_soci = get_nom_cognoms(object, object.polissa_ref_id.soci) if object.polissa_ref_id.soci else False
-
     cut_vat = hide_code(pas01.codi_document, 0, 4)
     cut_iban = hide_code(pas01.bank.iban, 0, 8)
 
@@ -49,7 +47,7 @@
     md_obj = object.pool.get('ir.model.data')
 
     template_id = md_obj.get_object_reference(
-        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_rejection_footer'
     )[1]
 
     text_legal = render(
