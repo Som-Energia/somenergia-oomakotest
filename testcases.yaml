@@ -15,6 +15,10 @@
 #    poweremailId: som_poweremail_common_templates.common_template_legal_footer
 #    cases: {}
 #
+#legal_footer_rejection:
+#  template: input/common/legal_footer_with_rejection.mako
+#  poweremailId: som_poweremail_common_templates.common_template_rejection_footer
+#  cases: {}
 #
 ######################################################
 ## Forms
@@ -185,9 +189,9 @@
 #     ca_ambsoci: 249766
 #     es_sensesoci: 253716
 #     ca_sensesoci: 170827
-#     es_ambsoci: 243142
+#     es_ambsoci: 266780
 #
-# validacioDadesOVCanviTitusSubrogacio:
+#validacioDadesOVCanviTitusSubrogacio:
 #   template: input/correu-validacioDadesOVCanviTitusSubrogacio.mako
 #   model: giscedata.switching
 #   poweremailId: som_polissa_condicions_generals_m101.notification_atr_M1_01_SS
