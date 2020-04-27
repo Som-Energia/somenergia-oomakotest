@@ -187,6 +187,14 @@
 #     ca_sensesoci: 170827
 #     es_ambsoci: 243142
 #
+# validacioDadesOVCanviTitusSubrogacio:
+#   template: input/correu-validacioDadesOVCanviTitusSubrogacio.mako
+#   model: giscedata.switching
+#   poweremailId: som_polissa_condicions_generals_m101.notification_atr_M1_01_SS
+#   cases:
+#     ca_ambsoci: 249766
+#     es: 270811
+#
 #notificacioAnticTitular:
 #  template: input/correu-notificacioAnticTitular.mako
 #  model: giscedata.switching
