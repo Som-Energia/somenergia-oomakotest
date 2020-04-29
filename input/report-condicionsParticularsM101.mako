@@ -479,7 +479,7 @@ def get_pas01(cas):
         </div>
         <hr/>
 
-        %if polissa != objects[-1]:
+        %if cas != objects[-1]:
             <p style="page-break-after:always;"></p>
         %endif
 
