@@ -572,8 +572,9 @@
 #    20A_es: 102 #par 13510
 #    30A_ca: 119789
 #    30A_es: 77717
-#    auto_ca: 260795
-#    auto_es: 235191
+#    auto01_ca: 260795
+#    auto01_es: 235191
+#    auto41_es: 279210
 #
 # activacioC205_automatica:
 #  template: input/correu-activacioC205.mako
@@ -585,7 +586,7 @@
 #    20A_es: 214   #par 13525
 #    30A_ca: 105074 #par 27587
 #    30A_es: 3699  #par 17345
-#    auto_es: 223916
+#    auto01_es: 223916
 #
 #activacioencontraCX06_manual:
 #  template: input/correu-activacioencontraCx06-manual.mako
