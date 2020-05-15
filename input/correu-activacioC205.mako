@@ -8,6 +8,13 @@
 <body>
 <%
 import sys
+
+def get_autoconsum_description(object_, auto_consum, lang):
+    C205 = object_.pool.get('giscedata.switching.c2.05')
+    tipus_autoconsum = dict(C205.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
+
+    return auto_consum + " - " + tipus_autoconsum[auto_consum]
+
 for step in object.step_ids:
   obj = step.pas_id
   try:
@@ -44,7 +51,9 @@ else:
     if p.potencia == 0: continue
     potencia = p.potencia
     break
-
+autoconsum_description = False
+if pas5.tipus_autoconsum != '00' and pas5.tipus_autoconsum:
+  autoconsum_description = get_autoconsum_description(object, pas5.tipus_autoconsum, object.cups_polissa_id.titular.lang)
 %>
 <%
 from mako.template import Template
@@ -86,6 +95,9 @@ ${lineesDePotencia}</li>
 %else:
 <li><strong> Potència: </strong>${potencia} W</li>
 %endif
+%if autoconsum_description:
+    <li><strong> Tipus d'Autoconsum: </strong> ${autoconsum_description}</li>
+%endif
 </ul>
 <br/>
 Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br/>
@@ -120,7 +132,10 @@ Los datos del nuevo contrato son:<br/>
 <li><strong> Potencia: </strong>
 ${lineesDePotencia}</li>
 %else:
-<li><strong> Potència: </strong>${potencia} W</li>
+<li><strong> Potencia: </strong>${potencia} W</li>
+%endif
+%if autoconsum_description:
+    <li><strong> Tipo de Autoconsumo: </strong> ${autoconsum_description}</li>
 %endif
 </ul>
 <br/>

@@ -7,6 +7,12 @@
 % endif
 <body>
 <%
+def get_autoconsum_description(object_, auto_consum, lang):
+    C105 = object_.pool.get('giscedata.switching.c1.05')
+    tipus_autoconsum = dict(C105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
+
+    return auto_consum + " - " + tipus_autoconsum[auto_consum]
+
 import sys
 for step in object.step_ids:
   obj = step.pas_id
@@ -45,6 +51,9 @@ else:
     potencia = p.potencia
     break
 
+autoconsum_description = False
+if pas5.tipus_autoconsum != '00' and pas5.tipus_autoconsum:
+  autoconsum_description = get_autoconsum_description(object, pas5.tipus_autoconsum, object.cups_polissa_id.titular.lang)
 %>
 <br>
 Hola${nom_titular},<br>
@@ -67,6 +76,9 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:
 ${lineesDePotencia}</li>
 %else:
 <li><strong> Potència: </strong>${potencia} W</li>
+%endif
+%if autoconsum_description:
+    <li><strong> Tipus d'Autoconsum: </strong> ${autoconsum_description}</li>
 %endif
 </ul>
 
@@ -107,7 +119,10 @@ Los datos del nuevo contrato son:<br>
 <li><strong> Potencia: </strong>
 ${lineesDePotencia}</li>
 %else:
-<li><strong> Potència: </strong>${potencia} W</li>
+<li><strong> Potencia: </strong>${potencia} W</li>
+%endif
+%if autoconsum_description:
+    <li><strong> Tipo de Autoconsumo: </strong> ${autoconsum_description}</li>
 %endif
 </ul>
 
