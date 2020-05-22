@@ -1663,6 +1663,9 @@ ${emergency_complaints(factura)}
         </div>
 
     </div>
+    <p style="font-size: .8em"><br />
+        ${_(u"Informació sobre protecció de dades: Les dades personals tractades per gestionar la relació contractual i, si s'escau, remetre informació comercial per mitjans electrònics, es conservaran fins a la fi de la relació, baixa comercial o els terminis de retenció legals. Pots exercir els teus drets a l'adreça postal de Som Energia com a responsable o a somenergia@delegado-datos.com .")}<br />
+    </p>
 </div>
 <script>
 var pie_total = ${pie_total};
