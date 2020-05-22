@@ -346,17 +346,47 @@
 #   model: giscedata.polissa
 #   reportXmlId: 527
 #   cases:
-#     ca_N: 240991
-#     catala_s_s: 207474
-#     catala_persona_f: 128907
+#       igic_vivenda: 158433
+#       igic_no_vivenda: 136877
+#       ca_N: 240991
+#       catala_s_s: 207474
+#       catala_persona_f: 128907
+#       20A_ca: 203092
+#       20A_es: 215948
+#       20DHA_ca: 208456
+#       20DHA_es: 58526
+#       20DHS_ca: 3744
+#       20DHS_es: 52378
+#       20A_e_g_es: 3847
+#       20DHA_g_ca: 86566
+#       20DHS_g_ca: 29616
+#       20DHS_g_es: 53737
+#       21A_ca: 78837
+#       21A_es: 171930
+#       21DHA_ca: 223631
+#       21DHA_es: 227116
+#       21DHS_ca: 49393
+#       21DHS_es: 60482
+#       30A_ca: 69977
+#       30A_es: 213676
+#       31A_ca: 12340
+#       31A_es: 192778
+#       20A_auto_directe_es: 262690
+#       20DHA_auto_g_es: 9398
+#       61A: 203034
 # reportCondicionsParticularsM101:
 #   template: input/report-condicionsParticularsM101.mako
 #   model: giscedata.switching
-#   reportXmlId: 999
+#   reportXmlId: 1469
 #   cases:
 #     ca_N: 274549
 #     catala_s_s: 282778
 #     catala_persona_f: 282717
+#     2_0DHA: 236801
+#     2_0A: 236941
+#     3_0A: 237057
+#     2_1A: 238934
+#     2_1DHA: 253218
 # avisCanviHora:
 #   template: input/correu-avisCanviHora.mako
 #   model: giscedata.polissa

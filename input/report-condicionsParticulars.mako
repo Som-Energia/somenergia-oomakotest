@@ -347,7 +347,7 @@ def clean_text(text):
                 %for p in periodes_potencia:
                     <td style="width: 60px;" class="center">
                     %if polissa.llista_preu:
-                        <span class="center">${formatLang(get_atr_price(cursor, uid, polissa, p, 'tp', ctx)[0], digits=6)}</span>
+                        <span class="center">${formatLang(get_atr_price(cursor, uid, polissa, p, 'tp', ctx, with_taxes=True)[0], digits=6)}</span>
                     %else:
                             &nbsp;
                     %endif
@@ -366,7 +366,7 @@ def clean_text(text):
                 %for p in periodes_energia:
                     %if polissa.llista_preu:
                         <td style="width: 60px;" class="center">
-                            <span class="">${formatLang(get_atr_price(cursor, uid, polissa, p, 'te', ctx)[0], digits=6)}</span>
+                            <span class="">${formatLang(get_atr_price(cursor, uid, polissa, p, 'te', ctx, with_taxes=True)[0], digits=3)}</span>
                         </td>
                     %else:
                         <td style="width: 60px;" class="">
@@ -387,7 +387,7 @@ def clean_text(text):
                 %for p in periodes_energia:
                     %if polissa.llista_preu:
                         <td style="width: 60px;" class="center">
-                            <span class="">${formatLang(get_gkwh_atr_price(cursor, uid, polissa, p, ctx)[0], digits=6)}</span>
+                            <span class="">${formatLang(get_gkwh_atr_price(cursor, uid, polissa, p, ctx, with_taxes=True)[0], digits=3)}</span>
                         </td>
                     %else:
                         <td style="width: 60px;" class="">
@@ -410,7 +410,7 @@ def clean_text(text):
                         %if polissa.llista_preu:
                             %if polissa.autoconsumo != '00':
                                 <td style="width: 60px;" class="center">
-                                    <span>${formatLang(get_atr_price(cursor, uid, polissa, p, 'ac', ctx)[0], digits=6)}</span>
+                                    <span>${formatLang(get_atr_price(cursor, uid, polissa, p, 'ac', ctx)[0], digits=3)}</span>
                                 </td>
                             %else:
                                 <td style="width: 60px;">
