@@ -1549,7 +1549,7 @@ ${emergency_complaints(factura)}
             <div class="mix_esp">
                 <div class="titol" style="width: 100%;"><span>${_(u"Mix producció en el sistema elèctric espanyol {year}").format(year=year_graph)}</span></div>
                 <div class="graf" style="text-align:center; width: 100%">
-                    <img src="${addons_path}/giscedata_facturacio_comer_som/report/graf1_html_${factura.lang_partner.lower()}_2018.png"/>
+                    <img src="${addons_path}/giscedata_facturacio_comer_som/report/graf1_html_${factura.lang_partner.lower()}_2020.png"/>
                 </div>
                 <div class="peu"><p>${_(u"El sistema elèctric espanyol ha importat un 4,3% de producció neta total")}</p></div>
             </div>
@@ -1563,25 +1563,25 @@ ${emergency_complaints(factura)}
                 </thead>
                 <tbody>
                 <tr>
-                    <td>${_(u"Renovable")}</td><td>100%</td><td>38,2%</td>
+                    <td>${_(u"Renovable")}</td><td>100%</td><td>37,0%</td>
                 </tr>
                 <tr>
-                    <td>${_(u"Cogeneració alta eficiència")}</td><td>0%</td><td>4,4%</td>
+                    <td>${_(u"Cogeneració alta eficiència")}</td><td>0%</td><td>4,9%</td>
                 </tr>
                 <tr>
-                    <td>${_(u"Cogeneració")}</td><td>0%</td><td>6,9%</td>
+                    <td>${_(u"Cogeneració")}</td><td>0%</td><td>6,7%</td>
                 </tr>
                 <tr>
-                    <td>${_(u"CC Gas natural")}</td><td>0%</td><td>11,7%</td>
+                    <td>${_(u"CC Gas natural")}</td><td>0%</td><td>21,5%</td>
                 </tr>
                 <tr>
-                    <td>${_(u"Carbó")}</td><td>0%</td><td>14,5%</td>
+                    <td>${_(u"Carbó")}</td><td>0%</td><td>4,9%</td>
                 </tr>
                 <tr>
-                    <td>${_(u"Fuel/Gas")}</td><td>0%</td><td>2,6%</td>
+                    <td>${_(u"Fuel/Gas")}</td><td>0%</td><td>2,2%</td>
                 </tr>
                 <tr>
-                    <td>${_(u"Nuclear")}</td><td>0%</td><td>20,7%</td>
+                    <td>${_(u"Nuclear")}</td><td>0%</td><td>21,8%</td>
                 </tr>
                 <tr>
                     <td>${_(u"Altres")}</td><td>0%</td><td>1,0%</td>
@@ -1637,21 +1637,21 @@ ${emergency_complaints(factura)}
                     </thead>
                     <tbody>
                     <tr>
-                        <td>${_(u"Eòlica")}</td><td>363.595</td>
+                        <td>${_(u"Eòlica")}</td><td>298.951</td>
                     </tr>
                     <tr>
-                        <td>${_(u"Solar fotovoltaica")}</td><td>29.434</td>
+                        <td>${_(u"Solar fotovoltaica")}</td><td>83.142</td>
                     </tr>
                     <tr>
-                        <td>${_(u"Minihidràulica")}</td><td>2.650</td>
+                        <td>${_(u"Minihidràulica")}</td><td>35.984</td>
                     </tr>
                     <tr>
-                        <td>${_(u"Biogàs")}</td><td>4.288</td>
+                        <td>${_(u"Biogàs")}</td><td>52.857</td>
                     </tr>
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td>${_(u"TOTAL")}</td><td>399.967</td>
+                        <td>${_(u"TOTAL")}</td><td>470.934</td>
                     </tr>
                     </tfoot>
                 </table>
@@ -1659,7 +1659,7 @@ ${emergency_complaints(factura)}
             ${_(u"Pots veure l'origen dels certificats de garantia d'origen en l'enllaç següent:")}<br/><a href="http://bit.ly/GdO15${factura.lang_partner.lower()[0:2]}")}>http://bit.ly/GdO15${factura.lang_partner.lower()[0:2]}</a>
         </div>
         <div class="cert_orig_grafic">
-            <img class="orig" src="${addons_path}/giscedata_facturacio_comer_som/report/graf3_html_${factura.lang_partner.lower()}_2018.png"/>
+            <img class="orig" src="${addons_path}/giscedata_facturacio_comer_som/report/graf3_html_${factura.lang_partner.lower()}_2020.png"/>
         </div>
 
     </div>
