@@ -141,7 +141,7 @@ def renderMakoPdf(template, report_id, id, data, uid=1):
     from contextlib import closing
 
     with closing(db.cursor()) as cursor:
-        ctx = {'browse_reference': True}
+        ctx = {}
         ir_obj = pool.get('ir.actions.report.xml')
         report_xml = ir_obj.browse(cursor, uid, report_id, context=ctx)
         report_xml.report_rml = None
@@ -155,6 +155,7 @@ def renderMakoPdf(template, report_id, id, data, uid=1):
 
         class report_webkit_html(report_sxw.rml_parse):
             def __init__(self, cursor, uid, name, context):
+                context['browse_reference'] = True
                 super(report_webkit_html, self).__init__(cursor, uid, name,
                                                          context=context)
                 self.localcontext.update({
