@@ -164,7 +164,8 @@ def renderMakoPdf(template, report_id, id, data, uid=1):
                 })
 
         # forcing to use our .mako template
-        report_xml.report_webkit = os.path.join(config['oomako_path'],template)
+        if 'useErpMako' not in data or not data['useErpMako']:
+            report_xml.report_webkit = os.path.join(config['oomako_path'],template)
 
         wk = webkit_report.WebKitParser(
             "report."+report_xml.report_name,
