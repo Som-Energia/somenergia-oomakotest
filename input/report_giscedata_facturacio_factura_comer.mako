@@ -8,7 +8,7 @@ import calendar
 from collections import namedtuple
 from giscedata_facturacio_indexada.report.report_indexada_helpers import getCsvData, colorPicker, getAxisAndData
 locale.setlocale(locale.LC_NUMERIC,'es_ES.utf-8')
-year_graph = 2018
+year_graph = 2019
 pool = objects[0].pool
 polissa_obj = objects[0].pool.get('giscedata.polissa')
 factura_linia_obj = objects[0].pool.get('giscedata.facturacio.factura.linia')
@@ -1551,7 +1551,7 @@ ${emergency_complaints(factura)}
                 <div class="graf" style="text-align:center; width: 100%">
                     <img src="${addons_path}/giscedata_facturacio_comer_som/report/graf1_html_${factura.lang_partner.lower()}_2020.png"/>
                 </div>
-                <div class="peu"><p>${_(u"El sistema elèctric espanyol ha importat un 4,3% de producció neta total")}</p></div>
+                <div class="peu"><p>${_(u"El sistema elèctric espanyol ha importat un {}% de producció neta total").format(formatLang(2.7, digits=1))}</p></div>
             </div>
         </div>
         <div class="mix_taula">
