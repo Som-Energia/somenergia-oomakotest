@@ -1606,7 +1606,7 @@ ${emergency_complaints(factura)}
                     <img class="a_g" src="${addons_path}/giscedata_facturacio_comer_som/report/graella_html.png"/>
                 </div>
                 <div class="env_mitjana" >
-                    <p>${_(u'Mitjana nacional')}<br /><span style="font-weight: 900;">0,26</span></p>
+                    <p>${_(u'Mitjana nacional')}<br /><span style="font-weight: 900;">0,20</span></p>
                 </div>
                 <div class="env_marc">${_(u'Contingut de carboni<br />Quilograms de diòxid de carboni per kWh')}<br /><span style="font-weight: 900;font-size: 1.1em">0,00</span></div>
                 <div class="env_img_lleg">${_(u"Més diòxid de carboni")}</div>
@@ -1618,7 +1618,7 @@ ${emergency_complaints(factura)}
                     <img class="a_g" src="${addons_path}/giscedata_facturacio_comer_som/report/graella_html.png"/>
                 </div>
                 <div class="env_mitjana">
-                    <p>${_(u'Mitjana nacional')}<br /><span style="font-weight: 900;">0,51</span></p>
+                    <p>${_(u'Mitjana nacional')}<br /><span style="font-weight: 900;">0,52</span></p>
                 </div>
                 <div class="env_marc">${_(u'Residus radioactius<br />Mil·ligrams per kWh')}<br /><span style="font-weight: 900;font-size: 1.1em">0,00</span></div>
                 <div class="env_img_lleg">${_(u"Més residus radioactius")}</div>
