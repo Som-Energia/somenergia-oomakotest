@@ -672,6 +672,10 @@
 #    20A_es: 1583  #par 11326
 #    30A_ca: 3632  #par 5366
 #    30A_es: 12696 #par 22212
+#    trifasica_ca: 272480
+#    trifasica_es: 271979
+#    monofasica_ca: 273113
+#    monofasica_es: 273331
 #
 #notificacioAcceptacioA3:
 #  template: input/correu-notificacioAcceptacioA3.mako
@@ -723,6 +727,10 @@
 #    2.1DHAto3.0A_ca: 50850
 #    3.0A_ca: 34800
 #    webform_contact_phone_different_to_polissa: 107487
+#    trifasica_ca: 272480
+#    trifasica_es: 271979
+#    monofasica_ca: 273113
+#    monofasica_es: 273331
 #
 #notificacioAltaAutoconsum:
 #  template: input/correu-notificacioAltaAutoconsum.mako
