@@ -59,6 +59,14 @@ def get_pas01(cas):
             if lang not in ['ca_ES', 'es_ES']:
                 lang = 'es_ES'
             setLang(lang)
+            tensio_nominal = polissa.tensio
+            if hasattr(pas01, "dt_cie_papel_tensio_suministre"):
+                if pas01.dt_cie_papel_tensio_suministre:
+                    tensio_obj = pool.get('giscedata.tensions.tensio')
+                    tensio_id = tensio_obj.search([
+                        ("cnmc_code", "=", pas01.dt_cie_papel_tensio_suministre)
+                    ])
+                    tensio_nominal = tensio_obj.read(tensio_id, ["name"]).get("name")
         %>
         <div id="capcelera">
             <div id="logo_capcelera">
@@ -206,12 +214,12 @@ def get_pas01(cas):
                 <td class="label">${_(u"Empresa distribuïdora:")}</td>
                 <td class="field">${polissa.cups.distribuidora_id.name}</td>
                 <td class="label">${_(u"Tensió Nominal (V):")}</td>
-                <td class="field">${clean(polissa.tensio)}</td>
+                <td class="field">${clean(tensio_nominal)}</td>
             </tr>
         </table>
 
         <h3> ${_("PEATGE D'ACCÉS (Definit al RD 1164/2001)")} </h3>
-	<%
+    <%
             es_canvi_tecnic = pas01.pas_id.sollicitudadm == "N"
 
             tarifa_contractada = polissa.tarifa_codi
@@ -223,7 +231,7 @@ def get_pas01(cas):
             potencies = pas01.pas_id.pot_ids if es_canvi_tecnic else polissa.potencies_periode 
             autoconsum = pas01.pas_id.tipus_autoconsum if es_canvi_tecnic else polissa.autoconsumo
             
-	%>
+    %>
         <table style="margin-top: 5px;">
             <tr>
                 <td class="label">${_(u"Tarifa contractada:")}</td>
