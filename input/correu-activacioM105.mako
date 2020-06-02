@@ -150,7 +150,6 @@
         %else:
             &nbsp;&nbsp; <strong> Potència: ${pot_deseada} W</strong><br>
         %endif
-
         %if pas01 and pas01.solicitud_tensio:
             <%
                 tipus_tensio = None
@@ -158,10 +157,8 @@
                     tipus_tensio = "Trifàsica"
                 elif pas01.solicitud_tensio == 'M':
                     tipus_tensio = "Monofàsica"
-                endif
             %>
-            &nbsp;&nbsp; <strong> Tensió: ${tipus_tensio}</strong>
-            <br>
+            &nbsp;&nbsp; <strong> Tensió: ${tipus_tensio}</strong><br>
         %endif
 
         %if pas05.tipus_autoconsum != '00':
@@ -256,7 +253,6 @@
         %else:
             &nbsp;&nbsp;<strong> Potencia: ${pot_deseada} W</strong><br>
         %endif
-
         %if pas01 and pas01.solicitud_tensio:
             <%
                 tipus_tensio = None
@@ -264,10 +260,8 @@
                     tipus_tensio = "Trifásica"
                 elif pas01.solicitud_tensio == 'M':
                     tipus_tensio = "Monofásica"
-                endif
             %>
-            &nbsp;&nbsp; <strong> Tensión: ${tipus_tensio}</strong>
-            <br>
+            &nbsp;&nbsp; <strong> Tensión: ${tipus_tensio}</strong><br>
         %endif
 
         %if pas05.tipus_autoconsum != '00':

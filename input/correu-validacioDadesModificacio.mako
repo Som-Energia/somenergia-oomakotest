@@ -78,9 +78,8 @@ if pas1:
                     tipus_tensio = "Trifàsica"
                 elif pas1.solicitud_tensio == 'M':
                     tipus_tensio = "Monofàsica"
-                endif
             %>
-            - Tensió desitjada: ${tipus_tensio}
+        - Tensió desitjada: ${tipus_tensio}
         %endif
     </p>
     <p>
@@ -135,9 +134,8 @@ Si ets una empresa i la teva distribuïdora és E-Distribución (antiga Endesa),
                     tipus_tensio = "Trifásica"
                 elif pas1.solicitud_tensio == 'M':
                     tipus_tensio = "Monofásica"
-                endif
             %>
-            - Tensión deseada: ${tipus_tensio}
+        - Tensión deseada: ${tipus_tensio}
         %endif
     </p>
     <p>
