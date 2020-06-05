@@ -731,14 +731,14 @@ def get_renovation_date(data_alta , today):
     <div class="invoice_data">
         % if has_autoconsum and factura.is_gkwh:
               <div class="logo_little_left">
-                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_auto_little.png" width="65px"/>
+                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_auto_little_${factura.lang_partner.lower()}.png" width="65px"/>
               </div>
               <div class="logo_little_right">
                   <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_gkwh_little.png" width="65px"/>
               </div>
         % elif has_autoconsum:
               <div class="logo_little_center">
-                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_auto_little.png" width="65px"/>
+                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_auto_little_${factura.lang_partner.lower()}.png" width="65px"/>
               </div>
         % elif factura.is_gkwh:
               <div class="logo_little_center">
