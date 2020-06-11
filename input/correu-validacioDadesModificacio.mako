@@ -71,6 +71,16 @@ if pas1:
         %else:
         - Potència desitjada: ${pot_deseada} W <br>
         %endif
+        %if pas1.solicitud_tensio:
+            <%
+                tipus_tensio = None
+                if pas1.solicitud_tensio == 'T':
+                    tipus_tensio = "Trifàsica"
+                elif pas1.solicitud_tensio == 'M':
+                    tipus_tensio = "Monofàsica"
+            %>
+        - Tensió desitjada: ${tipus_tensio}
+        %endif
     </p>
     <p>
         Telèfon de contacte: ${cont_telefon} (recorda que aquest telèfon l'utilitzarà la distribuïdora de la teva zona per posar-se en contacte amb tu en el cas que sigui necessari).
@@ -116,6 +126,16 @@ Si ets una empresa i la teva distribuïdora és E-Distribución (antiga Endesa),
         ${pot_deseada}
         %else:
         - Potencia deseada: ${pot_deseada} W<br>
+        %endif
+        %if pas1.solicitud_tensio:
+            <%
+                tipus_tensio = None
+                if pas1.solicitud_tensio == 'T':
+                    tipus_tensio = "Trifásica"
+                elif pas1.solicitud_tensio == 'M':
+                    tipus_tensio = "Monofásica"
+            %>
+        - Tensión deseada: ${tipus_tensio}
         %endif
     </p>
     <p>
