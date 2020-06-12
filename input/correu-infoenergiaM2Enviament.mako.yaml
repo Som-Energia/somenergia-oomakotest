@@ -1,7 +1,0 @@
-cc: false
-to: infoenergia@somenergia.coop
-subject_translations:
-  ca_ES: PROVA - Primer informe de 2019 del servei Infoenergia (contracte ${object.name})
-  es_ES: PROVA - Primer informe de 2019 del servicio Infoenergía (contrato ${object.name})
-subject: INFOENERGIA ${env['user']._context.get('period')} (${env['user']._context.get('empowering_channel')})
-bcc: false

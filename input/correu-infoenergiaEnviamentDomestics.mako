@@ -22,9 +22,9 @@ text_legal = render(t_obj.read(
 %>
 <html>
 <body>
-% if object.pagador.lang  == "ca_ES":
+% if object.titular.lang  == "ca_ES":
 <br>
-Hola ${object.direccio_pagament.name.split(',')[-1]},<br>
+Hola ${object.titular.name.split(',')[-1]},<br>
 <br>
 ${env['user']._context.get('body_personal')}
 <br>
@@ -33,9 +33,9 @@ Moltes gràcies per la teva confiança i qualsevol comentari, observació o sugg
 Bona Energia!<br>
 <br>
 % endif
-% if  object.pagador.lang  != "ca_ES":
+% if  object.titular.lang  != "ca_ES":
 <br>
-Hola ${object.direccio_pagament.name.split(',')[-1]},<br>
+Hola ${object.titular.name.split(',')[-1]},<br>
 <br>
 ${env['user']._context.get('body_personal')}
 <br>
