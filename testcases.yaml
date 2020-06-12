@@ -1045,4 +1045,21 @@
 #  reportXmlId: 1507
 #  cases:
 #    ca: 7641957
+########################################
+### Administradora
+##
+emailAdministradoraPerTitular:
+  template: input/correu-emailAdministradoraPerTitular.mako
+  model: giscedata.polissa
+  poweremailId: 274
+  cases:
+    ca: 123850
+
+emailAdministradoraPerAdministradora:
+  template: input/correu-emailAdministradoraPerAdministradora.mako
+  model: giscedata.polissa
+  poweremailId: 275
+  cases:
+    ca: 123850
+
 # vim: et ts=2 sw=2
