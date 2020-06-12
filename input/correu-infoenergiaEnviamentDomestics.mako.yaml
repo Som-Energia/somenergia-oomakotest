@@ -1,7 +1,7 @@
 cc: false
 to: ${object.titular.address[0].email}
 subject_translations:
-  ca_ES: Primer informe de 2020 del Servei Infoenergia (contracte ${object.name})
-  es_ES: Primer informe de 2020 del Servicio Infoenergía (contrato ${object.name})
-subject: INFOENERGIA ${env['user']._context.get('period')} (${env['user']._context.get('empowering_channel')})
+  ca_ES: Segon informe de 2020 del servei Infoenergia (contracte ${object.name})
+  es_ES: Segundo informe de 2020 del Servicio Infoenergía (contrato ${object.name})
+subject: Segon informe de 2020 del servei Infoenergia (contracte ${object.name})
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
