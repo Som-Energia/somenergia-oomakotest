@@ -39,10 +39,6 @@ Benvolgut/da,<br>
 T'enviem la <B>factura</B> d'electricitat de Som Energia. <br>
 <br>
 Carregarem l'import d'aquesta factura al teu número de compte durant els propers dies.<br>
-<br>
-Si tens dificultats per afrontar el pagament d’aquesta factura arran de la crisi de la <B>COVID-19</B>, pots sol·licitar l’ajornament del pagament fins que acabi l’estat d’alarma responent aquest mateix correu. Quan finalitzi l’estat d’alarma estudiarem quina pot ser la millor manera per tal que, qui s’hi hagi acollit, pugui saldar el deute pendent.<br>
-<br>
-Si ets autònom o autònoma, necessitarem que ens enviïs una còpia del Justificant d’Alta en el Règim Especial de Treballadors Autònoms de la Seguretat Social (RETA) amb la teva petició.<br>
 </p>
 <br>
 <U><B>Resum de la factura</B></U><br>
@@ -79,10 +75,6 @@ Saludos,<br>
 Te enviamos la <B>factura</B> de electricidad de Som Energia. <br>
 <br>
 Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
-<br>
-Si tienes dificultades para afrontar el pago de esta factura a raíz de la crisis de la <B>COVID-19</B>, puedes aplazar el pago hasta que acabe el estado de alarma respondiendo este mismo correo. Cuando finalice el estado de alarma estudiaremos cual puede ser la mejor manera para que, quien se haya acogido a esta medida, pueda saldar la deuda pendiente.<br>
-<br>
-Si eres autónomo o autónoma, necesitaremos que nos envíes una copia del Justificante de Alta en el Régimen Especial de Trabajadores Autónomos de la Seguridad Social (RETA) con tu petición.<br>
 </p>
 <br>
 <U><B>Resumen de la factura</B></U><br>
