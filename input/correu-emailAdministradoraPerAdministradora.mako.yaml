@@ -1,0 +1,7 @@
+cc: false
+to: ${object.administradora.www_email}
+subject_translations:
+  ca_ES: Titul administradora
+  es_ES: Titolo administradora
+subject: Titol administradora
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

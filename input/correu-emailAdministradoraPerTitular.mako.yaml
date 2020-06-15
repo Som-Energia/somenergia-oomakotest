@@ -1,0 +1,7 @@
+cc: false
+to: ${object.titular.www_email}
+subject_translations:
+  ca_ES: Titol Titular
+  es_ES: Titulo Titular
+subject: Titol Titular
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
