@@ -1051,15 +1051,21 @@
 emailAdministradoraPerTitular:
   template: input/correu-emailAdministradoraPerTitular.mako
   model: giscedata.polissa
-  poweremailId: 274
+  poweremailId: 294 #274
   cases:
-    ca: 123850
+    ca: 132850
+    es: 165532
+    ca_multi: 214978
+    es_multi: 173790
 
 emailAdministradoraPerAdministradora:
   template: input/correu-emailAdministradoraPerAdministradora.mako
   model: giscedata.polissa
-  poweremailId: 275
+  poweremailId: 295 #275
   cases:
-    ca: 123850
+    ca: 132850
+    es: 165532
+    ca_multi: 173790
+    es_multi: 214978
 
 # vim: et ts=2 sw=2

@@ -24,16 +24,47 @@ text_legal = render(t_obj.read(
     object
 )
 
-titular = "vsjlnvsolvfs"
-administradora = "jsvjlbvsjñbjv"
-contractes = ['01234','12234','23242']
-contractes = ', '.join(contractes)
+rp_obj = object.pool.get('res.partner')
+p_obj = object.pool.get('giscedata.polissa')
+
+def get_clean_name(composed_name, vat, name_only):
+    if rp_obj.vat_es_empresa(object._cr, object._uid, vat):
+        return composed_name
+    name = rp_obj.separa_cognoms(object._cr, object._uid, composed_name)
+    if name_only:
+        return name['nom']
+    return '{} {}{}{}'.format(name['nom'],name['cognoms'][0],'' if name['fuzzy'] else ' ',name['cognoms'][1])
+
+titular = get_clean_name(object.titular.name, object.titular.vat, True)
+administradora = get_clean_name(object.administradora.name, object.administradora_nif, False)
+
+contractes = []
+c_ids = p_obj.search(object._cr, object._uid, [
+    ('titular.id','=',object.titular.id),
+    ('administradora.id','=',object.administradora.id)])
+
+c_data = p_obj.read(object._cr, object._uid, c_ids , ['name'])
+contractes = [c['name'] for c in c_data]
+
+def compose(text,separator,contracts):
+    return text + ', '.join(contracts[:-1])+separator+contracts[-1]
+
+if len(contractes) > 1:
+    if object.titular.lang != "es_ES":
+        contractes_str = compose('dels contractes nº ', ' i ', contractes)
+    else:
+        contractes_str = compose('de los contratos nº ', ' y ', contractes)
+else:
+    if object.titular.lang != "es_ES":
+        contractes_str = 'del contracte nº ' + contractes[0]
+    else:
+        contractes_str = 'del contrato nº ' + contractes[0]
 %>
 <br>
-Hola${titular}<br>
-% if object.titular.lang != "es_ES":
+Hola ${titular}<br>
 <br>
-Reps aquest correu perquè has sol·licitat, a través de l'oficina virtual, que ${administradora} pugui veure i gestionar la informació dels contractes nº ${contractes} que tens amb Som Energia.<br>
+% if object.titular.lang != "es_ES":
+Reps aquest correu perquè has sol·licitat, a través de l'oficina virtual, que ${administradora} pugui veure i gestionar la informació ${contractes_str} que tens amb Som Energia.<br>
 <br>
 Per a qualsevol dubte seguim en contacte.<br>
 <br>
@@ -44,8 +75,7 @@ Equip de Som Energia<br>
 ----------------------------------------------------------------------------------------------------
 % endif
 % if  object.titular.lang != "ca_ES":
-<br>
-Recibes este correo porque has solicitado, a través de la oficina virtual, que ${administradora} pueda ver y gestionar la información de los contratos nº ${contractes} que tienes con Som Energia. <br>
+Recibes este correo porque has solicitado, a través de la oficina virtual, que ${administradora} pueda ver y gestionar la información ${contractes_str} que tienes con Som Energia. <br>
 <br>
 Para cualquier duda seguimos en contacto. <br>
 <br>
