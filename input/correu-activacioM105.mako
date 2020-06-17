@@ -55,9 +55,12 @@
 <%
     M105 = object.pool.get('giscedata.switching.m1.05')
     pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
+    pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
 
-    tipus_tensio = get_tension_type(object, pas05,
-                                    object.polissa_ref_id.titular.lang)
+    tipus_tensio = False
+    if pas01 and pas01.solicitud_tensio:
+        tipus_tensio = get_tension_type(object, pas05,
+                                        object.polissa_ref_id.titular.lang)
 
     is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
     is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
