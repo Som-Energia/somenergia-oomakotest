@@ -98,7 +98,7 @@
             Us informem que hem rebut correctament la sol·licitud d'un canvi de titular pel contracte número ${object.cups_polissa_id.name} amb el CUPS: ${object.cups_id.name} i del qual, fins ara, el titular és en/na ${object.cups_polissa_id.titular.name}.
         </p>
         <p>
-            Si es tracta d'un canvi de titularitat degut a la defunció de la persona titular actual o bé detecteu un error en el resum de dades següent, contesteu aquest correu.<br>
+            Si es tracta d'un canvi de titularitat degut a una fusió d'empreses cal que ens ajdunteu el document acreditatiu responent a aquest mateix correu. En el cas que detecteu un error en el resum de dades següent agraïrem que ens ho comuniqueu el més aviat possible contestant aquest mateix correu.<br>
             <b>Si tot és correcte no és necessari que contesteu</b> i la gestió es durà a terme en un màxim de cinc dies hàbils.<br>
             És important tenir en compte que en les properes setmanes, la persona que ha estat titular fins ara, rebrà una última factura fins a la data d’activació del contracte amb la nova persona titular.<br>
         </p>
@@ -147,7 +147,7 @@
 		        Os informamos que hemos recibido correctamente la solicitud de cambio de titular del contrato número ${object.cups_polissa_id.name} con el CUPS: ${object.cups_id.name} y del cual, hasta ahora el titular es ${object.cups_polissa_id.titular.name}.
 		    </p>
         <p>
-		        Si se trata de un cambio de titularidad debido a la defunción de la persona titular actual o bien detectáis un error en el resumen de datos siguiente, contestad este correo.<br/>
+		        Si se trata de un cambio de titularidad debido a una fusión de empresas es necesario que nos hagas llegar el documento acreditativo. En caso de detectar algún error en el resumen de datos siguiente agradeceremos que nos lo comuniquen lo antes posible contestando este mismo correo.<br/>
 		        <b>Si todo es correcto no es necesario que lo hagáis</b> y la gestión se llevará a cabo en un plazo máximo de cinco días hábiles.<br/>
 		        Es importante tener en cuenta que en las próximas semanas, la persona que ha sido titular hasta ahora, recibirá una última factura hasta la fecha de activación del contrato con la nueva persona titular.<br/>
         </p>
