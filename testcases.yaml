@@ -1012,13 +1012,13 @@
 #  cases:
 #    ca: 17
 #    es: 1028
-# infoenergiaM2Enviament:
-#   template: input/correu-infoenergiaM2Enviament.mako
-#   model: giscedata.polissa
-#   poweremailId: 60
-#   cases:
-#     ca: 17
-#     es: 1028
+#infoenergiaEnviamentDomestics:
+#  template: input/correu-infoenergiaEnviamentDomestics.mako
+#  model: giscedata.polissa
+#  poweremailId: 60
+#  cases:
+#    ca: 17
+#    es: 1028
 #
 #emailComunicarImportFacturacioAnual:
 #  template: input/correu-comunicarImportFacturacioAnual.mako
