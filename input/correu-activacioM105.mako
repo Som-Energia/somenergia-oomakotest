@@ -2,6 +2,16 @@
     from mako.template import Template
     from datetime import datetime, timedelta
 
+    THREEPHASE = {
+        'ca_ES': "Trifàsica",
+        'es_ES': "Trifásica"
+    }
+
+    MONOPHASE = {
+        'ca_ES': "Monofàsica",
+        'es_ES': "Monofásica"
+    }
+
     def render(text_to_render, object_):
         templ = Template(text_to_render)
         return templ.render_unicode(
@@ -36,19 +46,9 @@
         tension_name = tension_obj.read(object_._cr, object_._uid,
                                         tension_id, ['name']).get('name', '')
 
-        tension_text = False
         if tension_name.startswith("3x"):
-            if lang == "ca_ES":
-                tension_text = "Trifàsica"
-            else:
-                tension_text = "Trifásica"
-        else:
-            if lang == "ca_ES":
-                tension_text = "Monofàsica"
-            else:
-                tension_text = "Monofásica"
-
-        return tension_text
+            return THREEPHASE[lang]
+        return MONOPHASE[lang]
 
 %>
 
@@ -56,11 +56,6 @@
     M105 = object.pool.get('giscedata.switching.m1.05')
     pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
     pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
-
-    tipus_tensio = False
-    if pas01 and pas01.solicitud_tensio and pas05.tensio_suministre:
-        tipus_tensio = get_tension_type(object, pas05,
-                                        object.polissa_ref_id.titular.lang)
 
     is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
     is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
@@ -83,6 +78,10 @@
     pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
 
     polissa = object.polissa_ref_id if is_canvi_tit else object.cups_polissa_id
+
+    tipus_tensio = False
+    if pas01 and pas01.solicitud_tensio and pas05.tensio_suministre:
+        tipus_tensio = get_tension_type(object, pas05, polissa.titular.lang)
 
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
