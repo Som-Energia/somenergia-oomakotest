@@ -61,17 +61,16 @@ else:
         contractes_str = 'del contrato nº ' + contractes[0]
 %>
 <br>
-Hola ${administradora}<br>
+Hola ${administradora},<br>
 <br>
 % if mail_lang != "es_ES":
 T’enviem aquest correu per informar-te que, a petició de ${titular}, podràs veure i gestionar la informació ${contractes_str} des de la teva oficina virtual.<br>
 <br>
-Si no has accedit mai a l'oficina virtual, <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aqui</a> t’expliquem com fer-ho.<br>
+Si no has accedit mai a l'oficina virtual, <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquí</a> t’expliquem com fer-ho.<br>
 <br>
 Per a qualsevol dubte seguim en contacte.<br>
 <br>
 Equip de Som Energia<br>
-<br>
 % endif
 % if  mail_lang != "ca_ES" and mail_lang != "es_ES":
 ----------------------------------------------------------------------------------------------------
@@ -79,13 +78,14 @@ Equip de Som Energia<br>
 % if  mail_lang != "ca_ES":
 Te enviamos este correo para informarte que, a petición de ${titular}, podrás ver y gestionar la información ${contractes_str} desde tu oficina virtual.<br>
 <br>
-Si no has accedido nunca a la oficina virtual, <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">aqui</a> te explicamos cómo hacerlo.<br>
+Si no has accedido nunca a la oficina virtual, <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">aquí</a> te explicamos cómo hacerlo.<br>
 <br>
 Para cualquier duda seguimos en contacto.<br>
 <br>
 Equipo de Som Energia<br>
-<br>
 % endif
+<a href="https://www.somenergia.coop/">www.somenergia.coop</a><br>
+<br>
 ${text_legal}
 </body>
 </html>

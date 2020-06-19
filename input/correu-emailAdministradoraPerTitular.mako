@@ -61,7 +61,7 @@ else:
         contractes_str = 'del contrato nº ' + contractes[0]
 %>
 <br>
-Hola ${titular}<br>
+Hola ${titular},<br>
 <br>
 % if mail_lang != "es_ES":
 T’enviem aquest correu per a confirmar-te que hem rebut la teva sol·licitud, realitzada a través de l'oficina virtual, per tal que ${administradora} pugui veure i gestionar la informació ${contractes_str} que tens amb Som Energia.<br>
@@ -69,7 +69,6 @@ T’enviem aquest correu per a confirmar-te que hem rebut la teva sol·licitud, 
 Per a qualsevol dubte seguim en contacte.<br>
 <br>
 Equip de Som Energia<br>
-<br>
 % endif
 % if mail_lang != "ca_ES" and mail_lang != "es_ES":
 ----------------------------------------------------------------------------------------------------
@@ -80,8 +79,9 @@ Te enviamos este correo para confirmarte que hemos recibido tu solicitud, realiz
 Para cualquier duda seguimos en contacto. <br>
 <br>
 Equipo de Som Energia<br>
-<br>
 % endif
+<a href="https://www.somenergia.coop/">www.somenergia.coop</a><br>
+<br>
 ${text_legal}
 </body>
 </html>
