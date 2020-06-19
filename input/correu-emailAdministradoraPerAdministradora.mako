@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
-% if object.administradora.lang == "ca_ES":
+<%
+mail_lang = object.administradora.lang
+%>
+% if mail_lang == "ca_ES":
 <head><meta charset='utf8'><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia núm. ${object.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuïdora: ${object.distribuidora.name}</font></td></tr></table></head>
 % else:
 <head><meta charset='utf8'><table width="100%" frame="below" BGCOLOR="#F2F2F2"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Distribuidora: ${object.distribuidora.name}</font></td></tr></table></head>
@@ -25,8 +28,6 @@ text_legal = render(t_obj.read(
 )
 
 rp_obj = object.pool.get('res.partner')
-p_obj = object.pool.get('giscedata.polissa')
-
 def get_clean_name(composed_name, vat, name_only):
     if rp_obj.vat_es_empresa(object._cr, object._uid, vat):
         return composed_name
@@ -38,24 +39,23 @@ def get_clean_name(composed_name, vat, name_only):
 titular = get_clean_name(object.titular.name, object.titular.vat, False)
 administradora = get_clean_name(object.administradora.name, object.administradora_nif, True)
 
-contractes = []
+p_obj = object.pool.get('giscedata.polissa')
 c_ids = p_obj.search(object._cr, object._uid, [
     ('titular.id','=',object.titular.id),
     ('administradora.id','=',object.administradora.id)])
-
 c_data = p_obj.read(object._cr, object._uid, c_ids , ['name'])
 contractes = [c['name'] for c in c_data]
 
-def compose(text,separator,contracts):
+def compose(text, separator, contracts):
     return text + ', '.join(contracts[:-1])+separator+contracts[-1]
 
 if len(contractes) > 1:
-    if object.administradora.lang != "es_ES":
+    if mail_lang != "es_ES":
         contractes_str = compose('dels contractes nº ', ' i ', contractes)
     else:
         contractes_str = compose('de los contratos nº ', ' y ', contractes)
 else:
-    if object.administradora.lang != "es_ES":
+    if mail_lang != "es_ES":
         contractes_str = 'del contracte nº ' + contractes[0]
     else:
         contractes_str = 'del contrato nº ' + contractes[0]
@@ -63,8 +63,8 @@ else:
 <br>
 Hola ${administradora}<br>
 <br>
-% if object.administradora.lang != "es_ES":
-Reps aquest correu per informar-te que, a petició de ${titular}, podràs veure i gestionar la informació ${contractes_str} des de la teva oficina virtual.<br>
+% if mail_lang != "es_ES":
+T’enviem aquest correu per informar-te que, a petició de ${titular}, podràs veure i gestionar la informació ${contractes_str} des de la teva oficina virtual.<br>
 <br>
 Si no has accedit mai a l'oficina virtual, <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aqui</a> t’expliquem com fer-ho.<br>
 <br>
@@ -73,13 +73,15 @@ Per a qualsevol dubte seguim en contacte.<br>
 Equip de Som Energia<br>
 <br>
 % endif
-% if  object.administradora.lang != "ca_ES" and  object.pagador.lang != "es_ES":
+% if  mail_lang != "ca_ES" and mail_lang != "es_ES":
 ----------------------------------------------------------------------------------------------------
 % endif
-% if  object.administradora.lang != "ca_ES":
-Has recibido este mensaje para informarte que, a petición de ${titular}, podrás ver y gestionar la información ${contractes_str} desde tu oficina virtual.<br>
+% if  mail_lang != "ca_ES":
+Te enviamos este correo para informarte que, a petición de ${titular}, podrás ver y gestionar la información ${contractes_str} desde tu oficina virtual.<br>
 <br>
 Si no has accedido nunca a la oficina virtual, <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">aqui</a> te explicamos cómo hacerlo.<br>
+<br>
+Para cualquier duda seguimos en contacto.<br>
 <br>
 Equipo de Som Energia<br>
 <br>

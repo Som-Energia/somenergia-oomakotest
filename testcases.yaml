@@ -1048,24 +1048,28 @@
 ########################################
 ### Administradora
 ##
-emailAdministradoraPerTitular:
-  template: input/correu-emailAdministradoraPerTitular.mako
-  model: giscedata.polissa
-  poweremailId: 294 #274
-  cases:
-    ca: 132850
-    es: 165532
-    ca_multi: 214978
-    es_multi: 173790
-
-emailAdministradoraPerAdministradora:
-  template: input/correu-emailAdministradoraPerAdministradora.mako
-  model: giscedata.polissa
-  poweremailId: 295 #275
-  cases:
-    ca: 132850
-    es: 165532
-    ca_multi: 173790
-    es_multi: 214978
+#emailAdministradoraPerTitular:
+#  template: input/correu-emailAdministradoraPerTitular.mako
+#  model: giscedata.polissa
+#  poweremailId: 274 #T276 L294 R274
+#  cases:
+#    ca: 132850
+#    es: 165532
+#    ca_multi: 214978
+#    es_multi: 173790
+#    ca_emp: 247772
+#    es_emp: 78599
+#
+#emailAdministradoraPerAdministradora:
+#  template: input/correu-emailAdministradoraPerAdministradora.mako
+#  model: giscedata.polissa
+#  poweremailId: 275 #T277 L295 R275
+#  cases:
+#    ca: 132850
+#    es: 165532
+#    ca_multi: 173790
+#    es_multi: 214978
+#    ca_emp: 78599
+#    es_emp: 247772
 
 # vim: et ts=2 sw=2

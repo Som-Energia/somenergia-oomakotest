@@ -1,7 +1,7 @@
 cc: false
 to: ${object.administradora.www_email}
 subject_translations:
-  ca_ES: Titul administradora
-  es_ES: Titolo administradora
-subject: Titol administradora
+  ca_ES: "Som Energia: Administradora Oficina Virtual"
+  es_ES: "Som Energia: Administradora Oficina Virtual"
+subject: "Som Energia: Administradora Oficina Virtual"
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
