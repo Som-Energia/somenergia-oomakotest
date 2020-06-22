@@ -1,7 +1,7 @@
 cc: false
 to: ${object.titular.www_email}
 subject_translations:
-  ca_ES: Titol Titular
-  es_ES: Titulo Titular
-subject: Titol Titular
+  ca_ES: "Som Energia: Confirmació sol·licitud administradora Oficina Virtual"
+  es_ES: "Som Energia: Confirmación solicitud administradora Oficina Virtual"
+subject: "Som Energia: Confirmació sol·licitud administradora Oficina Virtual"
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
