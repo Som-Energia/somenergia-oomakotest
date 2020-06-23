@@ -92,11 +92,7 @@ if pas1:
         En un termini de 24 h enviarem la teva sol·licitud a la distribuïdora de la teva zona, l’encarregada de validar i fer efectiva la teva sol·licitud. En el cas que detectis algun error, respon aquest mateix correu electrònic al més aviat possible.
     </p>
     <br>
-    <p>
-        <b>IMPORTANT:</b>  Si ets una persona treballadora autònoma i vols reduir la potència contractada a causa de l’estat d’alarma, ens has d’enviar el document d’alta al règim especial de treballadores autònomes de la Seguretat Social, per tal d’acollir-te a les mesures del real Decret-llei 11/2020, de 31 de Març, responent aquest mateix correu.
-Si ets una empresa i la teva distribuïdora és E-Distribución (antiga Endesa), un document indicant que et vols acollir a l’article 42 del RDL 11/2020, el CUPS i el NIF, pots fer servir <a href="https://drive.google.com/file/d/1ilMCLmoQxEszwE4eGRcOtHjLqtbtpIBG/view">aquest model</a>.
-    </p>
-    <br>
+
     Fins ben aviat,<br>
     <br>
     Equip de Som Energia<br>
@@ -148,11 +144,7 @@ Si ets una empresa i la teva distribuïdora és E-Distribución (antiga Endesa),
         En un plazo de 24 horas enviaremos la solicitud a la distribuidora de tu zona, la encargada de validar y hacer efectiva tu solicitud. En el caso que detectes algún error, responde este mismo correo electrónico lo antes posible.<br>
     </p>
     <br>
-    <p>
-        <b>IMPORTANTE:</b> Si eres una persona trabajadora autónoma y quieres reducir la potencia contratada a causa del estado de alarma, nos tienes que enviar el documento de alta al régimen especial de trabajadoras autónomas de la Seguridad Social, para acogerte a las medidas del real Decreto ley 11/2020, de 31 de Marzo, respondiendo a este mismo correo.
-Si eres una empresa y tu distribuidora es E-Distribución (antigua Endesa), un documento indicando que quieres acogerte al artículo 42 del RDL 11/2020, el CUPS y el NIF, puedes utilizar <a href="https://drive.google.com/file/d/1Hw-7WdrFyonP3nb3z4m7GFqHZNNLrwzH/view">este modelo</a>.
-    </p>
-    <br>
+
     Hasta pronto,<br>
     <br>
     Equipo de Som Energia<br>
