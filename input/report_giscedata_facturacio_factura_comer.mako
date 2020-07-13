@@ -438,7 +438,7 @@ bosocial_lines = [l for l in factura.linia_ids if l.tipus in 'altres'
                   and l.invoice_line_id.product_id.code == 'BS01']
 donatiu_lines = [l for l in factura.linia_ids if l.tipus in 'altres'
                 and l.invoice_line_id.product_id.code == 'DN01']
-altres_lines = [l for l in factura.linia_ids if l.tipus in 'altres'
+altres_lines = [l for l in factura.linia_ids if l.tipus in ('altres', 'cobrament')
                 and l.invoice_line_id.product_id.code not in ('DN01', 'BS01')]
 
 donatiu = sum([l.price_subtotal for l in donatiu_lines])
