@@ -201,7 +201,7 @@ ${text_legal}
         Salutacions,<br>
         <br>
         Equip de Som Energia<br>
-        <a href="http://ca.support.somenergia.coop">Centre de Suport</a><br>
+        <a href="http://ca.support.somenergia.coop">Centre d'ajuda</a><br>
         factura@somenergia.coop<br>
         <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
         <br>
