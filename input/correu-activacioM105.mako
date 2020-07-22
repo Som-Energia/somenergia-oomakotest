@@ -2,6 +2,16 @@
     from mako.template import Template
     from datetime import datetime, timedelta
 
+    THREEPHASE = {
+        'ca_ES': "Trifàsica",
+        'es_ES': "Trifásica"
+    }
+
+    MONOPHASE = {
+        'ca_ES': "Monofàsica",
+        'es_ES': "Monofásica"
+    }
+
     def render(text_to_render, object_):
         templ = Template(text_to_render)
         return templ.render_unicode(
@@ -21,6 +31,24 @@
         tipus_autoconsum = dict(M105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
 
         return auto_consum + " - " + tipus_autoconsum[auto_consum]
+
+    def get_tension_type(object_, pas05, lang):
+        tension_obj = object_.pool.get('giscedata.tensions.tensio')
+
+        codi_cnmc = pas05.tensio_suministre
+        tension_ids = tension_obj.search(object_._cr, object_._uid,
+                                         [("cnmc_code", "=", codi_cnmc)])
+
+        if not tension_ids:
+            return False
+
+        tension_id = tension_ids[0]
+        tension_name = tension_obj.read(object_._cr, object_._uid,
+                                        tension_id, ['name']).get('name', '')
+
+        if tension_name.startswith("3x"):
+            return THREEPHASE[lang]
+        return MONOPHASE[lang]
 
 %>
 
@@ -50,6 +78,10 @@
     pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
 
     polissa = object.polissa_ref_id if is_canvi_tit else object.cups_polissa_id
+
+    tipus_tensio = False
+    if pas01 and pas01.solicitud_tensio and pas05.tensio_suministre:
+        tipus_tensio = get_tension_type(object, pas05, polissa.titular.lang)
 
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
@@ -150,14 +182,7 @@
         %else:
             &nbsp;&nbsp; <strong> Potència: ${pot_deseada} W</strong><br>
         %endif
-        %if pas01 and pas01.solicitud_tensio:
-            <%
-                tipus_tensio = None
-                if pas01.solicitud_tensio == 'T':
-                    tipus_tensio = "Trifàsica"
-                elif pas01.solicitud_tensio == 'M':
-                    tipus_tensio = "Monofàsica"
-            %>
+        %if tipus_tensio:
             &nbsp;&nbsp; <strong> Tensió: ${tipus_tensio}</strong><br>
         %endif
 
@@ -253,14 +278,7 @@
         %else:
             &nbsp;&nbsp;<strong> Potencia: ${pot_deseada} W</strong><br>
         %endif
-        %if pas01 and pas01.solicitud_tensio:
-            <%
-                tipus_tensio = None
-                if pas01.solicitud_tensio == 'T':
-                    tipus_tensio = "Trifásica"
-                elif pas01.solicitud_tensio == 'M':
-                    tipus_tensio = "Monofásica"
-            %>
+        %if tipus_tensio:
             &nbsp;&nbsp; <strong> Tensión: ${tipus_tensio}</strong><br>
         %endif
 
