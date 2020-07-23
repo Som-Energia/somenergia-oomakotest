@@ -144,10 +144,13 @@
 Ens informen també que la persona titular de la instal·lació generadora és una persona diferent de la titular del contracte.<br>
 	<br>
         % endif
-	Si és correcte cal que ens ho confirmis responent aquest mateix correu, <b>indicant expressament que vols que demanem la modificació corresponent a la modalitat d’autoproducció triada a la distribuïdora</b> per aplicar-ho al teu contracte i a la teva facturació mensual tal com s’estableix a les <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">CONDICIONS GENERALS</a>. <b>En cas que es tracti d’una instal·lació registrada a la Comunitat Autònoma de Catalunya cal que també ens facis arribar el Certificat d’Instal·lació Elèctrica i el document de la declaració responsable complert de la instal·lació generadora en aquest mateix correu</b><br>
-	El preu que estableix la cooperativa per els kWh d’energia excedentària és de 0,056€/kWh. <br>
-	<br>
-	Si la informació que ens traslladen no es correcta ens ho heu de notificar per comunicar-ho a la distribuïdora i també us heu d’adreçar a l’organisme pertinent de la vostra comunitat autònoma per tal que modifiquin/verifiquin la informació que els hi consta i tornin a passar la informació correctament a l’empresa distribuïdora.<br>
+Si és correcte cal que ens ho confirmis responent aquest mateix correu, indicant expressament que vols que demanem la modificació corresponent a la modalitat d’autoproducció triada a la distribuïdora per aplicar-ho al teu contracte i a la teva facturació mensual tal com s’estableix a les <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">CONDICIONS GENERALS</a>.<br>
+<br>
+En cas que es tracti d’una instal·lació registrada a la Comunitat Autònoma de Catalunya cal que també ens facis arribar el <b>Certificat d’Instal·lació de Generació</b> i el document de la declaració responsable complert o <b>RITSIC</b> i el <b>RAC</b>, contestant aquest mateix correu.<br>
+<br>
+El preu que estableix la cooperativa per els kWh d’energia excedentària és de 0,06359318€/kWh. Més info: <a href="https://ca.support.somenergia.coop/article/799-preu-compensacio-excedents-autoproduccio">Preu de compensació dels excedents en autoproducció</a>
+<br>
+	Si la informació que ens traslladen no és correcta, ens ho heu de notificar per comunicar-ho a la distribuïdora i també us heu d’adreçar a l’organisme pertinent de la vostra comunitat autònoma per tal que modifiquin/verifiquin la informació que els hi consta i tornin a passar la informació correctament a l’empresa distribuïdora.<br>
 	<br>
 	Quan ho hagin fet ens tornaran a enviar la informació actualitzada i t’informarem novament.<br>
 	<br>
@@ -210,8 +213,11 @@ Ens informen també que la persona titular de la instal·lació generadora és u
 Nos informan también que la persona titular de la instalación generadora es una persona diferente a la titular del contrato.<br>
 	<br>
         % endif
-	Si es correcto es necesario que nos lo confirmes respondiendo este mismo correo, <b>indicando en él expresamente que deseas que solicitemos la modificación correspondiente a la modalidad de autoproducción elegida a la distribuidora</b> para aplicarlo a tu contrato y en tu facturación mensual tal como se establece en las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">CONDICIONES GENERALES</a>.  <b>En caso de que se trate de una instalación registrada en la Comunidad Autónoma de Cataluña es necesario también que nos hagas llegar el Certificado de Instalación Eléctrica y el documento de la Declaración responsable completo de la Instalación generadora en el mismo correo.</b><br>
-        El precio que establece la cooperativa para los kWh de energía excedentaria es de 0,056€/kWh.
+	Si es correcto es necesario que nos lo confirmes respondiendo este mismo correo, indicando en él expresamente que deseas que solicitemos la modificación correspondiente a la modalidad de autoproducción elegida a la distribuidora para aplicarlo a tu contrato y en tu facturación mensual tal como se establece en las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">CONDICIONES GENERALES</a>.<br>
+<br>
+En caso de que se trate de una instalación registrada en la Comunidad Autónoma de Cataluña es necesario también que nos hagas llegar el <b>Certificado de Instalación de Generación</b> y el documento de la Declaración responsable completo o <b>RITSIC</b> i el <b>RAC</b>, contestando el mismo correo.</b><br>
+<br>
+        El precio que establece la cooperativa para los kWh de energía excedentaria es de 0,06359318€/kWh. Más info: <a href="https://es.support.somenergia.coop/article/800-el-precio-de-compensacion-excedentes-autoproduccion">Precio de compensación de excedentes en autoproducción</a><br>
 	<br>
 	Si la información que nos trasladan no es correcta nos lo debes notificar para comunicarlo a la distribuidora y también debes dirigirte al organismo correspondiente de tu Comunidad Autónoma para que modifiquen/verifiquen la información que les consta y vuelvan a pasar la información correctamente a la empresa distribuidora.<br>
 	<br>
