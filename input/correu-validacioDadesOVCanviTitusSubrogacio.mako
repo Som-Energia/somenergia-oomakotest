@@ -96,7 +96,7 @@
             Benvolguts/des,
         </p>
         <p>
-            Us informem que hem rebut correctament la sol·licitud d'un canvi de titular pel contracte número ${object.cups_polissa_id.name} amb el CUPS: ${object.cups_id.name} i del qual, fins ara, el titular és en/na ${object.cups_polissa_id.titular.name}.
+            Us informem que hem rebut correctament la sol·licitud d'un canvi de titular pel contracte número ${object.cups_polissa_id.name} amb el CUPS: ${object.cups_id.name}.
         </p>
         <p>
             Si es tracta d'un canvi de titularitat degut a la defunció de la persona titular actual o bé detecteu un error en el resum de dades següent, contesteu aquest correu.<br>
@@ -145,7 +145,7 @@
             Estimados/as,
         </p>
         <p>
-                Os informamos que hemos recibido correctamente la solicitud de cambio de titular del contrato número ${object.cups_polissa_id.name} con el CUPS: ${object.cups_id.name} y del cual, hasta ahora el titular es ${object.cups_polissa_id.titular.name}.
+                Os informamos que hemos recibido correctamente la solicitud de cambio de titular del contrato número ${object.cups_polissa_id.name} con el CUPS: ${object.cups_id.name}.
             </p>
         <p>
                 Si se trata de un cambio de titularidad debido a la defunción de la persona titular actual o bien detectáis un error en el resumen de datos siguiente, contestad este correo.<br/>
