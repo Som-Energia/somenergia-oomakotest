@@ -1,6 +1,6 @@
 cc: false
 to: -- definit en codi --
 subject_translations: {}
-subject: 'Som Energia: Canvi de titular. Verificació de dades. Contracte ${object.cups_polissa_id.name}
-  / Cambio de titular. Verificación de datos. Contrato ${object.cups_polissa_id.name}'
+subject: 'Som Energia: Canvi de titular. Verificació de dades. Contracte ${object.polissa_ref_id.name}
+  / Cambio de titular. Verificación de datos. Contrato ${object.polissa_ref_id.name}'
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
