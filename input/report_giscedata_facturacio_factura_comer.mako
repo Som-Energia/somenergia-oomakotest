@@ -1,3 +1,4 @@
+## -*- coding: utf-8 -*-
 <% from operator import attrgetter
 from datetime import datetime, timedelta
 import json
@@ -242,6 +243,9 @@ modes = {
             factor=1,
         ),
 }
+
+r_obj = pool.get('giscedata.facturacio.factura.report')
+report_data = r_obj.get_report_data(objects)
 %>
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
@@ -276,7 +280,7 @@ modes = {
         %>
     </div>
 </%def>
-<%def name="graph(nom, mode1, mode2)">
+<%def name="graph(nom, mode1, mode2, curve_data=None)">
     <%
         GraphModeObj = modes[nom]
         data = []
@@ -287,8 +291,14 @@ modes = {
             mode
             data.append([])
             ModeObj = modes[mode_str]
-            data_csv = getCsvData(objects[0], user, mode_str)
-            csv_lines = csv.reader(data_csv, delimiter=';')
+            if curve_data is None:
+                data_csv = getCsvData(objects[0], user, mode_str)
+                csv_stream = data_csv
+            else:
+                from StringIO import StringIO
+                csv_stream = StringIO(curve_data)
+
+            csv_lines = csv.reader(csv_stream, delimiter=';')
             rows = []
             for row in csv_lines:
                 rows.append((row[0], float(row[1])))
@@ -372,6 +382,8 @@ modes = {
 
 polissa = polissa_obj.browse(cursor, uid, factura.polissa_id.id,
                              context={'date': factura.data_final.val})
+
+factura_data = report_data[factura.id]
 
 # Agreement partners
 agreementPartners = {'S019753': {'ref': 'S019753', 'invoice_data_background': '#499944'}}
@@ -715,18 +727,8 @@ def get_renovation_date(data_alta , today):
 </div>
 <div id="container">
     <div class="company_address" style="font-size: .7em;">
-        <div class="logo" style="margin-bottom: 15px; ">
-            % if agreementPartner:
-                <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_som.png" width="95px"/>
-                <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_${agreementPartner['ref']}.png" width="95px"/>
-            % else:
-                <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_som.png" width="125px"/>
-            % endif
-        </div>
-    <span style="font-weight: bold;">${factura.company_id.partner_id.name}</span><br />
-    ${_(u"CIF:")} ${factura.company_id.partner_id.vat.replace('ES','')} <br />
-    ${_(u"Domicili:")} ${factura.company_id.partner_id.address[0].street} ${factura.company_id.partner_id.address[0].zip} - ${factura.company_id.partner_id.address[0].city}<br />
-    ${_(u"Adreça electrònica:")} ${factura.company_id.partner_id.address[0].email}
+        <%include file="/giscedata_facturacio_comer_som/report/components/logo/logo.mako" args="logo=factura_data.logo" />
+        <%include file="/giscedata_facturacio_comer_som/report/components/company/company.mako" args="company=factura_data.company" />
     </div>
     <div class="invoice_data">
         % if has_autoconsum and factura.is_gkwh:
@@ -1377,10 +1379,13 @@ ${emergency_complaints(factura)}
         </div>
         <div class="pl_15">
            <h1 style="background-color: ${invoice_data_background};">${_(u"Ús elèctric i curva horària")}</h1>
-            <%
+            <% curve = factura.get_curve_as_csv()[factura.id] %>
+            %if curve:
+                <%
                 mode = "curvegraph"
-                graph(mode, 'curve', 'curve')
-            %>
+                graph(mode, 'curve', 'curve', curve_data=curve)
+                %>
+            %endif
             <div style="clear: both;"></div>
         </div>
         %endif
@@ -1423,9 +1428,26 @@ ${emergency_complaints(factura)}
                 %>
                 <div style="font-weight: bold; float:left; width: 25em;">${_(u"Impost d'electricitat")}</div>
                 <div style="font-weight: bold; float:left; width: 45em;">
-                    ${_(u"%s x 5,11269%%") % (formatLang(l.base_amount))}
-                    ${_(u" (amb l'exempció del ")}
-                    ${_(excempcio)})
+                    <%
+                        percentatges_exempcio_splitted = excempcio.split(' ')
+                        if len(percentatges_exempcio_splitted) == 3:
+                            percentatges_exempcio = (
+                                abs(float(percentatges_exempcio_splitted[0].replace('%', '')) / 100),
+                                abs(float(percentatges_exempcio_splitted[2].replace('%', '')) / 100)
+                            )
+                            base_iese = l.base_amount * (1 - percentatges_exempcio[0] * percentatges_exempcio[1])
+                        else:
+                            base_iese = l.base_amount
+                    %>
+                    ${(_(u"%s x 5,11269%%") % (formatLang(base_iese)))}
+                    %if len(percentatges_exempcio_splitted) == 3 and len(percentatges_exempcio) == 2:
+                        ${_(u" (amb l'exempció del {} sobre el {}% de Base Imposable IE)").format(
+                            percentatges_exempcio_splitted[2].replace('-', ''),
+                            formatLang(percentatges_exempcio[0] * 100, digits=1)
+                        )}
+                    %else:
+                        ${_(u" (amb l'exempció del ")} ${excempcio})
+                    %endif
                 </div>
                 <div style="font-weight: bold; float:right;">${_(u"%s €") % formatLang(l.tax_amount)}</div>
             % else:
@@ -1625,44 +1647,7 @@ ${emergency_complaints(factura)}
             </div>
         </div>
     </div>
-    <div class="certificate_origin">
-        <h1>${_(u"DETALL DELS CERTIFICATS DE GARANTIA D'ORIGEN PER A SOM ENERGIA")}</h1>
-        <div class="cert_orig_info">
-            <div class="cert_orig_taula">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>${_(u"Font renovable")}</th><th>${_(u"Energia MWh")}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>${_(u"Eòlica")}</td><td>298.951</td>
-                    </tr>
-                    <tr>
-                        <td>${_(u"Solar fotovoltaica")}</td><td>83.142</td>
-                    </tr>
-                    <tr>
-                        <td>${_(u"Minihidràulica")}</td><td>35.984</td>
-                    </tr>
-                    <tr>
-                        <td>${_(u"Biogàs")}</td><td>52.857</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td>${_(u"TOTAL")}</td><td>470.934</td>
-                    </tr>
-                    </tfoot>
-                </table>
-            </div>
-            ${_(u"Pots veure l'origen dels certificats de garantia d'origen en l'enllaç següent:")}<br/><a href="http://bit.ly/GdO15${factura.lang_partner.lower()[0:2]}")}>http://bit.ly/GdO15${factura.lang_partner.lower()[0:2]}</a>
-        </div>
-        <div class="cert_orig_grafic">
-            <img class="orig" src="${addons_path}/giscedata_facturacio_comer_som/report/graf3_html_${factura.lang_partner.lower()}_2020.png"/>
-        </div>
-
-    </div>
+    <%include file="/giscedata_facturacio_comer_som/report/components/gdo/gdo.mako" args="gdo=factura_data.gdo" />
     <p style="font-size: .8em"><br />
         ${_(u"Informació sobre protecció de dades: Les dades personals tractades per gestionar la relació contractual i, si s'escau, remetre informació comercial per mitjans electrònics, es conservaran fins a la fi de la relació, baixa comercial o els terminis de retenció legals. Pots exercir els teus drets a l'adreça postal de Som Energia com a responsable o a somenergia@delegado-datos.com .")}<br />
     </p>
