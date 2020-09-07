@@ -188,7 +188,6 @@ def deleteIfExists(filename):
 def makeB2bTestCase(testCaseName, id) :
     def b2bTestCase(self):
         exit_code = 0
-        self.maxDiff = None
         resultFilename = os.path.join('b2bdata',testCaseName+'-result.html')
         expectedFilename = os.path.join('b2bdata',testCaseName+'-expected.html')
         resultPdf = os.path.join('b2bdata',testCaseName+'-result.pdf')
@@ -199,24 +198,27 @@ def makeB2bTestCase(testCaseName, id) :
         deleteIfExists(resultPdf)
         deleteIfExists(diffPdf)
 
+        data = self.fixture.get('data', {})
+        self.maxDiff = data.get('maxDiff', None)
+
         if 'rejectId' in self.fixture:
             output = renderMakoReject(
                 self.fixture.template,
                 self.fixture.model,
                 id,
-                self.fixture.get('data', {}))
+                data)
         elif 'poweremailId' in self.fixture:
             output = renderMako(
                 self.fixture.template,
                 self.fixture.model,
                 id,
-                self.fixture.get('data', {}))
+                data)
         elif 'reportXmlId' in self.fixture:
             output,pdf = renderMakoPdf(
                 self.fixture.template,
                 self.fixture.reportXmlId,
                 id,
-                self.fixture.get('data', {}))
+                data)
 
             with open(resultPdf,'wb') as f:
                 f.write(pdf)
