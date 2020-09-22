@@ -761,7 +761,7 @@
 #correuKillingPayerWarning:
 #  template: input/correu-killingPayerWarning.mako
 #  model: giscedata.polissa
-#  poweremailId: 283
+#  poweremailId: 308 #R308 T283
 #  cases:
 #    es: 618
 #    ca: 258
