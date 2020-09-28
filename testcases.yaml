@@ -283,6 +283,9 @@
 #  template: input/report_giscedata_facturacio_factura_comer.mako
 #  model: giscedata.facturacio.factura
 #  reportXmlId: 400
+#  data:
+#    maxDiff: 0
+#    useErpMako: True
 #  cases:
 #    test: 7152113
 #    o_sense_l1: 7205811
