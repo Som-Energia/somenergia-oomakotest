@@ -25,9 +25,6 @@ tarifa_elect_atr = model_obj.read(cursor, uid, model_ids[0],['res_id'])['res_id'
 
 
 comptador_factures = 0
-def lap_year(date):
-    a=datetime.strptime(date, '%Y-%m-%d').year
-    return a % 4 == 0 and a % 100 != 0 or a % 400 == 0
 
 gkwh_products = factura_linia_obj.get_gkwh_products(cursor, uid)
 
@@ -116,20 +113,6 @@ def get_origen_lectura(cursor, uid, lectura):
 
     return res
 
-def get_distri_phone(cursor, uid, polissa):
-    """ Per telèfons de ENDESA segons CUPS, aprofitant funció de switching"""
-    sw_obj = polissa.pool.get('giscedata.switching')
-    pa_obj = polissa.pool.get('res.partner.address')
-
-    partner_id = sw_obj.partner_map(cursor, uid,
-                                    polissa.cups, polissa.distribuidora.id)
-    if partner_id:
-        pa_ids = pa_obj.search(cursor, uid, [('partner_id', '=', partner_id)])
-        return (pa_obj.read(cursor, uid, [pa_ids[0]],['phone'])[0]['phone'] or
-                polissa.distribuidora.address[0].phone)
-    else:
-        return polissa.distribuidora.address[0].phone
-
 def get_gkwh_owner(cursor, uid, line):
     """Gets owner of gkwh line kwh"""
     if not line.is_gkwh().values()[0]:
@@ -163,43 +146,6 @@ def get_nom_cognoms(cursor, uid, owner):
        return name_dict['nom']
 
    return "{0} {1}".format(name_dict['nom'], ' '.join(name_dict['cognoms']))
-
-historic_sql = """SELECT * FROM (
-SELECT mes AS mes,
-periode AS periode,
-sum(suma_fact) AS facturat,
-sum(suma_consum) AS consum,
-min(data_ini) AS data_ini,
-max(data_fin) AS data_fin
-FROM (
-SELECT f.polissa_id AS polissa_id,
-       to_char(f.data_inici, 'YYYY/MM') AS mes,
-       pt.name AS periode,
-       COALESCE(SUM(il.quantity*(fl.tipus='energia')::int*(CASE WHEN i.type='out_refund' THEN -1 ELSE 1 END)),0.0) as suma_consum,
-       COALESCE(SUM(il.price_subtotal*(fl.tipus='energia')::int*(CASE WHEN i.type='out_refund' THEN -1 ELSE 1 END)),0.0) as suma_fact,
-       MIN(f.data_inici) data_ini,
-       MAX(f.data_final) data_fin
-       FROM
-            giscedata_facturacio_factura f
-            LEFT JOIN account_invoice i on f.invoice_id = i.id
-            LEFT JOIN giscedata_facturacio_factura_linia fl on f.id=fl.factura_id
-            LEFT JOIN account_invoice_line il on il.id=fl.invoice_line_id
-            LEFT JOIN product_product pp on il.product_id=pp.id
-            LEFT JOIN product_template pt on pp.product_tmpl_id=pt.id
-       WHERE
-            fl.tipus = 'energia' AND
-            f.polissa_id = %(p_id)s AND
-            f.data_inici <= %(data_inicial)s AND
-            f.data_inici >= date_trunc('month', date %(data_final)s) - interval '14 month'
-            AND (fl.isdiscount IS NULL OR NOT fl.isdiscount)
-            AND i.type IN ('out_invoice','out_refund')
-       GROUP BY
-            f.polissa_id, pt.name, f.data_inici
-       ORDER BY f.data_inici DESC ) AS consums
-GROUP BY polissa_id, periode, mes
-ORDER BY mes DESC, periode ASC
-) consums_ordenats
-ORDER BY mes ASC"""
 
 # Repartiment segons BOE
 rep_BOE = {'i': 39.44, 'c': 40.33 ,'o': 20.23}
@@ -245,7 +191,7 @@ modes = {
 }
 
 r_obj = pool.get('giscedata.facturacio.factura.report')
-report_data = r_obj.get_report_data(objects)
+report_data = r_obj.get_report_data(cursor, uid, objects)
 %>
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
@@ -396,44 +342,6 @@ if agreementPartner:
 
 tarifa_elect_som = polissa.llista_preu.id
 
-dphone = get_distri_phone(cursor, uid, polissa)
-cphone = factura.company_id.partner_id.address[0].phone
-distri_phone = '.'.join([dphone[i:i+3] for i in range(0,len(dphone),3)])
-comer_phone = '.'.join([cphone[i:i+3] for i in range(0,len(cphone),3)])
-
-factura._cr.execute(historic_sql,{'p_id':factura.polissa_id.id,
-                                  'data_inicial': factura.data_inici,
-                                  'data_final': factura.data_final,
-                                  })
-historic = factura._cr.dictfetchall()
-
-historic_graf = {}
-periodes_graf = []
-
-for row in historic:
-    historic_graf.setdefault(row['mes'],{})
-    historic_graf[row['mes']].update({row['periode']: row['consum']})
-    periodes_graf.append(row['periode'])
-
-periodes_graf = list(set(periodes_graf))
-
-historic_js = []
-for mes in sorted(historic_graf):
-    consums = historic_graf[mes]
-    p_js = {'mes': datetime.strptime(mes, '%Y/%m').strftime('%m/%y')}
-    for p in periodes_graf:
-        p_js.update({p: consums.get(p, 0.0)})
-    historic_js.append(p_js)
-
-total_historic_kw = sum([h['consum'] for h in historic])
-total_historic_eur = sum([h['facturat'] for h in historic])
-data_ini = min([h['data_ini'] for h in historic])
-data_fin = max([h['data_fin'] for h in historic])
-historic_dies = (datetime.strptime(data_fin, '%Y-%m-%d') - datetime.strptime(data_ini, '%Y-%m-%d')).days
-
-mes_any_inicial = (datetime.strptime(factura.data_inici,'%Y-%m-%d') - timedelta(days=365)).strftime("%Y/%m")
-total_any = sum([h['consum'] for h in historic if h['mes'] > mes_any_inicial])
-
 iese_lines = [l for l in factura.tax_line if 'IVA' not in l.name and 'IGIC' not in l.name]
 iva_lines = [l for l in factura.tax_line if 'IVA' in l.name]
 igic_lines = [l for l in factura.tax_line if 'IGIC' in l.name]
@@ -467,10 +375,6 @@ periodes_r = sorted(list(set([lectura.name[-3:-1]
 
 periodes_m = sorted(list(set([lectura.name
                               for lectura in factura.lectures_potencia_ids])))
-
-fact_pot_txt = ((polissa.facturacio_potencia=='max' or len(periodes_a)>3)
-                    and _(u"facturació per maxímetre")
-                 or _(u"facturació per ICP"))
 
 # lectures (activa) ordenades per comptador i període
 lectures_a = {}
@@ -597,129 +501,16 @@ dades_reparto = [
      [[rep_BOE['i'] + rep_BOE['c'], 100.00], 'o', _(u"Altres costos regulats (inclosa anualitat del dèficit)"), formatLang(reparto['o'])]
     ]
 
-TABLA_113_dict = { # Table extracted from gestionatr.defs TABLA_113, not imported due translations issues
-    '00': _(u"Sense Autoconsum"), # Sin Autoconsumo
-    '01': _(u"Autoconsum Tipus 1"), # Autoconsumo Tipo 1
-    '2A': _(u"Autoconsum tipus 2 (segons l'Art. 13. 2. a) RD 900/2015)"), # Autoconsumo tipo 2 (según el Art. 13. 2. a) RD 900/2015)
-    '2B': _(u"Autoconsum tipus 2 (segons l'Art. 13. 2. b) RD 900/2015)"), # Autoconsumo tipo 2 (según el Art. 13. 2. b) RD 900/2015)
-    '2G': _(u"Serveis auxiliars de generació lligada a un autoconsum tipus 2"), # Servicios auxiliares de generación ligada a un autoconsumo tipo 2
-    '31': _(u"Sense Excedents Individual - Consum"), # Sin Excedentes Individual – Consumo
-    '32': _(u"Sense Excedents Col·lectiu - Consum"), # Sin Excedentes Colectivo – Consumo
-    '41': _(u"Amb excedents i compensació Individual-Consum"), # Con excedentes y compensación Individual - Consumo 
-    '42': _(u"Amb excedents i compensació Col·lectiu-Consum"), # Con excedentes y compensación Colectivo– Consumo
-    '51': _(u"Amb excedents sense compensació Individual sense cte. de Serv. Aux. en Xarxa Interior - Consum"), # Con excedentes sin compensación Individual sin cto de SSAA en Red Interior– Consumo
-    '52': _(u"Amb excedents sense compensació Col·lectiu sense cte. de Serv. Aux. en Xarxa Interior - Consum"), # Con excedentes sin compensación Colectivo sin cto de SSAA en Red Interior– Consumo
-    '53': _(u"Amb excedents sense compensació Individual amb cte. de Serv. Aux. en Xarxa Interior - Consum"), # Con excedentes sin compensación Individual con cto SSAA en Red Interior– Consumo
-    '54': _(u"Amb excedents sense compensació individual amb cte. de Serv. Aux. en Xarxa Interior - Serv. Aux."), # Con excedentes sin compensación individual con cto SSAA en Red Interior– SSAA
-    '55': _(u"Amb excedents sense compensació Col·lectiu / en Xarxa Interior - Consum"), # Con excedentes sin compensación Colectivo/en Red Interior– Consumo
-    '56': _(u"Amb excedents sense compensació Col·lectiu / en Xarxa Interior - Serv. Aux."), # Con excedentes sin compensación Colectivo/en Red Interior - SSAA
-    '61': _(u"Amb excedents sense compensació Individual amb cte. de Serv. Aux. a través de xarxa - Consum"), # Con excedentes sin compensación Individual con cto SSAA a través de red – Consumo
-    '62': _(u"Amb excedents sense compensació individual amb cte. de Serv. Aux. a través de xarxa - Serv. Aux."), # Con excedentes sin compensación individual con cto SSAA a través de red – SSAA
-    '63': _(u"Amb excedents sense compensació Col·lectiu a través de xarxa - Consum"), # Con excedentes sin compensación Colectivo a través de red – Consumo
-    '64': _(u"Amb excedents sense compensació Col·lectiu a través de xarxa - Serv. Aux."), # Con excedentes sin compensación Colectivo a través de red - SSAA
-    '71': _(u"Amb excedents sense compensació Individual amb cte. de Serv. Aux. a través de xarxa i xarxa interior - Consum"), # Con excedentes sin compensación Individual con cto SSAA a través de red y red interior – Consumo
-    '72': _(u"Amb excedents sense compensació individual amb cte. de Serv. Aux. a través de xarxa i xarxa interior - Serv. Aux."), # Con excedentes sin compensación individual con cto SSAA a través de red y red interior – SSAA
-    '73': _(u"Amb excedents sense compensació Col·lectiu amb cte. de Serv. Aux. a través de xarxa i xarxa interior - Consum"), # Con excedentes sin compensación Colectivo con cto de SSAA  a través de red y red interior – Consumo
-    '74': _(u"Amb excedents sense compensació Col·lectiu amb cte. de Serv. Aux. a través de xarxa i xarxa interior - SSAA"), # Con excedentes sin compensación Colectivo con cto de SSAA a través de red y red interior - SSAA
-}
+def te_autoconsum(fact):
+    return fact.polissa_id.te_autoconsum(context={'date': datetime.strptime(fact.data_final, '%Y-%m-%d').strftime('%Y-%m-%d')})
 
-TENEN_AUTOCONSUM = [x for x in TABLA_113_dict.keys() if x not in ['00', '01', '2A', '2B', '2G']]
-
-def findAutoconsumModContractual(p):
-    for m in p.modcontractuals_ids:
-        if m.autoconsum_id or m.autoconsumo in TENEN_AUTOCONSUM:
-            return m
-    return None
-
-def has_polissa_autoconsum(f):
-    if f.polissa_id.autoconsum_id:
-        return f.polissa_id.autoconsum_id.active and f.polissa_id.autoconsum_id.data_alta <= f.data_inici
-
-    m = findAutoconsumModContractual(f.polissa_id)
-    return m and m.data_inici <= f.data_inici
-
-def has_polissa_autoconsum_colectiu(f):
-    return has_polissa_autoconsum(f) and f.polissa_id.autoconsum_id and f.polissa_id.autoconsum_id.collectiu
-
-has_autoconsum = has_polissa_autoconsum(factura)
-has_autoconsum_colectiu = has_polissa_autoconsum_colectiu(factura)
-autoconsum_colectiu_repartiment = float(factura.polissa_id.coef_repartiment) * 100.0 # not sure
-autoconsum_excedents_product = None
+has_autoconsum = te_autoconsum(factura)
+autoconsum_excedents_product_id = None
 if has_autoconsum:
-    autoconsum_tipus = TABLA_113_dict[factura.polissa_id.autoconsumo]
-    autoconsum_cau = factura.polissa_id.autoconsum_id.cau if factura.polissa_id.autoconsum_id else ''
     autoconsum_total_compensada = sum([l.price_subtotal for l in factura.linies_generacio])
     model_obj = objects[0].pool.get('ir.model.data')
     autoconsum_excedents_product_id = model_obj.get_object_reference(cursor, uid, 'giscedata_facturacio_comer', 'saldo_excedents_autoconsum')[1]
-
 %>
-<%
-def is_leap_year(year):
-    if year % 4 == 0:
-        if year % 100 == 0:
-            return year % 400 == 0
-        else:
-            return True
-    return False
-
-def leap_replace(data,year):
-    if data.month == 2 and data.day == 29 and not is_leap_year(year):
-        return datetime(year,2,28)
-    return datetime(year,data.month,data.day)
-
-def get_renovation_date(data_alta , today):
-    alta = datetime.strptime(data_alta, '%Y-%m-%d')
-    reno = leap_replace(alta, today.year)
-    if reno < today:
-        reno = leap_replace(alta, today.year +1)
-    return reno.strftime('%Y-%m-%d')
-%>
-<%def name="emergency_complaints(factura)">
-    <%
-        fixed_height = ''
-    %>
-    % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
-    <div class="row">
-        <div class="column">
-        <%
-            fixed_height = 'style="height: 100px"'
-        %>
-    % endif
-            <div class="emergency" ${fixed_height}>
-                <h1>${_(u"AVARIES I URGÈNCIES")}</h1>
-                <p style="line-height: 1.0;">${_(u"Empresa distribuïdora:")} <span style="font-weight: bold;">${polissa.distribuidora.name}</span> <br />
-                ${_(u"Núm. contracte distribuïdora:")} <span style="font-weight: bold;">${polissa.ref_dist or ''}</span> <br />
-                ${_(u"AVARIES I URGÈNCIES DEL SUBMINISTRAMENT (distribuïdora): %s (24 hores)") % distri_phone}<br />
-                </p>
-            </div>
-    % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
-    </div>
-    <div class="column">
-    % endif
-    <div class="complaints" ${fixed_height}>
-        <h1>${_(u"RECLAMACIONS")}</h1>
-        <p style="line-height: 1.0;">
-               % if agreementPartner and agreementPartner['ref'] == "S019753":
-                   ${_(u"RECLAMACIONES COMERCIALIZACIÓN (ENERGÉTICA/SOM ENERGIA): Lunes a viernes, de 10 a 14h. (tardes, previa cita) 983 660 112")} <br/>
-                   ${_(u"Correo electrónico: info@energetica.coop")} <br/>
-                   ${_(u"Dirección postal: Avda. Ramón Pradera 12, bajo trasera; 47009-Valladolid")}
-               % else:
-                   ${_(u"RECLAMACIONS COMERCIALITZACIÓ (SOM ENERGIA): Horari d'atenció de 9 a 14 h. 900 103 605 (cost de la trucada per a la cooperativa).<br />"
-                   u"Si tens tarifa plana, pots contactar igualment al %s, sense cap cost.<br />"
-                   u"Adreça electrònica: reclama@somenergia.coop<br />"
-                   u"Adreça postal: C/ Pic de Peguera, 11, A 2 8. Edifici Giroemprèn. 17003 - Girona<br />") % (comer_phone,)}
-                   % if agreementPartner:
-                       ${_ (u"Som Energia és la teva comercialitzadora elèctrica a mercè de l'acord firmat amb")} ${polissa.soci.name} <br />
-                   % endif
-               % endif
-        </p>
-    </div>
-    % if polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
-        </div>
-        </div>
-    % endif
-
-</%def>
 <div class="lateral_container">
     <div class="lateral" style="top: 250px;">${text_lateral}</div>
     <div class="lateral" style="top: 1350px;">${text_lateral}</div>
@@ -731,22 +522,7 @@ def get_renovation_date(data_alta , today):
         <%include file="/giscedata_facturacio_comer_som/report/components/company/company.mako" args="company=factura_data.company" />
     </div>
     <div class="invoice_data">
-        % if has_autoconsum and factura.is_gkwh:
-              <div class="logo_little_left">
-                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_auto_little_${factura.lang_partner.lower()}.png" width="65px"/>
-              </div>
-              <div class="logo_little_right">
-                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_gkwh_little.png" width="65px"/>
-              </div>
-        % elif has_autoconsum:
-              <div class="logo_little_center">
-                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_auto_little_${factura.lang_partner.lower()}.png" width="65px"/>
-              </div>
-        % elif factura.is_gkwh:
-              <div class="logo_little_center">
-                  <img src="${addons_path}/giscedata_facturacio_comer_som/report/logo_gkwh_little.png" width="65px"/>
-              </div>
-        % endif
+        <%include file="/giscedata_facturacio_comer_som/report/components/flags/flags.mako" args="flags=factura_data.flags" />
         <h1 style="background-color: ${invoice_data_background};">${_(u"DADES DE LA FACTURA")}</h1>
          <div style="font-weight: 900;font-size: 1.3em">${_(u"IMPORT DE LA FACTURA:  %s &euro;") % formatLang(factura.amount_total)}
          % if factura.invoice_id.type == 'out_refund':
@@ -967,167 +743,18 @@ def get_renovation_date(data_alta , today):
                 <div style="text-align: center"><p>${_(u"La despesa diària és de %s € que correspon a %s kWh/dia (%s dies).") % (formatLang(diari_factura_actual_eur), formatLang(diari_factura_actual_kwh), dies_factura or 1)}</p></div>
                 </div>
                 <div class="column">
-                    <div class="chart_consum_container">
-                        <div class="chart_consum" id="chart_consum_${factura.id}"></div>
-                            <div class="chart_estadistica">
-                                <p>
-                                    ${(_(u"La despesa mitjana diària en els últims %.0f mesos (%s dies) ha estat de <b>%s</b> €, que corresponen a  <b>%s</b> kWh/dia.")
-                                    % ((historic_dies*1.0 / 30), historic_dies or 1.0, formatLang((total_historic_eur * 1.0) / (historic_dies or 1.0)), formatLang((total_historic_kw * 1.0) / (historic_dies or 1.0))))}<br />
-                                    ${_(u"L'electricitat utilitzada durant el darrer any: <b>%s</b> kWh.") % formatLang(total_any, digits=0)}
-                            </p>
-                        </div>
-                    </div>
+                    <%include file="/giscedata_facturacio_comer_som/report/components/energy_consumption_graphic/energy_consumption_graphic.mako" args="energy=factura_data.energy_consumption_graphic" />
                 </div>
             </div>
         % else:
-            <div class="lectures${len(periodes_a)>3 and '30' or ''}">
-                <table>
-                    <tr>
-                        <th>&nbsp;</th>
-                        % for periode in periodes_a:
-                            <th style="text-align: center;">${periode}</th>
-                        % endfor
-                    </tr>
-                    <%
-                        ajust_periode = []
-                        hi_ha_ajust = False
-                    %>
-                    % for comptador in sorted(lectures_a):
-                        <tr>
-                            <th>${_(u"Núm. de comptador")}</th>
-                            % for p in periodes_a:
-                                <td style="font-weight: normal;text-align: center;">${comptador}</td>
-                            % endfor
-                        </tr>
-                        <tr>
-                            <th>${_(u"Lectura anterior")}<span style="font-weight: 100">&nbsp;(${lectures_a[comptador][0][4]})<br/>(${lectures_a[comptador][0][6]})</span></th>
-                            <!--%for lectura in lectures_a[comptador]:-->
-                            % for periode in periodes_a:
-                                <%
-                                    for lectura in lectures_a[comptador]:
-                                        if lectura[8] == 0:
-                                            ajust_periode.append(False)
-                                        else:
-                                            ajust_periode.append(True)
-                                            hi_ha_ajust = True
-                                %>
-                                % if periode not in [lectura[0] for lectura in lectures_a[comptador]]:
-                                    <td></td>
-                                % else:
-                                    <td style="text-align: center;">${int([lectura[1] for lectura in lectures_a[comptador] if lectura[0] == periode][0])} kWh</td>
-                                % endif
-                            %endfor
-                        </tr>
-                            <th>${_(u"Lectura final")}<span style="font-weight: 100">&nbsp;(${lectures_a[comptador][0][5]})<br/>(${lectures_a[comptador][0][7]})</span></th>
-                            % for periode in periodes_a:
-                                % if periode not in [lectura[0] for lectura in lectures_a[comptador]]:
-                                    <td></td>
-                                % else:
-                                    <td style="text-align: center;">${int([lectura[2] for lectura in lectures_a[comptador] if lectura[0] == periode][0])} kWh</td>
-                                % endif
-                            % endfor
-                        </tr>
-                    % endfor
-                    <tr>
-                        <th style="border-top: 1px solid #4c4c4c">${_(u"Total període")}</th>
-                        %for p in periodes_a:
-                            <td style="border-top: 1px solid #4c4c4c; text-align: center;">${formatLang(total_lectures_a[p], digits=0)} kWh
-                            % if ajust_periode[periodes_a.index(p)]:
-                                *
-                            %endif
-                            </td>
-                        %endfor
-                    </tr>
-                </table>
-                <div style="text-align: center"><p>${_(u"La despesa diària és de %s € que correspon a %s kWh/dia (%s dies).") % (formatLang(diari_factura_actual_eur), formatLang(diari_factura_actual_kwh), dies_factura or 1)}</p></div>
-                % if hi_ha_ajust:
-                    % if has_autoconsum:
-                        <div style="text-align: center"><p>${_("* Aquest consum té l'ajust corresponent al balanç horari.")}
-                            %if factura.lang_partner == 'ca_ES':
-                                <a href="https://ca.support.somenergia.coop/article/849-autoproduccio-que-es-el-balanc-net-horari">${_(u"(més informació).")}</a>
-                            %else:
-                                <a href="https://es.support.somenergia.coop/article/850-autoproduccion-que-es-el-balance-neto-horario">${_(u"(més informació).")}</a>
-                            %endif
-                        </p></div>
-                    % else:
-                        <div style="text-align: center"><p>${_("* Aquesta factura recull un ajust de consum de períodes anteriors per part de la distribuïdora.")}</p></div>
-                    %endif
-                % endif
-            </div>
-            <div class="chart_consum_container">
-                <div class="chart_consum" id="chart_consum_${factura.id}"></div>
-                <div class="chart_estadistica">
-                    <p>
-                        ${(_(u"La despesa mitjana diària en els últims %.0f mesos (%s dies) ha estat de <b>%s</b> €, que corresponen a <b>%s</b> kWh/dia.")
-                            % ((historic_dies*1.0 / 30), historic_dies or 1.0, formatLang((total_historic_eur * 1.0) / (historic_dies or 1.0)), formatLang((total_historic_kw * 1.0) / (historic_dies or 1.0))))}<br />
-                        ${_(u"L'electricitat utilitzada durant el darrer any: <b>%s</b> kWh.") % formatLang(total_any, digits=0)}
-                    </p>
-                </div>
-            </div>
-            %if any([lectures_a[comptador][0][7] != "real" for comptador in sorted(lectures_a) if len(lectures_real_a[comptador])>0]):
-                <div class="lectures${len(periodes_a)>3 and '30' or ''}">
-                    <table>
-                        % for comptador in sorted(lectures_real_a):
-                            % if len(lectures_real_a[comptador])>0:  
-                                <tr>
-                                    <th>&nbsp;</th>
-                                    % for periode in periodes_a:
-                                        <th style="text-align: center;">${periode}</th>
-                                    % endfor
-                                </tr>
-                                <tr>
-                                    <th>${_(u"Núm. de comptador")}</th>
-                                    % for p in periodes_a:
-                                        <td style="font-weight: normal;text-align: center;">${comptador}</td>
-                                    % endfor
-                                </tr>
-                                <tr>
-                                    <th>${_(u"Darrera lectura real ")}<span style="font-weight: 100">(${lectures_real_a[comptador][0][2]})</span></th>
-                                    % for periode in periodes_a:
-                                        % if periode not in [lectura_real[0] for lectura_real in lectures_real_a[comptador]]:
-                                            <td></td>
-                                        % else:
-                                            <td style="text-align: center;">${int([lectura_real[1] for lectura_real in lectures_real_a[comptador] if lectura_real[0] == periode][0])} KWh</td>
-                                        % endif
-                                    % endfor
-                                </tr>
-                            %endif
-                        % endfor
-                    </table>
-                </div>
-            %endif
+            <%include file="/giscedata_facturacio_comer_som/report/components/readings_table/readings_table.mako" args="readings=factura_data.readings_table" />
+            <%include file="/giscedata_facturacio_comer_som/report/components/meters/meters.mako" args="meters=factura_data.meters,location='up'" />
+            <%include file="/giscedata_facturacio_comer_som/report/components/energy_consumption_graphic/energy_consumption_graphic.mako" args="energy=factura_data.energy_consumption_graphic" />
+            <%include file="/giscedata_facturacio_comer_som/report/components/meters/meters.mako" args="meters=factura_data.meters,location='down'" />
         %endif
     </div>
-    <div class="contract_data">
-        <h1>${_(u"DADES DEL CONTRACTE")}</h1>
-        <div class="contract_data_container">
-            <div class="contract_data_main">
-                <p>${_(u"Adreça de subministrament:")} <span style="font-weight: bold;">${factura.cups_id.direccio}</span> <br />
-                ${_(u"Potència contractada (kW):")} <span style="font-weight: bold;">${"%s (%s)" % (locale.str(locale.atof(formatLang(polissa.potencia, digits=3))),fact_pot_txt)}</span> <br />
-                ${_(u"Tarifa contractada:")} <span style="font-weight: bold;">${polissa.tarifa.name}</span> <br />
-                ${_(u"CUPS:")} <span style="font-weight: bold;">${factura.cups_id.name}</span> <br />
-                ${_(u"Comptador telegestionat:")} <span style="font-weight: bold;">${polissa.tg in ['1','3'] and _(u'Sí') or _(u'No')}</span> <br />
-                ${_(u"CNAE:")} <span style="font-weight: bold;">${polissa.cnae.name}</span> <br />
-                ${_(u'Data d\'alta del contracte: <span style="font-weight: bold;">%s</span>, sense condicions de permanència') % polissa.data_alta} <br />
-                ${_(u'Forma de pagament: rebut domiciliat')} <br />
-                ${_(u'Data de renovació automàtica: <span style="font-weight: bold;">%s</span>') % get_renovation_date(polissa.data_alta,datetime.now())}
-                </p>
-            </div>
-            %if has_autoconsum:
-            <div class="contract_data_auto">
-                <p>${_(u"Autoproducció tipus:")} <span style="font-weight: bold;">${autoconsum_tipus}</span> <br />
-                ${_(u"Codi d'autoconsum unificat (CAU):")} <span style="font-weight: bold;">${autoconsum_cau}</span> 
-                %if has_autoconsum_colectiu:
-                    <br />${_(u"Percentatge de repartiment de l'autoproducció compartida:")} <span style="font-weight: bold;">${autoconsum_colectiu_repartiment} %</span>
-                %endif
-                </p>
-            </div>
-            %endif
-        </div>
-    </div>
-% if len(periodes_a) <= 3 or polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
-${emergency_complaints(factura)}
-% endif
+    <%include file="/giscedata_facturacio_comer_som/report/components/contract_data/contract_data.mako" args="cd=factura_data.contract_data" />
+    <%include file="/giscedata_facturacio_comer_som/report/components/emergency_complaints/emergency_complaints.mako" args="ec=factura_data.emergency_complaints,location='up'" />
     <p style="page-break-after:always"></p>
 <!-- DESTI DE LA FACTURA -->
 % if len(periodes_a) <= 3:
@@ -1541,9 +1168,7 @@ ${emergency_complaints(factura)}
         </div>
 % endif
 
-% if len(periodes_a) > 3 and not polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017'):
-    ${emergency_complaints(factura)}
-% endif
+    <%include file="/giscedata_facturacio_comer_som/report/components/emergency_complaints/emergency_complaints.mako" args="ec=factura_data.emergency_complaints,location='down'" />
     <p style="page-break-after:always"></p>
     <div class="elect_information">
         <h1>${_(u"INFORMACIÓ DE L'ELECTRICITAT")}</h1>
@@ -1668,12 +1293,8 @@ var reparto = ${json.dumps(reparto)}
 var dades_reparto = ${json.dumps(dades_reparto)}
 
 var factura_id = ${factura.id}
-var data_consum = ${json.dumps(historic_js)}
-var es30 = ${len(periodes_a)>3 and 'true' or 'false'}
-var esgran = ${(polissa.tarifa.codi_ocsum in ('012', '013', '014', '015', '016', '017')) and 'true' or 'false'}
 
 </script>
-<script src="${addons_path}/giscedata_facturacio_comer_som/report/consum.js"></script>
 <script src="${addons_path}/giscedata_facturacio_comer_som/report/pie.js"></script>
 </div>
 <%
