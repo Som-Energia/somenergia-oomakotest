@@ -1,7 +1,31 @@
 <%
+from gestionatr.defs import TABLA_64
 
 pas1 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
 
+THREEPHASE = {
+    'ca_ES': "Trifàsica",
+    'es_ES': "Trifásica"
+}
+
+MONOPHASE = {
+    'ca_ES': "Monofàsica",
+    'es_ES': "Monofásica"
+}
+
+def get_tension_type(object_, pas1, lang):
+    codi_cnmc = pas1.tensio_solicitada
+    taula_cnmc = dict(TABLA_64)
+    tension_name = taula_cnmc.get(codi_cnmc, False)
+
+    if not tension_name:
+        return False
+
+    if tension_name.lower().startswith("3x"):
+        return THREEPHASE[lang]
+    return MONOPHASE[lang]
+
+tipus_tensio = False
 if pas1:
 
     PasM101 = object.pool.get('giscedata.switching.m1.01')
@@ -23,6 +47,10 @@ if pas1:
           break
 
     pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
+
+    if pas1.solicitud_tensio == "S" and pas1.tensio_solicitada:
+        lang = object.cups_polissa_id.titular.lang
+        tipus_tensio = get_tension_type(object, pas1, lang)
 %>
 
 <!doctype html>
@@ -71,14 +99,7 @@ if pas1:
         %else:
         - Potència desitjada: ${pot_deseada} W <br>
         %endif
-        %if pas1.solicitud_tensio:
-            <%
-                tipus_tensio = None
-                if pas1.solicitud_tensio == 'T':
-                    tipus_tensio = "Trifàsica"
-                elif pas1.solicitud_tensio == 'M':
-                    tipus_tensio = "Monofàsica"
-            %>
+        %if tipus_tensio:
         - Tensió desitjada: ${tipus_tensio}
         %endif
     </p>
@@ -123,14 +144,7 @@ if pas1:
         %else:
         - Potencia deseada: ${pot_deseada} W<br>
         %endif
-        %if pas1.solicitud_tensio:
-            <%
-                tipus_tensio = None
-                if pas1.solicitud_tensio == 'T':
-                    tipus_tensio = "Trifásica"
-                elif pas1.solicitud_tensio == 'M':
-                    tipus_tensio = "Monofásica"
-            %>
+        %if tipus_tensio:
         - Tensión deseada: ${tipus_tensio}
         %endif
     </p>

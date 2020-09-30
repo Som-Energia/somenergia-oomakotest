@@ -1,6 +1,7 @@
 <%!
     from mako.template import Template
     from datetime import datetime, timedelta
+    from gestionatr.defs import TABLA_64
 
     THREEPHASE = {
         'ca_ES': "Trifàsica",
@@ -33,20 +34,14 @@
         return auto_consum + " - " + tipus_autoconsum[auto_consum]
 
     def get_tension_type(object_, pas05, lang):
-        tension_obj = object_.pool.get('giscedata.tensions.tensio')
-
         codi_cnmc = pas05.tensio_suministre
-        tension_ids = tension_obj.search(object_._cr, object_._uid,
-                                         [("cnmc_code", "=", codi_cnmc)])
+        taula_cnmc = dict(TABLA_64)
+        tension_name = taula_cnmc.get(codi_cnmc, False)
 
-        if not tension_ids:
+        if not tension_name:
             return False
 
-        tension_id = tension_ids[0]
-        tension_name = tension_obj.read(object_._cr, object_._uid,
-                                        tension_id, ['name']).get('name', '')
-
-        if tension_name.startswith("3x"):
+        if tension_name.lower().startswith("3x"):
             return THREEPHASE[lang]
         return MONOPHASE[lang]
 
@@ -80,7 +75,7 @@
     polissa = object.polissa_ref_id if is_canvi_tit else object.cups_polissa_id
 
     tipus_tensio = False
-    if pas01 and pas01.solicitud_tensio and pas05.tensio_suministre:
+    if pas01 and pas01.solicitud_tensio == "S" and pas05.tensio_suministre:
         tipus_tensio = get_tension_type(object, pas05, polissa.titular.lang)
 
     p_obj = object.pool.get('res.partner')
