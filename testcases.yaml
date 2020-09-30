@@ -888,6 +888,13 @@
 #    ca: 1447
 #    es: 1636
 #
+# baixaSocia:
+#  template: input/correu-baixaSocia.mako
+#  model: somenergia.soci
+#  poweremailId: som_generationkwh.email_baixa_soci
+#  cases:
+#    es: 5293
+#    ca: 192
 ######################################################
 ## Impagats
 #
