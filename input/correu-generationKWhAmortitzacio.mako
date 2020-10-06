@@ -1,5 +1,6 @@
 <!doctype html><html><head><meta charset="utf-8"/></head><body><table width="100%" frame="below" bgcolor="#E8F1D4"><tr><td valign=TOP rowspan="4" align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr></table>
 <%
+from babel.numbers import format_currency
 Investment = object.pool.get('generationkwh.investment')
 investment_name = object.origin
 investment_id = Investment.search(object._cr, object._uid, [('name','=', investment_name)])
@@ -8,6 +9,11 @@ date_investment = investment_obj[0]['purchase_date']
 from datetime import datetime, timedelta
 date = datetime.strptime(date_investment, '%Y-%m-%d')
 date = date.strftime('%d/%m/%Y')
+
+date_invoice = datetime.strptime(object.date_invoice, '%Y-%m-%d')
+previous_year = (date_invoice + timedelta(weeks=-52)).year
+member_id = investment_obj[0]['member_id'][0]
+irpf_values = Investment.get_irpf_amounts(object._cr, object._uid, investment_id[0], member_id, previous_year)
 
 nominal_amount = investment_obj[0]['nshares']*100
 amount_amortization = nominal_amount*4/100
@@ -47,8 +53,26 @@ Por favor, <b>verifica que el número de cuenta bancaria de abono es correcto</b
 · Titular:  ${object.partner_id.name}<br/>
 · Inversion:  ${nominal_amount}€<br/>
 · Referencia:  ${object.name or ''}<br/>
-· <b>Retorno parcial:</b>  ${object.amount_total}€<br/>
+<br/>
+<table>
+<tr>
+    <td><b>Importe a retornar: </b></td>
+    <td> ${format_currency(irpf_values['irpf_saving'],'EUR', locale='es_ES')}</td>
+</tr>
+<tr>
+
+    <td>· -19% IRPF sobre el ahorro conseguido durante el ${previous_year}:</td>
+    <td> -${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')}</td>
+</tr>
+<tr>
+    <td>· Retorno neto:</td>
+    <td> ${format_currency(object.amount_total,'EUR', locale='es_ES')}</td>
+</tr>
+</table>
+<br/>
 · <b>Pago número:</b> ${num_amortization} de 24<br/>
+<br/>
+El importe del ahorro conseguido el ${previous_year} fue de ${format_currency(object.amount_total,'EUR', locale='es_ES')}, base sobre la cual se ha calculado el 19 % del IRPF. Som Energia ingresó a la Agéncia Tributária la retención resultants a tu nombre, por eso ahora lo restemos de la devolución anual del préstamo, como se comunicó en aquella modificación de las condiciones generales.<br/>
 <br/>
 Para cualquier duda o aclaración antes de responder este correo te recomendamos visitar primero el <a href="https://es.support.somenergia.coop/category/595-generation-kwh">centro de ayuda de la Generación kWh</a> donde hay listadas las principales preguntas que nos han ido llegando.<br/>
 <br/>
@@ -79,8 +103,25 @@ Si us plau, <b>verifica que el número de compte bancari d’abonament és corre
 · Titular:  ${object.partner_id.name}<br/>
 · Inversió:  ${nominal_amount}€<br/>
 · Referència:  ${object.name or ''}<br/>
-· <b>Retorn parcial:</b>  ${object.amount_total}€<br/>
+<br/>
+<table>
+<tr>
+    <td><b>Import a retornar: </b></td>
+    <td> ${format_currency(irpf_values['irpf_saving'],'EUR', locale='es_ES')}</td>
+</tr>
+<tr>
+    <td>· -19% IRPF sobre l'estalvi aconseguit durant el ${previous_year}:</td>
+    <td> -${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')}</td>
+</tr>
+<tr>
+    <td>· Retorn net:</td>
+    <td> ${format_currency(object.amount_total,'EUR', locale='es_ES')}</td>
+</tr>
+</table>
+<br/>
 · <b>Pagament número:</b> ${num_amortization} de 24<br/>
+<br/>
+L’import de l'estalvi aconseguit el ${previous_year} va ser de ${format_currency(object.amount_total,'EUR', locale='es_ES')}, base sobre la qual s’ha calculat el 19 % de l’IRPF. Som Energia va ingressar a l'Agència Tributària la retenció resultant a nom teu, per això ara ho restem de la devolució anual del préstec, com es va comunicar en aquesta modificació de les condicions generals.<br/>
 <br/>
 Per a qualsevol dubte o aclariment abans de respondre aquest correu et recomanem visitar el <a href="https://ca.support.somenergia.coop/category/580-generation-kwh">centre d’ajuda de la Generació kWh</a> on hi ha llistades les principals preguntes que ens han anat arribant.<br/>
 <br/>
