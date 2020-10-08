@@ -25,6 +25,13 @@ def get_tension_type(object_, pas1, lang):
         return THREEPHASE[lang]
     return MONOPHASE[lang]
 
+
+def get_autoconsum_description(object_, auto_consum, lang):
+    M101 = object_.pool.get('giscedata.switching.m1.01')
+    tipus_autoconsum = dict(M101.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
+
+    return auto_consum + " - " + tipus_autoconsum[auto_consum]
+
 tipus_tensio = False
 if pas1:
 
@@ -51,6 +58,11 @@ if pas1:
     if pas1.solicitud_tensio == "S" and pas1.tensio_solicitada:
         lang = object.cups_polissa_id.titular.lang
         tipus_tensio = get_tension_type(object, pas1, lang)
+
+    nou_autoconsum = False
+    if object.cups_polissa_id.autoconsumo != pas1.tipus_autoconsum:
+        nou_autoconsum = get_autoconsum_description(object, pas1.tipus_autoconsum, object.cups_polissa_id.titular.lang)
+
 %>
 
 <!doctype html>
@@ -102,6 +114,9 @@ if pas1:
         %if tipus_tensio:
         - Tensió desitjada: ${tipus_tensio}
         %endif
+        %if nou_autoconsum:
+        - Autoconsum desitjat: ${nou_autoconsum}
+        %endif
     </p>
     <p>
         Telèfon de contacte: ${cont_telefon} (recorda que aquest telèfon l'utilitzarà la distribuïdora de la teva zona per posar-se en contacte amb tu en el cas que sigui necessari).
@@ -146,6 +161,9 @@ if pas1:
         %endif
         %if tipus_tensio:
         - Tensión deseada: ${tipus_tensio}
+        %endif
+        %if nou_autoconsum:
+        - Autoconsumo deseado: ${nou_autoconsum}
         %endif
     </p>
     <p>
