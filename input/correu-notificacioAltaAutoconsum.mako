@@ -131,7 +131,7 @@
 	<b>Codi autoconsum:</b> ${d.cau}<br>
 	<b>Modalitat:</b> ${get_auto_code_name(object, d.seccio_registre)}<br>
         <b>Tipus modalitat:</b> ${get_auto_section_name(object, d.subseccio)}<br>
-	<b>Instalació col·lectiva:</b> No<br>
+	<b>Instalació col·lectiva:</b> ${get_auto_colective_name(object, d.collectiu)}<br>
         % if d.generadors[0].cil:
 	<b>CIL:</b> ${d.generadors[0].cil}<br>
         % endif
@@ -200,7 +200,7 @@ El preu que estableix la cooperativa per els kWh d’energia excedentària és d
 	<b>Código autoconsumo:</b> ${d.cau}<br>
 	<b>Modalidad:</b> ${get_auto_code_name(object, d.seccio_registre)}<br>
         <b>Tipo modalidad:</b> ${get_auto_section_name(object, d.subseccio)}<br>
-	<b>Instalación colectiva:</b> No<br>
+	<b>Instalación colectiva:</b> ${get_auto_colective_name(object, d.collectiu)}<br>
         % if d.generadors[0].cil:
 	<b>CIL:</b> ${d.generadors[0].cil}<br>
         % endif
