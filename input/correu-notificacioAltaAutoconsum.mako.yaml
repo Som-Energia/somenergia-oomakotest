@@ -2,8 +2,7 @@ cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email
   object.cups_polissa_id.administradora else '') %>  ${mail}
 to: ${object.cups_polissa_id.direccio_notificacio.email}
 subject_translations:
-  ca_ES: Confirmació dades inst.autoproducció CUPS ${object.cups_id.name}
-  es_ES: Confirmación datos inst.autoproducción CUPS ${object.cups_id.name}
-subject: Confirmació dades inst.autoproducció CUPS ${object.cups_id.name} / Confirmación
-  datos inst.autoproducción CUPS ${object.cups_id.name}
+  ca_ES: Informació de dades inst.autoproducció CUPS ${object.cups_id.name}
+  es_ES: Información de datos inst.autoproducción CUPS ${object.cups_id.name}
+subject: Informació de dades inst.autoproducció CUPS ${object.cups_id.name} / Información de datos inst.autoproducción CUPS ${object.cups_id.name}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net

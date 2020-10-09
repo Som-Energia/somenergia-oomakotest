@@ -108,6 +108,11 @@
         <p>
             Necessitem que acceptis o rebutgis, en el cas de que no estiguis d’acord amb la informació que ens indiquen, la comunicació que ens faciliten per poder continuar amb les gestions pertinents.
         </p>
+        %if partner_diferent:
+        <p>
+            En el teu cas, ens informen també, que el titular de la instal·lació generadora és una altra persona, si no és correcte i ets tu mateix pots rebutjar la notificació i especificar-ho al motiu del rebuig.
+        </p>
+        %endif
         <p>
             En cas que la informació sigui correcta, i hagis acceptat el tràmit, podràs demanar la modificació del contracte per aplicar la modalitat triada seguint els passos que et va indicant la oficina virtual. També et permet sol·licitar alguna altra modificació del contracte com pot ser la potència, tarifa o tensió del subministrament; si vols, pots aprofitar aquest mateix tràmit per fer-ho.
         </p>
@@ -165,6 +170,11 @@
         <p>
             Necesitamos que aceptes o rechaces, en el caso de que no estés de acuerdo con la información que nos indican, la comunicación que nos facilitan para poder continuar con las gestiones pertinentes.
         </p>
+        %if partner_diferent:
+        <p>
+            En tu caso, nos informan también, que el titular de la instalación generadora es otra persona, si no es correcto y eres tú mismo puedes rechazar la notificación y especificarlo en el apartado de motivo de rechazo.
+        </p>
+        %endif
         <p>
             En caso de que la información sea correcta, y hayas aceptado el trámite, podrás pedir la modificación del contrato para aplicar la modalidad elegida siguiendo los pasos que te va indicando la oficina virtual. También te permite solicitar alguna otra modificación del contrato como puede ser la potencia, tarifa o tensión del suministro; si quieres, puedes aprovechar este mismo trámite para hacerlo.
         </p>
