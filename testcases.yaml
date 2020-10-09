@@ -777,7 +777,15 @@
 #    es_auto_tit_diff: 282561
 #    ca_noauto: 282878
 #    es_noauto: 281207
-#
+
+#notificacioRebuigAutoconsum:
+#  template: input/correu-notificacioRebuigAutoconsum.mako
+#  model: giscedata.switching
+#  poweremailId: som_switching.email_atr_rebuig_d1_01
+#  cases:
+#    ca: 304316
+#    es: 300707
+
 #peticioDocumentacioSubministres:
 #  template: input/correu-peticioDocumentacioSubministres.mako
 #  model: res.partner
