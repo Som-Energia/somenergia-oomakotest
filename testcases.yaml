@@ -1002,7 +1002,7 @@
 #    ca: 444848
 #    es: 403834
 #    es_baixa: 6850168
-#    ca_baixa: 6906042 
+#    ca_baixa: 6906042
 #
 ########################################
 ## Infoenergia
@@ -1081,5 +1081,16 @@
 #    es_multi: 214978
 #    ca_emp: 78599
 #    es_emp: 247772
+#######################################
+### Comunicació Socies
+##
+# Enviament comunicat assamblea 2020
+#assambleaSocies:
+#  template: input/correu-assambleaSocies.mako
+#  model: somenergia.soci
+#  poweremailId: 310
+#  cases:
+#    cat: 192
+#    es: 101 
 
 # vim: et ts=2 sw=2
