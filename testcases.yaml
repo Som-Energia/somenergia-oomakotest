@@ -1067,33 +1067,33 @@
 emailAdministradoraPerTitularAssignacio:
   template: input/correu-emailAdministradoraPerTitularAssignacio.mako
   model: som.admin.notification
-  poweremailId: 
+  poweremailId: 1
   cases:
-    ca:
-    es:
+    ca: 1
+    es: 2
 
-emailAdministradoraPerTitularDesassignacio:
-  template: input/correu-emailAdministradoraPerTitularDesassignacio.mako
-  model: som.admin.notification
-  poweremailId: 
-  cases:
-    ca:
-    es:
-
-emailAdministradoraPerAdministradoraAssignacio:
-  template: input/correu-emailAdministradoraPerAdministradoraAssignacio.mako
-  model: som.admin.notification
-  poweremailId: 
-  cases:
-    ca:
-    es:
-
-emailAdministradoraPerAdministradoraDesassignacio:
-  template: input/correu-emailAdministradoraPerAdministradoraDesassignacio.mako
-  model: som.admin.notification
-  poweremailId: 
-  cases:
-    ca:
-    es:
+#emailAdministradoraPerTitularDesassignacio:
+#  template: input/correu-emailAdministradoraPerTitularDesassignacio.mako
+#  model: som.admin.notification
+#  poweremailId: 
+#  cases:
+#    ca:
+#    es:
+#
+#emailAdministradoraPerAdministradoraAssignacio:
+#  template: input/correu-emailAdministradoraPerAdministradoraAssignacio.mako
+#  model: som.admin.notification
+#  poweremailId: 
+#  cases:
+#    ca:
+#    es:
+#
+#emailAdministradoraPerAdministradoraDesassignacio:
+#  template: input/correu-emailAdministradoraPerAdministradoraDesassignacio.mako
+#  model: som.admin.notification
+#  poweremailId: 
+#  cases:
+#    ca:
+#    es:
 
 # vim: et ts=2 sw=2
