@@ -1064,22 +1064,22 @@
 ########################################
 ### Administradora
 ##
-emailAdministradoraPerTitularAssignacio:
-  template: input/correu-emailAdministradoraPerTitularAssignacio.mako
+#emailAdministradoraPerTitularAssignacio:
+#  template: input/correu-emailAdministradoraPerTitularAssignacio.mako
+#  model: som.admin.notification
+#  poweremailId: 1
+#  cases:
+#    ca: 1
+#    es: 2
+
+emailAdministradoraPerTitularDesassignacio:
+  template: input/correu-emailAdministradoraPerTitularDesassignacio.mako
   model: som.admin.notification
   poweremailId: 1
   cases:
     ca: 1
     es: 2
 
-#emailAdministradoraPerTitularDesassignacio:
-#  template: input/correu-emailAdministradoraPerTitularDesassignacio.mako
-#  model: som.admin.notification
-#  poweremailId: 
-#  cases:
-#    ca:
-#    es:
-#
 #emailAdministradoraPerAdministradoraAssignacio:
 #  template: input/correu-emailAdministradoraPerAdministradoraAssignacio.mako
 #  model: som.admin.notification
