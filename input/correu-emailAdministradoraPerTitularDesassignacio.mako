@@ -52,7 +52,7 @@ Hola ${titular},<br>
 T’enviem aquest correu per a confirmar-te que has modificat les opcions d’administració de l’Oficina Virtual ${final[plural][mail_lang]}:<br>
 <ul>
 % for (contracte, administradora) in contractes:
-    <li>Contracte ${contracte}: s’ha desasignat a la persona administradora ${administradora}.</li>
+    <li>Contracte ${contracte}: s’ha desassignat a la persona administradora ${administradora}.</li>
 % endfor
 </ul>
 Per a qualsevol dubte seguim en contacte.<br>
