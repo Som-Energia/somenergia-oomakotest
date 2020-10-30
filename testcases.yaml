@@ -1065,28 +1065,42 @@
 ########################################
 ### Administradora
 ##
-#emailAdministradoraPerTitular:
-#  template: input/correu-emailAdministradoraPerTitular.mako
-#  model: giscedata.polissa
-#  poweremailId: 274 #T276 L294 R274
+#emailAdministradoraPerTitularAssignacio:
+#  template: input/correu-emailAdministradoraPerTitularAssignacio.mako
+#  model: som.admin.notification
+#  poweremailId: 1
 #  cases:
-#    ca: 132850
-#    es: 165532
-#    ca_multi: 214978
-#    es_multi: 173790
-#    ca_emp: 247772
-#    es_emp: 78599
+#    es: 1
+#    singular: 6
+#    dos: 10
 #
-#emailAdministradoraPerAdministradora:
-#  template: input/correu-emailAdministradoraPerAdministradora.mako
-#  model: giscedata.polissa
-#  poweremailId: 275 #T277 L295 R275
+#emailAdministradoraPerTitularDesassignacio:
+#  template: input/correu-emailAdministradoraPerTitularDesassignacio.mako
+#  model: som.admin.notification
+#  poweremailId: 1
 #  cases:
-#    ca: 132850
-#    es: 165532
-#    ca_multi: 173790
-#    es_multi: 214978
-#    ca_emp: 78599
-#    es_emp: 247772
+#    es: 3
+#    singular: 8
+#    varis: 15
+#
+#emailAdministradoraPerAdministradoraAssignacio:
+#  template: input/correu-emailAdministradoraPerAdministradoraAssignacio.mako
+#  model: som.admin.notification
+#  poweremailId: 1
+#  cases:
+#    ca: 2
+#    es: 5
+#    singular: 7
+#    dos: 11
+#
+#emailAdministradoraPerAdministradoraDesassignacio:
+#  template: input/correu-emailAdministradoraPerAdministradoraDesassignacio.mako
+#  model: som.admin.notification
+#  poweremailId: 1
+#  cases:
+#    ca: 4
+#    singular: 9
+#    varis: 16
+#    varis: 17
 
 # vim: et ts=2 sw=2
