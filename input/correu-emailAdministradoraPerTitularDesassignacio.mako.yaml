@@ -1,0 +1,7 @@
+cc: false
+to: ${object.receptor.www_email}
+subject_translations:
+  ca_ES: "Som Energia: Administració de l’Oficina Virtual"
+  es_ES: "Som Energia: Administradora Oficina Virtual"
+subject: "Som Energia: Administració de l’Oficina Virtual"
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
