@@ -42,6 +42,13 @@ final = {
             'es_ES':'del siguiente contrato'}
 }
 
+action = {
+    True: { 'ca_ES':'modificat',
+            'es_ES':'modificado'},
+    False: {'ca_ES':'assignat',
+            'es_ES':'asignado'}
+}
+
 mail_lang = object.receptor.lang
 titular = get_clean_name(object.receptor.name, object.receptor.vat, True)
 contractes = []
@@ -49,7 +56,8 @@ for mod in object.modification:
     contractes.append((
         mod.polissa_id.name,
         get_clean_name(mod.new_administradora.name, mod.new_administradora.vat, False),
-        permissions[mod.permissions][mail_lang]
+        permissions[mod.permissions][mail_lang],
+        action[bool(mod.old_administradora)][mail_lang],
     ))
 plural = len(contractes)>1
 %>
@@ -59,8 +67,8 @@ Hola ${titular},<br>
 % if mail_lang != "es_ES":
 T’enviem aquest correu per a confirmar-te que has modificat les opcions d’administració de l’Oficina Virtual ${final[plural][mail_lang]}:<br>
 <ul>
-% for (contracte, administradora, permission) in contractes:
-    <li>Contracte ${contracte}: s’ha assignat/modificat a la persona administradora ${administradora} per a ${permission} el contracte.</li>
+% for (contracte, administradora, permission, action) in contractes:
+    <li>Contracte ${contracte}: s’ha ${action} a la persona administradora ${administradora} per a ${permission} el contracte.</li>
 % endfor
 </ul>
 Per a qualsevol dubte seguim en contacte.<br>
@@ -74,8 +82,8 @@ Equip de Som Energia<br>
 % if mail_lang != "ca_ES":
 Te enviamos este correo para confirmarte que has modificado las opciones de administración de la Oficina Virtual ${final[plural][mail_lang]}:<br>
 <ul>
-% for (contracte, administradora, permission) in contractes:
-    <li>Contrato ${contracte}: se ha asignado/modificado a la persona administradora ${administradora} para ${permission} el contrato.</li>
+% for (contracte, administradora, permission, action) in contractes:
+    <li>Contrato ${contracte}: se ha ${action} a la persona administradora ${administradora} para ${permission} el contrato.</li>
 % endfor
 </ul>
 Para cualquier duda seguimos en contacto. <br>
