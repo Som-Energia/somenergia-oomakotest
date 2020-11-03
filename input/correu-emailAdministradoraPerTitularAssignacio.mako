@@ -68,7 +68,7 @@ Hola ${titular},<br>
 T’enviem aquest correu per a confirmar-te que has modificat les opcions d’administració de l’Oficina Virtual ${final[plural][mail_lang]}:<br>
 <ul>
 % for (contracte, administradora, permission, action) in contractes:
-    <li>Contracte ${contracte}: s’ha ${action} a la persona administradora ${administradora} per a ${permission} el contracte.</li>
+    <li>Contracte ${contracte}: has ${action} a la persona administradora ${administradora} per a ${permission} el contracte.</li>
 % endfor
 </ul>
 Per a qualsevol dubte seguim en contacte.<br>
@@ -83,7 +83,7 @@ Equip de Som Energia<br>
 Te enviamos este correo para confirmarte que has modificado las opciones de administración de la Oficina Virtual ${final[plural][mail_lang]}:<br>
 <ul>
 % for (contracte, administradora, permission, action) in contractes:
-    <li>Contrato ${contracte}: se ha ${action} a la persona administradora ${administradora} para ${permission} el contrato.</li>
+    <li>Contrato ${contracte}: has ${action} a la persona administradora ${administradora} para ${permission} el contrato.</li>
 % endfor
 </ul>
 Para cualquier duda seguimos en contacto. <br>

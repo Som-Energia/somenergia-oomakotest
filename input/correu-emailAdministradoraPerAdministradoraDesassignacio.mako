@@ -51,7 +51,7 @@ Hola ${administradora},<br>
 T’enviem aquest correu per informar-te de les opcions d’administració de l’Oficina Virtual ${final[plural][mail_lang]}:<br>
 <ul>
 % for contracte in contractes:
-    <li>Contracte ${contracte}: has estat desassignat com a persona administradora del contracte.</li>
+    <li>Contracte ${contracte}: has estat desassignat/ada com a persona administradora del contracte.</li>
 % endfor
 </ul>
 Per a qualsevol dubte seguim en contacte.<br>
@@ -66,7 +66,7 @@ Equip de Som Energia<br>
 Te enviamos este correo para informarte de las opciones de administración de la Oficina Virtual ${final[plural][mail_lang]}:<br>
 <ul>
 % for contracte in contractes:
-    <li>Contrato ${contracte}:has sido desasignado como persona administradora del contracto.</li>
+    <li>Contrato ${contracte}:has sido desasignado/ada como persona administradora del contracto.</li>
 % endfor
 </ul>
 Para cualquier duda seguimos en contacto. <br>
