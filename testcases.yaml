@@ -355,6 +355,9 @@
 #   template: input/report-condicionsParticulars.mako
 #   model: giscedata.polissa
 #   reportXmlId: 527
+#   data:
+#     maxDiff: 0
+#     useErpMako: True
 #   cases:
 #       igic_vivenda: 158433
 #       igic_no_vivenda: 136877
@@ -387,7 +390,10 @@
 # reportCondicionsParticularsM101:
 #   template: input/report-condicionsParticularsM101.mako
 #   model: giscedata.switching
-#   reportXmlId: 1469
+#   reportXmlId: 1389
+#   data:
+#     maxDiff: 0
+#     useErpMako: True
 #   cases:
 #     ca_N: 274549
 #     catala_s_s: 282778
