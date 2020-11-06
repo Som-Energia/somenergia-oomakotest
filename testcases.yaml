@@ -1074,7 +1074,7 @@
 #emailAdministradoraPerTitularAssignacio:
 #  template: input/correu-emailAdministradoraPerTitularAssignacio.mako
 #  model: som.admin.notification
-#  poweremailId: 1
+#  poweremailId: som_polissa_administradora.email_assignacio_a_titular
 #  cases:
 #    es: 1
 #    singular: 6
@@ -1083,26 +1083,26 @@
 #emailAdministradoraPerTitularDesassignacio:
 #  template: input/correu-emailAdministradoraPerTitularDesassignacio.mako
 #  model: som.admin.notification
-#  poweremailId: 1
+#  poweremailId: som_polissa_administradora.email_desassignacio_a_titular
 #  cases:
 #    es: 3
 #    singular: 8
 #    varis: 15
 #
-#emailAdministradoraPerAdministradoraAssignacio:
-#  template: input/correu-emailAdministradoraPerAdministradoraAssignacio.mako
-#  model: som.admin.notification
-#  poweremailId: 1
-#  cases:
-#    ca: 2
-#    es: 5
-#    singular: 7
-#    dos: 11
+# emailAdministradoraPerAdministradoraAssignacio:
+#   template: input/correu-emailAdministradoraPerAdministradoraAssignacio.mako
+#   model: som.admin.notification
+#   poweremailId: som_polissa_administradora.email_assignacio_a_administradora
+#   cases:
+#     ca: 2
+#     es: 5
+#     singular: 7
+#     dos: 11
 #
 #emailAdministradoraPerAdministradoraDesassignacio:
 #  template: input/correu-emailAdministradoraPerAdministradoraDesassignacio.mako
 #  model: som.admin.notification
-#  poweremailId: 1
+#  poweremailId: som_polissa_administradora.email_desassignacio_a_administradora
 #  cases:
 #    ca: 4
 #    singular: 9

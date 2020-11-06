@@ -41,6 +41,12 @@ final = {
     False: {'ca_ES':'del següent contracte',
             'es_ES':'del siguiente contrato'}
 }
+this_contract_text = {
+    True: { 'ca_ES':'aquests contractes',
+            'es_ES':'estos contratos'},
+    False: {'ca_ES':'aquest contracte',
+            'es_ES':'este contrato'}
+}
 
 mail_lang = object.receptor.lang
 administradora = get_clean_name(object.receptor.name, object.receptor.vat, True)
@@ -63,6 +69,13 @@ T’enviem aquest correu per informar-te de les opcions d’administració de l�
     <li>Contracte ${contracte}: ${titular} t’ha assignat com a persona administradora per a ${permission} el contracte.</li>
 % endfor
 </ul>
+<br>
+Així doncs, podràs ${permission} ${this_contract_text[plural][mail_lang]} des de la teva Oficina Virtual, encara que no en siguis la persona titular. El fet que siguis administradora no implica que en siguis el/la responsable legal.
+<br>
+<br>
+Si no has accedit mai a l'Oficina Virtual, <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquí</a> t’expliquem com fer-ho.
+<br>
+<br>
 Per a qualsevol dubte seguim en contacte.<br>
 <br>
 Equip de Som Energia<br>
@@ -78,6 +91,13 @@ Te enviamos este correo para informarte de las opciones de administración de la
     <li>Contrato ${contracte}: ${titular} te ha asignado como persona administradora para ${permission} el contrato.</li>
 % endfor
 </ul>
+<br>
+Por lo tanto, podrás ${permission} ${this_contract_text[plural][mail_lang]} desde tu Oficina Virtual, aunque no seas la persona titular. El hecho de que seas administradora no implica que seas el/la responsable legal.
+<br>
+<br>
+Si no has accedido nunca a la oficina virtual, <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">aquí</a> te explicamos cómo hacerlo.
+<br>
+<br>
 Para cualquier duda seguimos en contacto. <br>
 <br>
 Equipo de Som Energia<br>
