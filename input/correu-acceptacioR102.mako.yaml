@@ -1,7 +1,12 @@
-cc: false
-to: ${object.cups_polissa_id.titular.address[0].email},${object.cups_polissa_id.pagador.address[0].email},${object.cups_polissa_id.direccio_notificacio.email}
-subject_translations: 
-  ca_ES: "${object.company_id.name}: Rebuda una comunicació d'acceptació de la sol·licitud de reclamació a la seva distribuidora ${object.partner_id.name}"
-  es_ES: "${object.company_id.name}: Rebuda una comunicació d'acceptació de la sol·licitud de reclamació a la seva distribuidora ${object.partner_id.name}"
-subject: "${object.company_id.name}: Rebuda una comunicació d'acceptació de la sol·licitud de reclamació a la seva distribuidora ${object.partner_id.name}"
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email if
+  object.cups_polissa_id.administradora else '') %>  ${mail}
+to: ${object.cups_polissa_id.direccio_notificacio.email}
+subject_translations:
+  en_US: ''
+  es_ES: '${object.company_id.name}: Recibida una comunicación d''aceptación de la
+    solicitud de reclamación a su distribuidora ${object.partner_id.name}'
+  ca_ES: '${object.company_id.name}: Rebuda una comunicació d''acceptació de la sol·licitud
+    de reclamació a la seva distribuidora ${object.partner_id.name}'
+subject: '${object.company_id.name}: Rebuda una comunicació d''acceptació de la sol·licitud
+  de reclamació a la seva distribuidora ${object.partner_id.name}'
+bcc: false

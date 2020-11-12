@@ -1,0 +1,11 @@
+cc: <% mail = '{}'.format(object.administradora.address[0].email if object.administradora
+  else '') %>  ${mail}
+to: ${object.titular.address[0].email},${object.pagador.address[0].email},${object.direccio_notificacio.email}
+subject_translations:
+  ca_ES: 'Segon avís: requeriment butlletí elèctric Endesa Distribució / Segundo aviso:
+    requerimiento boletín eléctrico Endesa Distribución'
+  es_ES: 'Segon avís: requeriment butlletí elèctric Endesa Distribució / Segundo aviso:
+    requerimiento boletín eléctrico Endesa Distribución'
+subject: 'Segon avís: requeriment butlletí elèctric Endesa Distribució / Segundo aviso:
+  requerimiento boletín eléctrico Endesa Distribución'
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
