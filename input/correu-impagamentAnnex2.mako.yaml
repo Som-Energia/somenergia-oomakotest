@@ -1,7 +1,6 @@
-cc: ${object.polissa_id.titular.www_email}
+cc: ${object.polissa_id.titular.www_email},<% mail = '{}'.format(object.polissa_id.administradora.address[0].email
+  if object.polissa_id.administradora else '') %>  ${mail}
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
-subject_translations:
-  ca_ES: Procedimiento corte de luz (Anexo II) / Procediment tall de llum (Annex II)
-  es_ES: Procedimiento corte de luz (Anexo II) / Procediment tall de llum (Annex II)
+subject_translations: {}
 subject: Procedimiento corte de luz (Anexo II) / Procediment tall de llum (Annex II)
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net

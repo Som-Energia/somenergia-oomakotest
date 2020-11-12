@@ -1,4 +1,5 @@
-cc: false
+cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email if
+  object.cups_polissa_id.administradora else '') %>  ${mail}
 to: -- definit en codi --
 subject_translations: {}
 subject: 'Som Energia: Canvi de titular. Verificació de dades. Contracte ${object.cups_polissa_id.name}
