@@ -49,7 +49,7 @@ plural = len(contractes)>1
 Hola ${titular},<br>
 <br>
 % if mail_lang != "es_ES":
-T’enviem aquest correu per a confirmar-te que has modificat les opcions d’administració de l’Oficina Virtual ${final[plural][mail_lang]}:<br>
+T’enviem aquest correu per a confirmar-te que s'han modificat les opcions d’administració de l’Oficina Virtual ${final[plural][mail_lang]}:<br>
 <ul>
 % for (contracte, administradora) in contractes:
     <li>Contracte ${contracte}: s’ha desassignat a la persona administradora ${administradora}.</li>
@@ -64,7 +64,7 @@ Equip de Som Energia<br>
 ----------------------------------------------------------------------------------------------------
 % endif
 % if mail_lang != "ca_ES":
-Te enviamos este correo para confirmarte que has modificado las opciones de administración de la Oficina Virtual ${final[plural][mail_lang]}:<br>
+Te enviamos este correo para confirmarte que se han modificado las opciones de administración de la Oficina Virtual ${final[plural][mail_lang]}:<br>
 <ul>
 % for (contracte, administradora) in contractes:
     <li>Contrato ${contracte}: se ha desasignado a la persona administradora ${administradora}.</li>
