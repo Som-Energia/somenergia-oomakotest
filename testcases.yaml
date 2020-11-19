@@ -30,6 +30,13 @@
 #   cases:
 #     ca: 192
 #
+ nouSoci_destral:
+   template: input/correu-nouSoci.mako
+   model: somenergia.soci
+   poweremailId: som_polissa_soci.nou_soci_mail_webforms
+   cases:
+     ca: som_polissa_soci.soci_0001
+#
 ######################################################
 ## Facturació
 #
@@ -387,6 +394,17 @@
 #       20A_auto_directe_es: 262690
 #       20DHA_auto_g_es: 9398
 #       61A: 203034
+#
+#reportCondicionsParticulars_destral:
+#  template: input/report-condicionsParticulars.mako
+#  model: giscedata.polissa
+#  reportXmlId: 'giscedata_polissa.report_contracte'
+#  data:
+#    maxDiff: 0
+#    useErpMako: True
+#  cases:
+#    destral_ca: 'giscedata_polissa.polissa_0002'
+#
 # reportCondicionsParticularsM101:
 #   template: input/report-condicionsParticularsM101.mako
 #   model: giscedata.switching
