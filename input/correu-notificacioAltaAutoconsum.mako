@@ -51,6 +51,20 @@
         if not code:
             return "Sin excedentes"
         return get_description(code,'TABLA_128')
+
+    def get_ssaa_name(object_, ssaa):
+        switcher = {
+            'ca_ES': {
+                'S': 'Si',
+                'N': 'No'
+            },
+            'es_ES': {
+                'S': 'Sí',
+                'N': 'No'
+            }
+        }
+        lang = object_.cups_polissa_id.titular.lang
+        return switcher.get(lang, {}).get(ssaa, '')
 %>
 <%
     partner_diferent = False
@@ -62,7 +76,7 @@
     if d.motiu_canvi == '04':
         if d.generadors:
             nif_generador = d.generadors[0].identificador
-            if nif_generador != polissa_nif:
+            if nif_generador.lstrip('ES') != polissa_nif.lstrip('ES'):
                 partner_diferent = True
 
     t_obj = object.pool.get('poweremail.templates')
@@ -138,7 +152,7 @@
 	<b>Tecnologia:</b> ${get_auto_technologi_name(object,d.generadors[0].tec_generador)}<br>
 	<b>Potència instal·lada:</b> ${d.generadors[0].pot_installada_gen} kW<br>
 	<b>Tipus instal·lació:</b> ${get_auto_type_name(object, d.generadors[0].tipus_installacio)}<br>
-	<b>Serveis auxiliars:</b> No<br>
+	<b>Serveis auxiliars:</b> ${get_ssaa_name(object, d.generadors[0].ssaa)}<br>
 	<br>
         % if partner_diferent:
 Ens informen també que la persona titular de la instal·lació generadora és una persona diferent de la titular del contracte.<br>
@@ -146,7 +160,7 @@ Ens informen també que la persona titular de la instal·lació generadora és u
         % endif
 Si és correcte cal que ens ho confirmis responent aquest mateix correu, indicant expressament que vols que demanem la modificació corresponent a la modalitat d’autoproducció triada a la distribuïdora per aplicar-ho al teu contracte i a la teva facturació mensual tal com s’estableix a les <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">CONDICIONS GENERALS</a>.<br>
 <br>
-En cas que es tracti d’una instal·lació registrada a la Comunitat Autònoma de Catalunya cal que també ens facis arribar el <b>Certificat d’Instal·lació de Generació</b> i el document de la declaració responsable complert o <b>RITSIC</b>, contestant aquest mateix correu. Si disposes del  <b>RAC</b> agraïrem que ens ho facis arribar també per ajudar-nos a contrastar la informació. <br>
+En cas que es tracti d’una instal·lació registrada a la Comunitat Autònoma de Catalunya cal que també ens facis arribar el <b>Certificat d’Instal·lació de Generació</b> i el document de la declaració responsable complert o <b>RITSIC</b> i el <b>RAC</b>, contestant aquest mateix correu.<br>
 <br>
 El preu que estableix la cooperativa per els kWh d’energia excedentària és de 0,06359318€/kWh. Més info: <a href="https://ca.support.somenergia.coop/article/799-preu-compensacio-excedents-autoproduccio">Preu de compensació dels excedents en autoproducció</a>
 <br>
@@ -207,7 +221,7 @@ El preu que estableix la cooperativa per els kWh d’energia excedentària és d
 	<b>Tecnología:</b> ${get_auto_technologi_name(object, d.generadors[0].tec_generador)}<br>
 	<b>Potencia instalada:</b> ${d.generadors[0].pot_installada_gen} kW<br>
 	<b>Tipo instalación:</b> ${get_auto_type_name(object, d.generadors[0].tipus_installacio)}<br>
-	<b>Servicios auxiliares:</b> No<br>
+	<b>Servicios auxiliares:</b> ${get_ssaa_name(object, d.generadors[0].ssaa)}<br>
 	<br>
         % if partner_diferent:
 Nos informan también que la persona titular de la instalación generadora es una persona diferente a la titular del contrato.<br>
@@ -215,7 +229,7 @@ Nos informan también que la persona titular de la instalación generadora es un
         % endif
 	Si es correcto es necesario que nos lo confirmes respondiendo este mismo correo, indicando en él expresamente que deseas que solicitemos la modificación correspondiente a la modalidad de autoproducción elegida a la distribuidora para aplicarlo a tu contrato y en tu facturación mensual tal como se establece en las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">CONDICIONES GENERALES</a>.<br>
 <br>
-En caso de que se trate de una instalación registrada en la Comunidad Autónoma de Cataluña es necesario también que nos hagas llegar el <b>Certificado de Instalación de Generación</b> y el documento de la Declaración responsable completo o <b>RITSIC</b>, contestando el mismo correo. Si dispones del  <b>RAC</b> agradeceremos que nos lo hagas llegar también para ayudarnos a contrastar la información. <br>
+En caso de que se trate de una instalación registrada en la Comunidad Autónoma de Cataluña es necesario también que nos hagas llegar el <b>Certificado de Instalación de Generación</b> y el documento de la Declaración responsable completo o <b>RITSIC</b> i el <b>RAC</b>, contestando el mismo correo.</b><br>
 <br>
         El precio que establece la cooperativa para los kWh de energía excedentaria es de 0,06359318€/kWh. Más info: <a href="https://es.support.somenergia.coop/article/800-el-precio-de-compensacion-excedentes-autoproduccion">Precio de compensación de excedentes en autoproducción</a><br>
 	<br>
