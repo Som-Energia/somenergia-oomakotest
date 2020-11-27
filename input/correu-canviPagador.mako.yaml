@@ -1,0 +1,11 @@
+cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email if
+  object.cups_polissa_id.administradora else '') %>  ${mail}
+to: ${object.direccio_pagament.email},${object.titular.address[0].email}
+subject_translations:
+  ca_ES: Canvi de pagador/a (contracte ${object.name}) -- Cambio de pagador/a  (contrato
+    ${object.name})
+  es_ES: Canvi de pagador/a (contracte ${object.name}) -- Cambio de pagador/a  (contrato
+    ${object.name})
+subject: Canvi de pagador/a (contracte ${object.name}) -- Cambio de pagador/a  (contrato
+  ${object.name})
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
