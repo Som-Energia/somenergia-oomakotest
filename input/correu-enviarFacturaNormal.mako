@@ -51,7 +51,7 @@ Carregarem l'import d'aquesta factura al teu número de compte durant els proper
 </ul>
 Accedeix a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els teus contractes amb la cooperativa.<br>
 <br>
-Aprofitem l’avinentesa per informar-te que, tal com ha regulat la Comissió Nacional dels Mercats i la Competència, a partir de novembre de 2020, entrarà en vigor un canvi en la tarificació de les factures de subministrament elèctric.<br>
+Aprofitem l'avinentesa per informar-te que, tal com ha regulat la Comissió Nacional dels Mercats i la Competència, a partir de l’abril de 2021 entrarà en vigor un canvi en la tarificació de les factures de subministrament elèctric (inicialment previst pel novembre de 2020).<br>
 <br>
 En aquesta <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2020/01/com-canviara-la-factura-delectricitat/">notícia del nostre blog</a></b> trobaràs més informació sobre els canvis.<br>
 <br>
@@ -87,7 +87,7 @@ Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
 </ul>
 Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.<br>
 <br>
-Aprovechamos la ocasión para informarte de que, tal como ha regulado la Comisión Nacional de los Mercados y la Competencia, a partir de noviembre de 2020, entrará en vigor un cambio en la tarificación de las facturas de suministro eléctrico.<br>
+Aprovechamos la ocasión para informarte de que, tal como ha regulado la Comisión Nacional de los Mercados y la Competencia, a partir de abril de 2021 entrará en vigor un cambio en la tarificación de las facturas de suministro eléctrico (inicialmente previsto para noviembre de 2020).<br>
 <br>
 En esta <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2020/01/como-cambiara-la-factura-de-electricidad/">noticia de nuestro blog</a></b> encontrarás más información sobre los cambios.<br>
 <br>
