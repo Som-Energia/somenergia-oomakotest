@@ -484,5 +484,11 @@ def get_pas01(cas):
         %endif
 
     %endfor
+    <p style="page-break-after:always;"></p>
+    %if lang == 'ca_ES':
+        <%include file="/som_polissa_condicions_generals/report/condicions_generals.mako"/>
+    %else:
+        <%include file="/som_polissa_condicions_generals/report/condiciones_generales.mako"/>
+    %endif
 </body>
 </html>

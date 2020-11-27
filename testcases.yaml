@@ -408,7 +408,7 @@
 # reportCondicionsParticularsM101:
 #   template: input/report-condicionsParticularsM101.mako
 #   model: giscedata.switching
-#   reportXmlId: 1389
+#   reportXmlId: 1389 #R1389 T1469
 #   data:
 #     maxDiff: 0
 #     useErpMako: True
