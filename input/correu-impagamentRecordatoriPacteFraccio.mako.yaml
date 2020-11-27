@@ -1,4 +1,5 @@
-cc: ${object.polissa_id.titular.www_email}
+cc: ${object.polissa_id.titular.www_email},<% mail = '{}'.format(object.polissa_id.administradora.address[0].email
+  if object.polissa_id.administradora else '') %>  ${mail}
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
   ca_ES: '[FRACCIONAM. SOM ENERGIA] Recordatori transferència / recordatorio transferencia'

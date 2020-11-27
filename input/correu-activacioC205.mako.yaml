@@ -1,5 +1,8 @@
-cc: "<% mail = '{}'.format(object.cups_polissa_id.titular.address[0].email if object.cups_polissa_id.titular != object.cups_polissa_id.pagador else '') %> ${mail}"
-to: ${object.cups_polissa_id.direccio_pagament.email},${object.cups_polissa_id.direccio_notificacio.email}
+cc: <% mail = '{}'.format(object.cups_polissa_id.titular.address[0].email if object.cups_polissa_id.titular
+  != object.cups_polissa_id.pagador else '') %> ${mail}
+to: ${object.cups_polissa_id.direccio_pagament.email},${object.cups_polissa_id.direccio_notificacio.email},<%
+  mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email if object.cups_polissa_id.administradora
+  else '') %>  ${mail}
 subject_translations:
   en_US: ''
   ca_ES: '${object.cups_polissa_id.name}  Contracte activat/Contrato activado '

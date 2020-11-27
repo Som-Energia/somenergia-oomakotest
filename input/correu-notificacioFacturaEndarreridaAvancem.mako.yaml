@@ -1,4 +1,5 @@
-cc: false
+cc: <% mail = '{}'.format(object.administradora.address[0].email if object.administradora
+  else '') %>  ${mail}
 to: ${object.direccio_pagament.email},${object.direccio_notificacio.email}
 subject_translations:
   ca_ES: Facturació contracte ${object.name} / Facturación contrato ${object.name}

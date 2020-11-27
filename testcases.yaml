@@ -30,6 +30,13 @@
 #   cases:
 #     ca: 192
 #
+ nouSoci_destral:
+   template: input/correu-nouSoci.mako
+   model: somenergia.soci
+   poweremailId: som_polissa_soci.nou_soci_mail_webforms
+   cases:
+     ca: som_polissa_soci.soci_0001
+#
 ######################################################
 ## Facturació
 #
@@ -334,6 +341,13 @@
 #    m_ant_30_simax_reactiva_cat: 6773256
 #    m_nou_31_e_es: 6648703
 #    m_61_consum0_ca: 6726457
+#    61_es: 9468478
+#    61A_2_es: 9468467
+#    20DHS_auto_es: 9487852
+#    30_ende_mo_lec_auto_es: 9586982
+#    20DHA_ende_no_lec_auto_g_ca: 9607095
+#    20A_ende_no_lec_auto_g_ca: 9445326
+#    31_3periods: 9470629
 #
 ######################################################
 ## Gestió de contractes
@@ -348,6 +362,9 @@
 #   template: input/report-condicionsParticulars.mako
 #   model: giscedata.polissa
 #   reportXmlId: 527
+#   data:
+#     maxDiff: 0
+#     useErpMako: True
 #   cases:
 #       igic_vivenda: 158433
 #       igic_no_vivenda: 136877
@@ -377,10 +394,24 @@
 #       20A_auto_directe_es: 262690
 #       20DHA_auto_g_es: 9398
 #       61A: 203034
+#
+#reportCondicionsParticulars_destral:
+#  template: input/report-condicionsParticulars.mako
+#  model: giscedata.polissa
+#  reportXmlId: 'giscedata_polissa.report_contracte'
+#  data:
+#    maxDiff: 0
+#    useErpMako: True
+#  cases:
+#    destral_ca: 'giscedata_polissa.polissa_0002'
+#
 # reportCondicionsParticularsM101:
 #   template: input/report-condicionsParticularsM101.mako
 #   model: giscedata.switching
-#   reportXmlId: 1469
+#   reportXmlId: 1389
+#   data:
+#     maxDiff: 0
+#     useErpMako: True
 #   cases:
 #     ca_N: 274549
 #     catala_s_s: 282778
@@ -746,7 +777,15 @@
 #    es_auto_tit_diff: 282561
 #    ca_noauto: 282878
 #    es_noauto: 281207
-#
+
+#notificacioRebuigAutoconsum:
+#  template: input/correu-notificacioRebuigAutoconsum.mako
+#  model: giscedata.switching
+#  poweremailId: som_switching.email_atr_rebuig_d1_01
+#  cases:
+#    ca: 304316
+#    es: 300707
+
 #peticioDocumentacioSubministres:
 #  template: input/correu-peticioDocumentacioSubministres.mako
 #  model: res.partner
@@ -1058,29 +1097,43 @@
 ########################################
 ### Administradora
 ##
-#emailAdministradoraPerTitular:
-#  template: input/correu-emailAdministradoraPerTitular.mako
-#  model: giscedata.polissa
-#  poweremailId: 274 #T276 L294 R274
+#emailAdministradoraPerTitularAssignacio:
+#  template: input/correu-emailAdministradoraPerTitularAssignacio.mako
+#  model: som.admin.notification
+#  poweremailId: som_polissa_administradora.email_assignacio_a_titular
 #  cases:
-#    ca: 132850
-#    es: 165532
-#    ca_multi: 214978
-#    es_multi: 173790
-#    ca_emp: 247772
-#    es_emp: 78599
+#    es: 1
+#    singular: 6
+#    dos: 10
 #
-#emailAdministradoraPerAdministradora:
-#  template: input/correu-emailAdministradoraPerAdministradora.mako
-#  model: giscedata.polissa
-#  poweremailId: 275 #T277 L295 R275
+#emailAdministradoraPerTitularDesassignacio:
+#  template: input/correu-emailAdministradoraPerTitularDesassignacio.mako
+#  model: som.admin.notification
+#  poweremailId: som_polissa_administradora.email_desassignacio_a_titular
 #  cases:
-#    ca: 132850
-#    es: 165532
-#    ca_multi: 173790
-#    es_multi: 214978
-#    ca_emp: 78599
-#    es_emp: 247772
+#    es: 3
+#    singular: 8
+#    varis: 15
+#
+# emailAdministradoraPerAdministradoraAssignacio:
+#   template: input/correu-emailAdministradoraPerAdministradoraAssignacio.mako
+#   model: som.admin.notification
+#   poweremailId: som_polissa_administradora.email_assignacio_a_administradora
+#   cases:
+#     ca: 2
+#     es: 5
+#     singular: 7
+#     dos: 11
+#
+#emailAdministradoraPerAdministradoraDesassignacio:
+#  template: input/correu-emailAdministradoraPerAdministradoraDesassignacio.mako
+#  model: som.admin.notification
+#  poweremailId: som_polissa_administradora.email_desassignacio_a_administradora
+#  cases:
+#    ca: 4
+#    singular: 9
+#    varis: 16
+#    varis: 17
 #######################################
 ### Comunicació Socies
 ##
