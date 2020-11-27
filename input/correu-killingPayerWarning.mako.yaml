@@ -1,0 +1,7 @@
+cc: false
+to: ${object.direccio_pagament.email},${object.direccio_notificacio.email}
+subject_translations:
+  ca_ES: Notificar contracte ${object.name} amb pagador diferent al titular
+  es_ES: Notificar contrato ${object.name} con pagador diferente al titular
+subject: Notificar contracte ${object.name} amb pagador diferent al titular
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

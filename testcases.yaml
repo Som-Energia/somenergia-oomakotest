@@ -800,6 +800,13 @@
 ##  cases:
 ##    ca: 2391140
 #
+#correuKillingPayerWarning:
+#  template: input/correu-killingPayerWarning.mako
+#  model: giscedata.polissa
+#  poweremailId: 283 #R308 T283
+#  cases:
+#    es: 618
+#    ca: 258
 ######################################################
 ## Inversions
 #
