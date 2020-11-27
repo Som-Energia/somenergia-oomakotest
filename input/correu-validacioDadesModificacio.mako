@@ -25,35 +25,8 @@ def get_tension_type(object_, pas1, lang):
         return THREEPHASE[lang]
     return MONOPHASE[lang]
 
-
-def get_autoconsum_description(object_, auto_consum, lang):
-    M101 = object_.pool.get('giscedata.switching.m1.01')
-    tipus_autoconsum = dict(M101.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
-
-    return auto_consum + " - " + tipus_autoconsum[auto_consum]
-
-def is_canvi_potencia(object_, pas1):
-    polissa_pots = {
-        d.periode_id.name: int(d.potencia * 1000)
-        for d in object_.cups_polissa_id.potencies_periode
-    }
-
-    if len(polissa_pots) != len(pas1.header_id.pot_ids):
-        return True
-
-    for sw_pot in pas1.header_id.pot_ids:
-        if polissa_pots.get(sw_pot.name, False) != sw_pot.potencia:
-            return True
-    return False
-
-def is_canvi_tarifa(object_, pas1):
-    pol_tarifa_codi = object_.cups_polissa_id.tarifa.codi_ocsum
-    return pas1.tarifaATR != pol_tarifa_codi
-
-
 tipus_tensio = False
 if pas1:
-    _is_canvi_tarifa = is_canvi_tarifa(object, pas1)
 
     PasM101 = object.pool.get('giscedata.switching.m1.01')
     mapaTarifes = dict(PasM101.fields_get(object._cr, object._uid)['tarifaATR']['selection'])
@@ -61,32 +34,23 @@ if pas1:
 
     cont_telefon = pas1.cont_telefons and pas1.cont_telefons[0].numero or object.tel_pagador_polissa
 
-    _is_canvi_potencia = is_canvi_potencia(object, pas1)
-    pot_deseada = ''
+    if tarifaATR == '3.0A':
+        lineesDePotencia = '\n'.join((
+            '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
+            for p in pas1.header_id.pot_ids
+            if p.potencia != 0
+        ))
+    else:
+      for p in pas1.header_id.pot_ids:
+          if p.potencia == 0: continue
+          potencia = p.potencia
+          break
 
-    if _is_canvi_potencia:
-        if tarifaATR == '3.0A':
-            lineesDePotencia = '\n'.join((
-                '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
-                for p in pas1.header_id.pot_ids
-                if p.potencia != 0
-            ))
-        else:
-            for p in pas1.header_id.pot_ids:
-                if p.potencia == 0: continue
-                potencia = p.potencia
-                break
-
-        pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
+    pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
 
     if pas1.solicitud_tensio == "S" and pas1.tensio_solicitada:
         lang = object.cups_polissa_id.titular.lang
         tipus_tensio = get_tension_type(object, pas1, lang)
-
-    nou_autoconsum = False
-    if object.cups_polissa_id.autoconsumo != pas1.tipus_autoconsum:
-        nou_autoconsum = get_autoconsum_description(object, pas1.tipus_autoconsum, object.cups_polissa_id.titular.lang)
-
 %>
 
 <!doctype html>
@@ -128,22 +92,15 @@ if pas1:
     </p>
     <p>
         Dades de la sol·licitud: <br>
-        %if _is_canvi_tarifa:
         - Tarifa d'accés: ${tarifaATR} <br>
-        %endif
-        %if _is_canvi_potencia:
-            %if tarifaATR == '3.0A':
+        %if tarifaATR == '3.0A':
         - Potències desitjades: <br>
         ${pot_deseada}
-            %else:
+        %else:
         - Potència desitjada: ${pot_deseada} W <br>
-            %endif
         %endif
         %if tipus_tensio:
         - Tensió desitjada: ${tipus_tensio}
-        %endif
-        %if nou_autoconsum:
-        - Autoconsum desitjat: ${nou_autoconsum}
         %endif
     </p>
     <p>
@@ -180,22 +137,15 @@ if pas1:
     </p>
     <p>
         Datos de la solicitud:<br>
-        %if _is_canvi_tarifa:
         - Tarifa de acceso: ${tarifaATR}<br>
-        %endif
-        %if _is_canvi_potencia:
-            %if tarifaATR == '3.0A':
+        %if tarifaATR == '3.0A':
         - Potencias deseadas: <br>
         ${pot_deseada}
-            %else:
+        %else:
         - Potencia deseada: ${pot_deseada} W<br>
-            %endif
         %endif
         %if tipus_tensio:
         - Tensión deseada: ${tipus_tensio}
-        %endif
-        %if nou_autoconsum:
-        - Autoconsumo deseado: ${nou_autoconsum}
         %endif
     </p>
     <p>
