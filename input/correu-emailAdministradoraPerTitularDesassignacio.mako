@@ -39,6 +39,8 @@ mail_lang = object.receptor.lang
 titular = get_clean_name(object.receptor.name, object.receptor.vat, True)
 contractes = []
 for mod in object.modification:
+    if mod.error:
+        continue
     contractes.append((
         mod.polissa_id.name,
         get_clean_name(mod.old_administradora.name, mod.old_administradora.vat, False),
