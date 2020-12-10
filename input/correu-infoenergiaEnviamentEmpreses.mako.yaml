@@ -1,0 +1,10 @@
+cc: <% mail = '{}'.format(object.administradora.address[0].email if object.administradora else '') %>  ${mail}
+to: ${object.pagador_email}
+subject_translations:
+  ca_ES: Informe energètic personalitzat pel teu contracte ${object.name} amb tarifa
+    ${object.tarifa_codi} - Servei Infoenergia
+  es_ES: Informe energético personalizado para tu contrato ${object.name}  con tarifa
+    ${object.tarifa_codi}  -  Servicio Infoenergía
+subject: Informe energètic personalitzat pel teu contracte ${object.name} amb tarifa
+  ${object.tarifa_codi} - Servei Infoenergia
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

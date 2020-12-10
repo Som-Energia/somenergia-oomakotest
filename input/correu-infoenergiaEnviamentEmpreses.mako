@@ -47,7 +47,7 @@ Bona energia!
 <br>
 Equip de Som Energia<br>
 <a href="https://ca.support.somenergia.coop/article/672-servei-infoenergia">Centre d'ajuda</a><br>
-infoenergia@somenergia.coop<br>
+empresa@somenergia.coop<br>
 <a href="http://www.somenergia.coop">www.somenergia.coop</a><br>
 % endif
 
@@ -67,7 +67,7 @@ Muchas gracias por tu confianza y cualquier comentario, observación o sugerenci
 <br>
 Equipo de Som Energia<br>
 <a href="https://es.support.somenergia.coop/article/673-el-servicio-infoenergia">Centro de Ayuda</a><br>
-infoenergia@somenergia.coop<br>
+empresa@somenergia.coop<br>
 <a href="http://www.somenergia.coop">www.somenergia.coop</a><br>
 % endif
 
