@@ -10,7 +10,7 @@ def render(text_to_render, object_):
     )
 
 def get_clean_name(object_, composed_name, vat, name_only):
-	rp_obj = object_.pool.get('res.partner')
+    rp_obj = object_.pool.get('res.partner')
     if rp_obj.vat_es_empresa(object_._cr, object_._uid, vat):
         return composed_name
     name = rp_obj.separa_cognoms(object_._cr, object_._uid, composed_name)
@@ -29,7 +29,7 @@ text_legal = render(t_obj.read(
     object
 )
 nom = get_clean_name(object, object.titular.name,
-	object.titular.vat, True
+    object.titular.vat, True
 )
 %>
 <html>
