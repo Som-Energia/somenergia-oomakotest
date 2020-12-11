@@ -39,8 +39,7 @@ nom = get_clean_name(object, object.titular.name,
 <br>
 Hola ${nom},<br>
 <br>
-${env['user']._context.get('body_personal')}<br>
-<br>
+${env['user']._context.get('body_personal')}
 Moltes gràcies per la teva confiança i qualsevol comentari, observació o suggeriment ens el pots fer arribar responent a aquest mateix correu.<br>
 <br>
 Bona energia!
@@ -59,8 +58,7 @@ infoenergia@somenergia.coop<br>
 <br>
 Hola ${nom},<br>
 <br>
-${env['user']._context.get('body_personal')}<br>
-<br>
+${env['user']._context.get('body_personal')}
 Muchas gracias por tu confianza y cualquier comentario, observación o sugerencia nos lo puedes hacer llegar respondiendo a este mismo correo.<br>
 <br>
 ¡Buena energía!
