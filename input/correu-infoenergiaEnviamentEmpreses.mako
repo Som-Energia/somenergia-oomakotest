@@ -42,7 +42,7 @@ Hola ${nom},<br>
 ${env['user']._context.get('body_personal')}
 Moltes gràcies per la teva confiança. Si vols fer-nos arribar qualsevol comentari, observació o suggeriment ho pots fer responent a aquest mateix correu electrònic.<br>
 <br>
-Bona energia!
+Bona energia!<br>
 <br>
 Equip de Som Energia<br>
 <a href="https://ca.support.somenergia.coop/article/672-servei-infoenergia">Centre d'ajuda</a><br>
@@ -61,7 +61,7 @@ Hola ${nom},<br>
 ${env['user']._context.get('body_personal')}
 Muchas gracias por tu confianza. Si deseas hacernos llegar cualquier comentario, observación o sugerencia lo puedes hacer respondiendo a este mismo correo electrónico.<br>
 <br>
-¡Buena energía!
+¡Buena energía!<br>
 <br>
 Equipo de Som Energia<br>
 <a href="https://es.support.somenergia.coop/article/673-el-servicio-infoenergia">Centro de Ayuda</a><br>
