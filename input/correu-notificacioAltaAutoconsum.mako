@@ -103,7 +103,7 @@
             L'empresa de distribució elèctrica de la teva zona ens comunica que existeix una instal·lació d'autoproducció associada al punt de subministrament amb codi CUPS ${object.cups_id.name} corresponent a l’adreça ${object.cups_id.direccio}.
         </p>
         <p>
-            Pots accedir a través d'<a href="http://www.somenergia.coop/ca">aquest enllaç</a> a la teva oficina virtual i veure les característiques de la mateixa segons la informació que ens trasllada la distribuïdora.
+            Pots accedir a través d'<a href="http://oficinavirtual.somenergia.coop/ca">aquest enllaç</a> a la teva oficina virtual i veure les característiques de la mateixa segons la informació que ens trasllada la distribuïdora.
         </p>
         <p>
             Necessitem que acceptis o rebutgis, en el cas de que no estiguis d’acord amb la informació que ens indiquen, la comunicació que ens faciliten per poder continuar amb les gestions pertinents.
@@ -165,7 +165,7 @@
 	        La empresa de distribución eléctrica de tu zona nos comunica que existe una instalación de autoproducción asociada al punto de suministro con código CUPS ${object.cups_id.name} correspondiente a la dirección ${object.cups_id.direccio}.
         </p>
         <p>
-            Puedes acceder a través de <a href="http://www.somenergia.coop/es">este enlace</a> a tu oficina virtual y ver las características de la misma según la información que nos traslada la distribuidora.
+            Puedes acceder a través de <a href="http://oficinavirtual.somenergia.coop/es">este enlace</a> a tu oficina virtual y ver las características de la misma según la información que nos traslada la distribuidora.
         </p>
         <p>
             Necesitamos que aceptes o rechaces, en el caso de que no estés de acuerdo con la información que nos indican, la comunicación que nos facilitan para poder continuar con las gestiones pertinentes.
