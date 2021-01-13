@@ -788,8 +788,8 @@
 
 #notificacioTractamentDadesGeneradorAutoconsum:
 #  template: input/correu-notificacioTractamentDadesGeneradorAutoconsum.mako
-#  model: giscedata.polissa
-#  poweremailId: 
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notificacioTractamentDadesGeneradorAutoconsum
 #  cases:
 #    ca: 304316
 #    es: 300707
