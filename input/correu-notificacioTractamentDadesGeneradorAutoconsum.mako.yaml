@@ -1,4 +1,4 @@
-cc: object.cups_polissa_id.titular.address[0].email
+cc: ${object.cups_polissa_id.titular.address[0].email}
 to: <% mail = '{}'.format(object.cups_polissa_id.autoconsum_id.generador_id[0].partner_id.www_email if object.cups_polissa_id.autoconsum_id else '') %> ${mail}
 subject_translations:
   en_US: ''
