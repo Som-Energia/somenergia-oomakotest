@@ -30,12 +30,12 @@
 #   cases:
 #     ca: 192
 #
- nouSoci_destral:
-   template: input/correu-nouSoci.mako
-   model: somenergia.soci
-   poweremailId: som_polissa_soci.nou_soci_mail_webforms
-   cases:
-     ca: som_polissa_soci.soci_0001
+# nouSoci_destral:
+#   template: input/correu-nouSoci.mako
+#   model: somenergia.soci
+#   poweremailId: som_polissa_soci.nou_soci_mail_webforms
+#   cases:
+#     ca: som_polissa_soci.soci_0001
 #
 ######################################################
 ## Facturació
@@ -785,6 +785,15 @@
 #  cases:
 #    ca: 304316
 #    es: 300707
+
+#notificacioTractamentDadesGeneradorAutoconsum:
+#  template: input/correu-notificacioTractamentDadesGeneradorAutoconsum.mako
+#  model: giscedata.switching
+#  poweremailId: som_switching.notificacioTractamentDadesGeneradorAutoconsum
+#  cases:
+#    ca: 304316
+#    es: 300707
+#
 
 #peticioDocumentacioSubministres:
 #  template: input/correu-peticioDocumentacioSubministres.mako
