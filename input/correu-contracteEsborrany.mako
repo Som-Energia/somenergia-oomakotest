@@ -78,8 +78,6 @@ text_legal = render(t_obj.read(
             <p>
                 Enllaços d'interès:<br>
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- <a href="http://www.generationkwh.org/ca/">Generació kWh:</a> Ara també pots generar la teva pròpia energia renovable de forma col·lectiva. A l'enllaç hi trobaràs un vídeo explicatiu.<br>
-                <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- <a href="http://oficinavirtual.somenergia.coop/ca">Oficina Virtual:</a> Aquí pots revisar l'estat del teu contracte i les factures que emetrem. <a href="http://ca.support.somenergia.coop/category/72-oficina-virtual">Ús de l'Oficina Virtual.</a><br>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- <b><a href="http://ca.support.somenergia.coop/">Centre de Suport Som Energia:</a></b> Aquí hi trobaràs resolts els dubtes més freqüents, com per exemple: "Com puc fer un canvi de potència o tarifa?", "Com puc facilitar la lectura?", etc.<br>
@@ -148,8 +146,6 @@ text_legal = render(t_obj.read(
             </p>
             <p>
                 Enlaces de interés: <br>
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- <a href="http://www.generationkwh.org/es/">Generación kWh:</a> Ahora también puedes generar tu propia energía renovable de forma colectiva. En el enlace encontrarás un vídeo explicativo.<br>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- <a href="http://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a>: Aquí puedes revisar el estado de tu contrato y las facturas que emitiremos a través de nuestra Oficina Virtual.  <a href="http://es.support.somenergia.coop/category/141-uso-de-la-oficina-virtual">Uso de la Oficina Virtual.</a><br>
                 <br>

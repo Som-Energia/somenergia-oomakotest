@@ -36,9 +36,11 @@ text_legal = render(t_obj.read(
 <p><br>
 Benvolgut/da,<br>
 <br>
-T'enviem la <B>factura</B> d'electricitat de Som Energia. <br>
+Ens posem en contacte amb tu perquè hem detectat que hi ha hagut una incidència durant l’enviament de la <B>darrera factura</B>. El document que t’hem enviat no es podia obrir correctament.<br>
 <br>
-Carregarem l'import d'aquesta factura al teu número de compte durant els propers dies.<br>
+Ja ho hem resolt i te la tornem a fer arribar adjunta en aquest correu. Disculpa les molèsties.<br>
+<br>
+Com et comentàvem, carregarem l'import d'aquesta factura al teu número de compte durant els pròxims dies.<br>
 </p>
 <br>
 <U><B>Resum de la factura</B></U><br>
@@ -58,7 +60,7 @@ En aquesta <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-secto
 Atentament,<br>
 <br>
 Equip de Som Energia<br>
-<a href="http://ca.support.somenergia.coop/category/183-ja-tinc-la-llum-contractada">Centre d'ajuda</a><br>
+<a href="http://ca.support.somenergia.coop/category/183-ja-tinc-la-llum-contractada">Centre de Suport</a><br>
 factura@somenergia.coop<br>
 <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
 % endif
@@ -69,9 +71,11 @@ factura@somenergia.coop<br>
 <p><br>
 Saludos,<br>
 <br>
-Te enviamos la <B>factura</B> de electricidad de Som Energia. <br>
+Nos ponemos en contacto contigo porqué hemos detectado que ha habido una incidencia durante el envío de la <B>última factura</B>. El documento que te hemos mandado no se podía abrir correctamente.<br>
 <br>
-Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
+Ya hemos resuelto el problema y te la adjuntamos nuevamente en este correo. Disculpa las molestias.<br>
+<br>
+Como te comentábamos, cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
 </p>
 <br>
 <U><B>Resumen de la factura</B></U><br>
