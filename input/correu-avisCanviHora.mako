@@ -90,8 +90,6 @@ Equip de Som Energia<br/>
 <br/>
 <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> - <a href="https://ca.support.somenergia.coop">Centre d’Ajuda</a><br/>
 <br/>
-<div style='border: 2pt solid #AAA; background: #EEE; padding:1em; text-align: center'><b>Recorda que amb la <a href="https://www.generationkwh.org/ca/">Generació kWh</a> pots generar la teva pròpia energia renovable i obtenir l’electricitat a preu de cost els propers 25 anys.</b></div><br/>
-<br/>
 % endif
 % if object.pagador.lang != "ca_ES" and object.pagador.lang != "es_ES":
 ----------------------------------------------------------------------------------------------------
@@ -147,8 +145,6 @@ Equipo de Som Energia<br/>
 <br/>
 <a href="https://es.support.somenergia.coop">Ayuda</a> - <a href="https://eu.support.somenergia.coop">Laguntza</a> - <a href="https://gl.support.somenergia.coop">Axuda</a>
 <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> - <a href="https://oficinavirtual.somenergia.coop/eu/login/">Bulego birtuala</a> - <a href="https://oficinavirtual.somenergia.coop/gl/login/">Oficina Virtual</a><br/>
-<br/>
-<div style='border: 2pt solid #AAA; background: #EEE; padding:1em; text-align: center'><b>Recuerda que con la <a href="https://www.generationkwh.org/es/">Generación kWh</a> podrás generar tu propia energía renovable y obtener la electricidad a precio de coste los próximos 25 años</b></div><br/>
 <br/>
 % endif
 <br/>

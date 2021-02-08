@@ -52,7 +52,7 @@ Por favor, <b>verifica que el número de cuenta bancaria de abono es correcto</b
 <br/>
 Para cualquier duda o aclaración antes de responder este correo te recomendamos visitar primero el <a href="https://es.support.somenergia.coop/category/595-generation-kwh">centro de ayuda de la Generación kWh</a> donde hay listadas las principales preguntas que nos han ido llegando.<br/>
 <br/>
-Aprovechamos para agradecerte, una vez más, tu implicación con el objetivo compartido de alcanzar un modelo energético 100% renovable. Cuantas más seamos, más energía verde generamos. ¡Que corra la voz!<br/>
+Aprovechamos para agradecerte, una vez más, tu implicación con el objetivo compartido de alcanzar un modelo energético 100% renovable.<br/>
 <br/>
 Salud y buena energía,<br/>
 <br/>
@@ -84,7 +84,7 @@ Si us plau, <b>verifica que el número de compte bancari d’abonament és corre
 <br/>
 Per a qualsevol dubte o aclariment abans de respondre aquest correu et recomanem visitar el <a href="https://ca.support.somenergia.coop/category/580-generation-kwh">centre d’ajuda de la Generació kWh</a> on hi ha llistades les principals preguntes que ens han anat arribant.<br/>
 <br/>
-Aprofitem per agrair-te, una vegada més, la teva implicació amb l’objectiu compartit d’assolir un model energètic 100% renovable. Quantes més siguem, més energia verda generarem. Que corri la veu!<br/>
+Aprofitem per agrair-te, una vegada més, la teva implicació amb l’objectiu compartit d’assolir un model energètic 100% renovable.<br/>
 <br/>
 Salut i bona energia,<br/>
 <br/>
