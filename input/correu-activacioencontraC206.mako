@@ -32,9 +32,9 @@ Hola${nom_titular},
 % if object.cups_polissa_id.titular.lang != "es_ES":
 T’escrivim per informar-te que ens han comunicat la baixa del teu contracte amb Som Energia. La data de canvi de companyia és el  <strong>${date}</strong>
 
-No cal que facis cas d’aquest missatge si certament vols passar el contracte de Som Energia a una altra comercialitzadora.
+No cal que facis cas d’aquest missatge si realment vols passar el contracte de Som Energia a una altra comercialitzadora.
  
-Però si no eres conscient que s’ha realitzat aquesta sol·licitud i s’ha fet contra la teva voluntat, respon a aquest mateix correu i iniciarem els tràmits perquè tornis a tenir el contracte amb la cooperativa.
+Però si no eres conscient que s’ha realitzat aquesta sol·licitud i s’ha fet contra la teva voluntat, respon a aquest mateix correu i t'informarem dels passos a seguir perquè tornis a tenir el contracte amb la cooperativa.
 
 Gràcies.
 
@@ -50,9 +50,9 @@ comercialitzacio@somenergia.coop
 % if object.cups_polissa_id.titular.lang != "ca_ES":
 Te escribimos para informarte que nos han comunicado la baja de tu contrato con Som Energia. La fecha de cambio de compañia es el <strong>${date}</strong>
 
-No es necesario que atiendas a este mensaje si efectivamente quieres pasar el contrato de Som Energia a otra comercializadora. 
+No es necesario que atiendas a este mensaje si realmente quieres pasar el contrato de Som Energia a otra comercializadora. 
  
-Pero si no eres consciente de que se realizó esta solicitud y se hizo contra tu voluntad, responde a este mismo correo e iniciaremos los trámites para que vuelvas a tener el contrato con la cooperativa.
+Pero si no eres consciente de que se realizó esta solicitud y se hizo contra tu voluntad, responde a este mismo correo y te informaremos de los pasos a seguir para que vuelvas a tener el contrato con la cooperativa.
 
 Gracias. 
 
