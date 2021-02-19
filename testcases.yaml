@@ -447,9 +447,10 @@
 contracteEsborrany:
  template: input/correu-contracteEsborrany.mako
  model: giscedata.polissa
- poweremailId: 1
+ poweremailId: som_polissa_soci.email_contracte_esborrany
  cases:
      es: 297510
+     ca: 129
 
 #canviDePagador:
 #  template: input/correu-canviPagador.mako
@@ -597,6 +598,7 @@ acceptacioA302:
    poweremailId: giscedata_switching.notification_atr_A3_02_acceptacio
    cases:
        altaNou_ca: 116275
+       altaNou_ca2: 304116
 
 acceptacioM102:
     template: input/correu-acceptacioM102.mako

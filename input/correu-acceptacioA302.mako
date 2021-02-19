@@ -21,6 +21,7 @@
 % else:
     ${correu_es()}
 % endif
+${text_legal}
 </html>
 
 

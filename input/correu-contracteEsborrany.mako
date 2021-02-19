@@ -30,10 +30,13 @@ text_legal = render(t_obj.read(
                 Ja has completat la sol·licitud per contractar el teu subministrament elèctric amb Som Energia.
             </p>
             <p>
+                T'adjuntem les condicions generals i particulars del teu contracte.
+            </p>
+            <p>
                 Aquest és el resum de les dades facilitades en el formulari de contractació d'electricitat: <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Soci/a de Som Energia: ${object.soci.name} <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Titular del contracte d'electricitat: ${object.titular.name}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Pagador/a del contracte d'electricitat: ${object.pagador.name}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Titular del compte bancari: ${object.pagador.name}<br>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Adreça punt subministrament: ${object.cups_direccio}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Codi CUPS: ${object.cups.name}<br>
@@ -72,7 +75,7 @@ text_legal = render(t_obj.read(
                     <b>Conseqüències del desistiment.</b> Et tornarem els pagaments que hagis fet, si és el cas, com a molt tard en 14 dies naturals a partir de la data en què ens comuniquis la teva decisió. Efectuarem el reemborsament, sense que això suposi cap despesa per part teva, seguint el mateix mètode de pagament que hagis utilitzat, a no ser que ens n’indiquis un altre. En cas que s’hagi activat el subministrament d’electricitat, hauràs d’abonar el consum corresponent als dies pels quals t’haguem prestat el servei.
                 </p>
                 <p>
-                    A Som Energia <b>no tens cap obligació de permanència.<b> En el moment que vulguis, pots canviar de companyia comercialitzadora. Som una cooperativa d’electricitat 100% renovable sense ànim de lucre i un dels nostres principis és oferir el preu més ajustat possible. No oferim ofertes especials, ni clàusules addicionals, ni lletra petita. La transparència, el bon tracte, uns preus ajustats, el treball per un canvi de model energètic, són alguns dels valors de Som Energia i el motiu pel qual tanta gent se suma al projecte i continua amb nosaltres sense cap clàusula de permanència.
+                    A Som Energia <b>no tens cap obligació de permanència.</b> En el moment que vulguis, pots canviar de companyia comercialitzadora. Som una cooperativa d’electricitat 100% renovable sense ànim de lucre i un dels nostres principis és oferir el preu més ajustat possible. No oferim ofertes especials, ni clàusules addicionals, ni lletra petita. La transparència, el bon tracte, uns preus ajustats, el treball per un canvi de model energètic, són alguns dels valors de Som Energia i el motiu pel qual tanta gent se suma al projecte i continua amb nosaltres sense cap clàusula de permanència.
                 </p>
             </p>
             <p>
@@ -100,10 +103,13 @@ text_legal = render(t_obj.read(
                 Ya has completado la solicitud para contratar tu suministro eléctrico a través de la cooperativa Som Energia.
             </p>
             <p>
+                Te adjuntamos las condiciones generales y particulares de tu contrato.
+            </p>
+            <p>
                 Este es el resumen de los datos facilitados en el formulario de contratación de electricidad:<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Socio/a de Som Energia: ${object.soci.name}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Titular del contrato de electricidad: ${object.titular.name}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Pagador/a del contrato de electricidad: ${object.pagador.name}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Titular de la cuenta bancaria: ${object.pagador.name}<br>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Dirección punto de suministro: ${object.cups_direccio}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Código CUPS: ${object.cups.name}
