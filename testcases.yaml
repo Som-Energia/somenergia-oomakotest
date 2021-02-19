@@ -597,8 +597,8 @@ acceptacioA302:
    model: giscedata.switching
    poweremailId: giscedata_switching.notification_atr_A3_02_acceptacio
    cases:
-       altaNou_ca: 116275
-       altaNou_ca2: 304116
+       altaNou_ca: 304116
+       tarifa3p: 302901
 
 acceptacioM102:
     template: input/correu-acceptacioM102.mako
