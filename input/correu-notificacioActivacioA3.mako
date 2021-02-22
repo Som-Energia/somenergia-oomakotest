@@ -33,17 +33,12 @@ else:
   nom_titular = ''
 
 TarifaATR=dict(object.pool.get(model).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas5.tarifaATR]
-if TarifaATR == '3.0A':
-  lineesDePotencia = '\n'.join((
-    '\t- <strong> %s: </strong>%s W'%(p.name, p.potencia)
-    for p in pas5.header_id.pot_ids
-    if p.potencia != 0
-    ))
-else:
-  for p in pas5.header_id.pot_ids:
-    if p.potencia == 0: continue
-    potencia = p.potencia
-    break
+
+lineesDePotencia = '\n'.join((
+  '\t- <strong> %s: </strong>%s W'%(p.name, p.potencia)
+  for p in pas5.header_id.pot_ids
+  if p.potencia != 0
+  ))
 
 %>
 <%
@@ -69,7 +64,7 @@ text_legal = render(t_obj.read(
 Hola${nom_titular},<br />
 <br />
 % if object.cups_polissa_id.titular.lang != "es_ES":
-Ens plau comunicar-te que el procés d'alta de subministrament ha finalitzat,  <FONT COLOR="green"><strong>el contracte està activat amb Som Energia</strong></FONT> des del ${data_activacio}.<br />
+Ens plau comunicar-te que el procés d'alta de subministrament ha finalitzat,  <FONT COLOR="green"><strong>el contracte està activat amb Som Energia</strong></FONT> des del ${data_activacio}. En aquest sentit, t’adjuntem les condicions generals i particulars resultants després dels tràmits amb la companyia distribuïdora.<br />
 <br />
 Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br />
 <ul><br />
@@ -80,12 +75,8 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br />
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li><br />
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li><br />
 <li><strong> Tarifa: </strong>${TarifaATR}</li><br />
-%if TarifaATR == '3.0A':
 <li><strong> Potència: </strong><br />
 ${lineesDePotencia}</li><br />
-%else:
-<li><strong> Potència: </strong>${potencia} W</li><br />
-%endif
 </ul><br />
 Aproximadament en el termini d’un mes, rebràs la primera factura, que inclourà els costos regulats per la tramitació de l’alta (i que cobra la distribuïdora).<br />
 <br />
@@ -104,7 +95,7 @@ comercialitzacio@somenergia.coop<br />
 <br />----------------------------------------------------------------------------------------------------<br />
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
-Nos complace informarte que el proceso de alta de suministro ha finalizado, <FONT COLOR="green"><strong>tu contrato con Som Energia está activado </strong></FONT> desde el ${data_activacio}.<br />
+Nos complace informarte que el proceso de alta de suministro ha finalizado, <FONT COLOR="green"><strong>tu contrato con Som Energia está activado </strong></FONT> desde el ${data_activacio}. En este sentido, te adjuntamos las condiciones generales y particulares resultantes después de los trámites con la compañía distribuidora.<br />
 <br />
 Los datos del nuevo contrato son:<br />
 <ul><br />
@@ -115,12 +106,8 @@ Los datos del nuevo contrato son:<br />
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li><br />
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li><br />
 <li><strong> Tarifa: </strong>${TarifaATR}</li><br />
-%if TarifaATR == '3.0A':
 <li><strong> Potencia: </strong><br />
 ${lineesDePotencia}</li><br />
-%else:
-<li><strong> Potència: </strong>${potencia} W</li><br />
-%endif
 </ul><br />
 Aproximadamente en el plazo de un mes, recibirás la primera factura, que incluirá  los costes regulados de la tramitación del alta (y que cobra la distribuidora).<br />
 <br />
