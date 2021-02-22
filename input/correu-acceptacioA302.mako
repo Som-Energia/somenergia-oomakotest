@@ -1,8 +1,16 @@
 <%!
     from datetime import datetime
+    from mako.template import Template
 %>
 
 <%
+    def render(text_to_render, object_):
+        templ = Template(text_to_render)
+        return templ.render_unicode(
+            object=object_,
+            format_exceptions=True
+        )
+
     data_act = datetime.strptime(
         object.step_ids[1].pas_id.data_activacio, '%Y-%m-%d'
     ).strftime('%d-%m-%Y') if len(object.step_ids) > 1 else ''
@@ -12,6 +20,16 @@
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
     )['nom']) if not object.vat_enterprise() else ''
+
+    t_obj = object.pool.get('poweremail.templates')
+    md_obj = object.pool.get('ir.model.data')
+    template_id = md_obj.get_object_reference(
+                        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+                    )[1]
+    text_legal = render(t_obj.read(
+        object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+        object
+    )
 %>
 
 <!doctype html>
@@ -76,7 +94,7 @@ ${text_legal}
             <br>
             - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
-            - Potència: ${object.cups_polissa_id.potencia} kW<br>
+            - Potència: ${", ".join(["<b>" + pot.periode_id.name + "</b>: " + str(pot.potencia) + " KW" for pot in object.cups_polissa_id.potencies_periode])}<br>
             - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
@@ -140,7 +158,7 @@ ${text_legal}
             <br>
             - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
-            - Potencia: ${object.cups_polissa_id.potencia} kW<br>
+            - Potencia: ${", ".join(["<b>" + pot.periode_id.name + "</b>: " + str(pot.potencia) + " KW" for pot in object.cups_polissa_id.potencies_periode])}<br>
             - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
