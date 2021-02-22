@@ -65,17 +65,11 @@ if pas1:
     pot_deseada = ''
 
     if _is_canvi_potencia:
-        if tarifaATR == '3.0A':
-            lineesDePotencia = '\n'.join((
-                '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
-                for p in pas1.header_id.pot_ids
-                if p.potencia != 0
-            ))
-        else:
-            for p in pas1.header_id.pot_ids:
-                if p.potencia == 0: continue
-                potencia = p.potencia
-                break
+        lineesDePotencia = '\n'.join((
+            '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
+            for p in pas1.header_id.pot_ids
+            if p.potencia != 0
+        ))
 
         pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
 
@@ -132,12 +126,8 @@ if pas1:
         - Tarifa d'accés: ${tarifaATR} <br>
         %endif
         %if _is_canvi_potencia:
-            %if tarifaATR == '3.0A':
         - Potències desitjades: <br>
         ${pot_deseada}
-            %else:
-        - Potència desitjada: ${pot_deseada} W <br>
-            %endif
         %endif
         %if tipus_tensio:
         - Tensió desitjada: ${tipus_tensio}
@@ -155,8 +145,12 @@ if pas1:
     <p>
         En un termini de 24 h enviarem la teva sol·licitud a la distribuïdora de la teva zona, l’encarregada de validar i fer efectiva la teva sol·licitud. En el cas que detectis algun error, respon aquest mateix correu electrònic al més aviat possible.
     </p>
-    <br>
-
+    <p>
+        <b>Dret de desistiment.</b> Totes les persones consumidores de la cooperativa disposen de 14 dies naturals des de la data del contracte per desistir dels serveis. En cas que vulguis desistir, és necessari que ens notifiquis la teva decisió per correu electrònic a comercialitzacio@somenergia.coop, o per correu postal a SOM ENERGIA SCCL c/ Pic de Peguera 11, 17003 Girona. Si vols, pots utilitzar el text de desistiment que tens <b><a href="https://docs.google.com/document/d/10CzheqAYQs5lwvKpJBkaiBEdsHZjY6TZoeBDN-mOfT0/edit">en aquesta plantilla</a></b>.
+    </p>
+    <p>
+        <b>Conseqüències del desistiment.</b>Et tornarem tots els pagaments rebuts, si n’hi ha, dintre dels 14 dies naturals a partir de la data en què ens comuniquis la teva decisió. Efectuarem aquest reemborsament sense que suposi cap més despesa per a tu, i farem servir el mateix mitjà de pagament que hagis emprat per a la transacció inicial, si no és que ens indiques el contrari. En cas que ja es trobi actiu el subministrament d’electricitat, ens hauràs d’abonar el consum corresponent als dies en què t’hàgim prestat servei, així com la resta de costos associats a la contractació i, si s’escau, la reposició a la situació anterior.
+    </p>
     Fins ben aviat,<br>
     <br>
     Equip de Som Energia<br>
@@ -184,12 +178,8 @@ if pas1:
         - Tarifa de acceso: ${tarifaATR}<br>
         %endif
         %if _is_canvi_potencia:
-            %if tarifaATR == '3.0A':
         - Potencias deseadas: <br>
         ${pot_deseada}
-            %else:
-        - Potencia deseada: ${pot_deseada} W<br>
-            %endif
         %endif
         %if tipus_tensio:
         - Tensión deseada: ${tipus_tensio}
@@ -207,8 +197,12 @@ if pas1:
     <p>
         En un plazo de 24 horas enviaremos la solicitud a la distribuidora de tu zona, la encargada de validar y hacer efectiva tu solicitud. En el caso que detectes algún error, responde este mismo correo electrónico lo antes posible.<br>
     </p>
-    <br>
-
+    <p>
+        <b>Derecho de desistimiento.</b> Todas las personas consumidoras de la cooperativa disponen de 14 días naturales desde la fecha del contrato para desistir de los servicios. Si quieres desistir, es necesario que nos notifiques tu decisión por correo electrónico a comercializacion@somenergia.coop, o por correo postal a SOM ENERGIA SCCL c/Pic de Peguera 11, 17003 Girona. Para hacerlo, puedes utilizar el texto que figura <b><a href="https://docs.google.com/document/d/1KOnlw370Fkv8VX8mw2qfC7zvPKnAmptcGsvXU-4tMCc/edit">en esta plantilla</a></b>.
+    </p>
+    <p>
+        <b>Consecuencias del desistimiento.</b> Te devolveremos todos los pagos recibidos, si los hay, dentro de 14 días naturales a partir de la fecha en la que nos comuniques tu decisión. Efectuaremos dicho reembolso, sin que esto suponga ningún gasto para ti, utilizando el mismo medio de pago que hayas empleado para la transacción inicial, a no ser que nos indiques lo contrario. En caso de que ya se encuentre activo el suministro de electricidad, deberás abonarnos el consumo correspondiente a los días en que te hayamos prestado servicio.
+    </p>
     Hasta pronto,<br>
     <br>
     Equipo de Som Energia<br>
