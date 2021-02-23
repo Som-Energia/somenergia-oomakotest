@@ -30,12 +30,12 @@
 #   cases:
 #     ca: 192
 #
-#nouSoci_destral:
-#  template: input/correu-nouSoci.mako
-#  model: somenergia.soci
-#  poweremailId: som_polissa_soci.nou_soci_mail_webforms
-#  cases:
-#    ca: som_polissa_soci.soci_0001
+# nouSoci_destral:
+#   template: input/correu-nouSoci.mako
+#   model: somenergia.soci
+#   poweremailId: som_polissa_soci.nou_soci_mail_webforms
+#   cases:
+#     ca: som_polissa_soci.soci_0001
 #
 ######################################################
 ## Facturació
@@ -43,11 +43,12 @@
 #enviarFacturaNormal:
 #    template: input/correu-enviarFacturaNormal.mako
 #    model: giscedata.facturacio.factura
-#    poweremailId: 6
+#    poweremailId: giscedata_facturacio_comer.env_fact_via_email
 #    cases:
 #        normal_ca: 444848
 #        normal_es: 403834
 #        energetica: 5084228
+#
 #enviarAbonament:
 #    template: input/correu-enviarAbonament.mako
 #    model: giscedata.facturacio.factura
@@ -160,6 +161,12 @@
 #   cases:
 #     ca: 69398
 #     es: 116
+#
+#reenviamentFacturaNormalMissatgeEspecial:
+#   template: input/correu-reenviamentFacturaNormalMissatgeEspecial.mako
+#   model: giscedata.facturacio.factura
+#   poweremailId: 277
+#   cases: {}
 #
 #peticioLecturacomptadorEndIbe:
 #   template: input/correu-peticioLecturacomptadorEndIbe.mako
@@ -421,25 +428,28 @@
 #     3_0A: 237057
 #     2_1A: 238934
 #     2_1DHA: 253218
-# avisCanviHora:
-#   template: input/correu-avisCanviHora.mako
-#   model: giscedata.polissa
-#   poweremailId: 47
-#   cases:
-#     ca: 69398
-#     es: 116
+#
+#avisCanviHora:
+#  template: input/correu-avisCanviHora.mako
+#  model: giscedata.polissa
+#  poweremailId: 47
+#  cases:
+#    ca: 69398
+#    es: 116
+#
 #docu2avis:
 #  template: input/correu-peticioDocumentacioSubministres-2avis.mako
 #  model: giscedata.polissa
 #  # poweremailId: 239 # Testing
 #  poweremailId: 245 # Prod
 #  cases: {}
-# esborrany:
-#   template: input/correu-contracteEsborrany.mako
-#   model: giscedata.polissa
-#   poweremailId: 1
-#   cases:
-#       es: 297510
+#
+#contracteEsborrany:
+#  template: input/correu-contracteEsborrany.mako
+#  model: giscedata.polissa
+#  poweremailId: 1
+#  cases:
+#      es: 297510
 #
 #canviDePagador:
 #  template: input/correu-canviPagador.mako
@@ -777,7 +787,24 @@
 #    es_auto_tit_diff: 282561
 #    ca_noauto: 282878
 #    es_noauto: 281207
+
+#notificacioRebuigAutoconsum:
+#  template: input/correu-notificacioRebuigAutoconsum.mako
+#  model: giscedata.switching
+#  poweremailId: som_switching.email_atr_rebuig_d1_01
+#  cases:
+#    ca: 304316
+#    es: 300707
+
+#notificacioTractamentDadesGeneradorAutoconsum:
+#  template: input/correu-notificacioTractamentDadesGeneradorAutoconsum.mako
+#  model: giscedata.switching
+#  poweremailId: som_switching.notificacioTractamentDadesGeneradorAutoconsum
+#  cases:
+#    ca: 304316
+#    es: 300707
 #
+
 #peticioDocumentacioSubministres:
 #  template: input/correu-peticioDocumentacioSubministres.mako
 #  model: res.partner
@@ -861,6 +888,13 @@
 #     ca: 3665127
 #     es: 3665176
 #
+#aportacionsCreacio:
+#   template: input/correu-aportacionsCreacio.mako
+#   model: generationkwh.investment
+#   poweremailId: som_generationkwh.aportacio_mail_creacio
+#   cases:
+#    ca: 1707734
+#    es: 1707735
 #
 #aportacionsPas1:
 #  template: input/correu-aportacionsPas1.mako
@@ -1089,6 +1123,12 @@
 #  cases:
 #    test: 7554
 #
+#infoenergiaFVAuto:
+#  template: input/correu-infoenergiaFVAuto.mako
+#  model: giscedata.polissa
+#  poweremailId: som_infoenergia.env_empowering_report_fv_auto
+#  cases: {}
+#
 ########################################
 ## Autoproduccio
 #
@@ -1157,6 +1197,7 @@
 #  poweremailId: 310
 #  cases:
 #    cat: 192
-#    es: 101 
+#    es: 101
+#
 
 # vim: et ts=2 sw=2

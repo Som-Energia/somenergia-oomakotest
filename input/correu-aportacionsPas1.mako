@@ -36,10 +36,6 @@ Un cop verificada la validesa del pagament realitzat rebràs una nova notificaci
 <br/>
 Agrair la teva implicació amb la cooperativa i informar-te que per a qualsevol dubte o aclariment pots consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a> o bé mitjançant un mail a <a href="mailto:invertir@somenergia.coop">invertir@somenergia.coop</a>.<br/>
 <br/>
-Recorda que també pots participar de la Generació kWh per generar la teva energia a partir de nous projectes col•lectius de generació. Consulta el web <a href="https://www.generationkwh.org/ca">www.generationkwh.org</a>.<br/>
-<br/>
-Pots fer córrer la veu explicant el projecte a familiars i amics/gues. Com més siguem, més energia verda generarem!<br/>
-<br/>
 Moltes gràcies i bona energia!<br/>
 <br/>
 Atentament,<br/>
@@ -64,10 +60,7 @@ En los próximos dias recibirás el cargo bancario en esta cuenta, por favor ver
 <br/>
 Una vez verificada la validez del pago realizado recibirás una nueva notificación confirmando la aportación realizada y detallando las condiciones particulares de tu aportación.<br/>
 <br/>
-Agradecer tu implicación con la cooperativa y informarte que para cualquier duda o aclaración puedes consultar nuestra web <a href="https://www.somenergia.coop">www.somenergia.coop</a> o enviarnos un correo electrónico a <a href="mailto:invertir@somenergia.coop">invertir@somenergia.coop</a>
-Recuerda que también puedes participar de la Generación kWh para generar tu energía con nuevos proyectos colectivos de generación. Consulta la web <a href="https://www.generationkwh.org/es">www.generationkwh.org</a>.<br/>
-<br/>
-Haz que corra la voz explicando el proyecto a familiares y amigos. Cuantos más seamos, más energía verde generaremos!<br/>
+Agradecer tu implicación con la cooperativa y informarte que para cualquier duda o aclaración puedes consultar nuestra web <a href="https://www.somenergia.coop">www.somenergia.coop</a> o enviarnos un correo electrónico a <a href="mailto:invertir@somenergia.coop">invertir@somenergia.coop</a></br>
 <br/>
 ¡Muchas gracias y buena energía!<br/>
 <br/>
