@@ -1,5 +1,6 @@
 <%
 from gestionatr.defs import TABLA_64
+from mako.template import Template
 
 pas1 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
 
@@ -12,6 +13,13 @@ MONOPHASE = {
     'ca_ES': "Monofàsica",
     'es_ES': "Monofásica"
 }
+
+def render(text_to_render, object_):
+    templ = Template(text_to_render)
+    return templ.render_unicode(
+        object=object_,
+        format_exceptions=True
+)
 
 def get_tension_type(object_, pas1, lang):
     codi_cnmc = pas1.tensio_solicitada
@@ -81,6 +89,32 @@ if pas1:
     if object.cups_polissa_id.autoconsumo != pas1.tipus_autoconsum:
         nou_autoconsum = get_autoconsum_description(object, pas1.tipus_autoconsum, object.cups_polissa_id.titular.lang)
 
+    t_obj = object.pool.get('poweremail.templates')
+    md_obj = object.pool.get('ir.model.data')
+    text_desistiment = "abc"
+    text_legal = "ABC"
+    if object.cups_polissa_id.titular.lang != "ca_ES":
+        template_id = md_obj.get_object_reference(
+            object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_rejection_text_es'
+        )[1]
+    else:
+        template_id = md_obj.get_object_reference(
+            object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_rejection_text_ca'
+        )[1]
+
+    text_desistiment = render(
+        t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+        object
+    )
+
+    template_id = md_obj.get_object_reference(
+        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+    )[1]
+    text_legal = render(
+        t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+        object
+    )
+
 %>
 
 <!doctype html>
@@ -103,6 +137,7 @@ if pas1:
         % else:
             ${correu_cat()}
         %endif
+        ${text_legal}
     </body>
 </html>
 
@@ -145,12 +180,7 @@ if pas1:
     <p>
         En un termini de 24 h enviarem la teva sol·licitud a la distribuïdora de la teva zona, l’encarregada de validar i fer efectiva la teva sol·licitud. En el cas que detectis algun error, respon aquest mateix correu electrònic al més aviat possible.
     </p>
-    <p>
-        <b>Dret de desistiment.</b> Totes les persones consumidores de la cooperativa disposen de 14 dies naturals des de la data del contracte per desistir dels serveis. En cas que vulguis desistir, és necessari que ens notifiquis la teva decisió per correu electrònic a comercialitzacio@somenergia.coop, o per correu postal a SOM ENERGIA SCCL c/ Pic de Peguera 11, 17003 Girona. Si vols, pots utilitzar el text de desistiment que tens <b><a href="https://docs.google.com/document/d/10CzheqAYQs5lwvKpJBkaiBEdsHZjY6TZoeBDN-mOfT0/edit">en aquesta plantilla</a></b>.
-    </p>
-    <p>
-        <b>Conseqüències del desistiment.</b>Et tornarem tots els pagaments rebuts, si n’hi ha, dintre dels 14 dies naturals a partir de la data en què ens comuniquis la teva decisió. Efectuarem aquest reemborsament sense que suposi cap més despesa per a tu, i farem servir el mateix mitjà de pagament que hagis emprat per a la transacció inicial, si no és que ens indiques el contrari. En cas que ja es trobi actiu el subministrament d’electricitat, ens hauràs d’abonar el consum corresponent als dies en què t’hàgim prestat servei, així com la resta de costos associats a la contractació i, si s’escau, la reposició a la situació anterior.
-    </p>
+    ${text_desistiment}
     Fins ben aviat,<br>
     <br>
     Equip de Som Energia<br>
@@ -197,12 +227,7 @@ if pas1:
     <p>
         En un plazo de 24 horas enviaremos la solicitud a la distribuidora de tu zona, la encargada de validar y hacer efectiva tu solicitud. En el caso que detectes algún error, responde este mismo correo electrónico lo antes posible.<br>
     </p>
-    <p>
-        <b>Derecho de desistimiento.</b> Todas las personas consumidoras de la cooperativa disponen de 14 días naturales desde la fecha del contrato para desistir de los servicios. Si quieres desistir, es necesario que nos notifiques tu decisión por correo electrónico a comercializacion@somenergia.coop, o por correo postal a SOM ENERGIA SCCL c/Pic de Peguera 11, 17003 Girona. Para hacerlo, puedes utilizar el texto que figura <b><a href="https://docs.google.com/document/d/1KOnlw370Fkv8VX8mw2qfC7zvPKnAmptcGsvXU-4tMCc/edit">en esta plantilla</a></b>.
-    </p>
-    <p>
-        <b>Consecuencias del desistimiento.</b> Te devolveremos todos los pagos recibidos, si los hay, dentro de 14 días naturales a partir de la fecha en la que nos comuniques tu decisión. Efectuaremos dicho reembolso, sin que esto suponga ningún gasto para ti, utilizando el mismo medio de pago que hayas empleado para la transacción inicial, a no ser que nos indiques lo contrario. En caso de que ya se encuentre activo el suministro de electricidad, deberás abonarnos el consumo correspondiente a los días en que te hayamos prestado servicio.
-    </p>
+    ${text_desistiment}
     Hasta pronto,<br>
     <br>
     Equipo de Som Energia<br>
