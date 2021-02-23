@@ -581,7 +581,7 @@ rebuigM102:
     model: giscedata.switching
     poweremailId: giscedata_switching.notification_atr_M1_02_rebuig
     cases:
-      nou: 147916
+      es: 303873
 #rebuigM104:
 #    template: input/correu-rebuigM104.mako
 #    model: giscedata.switching
@@ -735,6 +735,8 @@ activacioM105_automatica:
    trifasica_es: 271979
    monofasica_ca: 273113
    monofasica_es: 273331
+   es: 310210
+   ca: 308466
 #
 #notificacioAcceptacioA3:
 #  template: input/correu-notificacioAcceptacioA3.mako

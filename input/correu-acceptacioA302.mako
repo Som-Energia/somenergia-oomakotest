@@ -30,6 +30,12 @@
         object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
     )
+    pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
+    pot_deseada = '\n'.join((
+        '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
+        for p in pas01.header_id.pot_ids
+        if p.potencia != 0
+    ))
 %>
 
 <!doctype html>
@@ -94,7 +100,7 @@ ${text_legal}
             <br>
             - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
-            - Potència: ${", ".join(["<b>" + pot.periode_id.name + "</b>: " + str(pot.potencia) + " KW" for pot in object.cups_polissa_id.potencies_periode])}<br>
+            - Potència: <br>${pot_deseada}
             - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
@@ -158,7 +164,7 @@ ${text_legal}
             <br>
             - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
-            - Potencia: ${", ".join(["<b>" + pot.periode_id.name + "</b>: " + str(pot.potencia) + " KW" for pot in object.cups_polissa_id.potencies_periode])}<br>
+            - Potencia: <br>${pot_deseada}
             - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
