@@ -20,6 +20,15 @@
 #  poweremailId: som_poweremail_common_templates.common_template_rejection_footer
 #  cases: {}
 #
+rejection_text_es:
+   template: input/common/rejection_text_es.mako
+   poweremailId: som_poweremail_common_templates.common_template_rejection_text_es
+   cases: {}
+#
+rejection_text_ca:
+   template: input/common/rejection_text_ca.mako
+   poweremailId: som_poweremail_common_templates.common_template_rejection_text_ca
+   cases: {}
 ######################################################
 ## Forms
 #
