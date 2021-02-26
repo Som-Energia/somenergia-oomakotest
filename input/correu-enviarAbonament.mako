@@ -39,6 +39,15 @@ text_legal = render(t_obj.read(
 import datetime
 data_inici = datetime.datetime.strptime(object.data_inici, '%Y-%m-%d').strftime('%d-%m-%Y')
 data_final = datetime.datetime.strptime(object.data_final, '%Y-%m-%d').strftime('%d-%m-%Y')
+
+def getLink(language, potencia):
+    link = "https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2021/02/el-canvi-de-la-factura-per-a-contractes-domestics-i-petites-empreses/"
+    if potencia > 15.0:
+        link = "https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2021/02/el-canvi-de-factura-per-a-contractes-dempreses-de-mes-de-15-kw/" if language != "es_ES" else "https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2021/02/el-cambio-de-factura-para-contratos-de-empresas-de-mas-de-15-kw/"
+    else:
+        link = "https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2021/02/el-canvi-de-la-factura-per-a-contractes-domestics-i-petites-empreses/" if language != "es_ES" else "https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2021/02/el-cambio-de-la-factura-para-contratos-domesticos-y-pequenas-empresas/"
+    return link
+
 %>
 <%
 try:
@@ -75,7 +84,7 @@ Accedeix a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Ofici
 <br>
 Aprofitem l'avinentesa per informar-te que, tal com ha regulat la Comissió Nacional dels Mercats i la Competència, a partir de l’abril de 2021 entrarà en vigor un canvi en la tarificació de les factures de subministrament elèctric (inicialment previst pel novembre de 2020).<br>
 <br>
-En aquesta <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2020/01/com-canviara-la-factura-delectricitat/">notícia del nostre blog</a></b> trobaràs més informació sobre els canvis.<br>
+En aquesta <b><a href=${getLink(object.partner_id.lang, object.polissa_id.potencia)}>notícia del nostre blog</a></b> trobaràs més informació (actualitzada) sobre els canvis.<br>
 <br>
 <br>
 Atentament,<br>
@@ -110,7 +119,7 @@ Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficin
 <br>
 Aprovechamos la ocasión para informarte de que, tal como ha regulado la Comisión Nacional de los Mercados y la Competencia, a partir de abril de 2021 entrará en vigor un cambio en la tarificación de las facturas de suministro eléctrico (inicialmente previsto para noviembre de 2020).<br>
 <br>
-En esta <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2020/01/como-cambiara-la-factura-de-electricidad/">noticia de nuestro blog</a></b> encontrarás más información sobre los cambios.<br>
+En esta <b><a href=${getLink(object.partner_id.lang, object.polissa_id.potencia)}>noticia de nuestro blog</a></b> encontrarás más información (actualizada) sobre los cambios.<br>
 <br>
 <br>
 Atentamente,<br>
