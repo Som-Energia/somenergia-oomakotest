@@ -60,7 +60,7 @@ Carregarem l'import d'aquesta factura al teu número de compte durant els proper
 </ul>
 Accedeix a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els teus contractes amb la cooperativa.<br>
 <br>
-T’informem també que el canvi en la tarificació de les factures de subministrament elèctric regulat per la Comissió Nacional dels Mercats i la Competència, que inicialment havia d’entrar en vigor el novembre del 2020 i que <b><a href=${getLink(object.partner_id.lang, object.polissa_id.potencia)}>estava prevista per l’1 d’abril</a></b>, ha estat ajornada novament pel Govern espanyol fins l’1 de juny de 2021.<br>
+T’informem també que el canvi en la tarificació de les factures de subministrament elèctric regulat per la Comissió Nacional dels Mercats i la Competència, que inicialment havia d’entrar en vigor el novembre del 2020 i que <b><a href=${getLink(object.partner_id.lang, object.polissa_id.potencia)}>estava prevista per l’1 d’abril</a></b>, s'ha proposat d'ajornar, un cop més, fins l’1 de juny de 2021.<br>
 <br>
 Atentament,<br>
 <br>
@@ -91,7 +91,7 @@ Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
 </ul>
 Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.<br>
 <br>
-Te informamos también que el cambio en la tarificación de las facturas de suministro eléctrico regulado por la Comisión Nacional de los Mercados y la Competencia, que inicialmente debía entrar en vigor en noviembre de 2020 y que <b><a href=${getLink(object.partner_id.lang, object.polissa_id.potencia)}>estaba prevista para el 1 de abril</a></b>, ha sido aplazada nuevamente por el Gobierno español hasta el 1 de junio de 2021.<br>
+Te informamos también que el cambio en la tarificación de las facturas de suministro eléctrico regulado por la Comisión Nacional de los Mercados y la Competencia, que inicialmente debía entrar en vigor en noviembre de 2020 y que <b><a href=${getLink(object.partner_id.lang, object.polissa_id.potencia)}>estaba prevista para el 1 de abril</a></b>, se ha propuesto aplazar, una vez más, hasta el 1 de junio de 2021.<br>
 <br>
 Atentamente,<br>
 <br>
