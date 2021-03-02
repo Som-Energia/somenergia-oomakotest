@@ -1,8 +1,6 @@
-cc: false
-to: ${object.cups_polissa_id.direccio_notificacio.email}
-subject_translations:
-  ca_ES: Rebuig dades inst.autoproducció CUPS ${object.cups_id.name}
-  es_ES: Rechazo datos inst.autoproducción CUPS ${object.cups_id.name}
-subject: Rebuig dades inst.autoproducció CUPS ${object.cups_id.name} / Rechazo
-  datos inst.autoproducción CUPS ${object.cups_id.name}
+cc: ${object.cups_polissa_id.direccio_notificacio.email}
+to: ${object.cups_polissa_id.titular.address[0].email}
+subject_translations: {}
+subject: Rebuig dades inst.autoproducció CUPS ${object.cups_id.name} / Rechazo datos
+  inst.autoproducción CUPS ${object.cups_id.name}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
