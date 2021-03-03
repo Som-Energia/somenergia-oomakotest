@@ -1,0 +1,6 @@
+cc: false
+to: ${object.polissa_id.titular.address[0].email}
+subject_translations: {}
+subject: Informe energètic personalitzat pel teu contracte ${object.polissa_id.name}
+  amb tarifa ${object.polissa_id.tarifa_codi} - Servei Infoenergia
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
