@@ -1115,6 +1115,29 @@
 #  poweremailId: som_infoenergia.env_empowering_report_fv_auto
 #  cases: {}
 #
+# Nou Infoenergia
+#
+#
+#nouInfoenergiaDomestic:
+#  template: input/correu-nouInfoenergiaDomestic.mako
+#  model: som.infoenergia.enviament
+#  poweremailId: som_infoenergia.env_empowering_report_domestic_from_enviament
+#  cases:
+#    ca: som_infoenergia.enviament_obert_amb_attach
+#
+#nouInfoenergiaFV:
+#  template: input/correu-nouInfoenergiaFV.mako
+#  model: som.infoenergia.enviament
+#  poweremailId: som_infoenergia.env_empowering_report_fv_auto_from_enviament
+#  cases:
+#    ca: som_infoenergia.enviament_obert_amb_attach
+##
+#nouInfoenergiaEiE:
+#  template: input/correu-nouInfoenergiaEiE.mako
+#  model: som.infoenergia.enviament
+#  poweremailId: som_infoenergia.env_empowering_report_empresa_from_enviament
+#  cases:
+#    ca: som_infoenergia.enviament_obert_amb_attach
 ########################################
 ## Autoproduccio
 #
