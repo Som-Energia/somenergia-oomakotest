@@ -24,7 +24,8 @@
         for p in pas01.header_id.pot_ids
         if p.potencia != 0
     ))
-
+    if tarifaATR == "2.0TD":
+        pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name

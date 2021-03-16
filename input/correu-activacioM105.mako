@@ -63,7 +63,8 @@
         for p in pas05.header_id.pot_ids
         if p.potencia != 0
     ))
-
+    if tarifaATR == "2.0TD":
+        pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
     polissa = object.polissa_ref_id if is_canvi_tit else object.cups_polissa_id
 
     tipus_tensio = False

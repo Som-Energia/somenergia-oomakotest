@@ -73,13 +73,13 @@ if pas1:
     pot_deseada = ''
 
     if _is_canvi_potencia:
-        lineesDePotencia = '\n'.join((
+        pot_deseada = '\n'.join((
             '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
             for p in pas1.header_id.pot_ids
             if p.potencia != 0
         ))
-
-        pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
+        if tarifaATR == "2.0TD":
+            pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
 
     if pas1.solicitud_tensio == "S" and pas1.tensio_solicitada:
         lang = object.cups_polissa_id.titular.lang

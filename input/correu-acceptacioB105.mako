@@ -84,7 +84,7 @@ ${text_legal}
         </p>
 
         <p>
-            T’informem que com a titular del contracte tens dret a que et facin el retorn del dipòsit de garantia si es va facilitar en el moment de tramitar l’alta del subministrament. Per tal de saber si et correspon i que et facin aquest retorn has de contactar directament amb <a href="http://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">la distribuïdora de la teva zona</a> i t’indicaran els passos a seguir.
+            T’informem que com a titular del contracte tens dret a que et facin el retorn del dipòsit de garantia si es va facilitar en el moment de tramitar l’alta del subministrament. Per tal de saber si et correspon i que et facin aquest retorn has de contactar directament amb <a href="http://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">la distribuïdora de la teva zona</a> ja que cadascuna d’elles té diferents protocols i t’indicaran els passos a seguir. D’acord amb el protocol que t’indiqui la Distribuidora, Som Energia està a la teva disposició per realitzar qualsevol gestió.
         </p>
 
         <p>
@@ -142,7 +142,7 @@ ${text_legal}
             Durante los próximos días generaremos la última factura de este contrato,  si no la has recibido ya, que será hasta la fecha que ha dejado de estar activo.
         </p>
         <p>
-            Te informamos que como titular del contrato tienes derecho a que te hagan el retorno del depósito de garantía si se facilitó en el momento de tramitar el alta del suministro. Para saber si te corresponde y que te hagan esta devolución debes contactar directamente con <a href="http://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">la distribuidora de tu zona</a> y te indicarán los pasos a seguir.
+            Te informamos que como titular del contrato tienes derecho a que te hagan el retorno del depósito de garantía si se facilitó en el momento de tramitar el alta del suministro. Para saber si te corresponde y que te hagan esta devolución debes contactar directamente con <a href="http://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">la distribuidora de tu zona</a> ya que cada una de ellas tiene diferentes protocolos y te indicarán los pasos a seguir. De acuerdo con el protocolo que te indique la Distribuidora, Somos Energía está a tu disposición para realizar cualquier gestión.
         </p>
         <p>
             Seguimos en contacto.

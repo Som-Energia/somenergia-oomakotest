@@ -43,6 +43,9 @@ text_legal = render(t_obj.read(
             </p>
             % if not object.observacions or 'proces: A3' not in object.observacions:
                 <p>
+                    Recorda que el titular del contracte de subministrament ha de ser l’usuari efectiu de l’electricitat contractada i que ha de tenir un just títol (contracte d’arrendament, etc.) sobre el punt de subministrament.
+                </p>
+                <p>
                     El procés de canvi de comercialitzadora consta dels següents passos:<br>
                     <br>
                     1. <b>Enviament de la sol·licitud a la distribuïdora</b>. Pas en el qual estem actualment. Enviem la petició de canvi de comercialitzadora amb les dades facilitades.<br>
@@ -115,6 +118,9 @@ text_legal = render(t_obj.read(
                 &nbsp;&nbsp;&nbsp;&nbsp;- Código CUPS: ${object.cups.name}
             </p>
             % if not object.observacions or 'proces: A3' not in object.observacions:
+                <p>
+                    Recuerda que el titular del contrato de suministro tiene que ser el usuario efectivo de la electricidad contratada y que tiene que tener un justo título (contrato de arrendamiento, etc.) sobre el punto de suministro.
+                </p>
                 <p>
                     El proceso de cambio de comercializadora consta de los siguientes pasos:<br>
                     1. <b>Envío de la solicitud a la distribuidora</b>. Paso en el que estamos en estos momentos. Enviamos la petición de cambio de comercializadora con los datos facilitados.<br>

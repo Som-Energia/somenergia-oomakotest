@@ -40,6 +40,8 @@ lineesDePotencia = '\n'.join((
   if p.potencia != 0
   ))
 
+if TarifaATR == "2.0TD":
+    lineesDePotencia = lineesDePotencia.replace("P1:", "P1-2:").replace("P2:", "P3:")
 %>
 <%
 from mako.template import Template

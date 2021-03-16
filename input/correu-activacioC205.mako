@@ -45,7 +45,8 @@ lineesDePotencia = '\n'.join((
   for p in pas5.header_id.pot_ids
   if p.potencia != 0
   ))
-
+if TarifaATR == "2.0TD":
+    lineesDePotencia = lineesDePotencia.replace("P1:", "P1-2:").replace("P2:", "P3:")
 autoconsum_description = False
 if pas5.tipus_autoconsum != '00' and pas5.tipus_autoconsum:
   autoconsum_description = get_autoconsum_description(object, pas5.tipus_autoconsum, object.cups_polissa_id.titular.lang)

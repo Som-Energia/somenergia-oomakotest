@@ -36,6 +36,9 @@
         for p in pas01.header_id.pot_ids
         if p.potencia != 0
     ))
+
+    if object.cups_polissa_id.tarifa.name == "2.0TD":
+        pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
 %>
 
 <!doctype html>
