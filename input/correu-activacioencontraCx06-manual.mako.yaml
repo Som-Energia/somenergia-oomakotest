@@ -2,9 +2,9 @@ cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email
   object.cups_polissa_id.administradora else '') %>  ${mail}
 to: ${object.cups_polissa_id.titular.address[0].email},${object.cups_polissa_id.pagador.address[0].email},${object.cups_polissa_id.direccio_notificacio.email}
 subject_translations:
-  ca_ES: 'C6 (${object.cups_polissa_id.name}) Baixa contracte amb Som Energia / Baja
-    contrato con Som Energia
-
-    '
-subject: Gestió Contracte ${object.cups_id.name}
+  ca_ES: (${object.cups_polissa_id.name}) Baixa contracte amb Som Energia / Baja contrato
+    con Som Energia
+  es_ES: (${object.cups_polissa_id.name}) Baja contrato con Som Energia
+subject: (${object.cups_polissa_id.name}) Baixa contracte amb Som Energia / Baja contrato
+    con Som Energia
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net

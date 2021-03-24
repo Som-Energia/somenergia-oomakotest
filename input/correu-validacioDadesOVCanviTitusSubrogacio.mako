@@ -32,6 +32,16 @@
             ('partner_id','=',partner_id),
         ]))
 
+    def render_template(object_, xml_id):
+        t_obj = object_.pool.get('poweremail.templates')
+        md_obj = object_.pool.get('ir.model.data')
+        template_id = md_obj.get_object_reference(
+            object_._cr, object_._uid,  'som_poweremail_common_templates', xml_id
+        )[1]
+        return render(
+            t_obj.read(object_._cr, object_._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+            object_
+        )
 %>
 
 <%
@@ -43,17 +53,9 @@
     cut_vat = hide_code(pas01.codi_document, 0, 4)
     cut_iban = hide_code(pas01.bank.iban, 0, 8)
 
-    t_obj = object.pool.get('poweremail.templates')
-    md_obj = object.pool.get('ir.model.data')
-
-    template_id = md_obj.get_object_reference(
-        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_rejection_footer'
-    )[1]
-
-    text_legal = render(
-        t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-        object
-    )
+    text_rejection_es = render_template(object, "common_template_rejection_text_es")
+    text_rejection_ca = render_template(object, "common_template_rejection_text_ca")
+    text_legal = render_template(object, "common_template_legal_footer")
 %>
 
 <!doctype html>
@@ -63,6 +65,7 @@
     </head>
     % if pas01.dades_client and pas01.dades_client.lang == "ca_ES":
         ${correu_cat()}
+        ${text_rejection_ca}
     % else:
         ${correu_es()}
     % endif
@@ -100,8 +103,7 @@
         </p>
         <p>
             Si es tracta d'un canvi de titularitat degut a la defunció de la persona titular actual o bé detecteu un error en el resum de dades següent, contesteu aquest correu.<br>
-            <b>Si tot és correcte no és necessari que contesteu</b> i la gestió es durà a terme en un màxim de cinc dies hàbils.<br>
-            És important tenir en compte que en les properes setmanes, la persona que ha estat titular fins ara, rebrà una última factura fins a la data d’activació del contracte amb la nova persona titular.<br>
+            <b>Si tot és correcte no és necessari que contesteu</b> i la gestió es durà a terme en un màxim de cinc dies hàbils.
         </p>
             <p>
                 Les dades de la nova persona titular són:<br>
@@ -109,6 +111,9 @@
                 - NIF, NIE o CIF: ${cut_vat}<br>
                 - Número de compte: ${cut_iban}<br>
             </p>
+        <br>
+        ${text_rejection_ca}
+        <br>
         <br>
         Salutacions,<br>
         <br>
@@ -149,8 +154,7 @@
             </p>
         <p>
                 Si se trata de un cambio de titularidad debido a la defunción de la persona titular actual o bien detectáis un error en el resumen de datos siguiente, contestad este correo.<br/>
-                <b>Si todo es correcto no es necesario que lo hagáis</b> y la gestión se llevará a cabo en un plazo máximo de cinco días hábiles.<br/>
-                Es importante tener en cuenta que en las próximas semanas, la persona que ha sido titular hasta ahora, recibirá una última factura hasta la fecha de activación del contrato con la nueva persona titular.<br/>
+                <b>Si todo es correcto no es necesario que lo hagáis</b> y la gestión se llevará a cabo en un plazo máximo de cinco días hábiles.
         </p>
         <p>
                 Los datos de la nueva persona titular son:<br/>
@@ -158,6 +162,9 @@
                 - NIF, NIE o CIF: ${cut_vat}<br/>
                 - Número de cuenta: ${cut_iban}<br/>
         </p>
+        <br>
+        ${text_rejection_es}
+        <br>
         <br>
             Saludos,<br/>
             <br/>
