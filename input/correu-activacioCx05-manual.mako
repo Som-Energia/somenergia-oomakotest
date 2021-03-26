@@ -109,7 +109,7 @@ Recuerda que el contrato <strong> se activa con las mismas condiciones contractu
 
 En la <a href="https://oficinavirtual.somenergia.coop/es/login/"> Oficina Virtual </a> también puedes consultar los datos del contrato, <a href = "http://es.support.somenergia.coop/article/535-como-puedo-facilitar-la-lectura"> facilitarnos las lecturas </a> y ver todas tus facturas. 
 
-Si tienes alguna duda, encontrarás las preguntas más frecuentes en el <a href="http://es.support.somenergia.coop/"> Centro de Ayuda </a>.
+Si tienes alguna duda, encontrarás las preguntas más frecuentes en el <a href="http://es.support.somenergia.coop/"> Centro de Apoyo </a>.
 
 
 
