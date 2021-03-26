@@ -102,7 +102,7 @@
             Us informem que hem rebut correctament la sol·licitud d'un canvi de titular pel contracte número ${object.cups_polissa_id.name} amb el CUPS: ${object.cups_id.name}.
         </p>
         <p>
-            Si es tracta d'un canvi de titularitat degut a la defunció de la persona titular actual o bé detecteu un error en el resum de dades següent, contesteu aquest correu.<br>
+            Si detecteu qualsevol error en el resum de dades següent, contesteu aquest correu.<br>
             <b>Si tot és correcte no és necessari que contesteu</b> i la gestió es durà a terme en un màxim de cinc dies hàbils.
         </p>
             <p>
@@ -153,7 +153,7 @@
                 Os informamos que hemos recibido correctamente la solicitud de cambio de titular del contrato número ${object.cups_polissa_id.name} con el CUPS: ${object.cups_id.name}.
             </p>
         <p>
-                Si se trata de un cambio de titularidad debido a la defunción de la persona titular actual o bien detectáis un error en el resumen de datos siguiente, contestad este correo.<br/>
+                Si detectáis cualquier error en el resumen de datos siguiente, contestad este correo.<br/>
                 <b>Si todo es correcto no es necesario que lo hagáis</b> y la gestión se llevará a cabo en un plazo máximo de cinco días hábiles.
         </p>
         <p>
