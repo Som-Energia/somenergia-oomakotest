@@ -102,7 +102,7 @@
             Us informem que hem rebut correctament la sol·licitud de contractació ${object.polissa_ref_id.name} per canvi de titular del punt de subministrament amb CUPS ${object.cups_id.name}.
         </p>
         <p>
-            Si es tracta d'un canvi de titularitat degut a una fusió d'empreses cal que ens ajdunteu el document acreditatiu responent a aquest mateix correu. En el cas que detecteu qualsevol error en el resum de dades següent agraïrem que ens ho comuniqueu el més aviat possible contestant aquest mateix correu.
+            En el cas que detecteu qualsevol error en el resum de dades següent agraïrem que ens ho comuniqueu el més aviat possible contestant aquest mateix correu.
         </p>
         <p>
             <b>Si tot és correcte no és necessari que contesteu</b> i la gestió es durà a terme en un màxim de cinc dies hàbils.<br>
@@ -160,7 +160,7 @@
 		        Os informamos que hemos recibido correctamente la solicitud de contratación ${object.polissa_ref_id.name} por cambio de titular del punto de suministro con CUPS ${object.cups_id.name}.
 		    </p>
         <p>
-		        Si se trata de un cambio de titularidad debido a una fusión de empresas es necesario que nos hagas llegar el documento acreditativo. En caso de detectar cualquier error en el resumen de datos siguiente agradeceremos que nos lo comuniquen lo antes posible contestando este mismo correo.
+		        En caso de detectar cualquier error en el resumen de datos siguiente agradeceremos que nos lo comuniquen lo antes posible contestando este mismo correo.
         </p>
         <p>
 		        <b>Si todo es correcto no es necesario que lo hagáis</b> y la gestión se llevará a cabo en un plazo máximo de cinco días hábiles.
