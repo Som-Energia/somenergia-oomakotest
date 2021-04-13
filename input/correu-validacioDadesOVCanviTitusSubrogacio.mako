@@ -105,6 +105,9 @@
             Si detecteu qualsevol error en el resum de dades següent, contesteu aquest correu.<br>
             <b>Si tot és correcte no és necessari que contesteu</b> i la gestió es durà a terme en un màxim de cinc dies hàbils.
         </p>
+        <p>
+            Et recordem que, com es detalla a les nostres <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">Condicions Generals</a>, el contracte de subministrament té caràcter personal, de forma que la persona titular manifesta i garanteix que és la usuària efectiva de l’energia elèctrica subministrada.
+        </p>
             <p>
                 Les dades de la nova persona titular són:<br>
                 - Nom: ${nom_nou_titular}<br/>
@@ -155,6 +158,9 @@
         <p>
                 Si detectáis cualquier error en el resumen de datos siguiente, contestad este correo.<br/>
                 <b>Si todo es correcto no es necesario que lo hagáis</b> y la gestión se llevará a cabo en un plazo máximo de cinco días hábiles.
+        </p>
+        <p>
+                Te recordamos que, como recogen nuestras <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">Condiciones Generales</a>, el contrato de suministro tiene carácter personal, de forma que la persona titular manifiesta y garantiza que es la usuaria efectiva de la energía eléctrica suministrada.
         </p>
         <p>
                 Los datos de la nueva persona titular son:<br/>
