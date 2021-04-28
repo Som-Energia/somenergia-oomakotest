@@ -80,9 +80,9 @@ En cas d'haver-te cobrat la factura original, la setmana vinent realitzarem els 
 <br>
 Si tens qualsevol dubte, pots respondre aquest mateix correu.<br>
 <br>
-Accedeix a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els teus contractes amb la cooperativa.<br>
+Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els contractes que tens amb la cooperativa.<br>
 <br>
-T’informem també que el canvi en la tarificació de les factures de subministrament elèctric regulat per la Comissió Nacional dels Mercats i la Competència, que inicialment havia d’entrar en vigor el novembre del 2020 i que <b><a href=${getLink(object.partner_id.lang, object.polissa_id.potencia)}>estava prevista per l’1 d’abril</a></b>, s'ha proposat d'ajornar, un cop més, fins l’1 de juny de 2021.<br>
+T’informem també que a partir de l’1 de juny de 2021 entrarà en vigor un canvi en la tarificació de les factures de subministrament elèctric regulat per la Comissió Nacional dels Mercats i la Competència. Si ets titular d’un contracte de fins a 15 kW (majoritàriament domèstics i algunes petites empreses i locals comercials), al nostre blog hi ha <b><a href="https://blog.somenergia.coop/destacados/2021/04/la-nova-tarifa-2-0td-per-a-contractes-domestics-i-petites-empreses/">més informació sobre la nova tarifa</a></b>. Per a contractes de més de 15 kW de potència contractada trobareu informació més detallada en <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifa-3-0/2021/04/les-noves-tarifes-per-a-contractes-de-mes-de-15-kw-o-dalta-tensio/">aquest altre enllaç del blog</a></b>.<br>
 <br>
 <br>
 Atentament,<br>
@@ -115,7 +115,7 @@ Si tienes cualquier duda, puedes responder este mismo correo.<br>
 <br>
 Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.<br>
 <br>
-Te informamos también que el cambio en la tarificación de las facturas de suministro eléctrico regulado por la Comisión Nacional de los Mercados y la Competencia, que inicialmente debía entrar en vigor en noviembre de 2020 y que <b><a href=${getLink(object.partner_id.lang, object.polissa_id.potencia)}>estaba prevista para el 1 de abril</a></b>, se ha propuesto aplazar, una vez más, hasta el 1 de junio de 2021.<br>
+Te informamos también que a partir del 1 de junio de 2021 entrará en vigor un cambio en la tarificación de las facturas de suministro eléctrico regulado por la Comisión Nacional de los Mercados y la Competencia. Si eres titular de un contrato de menos de 15 KW de potencia contratada (mayoritariamente domésticos, pequeñas empresas y algunos locales comerciales), en <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifas-y-precios-de-la-luz/2021/04/la-nueva-tarifa-2-0td-para-contratos-domesticos-y-pequenas-empresas/">este enlace del blog</a></b> encontrarás más información sobre la nueva tarifa. Para contratos de más de 15kW de potencia contratada encontraréis información más detallada en <b><a href="https://blog.somenergia.coop/destacados/2021/04/las-nuevas-tarifas-para-contratos-de-mas-de-15-kw-o-de-alta-tension/">este otro artículo del blog</a></b>.<br>
 <br>
 <br>
 Atentamente,<br>
