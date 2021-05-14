@@ -195,7 +195,7 @@
 #  cases:
 #    ca_tarif: 253740
 #
-#validacioDadesOVCanviTitus:
+# validacioDadesOVCanviTitus:
 #   template: input/correu-validacioDadesOVCanviTitus.mako
 #   model: giscedata.switching
 #   poweremailId: giscedata_switching.notification_atr_M1_01
@@ -204,24 +204,26 @@
 #     es_sensesoci: 253716
 #     ca_sensesoci: 170827
 #     es_ambsoci: 266780
-#
-#validacioDadesOVCanviTitusSubrogacio:
+
+# validacioDadesOVCanviTitusSubrogacio:
 #   template: input/correu-validacioDadesOVCanviTitusSubrogacio.mako
 #   model: giscedata.switching
 #   poweremailId: som_polissa_condicions_generals_m101.notification_atr_M1_01_SS
 #   cases:
 #     ca_ambsoci: 249766
 #     es: 270811
-#
-#notificacioAnticTitular:
+
+# notificacioAnticTitular:
 #  template: input/correu-notificacioAnticTitular.mako
 #  model: giscedata.switching
-#  poweremailId: 261
+#  poweremailId: som_switching.email_validacio_dades_canvi_titular
 #  cases:
 #    ca_ambsoci: 249766
 #    es_sensesoci: 253716
 #    ca_sensesoci: 170827
-#    es_ambsoci: 243142  
+#    es_ambsoci: 243142
+#    subrogacio: 304082
+#    traspas: 311011
 #
 #numeroFacturaDuplicada:
 #  template: input/correu-numeroFacturaDuplicada.mako
@@ -658,12 +660,10 @@
 #    30A_ca: 105074 #par 27587
 #    30A_es: 3699  #par 17345
 #
-#activacioencontraCX06_manual:
+# activacioencontraCX06_manual:
 #  template: input/correu-activacioencontraCx06-manual.mako
 #  model: giscedata.switching
 #  poweremailId: 21
-#  #poweremailId: giscedata_switching.notification_atr_C1_06
-#  #poweremailId: giscedata_switching.notification_atr_C2_06
 #  cases:
 #    20A_c1_ca: 489    #par 1469
 #    20A_c1_es: 9      #par 7821
@@ -673,22 +673,19 @@
 #    20A_c2_es: 503     #par 3808
 #    30A_c2_ca: 21728   #par 17324
 #    30A_c2_es: 34150   #par 31097
-#
-#activacioencontraC106_automatica:
+# activacioencontraC106_automatica:
 #  template: input/correu-activacioencontraC106.mako
 #  model: giscedata.switching
-#  #poweremailId: 21
 #  poweremailId: giscedata_switching.notification_atr_C1_06
 #  cases:
 #    20A_ca: 489    #par 1469
 #    20A_es: 9      #par 7821
 #    30A_ca: 8166   #par 12802
 #    30A_es: 11838  #par 20800
-#
-#activacioencontraC206_automatica:
+
+# activacioencontraC206_automatica:
 #  template: input/correu-activacioencontraC206.mako
 #  model: giscedata.switching
-#  #poweremailId: 21
 #  poweremailId: giscedata_switching.notification_atr_C2_06
 #  cases:
 #    20A_ca: 1191    #par 571
