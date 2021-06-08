@@ -30,15 +30,21 @@ text_legal = render(t_obj.read(
                 Ja has completat la sol·licitud per contractar el teu subministrament elèctric amb Som Energia.
             </p>
             <p>
+                T'adjuntem les condicions generals i particulars del teu contracte.
+            </p>
+            <p>
                 Aquest és el resum de les dades facilitades en el formulari de contractació d'electricitat: <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Soci/a de Som Energia: ${object.soci.name} <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Titular del contracte d'electricitat: ${object.titular.name}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Pagador/a del contracte d'electricitat: ${object.pagador.name}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Titular del compte bancari: ${object.pagador.name}<br>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Adreça punt subministrament: ${object.cups_direccio}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Codi CUPS: ${object.cups.name}<br>
             </p>
             % if not object.observacions or 'proces: A3' not in object.observacions:
+                <p>
+                    Recorda que el titular del contracte de subministrament ha de ser l’usuari efectiu de l’electricitat contractada i que ha de tenir un just títol (contracte d’arrendament, etc.) sobre el punt de subministrament.
+                </p>
                 <p>
                     El procés de canvi de comercialitzadora consta dels següents passos:<br>
                     <br>
@@ -66,13 +72,13 @@ text_legal = render(t_obj.read(
             <p>
                 Informació rellevant en el procés de contractació:<br>
                 <p>
-                    <b>Dret de desistiment.</b> Totes les persones consumidores de la cooperativa disposen de 14 dies naturals des de la data del contracte per desistir dels serveis. En cas que vulguis desistir, és necessari que ens notifiquis la teva decisió per correu electrònic a comercialitzacio@somenergia.coop, o per correu postal a SOM ENERGIA SCCL c/ Pic de Peguera 11, 17003 Girona. Si vols, pots utilitzar el text de desistiment que tens <b><a href="https://docs.google.com/document/d/10CzheqAYQs5lwvKpJBkaiBEdsHZjY6TZoeBDN-mOfT0/edit">en aquesta plantilla</a></b>.
+                    <b>Dret de desistiment.</b> Totes les persones <b> consumidores de la cooperativa disposen de 14 dies naturals des de la data de contracte per desistir dels serveis. Si vols desistir, cal que ens ho notifiquis per correu electrònic a</b> <a href="mailto:comercialitzacio@somenergia.coop">comercialitzacio@somenergia.coop</a>,  per correu postal a SOM ENERGIA SCCL c/Pic de Peguera 11, 17003 Girona o per qualsevol de les vies de contacte que consten <a href="https://ca.support.somenergia.coop/article/470-com-puc-contactar-amb-la-cooperativa-mail-telefon-etc">al nostre portal d'internet</a>. Per fer-ho, pots utilitzar el text que trobaràs <a href="https://docs.google.com/document/d/10CzheqAYQs5lwvKpJBkaiBEdsHZjY6TZoeBDN-mOfT0/edit">en aquesta plantilla</a>.
                 </p>
                 <p>
-                    <b>Conseqüències del desistiment.</b> Et tornarem els pagaments que hagis fet, si és el cas, com a molt tard en 14 dies naturals a partir de la data en què ens comuniquis la teva decisió. Efectuarem el reemborsament, sense que això suposi cap despesa per part teva, seguint el mateix mètode de pagament que hagis utilitzat, a no ser que ens n’indiquis un altre. En cas que s’hagi activat el subministrament d’electricitat, hauràs d’abonar el consum corresponent als dies pels quals t’haguem prestat el servei.
+                    <b>Conseqüències del desistiment</b>. Et tornarem tots els pagaments rebuts, si n’hi ha, dintre dels 14 dies naturals a partir de la data en què ens comuniquis la teva decisió. Efectuarem aquest reemborsament sense que suposi cap més despesa per a tu, i farem servir el mateix mitjà de pagament que hagis emprat per a la transacció inicial, si no és que ens indiques el contrari. En cas que ja es trobi actiu el subministrament d’electricitat, ens hauràs d’abonar el consum corresponent als dies en què t’hàgim prestat servei, així com la resta de costos associats a la contractació i, si s’escau, la reposició a la situació anterior.
                 </p>
                 <p>
-                    A Som Energia <b>no tens cap obligació de permanència.<b> En el moment que vulguis, pots canviar de companyia comercialitzadora. Som una cooperativa d’electricitat 100% renovable sense ànim de lucre i un dels nostres principis és oferir el preu més ajustat possible. No oferim ofertes especials, ni clàusules addicionals, ni lletra petita. La transparència, el bon tracte, uns preus ajustats, el treball per un canvi de model energètic, són alguns dels valors de Som Energia i el motiu pel qual tanta gent se suma al projecte i continua amb nosaltres sense cap clàusula de permanència.
+                    A Som Energia <b>no tens cap obligació de permanència.</b> En el moment que vulguis, pots canviar de companyia comercialitzadora. Som una cooperativa d’electricitat 100% renovable sense ànim de lucre i un dels nostres principis és oferir el preu més ajustat possible. No oferim ofertes especials, ni clàusules addicionals, ni lletra petita. La transparència, el bon tracte, uns preus ajustats, el treball per un canvi de model energètic, són alguns dels valors de Som Energia i el motiu pel qual tanta gent se suma al projecte i continua amb nosaltres sense cap clàusula de permanència.
                 </p>
             </p>
             <p>
@@ -100,15 +106,21 @@ text_legal = render(t_obj.read(
                 Ya has completado la solicitud para contratar tu suministro eléctrico a través de la cooperativa Som Energia.
             </p>
             <p>
+                Te adjuntamos las condiciones generales y particulares de tu contrato.
+            </p>
+            <p>
                 Este es el resumen de los datos facilitados en el formulario de contratación de electricidad:<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Socio/a de Som Energia: ${object.soci.name}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Titular del contrato de electricidad: ${object.titular.name}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Pagador/a del contrato de electricidad: ${object.pagador.name}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Titular de la cuenta bancaria: ${object.pagador.name}<br>
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Dirección punto de suministro: ${object.cups_direccio}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Código CUPS: ${object.cups.name}
             </p>
             % if not object.observacions or 'proces: A3' not in object.observacions:
+                <p>
+                    Recuerda que el titular del contrato de suministro tiene que ser el usuario efectivo de la electricidad contratada y que tiene que tener un justo título (contrato de arrendamiento, etc.) sobre el punto de suministro.
+                </p>
                 <p>
                     El proceso de cambio de comercializadora consta de los siguientes pasos:<br>
                     1. <b>Envío de la solicitud a la distribuidora</b>. Paso en el que estamos en estos momentos. Enviamos la petición de cambio de comercializadora con los datos facilitados.<br>
@@ -135,10 +147,10 @@ text_legal = render(t_obj.read(
             <p>
                 Información referente al proceso de contratación:<br>
                 <p>
-                    <b>Derecho de desistimiento.</b> Todas las personas consumidoras de la cooperativa disponen de 14 días naturales desde la fecha del contrato para desistir de los servicios. Si quieres desistir, es necesario que nos notifiques tu decisión por correo electrónico a comercializacion@somenergia.coop, o por correo postal a SOM ENERGIA SCCL c/Pic de Peguera 11, 17003 Girona. Para hacerlo, puedes utilizar el texto que figura <b><a href="https://docs.google.com/document/d/1KOnlw370Fkv8VX8mw2qfC7zvPKnAmptcGsvXU-4tMCc/edit">en esta plantilla</a></b>.
+                    <b>Derecho de desistimiento.</b> Todas las personas consumidoras de la cooperativa disponen de 14 días naturales desde la fecha del contrato para desistir de los servicios. Si quieres desistir, es necesario que nos lo notifiques por correo electrónico a comercializacion@somenergia.coop, por correo postal a SOM ENERGIA SCCL c/Pic de Peguera 11, 17003 Girona o por cualquiera de las vías de contacto que constan en nuestra <a href="https://ca.support.somenergia.coop/article/470-com-puc-contactar-amb-la-cooperativa-mail-telefon-etc">página en internet</a>. Para hacerlo, puedes utilizar el texto que figura en <a href="https://docs.google.com/document/d/1KOnlw370Fkv8VX8mw2qfC7zvPKnAmptcGsvXU-4tMCc/edit?usp=sharing"><b>esta plantilla</b></a>.
                 </p>
                 <p>
-                    <b>Consecuencias del desistimiento.</b> Te devolveremos todos los pagos recibidos, si los hay, dentro de 14 días naturales a partir de la fecha en la que nos comuniques tu decisión. Efectuaremos dicho reembolso, sin que esto suponga ningún gasto para ti, utilizando el mismo medio de pago que hayas empleado para la transacción inicial, a no ser que nos indiques lo contrario. En caso de que ya se encuentre activo el suministro de electricidad, deberás abonarnos el consumo correspondiente a los días en que te hayamos prestado servicio.
+                    <b>Consecuencias del desistimiento.</b> Te devolveremos todos los pagos recibidos, si los hay, dentro de 14 días naturales a partir de la fecha en la que nos comuniques tu decisión. Efectuaremos dicho reembolso, sin que esto suponga ningún gasto para ti, utilizando el mismo medio de pago que hayas empleado para la transacción inicial, a no ser que nos indiques lo contrario. En caso de que ya se encuentre activo el suministro de electricidad, deberás abonarnos el consumo correspondiente a los días en que te hayamos prestado servicio, así como el resto de costes asociados a la contratación y, en su caso, reposición de la situación anterior.
                 </p>
                 <p>
                     En Som Energia <b>no tienes obligación de permanencia.</b> Cuando quieras, puedes cambiar de compañia comercializadora. Somos una cooperativa 100% renovable sin ánimo de lucro y uno de nuestros principios es ofrecer el precio lo más ajustado posible. No ofrecemos ofertas especiales, ni cláusulas adicionales ni letra pequeña. La transparencia, el buen trato, unos precios ajustados, el trabajo para un cambio de modelo energético, son algunos de los valores de Som Energia y el motivo por el cual tanta gente se suma al proyecto y sigue con nosotros, sin ninguna cláusula de permanencia.

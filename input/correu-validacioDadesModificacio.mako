@@ -1,5 +1,6 @@
 <%
 from gestionatr.defs import TABLA_64
+from mako.template import Template
 
 pas1 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
 
@@ -12,6 +13,13 @@ MONOPHASE = {
     'ca_ES': "Monofàsica",
     'es_ES': "Monofásica"
 }
+
+def render(text_to_render, object_):
+    templ = Template(text_to_render)
+    return templ.render_unicode(
+        object=object_,
+        format_exceptions=True
+)
 
 def get_tension_type(object_, pas1, lang):
     codi_cnmc = pas1.tensio_solicitada
@@ -65,19 +73,13 @@ if pas1:
     pot_deseada = ''
 
     if _is_canvi_potencia:
-        if tarifaATR == '3.0A':
-            lineesDePotencia = '\n'.join((
-                '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
-                for p in pas1.header_id.pot_ids
-                if p.potencia != 0
-            ))
-        else:
-            for p in pas1.header_id.pot_ids:
-                if p.potencia == 0: continue
-                potencia = p.potencia
-                break
-
-        pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
+        pot_deseada = '\n'.join((
+            '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
+            for p in pas1.header_id.pot_ids
+            if p.potencia != 0
+        ))
+        if tarifaATR == "2.0TD":
+            pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
 
     if pas1.solicitud_tensio == "S" and pas1.tensio_solicitada:
         lang = object.cups_polissa_id.titular.lang
@@ -86,6 +88,32 @@ if pas1:
     nou_autoconsum = False
     if object.cups_polissa_id.autoconsumo != pas1.tipus_autoconsum:
         nou_autoconsum = get_autoconsum_description(object, pas1.tipus_autoconsum, object.cups_polissa_id.titular.lang)
+
+    t_obj = object.pool.get('poweremail.templates')
+    md_obj = object.pool.get('ir.model.data')
+    text_desistiment = "abc"
+    text_legal = "ABC"
+    if object.cups_polissa_id.titular.lang != "ca_ES":
+        template_id = md_obj.get_object_reference(
+            object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_rejection_text_es'
+        )[1]
+    else:
+        template_id = md_obj.get_object_reference(
+            object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_rejection_text_ca'
+        )[1]
+
+    text_desistiment = render(
+        t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+        object
+    )
+
+    template_id = md_obj.get_object_reference(
+        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+    )[1]
+    text_legal = render(
+        t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+        object
+    )
 
 %>
 
@@ -109,6 +137,7 @@ if pas1:
         % else:
             ${correu_cat()}
         %endif
+        ${text_legal}
     </body>
 </html>
 
@@ -132,12 +161,8 @@ if pas1:
         - Tarifa d'accés: ${tarifaATR} <br>
         %endif
         %if _is_canvi_potencia:
-            %if tarifaATR == '3.0A':
         - Potències desitjades: <br>
         ${pot_deseada}
-            %else:
-        - Potència desitjada: ${pot_deseada} W <br>
-            %endif
         %endif
         %if tipus_tensio:
         - Tensió desitjada: ${tipus_tensio}
@@ -155,8 +180,7 @@ if pas1:
     <p>
         En un termini de 24 h enviarem la teva sol·licitud a la distribuïdora de la teva zona, l’encarregada de validar i fer efectiva la teva sol·licitud. En el cas que detectis algun error, respon aquest mateix correu electrònic al més aviat possible.
     </p>
-    <br>
-
+    ${text_desistiment}
     Fins ben aviat,<br>
     <br>
     Equip de Som Energia<br>
@@ -184,12 +208,8 @@ if pas1:
         - Tarifa de acceso: ${tarifaATR}<br>
         %endif
         %if _is_canvi_potencia:
-            %if tarifaATR == '3.0A':
         - Potencias deseadas: <br>
         ${pot_deseada}
-            %else:
-        - Potencia deseada: ${pot_deseada} W<br>
-            %endif
         %endif
         %if tipus_tensio:
         - Tensión deseada: ${tipus_tensio}
@@ -207,8 +227,7 @@ if pas1:
     <p>
         En un plazo de 24 horas enviaremos la solicitud a la distribuidora de tu zona, la encargada de validar y hacer efectiva tu solicitud. En el caso que detectes algún error, responde este mismo correo electrónico lo antes posible.<br>
     </p>
-    <br>
-
+    ${text_desistiment}
     Hasta pronto,<br>
     <br>
     Equipo de Som Energia<br>

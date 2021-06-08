@@ -1,8 +1,7 @@
-cc: ${object.cups_polissa_id.titular.address[0].email}
-to: <% mail = '{}'.format(object.cups_polissa_id.autoconsum_id.generador_id[0].partner_id.www_email if object.cups_polissa_id.autoconsum_id else '') %> ${mail}
+cc: false
+to: ${object.cups_polissa_id.autoconsum_id.generador_id[0].partner_id.www_email}
 subject_translations:
-  en_US: ''
-  ca_ES: 'Dades instal·lació autoconsum CUPS ${object.cups_id.name}'
-  es_ES: 'Datos instalación autoconsumo CUPS ${object.cups_id.name}'
-subject: 'Datos instalación autoconsumo / Dades instal·lació autoconsum CUPS ${object.cups_id.name}'
+  ca_ES: Dades instal·lació autoconsum CUPS ${object.cups_id.name}
+  es_ES: Datos instalación autoconsumo CUPS ${object.cups_id.name}
+subject: Datos instalación autoconsumo / Dades instal·lació autoconsum CUPS ${object.cups_id.name}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net

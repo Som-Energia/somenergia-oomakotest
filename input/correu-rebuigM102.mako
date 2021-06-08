@@ -1,4 +1,13 @@
 <%
+    from mako.template import Template
+
+    def render(text_to_render, object_):
+        templ = Template(text_to_render)
+        return templ.render_unicode(
+            object=object_,
+            format_exceptions=True
+    )
+
     pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
     PasM101 = object.pool.get('giscedata.switching.m1.01')
 
@@ -10,24 +19,28 @@
 
     cont_telefon = pas01.cont_telefons and pas01.cont_telefons[0].numero or object.tel_pagador_polissa
 
-    if tarifaATR == '3.0A':
-        lineesDePotencia = '\n'.join((
-            '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
-            for p in pas01.header_id.pot_ids
-            if p.potencia != 0
-        ))
-    else:
-        for p in pas01.header_id.pot_ids:
-            if p.potencia == 0: continue
-            potencia = p.potencia
-            break
-
-    pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
-
+    pot_deseada = '\n'.join((
+        '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
+        for p in pas01.header_id.pot_ids
+        if p.potencia != 0
+    ))
+    if tarifaATR == "2.0TD":
+        pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
     )['nom']) if not object.vat_enterprise() else ""
+
+    t_obj = object.pool.get('poweremail.templates')
+    md_obj = object.pool.get('ir.model.data')
+
+    template_id = md_obj.get_object_reference(
+        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+    )[1]
+    text_legal = render(
+        t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+        object
+    )
 %>
 
 
@@ -52,6 +65,7 @@
         % else:
             ${footer_es()}
         % endif
+        ${text_legal}
     </body>
 </html>
 
@@ -137,12 +151,8 @@
         </p>
         <p>
             CUPS: ${object.cups_id.name} <br>
-            %if tarifaATR == '3.0A':
-                Potència desitjada: <br>
-                ${pot_deseada}
-            %else:
-                Potència desitjada: ${pot_deseada} W <br>
-            %endif
+            Potència desitjada: <br>
+            ${pot_deseada}
             Tarifa desitjada: ${tarifaATR} <br>
             Telèfon de contacte: ${cont_telefon}
         </p>
@@ -166,12 +176,9 @@
         </p>
         <p>
             CUPS: ${object.cups_id.name} <br>
-            %if tarifaATR == '3.0A':
-                Potencia deseada: <br>
-                ${pot_deseada}
-            %else:
-                Potencia deseada: ${pot_deseada} W <br>
-            %endif
+            Potencia deseada: <br>
+            ${pot_deseada}
+
             Tarifa deseada: ${tarifaATR} <br>
             Teléfono de contacto: ${cont_telefon}
         </p>

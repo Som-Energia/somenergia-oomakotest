@@ -1,12 +1,26 @@
 <%
-try:
-  p_obj = object.pool.get('res.partner')
-  if not object.vat_enterprise():
-    nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.cups_polissa_id.titular.name)['nom']
-  else:
-    nom_titular = ''
-except:
-  nom_titular = ''
+    from mako.template import Template
+    def render(text_to_render, object_):
+        templ = Template(text_to_render)
+        return templ.render_unicode(
+            object=object_,
+            format_exceptions=True
+        )
+    t_obj = object.pool.get('poweremail.templates')
+    md_obj = object.pool.get('ir.model.data')
+    template_id = md_obj.get_object_reference(
+                        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+                    )[1]
+    text_legal = render(t_obj.read(
+        object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+        object
+    )
+
+    p_obj = object.pool.get('res.partner')
+
+    nom_titular = ' {}'.format(p_obj.separa_cognoms(
+        object._cr, object._uid, object.cups_polissa_id.titular.name
+    )['nom']) if not object.vat_enterprise() else ""
 %>
 
 
@@ -31,13 +45,13 @@ except:
         % else:
             ${footer_es()}
         % endif
+        ${text_legal}
     </body>
 </html>
 
 
 <%def name="cabecera_cat()">
     <head>
-        <meta charset='utf8'>
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=1px>
@@ -68,7 +82,6 @@ except:
 
 <%def name="cabecera_es()">
     <head>
-        <meta charset='utf8'>
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
@@ -117,6 +130,9 @@ except:
 
 <%def name="footer_cat()">
     <p>
+        Recorda que el titular del contracte de subministrament ha de ser l’usuari efectiu de l’electricitat contractada i que ha de tenir un just títol (contracte d’arrendament, etc.) sobre el punt de subministrament.
+    </p>
+    <p>
         Gràcies per la teva atenció, estem en contacte per a qualsevol dubte o consulta.<br>
     </p>
     Atentament,<br>
@@ -128,6 +144,9 @@ except:
 </%def>
 
 <%def name="footer_es()">
+    <p>
+        Recuerda que el titular del contrato de suministro tiene que ser el usuario efectivo de la electricidad contratada y que tiene que tener un justo título (contrato de arrendamiento, etc.) sobre el punto de suministro.
+    </p>
     <p>
         Muchas gracias por tu atención, estamos en contacto para cualquier duda o consulta.
     </p>

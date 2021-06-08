@@ -58,20 +58,13 @@
     mapaTarifes = dict(M105.fields_get(object._cr, object._uid)['tarifaATR']['selection'])
     tarifaATR = mapaTarifes[pas05.tarifaATR]
 
-    if tarifaATR == '3.0A':
-        lineesDePotencia = '\n'.join((
-            '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
-            for p in pas05.header_id.pot_ids
-            if p.potencia != 0
-        ))
-    else:
-        for p in pas05.header_id.pot_ids:
-            if p.potencia == 0: continue
-            potencia = p.potencia
-            break
-
-    pot_deseada = lineesDePotencia if tarifaATR == '3.0A' else potencia
-
+    pot_deseada = '\n'.join((
+        '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
+        for p in pas05.header_id.pot_ids
+        if p.potencia != 0
+    ))
+    if tarifaATR == "2.0TD":
+        pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
     polissa = object.polissa_ref_id if is_canvi_tit else object.cups_polissa_id
 
     tipus_tensio = False
@@ -171,12 +164,9 @@
         Les <b>condicions contractuals actuals</b> del teu contracte amb Som Energia són:<br>
         <br>
         &nbsp;&nbsp; <strong> Tarifa: ${tarifaATR}</strong> <br>
-        %if tarifaATR == '3.0A':
-            &nbsp;&nbsp; <strong> Potència: </strong> <br>
-            ${pot_deseada}
-        %else:
-            &nbsp;&nbsp; <strong> Potència: ${pot_deseada} W</strong><br>
-        %endif
+        &nbsp;&nbsp; <strong> Potència: </strong> <br>
+        ${pot_deseada}
+
         %if tipus_tensio:
             &nbsp;&nbsp; <strong> Tensió: ${tipus_tensio}</strong><br>
         %endif
@@ -267,12 +257,9 @@
         Las <b>condiciones contractuales actuales</b> de tu contrato con Som Energia son:<br>
 
         &nbsp;&nbsp;<strong> Tarifa: ${tarifaATR}</strong><br>
-        %if tarifaATR == '3.0A':
-            &nbsp;&nbsp;<strong> Potencia: </strong><br>
-            ${pot_deseada}
-        %else:
-            &nbsp;&nbsp;<strong> Potencia: ${pot_deseada} W</strong><br>
-        %endif
+        &nbsp;&nbsp;<strong> Potencia: </strong><br>
+        ${pot_deseada}
+
         %if tipus_tensio:
             &nbsp;&nbsp; <strong> Tensión: ${tipus_tensio}</strong><br>
         %endif
