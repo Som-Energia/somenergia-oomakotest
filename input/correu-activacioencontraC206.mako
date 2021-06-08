@@ -22,46 +22,76 @@ date = date.strftime('%d/%m/%Y')
 
 p_obj = object.pool.get('res.partner')
 if not object.vat_enterprise():
-  nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid, object.cups_polissa_id.titular.name)['nom']
+  nom_titular = ' ' + p_obj.separa_cognoms(object._cr, object._uid, object.cups_polissa_id.titular.name)['nom']
 else:
   nom_titular = ''
 
-%>
-Hola${nom_titular}, 
+from mako.template import Template
 
+def render(text_to_render, object_):
+    templ = Template(text_to_render)
+    return templ.render_unicode(
+        object=object_,
+        format_exceptions=True
+)
+
+t_obj = object.pool.get('poweremail.templates')
+md_obj = object.pool.get('ir.model.data')
+
+template_id = md_obj.get_object_reference(
+    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+)[1]
+
+text_legal = render(
+    t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+    object
+)
+
+%>
+Hola${nom_titular},<br>
+<br>
 % if object.cups_polissa_id.titular.lang != "es_ES":
 T’escrivim per informar-te que ens han comunicat la baixa del teu contracte amb Som Energia. La data de canvi de companyia és el  <strong>${date}</strong>
-
-No cal que facis cas d’aquest missatge si realment vols passar el contracte de Som Energia a una altra comercialitzadora.
- 
-Però si no eres conscient que s’ha realitzat aquesta sol·licitud i s’ha fet contra la teva voluntat, respon a aquest mateix correu i t'informarem dels passos a seguir perquè tornis a tenir el contracte amb la cooperativa.
-
+<br>
+<br>
+No cal que facis cas d’aquest missatge si certament vols passar el contracte de Som Energia a una altra comercialitzadora, ja que sempre pots triar lliurement la teva comercialitzadora.
+<br>
+<br>
+Però si no eres conscient que s’ha realitzat aquesta sol·licitud i s’ha fet contra la teva voluntat, respon a aquest mateix correu i iniciarem els tràmits perquè tornis a tenir el contracte amb la cooperativa i, si és el cas, per a realitzar la reclamació pertinent si el canvi de comercialitzadora es va fer de manera fraudulenta sense el teu consentiment.
+<br>
+<br>
 Gràcies.
-
+<br>
+<br>
 Salutacions,
-
-Equip de Som Energia
-comercialitzacio@somenergia.coop
-<a href="www.somenergia.coop">www.somenergia.coop</a>
+<br>
+<br>
+Equip de Som Energia<br>
+comercialitzacio@somenergia.coop<br>
+<a href="www.somenergia.coop">www.somenergia.coop</a><br>
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES" and object.cups_polissa_id.titular.lang != "es_ES":
 ----------------------------------------------------------------------------------------------------
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
 Te escribimos para informarte que nos han comunicado la baja de tu contrato con Som Energia. La fecha de cambio de compañia es el <strong>${date}</strong>
-
-No es necesario que atiendas a este mensaje si realmente quieres pasar el contrato de Som Energia a otra comercializadora. 
- 
-Pero si no eres consciente de que se realizó esta solicitud y se hizo contra tu voluntad, responde a este mismo correo y te informaremos de los pasos a seguir para que vuelvas a tener el contrato con la cooperativa.
-
-Gracias. 
-
-Un saludo,
-
-Equipo de Som Energia
-comercializacion@somenergia.coop
-<a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
+<br>
+<br>
+No es necesario que atiendas a este mensaje si efectivamente quieres pasar el contrato de Som Energia a otra comercializadora ya que siempre puedes escoger libremente tu comercializadora.
+<br>
+<br>
+Pero si no eres consciente de que se realizó esta solicitud y se hizo contra tu voluntad, responde a este mismo correo e iniciaremos los trámites para que vuelvas a tener el contrato con la cooperativa y, en su caso, para realizar la reclamación pertinente si el cambio de comercializadora se hizo de forma fraudulenta sin tu consentimiento.
+<br>
+<br>
+Gracias.<br>
+<br>
+Un saludo,<br>
+<br>
+Equipo de Som Energia<br>
+comercializacion@somenergia.coop<br>
+<a href="http://www.somenergia.coop/es">www.somenergia.coop</a><br>
 % endif
+${text_legal}
 </body>
 </html>
 </html>

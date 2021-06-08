@@ -204,7 +204,7 @@
 #  cases:
 #    ca_tarif: 253740
 #
-#validacioDadesOVCanviTitus:
+# validacioDadesOVCanviTitus:
 #   template: input/correu-validacioDadesOVCanviTitus.mako
 #   model: giscedata.switching
 #   poweremailId: giscedata_switching.notification_atr_M1_01
@@ -213,24 +213,26 @@
 #     es_sensesoci: 253716
 #     ca_sensesoci: 170827
 #     es_ambsoci: 266780
-#
-#validacioDadesOVCanviTitusSubrogacio:
+
+# validacioDadesOVCanviTitusSubrogacio:
 #   template: input/correu-validacioDadesOVCanviTitusSubrogacio.mako
 #   model: giscedata.switching
 #   poweremailId: som_polissa_condicions_generals_m101.notification_atr_M1_01_SS
 #   cases:
 #     ca_ambsoci: 249766
 #     es: 270811
-#
-#notificacioAnticTitular:
+
+# notificacioAnticTitular:
 #  template: input/correu-notificacioAnticTitular.mako
 #  model: giscedata.switching
-#  poweremailId: 261
+#  poweremailId: som_switching.email_validacio_dades_canvi_titular
 #  cases:
 #    ca_ambsoci: 249766
 #    es_sensesoci: 253716
 #    ca_sensesoci: 170827
 #    es_ambsoci: 243142
+#    subrogacio: 304082
+#    traspas: 311011
 #
 #numeroFacturaDuplicada:
 #  template: input/correu-numeroFacturaDuplicada.mako
@@ -651,34 +653,32 @@
 #    30A_c2_ca: 105074
 #    30A_c2_es: 77717
 #
-# activacioC105_automatica:
-#   template: input/correu-activacioC105.mako
-#   model: giscedata.switching
-#   #  poweremailId: 19
-#   poweremailId: giscedata_switching.notification_atr_C1_05
-#   cases:
-#     20A_ca: 232 #par 13346
-#     20A_es: 102 #par 13510
-#     30A_ca: 119789
-#     30A_es: 77717
-
-# activacioC205_automatica:
-#   template: input/correu-activacioC205.mako
-#   model: giscedata.switching
-#   #  poweremailId: 19
-#   poweremailId: giscedata_switching.notification_atr_C2_05
-#   cases:
-#     20A_ca: 205 #par 6804
-#     20A_es: 214 #par 13525
-#     30A_ca: 105074 #par 27587
-#     30A_es: 3699 #par 17345
-
-#activacioencontraCX06_manual:
+#activacioC105_automatica:
+#  template: input/correu-activacioC105.mako
+#  model: giscedata.switching
+##  poweremailId: 19
+#  poweremailId: giscedata_switching.notification_atr_C1_05
+#  cases:
+#    20A_ca: 232 #par 13346
+#    20A_es: 102 #par 13510
+#    30A_ca: 119789
+#    30A_es: 77717
+#
+#activacioC205_automatica:
+#  template: input/correu-activacioC205.mako
+#  model: giscedata.switching
+##  poweremailId: 19
+#  poweremailId: giscedata_switching.notification_atr_C2_05
+#  cases:
+#    20A_ca: 205   #par 6804
+#    20A_es: 214   #par 13525
+#    30A_ca: 105074 #par 27587
+#    30A_es: 3699  #par 17345
+#
+# activacioencontraCX06_manual:
 #  template: input/correu-activacioencontraCx06-manual.mako
 #  model: giscedata.switching
 #  poweremailId: 21
-#  #poweremailId: giscedata_switching.notification_atr_C1_06
-#  #poweremailId: giscedata_switching.notification_atr_C2_06
 #  cases:
 #    20A_c1_ca: 489    #par 1469
 #    20A_c1_es: 9      #par 7821
@@ -1130,6 +1130,29 @@
 #  poweremailId: som_infoenergia.env_empowering_report_fv_auto
 #  cases: {}
 #
+# Nou Infoenergia
+#
+#
+#nouInfoenergiaDomestic:
+#  template: input/correu-nouInfoenergiaDomestic.mako
+#  model: som.infoenergia.enviament
+#  poweremailId: som_infoenergia.env_empowering_report_domestic_from_enviament
+#  cases:
+#    ca: som_infoenergia.enviament_obert_amb_attach
+#
+#nouInfoenergiaFV:
+#  template: input/correu-nouInfoenergiaFV.mako
+#  model: som.infoenergia.enviament
+#  poweremailId: som_infoenergia.env_empowering_report_fv_auto_from_enviament
+#  cases:
+#    ca: som_infoenergia.enviament_obert_amb_attach
+##
+#nouInfoenergiaEiE:
+#  template: input/correu-nouInfoenergiaEiE.mako
+#  model: som.infoenergia.enviament
+#  poweremailId: som_infoenergia.env_empowering_report_empresa_from_enviament
+#  cases:
+#    ca: som_infoenergia.enviament_obert_amb_attach
 ########################################
 ## Autoproduccio
 #
