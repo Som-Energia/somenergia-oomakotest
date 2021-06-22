@@ -12,11 +12,14 @@ if O.uri != 'http://192.168.1.28':
 
 testcases = ns.load(sys.argv[1])
 plantilla = getattr(testcases, sys.argv[2])
-template_name = plantilla.poweremailId
-module_name, poweremail_id = template_name.split(".")
-template_id = O.IrModelData.get_object_reference(
-    module_name, poweremail_id
-)[1]
+
+template_id = plantilla.poweremailId
+import pudb; pu.db
+if not isinstance(template_id, int):
+    module_name, poweremail_id = template_name.split(".")
+    template_id = O.IrModelData.get_object_reference(
+        module_name, poweremail_id
+    )[1]
 
 model = plantilla.model
 
