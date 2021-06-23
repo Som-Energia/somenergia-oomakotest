@@ -14,14 +14,11 @@ gkwh_emission_id = md_obj.get_object_reference(
                     object._cr, object._uid,  'som_generationkwh', 'emissio_genkwh'
                 )[1]
 
-today = datetime.date.today().strftime('%Y-%m-%d')
-
 investment_ids = Investment.search(
     object._cr, object._uid,
     [
     ('member_id', '=', object.id),
     ('first_effective_date', '!=', False),
-    ('first_effective_date', '>=', today),
     ('emission_id', '=', gkwh_emission_id)
     ],
     order='first_effective_date ASC',

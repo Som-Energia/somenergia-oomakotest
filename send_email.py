@@ -14,7 +14,6 @@ testcases = ns.load(sys.argv[1])
 plantilla = getattr(testcases, sys.argv[2])
 
 template_id = plantilla.poweremailId
-import pudb; pu.db
 if not isinstance(template_id, int):
     module_name, poweremail_id = template_name.split(".")
     template_id = O.IrModelData.get_object_reference(
