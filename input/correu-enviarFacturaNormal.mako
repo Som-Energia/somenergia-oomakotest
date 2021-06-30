@@ -47,9 +47,11 @@ Benvolgut/da,<br>
 <br>
 T'enviem la <B>factura</B> d'electricitat de Som Energia. <br>
 <br>
-T'informem que a partir de l'1 de juny de 2021 ha entrat en vigor un canvi en la tarificació de les factures de subministrament elèctric regulat per la Comissió Nacional dels Mercats i la Competència. Si ets titular d'un contracte de fins a 15 kW (majoritàriament domèstics i algunes petites empreses i locals comercials), pots visitar el nostre blog, on hi ha <b><a href="https://blog.somenergia.coop/destacados/2021/04/la-nova-tarifa-2-0td-per-a-contractes-domestics-i-petites-empreses/">més informació sobre la nova tarifa</a></b>. Per a contractes de més de 15 kW de potència contractada, trobareu informació més detallada en <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifa-3-0/2021/04/les-noves-tarifes-per-a-contractes-de-mes-de-15-kw-o-dalta-tensio/">aquest altre enllaç del blog</a></b>.<br>
+T'informem que l'1 de juny de 2021 va entrar en vigor un canvi en la tarificació de les factures de subministrament elèctric regulat per la Comissió Nacional dels Mercats i la Competència. Si ets titular d'un contracte de fins a 15 kW (majoritàriament domèstics i algunes petites empreses i locals comercials), pots visitar el nostre blog, on hi ha <b><a href="https://blog.somenergia.coop/destacados/2021/04/la-nova-tarifa-2-0td-per-a-contractes-domestics-i-petites-empreses/">més informació sobre la nova tarifa</a></b>. Al Centre d’Ajuda també t’expliquem detalladament a què correspon <b><a href="https://ca.support.somenergia.coop/article/488-entendre-la-factura">cadascun dels apartats de la factura</a></b>.<br>
 <br>
-Aquest canvi en la tarificació requereix una etapa d’adaptació. Per aquest motiu, és possible que s’emetin dues factures amb un període de facturació més curt de l’habitual i que coincideixin dos càrrecs en el mes de juny. També és possible que s’endarrereixi l’emissió d’alguna de les pròximes factures. <br>
+Per a contractes de més de 15 kW de potència contractada, trobareu informació més detallada en <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifa-3-0/2021/04/les-noves-tarifes-per-a-contractes-de-mes-de-15-kw-o-dalta-tensio/">aquest altre enllaç del blog</a></b>.<br>
+<br>
+Aquest canvi en la tarificació requereix una etapa d’adaptació. Per aquest motiu, és possible que durant les setmanes posteriors a l’1 de juny de 2021, s’emetin factures amb un període de facturació més curt de l’habitual, que coincideixin dos càrrecs en un mateix mes, o bé, que s’endarrereixi l’enviament d’alguna de les factures.<br>
 <br>
 Carregarem l'import d'aquesta factura al teu número de compte durant els propers dies.<br>
 </p>
@@ -80,9 +82,11 @@ Saludos,<br>
 <br>
 Te enviamos la <B>factura</B> de electricidad de Som Energia. <br>
 <br>
-Te informamos que a partir del 1 de junio de 2021 ha entrado en vigor un cambio en la tarificación de las lecturas de suministro eléctrico regulado por la Comisión Nacional de los Mercados y la Competencia. Si eres titular de un contrato de hasta 15 kW (mayoritariamente domésticos y algunas pequeñas empresas y locales comerciales), puedes visitar nuestro blog, donde hay <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifas-y-precios-de-la-luz/2021/04/la-nueva-tarifa-2-0td-para-contratos-domesticos-y-pequenas-empresas/">más información sobre la nueva tarifa</a></b>. Para contratos de más de 15 kW de potencia contratada, encontraréis información más detallada en <b><a href="https://blog.somenergia.coop/destacados/2021/04/las-nuevas-tarifas-para-contratos-de-mas-de-15-kw-o-de-alta-tension/">este otro enlace del blog</a></b>.<br>
+Te informamos que el 1 de junio de 2021 entró en vigor un cambio en la tarificación de las lecturas de suministro eléctrico regulado por la Comisión Nacional de los Mercados y la Competencia. Si eres titular de un contrato de hasta 15 kW (mayoritariamente domésticos y algunas pequeñas empresas y locales comerciales), puedes visitar nuestro blog, donde hay <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifas-y-precios-de-la-luz/2021/04/la-nueva-tarifa-2-0td-para-contratos-domesticos-y-pequenas-empresas/">más información sobre la nueva tarifa</a></b>. En el Centro de Ayuda también te explicamos detalladamente <b><a href="https://es.support.somenergia.coop/article/489-entender-la-factura">a qué corresponde cada uno de los apartados de la factura</a></b>.<br>
 <br>
-Este cambio en la tarificación requiere una etapa de adaptación. Por este motivo, es posible que se emitan dos facturas con un período de facturación más corto de lo habitual y que coincidan dos cargos en el mes de junio. También es posible que se retrase la emisión de alguna de las próximas facturas.<br>
+Para contratos de más de 15 kW de potencia contratada, encontraréis información más detallada en <b><a href="https://blog.somenergia.coop/destacados/2021/04/las-nuevas-tarifas-para-contratos-de-mas-de-15-kw-o-de-alta-tension/">este otro enlace del blog</a></b>.<br>
+<br>
+Este cambio en la tarificación requiere una etapa de adaptación. Por este motivo, es posible que durante las semanas posteriores al 1 de junio de 2021, se emitan facturas con un período de facturación más corto de lo habitual, que coincidan dos cargos en un mismo mes, o bien, que se retrase el envío de alguna de las facturas.<br>
 <br>
 Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
 </p>
