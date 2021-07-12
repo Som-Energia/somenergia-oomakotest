@@ -82,7 +82,9 @@ Si tens qualsevol dubte, pots respondre aquest mateix correu.<br>
 <br>
 Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els contractes que tens amb la cooperativa.<br>
 <br>
-T'informem que a partir de l'1 de juny de 2021 ha entrat en vigor un canvi en la tarificació de les factures de subministrament elèctric regulat per la Comissió Nacional dels Mercats i la Competència. Si ets titular d'un contracte de fins a 15 kW (majoritàriament domèstics i algunes petites empreses i locals comercials), pots visitar aquesta notícia del nostre blog, on hi ha <b><a href="https://blog.somenergia.coop/destacados/2021/04/la-nova-tarifa-2-0td-per-a-contractes-domestics-i-petites-empreses/">més informació sobre la nova tarifa</a></b>. Per a contractes de més de 15 kW de potència contractada, trobareu informació més detallada en <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifa-3-0/2021/04/les-noves-tarifes-per-a-contractes-de-mes-de-15-kw-o-dalta-tensio/">aquest altre enllaç del blog</a></b>.<br>
+T'informem que l'1 de juny de 2021 va entrar en vigor un canvi en la tarificació de les factures de subministrament elèctric regulat per la Comissió Nacional dels Mercats i la Competència. Si ets titular d'un contracte de fins a 15 kW (majoritàriament domèstics i algunes petites empreses i locals comercials), pots visitar el nostre blog, on hi ha <b><a href="https://blog.somenergia.coop/destacados/2021/04/la-nova-tarifa-2-0td-per-a-contractes-domestics-i-petites-empreses/">més informació sobre la nova tarifa</a></b>. Al Centre d’Ajuda també t’expliquem detalladament a què correspon <b><a href="https://ca.support.somenergia.coop/article/488-entendre-la-factura">cadascun dels apartats de la factura</a></b>.<br>
+<br>
+Per a contractes de més de 15 kW de potència contractada, trobareu informació més detallada en <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifa-3-0/2021/04/les-noves-tarifes-per-a-contractes-de-mes-de-15-kw-o-dalta-tensio/">aquest altre enllaç del blog</a></b>.<br>
 <br>
 <br>
 Atentament,<br>
@@ -115,8 +117,10 @@ Si tienes cualquier duda, puedes responder este mismo correo.<br>
 <br>
 Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.<br>
 <br>
-Te informamos que a partir del 1 de junio de 2021 ha entrado en vigor un cambio en la tarificación de las lecturas de suministro eléctrico regulado por la Comisión Nacional de los Mercados y la Competencia. Si eres titular de un contrato de hasta 15 kW (mayoritariamente domésticos y algunas pequeñas empresas y locales comerciales), puedes visitar nuestro blog, donde hay <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifas-y-precios-de-la-luz/2021/04/la-nueva-tarifa-2-0td-para-contratos-domesticos-y-pequenas-empresas/">más información sobre la nueva tarifa</a></b>. Para contratos de más de 15 kW de potencia contratada, encontraréis información más detallada en <b><a href="https://blog.somenergia.coop/destacados/2021/04/las-nuevas-tarifas-para-contratos-de-mas-de-15-kw-o-de-alta-tension/">este otro enlace del blog</a></b>.<br>
+Te informamos que el 1 de junio de 2021 entró en vigor un cambio en la tarificación de las lecturas de suministro eléctrico regulado por la Comisión Nacional de los Mercados y la Competencia. Si eres titular de un contrato de hasta 15 kW (mayoritariamente domésticos y algunas pequeñas empresas y locales comerciales), puedes visitar nuestro blog, donde hay <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifas-y-precios-de-la-luz/2021/04/la-nueva-tarifa-2-0td-para-contratos-domesticos-y-pequenas-empresas/">más información sobre la nueva tarifa</a></b>. En el Centro de Ayuda también te explicamos detalladamente <b><a href="https://es.support.somenergia.coop/article/489-entender-la-factura">a qué corresponde cada uno de los apartados de la factura</a></b>.<br>
 <br>
+Para contratos de más de 15 kW de potencia contratada, encontraréis información más detallada en <b><a href="https://blog.somenergia.coop/destacados/2021/04/las-nuevas-tarifas-para-contratos-de-mas-de-15-kw-o-de-alta-tension/">este otro enlace del blog</a></b>.<br>
+<br><br>
 <br>
 Atentamente,<br>
 <br>
