@@ -70,16 +70,18 @@ if pas1:
     cont_telefon = pas1.cont_telefons and pas1.cont_telefons[0].numero or object.tel_pagador_polissa
 
     _is_canvi_potencia = is_canvi_potencia(object, pas1)
-    pot_deseada = ''
-
+    pot_deseada_ca = ''
+    pot_deseada_es = pot_deseada_ca
     if _is_canvi_potencia:
-        pot_deseada = '\n'.join((
+        pot_deseada_ca = '\n'.join((
             '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
             for p in pas1.header_id.pot_ids
             if p.potencia != 0
         ))
+        pot_deseada_es = pot_deseada_ca
         if tarifaATR == "2.0TD":
-            pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
+            pot_deseada_ca = pot_deseada_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
+            pot_deseada_es = pot_deseada_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
 
     if pas1.solicitud_tensio == "S" and pas1.tensio_solicitada:
         lang = object.cups_polissa_id.titular.lang
@@ -162,7 +164,7 @@ if pas1:
         %endif
         %if _is_canvi_potencia:
         - Potències desitjades: <br>
-        ${pot_deseada}
+        ${pot_deseada_ca}
         %endif
         %if tipus_tensio:
         - Tensió desitjada: ${tipus_tensio}
@@ -209,7 +211,7 @@ if pas1:
         %endif
         %if _is_canvi_potencia:
         - Potencias deseadas: <br>
-        ${pot_deseada}
+        ${pot_deseada_es}
         %endif
         %if tipus_tensio:
         - Tensión deseada: ${tipus_tensio}

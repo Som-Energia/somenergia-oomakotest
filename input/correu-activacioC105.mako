@@ -40,13 +40,17 @@ else:
   nom_titular = ''
 
 TarifaATR=dict(object.pool.get(model).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas5.tarifaATR]
-lineesDePotencia = '\n'.join((
+lineesDePotencia_ca = '\n'.join((
   '\t- <strong> %s: </strong>%s W'%(p.name, p.potencia)
   for p in pas5.header_id.pot_ids
   if p.potencia != 0
   ))
+lineesDePotencia_es = lineesDePotencia_ca
+
 if TarifaATR == "2.0TD":
-    lineesDePotencia = lineesDePotencia.replace("P1:", "P1-2:").replace("P2:", "P3:")
+    lineesDePotencia_ca = lineesDePotencia_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
+    lineesDePotencia_es = lineesDePotencia_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
+
 autoconsum_description = False
 if pas5.tipus_autoconsum != '00' and pas5.tipus_autoconsum:
   autoconsum_description = get_autoconsum_description(object, pas5.tipus_autoconsum, object.cups_polissa_id.titular.lang)
@@ -86,7 +90,7 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br />
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
 <li><strong> Tarifa: </strong>${TarifaATR}</li>
 <li><strong> Potència: </strong>
-${lineesDePotencia}</li>
+${lineesDePotencia_ca}</li>
 %if autoconsum_description:
     <li><strong> Modalitat autoconsum: </strong> ${autoconsum_description}</li>
 %endif
@@ -132,7 +136,7 @@ Los datos del nuevo contrato son:<br />
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
 <li><strong> Tarifa: </strong>${TarifaATR}</li>
 <li><strong> Potencia: </strong>
-${lineesDePotencia}</li>
+${lineesDePotencia_es}</li>
 
 %if autoconsum_description:
     <li><strong> Modalidad autoconsumo: </strong> ${autoconsum_description}</li>

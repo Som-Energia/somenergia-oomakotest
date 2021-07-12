@@ -31,14 +31,15 @@
         object
     )
     pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
-    pot_deseada = '\n'.join((
+    pot_deseada_ca = '\n'.join((
         '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
         for p in pas01.header_id.pot_ids
         if p.potencia != 0
     ))
-
+    pot_deseada_es = pot_deseada_ca
     if object.cups_polissa_id.tarifa.name == "2.0TD":
-        pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
+        pot_deseada_ca = pot_deseada_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
+        pot_deseada_es = pot_deseada_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
 %>
 
 <!doctype html>
@@ -103,7 +104,7 @@ ${text_legal}
             <br>
             - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
-            - Potència: <br>${pot_deseada}
+            - Potència: <br>${pot_deseada_ca}
             - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
@@ -167,7 +168,7 @@ ${text_legal}
             <br>
             - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
-            - Potencia: <br>${pot_deseada}
+            - Potencia: <br>${pot_deseada_es}
             - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>

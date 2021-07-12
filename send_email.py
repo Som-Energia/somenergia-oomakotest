@@ -3,7 +3,7 @@ import configdb; import ooop; O = ooop.OOOP(**configdb.ooop)
 from yamlns import namespace as ns
 
 if len(sys.argv) < 3:
-	print "USAGE: testcasesfile.yaml nomdelaplantilla"
+	print "USAGE: testcasesfile.yaml nomdelaplantilla [ mail_to ]"
 	exit(1)
 
 if O.uri != 'http://192.168.1.28':
@@ -13,9 +13,12 @@ if O.uri != 'http://192.168.1.28':
 testcases = ns.load(sys.argv[1])
 plantilla = getattr(testcases, sys.argv[2])
 
+if len(sys.argv) >  3:
+    mail_to = sys.argv[3]
+
 template_id = plantilla.poweremailId
 if not isinstance(template_id, int):
-    module_name, poweremail_id = template_name.split(".")
+    module_name, poweremail_id = template_id.split(".")
     template_id = O.IrModelData.get_object_reference(
         module_name, poweremail_id
     )[1]
@@ -40,13 +43,19 @@ ctx = {
     'from': 16,
     'state': 'single',
     'priority': 0,
-    'empowering_channel': 'test1'
+    'empowering_channel': 'test1',
+    'extra_render_values': {'notificacio_text': 'Text de notificacio rebuig'}
 }
 params = {
     'state': 'single',
     'priority': 0,
     'from': 16,
+    'bcc': '',
 }
+if mail_to:
+    ctx['to'] = mail_to
+    params['to'] = mail_to
+
 print "======"
 print "CTX:"
 print ctx
@@ -55,4 +64,4 @@ print "PARAMS:"
 print params
 print "======"
 wz_id = O.PoweremailSendWizard.create(params, ctx)
-O.PoweremailSendWizard.send_mail([wz_id], ctx)
+result = O.PoweremailSendWizard.send_mail([wz_id], ctx)
