@@ -58,13 +58,15 @@
     mapaTarifes = dict(M105.fields_get(object._cr, object._uid)['tarifaATR']['selection'])
     tarifaATR = mapaTarifes[pas05.tarifaATR]
 
-    pot_deseada = '\n'.join((
+    pot_deseada_ca = '\n'.join((
         '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
         for p in pas05.header_id.pot_ids
         if p.potencia != 0
     ))
+    pot_deseada_es = pot_deseada_ca
     if tarifaATR == "2.0TD":
-        pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
+        pot_deseada_ca = pot_deseada_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
+        pot_deseada_es = pot_deseada_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
     polissa = object.polissa_ref_id if is_canvi_tit else object.cups_polissa_id
 
     tipus_tensio = False
@@ -165,7 +167,7 @@
         <br>
         &nbsp;&nbsp; <strong> Tarifa: ${tarifaATR}</strong> <br>
         &nbsp;&nbsp; <strong> Potència: </strong> <br>
-        ${pot_deseada}
+        ${pot_deseada_ca}
 
         %if tipus_tensio:
             &nbsp;&nbsp; <strong> Tensió: ${tipus_tensio}</strong><br>
@@ -258,7 +260,7 @@
 
         &nbsp;&nbsp;<strong> Tarifa: ${tarifaATR}</strong><br>
         &nbsp;&nbsp;<strong> Potencia: </strong><br>
-        ${pot_deseada}
+        ${pot_deseada_es}
 
         %if tipus_tensio:
             &nbsp;&nbsp; <strong> Tensión: ${tipus_tensio}</strong><br>

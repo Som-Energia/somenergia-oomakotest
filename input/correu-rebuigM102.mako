@@ -19,13 +19,17 @@
 
     cont_telefon = pas01.cont_telefons and pas01.cont_telefons[0].numero or object.tel_pagador_polissa
 
-    pot_deseada = '\n'.join((
+    pot_deseada_ca = '\n'.join((
         '&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
         for p in pas01.header_id.pot_ids
         if p.potencia != 0
     ))
+    pot_deseada_es = pot_deseada_ca
+
     if tarifaATR == "2.0TD":
-        pot_deseada = pot_deseada.replace("P1:", "P1-2:").replace("P2:", "P3:")
+        pot_deseada_ca = pot_deseada_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
+        pot_deseada_es = pot_deseada_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
+
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
@@ -152,7 +156,7 @@
         <p>
             CUPS: ${object.cups_id.name} <br>
             Potència desitjada: <br>
-            ${pot_deseada}
+            ${pot_deseada_ca}
             Tarifa desitjada: ${tarifaATR} <br>
             Telèfon de contacte: ${cont_telefon}
         </p>
@@ -177,7 +181,7 @@
         <p>
             CUPS: ${object.cups_id.name} <br>
             Potencia deseada: <br>
-            ${pot_deseada}
+            ${pot_deseada_es}
 
             Tarifa deseada: ${tarifaATR} <br>
             Teléfono de contacto: ${cont_telefon}

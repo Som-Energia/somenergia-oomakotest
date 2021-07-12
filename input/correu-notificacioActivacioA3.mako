@@ -34,14 +34,15 @@ else:
 
 TarifaATR=dict(object.pool.get(model).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas5.tarifaATR]
 
-lineesDePotencia = '\n'.join((
+lineesDePotencia_ca = '\n'.join((
   '\t- <strong> %s: </strong>%s W'%(p.name, p.potencia)
   for p in pas5.header_id.pot_ids
   if p.potencia != 0
   ))
-
+lineesDePotencia_es = lineesDePotencia_ca
 if TarifaATR == "2.0TD":
-    lineesDePotencia = lineesDePotencia.replace("P1:", "P1-2:").replace("P2:", "P3:")
+    lineesDePotencia_ca = lineesDePotencia_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
+    lineesDePotencia_es = lineesDePotencia_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
 %>
 <%
 from mako.template import Template
@@ -78,7 +79,7 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br />
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li><br />
 <li><strong> Tarifa: </strong>${TarifaATR}</li><br />
 <li><strong> Potència: </strong><br />
-${lineesDePotencia}</li><br />
+${lineesDePotencia_ca}</li><br />
 </ul><br />
 Aproximadament en el termini d’un mes, rebràs la primera factura, que inclourà els costos regulats per la tramitació de l’alta (i que cobra la distribuïdora).<br />
 <br />
@@ -109,7 +110,7 @@ Los datos del nuevo contrato son:<br />
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li><br />
 <li><strong> Tarifa: </strong>${TarifaATR}</li><br />
 <li><strong> Potencia: </strong><br />
-${lineesDePotencia}</li><br />
+${lineesDePotencia_es}</li><br />
 </ul><br />
 Aproximadamente en el plazo de un mes, recibirás la primera factura, que incluirá  los costes regulados de la tramitación del alta (y que cobra la distribuidora).<br />
 <br />
