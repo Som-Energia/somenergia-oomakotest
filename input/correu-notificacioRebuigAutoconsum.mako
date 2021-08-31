@@ -76,10 +76,7 @@
             Enviem el rebuig, amb el detall del motiu de desacord que ens has indicat a través de la teva oficina virtual, a la distribuïdora.
         </p>
         <p>
-            Si es tracta d’un error en la comunicació per part de la distribuïdora ens faran arribar una nova comunicació corregida, si pel contrari es tracta d’un error a l’hora de fer el registre o de la comunicació per part de la Comunitat Autònoma cal que contacteu amb la mateixa per tal de modificar la informació i que comenci el procés novament.
-        </p>
-        <p>
-            Malauradament, la distribuïdora no ens indica si es tracta d’una o altra casuística pel que et recomanem que contactis directament amb la distribuïdora i el departament corresponent de la teva Comunitat Autònoma per aclarir-ho.
+            Caldrà que contactis directament amb el departament corresponent de la teva Comunitat Autònoma per tal de modificar la informació registrada i que comenci el procés novament.
         </p>
         <p>
             Qualsevol dubte seguim en contacte.
@@ -123,10 +120,7 @@
             Enviamos el rechazo, con el detalle del motivo de desacuerdo que nos has indicado a través de tu oficina virtual, a la distribuidora.
         </p>
         <p>
-            Si se trata de un error en la comunicación por parte de la distribuidora nos harán llegar una nueva comunicación corregida, si por el contrario se trata de un error a la hora de hacer el registro o de la comunicación por parte de la Comunidad Autónoma deberás ponerte en contacto con la misma a fin de modificar la información y que comience el proceso nuevamente.
-        </p>
-        <p>
-            Desgraciadamente, la distribuidora no nos indica si se trata de una u otra casuística por lo que te recomendamos que contactes directamente con la distribuidora y el departamento correspondiente de tu Comunidad Autónoma para aclararlo.
+            Hará falta que contactes directamente con el departamento correspondiente de tu Comunidad Autónoma para modificar la información registrada y que empiece el proceso nuevamente.
         </p>
         <p>
             Cualquier duda seguimos en contacto.
