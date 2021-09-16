@@ -487,6 +487,8 @@
 #    2.0_A3_ca: 66599
 #    2.0_A3_es: 68012
 #
+## REBUTJOS
+## --------
 #rebuigM104:
 #  template: input/correu-rebuigM104.mako
 #  model: giscedata.switching
@@ -632,7 +634,9 @@
 #   poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
 #   cases:
 #     nou: 147916
-
+##
+## ACTIVACIONS
+## -----------
 # activacioCX05_manual:
 #   template: input/correu-activacioCx05-manual.mako
 #   model: giscedata.switching
@@ -717,7 +721,7 @@
 #     2TD_es: 360584  #par 11326
 #     30TD_es: 358661  #par 11326
 #     30TD_ca: 357413  #par 11326
-
+#
 # activacioM105_automatica:
 #   template: input/correu-activacioM105.mako
 #   model: giscedata.switching
@@ -733,7 +737,21 @@
 #     monofasica_es: 273331 #this is not a TD contract
 #     es: 310210 #this is not a TD contract
 #     ca: 308466 #this is not a TD contract
-# #
+#
+activacionE106_automatica:
+  template: input/correu-activacioE106.mako
+  model: giscedata.switching
+  poweremailId: giscedata_switching.notification_atr_E1_06
+  cases:
+    20TD_ca: 359886
+    20TD_es: 359034
+#     30TD_es: 356843
+#     30TD_ca: 356375
+    20TD_ca_auto: 354387
+    20TD_es_auto: 354985
+#     30TD_es_auto: 356843
+#     30TD_ca_auto: 356375
+
 #notificacioAcceptacioA3:
 #  template: input/correu-notificacioAcceptacioA3.mako
 #  model: giscedata.switching
