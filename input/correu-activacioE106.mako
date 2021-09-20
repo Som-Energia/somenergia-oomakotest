@@ -1,10 +1,11 @@
 <%!
     from datetime import datetime
-    from mako.template import Template
+    from mako.template import Template as MakoTemplate
 
 
     class E106Template:
         STEP06 = '06'
+        UNKNOWN_VALUE = ' - '
 
         def __init__(self, object_, lang):
             self._case = object_
@@ -100,7 +101,10 @@
                     self.case._cr, self.case._uid
                 )['tarifaATR']['selection']
             )
-            self._atr_tariff = tariff_map[self.step_06.tarifaATR]
+            tariff = tariff_map.get(
+                self.step_06.tarifaATR, self.UNKNOWN_VALUE
+            ) or self.UNKNOWN_VALUE
+            self._atr_tariff = tariff if tariff != 'None' else self.UNKNOWN_VALUE
 
         @property
         def powers_description(self):
@@ -108,7 +112,7 @@
                 return self._powers_description
 
             powers = '\n'.join((
-                '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: </strong>%s W' % (p.name, p.potencia)
+                '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: </strong>%s W <br/>' % (p.name, p.potencia)
                 for p in self.step_06.header_id.pot_ids
                 if p.potencia != 0
             ))
@@ -136,31 +140,31 @@
             return self._obj_instance
 
         @property
-        def text(self):
-            if hasattr(self, '_text'):
-                return self._text
+        def raw_text(self):
+            if hasattr(self, '_raw_text'):
+                return self._raw_text
             
             template_id = self.ModelData.get_object_reference(
                 self.instance._cr, self.instance._uid, 
                 'som_poweremail_common_templates', 'common_template_legal_footer'
             )[1]
             
-            self._text = self.Template.read(
+            self._raw_text = self.Template.read(
                 self.instance._cr, self.instance._uid, [template_id], ['def_body_text']
             )[0]['def_body_text']
-            return self._text
+            return self._raw_text
 
         @property
-        def rendered_legal_text(self):
-            if hasattr(self, '_rendered_legal_text'):
-                return self._rendered_legal_text
+        def legal_text(self):
+            if hasattr(self, '_legal_text'):
+                return self._legal_text
 
-            templ = Template(self.text)
-            self._rendered_legal_text = templ.render_unicode(
+            templ = MakoTemplate(self.raw_text)
+            self._legal_text = templ.render_unicode(
                 object=self.instance,
                 format_exceptions=True
             )
-            return self._rendered_legal_text
+            return self._legal_text
 %>
 
 <%
@@ -180,7 +184,7 @@
   % else:
     ${correu_es()}
   % endif
-  ${legal_text_template.rendered_legal_text}
+  ${legal_text_template.legal_text}
 </html>
 
 <%def name="correu_cat()">
@@ -229,7 +233,7 @@
         <li><strong>NIF/CIF/NIE Titular: </strong>${e106_template.owner_vat}</li>
         <li><strong>Soci/a vinculat/da: </strong>${e106_template.member_name}</li>
         <li><strong> Tarifa: </strong>${e106_template.atr_tariff}</li>
-        <li><strong> Potència: </strong>
+        <li><strong> Potència: </strong><br/>
         ${e106_template.powers_description}</li>
         %if e106_template.selfconsumption_description:
           <li><strong> Modalitat autoconsum: </strong> ${e106_template.selfconsumption_description}</li>
@@ -301,7 +305,7 @@
         <li><strong>NIF/CIF/NIE Titular: </strong>${e106_template.owner_vat}</li>
         <li><strong>Socio/a vinculado/a: </strong>${e106_template.member_name}</li>
         <li><strong> Tarifa: </strong>${e106_template.atr_tariff}</li>
-        <li><strong> Potencia: </strong>
+        <li><strong> Potencia: </strong> <br/>
         ${e106_template.powers_description}</li>
         % if e106_template.selfconsumption_description:
             <li><strong> Modalidad autoconsumo: </strong> ${e106_template.selfconsumption_description}</li>
