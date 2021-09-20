@@ -3,7 +3,7 @@ cfg.py
 b2bdata/
 # vim swapps
 *.sw?
-
+.vscode
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
