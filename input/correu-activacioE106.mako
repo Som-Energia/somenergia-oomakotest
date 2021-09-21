@@ -7,12 +7,20 @@
         STEP06 = '06'
         UNKNOWN_VALUE = ' - '
 
-        def __init__(self, object_, lang):
+        def __init__(self, object_):
             self._case = object_
-            self._lang = lang
-            
+            self._lang = self.contract.titular.lang
+
             self.SelfConsumption = self._case.pool.get('giscedata.autoconsum')
             self.E106 = self._case.pool.get('giscedata.switching.e1.06')
+
+        @property
+        def contract(self):
+            if hasattr(self, '_contract'):
+                return self._contract
+
+            self._contract = self.case.polissa_ref_id or self.case.cups_polissa_id
+            return self._contract
 
         @property
         def case(self):
@@ -24,7 +32,7 @@
 
         @property
         def contract_number(self):
-            return self.case.cups_polissa_id.name
+            return self.contract.name
 
         @property
         def cups(self):
@@ -36,15 +44,15 @@
 
         @property
         def owner_name(self):
-            return self.case.cups_polissa_id.titular.name
+            return self.contract.titular.name
 
         @property
         def owner_vat(self):
-            return self.case.cups_polissa_id.titular_nif
+            return self.contract.titular_nif
 
         @property
         def member_name(self):
-            return self.case.cups_polissa_id.soci.name
+            return self.contract.soci.name
 
         @property
         def step_06(self):
@@ -61,7 +69,7 @@
             if hasattr(self, '_selfconsumption_code'):
                 return self._selfconsumption_code
             
-            self._selfconsumption_code = self.case.cups_polissa_id.autoconsumo
+            self._selfconsumption_code = self.contract.autoconsumo
             return self._selfconsumption_code
 
         @property
@@ -69,7 +77,7 @@
             if hasattr(self, '_selfconsumption_description'):
                 return self._selfconsumption_description
 
-            if self.case.cups_polissa_id.autoconsumo and self.case.cups_polissa_id.autoconsumo != '00':
+            if self.contract.autoconsumo and self.contract.autoconsumo != '00':
                 selfconsumption_types = dict(
                     self.SelfConsumption.fields_get(
                         self.case._cr, self.case._uid, context={'lang': self.lang}
@@ -168,7 +176,7 @@
 %>
 
 <%
-    e106_template = E106Template(object, object.cups_polissa_id.titular.lang)
+    e106_template = E106Template(object)
     legal_text_template = LegalTextTemplate(object)
 
     p_obj = object.pool.get('res.partner')
@@ -177,9 +185,10 @@
     )['nom']) if not object.vat_enterprise() else ''
 %>
 
+
 <!doctype html>
 <html>
-  % if object.cups_polissa_id.titular.lang == "ca_ES":
+  % if e106_template.lang == "ca_ES":
     ${correu_cat()}
   % else:
     ${correu_es()}
