@@ -47,11 +47,7 @@ Benvolgut/da,<br>
 <br>
 T'enviem la <B>factura</B> d'electricitat de Som Energia. <br>
 <br>
-T'informem que l'1 de juny de 2021 va entrar en vigor un canvi en la tarificació de les factures de subministrament elèctric regulat per la Comissió Nacional dels Mercats i la Competència. Si ets titular d'un contracte de fins a 15 kW (majoritàriament domèstics i algunes petites empreses i locals comercials), pots visitar el nostre blog, on hi ha <b><a href="https://blog.somenergia.coop/destacados/2021/04/la-nova-tarifa-2-0td-per-a-contractes-domestics-i-petites-empreses/">més informació sobre la nova tarifa</a></b>. Al Centre d’Ajuda també t’expliquem detalladament a què correspon <b><a href="https://ca.support.somenergia.coop/article/488-entendre-la-factura">cadascun dels apartats de la factura</a></b>.<br>
-<br>
-Per a contractes de més de 15 kW de potència contractada, trobareu informació més detallada en <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifa-3-0/2021/04/les-noves-tarifes-per-a-contractes-de-mes-de-15-kw-o-dalta-tensio/">aquest altre enllaç del blog</a></b>.<br>
-<br>
-Aquest canvi en la tarificació requereix una etapa d’adaptació. Per aquest motiu, és possible que durant les setmanes posteriors a l’1 de juny de 2021, s’emetin factures amb un període de facturació més curt de l’habitual, que coincideixin dos càrrecs en un mateix mes, o bé, que s’endarrereixi l’enviament d’alguna de les factures.<br>
+Al Centre d’Ajuda també t’expliquem detalladament a què correspon <b><a href="https://ca.support.somenergia.coop/article/488-entendre-la-factura">cadascun dels apartats de la factura</a></b>.<br>
 <br>
 Carregarem l'import d'aquesta factura al teu número de compte durant els propers dies.<br>
 </p>
@@ -64,7 +60,7 @@ Carregarem l'import d'aquesta factura al teu número de compte durant els proper
 <li>Període del  ${data_inici} al  ${data_final}</li><br>
 <li><B> Import total: ${object.invoice_id.amount_total}</B>€</li><br>
 </ul>
-Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els contractes que tens amb la cooperativa.<br>
+Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els contractes que tens amb la cooperativa. Si detectes algun error en la factura, ens ho pots comunicar responent aquest mateix correu. T’informem que l’Equip de Treball de Som Energia es troba en un <b><a href="https://blog.somenergia.coop/som-energia/2021/09/moment-excepcional-en-el-servei-de-comercialitzacio-de-som-energia/">moment excepcional</a></b> de càrrega de feina i això pot fer que triguem uns dies més en respondre.<br>
 <br>
 Atentament,<br>
 <br>
@@ -82,11 +78,7 @@ Saludos,<br>
 <br>
 Te enviamos la <B>factura</B> de electricidad de Som Energia. <br>
 <br>
-Te informamos que el 1 de junio de 2021 entró en vigor un cambio en la tarificación de las lecturas de suministro eléctrico regulado por la Comisión Nacional de los Mercados y la Competencia. Si eres titular de un contrato de hasta 15 kW (mayoritariamente domésticos y algunas pequeñas empresas y locales comerciales), puedes visitar nuestro blog, donde hay <b><a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifas-y-precios-de-la-luz/2021/04/la-nueva-tarifa-2-0td-para-contratos-domesticos-y-pequenas-empresas/">más información sobre la nueva tarifa</a></b>. En el Centro de Ayuda también te explicamos detalladamente <b><a href="https://es.support.somenergia.coop/article/489-entender-la-factura">a qué corresponde cada uno de los apartados de la factura</a></b>.<br>
-<br>
-Para contratos de más de 15 kW de potencia contratada, encontraréis información más detallada en <b><a href="https://blog.somenergia.coop/destacados/2021/04/las-nuevas-tarifas-para-contratos-de-mas-de-15-kw-o-de-alta-tension/">este otro enlace del blog</a></b>.<br>
-<br>
-Este cambio en la tarificación requiere una etapa de adaptación. Por este motivo, es posible que durante las semanas posteriores al 1 de junio de 2021, se emitan facturas con un período de facturación más corto de lo habitual, que coincidan dos cargos en un mismo mes, o bien, que se retrase el envío de alguna de las facturas.<br>
+En el Centro de Ayuda también te explicamos detalladamente <b><a href="https://es.support.somenergia.coop/article/489-entender-la-factura">a qué corresponde cada uno de los apartados de la factura</a></b>.<br>
 <br>
 Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
 </p>
@@ -99,7 +91,7 @@ Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
 <li>Periodo del  ${data_inici} al  ${data_final}</li><br>
 <li><B>Importe total: ${object.invoice_id.amount_total}</B>€</li><br>
 </ul>
-Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa.<br>
+Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa. Si detectas algún error en la factura, nos lo puedes comunicar respondiendo este mismo correo. Te informamos que el Equipo de Som Energia se encuentra en un <b><a href="https://blog.somenergia.coop/som-energia/2021/09/momento-excepcional-en-el-servicio-de-comercializacion-de-som-energia/">momento excepcional</a></b> de carga de trabajo y esto puede suponer que tardemos unos días más en responder.<br>
 <br>
 Atentamente,<br>
 <br>
