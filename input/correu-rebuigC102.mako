@@ -130,9 +130,6 @@
 
 <%def name="footer_cat()">
     <p>
-        Recorda que el titular del contracte de subministrament ha de ser l’usuari efectiu de l’electricitat contractada i que ha de tenir un just títol (contracte d’arrendament, etc.) sobre el punt de subministrament.
-    </p>
-    <p>
         Gràcies per la teva atenció, estem en contacte per a qualsevol dubte o consulta.<br>
     </p>
     Atentament,<br>
@@ -144,9 +141,6 @@
 </%def>
 
 <%def name="footer_es()">
-    <p>
-        Recuerda que el titular del contrato de suministro tiene que ser el usuario efectivo de la electricidad contratada y que tiene que tener un justo título (contrato de arrendamiento, etc.) sobre el punto de suministro.
-    </p>
     <p>
         Muchas gracias por tu atención, estamos en contacto para cualquier duda o consulta.
     </p>
