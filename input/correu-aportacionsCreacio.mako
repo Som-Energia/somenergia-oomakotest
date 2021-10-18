@@ -66,7 +66,7 @@ En els propers dies rebràs el càrrec bancari en aquest compte, siusplau verifi
 <br/>
 Un cop verificada la validesa del pagament realitzat rebràs una nova notificació confirmant l'aportació realitzada i detallant les condicions particulars de la teva aportació.<br/>
 <br/>
-Agrair la teva implicació amb la cooperativa i informar-te que per a qualsevol dubte o aclariment pots consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a> o bé mitjançant un mail a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a>.<br/>
+Agrair la teva implicació amb la cooperativa i informar-te que per a qualsevol dubte o aclariment pots consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a> enviar-nos un correu electrònic a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a>.<br/>
 <br/>
 % endif
 Moltes gràcies i bona energia!<br/>
@@ -74,7 +74,7 @@ Moltes gràcies i bona energia!<br/>
 Atentament,<br/>
 <br/>
 <br/>
-Som Energia, SCCL<br/>
+Equip de Som Energia,<br/>
 <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 % endif
 % if lang != "ca_ES" and lang != "es_ES":
@@ -112,7 +112,7 @@ Agradecer tu implicación con la cooperativa y informarte que para cualquier dud
 Atentamente,<br/>
 <br/>
 <br/>
-Som Energia, SCCL<br/>
+Equipo de Som Energia,<br/>
 <a href="https://www.somenergia.coop">www.somenergia.coop</a><br/>
 % endif
 <br/>
