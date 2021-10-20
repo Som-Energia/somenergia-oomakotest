@@ -62,11 +62,11 @@ Import aportació: ${int(abs(amount_currency))} €<br/>
 </ul>
 <p>Un cop rebuda i verificada la documentació, procedirem a realitzar el corresponent càrrec en compte per l'import que ens has sol.licitat.</p>
 % else:
-En els propers dies rebràs el càrrec bancari en aquest compte, siusplau verifica que totes les dades facilitades són correctes i que disposes dels diners, per tal que no hi hagi cap incidència en el gir del rebut.<br/>
+En els propers dies rebràs el càrrec bancari en aquest compte, si us plau verifica que totes les dades facilitades són correctes i que disposes dels diners, per tal que no hi hagi cap incidència en el gir del rebut.<br/>
 <br/>
 Un cop verificada la validesa del pagament realitzat rebràs una nova notificació confirmant l'aportació realitzada i detallant les condicions particulars de la teva aportació.<br/>
 <br/>
-Agrair la teva implicació amb la cooperativa i informar-te que per a qualsevol dubte o aclariment pots consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a> enviar-nos un correu electrònic a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a>.<br/>
+Agrair la teva implicació amb la cooperativa i informar-te que per a qualsevol dubte o aclariment pots consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a> o enviar-nos un correu electrònic a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a>.<br/>
 <br/>
 % endif
 Moltes gràcies i bona energia!<br/>
