@@ -113,6 +113,7 @@
                 self.step_06.tarifaATR, self.UNKNOWN_VALUE
             ) or self.UNKNOWN_VALUE
             self._atr_tariff = tariff if tariff != 'None' else self.UNKNOWN_VALUE
+            return self._atr_tariff
 
         @property
         def powers_description(self):
