@@ -8,6 +8,7 @@
 Soci = object.pool.get('somenergia.soci')
 Partner = object.pool.get('res.partner')
 PartnerBank = object.pool.get('res.partner.bank')
+GenerationkwhInvestment = object.pool.get('generationkwh.investment')
 soci_id = object.member_id.id
 soci_obj = Soci.read(object._cr, object._uid, soci_id)
 part_obj = Partner.read(object._cr,object._uid,soci_obj['partner_id'][0])
@@ -16,6 +17,9 @@ lang = part_obj['lang']
 name = part_obj['name']
 iban = bank_obj['iban']
 amount_currency= int(object.nshares) * 100
+emission_id = object.emission_id.id
+total_amount_in_emission = GenerationkwhInvestment.get_investments_amount(object._cr, object._uid, soci_id, emission_id=emission_id)
+is_higher_5k = total_amount_in_emission > 5000
 
 nom_pagador = ''
 es_empresa = Partner.vat_es_empresa(object._cr, object._uid, object.member_id.vat)
@@ -65,10 +69,16 @@ Import aportació: ${int(abs(amount_currency))} €<br/>
 En els propers dies rebràs el càrrec bancari en aquest compte, si us plau verifica que totes les dades facilitades són correctes i que disposes dels diners, per tal que no hi hagi cap incidència en el gir del rebut.<br/>
 <br/>
 Un cop verificada la validesa del pagament realitzat rebràs una nova notificació confirmant l'aportació realitzada i detallant les condicions particulars de la teva aportació.<br/>
+% endif
 <br/>
-Agrair la teva implicació amb la cooperativa i informar-te que per a qualsevol dubte o aclariment pots consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a> o enviar-nos un correu electrònic a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a>.<br/>
+% if is_higher_5k:
+D’acord amb la nostra política de prevenció de blanqueig de capitals, a partir de 5.000 euros d’aportació en una sola emissió, és necessari verificar l'origen dels fons aportats a Som Energia. És per això que més endavant t’enviarem un formulari d’identificació perquè ens el signis aixi com la sol.licitud d’una serie de documentació identificativa (DNI, escriptura constitució en cas de societats…)<br/>
+<br/>
+En cas que no ens poguessis aportar aquesta informació, i d’acord amb la nostra política en matèria de prevenció del blanqueig de capitals, hauriem de reemborsar-te l’import de la teva aportació.<br/>
 <br/>
 % endif
+Agrair la teva implicació amb la cooperativa i informar-te que per a qualsevol dubte o aclariment pots consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a> o enviar-nos un correu electrònic a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a>.<br/>
+<br/>
 Moltes gràcies i bona energia!<br/>
 <br/>
 Atentament,<br/>
@@ -103,10 +113,16 @@ Importe aportación: ${int(abs(amount_currency))} €<br/>
 En los próximos dias recibirás el cargo bancario en esta cuenta, por favor verifica que todos los datos facilitados sean correctos y dispones del dinero, para evitar cualquier incidencia en el giro del recibo.<br/>
 <br/>
 Una vez verificada la validez del pago realizado recibirás una nueva notificación confirmando la aportación realizada y detallando las condiciones particulares de tu aportación.<br/>
+% endif
 <br/>
-Agradecer tu implicación con la cooperativa y informarte que para cualquier duda o aclaración puedes consultar nuestra web <a href="https://www.somenergia.coop">www.somenergia.coop</a> o enviarnos un correo electrónico a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a><br/>
+% if is_higher_5k:
+De acuerdo con nuestra política de prevención de blanqueo de capitales, a partir de 5.000 euros de aportación por emisión, es necesario verificar el orígen de los fondos aportados a Som Energia. Es por eso que más adelante,  te enviaremos un formulario de identificación para que nos firmes así como la solicitud de la documentación justificativa (DNI, escrituras constitución en caso de sociedades…)<br/>
+<br/>
+En caso de que no pudieras aportar esta información, y de acuerdo con nuestra política en materia de prevención del blanqueo de capitales, tendriamos que reembolsarte el importe de tu aportación.<br/>
 <br/>
 % endif
+Agradecer tu implicación con la cooperativa y informarte que para cualquier duda o aclaración puedes consultar nuestra web <a href="https://www.somenergia.coop">www.somenergia.coop</a> o enviarnos un correo electrónico a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a><br/>
+<br/>
 ¡Muchas gracias y buena energía!<br/>
 <br/>
 Atentamente,<br/>
