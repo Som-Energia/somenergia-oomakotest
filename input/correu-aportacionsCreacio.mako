@@ -77,7 +77,11 @@ D’acord amb la nostra política de prevenció de blanqueig de capitals, a part
 En cas que no ens poguessis aportar aquesta informació, i d’acord amb la nostra política en matèria de prevenció del blanqueig de capitals, hauriem de reemborsar-te l’import de la teva aportació.<br/>
 <br/>
 % endif
-Agrair la teva implicació amb la cooperativa i informar-te que per a qualsevol dubte o aclariment pots consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a> o enviar-nos un correu electrònic a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a>.<br/>
+T’informem que per a qualsevol dubte o aclariment pots consultar el <a href="https://ca.support.somenergia.coop/article/195-puc-fer-aportacions-a-la-cooperativa" >Centre d’Ajuda</a>. També pots respondre aquest correu o escriure a aporta@somenergia.coop.<br/>
+<br/>
+Els socis i les sòcies de la cooperativa són les que sempre heu ajudat a tirar aquest projecte endavant. T’agraïm la teva aportació i t’animem a fer córrer la veu a familiars i amistats. Si estàs connectat a les xarxes socials també pots compartir fàcilment un missatge des d’aquest enllaç a <a href="https://ctt.ac/dc162">Twitter</a>, a <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.somenergia.coop/ca/produeix-energia-renovable/aporta-al-capital-social/">Facebook</a> i a <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.somenergia.coop/ca/produeix-energia-renovable/aporta-al-capital-social/">Linkedin</a>.<br/>
+<br/>
+Demostrem, un cop més, la força del cooperativisme.<br/>
 <br/>
 Moltes gràcies i bona energia!<br/>
 <br/>
@@ -121,7 +125,11 @@ De acuerdo con nuestra política de prevención de blanqueo de capitales, a part
 En caso de que no pudieras aportar esta información, y de acuerdo con nuestra política en materia de prevención del blanqueo de capitales, tendriamos que reembolsarte el importe de tu aportación.<br/>
 <br/>
 % endif
-Agradecer tu implicación con la cooperativa y informarte que para cualquier duda o aclaración puedes consultar nuestra web <a href="https://www.somenergia.coop">www.somenergia.coop</a> o enviarnos un correo electrónico a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a><br/>
+Te informamos que para cualquier duda o aclaración puedes consultar el <a href="https://es.support.somenergia.coop/article/150-puedo-realizar-aportaciones-en-la-cooperativa">Centro de Ayuda</a>. También puedes responder este correo o escribir al correo aporta@somenergia.coop.<br/>
+<br/>
+Los socios y las socias son las que siempre habéis ayudado a la cooperativa a avanzar. Te agradecemos tu aportación y te animamos a contárselo a familiares y amistades. Si estás conectado a las redes sociales también puedes compartir fácilmente un mensaje desde este enlace en <a href="https://ctt.ac/FS4uH" >Twitter</a>, en <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.somenergia.coop/es/produce-energia-renovable/aporta-al-capital-social/" >Facebook</a> y en <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.somenergia.coop/es/produce-energia-renovable/aporta-al-capital-social/" >Linkedin</a>.<br/>
+<br/>
+Demostremos, una vez más, la fuerza del cooperativismo.<br/>
 <br/>
 ¡Muchas gracias y buena energía!<br/>
 <br/>

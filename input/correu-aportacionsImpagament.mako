@@ -25,7 +25,7 @@ text_legal = render(t_obj.read(
 <br>
 Hola ${object.partner_id.name.split(',')[-1]},<br>
 <br>
-Avui ens ha vingut retornat el rebut de ${int(object.amount_total)} euros corresponent a la teva aportació voluntària al capital social de Som Energia SCCL. Si segueixes interessat/da en fer-la, t'agrairem que ens facis una transferència com més aviat millor al següent número de compte: ES19 3025 0016 12 1400005159<br>
+Avui ens ha vingut retornat el rebut de ${int(object.amount_total)} euros corresponent a la teva aportació voluntària al capital social de Som Energia SCCL. Si segueixes interessat/da en fer-la, t'agrairem que ens facis una transferència com més aviat millor al següent número de compte: ES19 3025 0016 12 1400005159. En el concepte de la transferència cal informar del número de la teva aportació: ${object.origin}<br>
 <br>
 Si pel contrari has canviat d'idea i ja no la vols fer, t'agrairem que ens ho comuniquis contestant aquest mateix correu.<br>
 <br>
@@ -42,7 +42,7 @@ Equip de Som Energia,<br>
 <br>
 Hola ${object.partner_id.name.split(',')[-1]},<br>
 <br>
-Hoy nos ha venido devuelto el recibo de ${int(object.amount_total)} euros correspondiente a tu aportación voluntaria al capital social de Som Energia SCCL. Si sigues interesado/a en participar, te agradeceremos que hagas una transferencia lo antes posible al siguiente número de cuenta: ES19 3025 0016 12 1400005159.<br>
+Hoy nos ha venido devuelto el recibo de ${int(object.amount_total)} euros correspondiente a tu aportación voluntaria al capital social de Som Energia SCCL. Si sigues interesado/a en participar, te agradeceremos que hagas una transferencia lo antes posible al siguiente número de cuenta: ES19 3025 0016 12 1400005159. En el concepto de la transferencia es necesario informar del número de tu aportación: ${object.origin}<br>
 <br>
 Si por el contrario ya no te interesa aportar al capital social de Som Energia te agradeceremos que nos lo comuniques contestando este correo.<br>
 <br>
