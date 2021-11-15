@@ -519,6 +519,7 @@
 #rebuig03NifNoCoincide:
 #    template: input/rebutjos/rebuig03.mako
 #    model: giscedata.switching
+#    main_template: input/correu-rebuigC102.mako
 #    rejectId: 1234
 #    cases:
 #        es:
@@ -527,6 +528,15 @@
 #        ca:
 #            id: 723
 #            pas: 1
+rebuigM102_E7:
+    template: input/rebutjos/rebuigM102_E7.mako
+    model: giscedata.switching
+    main_template: input/correu-rebuigM102.mako
+    rejectId: 90
+    cases:
+        ca:
+            id: 364807
+            pas: 1
 #
 # rebuigC102:
 #   template: input/correu-rebuigC102.mako
