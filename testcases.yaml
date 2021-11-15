@@ -491,7 +491,7 @@
 #    2.0_A3_ca: 66599
 #    2.0_A3_es: 68012
 #
-## REBUTJOS
+## REBUTJOS PLANTILLA POWER.EMAIL
 ## --------
 #rebuigM104:
 #  template: input/correu-rebuigM104.mako
@@ -528,15 +528,6 @@
 #        ca:
 #            id: 723
 #            pas: 1
-rebuigM102_E7:
-    template: input/rebutjos/rebuigM102_E7.mako
-    model: giscedata.switching
-    main_template: input/correu-rebuigM102.mako
-    rejectId: 90
-    cases:
-        ca:
-            id: 364807
-            pas: 1
 #
 # rebuigC102:
 #   template: input/correu-rebuigC102.mako
@@ -648,6 +639,28 @@ rebuigM102_E7:
 #   poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
 #   cases:
 #     nou: 147916
+#
+#
+## REBUTJOS PLANTILLA giscedata.switching.notify
+## --------
+#rebuigM102_E7:
+#    template: input/rebutjos/rebuigM102_E7.mako
+#    model: giscedata.switching
+#    main_template: input/correu-rebuigM102.mako
+#    rejectId: som_switching.notification_atr_M104_E7
+#    cases:
+#        ca:
+#            id: 364807
+#            pas: 1
+rebuigM102_14:
+    template: input/rebutjos/rebuigM102_14.mako
+    model: giscedata.switching
+    main_template: input/correu-rebuigM102.mako
+    rejectId: som_switching.notification_atr_M102_14
+    cases:
+        ca:
+            id: 358027
+            pas: 1
 ##
 ## ACTIVACIONS
 ## -----------
@@ -752,17 +765,17 @@ rebuigM102_E7:
 #     es: 310210 #this is not a TD contract
 #     ca: 308466 #this is not a TD contract
 #
-activacionE106_automatica:
-  template: input/correu-activacioE106.mako
-  model: giscedata.switching
-  poweremailId: giscedata_switching.notification_atr_E1_06
-  cases:
-    20TD_ca: 359886
-    20TD_es: 359034
+#activacionE106_automatica:
+#  template: input/correu-activacioE106.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_E1_06
+#  cases:
+#    20TD_ca: 359886
+#    20TD_es: 359034
 #     30TD_es: 356843
 #     30TD_ca: 356375
-    20TD_ca_auto: 354387
-    20TD_es_auto: 354985
+#    20TD_ca_auto: 354387
+#    20TD_es_auto: 354985
 #     30TD_es_auto: 356843
 #     30TD_ca_auto: 356375
 
