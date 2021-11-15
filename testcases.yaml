@@ -830,15 +830,15 @@ activacionE106_automatica:
 #     es_auto_tit_diff: 282561
 #     ca_noauto: 282878
 #     es_noauto: 281207
-
-#notificacioRebuigAutoconsum:
+#
+# notificacioRebuigAutoconsum:
 #  template: input/correu-notificacioRebuigAutoconsum.mako
 #  model: giscedata.switching
 #  poweremailId: som_switching.email_atr_rebuig_d1_01
 #  cases:
 #    ca: 304316
 #    es: 300707
-
+#
 # notificacioTractamentDadesGeneradorAutoconsum:
 #   template: input/correu-notificacioTractamentDadesGeneradorAutoconsum.mako
 #   model: giscedata.switching
@@ -937,21 +937,21 @@ activacionE106_automatica:
 #    ca: 1707734
 #    es: 1707735
 #
-#aportacionsPas1:
-#  template: input/correu-aportacionsPas1.mako
-#  model: payment.line
-#  poweremailId: 3
+#aportacionsPagament:
+#  template: input/correu-aportacionsPagament.mako
+#  model: account.invoice
+#  poweremailId: som_generationkwh.aportacio_mail_pagament
 #  cases:
-#    ca: 1707734
-#    es: 1707735
+#    ca:
+#    es:
 #
-#aportacionsPas2:
-#  template: input/correu-aportacionsPas2.mako
-#  model: payment.line
-#  poweremailId: 4
+#aportacionsImpagament:
+#  template: input/correu-aportacionsImpagament.mako
+#  model: account.invoice
+#  poweremailId: som_generationkwh.aportacio_mail_impagament
 #  cases:
-#    ca: 1707734
-#    es: 1707735
+#    ca:
+#    es:
 #
 #liquidacioTitolsParticipatius:
 #  template: input/correu-liquidacioTitolsParticipatius.mako

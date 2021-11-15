@@ -1,7 +1,0 @@
-cc: false
-to: ${object.partner_id.address[0].email}
-subject_translations:
-  ca_ES: Invertir a Som Energia Ref. ${object.name}
-  es_ES: Invertir a Som Energia Ref. ${object.name}
-subject: Invertir a Som Energia Ref. ${object.name}
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net
