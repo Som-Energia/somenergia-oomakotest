@@ -1,0 +1,7 @@
+cc: false
+to: ${object.polissa_id.titular.address[0].email}
+subject_translations:
+  ca_ES: Actualització de preus i noves mesures del govern
+  es_ES: Actualización de precios y nuevas medidas del gobierno
+subject: Actualización de precios y nuevas medidas del gobierno
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
