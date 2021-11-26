@@ -311,8 +311,10 @@ def calcularImpostos(preu, fiscal_position):
     if fiscal_position.id == 25:
       iva = 0.0
   preu_imp = round(preu * (1 + impost_electric), 2)
-  return round(preu_imp * (1 + 0.21), 2)
+  return round(preu_imp * (1 + 0.21))
 
+def formatNumber(number):
+  return format(number, "1,.0f").replace(',','.')
 
 potencies = getPotenciesPolissa(object.polissa_id)
 
@@ -345,19 +347,22 @@ else:
 preu_vell = calcularPreuTotal(consums, potencies, tarifa, OLD_TARIFF_PRICES)
 preu_nou = calcularPreuTotal(consums, potencies, tarifa, NEW_TARIFF_PRICES)
 
-preu_vell_imp = calcularImpostos(preu_vell, object.polissa_id.fiscal_position_id)
-preu_nou_imp = calcularImpostos(preu_nou, object.polissa_id.fiscal_position_id)
+preu_vell_imp_int = calcularImpostos(preu_vell, object.polissa_id.fiscal_position_id)
+preu_nou_imp_int = calcularImpostos(preu_nou, object.polissa_id.fiscal_position_id)
 
-increment_total = (preu_nou_imp - preu_vell_imp)
-increment_mensual = (preu_nou_imp - preu_vell_imp) / 12
+increment_total = formatNumber(preu_nou_imp_int - preu_vell_imp_int)
+increment_mensual = (preu_nou_imp_int - preu_vell_imp_int) / 12
 
-impost_aplicat = 'IVA del 21%'
+preu_vell_imp = formatNumber(preu_vell_imp_int)
+preu_nou_imp = formatNumber(preu_nou_imp_int)
+
+impost_aplicat = 'IVA del 21'
 if object.polissa_id.fiscal_position_id.id == 19:
-  impost_aplicat = "IGIC del 3%"
+  impost_aplicat = "IGIC del 3"
 elif object.polissa_id.fiscal_position_id.id == 25:
-  impost_aplicat = "IGIC del 0%"
+  impost_aplicat = "IGIC del 0"
 
-consum_total = round(consum_total,2)
+consum_total = formatNumber(round(consum_total))
 
 %>
 <%
@@ -378,7 +383,7 @@ except:
 
 <p>A partir de l’u de gener <b>modificarem els preus de l’electricitat</b> de Som Energia. Ja deus saber que estem en un context de pujades desorbitades del preu de l’energia al mercat majorista (per la qual cosa ja vam haver d’actualitzar preus al novembre). Ara hem de repercutir, de nou, aquest cost, i també hem d’adaptar els preus a les necessitats que tindrà la cooperativa durant l’any 2022.</p>
 
-<p>Ho expliquem a <a href="https://blog.somenergia.coop">aquesta notícia del blog</a>, i al web hi podràs veure, també, <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">Històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.</p>
+<p>Ho expliquem a <a href="https://blog.somenergia.coop/?p=40359">aquesta notícia del blog</a>, i al web hi podràs veure, també, <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">Històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.</p>
 <br>
 <p><b>Les mesures del govern</b></p>
 
@@ -387,18 +392,18 @@ except:
 <p><b>Estimació</b></p>
 
   % if quintextes == 'casA':
-  <p>Hem fet una <b>estimació de caire orientatiu</b>, en base a les dades que tenim del teu històric recent de consum (aproximadament ${consum_total} kWh anuals) i prenent com a referència el repartiment horari d’un usuari/a mitjà (sense autoproducció ni Generation kWh). Segons aquestes dades, l’actualització de preus podria suposar un increment aproximat de ${increment_total} euros anuals a la factura respecte al que costaria si mantinguéssim els preus actuals, vigents des del novembre, durant tot l’any vinent. Així doncs, en resulta un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense actualitzar preus (en els dos casos l’estimació inclou l’${impost_aplicat} i l’impost elèctric del 5,11%, és a dir, impostos sense rebaixes del govern).</p>
+  <p>Hem fet una <b>estimació de caire orientatiu</b>, en base a les dades que tenim del teu històric recent de consum (aproximadament ${consum_total} kWh anuals) i prenent com a referència el repartiment horari d’un usuari/a mitjà (sense autoproducció ni Generation kWh). Segons aquestes dades, l’actualització de preus podria suposar un increment aproximat de ${increment_total} euros anuals a la factura respecte al que costaria si mantinguéssim els preus actuals, vigents des del novembre, durant tot l’any vinent. Així doncs, en resulta un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense actualitzar preus (en els dos casos l’estimació inclou l’${impost_aplicat} % i l’impost elèctric del 5,11 %, és a dir, impostos sense rebaixes del govern).</p>
 
   <p>Tingues en compte que això són estimacions aproximades, i que els imports finals <b>dependran de multitud de circumstàncies</b> que no podem preveure, com per exemple els horaris i el consum d’energia que finalment facis, les variacions de preus durant el 2022, o altres canvis que pugui haver al mercat energètic.</p>
 
   % elif quintextes == 'casB':
-  <p>Hem fet una estimació en funció de la potència contractada que tens i el consum aproximat que sol haver-hi amb aquestes potències. Així doncs, a un usuari/a tipus de la teva potència amb un consum tipus de ${consum_total} kWh anuals, sense Generation kWh ni autoproducció, la factura anual amb els nous preus li sortiria ${increment_total} euros més elevada que si no actualitzéssim els preus. Segons aquesta estimació, el cost anual amb la pujada de preus sortiria per ${preu_nou_imp} euros, mentre que el cost anual amb els preus vigents des del novembre sortiria per ${preu_vell_imp} euros; tot, comptant que no hi ha rebaixes ni descomptes del govern.</p>
+  <p>Hem fet <b>una estimació en funció de la potència contractada</b> que tens i el consum aproximat que sol haver-hi amb aquestes potències. Així doncs, a un usuari/a tipus de la teva potència amb un consum tipus de ${consum_total} kWh anuals, sense Generation kWh ni autoproducció, la factura anual amb els nous preus li sortiria ${increment_total} euros més elevada que si no actualitzéssim els preus. Segons aquesta estimació, el cost anual amb la pujada de preus sortiria per ${preu_nou_imp} euros, mentre que el cost anual amb els preus vigents des del novembre sortiria per ${preu_vell_imp} euros (en els dos casos l’estimació inclou l’${impost_aplicat} % i l’impost elèctric del 5,11 %, és a dir, impostos sense rebaixes del govern).</p>
 
   <p>Tingues en compte que això són estimacions aproximades a partir d’usos típics, i que els imports finals <b>dependran de multitud de circumstàncies</b> que no podem preveure, com per exemple els horaris i el consum real d’energia que facis, variacions de preus durant el 2022, o altres canvis que pugui haver al mercat energètic.</p>
 
   % elif quintextes == 'casC':
 
-  <p>Hem fet una <b>estimació de caire orientatiu</b>, en base a les dades que tenim del teu històric recent de consum (aproximadament ${consum_total} kWh anuals) i sense tenir en compte l’autoproducció ni el Generation kWh. Segons aquesta estimació, l’actualització de preus podria suposar un increment aproximat de ${increment_total} euros anuals a la factura respecte al que costaria si mantinguéssim els preus actuals, vigents des del novembre, durant tot l’any vinent. Així doncs, en resulta un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense actualitzar preus (en els dos casos l’estimació inclou l’${impost_aplicat} i l’impost elèctric del 5,11%, és a dir, impostos sense rebaixes del govern).</p>
+  <p>Hem fet una <b>estimació de caire orientatiu</b>, en base a les dades que tenim del teu històric recent de consum (aproximadament ${consum_total} kWh anuals) i sense tenir en compte l’autoproducció ni el Generation kWh. Segons aquesta estimació, l’actualització de preus podria suposar un increment aproximat de ${increment_total} euros anuals a la factura respecte al que costaria si mantinguéssim els preus actuals, vigents des del novembre, durant tot l’any vinent. Així doncs, en resulta un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense actualitzar preus (en els dos casos l’estimació inclou l’${impost_aplicat} % i l’impost elèctric del 5,11 %, és a dir, impostos sense rebaixes del govern).</p>
 
   <p>Tingues en compte que això són estimacions aproximades, i que els imports finals <b>dependran de multitud de circumstàncies</b> que no podem preveure, com per exemple els horaris i el consum real d’energia que facis, variacions de preus durant el 2022, o altres canvis que pugui haver al mercat energètic.</p>
 
@@ -423,7 +428,7 @@ except:
 % if  object.polissa_id.titular.lang != "ca_ES":
 <p>A partir del uno de enero modificaremos los precios de la electricidad de Som Energia. Ya debes saber que estamos en un contexto de subidas desorbitadas del precio de la energía en el mercado mayorista (por lo que ya tuvimos que actualizar precios en noviembre). Ahora tenemos que repercutir, de nuevo, este coste, y también debemos adaptar los precios a las necesidades que tendrá la cooperativa durante el año 2022.</p>
 
-<p>Lo explicamos en <a href="https://blog.somenergia.coop">esta noticia del blog</a>, y en la web podrás ver, también, <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/historico-de-tarifas-de-electricidad/">Histórico de tarifas</a>, donde hay también los precios vigentes hasta el 31 de diciembre y los de períodos anteriores.</p>
+<p>Lo explicamos en <a href="https://blog.somenergia.coop/?p=40364">esta noticia del blog</a>, y en la web podrás ver, también, <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/historico-de-tarifas-de-electricidad/">Histórico de tarifas</a>, donde hay también los precios vigentes hasta el 31 de diciembre y los de períodos anteriores.</p>
 <br>
 <p><b>Las medidas del gobierno</b></p>
 
@@ -433,17 +438,17 @@ except:
 
 % if quintextes == 'casA':
 
-<p>Hemos hecho una estimación de carácter orientativo, en base a los datos que tenemos de tu histórico reciente de consumo (aproximadamente ${consum_total} kWh anuales) y tomando como referencia el reparto horario de un usuario/a medio (sin autoproducción ni Generation kWh). Según estos datos, la actualización de precios podría suponer un incremento aproximado de ${increment_total} euros anuales en la factura respecto a lo que costaría si mantuviéramos los precios actuales, vigentes desde noviembre, durante el próximo año. Así pues, resulta un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar precios (en los dos casos la estimación incluye el ${impost_aplicat} y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno).</p>
+<p>Hemos hecho una estimación de carácter orientativo, en base a los datos que tenemos de tu histórico reciente de consumo (aproximadamente ${consum_total} kWh anuales) y tomando como referencia el reparto horario de un usuario/a medio (sin autoproducción ni Generation kWh). Según estos datos, la actualización de precios podría suponer un incremento aproximado de ${increment_total} euros anuales en la factura respecto a lo que costaría si mantuviéramos los precios actuales, vigentes desde noviembre, durante el próximo año. Así pues, resulta un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar precios (en los dos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno).</p>
 <p>Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <b>dependerán de multitud de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo de energía que finalmente hagas, las variaciones de precios durante 2022, u otros cambios que pueda haber en el mercado energético.</p>
 
 % elif quintextes == 'casB':
 
-<p>Hemos hecho una estimación en función de la potencia contratada que tienes y el consumo aproximado que suele haber con estas potencias. Así pues, para un usuario/a tipo de tu potencia con un consumo tipo de ${consum_total} kWh anuales, sin Generation kWh ni autoproducción, la factura anual con los nuevos precios saldría ${increment_total} euros más elevada que si no actualizáramos los precios. Según esta estimación, el coste anual con la subida de precios saldría por ${preu_nou_imp} euros, mientras que el coste anual con los precios vigentes desde noviembre saldría por ${preu_vell_imp} euros; todo esto, contando que no haya rebajas ni descuentos del gobierno.</p>
+<p>Hemos hecho una <b>estimación en función de la potencia contratada</b> que tienes y el consumo aproximado que suele haber con estas potencias. Así pues, para un usuario/a tipo de tu potencia con un consumo tipo de ${consum_total} kWh anuales, sin Generation kWh ni autoproducción, la factura anual con los nuevos precios saldría ${increment_total} euros más elevada que si no actualizáramos los precios. Según esta estimación, el coste anual con la subida de precios saldría por ${preu_nou_imp} euros, mientras que el coste anual con los precios vigentes desde noviembre saldría por ${preu_vell_imp} euros (en los dos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno).</p>
 <p>Ten en cuenta que esto son estimaciones aproximadas a partir de usos típicos, y que los importes finales <b>dependerán de multitud de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que hagas, variaciones de precios durante en 2022, u otros cambios que pueda haber en el mercado energético.</p>
 
 % elif quintextes == 'casC':
 
-<p>Hemos hecho una estimación de carácter orientativo, en base a los datos que tenemos de tu histórico reciente de consumo (aproximadamente ${consum_total} kWh anuales) y sin tener en cuenta la autoproducción ni el Generation kWh. Según esta estimación, la actualización de precios podría suponer un incremento aproximado de ${increment_total} euros anuales a la factura respecto a lo que costaría si mantuviéramos los precios actuales, vigentes desde noviembre, durante todo el próximo año. Así pues, resulta un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar precios (en ambos casos la estimación incluye el ${impost_aplicat} y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno).</p>
+<p>Hemos hecho una estimación de carácter orientativo, en base a los datos que tenemos de tu histórico reciente de consumo (aproximadamente ${consum_total} kWh anuales) y sin tener en cuenta la autoproducción ni el Generation kWh. Según esta estimación, la actualización de precios podría suponer un incremento aproximado de ${increment_total} euros anuales a la factura respecto a lo que costaría si mantuviéramos los precios actuales, vigentes desde noviembre, durante todo el próximo año. Así pues, resulta un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar precios (en ambos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno).</p>
 <p>Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <b>dependerán de multitud de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que hagas, variaciones de precios durante el 2022, u otros cambios que pueda haber en el mercado energético.</p>
 % endif
 <br>
