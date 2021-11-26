@@ -1249,15 +1249,15 @@
 #    cat: 192
 #    es: 101
 #
-canviPreus:
-  template: input/correu-canviPreus.mako
-  model: som.enviament.massiu
-  poweremailId: 333
-  cases:
-    ca_20: 484617
-    ca_30_factures: 484618
-    ca_61: 484619
-    es_20_canaries_vivenda: 484620
-    es_20_canaries_empresa: 484621
-  
+# canviPreus:
+#   template: input/correu-canviPreus.mako
+#   model: som.enviament.massiu
+#   poweremailId: 333
+#   cases:
+#     ca_20: 484617
+#     ca_30_factures: 484618
+#     ca_61: 484619
+#     es_20_canaries_vivenda: 484620
+#     es_20_canaries_empresa: 484621
+
 # vim: et ts=2 sw=2

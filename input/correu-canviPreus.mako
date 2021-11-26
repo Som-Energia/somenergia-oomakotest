@@ -362,7 +362,7 @@ if object.polissa_id.fiscal_position_id.id == 19:
 elif object.polissa_id.fiscal_position_id.id == 25:
   impost_aplicat = "IGIC del 0"
 
-consum_total = formatNumber(round(consum_total))
+consum_total = formatNumber(round(consum_total/100.0)*100)
 
 %>
 <%
@@ -377,7 +377,7 @@ except:
 %>
 <br>
 <br>
-<p> Hola ${nom_titular},</p>
+<p> Hola${nom_titular},</p>
 <br>
 % if  object.polissa_id.titular.lang != "es_ES":
 
@@ -409,10 +409,11 @@ except:
 
   % endif
 <br>
-<p>A la cooperativa fixem els preus de les nostres tarifes en funció del mercat elèctric, del qual depenem. N’hem de <b>reflexar les variacions, i ho fem tant a l’alça com a la baixa</b>. Les <b>previsions</b> apunten que el segon trimestre de 2022 hi haurà una baixada generalitzada del preu de l’energia, fet que ens permetria actualitzar les nostres tarifes.</b>
+<p>A la cooperativa fixem els preus de les nostres tarifes en funció del mercat elèctric, del qual depenem. N’hem de <b>reflectir les variacions, i ho fem tant a l’alça com a la baixa</b>. Les <b>previsions</b> apunten que el segon trimestre de 2022 hi haurà una baixada generalitzada del preu de l’energia.</b>
+<br>
 <br>
 <p>Aprofitem per dir-te que al servei de comercialització de la cooperativa ens trobem encara en una situació excepcional de sobrecàrrega de feina, a causa de problemàtiques derivades dels nous peatges i l’adaptació de les distribuïdores. Això fa que no puguem atendre les consultes i peticions amb la celeritat amb què ho fem habitualment. Recorda que, si tens dubtes o vols fer algun tràmit, pots consultar el <a href="https://ca.support.somenergia.coop/">Centre d’Ajuda</a> o entrar a la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>.</p>
-
+<br>
 <br>
 <p>T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Com et comentàvem, les noves tarifes es començaran a aplicar el dia 1 de gener de 2022. Si hi estàs d’acord, no cal que responguis aquest correu ni que ens retornis el document signat, ja que l'actualització dels preus de les nostres tarifes s'aplicarà automàticament. Si lamentablement aquest canvi et fes replantejar la teva pertinença a la cooperativa, podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia de finalització del contracte, amb els preus vigents a cada moment.</p>
 
@@ -426,7 +427,7 @@ except:
 ----------------------------------------------------------------------------------------------------
 % endif
 % if  object.polissa_id.titular.lang != "ca_ES":
-<p>A partir del uno de enero modificaremos los precios de la electricidad de Som Energia. Ya debes saber que estamos en un contexto de subidas desorbitadas del precio de la energía en el mercado mayorista (por lo que ya tuvimos que actualizar precios en noviembre). Ahora tenemos que repercutir, de nuevo, este coste, y también debemos adaptar los precios a las necesidades que tendrá la cooperativa durante el año 2022.</p>
+<p>A partir del uno de enero <b>modificaremos los precios de la electricidad</b> de Som Energia. Ya debes saber que estamos en un contexto de subidas desorbitadas del precio de la energía en el mercado mayorista (por lo que ya tuvimos que actualizar precios en noviembre). Ahora tenemos que repercutir, de nuevo, este coste, y también debemos adaptar los precios a las necesidades que tendrá la cooperativa durante el año 2022.</p>
 
 <p>Lo explicamos en <a href="https://blog.somenergia.coop/?p=40364">esta noticia del blog</a>, y en la web podrás ver, también, <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/historico-de-tarifas-de-electricidad/">Histórico de tarifas</a>, donde hay también los precios vigentes hasta el 31 de diciembre y los de períodos anteriores.</p>
 <br>
@@ -438,23 +439,25 @@ except:
 
 % if quintextes == 'casA':
 
-<p>Hemos hecho una estimación de carácter orientativo, en base a los datos que tenemos de tu histórico reciente de consumo (aproximadamente ${consum_total} kWh anuales) y tomando como referencia el reparto horario de un usuario/a medio (sin autoproducción ni Generation kWh). Según estos datos, la actualización de precios podría suponer un incremento aproximado de ${increment_total} euros anuales en la factura respecto a lo que costaría si mantuviéramos los precios actuales, vigentes desde noviembre, durante el próximo año. Así pues, resulta un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar precios (en los dos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno).</p>
+<p>Hemos hecho una <b>estimación de carácter orientativo</b>, en base a los datos que tenemos de tu histórico reciente de consumo (aproximadamente ${consum_total} kWh anuales) y tomando como referencia el reparto horario de un usuario/a medio (sin autoproducción ni Generation kWh). Según estos datos, la actualización de precios podría suponer un incremento aproximado de ${increment_total} euros anuales en la factura respecto a lo que costaría si mantuviéramos los precios actuales, vigentes desde noviembre, durante el próximo año. Así pues, resulta un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar precios (en los dos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno).</p>
 <p>Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <b>dependerán de multitud de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo de energía que finalmente hagas, las variaciones de precios durante 2022, u otros cambios que pueda haber en el mercado energético.</p>
 
 % elif quintextes == 'casB':
 
 <p>Hemos hecho una <b>estimación en función de la potencia contratada</b> que tienes y el consumo aproximado que suele haber con estas potencias. Así pues, para un usuario/a tipo de tu potencia con un consumo tipo de ${consum_total} kWh anuales, sin Generation kWh ni autoproducción, la factura anual con los nuevos precios saldría ${increment_total} euros más elevada que si no actualizáramos los precios. Según esta estimación, el coste anual con la subida de precios saldría por ${preu_nou_imp} euros, mientras que el coste anual con los precios vigentes desde noviembre saldría por ${preu_vell_imp} euros (en los dos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno).</p>
-<p>Ten en cuenta que esto son estimaciones aproximadas a partir de usos típicos, y que los importes finales <b>dependerán de multitud de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que hagas, variaciones de precios durante en 2022, u otros cambios que pueda haber en el mercado energético.</p>
+<p>Ten en cuenta que esto son estimaciones aproximadas a partir de usos típicos, y que los importes finales <b>dependerán de multitud de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que hagas, variaciones de precios durante 2022, u otros cambios que pueda haber en el mercado energético.</p>
 
 % elif quintextes == 'casC':
 
-<p>Hemos hecho una estimación de carácter orientativo, en base a los datos que tenemos de tu histórico reciente de consumo (aproximadamente ${consum_total} kWh anuales) y sin tener en cuenta la autoproducción ni el Generation kWh. Según esta estimación, la actualización de precios podría suponer un incremento aproximado de ${increment_total} euros anuales a la factura respecto a lo que costaría si mantuviéramos los precios actuales, vigentes desde noviembre, durante todo el próximo año. Así pues, resulta un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar precios (en ambos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno).</p>
-<p>Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <b>dependerán de multitud de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que hagas, variaciones de precios durante el 2022, u otros cambios que pueda haber en el mercado energético.</p>
+<p>Hemos hecho una <b>estimación de carácter orientativo</b>, en base a los datos que tenemos de tu histórico reciente de consumo (aproximadamente ${consum_total} kWh anuales) y sin tener en cuenta la autoproducción ni el Generation kWh. Según esta estimación, la actualización de precios podría suponer un incremento aproximado de ${increment_total} euros anuales a la factura respecto a lo que costaría si mantuviéramos los precios actuales, vigentes desde noviembre, durante todo el próximo año. Así pues, resulta un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar precios (en ambos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno).</p>
+<p>Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <b>dependerán de multitud de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que hagas, variaciones de precios durante 2022, u otros cambios que pueda haber en el mercado energético.</p>
 % endif
 <br>
-<p>En la cooperativa fijamos los precios de nuestras tarifas en función del mercado eléctrico, del cual dependemos. Debemos <b>reflejar sus variaciones, y lo hacemos tanto al alza como a la baja</b>. Las <b>previsiones</b> apuntan a que en el segundo trimestre de 2022 habrá una bajada generalizada del precio de la energía, lo que nos permitiría actualizar nuestras tarifas.</p>
+<p>En la cooperativa fijamos los precios de nuestras tarifas en función del mercado eléctrico, del cual dependemos. Debemos <b>reflejar sus variaciones, y lo hacemos tanto al alza como a la baja</b>. Las <b>previsiones</b> apuntan a que en el segundo trimestre de 2022 habrá una bajada generalizada del precio de la energía.</p>
+<br>
 <br>
 <p>Aprovechamos para decirte que en el servicio de comercialización de la cooperativa nos encontramos todavía en una situación excepcional de sobrecarga de trabajo, debido a problemáticas derivadas de los nuevos peajes y la adaptación de las distribuidoras. Esto hace que no podamos atender las consultas y peticiones con la celeridad con la que lo hacemos habitualmente. Recuerda que, si tienes dudas o quieres realizar algún trámite, puedes consultar el <a href="https://es.support.somenergia.coop/">Centro de Ayuda</a> o entrar en tu <a href="https://oficinavirtual.somenergia.coop/es">Oficina Virtual</a>.</b>
+<br>
 <br>
 <p>Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Como te comentábamos, las nuevas tarifas empezarán a aplicarse el día 1 de enero de 2022. Si estás de acuerdo, no hace falta que respondas este correo ni que nos devuelvas el documento firmado, ya que la actualización de los precios de nuestras tarifas se aplicará automáticamente. Si lamentablemente este cambio te hiciera replantear tu pertenencia a la cooperativa, podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente, o mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día de finalización del contrato, con los precios vigentes en cada momento.</p>
 <br>
