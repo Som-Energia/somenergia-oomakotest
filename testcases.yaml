@@ -742,20 +742,20 @@
 #     es: 310210 #this is not a TD contract
 #     ca: 308466 #this is not a TD contract
 #
-activacionE106_automatica:
-  template: input/correu-activacioE106.mako
-  model: giscedata.switching
-  poweremailId: giscedata_switching.notification_atr_E1_06
-  cases:
-    20TD_ca: 359886
-    20TD_es: 359034
+#activacionE106_automatica:
+#  template: input/correu-activacioE106.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_E1_06
+#  cases:
+#    20TD_ca: 359886
+#    20TD_es: 359034
 #     30TD_es: 356843
 #     30TD_ca: 356375
-    20TD_ca_auto: 354387
-    20TD_es_auto: 354985
+#    20TD_ca_auto: 354387
+#    20TD_es_auto: 354985
 #     30TD_es_auto: 356843
 #     30TD_ca_auto: 356375
-
+#
 #notificacioAcceptacioA3:
 #  template: input/correu-notificacioAcceptacioA3.mako
 #  model: giscedata.switching
@@ -1249,5 +1249,15 @@ activacionE106_automatica:
 #    cat: 192
 #    es: 101
 #
+# canviPreus:
+#   template: input/correu-canviPreus.mako
+#   model: som.enviament.massiu
+#   poweremailId: 333
+#   cases:
+#     ca_20: 484617
+#     ca_30_factures: 484618
+#     ca_61: 484619
+#     es_20_canaries_vivenda: 484620
+#     es_20_canaries_empresa: 484621
 
 # vim: et ts=2 sw=2
