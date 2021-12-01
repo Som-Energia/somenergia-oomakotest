@@ -955,7 +955,7 @@ activacionE106_automatica:
 #
 #aportacionsTransmissio:
 #  template: input/correu-aportacionsTransmissio.mako
-#  model: account.invoice
+#  model: generationkwh.investment
 #  poweremailId: som_generationkwh.aportacio_mail_transmissio
 #  cases:
 #    ca:
