@@ -574,6 +574,8 @@
 #   template: input/correu-rebuigA304.mako
 #   model: giscedata.switching
 #   poweremailId: giscedata_switching.notification_atr_A3_04
+#   data:
+#     notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 #   cases:
 #     nou: 147916
 #rebuigM102:
@@ -930,20 +932,6 @@
 #    ca: 42297
 #    es: 42138
 #
-#
-#notificacioRebuigA302:
-#  template: input/correu-notificacioRebuigA302.mako
-#  model: giscedata.switching
-#  poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
-#  cases:
-#    2.x_ca: 42153 #Fakecase
-#
-#notificacioRebuigA304:
-#  template: input/correu-notificacioRebuigA304.mako
-#  model: giscedata.switching
-#  poweremailId: giscedata_switching.notification_atr_A3_04
-#  cases:
-#    2.x_ca: 42153 #Fakecase
 #
 #notificacioActivacioA3_manual:
 #  template: input/correu-notificacioActivacioA3-manual.mako
