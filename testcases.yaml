@@ -736,30 +736,30 @@
 #        ca:
 #            id: 358027
 #            pas: 1
-rebuigM104_26:
-    template: input/rebutjos/rebuigM104_26.mako
-    model: giscedata.switching
-    main_template: input/correu-rebuigM104.mako
-    rejectId: som_switching.notification_atr_M104_26
-    cases:
-        ca:
-            id: 358164
-            pas: 1
-        es:
-            id: 319145
-            pas: 1
-rebuigM104_31:
-    template: input/rebutjos/rebuigM104_31.mako
-    model: giscedata.switching
-    main_template: input/correu-rebuigM104.mako
-    rejectId: som_switching.notification_atr_M104_31
-    cases:
-        ca:
-            id: 383332
-            pas: 1
-        es:
-            id: 394441
-            pas: 1
+#rebuigM104_26:
+#    template: input/rebutjos/rebuigM104_26.mako
+#    model: giscedata.switching
+#    main_template: input/correu-rebuigM104.mako
+#    rejectId: som_switching.notification_atr_M104_26
+#    cases:
+#        ca:
+#            id: 358164
+#            pas: 1
+#        es:
+#            id: 319145
+#            pas: 1
+#rebuigM104_31:
+#    template: input/rebutjos/rebuigM104_31.mako
+#    model: giscedata.switching
+#    main_template: input/correu-rebuigM104.mako
+#    rejectId: som_switching.notification_atr_M104_31
+#    cases:
+#        ca:
+#            id: 383332
+#            pas: 1
+#        es:
+#            id: 394441
+#            pas: 1
 #rebuigM104_60:
 #    template: input/rebutjos/rebuigM104_60.mako
 #    model: giscedata.switching
@@ -772,30 +772,30 @@ rebuigM104_31:
 #        es:
 #            id: 383679
 #            pas: 1
-rebuigM104_62:
-    template: input/rebutjos/rebuigM104_62.mako
-    model: giscedata.switching
-    main_template: input/correu-rebuigM104.mako
-    rejectId: som_switching.notification_atr_M104_62
-    cases:
-        ca:
-            id: 395429
-            pas: 1
-        es:
-            id: 342611
-            pas: 1
-rebuigM104_A1:
-    template: input/rebutjos/rebuigM104_A1.mako
-    model: giscedata.switching
-    main_template: input/correu-rebuigM104.mako
-    rejectId: som_switching.notification_atr_M104_A1
-    cases:
-        ca:
-            id: 362280
-            pas: 1
-        es:
-            id: 290430
-            pas: 1
+#rebuigM104_62:
+#    template: input/rebutjos/rebuigM104_62.mako
+#    model: giscedata.switching
+#    main_template: input/correu-rebuigM104.mako
+#    rejectId: som_switching.notification_atr_M104_62
+#    cases:
+#        ca:
+#            id: 395429
+#            pas: 1
+#        es:
+#            id: 342611
+#            pas: 1
+#rebuigM104_A1:
+#    template: input/rebutjos/rebuigM104_A1.mako
+#    model: giscedata.switching
+#    main_template: input/correu-rebuigM104.mako
+#    rejectId: som_switching.notification_atr_M104_A1
+#    cases:
+#        ca:
+#            id: 362280
+#            pas: 1
+#        es:
+#            id: 290430
+#            pas: 1
 ##
 ## ACTIVACIONS
 ## -----------
@@ -930,6 +930,20 @@ rebuigM104_A1:
 #    ca: 42297
 #    es: 42138
 #
+#
+#notificacioRebuigA302:
+#  template: input/correu-notificacioRebuigA302.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
+#  cases:
+#    2.x_ca: 42153 #Fakecase
+#
+#notificacioRebuigA304:
+#  template: input/correu-notificacioRebuigA304.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_A3_04
+#  cases:
+#    2.x_ca: 42153 #Fakecase
 #
 #notificacioActivacioA3_manual:
 #  template: input/correu-notificacioActivacioA3-manual.mako
