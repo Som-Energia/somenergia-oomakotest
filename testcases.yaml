@@ -953,6 +953,14 @@ activacionE106_automatica:
 #    ca:
 #    es:
 #
+#aportacionsTransmissio:
+#  template: input/correu-aportacionsTransmissio.mako
+#  model: account.invoice
+#  poweremailId: som_generationkwh.aportacio_mail_transmissio
+#  cases:
+#    ca:
+#    es:
+#
 #liquidacioTitolsParticipatius:
 #  template: input/correu-liquidacioTitolsParticipatius.mako
 #  model: account.invoice
