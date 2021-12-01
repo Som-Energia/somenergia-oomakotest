@@ -1,5 +1,6 @@
 <%
     from mako.template import Template
+    from gestionatr.utils import get_description
 
     def render(text_to_render, object_):
         templ = Template(text_to_render)
@@ -25,6 +26,37 @@
         if p.potencia != 0
     ))
     pot_deseada_es = pot_deseada_ca
+
+    pot_polissa = {}
+    pot_solicitud = {}
+
+    for pot in object.step_ids[0].pas_id.pot_ids:
+        pot_polissa[pot.name] = pot.potencia
+
+    for pot in object.polissa_ref_id.potencies_periode:
+        pot_solicitud[pot.periode_id.name] = pot.potencia * 1000
+
+    is_canvi_pot = pot_polissa != pot_solicitud
+    is_canvi_ten = object.step_ids[0].pas_id.solicitud_tensio == 'S'
+    is_canvi_tar = object.polissa_ref_id.tarifa_codi != tarifaATR
+    is_canvi_auto = object.step_ids[0].pas_id.tipus_autoconsum != object.polissa_ref_id.autoconsumo
+
+    if is_canvi_auto:
+        codi_auto = object.step_ids[0].pas_id.tipus_autoconsum
+        descripcio_auto = get_description(codi_auto,"TABLA_113")
+
+    if is_canvi_ten:
+        nom_tensio = get_description(object.step_ids[0].pas_id.tensio_solicitada,"TABLA_64")
+
+        if nom_tensio[0] == '1':
+            ten_deseada_ca = "Monofàsica"
+            ten_deseada_es = "Monofásica"
+        elif  nom_tensio[0] == '3':
+            ten_deseada_ca = "Trifàsica"
+            ten_deseada_es = "Trifásica"
+        else:
+            ten_deseada_ca = nom_tensio
+            ten_deseada_es = nom_tensio
 
     if tarifaATR == "2.0TD":
         pot_deseada_ca = pot_deseada_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
@@ -151,14 +183,22 @@
             Hola${nom_titular}, <br>
         </p>
         <p>
-            Fa us dies vas sol.licitar una modificació de tarifa i/o potència per aquest punt de subministrament.
+            Fa uns dies vas sol·licitar una modificació contractual per aquest punt de subministrament:
         </p>
         <p>
-            CUPS: ${object.cups_id.name} <br>
-            Potència desitjada: <br>
+       %if is_canvi_pot:
+            Potència desitjada: <br />
             ${pot_deseada_ca}
-            Tarifa desitjada: ${tarifaATR} <br>
-            Telèfon de contacte: ${cont_telefon}
+        %endif
+        %if is_canvi_ten:
+            Tensió: ${ten_deseada_ca} <br />
+        %endif
+        %if is_canvi_tar:
+            Tarifa desitjada: ${tarifaATR} <br />
+        %endif
+        %if is_canvi_auto:
+            Autoconsum: [${codi_auto}] - ${descripcio_auto} <br />
+        %endif
         </p>
     %endif
 </%def>
@@ -176,15 +216,22 @@
             Hola${nom_titular}, <br>
         </p>
         <p>
-            Recientemente has solicitado una modificación de tarifa y/o potencia para este punto de suministro.
+            Recientemente has solicitado una modificación contractual para este punto de suministro:
         </p>
         <p>
-            CUPS: ${object.cups_id.name} <br>
-            Potencia deseada: <br>
-            ${pot_deseada_es}
-
-            Tarifa deseada: ${tarifaATR} <br>
-            Teléfono de contacto: ${cont_telefon}
+        %if is_canvi_pot:
+            Potència desitjada: <br />
+            ${pot_deseada_ca}
+        %endif
+        %if is_canvi_ten:
+            Tensió: ${ten_deseada_ca} <br />
+        %endif
+        %if is_canvi_tar:
+            Tarifa desitjada: ${tarifaATR} <br />
+        %endif
+        %if is_canvi_auto:
+            Autoconsum: [${codi_auto}] - ${descripcio_auto} <br />
+        %endif
         </p>
     %endif
 </%def>
