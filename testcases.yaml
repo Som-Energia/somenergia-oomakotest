@@ -491,7 +491,7 @@
 #    2.0_A3_ca: 66599
 #    2.0_A3_es: 68012
 #
-## REBUTJOS
+## REBUTJOS PLANTILLA POWER.EMAIL
 ## --------
 #rebuigM104:
 #  template: input/correu-rebuigM104.mako
@@ -519,6 +519,7 @@
 #rebuig03NifNoCoincide:
 #    template: input/rebutjos/rebuig03.mako
 #    model: giscedata.switching
+#    main_template: input/correu-rebuigC102.mako
 #    rejectId: 1234
 #    cases:
 #        es:
@@ -573,9 +574,11 @@
 #   template: input/correu-rebuigA304.mako
 #   model: giscedata.switching
 #   poweremailId: giscedata_switching.notification_atr_A3_04
+#   data:
+#     notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 #   cases:
 #     nou: 147916
-# rebuigM102:
+#rebuigM102:
 #   template: input/correu-rebuigM102.mako
 #   model: giscedata.switching
 #   poweremailId: giscedata_switching.notification_atr_M1_02_rebuig
@@ -584,12 +587,12 @@
 #     ca_20TD: 360954
 #     es_20TD: 360904
 #     ca_30TD: 354984
-#rebuigM104:
-#    template: input/correu-rebuigM104.mako
-#    model: giscedata.switching
-#    poweremailId: giscedata_switching.notification_atr_M1_04
-#    cases:
-#      nou: 147916
+# rebuigM104:
+#     template: input/correu-rebuigM104.mako
+#     model: giscedata.switching
+#     poweremailId: giscedata_switching.notification_atr_M1_04
+#     cases:
+#       nou: 147916
 ##
 # acceptacioB102:
 #   template: input/correu-acceptacioB102.mako
@@ -638,9 +641,157 @@
 #   poweremailId: giscedata_switching.notification_atr_C2_02_acceptacio
 #   cases:
 #     nou: 147916
-##
-## ACTIVACIONS
-## -----------
+#
+#
+## REBUTJOS PLANTILLA giscedata.switching.notify
+## --------
+# rebuigM102_14:
+#   template: input/rebutjos/rebuigM102_14.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM102.mako
+#   rejectId: som_switching.notification_atr_M102_14
+#   cases:
+#       ca:
+#           id: 395592
+#           pas: 1
+#       es:
+#           id: 396059
+#           pas: 1
+# rebuigM102_20:
+#   template: input/rebutjos/rebuigM102_20.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM102.mako
+#   rejectId: som_switching.notification_atr_M102_20
+#   cases:
+#       ca:
+#           id: 374612
+#           pas: 1
+#       es:
+#           id: 361726
+#           pas: 1
+# rebuigM102_22:
+#   template: input/rebutjos/rebuigM102_22.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM102.mako
+#   rejectId: som_switching.notification_atr_M102_22
+#   cases:
+#       ca:
+#           id: 392505
+#           pas: 1
+#       es:
+#           id: 356878
+#           pas: 1
+# rebuigM102_39:
+#   template: input/rebutjos/rebuigM102_39.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM102.mako
+#   rejectId: som_switching.notification_atr_M102_39
+#   cases:
+#       ca:
+#           id: 377892
+#           pas: 1
+#       es:
+#           id: 350584
+#           pas: 1
+# rebuigM102_53:
+#   template: input/rebutjos/rebuigM102_53.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM102.mako
+#   rejectId: som_switching.notification_atr_M102_53
+#   cases:
+#       ca:
+#           id: 396211
+#           pas: 1
+#       es:
+#           id: 396447
+#           pas: 1
+# rebuigM102_63:
+#   template: input/rebutjos/rebuigM102_63.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM102.mako
+#   rejectId: som_switching.notification_atr_M102_63
+#   cases:
+#       ca:
+#           id: 395358
+#           pas: 1
+#       es:
+#           id: 399154
+#           pas: 1
+# rebuigM102_65:
+#   template: input/rebutjos/rebuigM102_65.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM102.mako
+#   rejectId: som_switching.notification_atr_M102_65
+#   cases:
+#       ca:
+#           id: 356917
+#           pas: 1
+#       es:
+#           id: 392084
+#           pas: 1
+# rebuigM104_26:
+#   template: input/rebutjos/rebuigM104_26.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM104.mako
+#   rejectId: som_switching.notification_atr_M104_26
+#   cases:
+#       ca:
+#           id: 393195
+#           pas: 1
+#       es:
+#           id: 358164
+#           pas: 1
+# rebuigM104_31:
+#   template: input/rebutjos/rebuigM104_31.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM104.mako
+#   rejectId: som_switching.notification_atr_M104_31
+#   cases:
+#       ca:
+#           id: 371637
+#           pas: 1
+#       es:
+#           id: 394441
+#           pas: 1
+# rebuigM104_60:
+#   template: input/rebutjos/rebuigM104_60.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM104.mako
+#   rejectId: som_switching.notification_atr_M104_60
+#   cases:
+#       ca:
+#           id: 393728
+#           pas: 1
+#       es:
+#           id: 383679
+#           pas: 1
+# rebuigM104_62:
+#   template: input/rebutjos/rebuigM104_62.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM104.mako
+#   rejectId: som_switching.notification_atr_M104_62
+#   cases:
+#       ca:
+#           id: 395429
+#           pas: 1
+#       es:
+#           id: 364162
+#           pas: 1
+# rebuigM104_A1:
+#   template: input/rebutjos/rebuigM104_A1.mako
+#   model: giscedata.switching
+#   main_template: input/correu-rebuigM104.mako
+#   rejectId: som_switching.notification_atr_M104_A1
+#   cases:
+#       ca:
+#           id: 362280
+#           pas: 1
+#       es:
+#           id: 313435
+#           pas: 1
+#
+# ACTIVACIONS
+# -----------
 # activacioCX05_manual:
 #   template: input/correu-activacioCx05-manual.mako
 #   model: giscedata.switching

@@ -115,7 +115,7 @@
         Hola${nom_titular}, <br>
     </p>
     <p>
-        Fa uns dies vàrem iniciar la sol·licitud d'alta de subministrament.
+	Fa uns dies vàrem iniciar els tràmits per fer efectiva l’alta per aquest punt de subministrament.
     </p>
 </%def>
 
@@ -124,7 +124,7 @@
         Hola${nom_titular}, <br>
     </p>
     <p>
-        Hace unos días iniciamos la solicitud de alta de suministro.
+	Hace unos días iniciamos los trámites de alta para este punto de suministro.
     </p>
 </%def>
 

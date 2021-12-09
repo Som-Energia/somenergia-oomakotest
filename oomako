@@ -122,6 +122,8 @@ def renderMako(template, model, id, data, uid=1):
         #browse last param is OpenERP dict Context. The 'browse_reference' variable to True
         #force get all references in object (even one2many fields)
         ir_data_obj = pool.get('ir.model.data')
+        if isinstance(id, dict):
+            id = id['id']
         if not isinstance(id, int):
             try:
                 id_data = ir_data_obj.search(cursor, uid, [('module', '=', id.split('.')[0]), ('name', '=', id.split('.')[1])])
@@ -226,8 +228,14 @@ def makeB2bTestCase(testCaseName, id) :
         self.maxDiff = data.get('maxDiff', None)
 
         if 'rejectId' in self.fixture:
-            output = renderMakoReject(
+            output_reject = renderMakoReject(
                 self.fixture.template,
+                self.fixture.model,
+                id,
+                data)
+            data['notificacio_text'] = output_reject
+            output = renderMako(
+                self.fixture.main_template,
                 self.fixture.model,
                 id,
                 data)
