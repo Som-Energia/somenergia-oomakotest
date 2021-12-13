@@ -106,11 +106,11 @@
             Pots accedir a través d'<a href="http://oficinavirtual.somenergia.coop/ca">aquest enllaç</a> a la teva oficina virtual i veure les característiques de la mateixa segons la informació que ens trasllada la distribuïdora.
         </p>
         <p>
-            Necessitem que acceptis o rebutgis, en el cas de que no estiguis d’acord amb la informació que ens indiquen, la comunicació que ens faciliten per poder continuar amb les gestions pertinents.
+            Necessitem que acceptis o rebutgis, en el cas que no estiguis d’acord amb la informació que ens indiquen, la comunicació que ens faciliten per poder continuar amb les gestions pertinents.
         </p>
         %if partner_diferent:
         <p>
-            En el teu cas, ens informen també, que el titular de la instal·lació generadora és una altra persona, si no és correcte i ets tu mateix pots rebutjar la notificació i especificar-ho al motiu del rebuig.
+            En el teu cas, ens informen també, que <b>el titular de la instal·lació generadora és una altra persona.</b> Si aquesta informació no és correcta, i el titular de la instal·lació correspon amb el titular del contracte, et demanem que ens avisis responent aquest mateix correu, abans d’acceptar o rebutjar les dades de l’Oficina Virtual.
         </p>
         %endif
         <p>
@@ -172,7 +172,7 @@
         </p>
         %if partner_diferent:
         <p>
-            En tu caso, nos informan también, que el titular de la instalación generadora es otra persona, si no es correcto y eres tú mismo puedes rechazar la notificación y especificarlo en el apartado de motivo de rechazo.
+            En tu caso, nos informan también, que <b>el titular de la instalación generadora es otra persona.</b> Si esta información no es correcta, y el titular de la instalación se corresponde con el titular del contrato, te pedimos que nos avises respondiendo este correo, antes de aceptar o rechazar los datos en tu Oficina Virtual.
         </p>
         %endif
         <p>
