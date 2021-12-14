@@ -48,7 +48,7 @@
         object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
     )
-
+    hola = 'hola'
 %>
 <!doctype html>
 <html>
@@ -106,11 +106,11 @@
             Pots accedir a través d'<a href="http://oficinavirtual.somenergia.coop/ca">aquest enllaç</a> a la teva oficina virtual i veure les característiques de la mateixa segons la informació que ens trasllada la distribuïdora.
         </p>
         <p>
-            Necessitem que acceptis o rebutgis, en el cas que no estiguis d’acord amb la informació que ens indiquen, la comunicació que ens faciliten per poder continuar amb les gestions pertinents.
+            Necessitem que acceptis o rebutgis, en el cas de que no estiguis d’acord amb la informació que ens indiquen, la comunicació que ens faciliten per poder continuar amb les gestions pertinents. Seguint aquests passos:  Apartat <b>Contractes > Els meus tràmits d'autoconsum > Detalls</b>
         </p>
         %if partner_diferent:
         <p>
-            En el teu cas, ens informen també, que <b>el titular de la instal·lació generadora és una altra persona.</b> Si aquesta informació no és correcta, i el titular de la instal·lació correspon amb el titular del contracte, et demanem que ens avisis responent aquest mateix correu, abans d’acceptar o rebutjar les dades de l’Oficina Virtual.
+            En el teu cas, ens informen també, que el titular de la instal·lació generadora és una altra persona, si no és correcte i ets tu mateix pots rebutjar la notificació i especificar-ho al motiu del rebuig.
         </p>
         %endif
         <p>
@@ -165,14 +165,14 @@
 	        La empresa de distribución eléctrica de tu zona nos comunica que existe una instalación de autoproducción asociada al punto de suministro con código CUPS ${object.cups_id.name} correspondiente a la dirección ${object.cups_id.direccio}.
         </p>
         <p>
-            Puedes acceder a través de <a href="http://oficinavirtual.somenergia.coop/es">este enlace</a> a tu oficina virtual y ver las características de la misma según la información que nos traslada la distribuidora.
+            Puedes acceder a través de <a href="http://oficinavirtual.somenergia.coop/es">este enlace</a> a tu oficina virtual y ver las características de la misma según la información que nos traslada la distribuidora.  Siguiendo estos pasos: Apartado <b>Contratos> Mis trámites de autoconsumo> Detalles</b>
         </p>
         <p>
             Necesitamos que aceptes o rechaces, en el caso de que no estés de acuerdo con la información que nos indican, la comunicación que nos facilitan para poder continuar con las gestiones pertinentes.
         </p>
         %if partner_diferent:
         <p>
-            En tu caso, nos informan también, que <b>el titular de la instalación generadora es otra persona.</b> Si esta información no es correcta, y el titular de la instalación se corresponde con el titular del contrato, te pedimos que nos avises respondiendo este correo, antes de aceptar o rechazar los datos en tu Oficina Virtual.
+            En tu caso, nos informan también, que el titular de la instalación generadora es otra persona, si no es correcto y eres tú mismo puedes rechazar la notificación y especificarlo en el apartado de motivo de rechazo.
         </p>
         %endif
         <p>

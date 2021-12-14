@@ -970,17 +970,17 @@
 #     ca_30TD_pot: 361226
 #     es_20TD_tit: 360706
 #
-# notificacioAltaAutoconsum:
-#   template: input/correu-notificacioAltaAutoconsum.mako
-#   model: giscedata.switching
-#   poweremailId: giscedata_switching.notification_atr_D1_01
-#   cases:
-#     ca_auto_tit_diff: 277496
-#     ca_auto_tit_equal: 280714
-#     es_auto_tit_equal: 282857
-#     es_auto_tit_diff: 282561
-#     ca_noauto: 282878
-#     es_noauto: 281207
+#notificacioAltaAutoconsum:
+#  template: input/correu-notificacioAltaAutoconsum.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_D1_01
+#  cases:
+#    ca_auto_tit_diff: 277496
+#    ca_auto_tit_equal: 280714
+#    es_auto_tit_equal: 282857
+#    es_auto_tit_diff: 282561
+#    ca_noauto: 282878
+#    es_noauto: 281207
 #
 # notificacioRebuigAutoconsum:
 #  template: input/correu-notificacioRebuigAutoconsum.mako
