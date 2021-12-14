@@ -48,7 +48,6 @@
         object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
     )
-    hola = 'hola'
 %>
 <!doctype html>
 <html>
