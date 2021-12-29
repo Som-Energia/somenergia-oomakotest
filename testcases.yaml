@@ -1410,5 +1410,12 @@
 #     ca_61: 484619
 #     es_20_canaries_vivenda: 484620
 #     es_20_canaries_empresa: 484621
-
+#
+#situacioExcepcional2022:
+#  template: input/correu-situacioExcepcional2022.mako
+#  model: som.enviament.massiu
+#  poweremailId: 337
+#  cases:
+#    ca: 750214
+#    es: 750215
 # vim: et ts=2 sw=2
