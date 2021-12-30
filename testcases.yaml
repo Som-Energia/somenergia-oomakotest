@@ -373,42 +373,54 @@
 #   cases:
 #     ca: 69398
 #     es: 265122
-# reportCondicionsParticulars:
-#   template: input/report-condicionsParticulars.mako
-#   model: giscedata.polissa
-#   reportXmlId: 527
-#   data:
-#     maxDiff: 0
-#     useErpMako: True
-#   cases:
-#       igic_vivenda: 158433
-#       igic_no_vivenda: 136877
-#       ca_N: 240991
-#       catala_s_s: 207474
-#       catala_persona_f: 128907
-#       20A_ca: 203092
-#       20A_es: 215948
-#       20DHA_ca: 208456
-#       20DHA_es: 58526
-#       20DHS_ca: 3744
-#       20DHS_es: 52378
-#       20A_e_g_es: 3847
-#       20DHA_g_ca: 86566
-#       20DHS_g_ca: 29616
-#       20DHS_g_es: 53737
-#       21A_ca: 78837
-#       21A_es: 171930
-#       21DHA_ca: 223631
-#       21DHA_es: 227116
-#       21DHS_ca: 49393
-#       21DHS_es: 60482
-#       30A_ca: 69977
-#       30A_es: 213676
-#       31A_ca: 12340
-#       31A_es: 192778
-#       20A_auto_directe_es: 262690
-#       20DHA_auto_g_es: 9398
-#       61A: 203034
+#reportCondicionsParticulars:
+#  template: input/report-condicionsParticulars.mako
+#  model: giscedata.polissa
+#  reportXmlId: 527
+#  data:
+#    maxDiff: 0
+#    useErpMako: True
+#  cases:
+#      igic_vivenda: 158433
+#      igic_no_vivenda: 136877
+#      ca_N: 240991
+#      catala_s_s: 207474
+#      catala_persona_f: 128907
+#      20A_ca: 203092
+#      20A_es: 215948
+#      20DHA_ca: 208456
+#      20DHA_es: 58526
+#      20DHS_ca: 3744
+#      20DHS_es: 52378
+#      20A_e_g_es: 3847
+#      20DHA_g_ca: 86566
+#      20DHS_g_ca: 29616
+#      20DHS_g_es: 53737
+#      21A_ca: 78837
+#      21A_es: 171930
+#      21DHA_ca: 223631
+#      21DHA_es: 227116
+#      21DHS_ca: 49393
+#      21DHS_es: 60482
+#      30A_ca: 69977
+#      30A_es: 213676
+#      31A_ca: 12340
+#      31A_es: 192778
+#      20A_auto_directe_es: 262690
+#      20DHA_auto_g_es: 9398
+#      61A: 203034
+#
+#reportCondicionsParticularsCanviPreus:
+#  template: input/report-condicionsParticularsCanviPreus.mako
+#  model: giscedata.polissa
+#  reportXmlId: 1684
+#  data:
+#    maxDiff: 0
+#    useErpMako: True
+#    addons_path: /home/oriol/src/erp/server/bin/addons
+#  cases:
+#      21A_ca: 78837
+#      21A_es: 171930
 #
 #reportCondicionsParticulars_destral:
 #  template: input/report-condicionsParticulars.mako
@@ -717,30 +729,30 @@
 #       es:
 #           id: 399154
 #           pas: 1
-# rebuigM102_65:
-#   template: input/rebutjos/rebuigM102_65.mako
-#   model: giscedata.switching
-#   main_template: input/correu-rebuigM102.mako
-#   rejectId: som_switching.notification_atr_M102_65
-#   cases:
-#       ca:
-#           id: 356917
-#           pas: 1
-#       es:
-#           id: 392084
-#           pas: 1
-# rebuigM104_26:
-#   template: input/rebutjos/rebuigM104_26.mako
-#   model: giscedata.switching
-#   main_template: input/correu-rebuigM104.mako
-#   rejectId: som_switching.notification_atr_M104_26
-#   cases:
-#       ca:
-#           id: 393195
-#           pas: 1
-#       es:
-#           id: 358164
-#           pas: 1
+#rebuigM102_65:
+#  template: input/rebutjos/rebuigM102_65.mako
+#  model: giscedata.switching
+#  main_template: input/correu-rebuigM102.mako
+#  rejectId: som_switching.notification_atr_M102_65
+#  cases:
+#      ca:
+#          id: 356917
+#          pas: 1
+#      es:
+#          id: 392084
+#          pas: 1
+#rebuigM104_26:
+#  template: input/rebutjos/rebuigM104_26.mako
+#  model: giscedata.switching
+#  main_template: input/correu-rebuigM104.mako
+#  rejectId: som_switching.notification_atr_M104_26
+#  cases:
+#      ca:
+#          id: 393195
+#          pas: 1
+#      es:
+#          id: 358164
+#          pas: 1
 # rebuigM104_31:
 #   template: input/rebutjos/rebuigM104_31.mako
 #   model: giscedata.switching
@@ -1400,16 +1412,16 @@
 #    cat: 192
 #    es: 101
 #
-# canviPreus:
-#   template: input/correu-canviPreus.mako
-#   model: som.enviament.massiu
-#   poweremailId: 333
-#   cases:
-#     ca_20: 484617
-#     ca_30_factures: 484618
-#     ca_61: 484619
-#     es_20_canaries_vivenda: 484620
-#     es_20_canaries_empresa: 484621
+#canviPreus:
+#  template: input/correu-canviPreus.mako
+#  model: som.enviament.massiu
+#  poweremailId: 333
+#  cases:
+#    ca_20: 484617
+#    ca_30_factures: 484618
+#    ca_61: 484619
+#    es_20_canaries_vivenda: 634577
+#    es_20_canaries_empresa: 643509
 #
 #situacioExcepcional2022:
 #  template: input/correu-situacioExcepcional2022.mako
