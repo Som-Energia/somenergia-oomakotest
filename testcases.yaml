@@ -358,11 +358,16 @@
 #    20DHA_ende_no_lec_auto_g_ca: 9607095
 #    20A_ende_no_lec_auto_g_ca: 9445326
 #    31_3periods: 9470629
-#    30_auto_tallada: 9550161
 #    30A_RRI_ca: 9822429
 #    20DHA_auto_col_es: 11070661
 #    6X_reactiva: 11482615
 #    6X_exces_pot: 11482610
+#    20TD_auto_gkwh_es_072021: 12802743
+#    20TD_auto_gkwh_multilines_es_092021: 13320679
+#    20TD_normal_cat_082021: 12985843
+#    20TD_reactiva_i_disc_es_202021: 13482363
+#    30TD_auto_exces_pot_cat_102021: 13341139
+#    61TD_exces_es_102021: 13317447
 #
 ######################################################
 ## Gestió de contractes
