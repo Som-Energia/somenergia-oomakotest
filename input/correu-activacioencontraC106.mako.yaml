@@ -6,5 +6,5 @@ subject_translations:
   ca_ES: (${object.cups_polissa_id.name}) Baixa contracte amb Som Energia / Baja contrato
     con Som Energia
 subject: (${object.cups_polissa_id.name}) Baixa contracte amb Som Energia / Baja contrato
-    con Som Energia
+  con Som Energia
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
