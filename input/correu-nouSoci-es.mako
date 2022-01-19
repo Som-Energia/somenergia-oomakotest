@@ -35,7 +35,9 @@ Nombre del socio/a: ${object.name}<br>
 Fecha de ingreso: ${ingres}<br>
 Aportación al capital social: 100€</fieldset></td></tr></table><br>
 <br> 
-Te animamos a que nos ayudes a difundir el proyecto de Som Energia, haciéndote amigo/a en <a href="https://es-es.facebook.com/somenergia">Facebook</a> siguiéndonos en <a href="https://twitter.com/SomEnergia">Twitter</a> o enviando un enlace de <a href="www.somenergia.coop">nuestra página web</a> a quien creas pueda estar interesado/a.<br>
+Para hacer frente a las <a href="https://blog.somenergia.coop/som-energia/2021/12/nuevas-medidas-para-hacer-frente-a-las-tensiones-actuales-del-mercado-energetico/">tensiones actuales del mercado energético</a>, hemos abierto una emisión de aportaciones voluntarias para aumentar en 15 millones de euros el capital social de la cooperativa. <b>Te animamos a realizar tu aportación</b> <a href="https://www.somenergia.coop/es/produce-energia-renovable/aporta-al-capital-social/">desde este formulario</a> donde también encontrarás respuesta a las preguntas más frecuentes.
+<br>
+Además, puedes ayudar a difundir el proyecto de Som Energia, haciéndote amigo/a en <a href="https://es-es.facebook.com/somenergia">Facebook</a> siguiéndonos en <a href="https://twitter.com/SomEnergia">Twitter</a> o enviando un enlace de <a href="www.somenergia.coop">nuestra página web</a> a quien creas pueda estar interesado/a.<br>
 Si quieres participar de la cooperativa de una forma más activa puedes consultar en el apartado de <a href="http://www.somenergia.coop/participa/">participación de nuestra web</a>: formar parte de un grupo local, de la plataforma, consultar nuestro blog.<br> 
 <br> 
 <br> 
