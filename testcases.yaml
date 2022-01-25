@@ -618,7 +618,13 @@
 #   poweremailId: giscedata_switching.notification_atr_B1_05
 #   cases:
 #     altaNou_ca: 116275
-
+#activacioT106:
+#  template: input/correu-acceptacioT106.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_T1_06
+#  cases:
+#    ca: 355779
+#    es: 354382
 # acceptacioA302:
 #   template: input/correu-acceptacioA302.mako
 #   model: giscedata.switching
