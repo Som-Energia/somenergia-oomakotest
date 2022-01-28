@@ -36,9 +36,9 @@ Ens complau que formis part de la cooperativa que construeix un model energètic
  Data d'ingrés: ${ingres}<br>
  Aportació al capital social: 100€</fieldset></td></tr></table><br>
 <br>
-Per fer front a les <a href="https://blog.somenergia.coop/som-energia/2021/12/noves-mesures-per-fer-front-a-les-tensions-actuals-del-mercat-energetic/">tensions actuals del mercat energètic</a>, hem obert una emissió d’aportacions voluntàries per augmentar en 15 milions d’euros el capital social de la cooperativa. <b>T’animem a fer la teva aportació</b> <a href="https://www.somenergia.coop/ca/produeix-energia-renovable/aporta-al-capital-social/">des d’aquest formulari</a> on també trobaràs resposta a les preguntes més freqüents.
+Per fer front a les <a href="https://bit.ly/noticia-blog-cat">tensions actuals del mercat energètic</a>, hem obert una emissió d’aportacions voluntàries per augmentar en 15 milions d’euros el capital social de la cooperativa. <b>T’animem a fer la teva aportació</b> <a href="https://bit.ly/formulari-aportacions-cat">des d’aquest formulari</a> on també trobaràs resposta a les preguntes més freqüents.<br>
 <br>
-Al mateix temps, t'encoratgem que ens ajudis a difondre el projecte de Som Energia, fent-te amic al <a href="https://es-es.facebook.com/somenergia">Facebook</a>, seguint-nos al <a href="https://twitter.com/SomEnergia">Twitter</a> o enviant un enllaç de la <a href="www.somenergia.coop/ca">nostra pàgina web</a> a qui creguis pugui estar interessat/da.<br> 
+Al mateix temps, t'encoratgem que ens ajudis a difondre el projecte de Som Energia, fent-te amic al <a href="https://es-es.facebook.com/somenergia">Facebook</a>, seguint-nos al <a href="https://twitter.com/SomEnergia">Twitter</a> o enviant un enllaç de la <a href="www.somenergia.coop/ca">nostra pàgina web</a> a qui creguis pugui estar interessat/da.
 Si vols participar de la cooperativa d'una forma més activa pots consultar a l'apartat de <a href="http://www.somenergia.coop/ca/participa/">participació de la nostra web</a>; formar part d'un grup local, de la plataforma, consultar el nostre blog, tot ho trobaràs al mateix link.<br> 
 <br> 
 <br> 
@@ -66,9 +66,9 @@ Nombre del socio/a: ${object.name}<br>
 Fecha de ingreso: ${ingres}<br>
 Aportación al capital social: 100€</fieldset></td></tr></table><br>
 <br> 
-Para hacer frente a las <a href="https://blog.somenergia.coop/som-energia/2021/12/nuevas-medidas-para-hacer-frente-a-las-tensiones-actuales-del-mercado-energetico/">tensiones actuales del mercado energético</a>, hemos abierto una emisión de aportaciones voluntarias para aumentar en 15 millones de euros el capital social de la cooperativa. <b>Te animamos a realizar tu aportación</b> <a href="https://www.somenergia.coop/es/produce-energia-renovable/aporta-al-capital-social/">desde este formulario</a> donde también encontrarás respuesta a las preguntas más frecuentes.
+Para hacer frente a las <a href="https://bit.ly/noticia-blog-es">tensiones actuales del mercado energético</a>, hemos abierto una emisión de aportaciones voluntarias para aumentar en 15 millones de euros el capital social de la cooperativa. <b>Te animamos a realizar tu aportación</b> <a href="https://bit.ly/formulari-aportacions-es">desde este formulario</a> donde también encontrarás respuesta a las preguntas más frecuentes.<br>
 <br>
-Además, puedes ayudar a difundir el proyecto de Som Energia, haciéndote amigo/a en <a href="https://es-es.facebook.com/somenergia">Facebook</a> siguiéndonos en <a href="https://twitter.com/SomEnergia">Twitter</a> o enviando un enlace de <a href="www.somenergia.coop">nuestra página web</a> a quien creas pueda estar interesado/a.<br>
+Además, puedes ayudar a difundir el proyecto de Som Energia, haciéndote amigo/a en <a href="https://es-es.facebook.com/somenergia">Facebook</a> siguiéndonos en <a href="https://twitter.com/SomEnergia">Twitter</a> o enviando un enlace de <a href="www.somenergia.coop">nuestra página web</a> a quien creas pueda estar interesado/a.
 Si quieres participar de la cooperativa de una forma más activa puedes consultar en el apartado de <a href="http://www.somenergia.coop/participa/">participación de nuestra web</a>: formar parte de un grupo local, de la plataforma, consultar nuestro blog.<br> 
 <br> 
 <br> 
