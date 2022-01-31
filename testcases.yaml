@@ -1121,6 +1121,14 @@
 #    ca:
 #    es:
 #
+#aportacionsTransmissio:
+#  template: input/correu-aportacionsTransmissio.mako
+#  model: generationkwh.investment
+#  poweremailId: som_generationkwh.aportacio_mail_transmissio
+#  cases:
+#    ca:
+#    es:
+#
 #liquidacioTitolsParticipatius:
 #  template: input/correu-liquidacioTitolsParticipatius.mako
 #  model: account.invoice
