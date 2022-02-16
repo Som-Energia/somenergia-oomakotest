@@ -1,7 +1,8 @@
-cc: false
-to: ${object.polissa_id.titular.address[0].email}
+cc: <% mail = '{}'.format(object.administradora.address[0].email if object.administradora
+  else '') %>  ${mail}
+to: ${object.direccio_pagament.email},${object.direccio_notificacio.email}
 subject_translations:
-  ca_ES: Noves mesures per fer front a les tensions actuals del mercat energètic
-  es_ES: Nuevas medidas para hacer frente a las tensiones actuales del mercado energético
-subject: Nuevas medidas para hacer frente a las tensiones actuales del mercado energético
+  ca_ES: Refacturación contrato ${object.name} / Refacturació contracte ${object.name}
+  es_ES: Refacturación contrato ${object.name} / Refacturació contracte ${object.name}
+subject: Refacturación contrato ${object.name} / Refacturació contracte ${object.name}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
