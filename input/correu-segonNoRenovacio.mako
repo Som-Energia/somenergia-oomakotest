@@ -1,5 +1,5 @@
 <%!
-    from datetime import datetime
+    from datetime import datetime, timedelta
     from mako.template import Template
 %>
 
@@ -30,7 +30,8 @@
         object
     )
 
-    data_limit = object.polissa_id.modcontractual_activa.data_final +- timedelta(days=7)
+    data_limit = datetime.strptime(object.polissa_id.modcontractual_activa.data_final, '%Y-%m-%d') - timedelta(days=7)
+    data_limit = data_limit.strftime('%d/%m/%Y')
 
     if object.extra_text:
         text_extra = eval(object.extra_text)
@@ -94,7 +95,7 @@ ${text_legal}
             </ul>
         </p>
         <p>
-            També cal que ens faciliteu el document dels poders notarials i que ens envieu el <strong>document SEPA</strong> adjunt complimentat i firmat. Ens l'hauríeu d'enviar amb <strong>firma digital<strong>, però si no és possible, per correu postal a: Som Energia, SCCL. Parc Científic i Tecnològic de la UdG. C/Pic de Peguera, 9 (1a planta) 17003 Girona.<br>
+            També cal que ens faciliteu el document dels poders notarials i que ens envieu el <strong>document SEPA</strong> adjunt complimentat i firmat. Ens l'hauríeu d'enviar amb <strong>firma digital</strong>, però si no és possible, per correu postal a: Som Energia, SCCL. Parc Científic i Tecnològic de la UdG. C/Pic de Peguera, 9 (1a planta) 17003 Girona.<br>
         </p>
         <p>
            Un cop tinguem preparat el contracte, procedirem a la firma digital d'aquest a través de la plataforma <a href="https://www.signaturit.com/es">Signaturit</a> (no cal registrar-se). 
@@ -120,7 +121,7 @@ ${text_legal}
            Hace unos días os escribimos para explicaros la situación de la cooperativa y la propuesta de renovación de vuestro contrato. A continuación os detallamos las condiciones de esta propuesta:<br>
         </p>
         <p>
-            <strong>Oferta con tarifa indexada<strong><br>
+            <strong>Oferta con tarifa indexada</strong><br>
             <ul>
                 <li>El margen de comercialización con los costes de desvío incluidos es de <strong>${marge} €/MWh</strong>. Podéis consultar los detalles de la oferta en el documento adjunto. </li>
                 <li>En este otro <a href="https://www.somenergia.coop/tarifa_indexada/ES_EiE_Explicacion_Tarifa_Indexada_Entidades_y_Empresas_Som_Energia.pdf">documento</a> explicamos qué es la tarifa indexada y su funcionamiento.  </li>
