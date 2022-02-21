@@ -98,7 +98,7 @@ ${text_legal}
             També cal que ens faciliteu el document dels poders notarials i que ens envieu el <strong>document SEPA</strong> adjunt complimentat i firmat. Ens l'hauríeu d'enviar amb <strong>firma digital</strong>, però si no és possible, per correu postal a: Som Energia, SCCL. Parc Científic i Tecnològic de la UdG. C/Pic de Peguera, 9 (1a planta) 17003 Girona.<br>
         </p>
         <p>
-           Un cop tinguem preparat el contracte, procedirem a la firma digital d'aquest a través de la plataforma <a href="https://www.signaturit.com/es">Signaturit</a> (no cal registrar-se). 
+           Un cop tinguem preparat el contracte, procedirem a la firma digital d'aquest a través de la plataforma <a href="https://www.signaturit.com/es">Signaturit</a> (no cal registrar-se). <br>
         </p>
         <p>
             Si necessiteu aclarir dubtes per telèfon, podeu enviar-nos un número i us trucarem tan aviat com puguem.<br>
