@@ -1449,4 +1449,13 @@
 #  cases:
 #    ca: 750214
 #    es: 750215
+
+# primerNoRenovacio:
+#   template: input/correu-primerNoRenovacio.mako
+#   model: som.enviament.massiu
+#   poweremailId: 338
+#   cases:
+#     ca: 491957
+#     es: 491958
+
 # vim: et ts=2 sw=2
