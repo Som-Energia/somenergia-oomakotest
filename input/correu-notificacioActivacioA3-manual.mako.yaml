@@ -5,7 +5,7 @@ to: ${object.cups_polissa_id.direccio_pagament.email},${object.cups_polissa_id.d
   else '') %>  ${mail}
 subject_translations:
   en_US: ''
-  ca_ES: '${object.cups_polissa_id.name}  Contracte activat '
-  es_ES: '${object.cups_polissa_id.name}  Contrato activado '
-subject: '${object.cups_polissa_id.name}  Contracte activat '
+  ca_ES: ${object.cups_polissa_id.name}  Alta completada
+  es_ES: ${object.cups_polissa_id.name}  Alta completada
+subject: ${object.cups_polissa_id.name}  Alta completada
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
