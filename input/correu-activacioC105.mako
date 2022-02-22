@@ -10,10 +10,10 @@
 import sys
 
 def get_autoconsum_description(object_, auto_consum, lang):
-    C105 = object_.pool.get('giscedata.switching.c1.05')
-    tipus_autoconsum = dict(C105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
+  C105 = object_.pool.get('giscedata.switching.c1.05')
+  tipus_autoconsum = dict(C105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
 
-    return auto_consum + " - " + tipus_autoconsum[auto_consum]
+  return auto_consum + " - " + tipus_autoconsum[auto_consum]
 
 for step in object.step_ids:
   obj = step.pas_id
@@ -48,12 +48,17 @@ lineesDePotencia_ca = '\n'.join((
 lineesDePotencia_es = lineesDePotencia_ca
 
 if TarifaATR == "2.0TD":
-    lineesDePotencia_ca = lineesDePotencia_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
-    lineesDePotencia_es = lineesDePotencia_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
+  lineesDePotencia_ca = lineesDePotencia_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
+  lineesDePotencia_es = lineesDePotencia_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
 
 autoconsum_description = False
 if pas5.tipus_autoconsum != '00' and pas5.tipus_autoconsum:
   autoconsum_description = get_autoconsum_description(object, pas5.tipus_autoconsum, object.cups_polissa_id.titular.lang)
+
+subministrament_essencial = False
+if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
+  subministrament_essencial = True
+
 %>
 <%
 from mako.template import Template
@@ -111,6 +116,10 @@ T’adjuntem les condicions particulars i generals. Recorda que el contracte <st
 <br />
 A l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> també pots consultar les dades del contracte i veure totes les teves factures.<br />
 <br />
+%if subministrament_essencial:
+Si aquest contracte de llum correspon a un <a href="https://ca.support.somenergia.coop/article/1226-subministraments-essencials">subministrament essencial</a>, per tal de disposar d’una protecció especial i que no es pugui suspendre el subministrament elèctric, cal que ens ho indiqueu responent aquest mateix correu.<br />
+<br />
+%endif
 Si tens algun dubte, trobaràs les preguntes més freqüents al <a href="https://ca.support.somenergia.coop/">Centre de Suport</a>.<br />
 <br />
 <br />
@@ -158,8 +167,11 @@ Te adjuntamos las condiciones particulares y generales. Recuerda que el contrato
 <br />
 En la <a href="https://oficinavirtual.somenergia.coop/es/login/"> Oficina Virtual </a> también puedes consultar los datos del contrato y ver todas tus facturas. <br />
 <br />
-Si tienes alguna duda, encontrarás las preguntas más frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br />
+%if subministrament_essencial:
+Si este contrato de luz corresponde a un <a href="https://es.support.somenergia.coop/article/1227-suministros-esenciales">suministro esencial</a>, para disponer de una protección especial y que no se pueda suspender el suministro eléctrico, es necesario que nos lo indiquéis respondiendo este mismo correo.<br />
 <br />
+%endif
+Si tienes alguna duda, encontrarás las preguntas más frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br />
 <br />
 Atentamente,<br />
 <br />
