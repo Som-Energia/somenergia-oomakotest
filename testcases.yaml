@@ -1449,13 +1449,29 @@
 #  cases:
 #    ca: 750214
 #    es: 750215
-
-# primerNoRenovacio:
-#   template: input/correu-primerNoRenovacio.mako
-#   model: som.enviament.massiu
-#   poweremailId: 338
-#   cases:
-#     ca: 491957
-#     es: 491958
-
+#
+#primerNoRenovacio:
+#  template: input/correu-primerNoRenovacio.mako
+#  model: som.enviament.massiu
+#  poweremailId: som_infoenergia.primer_env_no_renovacio_30
+#  cases:
+#    ca: 491957
+#    es: 491958
+#
+#segonNoRenovacio:
+#  template: input/correu-segonNoRenovacio.mako
+##  model: som.enviament.massiu
+#  poweremailId: som_infoenergia.segon_env_no_renovacio_30
+#  cases:
+#    ca: 491957
+#    es: 491958
+#
+#tercerNoRenovacio:
+#  template: input/correu-tercerNoRenovacio.mako
+#  model: som.enviament.massiu
+#  poweremailId: som_infoenergia.tercer_env_no_renovacio_30
+#  cases:
+#    ca: 491957
+#    es: 491958
+#
 # vim: et ts=2 sw=2
