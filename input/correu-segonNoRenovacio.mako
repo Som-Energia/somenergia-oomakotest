@@ -56,11 +56,13 @@ ${text_legal}
 <%def name="correu_cat()">
         <body>
         <p>
-            Hola ${nom_titular},<br>
+            Hola${nom_titular},<br>
         </p>
+        <br>
         <p>
             Fa uns dies us vam escriure per explicar-vos la situació de la cooperativa i la proposta de renovació del vostre contracte. A continuació us detallem les condicions d’aquesta proposta:<br>
         </p>
+        <br>
         <p>
             <strong>Oferta amb tarifa indexada</strong><br>
             <ul>
@@ -68,6 +70,7 @@ ${text_legal}
                 <li>En aquest altre <a href="https://www.somenergia.coop/tarifa_indexada/CA_EiE_Explicacio_Tarifa_Indexada_Entitats_i_Empreses_Som_Energia.pdf">document</a> expliquem què és la tarifa indexada i el seu funcionament.</li>
             </ul>
         </p>
+        <br>
         <p>
            <strong>Garantia en forma de dipòsit bancari</strong><br>
            <ul>
@@ -79,6 +82,7 @@ ${text_legal}
                 <li>Abans d’ingressar la garantia caldrà signar el nou contracte amb tarifa indexada, que inclou la clàusula sobre la garantia.</li>
            </ul>
         </p>
+        <br>
         <p>
             <strong>Signatura del nou contracte</strong><br>
             Per preparar el nou contracte necessitem les següents dades:<br>
@@ -94,15 +98,19 @@ ${text_legal}
                 <li>Número de protocol dels poders. </li>
             </ul>
         </p>
+        <br>
         <p>
             També cal que ens faciliteu el document dels poders notarials i que ens envieu el <strong>document SEPA</strong> adjunt complimentat i firmat. Ens l'hauríeu d'enviar amb <strong>firma digital</strong>, però si no és possible, per correu postal a: Som Energia, SCCL. Parc Científic i Tecnològic de la UdG. C/Pic de Peguera, 9 (1a planta) 17003 Girona.<br>
         </p>
+        <br>
         <p>
            Un cop tinguem preparat el contracte, procedirem a la firma digital d'aquest a través de la plataforma <a href="https://www.signaturit.com/es">Signaturit</a> (no cal registrar-se). <br>
         </p>
+        <br>
         <p>
             Si necessiteu aclarir dubtes per telèfon, podeu enviar-nos un número i us trucarem tan aviat com puguem.<br>
         </p>
+        <br>
         Salutacions,<br>
         <br>
         Equip de Som Energia<br>
@@ -115,11 +123,13 @@ ${text_legal}
 <%def name="correu_es()">
     <body>
         <p>
-            Hola ${nom_titular},<br>
+            Hola${nom_titular},<br>
         </p>
+        <br>
         <p>
            Hace unos días os escribimos para explicaros la situación de la cooperativa y la propuesta de renovación de vuestro contrato. A continuación os detallamos las condiciones de esta propuesta:<br>
         </p>
+        <br>
         <p>
             <strong>Oferta con tarifa indexada</strong><br>
             <ul>
@@ -127,6 +137,7 @@ ${text_legal}
                 <li>En este otro <a href="https://www.somenergia.coop/tarifa_indexada/ES_EiE_Explicacion_Tarifa_Indexada_Entidades_y_Empresas_Som_Energia.pdf">documento</a> explicamos qué es la tarifa indexada y su funcionamiento.  </li>
             </ul>
         </p>
+        <br>
         <p>
            <strong>Garantía en forma de depósito bancario</strong><br>
            <ul>
@@ -138,6 +149,7 @@ ${text_legal}
                 <li> Antes de ingresar la garantía hay que firmar el nuevo contrato con tarifa indexada, que incluye la cláusula sobre la garantía.</li>
            </ul>
         </p>
+        <br>
         <p>
             <strong>Signatura del nuevo contrato </strong><br>
             Para preparar el nuevo contrato necesitamos los siguientes datos:<br>
@@ -153,15 +165,19 @@ ${text_legal}
                 <li> Número de protocolo de los poderes.</li>
             </ul>
         </p>
+        <br>
         <p>
         También será necesario que nos facilitéis el documento de los poderes notariales y que nos enviéis el <strong>documento SEPA</strong> adjunto cumplimentado y firmado. Nos lo deberíais enviar con <strong>firma digital</strong>, pero si no es posible, por correo postal a: Som Energia, SCCL. Parque Científico y Tecnológico de la UdG. C/Pic de Peguera, 9 (1ª planta) 17003 Girona.<br>
         </p>
+        <br>
         <p>
             Una vez tengamos preparado el contrato, procederemos a la firma digital del mismo a través de la plataforma <a href="https://www.signaturit.com/es">Signaturit</a> (no es necesario registrarse).
         </p>
+        <br>
         <p>
             Si necesitáis aclarar dudas por teléfono, podéis enviarnos un número y os llamaremos en cuanto podamos.<br>
         </p>
+        <br>
         Saludos,<br>
         <br>
         Equipo de Som Energia<br>

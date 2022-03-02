@@ -45,20 +45,25 @@ ${text_legal}
 <%def name="correu_cat()">
         <body>
         <p>
-            Hola ${nom_titular},<br>
+            Hola${nom_titular},<br>
         </p>
+        <br>
         <p>
             Fa uns dies us vam escriure per explicar-vos la situació de la cooperativa i les condicions per renovar el contracte. Us enviem aquest correu perquè no hem rebut una resposta definitiva per part vostra.<br>
         </p>
+        <br>
         <p>
             Malauradament, si no ens comuniqueu el contrari, us informem que <strong>no renovarem el vostre contracte ${object.polissa_id.name} amb CUPS ${object.polissa_id.cups.name}</strong> i, per tant, rescindirem el contracte de forma unilateral el pròxim <strong>${object.polissa_id.modcontractual_activa.data_final}</strong>.<br>
         </p>
+        <br>
         <p>
             Us demanem que recupereu els <strong>últims correus i seguiu les recomanacions</strong> que us fem, i en cas de tenir qualsevol dubte, ens contacteu.<br>
         </p>
+        <br>
         <p>
             Si necessiteu aclarir dubtes per telèfon, podeu enviar-nos un número i us trucarem tan aviat com puguem.<br>
         </p>
+        <br>
         Salutacions,<br>
         <br>
         Equip de Som Energia<br>
@@ -71,20 +76,25 @@ ${text_legal}
 <%def name="correu_es()">
     <body>
         <p>
-            Hola ${nom_titular},<br>
+            Hola${nom_titular},<br>
         </p>
+        <br>
         <p>
            Hace unos días os escribimos para explicaros la situación de la cooperativa y las condiciones para renovar el contrato. Os escribimos este correo porque no hemos recibido una respuesta definitiva por vuestra parte.<br>
         </p>
+        <br>
         <p>
-           Lamentablemente, si no nos comunicáis lo contrario, os informamos que <strong>no renovaremos vuestro contrato ${object.polissa_id.name} con CUPS ${object.polissa_id.cups.name}</strong>, y por tanto, rescindiremos el contrato de forma unilateral el próximo <strong>${object.polissa_id.modcontractual_activa.data_final}</strong><br>
+           Lamentablemente, si no nos comunicáis lo contrario, os informamos que <strong>no renovaremos vuestro contrato ${object.polissa_id.name} con CUPS ${object.polissa_id.cups.name}</strong>, y por tanto, rescindiremos el contrato de forma unilateral el próximo <strong>${object.polissa_id.modcontractual_activa.data_final}</strong>.<br>
         </p>
+        <br>
         <p>
             Os sugerimos que, por favor, <strong>recuperéis los últimos correo y sigáis las recomendaciones que hacemos,</strong> y en caso de tener cualquier duda, nos contactéis.<br>
         </p>
+        <br>
         <p>
             Si necesitáis aclarar dudas por teléfono, podéis enviarnos un número y os llamaremos en cuanto podamos.<br>
         </p>
+        <br>
         Saludos,<br>
         <br>
         Equipo de Som Energia<br>
