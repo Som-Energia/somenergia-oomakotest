@@ -32,20 +32,20 @@
 ######################################################
 ## Forms
 #
-# nouSoci:
-#   template: input/correu-nouSoci.mako
-#   model: somenergia.soci
-#   poweremailId: 2
-#   cases:
-#     ca: 192
-#
-# nouSoci_destral:
-#   template: input/correu-nouSoci.mako
-#   model: somenergia.soci
-#   poweremailId: som_polissa_soci.nou_soci_mail_webforms
-#   cases:
-#     ca: som_polissa_soci.soci_0001
-#
+#  nouSoci:
+#    template: input/correu-nouSoci.mako
+#    model: somenergia.soci
+#    poweremailId: 2
+#    cases:
+#      ca: 192
+
+#  nouSoci_destral:
+#    template: input/correu-nouSoci.mako
+#    model: somenergia.soci
+#    poweremailId: som_polissa_soci.nou_soci_mail_webforms
+#    cases:
+#      ca: som_polissa_soci.soci_0001
+
 ######################################################
 ## Facturació
 #
@@ -226,7 +226,15 @@
 #    es_ambsoci: 243142
 #    subrogacio: 304082
 #    traspas: 311011
-#
+
+# notificacioM105AnticTitular:
+#  template: input/correu-notificacioM105AnticTitular.mako
+#  model: giscedata.switching
+#  poweremailId: som_switching.notification_atr_M1_05_old_titular
+#  cases:
+#    ca_ambsoci: 249766
+#    es_sensesoci: 253716
+
 #numeroFacturaDuplicada:
 #  template: input/correu-numeroFacturaDuplicada.mako
 #  model: giscedata.facturacio.factura
