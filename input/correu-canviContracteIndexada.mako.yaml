@@ -1,0 +1,5 @@
+cc: false
+to: ${object.direccio_pagament.email}
+subject_translations: {}
+subject: '[AVÍS] Activació tarifa indexada contracte ${object.name}'
+bcc: false
