@@ -1,0 +1,9 @@
+cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email if
+  object.cups_polissa_id.administradora else '') %>  ${mail}
+to: ${object.cups_polissa_id.direccio_notificacio.email}
+subject_translations:
+  en_US: ''
+  es_ES: 'Som Energia: ${object.cups_polissa_id.name} Baja de contrato por cambio de titular'
+  ca_ES: 'Som Energia: ${object.cups_polissa_id.name} Baixa de contracte per canvi de titular'
+subject: 'Som Energia: ${object.cups_polissa_id.name} Baixa de contracte per canvi de titular'
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net,${object.cups_polissa_id.direccio_notificacio.email}
