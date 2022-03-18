@@ -1,7 +1,11 @@
+lang: ${object.polissa_id.titular.lang}
 cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.polissa_id.titular.address[0].email}
 subject_translations:
-  ca_ES: '[IMPORTANT] Condicions per a la renovació del contracte ${object.polissa_id.name} amb tarifa indexada'
-  es_ES: '[IMPORTANTE] Condiciones para la renovación del contrato ${object.polissa_id.name} con tarifa indexada'
-subject: '[IMPORTANTE] Condiciones para la renovación del contrato ${object.polissa_id.name} con tarifa indexada'
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+  ca_ES: '[IMPORTANT] Condicions per a la renovació del contracte ${object.polissa_id.name}
+    amb tarifa indexada'
+  es_ES: '[IMPORTANTE] Condiciones para la renovación del contrato ${object.polissa_id.name}
+    con tarifa indexada'
+subject: '[IMPORTANTE] Condiciones para la renovación del contrato ${object.polissa_id.name}
+  con tarifa indexada'
