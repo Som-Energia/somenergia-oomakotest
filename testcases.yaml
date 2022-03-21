@@ -1473,6 +1473,7 @@
 #  cases:
 #    ca: 491957
 #    es: 491958
+#
 #tercerNoRenovacio:
 #  template: input/correu-tercerNoRenovacio.mako
 #  model: som.enviament.massiu
@@ -1488,4 +1489,4 @@
 #   cases:
 #     ca: 233
 #     es: 133759
-## vim: et ts=2 sw=2
+# vim: et ts=2 sw=2
