@@ -1,5 +1,7 @@
 cc: false
 to: ${object.direccio_pagament.email}
-subject_translations: {}
-subject: '[AVÍS] Activació tarifa indexada contracte ${object.name}'
+subject_translations:
+  ca_ES: '[AVÍS] Activació tarifa indexada contracte ${object.name}'
+  es_ES: '[AVISO] Activación tarifa indexada contrato ${object.name}'
+subject: '[AVISO] Activación tarifa indexada contrato ${object.name}'
 bcc: false

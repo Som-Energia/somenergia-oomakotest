@@ -15,6 +15,9 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
+
+from datetime import datetime
+data_inici = datetime.strptime(object.modcontractual_activa.data_inici, '%Y-%m-%d').strftime('%d-%m-%Y')
 %>
 
 <!doctype html>
@@ -32,9 +35,9 @@ ${text_legal}
 
 <p>Segons l'acord de renovació firmat, hem procedit a fer les modificacions oportunes per tal de passar a facturar el contracte núm. ${object.name} i CUPS ${object.cups.name} amb tarifa indexada.</p>
 
-<p>La data d'activació del canvi és el ${object.modcontractual_activa.data_inici}.</p>
+<p>La data d'activació del canvi és el ${data_inici}.</p>
 
-<p>Recorda que tens més informació del funcionament de la tarifa indexada en aquest document.</p>
+<p>Recorda que tens més informació del funcionament de la tarifa indexada en aquest <a href="https://www.somenergia.coop/tarifa_indexada/CA_EiE_Explicacio_Tarifa_Indexada_Entitats_i_Empreses_Som_Energia.pdf">document</a>.</p>
 
 <p>Per qualsevol dubte, estem en contacte.</p>
 
@@ -47,9 +50,9 @@ ${text_legal}
 
 <p>Según el acuerdo de renovación firmado, hemos procedido a realizar las modificaciones oportunas a fin de cambiar la facturación del contrato ${object.name} y CUPS ${object.cups.name} a tarifa indexada.</p>
 
-<p>La fecha de activación del cambio es el ${object.modcontractual_activa.data_inici}.</p>
+<p>La fecha de activación del cambio es el ${data_inici}.</p>
 
-<p>Recuerda que tienes más información del funcionamiento de la tarifa indexada en este documento.</p>
+<p>Recuerda que tienes más información del funcionamiento de la tarifa indexada en este <a href="https://www.somenergia.coop/tarifa_indexada/ES_EiE_Explicacion_Tarifa_Indexada_Entidades_y_Empresas_Som_Energia.pdf">documento</a>.</p>
 
 <p>Para cualquier duda, estamos en contacto.</p>
 
