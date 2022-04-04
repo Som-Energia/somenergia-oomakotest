@@ -100,17 +100,6 @@ ${lineesDePotencia_ca}</li>
     <li><strong> Modalitat autoconsum: </strong> ${autoconsum_description}</li>
 %endif
 </ul>
-%if autoconsum_description:
-T'agrairem que ens facis arribar les següents dades referents al teu autoconsum:
-<ul>
-  <li>Codi autoconsum (CAU)</li>
-  <li>Instal·lació col·lectiva o individual</li>
-  <li>Tecnologia de producció</li>
-  <li>Potència instal·lada kWp</li>
-  <li>Tipus instal·lació: Interior / interior diversos consumidors / pròxima a través de xarxa</li>
-  <li>Serveis auxiliars SI o NO</li>
-</ul>
-%endif
 <br />
 T’adjuntem les condicions particulars i generals. Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br />
 <br />
@@ -151,17 +140,6 @@ ${lineesDePotencia_es}</li>
     <li><strong> Modalidad autoconsumo: </strong> ${autoconsum_description}</li>
 %endif
 </ul>
-%if autoconsum_description:
-Te agradeceremos que nos hagas llegar los siguientes datos referentes a tu autoconsumo:
-<ul>
-  <li>Código autoconsumo (CAU)</li>
-  <li>Instalación colectiva o individual</li>
-  <li>Tecnología de producción</li>
-  <li>Potencia instalada kWp</li>
-  <li>Tipo instalación: Interior / interior varios consumidores / próxima a través de red</li>
-  <li>Servicios auxiliares SI o NO</li>
-</ul>
-%endif
 <br />
 Te adjuntamos las condiciones particulares y generales. Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con el anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br />
 <br />
