@@ -27,6 +27,7 @@ data_inici = datetime.strptime(object.modcontractual_activa.data_inici, '%Y-%m-%
 % else:
     ${correu_es()}
 % endif
+<br>
 ${text_legal}
 </html>
 
