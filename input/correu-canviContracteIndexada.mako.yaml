@@ -1,0 +1,8 @@
+lang: ${object.titular.lang}
+cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.direccio_pagament.email}
+subject_translations:
+  ca_ES: '[AVÍS] Activació tarifa indexada contracte ${object.name}'
+  es_ES: '[AVISO] Activación tarifa indexada contrato ${object.name}'
+subject: '[AVISO] Activación tarifa indexada contrato ${object.name}'
