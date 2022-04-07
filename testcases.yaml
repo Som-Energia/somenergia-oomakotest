@@ -1489,4 +1489,11 @@
 #   cases:
 #     ca: 233
 #     es: 133759
+#canviPreuIndexada202204:
+#  template: input/correu-canviPreuIndexada202204.mako
+#  model: som.enviament.massiu
+#  poweremailId: 346
+#  cases:
+#    ca: 1170989
+#    es: 1170988
 # vim: et ts=2 sw=2
