@@ -289,17 +289,6 @@ def calcularPreuTotal(potencies, tarifa, preus):
 
   return imports
 
-def calcularImpostos(preu, fiscal_position):
-  iva = 0.21
-  impost_electric = 0.051127
-  if fiscal_position:
-    if fiscal_position.id in [19,33]:
-      iva = 0.03
-    if fiscal_position.id in [25,34]:
-      iva = 0.0
-  preu_imp = round(preu * (1 + impost_electric), 2)
-  return round(preu_imp * (1 + iva))
-
 def formatNumber(number):
   return format(number, "1,.0f").replace(',','.')
 
@@ -309,10 +298,7 @@ tarifa = object.polissa_id.tarifa.name
 preu_vell = calcularPreuTotal(potencies, tarifa, OLD_TARIFF_PRICES)
 preu_nou = calcularPreuTotal(potencies, tarifa, NEW_TARIFF_PRICES)
 
-preu_vell_imp_int = calcularImpostos(preu_vell, object.polissa_id.fiscal_position_id)
-preu_nou_imp_int = calcularImpostos(preu_nou, object.polissa_id.fiscal_position_id)
-
-estalvi_euros = formatNumber(abs(preu_nou_imp_int - preu_vell_imp_int))
+estalvi_euros = formatNumber(abs(preu_nou - preu_vell))
 
 %>
 <br>
@@ -320,7 +306,7 @@ estalvi_euros = formatNumber(abs(preu_nou_imp_int - preu_vell_imp_int))
 % if  object.polissa_id.titular.lang != "es_ES":
 <p>Us escrivim per comunicar-vos que el govern ha aprovat una <b>rebaixa en els càrrecs de l’electricitat</b>, un dels components regulats de la factura de la llum. Segons estableix el Reial decret llei 6/2022, els nous càrrecs són d’aplicació des del 31 de març i fins al 31 de desembre de 2022. En donem més detalls a <a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/tarifas-y-precios-de-la-luz/2022/04/actualitzacio-de-les-tarifes-amb-el-nou-valor-dels-carrecs-anunciat-pel-govern/">aquesta notícia del blog</a>.</p>
 <p>Els càrrecs s’apliquen tant a la potència contractada com a l’energia utilitzada.</p>
-<p>El <b>preu de la potència contractada</b> la podeu trobar en l’<a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/">apartat de tarifes de la cooperativa</a>. Per al vostre contracte aquesta rebaixa, en el terme de potència representarà un estalvi anual de ${estalvi_euros} euros.</p>
+<p>El <b>preu de la potència contractada</b> la podeu trobar en l’<a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/">apartat de tarifes de la cooperativa</a>. Per al vostre contracte aquesta rebaixa, en el terme de potència representarà un estalvi anual de ${estalvi_euros} € (abans d'impostos).</p>
 <p>En el <b>terme d’energia</b>, com que teniu una <b>tarifa indexada</b>, els càrrecs (<b>CA</b>) ja estan inclosos en la fórmula per calcular el preu horari, tal com expliquem en aquest <a href="https://www.somenergia.coop/tarifa_indexada/CA_EiE_Explicacio_Tarifa_Indexada_Entitats_i_Empreses_Som_Energia.pdf">document</a>.
 <br>
 <p>PH = 1,015 * [(PrmDiari + Pc + Sc + I + POsOm) (1 + Perd) + FE + K] + PA + <a><u>CA</u></a></p>
@@ -339,13 +325,13 @@ estalvi_euros = formatNumber(abs(preu_nou_imp_int - preu_vell_imp_int))
 % if  object.polissa_id.titular.lang != "ca_ES":
 <p>Os escribimos para comunicaros que el gobierno ha aprobado una rebaja en los cargos de la electricidad, uno de los componentes regulados de la factura de la luz. Según establece el Real Decreto-Ley 6/2022, los nuevos cargos son de aplicación des del 31 de marzo hasta al 31 de diciembre de 2022. Para más información puedes consultar <a href="https://blog.somenergia.coop/destacados/2022/04/actualizacion-de-las-tarifas-con-el-nuevo-valor-de-los-cargos-anunciado-por-el-gobierno/">esta noticia del blog</a>. </p>
 <p>Los cargos se aplican sobre la potencia contratada y la energía utilizada. </p>
-<p>El <b>precio de la potencia contratada</b> la puedes encontrar en el apartado de tarifas de la cooperativa. Para vuestro contrato esta rebaja, en el término de potencia representará un ahorro anual de ${estalvi_euros} euros.</p>
+<p>El <b>precio de la potencia contratada</b> la puedes encontrar en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/">apartado de tarifas de la web</a>. Para vuestro contrato esta rebaja, en el término de potencia representará un ahorro anual de ${estalvi_euros} € (abans d'impostos).</p>
 <p>En el <b>término de energía</b>, como tenéis una tarifa indexada, los cargos <b>(CA)</b> ya están incluidos enla fórmula para calcular el precio horario, tal como detallamos en este <a href="https://www.somenergia.coop/tarifa_indexada/ES_EiE_Explicacion_Tarifa_Indexada_Entidades_y_Empresas_Som_Energia.pdf">documento</a>.</p>
 <br>
 <p>PH = 1,015 * [(PrmDiario + Pc + Sc + I + POsOm)(1 + Perd) + FE + K] + PA + <b><u>CA</u></b></p>
 <br>
 <p>Como el precio horario de la energía varía cada día y hora, no podemos hacer una estimación del ahorro que supondrá.</p>
-<p>En relación con la rebaja del impuesto eléctrico, que estaba en vigor hasta el 30 de abril, el gobierno ha aprobado también alargarla hasta el 30 de junio. La rebaja del IVA es has ta 10 kW de potencia contratada, y no se aplica en vuestro caso.</p>
+<p>En relación con la <b>rebaja del impuesto eléctrico</b>, que estaba en vigor hasta el 30 de abril, el gobierno ha aprobado también alargarla hasta el 30 de junio. La rebaja del IVA es has ta 10 kW de potencia contratada, y no se aplica en vuestro caso.</p>
 <p>Como se trata de un cambio normativo, y tal como recogen las condiciones particulares de vuestro contrato, no es necesario formalizar ningún nuevo contrato o adenda.</p>
 <p>Un saludo cordial,</p>
 <br>
