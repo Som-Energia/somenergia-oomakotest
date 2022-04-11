@@ -71,15 +71,16 @@ ${text_legal}
         </table>
     </head>
     <body>
-        <br/>
         <p>
             Hola,
         </p>
 
         <p>
-            T'escrivim per informar-te que s’ha donat de baixa el teu contracte a Som Energia. La data de canvi de companyia és el <b>${date}</b>.
+            T'escrivim per informar-te que en data <b>${date}</b> s'ha realitzat el canvi de comercialitzadora que gestiona el teu contracte, i, per tant, s’ha donat de baixa de Som Energia.
         </p>
-
+        <p>
+            Recorda que els canvis de comercialitzadora no representen cap afectació sobre el subministrament elèctric, ni talls, ni canvis en la potència contractada.
+        </p>
         <p>
             El teu contracte d'electricitat ha passat a ser gestionat per l'empresa comercialitzadora de referència, que pots consultar en <a href="http://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">aquest enllaç</a>.
         </p>
@@ -129,12 +130,14 @@ ${text_legal}
         </table>
     </head>
     <body>
-        <br/>
         <p>
             Hola,
         </p>
         <p>
-            Te escribimos para informarte que se ha dado de baja tu contrato con Som Energía. La fecha de cambio de compañía es el <b>${date}</b>.
+            Te escribimos para informarte que en fecha <b>${date}</b> se ha realizado el cambio de comercializadora que gestiona tu contrato, y, por lo tanto, se ha dado de baja con Som Energia.
+        </p>
+        <p>
+            Recuerda que los cambios de comercializadora no representan ninguna afectación sobre el suministro eléctrico, ni cortes, ni cambios en la potencia contratada.
         </p>
         <p>
             Este contrato ha pasado a estar gestionado por la empresa comercializadora de referencia, que puedes consultar en <a href="http://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">este enlace</a>.
