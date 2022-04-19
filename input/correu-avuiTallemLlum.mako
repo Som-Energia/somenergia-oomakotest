@@ -42,7 +42,7 @@ Ens posem en contacte amb tu per informar-te que a dia d’avui no s’han satis
 <br />
 Has de fer el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
-Et comuniquem que s'aplicarà un càrrec de 3€+IVA en concepte de despeses de Gestió de l'Impagament.<br/>
+Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
 <br />
 <U>Resum de la teva factura</U><br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
@@ -112,7 +112,7 @@ Nos ponemos en contacto contigo para informarte que a día de hoy no se han sati
 <br />
 Tienes que hacer el pago mediante el documento adjunto con código de barras. Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www1.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
 <br/>
-Te comunicamos que se aplicará un cargo de 3€+IVA en concepto de gastos de Gestión del Impago de la factura vinculada a la fecha de Corte de Suministro Eléctrico.<br/>
+Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
 <br/>
 <U>Resumen de la factura</U><br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>

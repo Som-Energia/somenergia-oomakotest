@@ -44,6 +44,8 @@ Com a conseqüència, aviat se’t pot remetre un requeriment fefaent de pagamen
 <br/>
 En cas de no abonar-se la quantitat deguda, en un termini de  <b>2 mesos a partir de la notificació</b> a partir de la recepció d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
+Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
+<br/>
 <br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
@@ -68,7 +70,7 @@ factura@somenergia.coop<br/>
 <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
-Si compliu els requisits per ser consumidor vulnerable, podeu sol·licitar a una de les empreses comercialitzadores de referència acollir-se al bo social, que suposa un descompte sobre el preu voluntari per al petit consumidor (PVPC). El canvi de modalitat en el contracte per passar a PVPC, sempre que no es modifiquin els paràmetres que recull el contracte d’accés de tercers a la xarxa, s’ha de portar a terme sense cap tipus de penalització ni cost addicional. Una vegada acollit al PVPC, i sempre que s’hagin acreditat els requisits per ser consumidor vulnerable, el termini perquè se us pugui suspendre el subministrament d’electricitat, en cas que no s’hagi abonat la quantitat deguda, passa a ser de 4 mesos (comptats sempre des de la recepció del requeriment fefaent de pagament). <br/>
+Si compliu els requisits per ser consumidor vulnerable, podeu sol·licitar a una de les empreses comercialitzadores de referència acollir-se al bo social, que suposa un descompte sobre el preu voluntari per al petit consumidor (PVPC). El canvi de modalitat en el contracte per passar a PVPC, sempre que no es modifiquin els paràmetres que recull el contracte d’accés de tercers a la xarxa, s’ha de portar a terme sense cap tipus de penalització ni cost addicional. Un cop acollit al PVPC, i sempre que s’hagin acreditat els requisits per ser consumidor vulnerable, en cas que no s’hagi abonat la quantitat deguda, havent passat 4 mesos des de la recepció de requeriment fefaent de pagament, s’adaptarà la seva potència, durant 6 mesos addicionals, a un subministrament mínim vital de 3,5 kW. Durant aquest període no es podrà suspendre el subministrament. <br/>
 <br/>
 L’enllaç a la pàgina web de la CNMC, en la qual trobareu les dades necessàries per contactar amb la comercialitzadora de referència, és el següent: <a href="https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados">https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados</a><br/>
 <br/>
@@ -114,6 +116,8 @@ Como consecuencia, próximamente te podrá ser remitido un requerimiento fehacie
 <br/>
 De no abonarse la cantidad adeudada en un plazo de 2 meses  a partir de la recepción de dicho requerimiento, la empresa distribuidora podrá suspender tu suministro de electricidad.<br/>
 <br/>
+Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
+<br/>
 <br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
@@ -138,7 +142,7 @@ factura@somenergia.coop<br/>
 <a href="http://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
-Si usted cumple los requisitos para ser consumidor vulnerable, puede solicitar a una de las empresas comercializadoras de referencia acogerse al bono social, que supone un descuento sobre el precio voluntario para el pequeño consumidor (PVPC). El cambio de modalidad en el contrato para pasar a PVPC, siempre que no se modifiquen los parámetros recogidos en el contrato de acceso de terceros a la red, se llevará a cabo sin ningún tipo de penalización ni coste adicional. Una vez acogido al PVPC, y siempre que se hayan acreditado los requisitos para ser consumidor vulnerable, el plazo para que su suministro de electricidad pueda ser suspendido, de no haber sido abonada la cantidad adeudada, pasará a ser 4 meses (contados siempre desde la recepción del requerimiento fehaciente de pago). <br/>
+Si usted cumple los requisitos para ser consumidor vulnerable, puede solicitar a una de las empresas comercializadoras de referencia acogerse al bono social, que supone un descuento sobre el precio voluntario para el pequeño consumidor (PVPC). El cambio de modalidad en el contrato para pasar a PVPC, siempre que no se modifiquen los parámetros recogidos en el contrato de acceso de terceros a la red, se llevará a cabo sin ningún tipo de penalización ni coste adicional. Una vez acogido al PVPC, y siempre que se hayan acreditado los requisitos para ser consumidor vulnerable, de no haber sido abonada la cantidad adeudada, transcurridos cuatro meses desde la recepción del requerimiento fehaciente de pago, se adaptará su potencia, durante otros seis meses adicionales, a un suministro mínimo vital de 3,5 kW. Durante este tiempo no podrá ser suspendido su suministro.<br/>
 <br/>
 El enlace a la página web de la CNMC donde encontrará los datos necesarios para contactar con la comercializadora de referencia es el siguiente: <a href="https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados">https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados</a><br/>
 <br/>

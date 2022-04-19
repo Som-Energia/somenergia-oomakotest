@@ -47,7 +47,7 @@ En cas de no abonar-se la quantitat deguda, en un termini de <b>2 mesos a partir
 <br/>
 Sempre prevaldrà la data de notificació del primer requeriment de factura impagada.<br/>
 <br/>
-Et comuniquem que s'aplicarà un càrrec de 3€+IVA en concepte de despeses de Gestió de l'Impagament, a través de la nostra factura.<br/>
+Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
 <br/>
 <br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
@@ -123,7 +123,7 @@ De no abonarse la cantidad adeudada en un plazo de 2 meses a partir de la notifi
 <br/>
 Siempre prevaldrá la fecha de notificación del primer requerimiento de factura impagada.<br/>
 <br/>
-Te comunicamos que se aplicará un cargo de 3€+IVA en concepto de gastos por la Gestión del Impago, a través de nuestra factura.<br/>
+Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
 <br/>
 <br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>
