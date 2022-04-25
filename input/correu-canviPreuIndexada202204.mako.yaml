@@ -1,0 +1,8 @@
+lang: ${object.polissa_id.titular.lang}
+cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.polissa_id.titular.address[0].email}
+subject_translations:
+  ca_ES: Actualització de les tarifes pel nou valor dels càrrecs de l’electricitat
+  es_ES: Actualización de las tarifas por el nuevo valor de los cargos de la electricidad
+subject: Actualización de las tarifas por el nuevo valor de los cargos de la electricidad
