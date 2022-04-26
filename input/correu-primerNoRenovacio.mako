@@ -53,7 +53,7 @@ ${text_legal}
         </p>
         <br>
         <p>
-            Tal com segurament ja sabeu, els darrers mesos el cost de l'electricitat al mercat majorista diari ha pujat desorbitadament, situant els preus a més de 400 €/MWh en hores puntuals durant el mes de desembre. Amb la volatilitat actual en el mercat elèctric aquesta situació es podria repetir, i fins i tot, superar aquest preu.<br>
+            Tal com segurament ja sabeu, els darrers mesos el cost de l'electricitat al mercat majorista diari ha pujat desorbitadament, situant els preus a més de 700 €/MWh en hores puntuals. Ni els nostres millors càlculs pronosticaven aquesta situació.<br>
         </p>
         <br>
         <p>
@@ -120,7 +120,7 @@ ${text_legal}
         </p>
         <br>
         <p>
-            Tal y como seguramente ya sabéis, en los últimos meses el coste de la electricidad en el mercado mayorista diario ha subido desorbitadamente, situando los precios a más de 400 €/MWh en horas puntuales durante el mes de diciembre. Con la volatilidad actual en el mercado eléctrico, esta situación se podría repetir e incluso se podría superar este precio.<br>
+            Tal y como seguramente ya sabéis, en los últimos meses el coste de la electricidad en el mercado mayorista diario ha subido desorbitadamente, situando los precios a más de 700 €/MWh en horas puntuales. Ni nuestros mejores cálculos pronosticaban esa situación.<br>
         </p>
         <br>
         <p>
