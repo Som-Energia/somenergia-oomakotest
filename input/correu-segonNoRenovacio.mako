@@ -1,5 +1,6 @@
 <%!
     from datetime import datetime, timedelta
+    import calendar
     from mako.template import Template
 %>
 
@@ -30,7 +31,20 @@
         object
     )
 
-    data_limit = datetime.strptime(object.polissa_id.modcontractual_activa.data_final, '%Y-%m-%d') - timedelta(days=7)
+    def leap_replace(data,year):
+        if data.month == 2 and data.day == 29 and not calendar.isleap(year):
+            return datetime(year,2,28)
+        return datetime(year,data.month,data.day)
+
+    def get_renovation_date_dt(data_alta):
+        today = datetime.now()
+        alta = datetime.strptime(data_alta, '%Y-%m-%d')
+        reno = leap_replace(alta, today.year)
+        if reno < today:
+            reno = leap_replace(alta, today.year +1)
+        return reno
+
+    data_limit = get_renovation_date_dt(object.polissa_id.data_alta) - timedelta(days=7)
     data_limit = data_limit.strftime('%d/%m/%Y')
 
     if object.extra_text:

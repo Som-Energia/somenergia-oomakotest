@@ -3,6 +3,6 @@ cc: false
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.polissa_id.titular.address[0].email}
 subject_translations:
-  ca_ES: '[IMPORTANT] Finalització del contracte ${object.polissa_id.name} el ${object.polissa_id.modcontractual_activa.data_final}'
-  es_ES: '[IMPORTANTE] Finalización del contrato ${object.polissa_id.name} el ${object.polissa_id.modcontractual_activa.data_final}'
-subject: '[IMPORTANTE] Finalización del contrato ${object.polissa_id.name} el ${object.polissa_id.modcontractual_activa.data_final}'
+  ca_ES: "[IMPORTANT] Finalització del contracte ${object.polissa_id.name} el ${object.polissa_id.data_alta.split('-')[2]+'/'+object.polissa_id.data_alta.split('-')[1]}"
+  es_ES: "[IMPORTANTE] Finalización del contrato ${object.polissa_id.name} el ${object.polissa_id.data_alta.split('-')[2]+'/'+object.polissa_id.data_alta.split('-')[1]}"
+subject: "IMPORTANTE] Finalización del contrato ${object.polissa_id.name} el ${object.polissa_id.data_alta.split('-')[2]+'/'+object.polissa_id.data_alta.split('-')[1]}"
