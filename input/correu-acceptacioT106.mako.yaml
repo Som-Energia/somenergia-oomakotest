@@ -1,7 +1,7 @@
 lang: ${object.cups_polissa_id.titular.lang}
 cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email if
   object.cups_polissa_id.administradora else '') %>  ${mail}
-bcc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.cups_polissa_id.direccio_notificacio.email}
 subject_translations:
   en_US: ''
