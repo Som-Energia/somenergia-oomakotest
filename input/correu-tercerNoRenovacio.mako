@@ -1,5 +1,6 @@
 <%!
     from datetime import datetime
+    import calendar
     from mako.template import Template
 %>
 
@@ -29,6 +30,22 @@
         object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
     )
+
+    def leap_replace(data,year):
+        if data.month == 2 and data.day == 29 and not calendar.isleap(year):
+            return datetime(year,2,28)
+        return datetime(year,data.month,data.day)
+
+    def get_renovation_date(data_alta):
+        today = datetime.now()
+        alta = datetime.strptime(data_alta, '%Y-%m-%d')
+        reno = leap_replace(alta, today.year)
+        if reno < today:
+            reno = leap_replace(alta, today.year +1)
+        return reno.strftime('%d/%m/%Y')
+
+    data_renovacio = get_renovation_date(object.polissa_id.data_alta)
+
 %>
 
 <!doctype html>
@@ -53,7 +70,7 @@ ${text_legal}
         </p>
         <br>
         <p>
-            Malauradament, si no ens comuniqueu el contrari, us informem que <strong>no renovarem el vostre contracte ${object.polissa_id.name} amb CUPS ${object.polissa_id.cups.name}</strong> i, per tant, rescindirem el contracte de forma unilateral el pròxim <strong>${object.polissa_id.modcontractual_activa.data_final}</strong>.<br>
+            Malauradament, si no ens comuniqueu el contrari, us informem que <strong>no renovarem el vostre contracte ${object.polissa_id.name} amb CUPS ${object.polissa_id.cups.name}</strong> i, per tant, rescindirem el contracte de forma unilateral el pròxim <strong>${data_renovacio}</strong>.<br>
         </p>
         <br>
         <p>
@@ -84,7 +101,7 @@ ${text_legal}
         </p>
         <br>
         <p>
-           Lamentablemente, si no nos comunicáis lo contrario, os informamos que <strong>no renovaremos vuestro contrato ${object.polissa_id.name} con CUPS ${object.polissa_id.cups.name}</strong>, y por tanto, rescindiremos el contrato de forma unilateral el próximo <strong>${object.polissa_id.modcontractual_activa.data_final}</strong>.<br>
+           Lamentablemente, si no nos comunicáis lo contrario, os informamos que <strong>no renovaremos vuestro contrato ${object.polissa_id.name} con CUPS ${object.polissa_id.cups.name}</strong>, y por tanto, rescindiremos el contrato de forma unilateral el próximo <strong>${data_renovacio}</strong>.<br>
         </p>
         <br>
         <p>
