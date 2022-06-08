@@ -38,7 +38,7 @@ ${text_legal}
 
 <p>La data d'activació del canvi és el ${data_inici}.</p>
 
-<p>Recorda que tens més informació del funcionament de la tarifa indexada en aquest <a href="https://www.somenergia.coop/tarifa_indexada/CA_EiE_Explicacio_Tarifa_Indexada_Entitats_i_Empreses_Som_Energia.pdf">document</a>.</p>
+<p>Recorda que tens més informació del funcionament de la tarifa indexada en aquest <a href="https://www.somenergia.coop/documentacio_EiE/CA_EiE_Explica_Tarifa%20Indexada%20per%20Entitats%20i%20Empreses_Som%20Energia.pdf">document</a>.</p>
 
 <p>Per qualsevol dubte, estem en contacte.</p>
 
@@ -58,7 +58,7 @@ Equip de Som Energia<br>
 
 <p>La fecha de activación del cambio es el ${data_inici}.</p>
 
-<p>Recuerda que tienes más información del funcionamiento de la tarifa indexada en este <a href="https://www.somenergia.coop/tarifa_indexada/ES_EiE_Explicacion_Tarifa_Indexada_Entidades_y_Empresas_Som_Energia.pdf">documento</a>.</p>
+<p>Recuerda que tienes más información del funcionamiento de la tarifa indexada en este <a href="https://www.somenergia.coop/documentacio_EiE/ES_EiE_Explica_Tarifa%20Indexada%20para%20Entidades%20y%20Empresas_Som%20Energia.pdf">documento</a>.</p>
 
 <p>Para cualquier duda, estamos en contacto.</p>
 
