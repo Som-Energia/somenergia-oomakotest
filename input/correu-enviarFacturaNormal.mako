@@ -7,6 +7,15 @@ data_inici = datetime.datetime.strptime(object.data_inici, '%Y-%m-%d').strftime(
 data_final = datetime.datetime.strptime(object.data_final, '%Y-%m-%d').strftime('%d-%m-%Y')
 id_soci_fact= object.polissa_id.soci.id
 id_soci_energetica = 38039
+
+polissa_retrocedida = False
+de_lot = object.lot_facturacio and object.lot_facturacio.id != False
+if de_lot:
+    clot_obj = object.pool.get('giscedata.facturacio.contracte_lot')
+    clot_id = clot_obj.search(object._cr, object._uid, [('polissa_id', '=', object.polissa_id.id), ('lot_id', '=', object.lot_facturacio.id)])
+    if clot_id:
+        n_retrocedir_lot = clot_obj.read(object._cr, object._uid, clot_id[0], ['n_retrocedir_lot'])['n_retrocedir_lot']
+        polissa_retrocedida = n_retrocedir_lot > 0
 %>
 <%
 from mako.template import Template
@@ -45,8 +54,18 @@ def getLink(language, potencia):
 <p><br>
 Benvolgut/da,<br>
 <br>
-T'enviem la <B>factura</B> d'electricitat de Som Energia. <br>
+T'enviem
+% if not polissa_retrocedida:
+ la
+% else:
+ una altra
+%endif
+ <B>factura</B> d'electricitat de Som Energia. <br>
 <br>
+% if polissa_retrocedida:
+Aquest mes has rebut més d’una factura a causa d'un endarreriment de les factures, o perquè la distribuïdora ens ha enviat lectures d’un període més curt. Si vols, podem canviar la data de venciment per cobrar-la quan et vagi millor.<br>
+<br>
+% endif
 Al Centre d’Ajuda també t’expliquem detalladament a què correspon <b><a href="https://ca.support.somenergia.coop/article/488-entendre-la-factura">cadascun dels apartats de la factura</a></b>.<br>
 <br>
 Carregarem l'import d'aquesta factura al teu número de compte durant els propers dies.<br>
@@ -76,8 +95,18 @@ factura@somenergia.coop<br>
 <p><br>
 Saludos,<br>
 <br>
-Te enviamos la <B>factura</B> de electricidad de Som Energia. <br>
+Te enviamos
+% if not polissa_retrocedida:
+ la
+% else:
+ otra
+%endif
+ <B>factura</B> de electricidad de Som Energia. <br>
 <br>
+% if polissa_retrocedida:
+Este mes has recibido más de una factura debido a un retraso de las facturas, o porque la distribuidora nos ha enviado lecturas de un período más corto. Si quieres, podemos cambiar la fecha de vencimiento para cobrarla cuando te vaya mejor.<br>
+<br>
+% endif
 En el Centro de Ayuda también te explicamos detalladamente <b><a href="https://es.support.somenergia.coop/article/489-entender-la-factura">a qué corresponde cada uno de los apartados de la factura</a></b>.<br>
 <br>
 Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
