@@ -1,7 +1,8 @@
+lang: ${object.polissa_id.titular.lang}
 cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.polissa_id.titular.address[0].email}
 subject_translations:
-  ca_ES: Actualització de preus al gener
-  es_ES: Actualización de precios en enero
-subject: Actualización de precios en enero
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+  ca_ES: Actualitzem les tarifes d’electricitat
+  es_ES: Actualizamos las tarifas de electricidad
+subject: Actualizamos las tarifas de electricidad
