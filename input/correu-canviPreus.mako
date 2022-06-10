@@ -437,9 +437,9 @@ preu_vell_imp = formatNumber(preu_vell_imp_int)
 preu_nou_imp = formatNumber(preu_nou_imp_int)
 
 impost_aplicat = 'IVA del 21'
-if object.polissa_id.fiscal_position_id.id == 19:
+if object.polissa_id.fiscal_position_id.id in [19, 33]:
   impost_aplicat = "IGIC del 3"
-elif object.polissa_id.fiscal_position_id.id == 25:
+elif object.polissa_id.fiscal_position_id.id in [25, 34]:
   impost_aplicat = "IGIC del 0"
 
 consum_total = formatNumber(round(consum_total/100.0)*100)
