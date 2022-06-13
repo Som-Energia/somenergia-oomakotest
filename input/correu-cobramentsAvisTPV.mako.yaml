@@ -1,0 +1,8 @@
+lang: ${object.partner_id.lang}
+to: cobraments@somenergia.coop
+cc: ''
+bcc: ''
+subject_translations:
+  ca_ES: Factura pagada a través de la Oficina Virtual! 
+  es_ES: Factura pagada a través de la Oficina Virtual! 
+subject: Factura pagada a través de la Oficina Virtual!
