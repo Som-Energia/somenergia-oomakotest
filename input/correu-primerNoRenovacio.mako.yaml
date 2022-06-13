@@ -1,7 +1,7 @@
 lang: ${object.polissa_id.titular.lang}
-cc: false
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.polissa_id.titular.address[0].email}
+cc: correu@certificat.lleida.net
 subject_translations:
   ca_ES: '[IMPORTANT] Finalització del contracte ${object.polissa_id.name} i proposta de renovació'
   es_ES: '[IMPORTANTE] Finalización del contrato ${object.polissa_id.name} y propuesta renovación'
