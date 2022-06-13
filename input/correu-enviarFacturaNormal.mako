@@ -34,6 +34,23 @@ def getLink(language, potencia):
         link = "https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2021/02/el-canvi-de-la-factura-per-a-contractes-domestics-i-petites-empreses/" if language != "es_ES" else "https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2021/02/el-cambio-de-la-factura-para-contratos-domesticos-y-pequenas-empresas/"
     return link
 
+def isTariffChange(f):
+    ppu = {}
+    for line in f.linies_energia:
+        if line.name in ppu:
+            if line.price_unit != ppu[line.name]:
+                return True
+        else:
+            ppu[line.name] = line.price_unit
+    ppu = {}
+    for line in f.linies_potencia:
+        if line.name in ppu:
+            if line.price_unit != ppu[line.name]:
+                return True
+        else:
+            ppu[line.name] = line.price_unit
+    return False
+
 %>
 % if id_soci_fact == id_soci_energetica:
 <div align="right"><img src="https://blog.somenergia.coop/wp-content/uploads/2018/10/som-energia-energetica-logos.jpg"></div>
@@ -62,6 +79,10 @@ Carregarem l'import d'aquesta factura al teu número de compte durant els proper
 </ul>
 Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els contractes que tens amb la cooperativa. Si detectes algun error en la factura, ens ho pots comunicar responent aquest mateix correu. T’informem que l’Equip de Treball de Som Energia es troba en un <b><a href="https://blog.somenergia.coop/som-energia/2021/09/moment-excepcional-en-el-servei-de-comercialitzacio-de-som-energia/">moment excepcional</a></b> de càrrega de feina i això pot fer que triguem uns dies més en respondre.<br>
 <br>
+% if isTariffChange(object):
+Com que en el període que comprèn la teva factura hi ha hagut un canvi de tarifes, una part del terme d’energia i del terme de potència està facturada amb les tarifes d’abans del canvi, i l’altra part està facturada amb les noves tarifes. Això fa que, a la factura, apareguin dues línies (amb els dos preus) de cadascun dels conceptes d’energia i potència.<br>
+<br>
+% endif
 Atentament,<br>
 <br>
 Equip de Som Energia<br>
@@ -93,6 +114,10 @@ Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
 </ul>
 Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa. Si detectas algún error en la factura, nos lo puedes comunicar respondiendo este mismo correo. Te informamos que el Equipo de Som Energia se encuentra en un <b><a href="https://blog.somenergia.coop/som-energia/2021/09/momento-excepcional-en-el-servicio-de-comercializacion-de-som-energia/">momento excepcional</a></b> de carga de trabajo y esto puede suponer que tardemos unos días más en responder.<br>
 <br>
+% if isTariffChange(object):
+Como en el periodo que comprende tu factura ha habido un cambio de tarifas, una parte del término de energía y del término de potencia está facturada con las tarifas de antes del cambio, y la otra parte está facturada con las nuevas tarifas. Esto hace que, en la factura, aparezcan dos líneas (con los precios distintos) de cada uno de los conceptos de energía y potencia.<br>
+<br>
+% endif
 Atentamente,<br>
 <br>
 Equipo de Som Energia<br>
