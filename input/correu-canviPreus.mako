@@ -29,70 +29,70 @@ text_legal = render(t_obj.read(
 NEW_TARIFF_PRICES = {
     "2.0TD": {
         "power": [
-            ("P1", 29.778),
-            ("P2", 3.078),
+            ("P1", 27.984),
+            ("P2", 2.963),
         ],
         "energy": [
-            ("P1", 0.407),
-            ("P2", 0.320),
-            ("P3", 0.262),
+            ("P1", 0.357),
+            ("P2", 0.293),
+            ("P3", 0.241),
         ],
         "gkwh": [
-            ("P1", 0.209),
-            ("P2", 0.137),
-            ("P3", 0.110),
+            ("P1", 0.170),
+            ("P2", 0.120),
+            ("P3", 0.096),
         ]
     },
     "3.0TD": {
         "power": [
-            ("P1", 16.670219),
-            ("P2", 12.243338),
-            ("P3", 5.934083),
-            ("P4", 5.048310),
-            ("P5", 3.368404),
-            ("P6", 2.152216),
+            ("P1", 14.440099),
+            ("P2", 11.127305),
+            ("P3", 5.123259),
+            ("P4", 4.237486),
+            ("P5", 2.557580),
+            ("P6", 1.780529),
         ],
         "energy": [
-            ("P1", 0.387),
-            ("P2", 0.350),
-            ("P3", 0.319),
-            ("P4", 0.293),
-            ("P5", 0.266),
-            ("P6", 0.253),
+            ("P1", 0.355),
+            ("P2", 0.324),
+            ("P3", 0.296),
+            ("P4", 0.269),
+            ("P5", 0.246),
+            ("P6", 0.239),
         ],
         "gkwh": [
-            ("P1", 0.163),
-            ("P2", 0.146),
-            ("P3", 0.120),
-            ("P4", 0.107),
-            ("P5", 0.094),
-            ("P6", 0.100),
+            ("P1", 0.142),
+            ("P2", 0.130),
+            ("P3", 0.107),
+            ("P4", 0.095),
+            ("P5", 0.083),
+            ("P6", 0.091),
         ]
     },
     "6.1TD": {
         "power": [
-            ("P1", 24.732072),
-            ("P2", 21.529345),
-            ("P3", 12.319941),
-            ("P4", 9.897259),
-            ("P5", 2.833920),
-            ("P6", 1.571094),
+            ("P1", 22.417110),
+            ("P2", 20.370815),
+            ("P3", 11.478137),
+            ("P4", 9.055455),
+            ("P5", 1.992116),
+            ("P6", 1.185268),
         ],
         "energy": [
-            ("P1", 0.340),
-            ("P2", 0.310),
-            ("P3", 0.291),
-            ("P4", 0.267),
-            ("P5", 0.243),
-            ("P6", 0.231),
+            ("P1", 0.314),
+            ("P2", 0.289),
+            ("P3", 0.271),
+            ("P4", 0.244),
+            ("P5", 0.226),
+            ("P6", 0.219),
         ],
         "gkwh": [
-            ("P1", 0.115),
-            ("P2", 0.104),
-            ("P3", 0.089),
-            ("P4", 0.081),
-            ("P5", 0.070),
-            ("P6", 0.077),
+            ("P1", 0.101),
+            ("P2", 0.093),
+            ("P3", 0.079),
+            ("P4", 0.072),
+            ("P5", 0.062),
+            ("P6", 0.069),
         ]
     },
     "3.0TDVE": {
@@ -105,20 +105,20 @@ NEW_TARIFF_PRICES = {
             ("P6", 0.274140),
         ],
         "energy": [
-            ("P1", 0.489),
-            ("P2", 0.430),
-            ("P3", 0.363),
-            ("P4", 0.319),
-            ("P5", 0.273),
-            ("P6", 0.258),
+            ("P1", 0.441),
+            ("P2", 0.392),
+            ("P3", 0.333),
+            ("P4", 0.291),
+            ("P5", 0.251),
+            ("P6", 0.243),
         ],
         "gkwh": [
-            ("P1", 0.265),
-            ("P2", 0.226),
-            ("P3", 0.163),
-            ("P4", 0.133),
-            ("P5", 0.101),
-            ("P6", 0.105),
+            ("P1", 0.227),
+            ("P2", 0.198),
+            ("P3", 0.144),
+            ("P4", 0.118),
+            ("P5", 0.088),
+            ("P6", 0.095),
         ]
     },
     "6.1TDVE": {
@@ -131,20 +131,20 @@ NEW_TARIFF_PRICES = {
             ("P6", 0.112654),
         ],
         "energy": [
-            ("P1", 0.499),
-            ("P2", 0.437),
-            ("P3", 0.362),
-            ("P4", 0.311),
-            ("P5", 0.251),
-            ("P6", 0.237),
+            ("P1", 0.456),
+            ("P2", 0.403),
+            ("P3", 0.335),
+            ("P4", 0.285),
+            ("P5", 0.232),
+            ("P6", 0.223),
         ],
         "gkwh": [
-            ("P1", 0.274),
-            ("P2", 0.231),
-            ("P3", 0.160),
-            ("P4", 0.125),
-            ("P5", 0.078),
-            ("P6", 0.082),
+            ("P1", 0.242),
+            ("P2", 0.207),
+            ("P3", 0.143),
+            ("P4", 0.113),
+            ("P5", 0.068),
+            ("P6", 0.074),
         ]
     },
 }
@@ -152,50 +152,71 @@ NEW_TARIFF_PRICES = {
 OLD_TARIFF_PRICES = {
     "2.0TD": {
         "power": [
-            ("P1", 31.981),
-            ("P2", 3.192),
+            ("P1", 27.984),
+            ("P2", 2.963),
         ],
         "energy": [
-            ("P1", 0.396),
-            ("P2", 0.286),
-            ("P3", 0.228),
+            ("P1", 0.380),
+            ("P2", 0.315),
+            ("P3", 0.261),
         ],
+        "gkwh": [
+            ("P1", 0.183),
+            ("P2", 0.132),
+            ("P3", 0.109),
+        ]
     },
     "3.0TD": {
         "power": [
-            ("P1", 19.444029),
-            ("P2", 13.631455),
-            ("P3", 6.942581),
-            ("P4", 6.056808),
-            ("P5", 4.376902),
-            ("P6", 2.614518),
+            ("P1", 14.440099),
+            ("P2", 11.127305),
+            ("P3", 5.123259),
+            ("P4", 4.237486),
+            ("P5", 2.557580),
+            ("P6", 1.780529),
         ],
         "energy": [
-            ("P1", 0.357),
-            ("P2", 0.319),
-            ("P3", 0.283),
-            ("P4", 0.255),
-            ("P5", 0.231),
-            ("P6", 0.219),
+            ("P1", 0.373),
+            ("P2", 0.340),
+            ("P3", 0.313),
+            ("P4", 0.290),
+            ("P5", 0.264),
+            ("P6", 0.252),
         ],
+        "gkwh": [
+            ("P1", 0.148),
+            ("P2", 0.135),
+            ("P3", 0.114),
+            ("P4", 0.104),
+            ("P5", 0.093),
+            ("P6", 0.099),
+        ]
     },
     "6.1TD": {
         "power": [
-            ("P1", 27.611408),
-            ("P2", 22.970318),
-            ("P3", 13.366972),
-            ("P4", 10.944290),
-            ("P5", 3.880951),
-            ("P6", 2.050984),
+            ("P1", 22.417110),
+            ("P2", 20.370815),
+            ("P3", 11.478137),
+            ("P4", 9.055455),
+            ("P5", 1.992116),
+            ("P6", 1.185268),
         ],
         "energy": [
-            ("P1", 0.306),
-            ("P2", 0.277),
-            ("P3", 0.254),
-            ("P4", 0.231),
-            ("P5", 0.210),
-            ("P6", 0.199),
+            ("P1", 0.332),
+            ("P2", 0.305),
+            ("P3", 0.287),
+            ("P4", 0.265),
+            ("P5", 0.242),
+            ("P6", 0.231),
         ],
+        "gkwh": [
+            ("P1", 0.107),
+            ("P2", 0.099),
+            ("P3", 0.086),
+            ("P4", 0.080),
+            ("P5", 0.069),
+            ("P6", 0.076),
+        ]
     },
     "3.0TDVE": {
         "power": [
@@ -207,31 +228,47 @@ OLD_TARIFF_PRICES = {
             ("P6", 0.274140),
         ],
         "energy": [
-            ("P1", 0.480),
-            ("P2", 0.414),
-            ("P3", 0.335),
-            ("P4", 0.286),
-            ("P5", 0.240),
-            ("P6", 0.225),
+            ("P1", 0.458),
+            ("P2", 0.407),
+            ("P3", 0.350),
+            ("P4", 0.312),
+            ("P5", 0.269),
+            ("P6", 0.255),
         ],
+        "gkwh": [
+            ("P1", 0.233),
+            ("P2", 0.203),
+            ("P3", 0.151),
+            ("P4", 0.127),
+            ("P5", 0.097),
+            ("P6", 0.102),
+        ]
     },
     "6.1TDVE": {
         "power": [
-            ("P1", 4.107960),
-            ("P2", 4.107960),
+            ("P1", 4.107961),
+            ("P2", 4.107961),
             ("P3", 2.239713),
-            ("P4", 1.696451),
+            ("P4", 1.696452),
             ("P5", 0.112654),
             ("P6", 0.112654),
         ],
         "energy": [
-            ("P1", 0.486),
-            ("P2", 0.419),
-            ("P3", 0.334),
-            ("P4", 0.280),
-            ("P5", 0.220),
-            ("P6", 0.207),
+            ("P1", 0.473),
+            ("P2", 0.418),
+            ("P3", 0.352),
+            ("P4", 0.306),
+            ("P5", 0.248),
+            ("P6", 0.235),
         ],
+        "gkwh": [
+            ("P1", 0.249),
+            ("P2", 0.212),
+            ("P3", 0.150),
+            ("P4", 0.120),
+            ("P5", 0.075),
+            ("P6", 0.080),
+        ]
     },
 }
 
@@ -393,16 +430,16 @@ preu_nou = calcularPreuTotal(consums, potencies, tarifa, NEW_TARIFF_PRICES)
 preu_vell_imp_int = calcularImpostos(preu_vell, object.polissa_id.fiscal_position_id)
 preu_nou_imp_int = calcularImpostos(preu_nou, object.polissa_id.fiscal_position_id)
 
-increment_total = formatNumber(preu_nou_imp_int - preu_vell_imp_int)
-increment_mensual = (preu_nou_imp_int - preu_vell_imp_int) / 12
+increment_total = formatNumber(abs(preu_nou_imp_int - preu_vell_imp_int))
+increment_mensual = abs((preu_nou_imp_int - preu_vell_imp_int) / 12)
 
 preu_vell_imp = formatNumber(preu_vell_imp_int)
 preu_nou_imp = formatNumber(preu_nou_imp_int)
 
 impost_aplicat = 'IVA del 21'
-if object.polissa_id.fiscal_position_id.id == 19:
+if object.polissa_id.fiscal_position_id.id in [19, 33]:
   impost_aplicat = "IGIC del 3"
-elif object.polissa_id.fiscal_position_id.id == 25:
+elif object.polissa_id.fiscal_position_id.id in [25, 34]:
   impost_aplicat = "IGIC del 0"
 
 consum_total = formatNumber(round(consum_total/100.0)*100)
@@ -422,69 +459,60 @@ except:
 <p>Hola${nom_titular},</p>
 <br>
 % if  object.polissa_id.titular.lang != "es_ES":
-<p>A partir de l’1 de febrer <b>modificarem els preus de l’electricitat</b> de Som Energia.</p>
-<p>Aquesta actualització és deguda a la situació actual d’excepcionalitat del mercat energètic, i n’expliquem els detalls en <a href="https://blog.somenergia.coop/?p=40838">aquesta notícia del blog</a>. A la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de gener i els de períodes anteriors.</p>
-<br>
-<p><b>Les mesures del govern</b></p>
-<p>De les mesures que va establir el govern el juliol de 2021, es prorrogarà fins al 30 d’abril de 2022 la rebaixa de l’IVA del 21% al 10% en tots aquells contractes amb una potència contractada inferior als 10 kW, i també es prorrogarà la rebaixa de l’impost elèctric del 5,11% al 0,5%. Tot i allargar aquesta rebaixa, el descompte en els càrrecs del sistema elèctric no es mantindrà i ho notarem a l’import final de la factura a partir de gener.</p>
+
+<p>Des d’avui, 10 de juny, apliquem uns nous preus a les tarifes de Som Energia. Després d’uns mesos amb costos de l’energia elevadíssims, ara s’han estabilitzat; això, i la previsió per als propers mesos, fan que puguem abaixar una mica les nostres tarifes. </p>
+<p>Donem més detalls de l’actualització de preus a <a href="https://blog.somenergia.coop/?p=42375">aquesta notícia</a> del blog, i pots veure’ls també a l’<a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/">apartat de tarifes del web</a>. Si vols fer-ne comparacions, pots accedir a l’<a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha els preus vigents fins al 9 de juny i els de períodes anteriors.</p>
+<p>Per altra banda, pel que fa a la mesura de les <b>rebaixes dels impostos (IVA del 10% i impost elèctric del 0,5%)</b>, de moment segueixen en vigor fins al 30 de juny en les mateixes condicions.</p>
 <br>
 <p><b>Estimació</b></p>
   % if quintextes == 'casA':
-  <p>Hem fet una <b>estimació orientativa</b>, a partir de les dades que tenim del teu històric recent d’ús d’electricitat (aproximadament ${consum_total} kWh anuals) i prenent com a referència el repartiment horari d’un contracte estàndard, sense autoproducció ni Generation kWh. Segons aquestes dades, l’actualització de preus podria suposar un increment aproximat de ${increment_total} euros anuals a la factura respecte al que costaria si mantinguéssim els preus de gener durant tot l’any vinent. Així doncs, en resulta un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense actualitzar preus. En els dos casos l’estimació inclou l’${impost_aplicat} % i l’impost elèctric del 5,11 %, és a dir, impostos sense rebaixes del govern.</p>
-  <p>Tingues en compte que això són estimacions aproximades, i que els imports finals <b>dependran de circumstàncies</b> que no podem preveure, com per exemple els horaris i l’ús d’energia que finalment facis, les variacions de preus durant el 2022, o altres canvis que hi pugui haver al mercat energètic.</p>
+  <p>Tal com estableix la normativa, hem fet una <b>estimació de caràcter orientatiu</b>, a partir de les dades que tenim del teu històric recent d’ús d’electricitat (aproximadament ${consum_total} kWh anuals) i prenent com a referència el repartiment horari d’un contracte estàndard, sense autoproducció ni Generation kWh. Segons aquestes dades, l’actualització dels nous càrrecs podria suposar una disminució aproximada de ${increment_total} euros anuals a la factura respecte al que costaria si mantinguéssim els preus de l'abril durant tot l’any. Així doncs, en resultaria un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense actualitzar els preus. En els dos casos l’estimació inclou l’${impost_aplicat} % i l’impost elèctric del 5,11 %, és a dir, impostos sense les rebaixes vigents.</p>
+  <p>Tingues en compte que això són estimacions aproximades, i que els imports finals <b>dependran de circumstàncies</b> que no podem preveure, com per exemple els horaris i l’ús d’energia que finalment facis, altres variacions de preus durant el 2022, o canvis que pugui haver al mercat elèctric.</p>
   % elif quintextes == 'casB':
-  <p>Hem fet <b>una estimació en funció de la potència contractada</b> que tens i l’ús d’electricitat que sol haver-hi amb aquestes potències, agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh. Segons aquestes dades, amb un ús elèctric tipus de ${consum_total} kWh anuals, l’import anual amb els nous preus sortiria ${increment_total} euros més elevat que si no actualitzéssim els preus. Segons aquesta estimació, el cost anual amb la pujada de preus sortiria per ${preu_nou_imp} euros, mentre que el cost anual amb els preus vigents des del gener sortiria per ${preu_vell_imp} euros. En els dos casos l’estimació inclou l’${impost_aplicat} % i l’impost elèctric del 5,11 %, és a dir, impostos sense rebaixes del govern.</p>
-  <p>Tingues en compte que això són estimacions aproximades a partir d’usos típics, i que els imports finals <b>dependran de circumstàncies</b> que no podem preveure, com per exemple els horaris i el consum real d’energia que facis, variacions de preus durant el 2022, o altres canvis que pugui haver al mercat energètic.</p>
+  <p>Tal com estableix la normativa, hem fet una <b>estimació de caràcter orientatiu</b>, en funció de la potència contractada que tens i l’ús d’electricitat que sol haver-hi amb aquestes potències, agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh. Segons aquestes dades, l’actualització de preus podria suposar una disminució aproximada de ${increment_total} euros anuals a la factura respecte al que costaria sense aplicar-hi els nous preus (és a dir, si mantinguéssim els preus de l'abril durant tot l’any). Així doncs, en resultaria un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense aplicar el canvi de preus. En els dos casos l’estimació inclou l’${impost_aplicat} % i l’impost elèctric del 5,11%, és a dir, impostos sense les rebaixes vigents.</p>
+  <p>Tingues en compte que això són estimacions aproximades a partir d’usos típics, i que els imports finals <b>dependran de circumstàncies</b> que no podem preveure, com per exemple els horaris i el consum real d’energia que facis, altres variacions de preus durant el 2022, o canvis que pugui haver al mercat elèctric.</p>
   % elif quintextes == 'casC':
-  <p>Hem fet una <b>estimació de caire orientatiu</b>, en base a les dades que tenim del teu històric recent de consum (aproximadament ${consum_total} kWh anuals) i sense tenir en compte l’autoproducció ni el Generation kWh. Segons aquesta estimació, l’actualització de preus podria suposar un increment aproximat de ${increment_total} euros anuals a la factura respecte al que costaria si mantinguéssim els preus actuals, vigents des del gener, durant tot l’any vinent. Així doncs, en resulta un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense actualitzar preus. En els dos casos l’estimació inclou l’${impost_aplicat} % i l’impost elèctric del 5,11 %, és a dir, impostos sense rebaixes del govern.</p>
-  <p>Tingues en compte que això són estimacions aproximades, i que els imports finals <b>dependran de circumstàncies</b> que no podem preveure, com per exemple els horaris i el consum real d’energia que facis, variacions de preus durant el 2022, o altres canvis que pugui haver al mercat energètic.</p>
+  <p>Tal com estableix la normativa, hem fet una <b>estimació de caràcter orientatiu</b>, a partir de les dades que tenim del teu històric recent d’ús d’electricitat (aproximadament ${consum_total} kWh anuals) i sense tenir en compte l’autoproducció ni el Generation kWh. Segons aquesta estimació, l’actualització dels nous càrrecs podria suposar una disminució aproximada de ${increment_total} euros anuals a la factura respecte al que costaria si mantinguéssim els preus vigents des de l'abril, durant tot l’any. Així doncs, en resultaria un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense aplicar els nous preus. En els dos casos l’estimació inclou l’${impost_aplicat} % i l’impost elèctric del 5,11 %, és a dir, impostos sense rebaixes del govern.</p>
+  <p>Tingues en compte que això són estimacions aproximades, i que els imports finals <b>dependran de circumstàncies</b> que no podem preveure, com per exemple els horaris i el consum real d’energia que facis, variacions de preus durant el 2022, o altres canvis que pugui haver al mercat elèctric.</p>
   % endif
 <br>
-<p><b>Situació actual</b></p>
-<p>Aquesta actualització de preus és una de les <a href="https://blog.somenergia.coop/?p=40801">noves mesures que hem hagut de prendre</a>, i que t’explicàvem a l’anterior correu electrònic, arran de la situació actual d’excepcionalitat al mercat energètic: pujada històrica del preu de l’electricitat i els seus efectes sobre la tresoreria de la cooperativa.</p>
-<p>Aprofitem per dir-te que al servei de comercialització de la cooperativa ens trobem encara en una situació excepcional de sobrecàrrega de feina, a causa de problemàtiques derivades dels nous peatges i l’adaptació de les distribuïdores. Això fa que no puguem atendre les consultes i peticions amb la celeritat amb què ho fem habitualment. Recorda que, si tens dubtes o vols fer algun tràmit, pots consultar el <a href="https://ca.support.somenergia.coop/">Centre d’Ajuda</a> o entrar a la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>.</p>
+<p>T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Imaginem que estaràs d’acord amb la baixada de preus. Si és així, <b>no cal que ens retornis el document signat</b>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d’informar-te que si, per alguna raó, aquest canvi de preus a la baixa et fes replantejar la teva pertinença a la cooperativa, podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia de finalització del contracte, amb els preus vigents a cada moment.</p>
 <br>
-<p>T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Com et comentàvem, les noves tarifes es començaran a aplicar el dia 1 de febrer de 2022. <b>Si hi estàs d’acord, no cal que responguis aquest correu ni que ens retornis el document signat, ja que l'actualització dels preus de les nostres tarifes s'aplicarà automàticament</b>. Si lamentablement aquest canvi et fes replantejar la teva pertinença a la cooperativa, podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia de finalització del contracte, amb els preus vigents a cada moment.</p>
-<br>
+<p>Estem a la teva disposició per a qualsevol dubte. Et demanem que, en cas que en tinguis, ens escriguis un correu a info@somenergia.coop.</p>
 <p>Una salutació cordial,</p>
 <br>
 <p> Equip de Som Energia</p>
 <p><a href="https://www.somenergia.coop/ca/" alt="www.somenergia.coop">www.somenergia.coop</a>​</p>
+<p><i>Aquest correu electrònic no admet respostes.</i><p>
 % endif
 % if  object.polissa_id.titular.lang!= "ca_ES" and  object.polissa_id.titular.lang != "es_ES":
 ----------------------------------------------------------------------------------------------------
 % endif
 % if  object.polissa_id.titular.lang != "ca_ES":
-<p>A partir del 1 de febrero <b>volveremos a modificar los precios de la electricidad</b> de Som Energia.</p>
-
-<p>Esta actualización viene dada por la situación actual de excepcionalidad del mercado energético, y explicamos los detalles en <a href="https://blog.somenergia.coop/?p=40843">esta noticia del blog</a>. En la página web puedes consultar en cualquier momento <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/historico-de-tarifas-de-electricidad/">Histórico de tarifas</a>, donde también están los precios vigentes hasta el 31 de enero y los de periodos anteriores.</p>
-<br>
-<p><b>Las medidas del gobierno</b></p>
-<p>De las medidas que estableció el gobierno en julio de 2021, se prorrogará hasta el 30 de abril de 2022 la rebaja del IVA del 21% al 10% en todos los contratos con una potencia contratada inferior a los 10 kW, y también se prorrogará la rebaja del impuesto eléctrico del 5,11% al 0,5%. Aunque se alargue esta rebaja, el descuento en los cargos del sistema eléctrico no se mantendrá y lo notaremos en el importe final de la factura a partir de enero.</p>
+<p>Desde hoy, 10 de junio, aplicamos unos nuevos precios a las tarifas de Som Energia. Después de unos meses con elevadísimos costes de la energía, ahora se han estabilizado; esto, y la previsión para los próximos meses hacen que podamos bajar un poco nuestras tarifas.</p>
+<p>Damos más detalles de la actualización de precios en esta <a href="https://blog.somenergia.coop/?p=42377">noticia del blog</a>, y puedes verlos también en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/">apartado de tarifas de la web</a>. Si quieres hacer comparaciones, puedes acceder al <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/historico-de-tarifas-de-electricidad/">histórico de tarifas</a>, donde están los precios vigentes hasta el 9 de junio y los de períodos anteriores.</p>
+<p>Por otra parte, en cuanto a la medida de las <b>rebajas de los impuestos (IVA del 10% e impuesto eléctrico del 0,5%)</b>, de momento siguen en vigor hasta el 30 de junio en las mismas condiciones.</p>
 <br>
 <p><b>Estimación</b></p>
-
 % if quintextes == 'casA':
-<p>Hemos hecho una <b>estimación orientativa</b>, en base a los datos que tenemos de tu histórico reciente de uso de electricidad (aproximadamente ${consum_total} kWh anuales) y tomando como referencia el reparto horario de un contrato estándar, sin autoproducción ni Generation kWh. Según estos datos, la actualización de precios podría suponer un incremento aproximado de ${increment_total} euros anuales en la factura respecto a lo que costaría si mantuviéramos los precios de enero durante todo el año que viene. Así pues, resulta un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar precios. En ambos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno.</p>
-<p>Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <b>dependerán de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo de energía que finalmente hagas, las variaciones de precios durante 2022, u otros cambios que pueda haber en el mercado energético.</p>
+<p>Tal y como establece la normativa, hemos hecho una <b>estimación orientativa</b>, a partir de los datos que tenemos de tu histórico reciente de uso de electricidad (aproximadamente ${consum_total} kWh anuales) y tomando como referencia el reparto horario de un contrato estándar, sin autoproducción ni Generation kWh. Según estos datos, la actualización de los nuevos precios podría suponer una disminución aproximada de ${increment_total} euros anuales en la factura respecto a lo que costaría si mantuviéramos los precios de abril durante todo el año. Así pues, resultaría un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar los precios. En ambos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin las rebajas vigentes.</p>
+<p>Ten en cuenta que esto son estimaciones aproximadas a partir de usos típicos, y que los importes finales <b>dependerán de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que realices, otras variaciones de precios durante el 2022, o cambios que pueda haber en el mercado eléctrico.</p>
 % elif quintextes == 'casB':
-<p>Hemos realizado una <b>estimación en función de la potencia contratada</b> que tienes y el uso de electricidad que suele darse con estas potencias. tomando como referencia un contrato estándar, sin autoproducción ni Generation kWh. Según estos datos, con un uso eléctrico tipo de ${consum_total} kWh anuales, el importe anual con los nuevos precios saldría ${increment_total} euros más elevada que si no actualizáramos los precios. Según esta estimación, el coste anual con la subida de precios saldría por ${preu_nou_imp} euros, mientras que el coste anual con los precios vigentes desde enero saldría por ${preu_vell_imp} euros. En ambos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno.</p>
-<p>Ten en cuenta que esto son estimaciones aproximadas a partir de usos típicos, y que los importes finales <b>dependerán de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que hagas, variaciones de precios durante 2022, u otros cambios que pueda haber en el mercado energético.</p>
+<p>Tal y como establece la normativa, hemos hecho una <b>estimación de carácter orientativo</b>, en función de la potencia contratada que tienes y el uso de electricidad que suele haber con estas potencias, cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh. Según estos datos, la actualización de precios podría suponer una disminución aproximada de ${increment_total} euros anuales en la factura respecto a lo que costaría sin aplicar los nuevos precios (es decir, si mantuviéramos los precios de abril durante todo el año). Así pues, resultaría un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin aplicar el cambio de precios. En ambos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin las rebajas vigentes.</p>
+<p>Ten en cuenta que esto son estimaciones aproximadas a partir de usos típicos, y que los importes finales <b>dependerán de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que realices, otras variaciones de precios durante el 2022, o cambios que pueda haber en el mercado eléctrico.</p>
 % elif quintextes == 'casC':
-<p>Hemos hecho una <b>estimación orientativa</b>, a partir de los datos que tenemos de tu histórico reciente de uso de electricidad (aproximadamente ${consum_total} kWh anuales) y sin tener en cuenta la autoproducción ni el Generation kWh. Según esta estimación, la actualización de precios podría suponer un incremento aproximado de ${increment_total} euros anuales en la factura respecto a lo que costaría si mantuviéramos los precios actuales, vigentes desde enero, durante todo el año que viene. Así pues, resulta un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar precios. En ambos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno.</p>
-<p>Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <b>dependerán de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que hagas, variaciones de precios durante 2022, u otros cambios que pueda haber en el mercado energético.</p>
+<p>Tal y como establece la normativa, hemos hecho una <b>estimación de carácter orientativo</b>, a partir de los datos que tenemos de tu histórico reciente de uso de electricidad (aproximadamente ${consum_total} kWh anuales) y sin tener en cuenta la autoproducción ni el Generation kWh. Según esta estimación, la actualización de los nuevos cargos podría suponer una disminución aproximada de ${increment_total} euros anuales en la factura respecto a lo que costaría si mantuviéramos los precios vigentes desde abril, durante todo el año. Así pues, resultaría un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin aplicar los nuevos precios. En ambos casos la estimación incluye el ${impost_aplicat}% y el impuesto eléctrico del 5,11%, es decir, impuestos sin rebajas del gobierno.</p>
+<p>Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <b>dependerán de circunstancias</b> que no podemos prever, como por ejemplo los horarios y el consumo real de energía que realices, variaciones de precios durante el 2022, u otros cambios que pueda haber en el mercado eléctrico.</p>
 % endif
 <br>
-<p><b>Situación actual</b></p>
-<p>Esta actualización de precios es una de las <a href="https://blog.somenergia.coop/som-energia/2021/12/nuevas-medidas-para-hacer-frente-a-las-tensiones-actuales-del-mercado-energetico/">nuevas medidas que hemos tenido que tomar</a>, y que te explicábamos en el anterior correo electrónico, a raíz de la situación actual de excepcionalidad en el mercado energético: subida histórica del precio de la electricidad y sus efectos sobre la tesorería de la cooperativa.</p>
-<p>Aprovechamos para decirte que en el servicio de comercialización de la cooperativa nos encontramos todavía en una situación excepcional de sobrecarga de trabajo, debido a problemáticas derivadas de los nuevos peajes y la adaptación de las distribuidoras. Esto hace que no podamos atender las consultas y peticiones con la celeridad con la que lo hacemos habitualmente. Recuerda que, si tienes dudas o quieres realizar algún trámite, puedes consultar el <a href="https://es.support.somenergia.coop/">Centro de Ayuda</a> o entrar en tu <a href="https://oficinavirtual.somenergia.coop/es">Oficina Virtual</a>.</p>
+<p>Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Imaginamos que estarás de acuerdo con la disminución de precios. Si es así, <b>no es necesario que nos devuelvas el documento firmado</b>, ya que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio de precios a la baja te hiciera replantear tu pertenencia a la cooperativa, podrías dar de baja tu contrato con Som Energia, bien comunicándonoslo directamente, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día de finalización del contrato, con los precios vigentes en cada momento.</p>
 <br>
-<p>Adjuntamos a este correo tu contrato actualizado con los nuevos precios. Como te comentábamos, las nuevas tarifas se empezarán a aplicar el día 1 de febrero de 2022. <b>Si estás de acuerdo, no hace falta que respondas este correo ni que nos devuelvas el documento firmado, ya que la actualización de los precios de nuestras tarifas se aplicará automáticamente</b>. Si lamentablemente este cambio te hiciera replantear tu pertenencia a la cooperativa, podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente, o mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día de finalización del contrato, con los precios vigentes en cada momento.</p>
-<br>
+<p>Estamos a tu disposición para cualquier duda. Te pedimos que, en caso de que las tengas, nos escribas un correo a info@somenergia.coop.</p>
 <p>Un saludo cordial,</p>
 <br>
 <p> Equipo de Som Energia</p>
 <p> <a href="https://www.somenergia.coop/es/" alt="www.somenergia.coop">www.somenergia.coop</a>​</p>
+<p><i>Este correo electrónico no admite respuestas.</i><p>
 % endif
 
 <p>${text_legal}</p>
