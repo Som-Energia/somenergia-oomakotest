@@ -1496,4 +1496,13 @@
 #  cases:
 #    ca: 1170989
 #    es: 1170988
+#
+#cobramentsAvisTPV:
+#  template: input/correu-cobramentsAvisTPV.mako
+#  model: giscedata.facturacio.factura 
+#  poweremailId: som_account_invoice_pending.tpv_pay_alert_template_som
+#  cases:
+#    ca: 444848
+#    es: 403834  
+# 
 # vim: et ts=2 sw=2
