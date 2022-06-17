@@ -147,6 +147,13 @@
 #    es_1_2_1: 112738
 #    es_1_2_0: 188333
 #
+#refacturacioAutoG:
+#  template: input/correu-refacturacioAutoG.mako
+#  model: giscedata.polissa
+#  poweremailId: som_facturacio_comer.refacturacio_auto_g
+#  cases:
+#    ca: 57157
+#
 #notificacioFacturaEndarreridaAvancem:
 #  template: input/correu-notificacioFacturaEndarreridaAvancem.mako
 #  model: giscedata.polissa
