@@ -67,20 +67,8 @@ ${text_legal}
             <strong>Oferta amb tarifa indexada</strong><br>
             <ul>
                 <li>El marge de comercialització amb els costos pel desviament inclosos és de <strong>${marge} €/MWh</strong>. Podeu consultar els detalls de l’oferta en el document adjunt.</li>
-                <li>En aquest altre <a href="https://www.somenergia.coop/tarifa_indexada/CA_EiE_Explicacio_Tarifa_Indexada_Entitats_i_Empreses_Som_Energia.pdf">document</a> expliquem què és la tarifa indexada i el seu funcionament.</li>
+                <li>En aquest altre <a href="https://www.somenergia.coop/documentacio_EiE/CA_EiE_Explica_Tarifa%20Indexada%20per%20Entitats%20i%20Empreses_Som%20Energia.pdf">document</a> expliquem què és la tarifa indexada i el seu funcionament.</li>
             </ul>
-        </p>
-        <br>
-        <p>
-           <strong>Garantia en forma de dipòsit bancari</strong><br>
-           <ul>
-                <li>La contractació amb tarifa indexada està supeditada al pagament d’una garantia en forma de dipòsit bancari, executable en cas d’impagament.</li>
-                <li>L'import de la garantia s'ha calculat a partir de l’ús d’energia de l’últim any i de la nostra predicció dels preus indexats pels pròxims mesos, sense tenir en compte els descomptes del govern espanyol en l’impost elèctric i els càrrecs. Aquest import és una estimació del que podria representar una factura si el preu de l'electricitat es mantingués elevat durant totes les hores del mes. </li>
-                <li>En el vostre cas, l’import de la garantia és de <strong>${garantia} €</strong>.</li>
-                <li>El compte on realitzar l'ingrés és ES82 1491 0001 2920 2709 8223 (Triodos Bank) i en el concepte cal indicar "garantia + número CIF".</li>
-                <li>L’últim dia per rebre l’ingrés és el <strong>${data_limit}</strong>. </li>
-                <li>Abans d’ingressar la garantia caldrà signar el nou contracte amb tarifa indexada, que inclou la clàusula sobre la garantia.</li>
-           </ul>
         </p>
         <br>
         <p>
@@ -134,20 +122,8 @@ ${text_legal}
             <strong>Oferta con tarifa indexada</strong><br>
             <ul>
                 <li>El margen de comercialización con los costes de desvío incluidos es de <strong>${marge} €/MWh</strong>. Podéis consultar los detalles de la oferta en el documento adjunto. </li>
-                <li>En este otro <a href="https://www.somenergia.coop/tarifa_indexada/ES_EiE_Explicacion_Tarifa_Indexada_Entidades_y_Empresas_Som_Energia.pdf">documento</a> explicamos qué es la tarifa indexada y su funcionamiento.  </li>
+                <li>En este otro <a href="https://www.somenergia.coop/documentacio_EiE/ES_EiE_Explica_Tarifa%20Indexada%20para%20Entidades%20y%20Empresas_Som%20Energia.pdf">documento</a> explicamos qué es la tarifa indexada y su funcionamiento.  </li>
             </ul>
-        </p>
-        <br>
-        <p>
-           <strong>Garantía en forma de depósito bancario</strong><br>
-           <ul>
-                <li> La contratación con tarifa indexada está supeditada al pago de una garantía en forma de depósito bancario, ejecutable en caso de impago.</li>
-                <li> El importe de la garantía se ha calculado a partir del uso de energía del último año y de nuestra predicción de precios indexados para los próximos meses, sin tener en cuenta los descuentos del gobierno español en el impuesto eléctrico y los cargos. Así pues, este importe es nuestra estimación de lo que puede representar una factura si el precio de la electricidad se mantuviera elevado durante todas las horas del mes.</li>
-                <li> En vuestro caso, el importe de la garantía es de <strong>${garantia} €</strong>.</li>
-                <li> La cuenta donde realizar el ingreso es ES82 1491 0001 2920 2709 8223 (Triodos Bank) y en el concepto hay que indicar "garantía + número CIF".</li>
-                <li> El último día para recibir el ingreso es el <strong>${data_limit}</strong>.</li>
-                <li> Antes de ingresar la garantía hay que firmar el nuevo contrato con tarifa indexada, que incluye la cláusula sobre la garantía.</li>
-           </ul>
         </p>
         <br>
         <p>
