@@ -25,7 +25,7 @@ Hola,<br>
 <br>
 Ens posem amb contacte amb tu per informar-te que hem tramitat correctament la teva baixa de persona sòcia.<br>
 <br>
-En data d'avui hem fet la devolució dels 100 € del capital social.<br>
+Durant els pròxims dies farem la devolució dels 100 € del capital social.<br>
 <br>
 T’agraïm el temps que has passat amb nosaltres ajudant-nos a canviar el model energètic actual.<br>
 <br>
@@ -49,7 +49,7 @@ Hola,<br>
 <br>
 Nos ponemos en contacto contigo para informarte que hemos tramitado correctamente tu baja de persona socia.<br>
 <br>
-En fecha de hoy hemos efectuado la devolución de los 100 € del capital social.<br>
+Durante los próximos días realizaremos la devolución de los 100 € del capital social.<br>
 <br>
 Te agradecemos el tiempo que has pasado con nosotros ayudándonos a cambiar el modelo energético actual.<br>
 <br>
@@ -65,5 +65,3 @@ info@somenergia.coop
 ${text_legal}
 </body>
 </html>
-
-                
