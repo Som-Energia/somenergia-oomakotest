@@ -64,7 +64,7 @@ ${text_legal}
             Estem a la teva disposició per a qualsevol dubte. Et demanem que, en cas que en tinguis, ens escriguis un correu a info@somenergia.coop.
         </p>
         <br>
-        Una salutació cordial,,<br>
+        Una salutació cordial,<br>
         <br>
         Equip de Som Energia<br>
         <a href="http://ca.support.somenergia.coop/">Suport</a> / <a href="http://es.support.somenergia.coop/">Ayuda</a> / <a href="http://eu.support.somenergia.coop/">Laguntza</a> / <a href="http://gl.support.somenergia.coop/">Axuda<br>
