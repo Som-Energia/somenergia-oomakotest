@@ -5,4 +5,4 @@ to: ${object.polissa_id.titular.address[0].email}
 subject_translations:
   ca_ES: 'Preus actualitzats amb l’IVA al 5% establert pel govern espanyol'
   es_ES: 'Precios actualizados con el IVA al 5% establecido por el gobierno español'
-subject: 'Preus actualitzats amb l’IVA al 5% establert pel govern espanyol'
+subject: 'Precios actualizados con el IVA al 5% establecido por el gobierno español'
