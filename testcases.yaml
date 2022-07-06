@@ -1480,6 +1480,14 @@
 #    ca: 491957
 #    es: 491958
 #
+#rebaixaIva5:
+#  template: input/correu-rebaixaIva5.mako
+#  model: som.enviament.massiu
+#  poweremailId: som_infoenergia.rebaixa_iva_5
+#  cases:
+#    ca: 491957
+#    es: 491958
+#
 #segonNoRenovacio:
 #  template: input/correu-segonNoRenovacio.mako
 #  model: som.enviament.massiu
