@@ -1,8 +1,11 @@
 lang: ${object.partner_id.lang}
-cc: ${object.polissa_id.titular.www_email}, correo@certificado.lleida.net,<% mail = '{}'.format(object.polissa_id.administradora.address[0].email if object.polissa_id.administradora else '') %>  ${mail}
+cc: ${object.polissa_id.titular.www_email}, correo@certificado.lleida.net,<% mail
+  = '{}'.format(object.polissa_id.administradora.address[0].email if object.polissa_id.administradora
+  else '') %>  ${mail}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
   ca_ES: Procediment tall de llum (Annex III)
   es_ES: Procedimiento corte de luz (Anexo III)
-subject: Procedimiento corte de luz (Anexo III) / Procediment tall de llum (Annex III)
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+subject: Procedimiento corte de luz (Anexo III) / Procediment tall de llum (Annex
+  III)
