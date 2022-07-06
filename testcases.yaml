@@ -1325,10 +1325,24 @@
 #  cases:
 #    ca: 17
 #    es: 1028
-#infoenergiaEnviamentDomestics:
-#  template: input/correu-infoenergiaEnviamentDomestics.mako
+# infoenergiaEnviamentDomestics:
+#   template: input/correu-infoenergiaEnviamentDomestics.mako
+#   model: giscedata.polissa
+#   poweremailId: som_infoenergia.env_empowering_report_domestic
+#   cases:
+#     ca: 17
+#     es: 1028
+# infoenergiaEnviamentEmpreses:
+#  template: input/correu-infoenergiaEnviamentEmpreses.mako
 #  model: giscedata.polissa
-#  poweremailId: 60
+#  poweremailId: som_infoenergia.env_empowering_report_empresa
+#  cases:
+#    ca: 17
+#    es: 1028
+# infoenergiaEnviamentFVAuto:
+#  template: input/correu-infoenergiaEnviamentFVAuto.mako
+#  model: giscedata.polissa
+#  poweremailId: empowering_customize.env_empowering_report
 #  cases:
 #    ca: 17
 #    es: 1028

@@ -1,0 +1,7 @@
+cc: false
+to: ${object.titular.address[0].email}
+subject_translations:
+  es_ES: '[Informe] ¿Qué potencial de autoproducción tienes? (contrato ${object.name})'
+  ca_ES: '[Informe] Quin potencial d’autoproducció tens? (contracte ${object.name})'
+subject: INFOENERGIA ${env['user']._context.get('period')} (${env['user']._context.get('empowering_channel')})
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

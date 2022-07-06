@@ -1,7 +1,7 @@
-cc: false
-to: ${object.titular.address[0].email}
+cc: <% mail = '{}'.format(object.administradora.address[0].email if object.administradora else '') %>  ${mail}
+to: ${object.pagador_email}
 subject_translations:
-  ca_ES: Segon informe de 2020 del servei Infoenergia (contracte ${object.name})
-  es_ES: Segundo informe de 2020 del Servicio Infoenergía (contrato ${object.name})
-subject: Segon informe de 2020 del servei Infoenergia (contracte ${object.name})
+  ca_ES: Infoenergia - Tancament d’any 2019 (contracte ${object.name})
+  es_ES: Infoenergia - Cierre del año 2019 (contracte ${object.name})
+subject: Infoenergia - Tancament d’any 2019 (contracte ${object.name})
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
