@@ -1,5 +1,6 @@
 lang: ${object.polissa_id.titular.lang}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+cc: false
 to: ${object.polissa_id.titular.address[0].email}
 subject_translations:
   ca_ES: 'Preus actualitzats amb l’IVA al 5% establert pel govern espanyol'
