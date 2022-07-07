@@ -26,13 +26,13 @@ text_legal = render(t_obj.read(
 <br />
 % if object.partner_id.lang != "es_ES":
 <br />
-Benvolgut/da,<br />
+Hola,<br />
 <br />
-T'adjuntem la liquidació d’interessos de l’any 2018 corresponent a la teva aportació voluntària al capital social de SOM ENERGIA SCCL.<br />
+Com recordaràs, l'Assemblea General de l'any passat va aprovar que el període de liquidació d'interessos s'ajustés al nostre calendari cooperatiu i que enlloc de seguir l'any natural agafaríem el període comprès entre 01/07 i el 30/06 de l'any següent. Per tal d'ajustar-nos a aquest canvi, l'any passat, el mes de juliol, vàrem va fer una liquidació d'interessos de només 6 mesos (01/01/2021 a 30/06/2021). Preparant les liquidacions d'interessos pel període 01/07/2021 a 30/06/2022 ens hem adonat que a tu no t'haviem liquidat encara aquests 6 mesos. T'adjuntem la liquidació d'interessos de l'any 2018 corresponent a la teva aportació voluntària al capital social de SOM ENERGIA SCCL.<br />
 <br />
-L'import d'aquesta liquidació et serà transferit el proper 15 de gener.<br />
+T'adjuntem ara la liquidació, perdona per l'errada. Revisa si us plau que el número de compte bancari d'abonament sigui el correcte i, en cas que hi hagi algun error, escriu-nos urgentment a aquest mateix correu (aporta@somenergia.coop).<br />
 <br />
-Verifica que el número de compte bancari d’abonament sigui el correcte i sinó escriu-nos urgentment en aquest mateix correu.<br />
+Aquesta interessos seran transferits a partir del dia 15/07<br />
 <br />
 <u>Resum de la liquidació</u><br />
 Número liquidació: ${object.number or ''}<br />
@@ -47,7 +47,7 @@ Aprofitem per agrair-te una vegada més la teva implicació amb el nostre projec
 Atentament,<br />
 <br />
 Equip Som Energia<br />
-invertir@somenergia.coop<br />
+aporta@somenergia.coop<br />
 <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br />
 <br />
 % endif
@@ -56,13 +56,13 @@ invertir@somenergia.coop<br />
 % endif
 % if object.partner_id.lang != "ca_ES":
 <br />
-Saludos,<br />
+Hola,<br />
 <br />
-Te enviamos la liquidación de intereses del año 2018 correspondiente a tu aportación voluntaria al capital social de SOM ENERGIA SCCL<br />
+Como recordarás, la Asamblea General del año pasado aprobó que el periodo de liquidación de intereses se ajustara a nuestro calendario cooperativo y que en lugar de seguir el año natural tomaríamos de referencia el periodo comprendido entre el 01/07 y el 30/06 del año siguiente. Para ajustarnos a este cambio, el año pasado (en julio) hicimos una liquidación de intereses de sólo 6 meses (01/01/2021 a 30/06/2021). Ahora, preparando las liquidaciones de intereses del periodo 01/07/2021 a 30/06/2022 nos hemos percatado que a ti no te habíamos liquidado aún estos 6 meses.<br />
 <br />
-El importe de esta liquidación será transferido en tu cuenta bancaria el próximo 15 de enero.<br />
+Te adjuntamos ahora la liquidación, perdona por el error. Revisa por favor que el número de cuenta bancaria sea el correcto y, en caso que haya algún error, escribenos urgentemente a este mismo correo (aporta@somenergia.coop).<br />
 <br />
-Verifica que la cuenta de abono sea la correcta y sino escríbenos urgentemente en este mismo correo.<br />
+Estos intereses se transferirán a partir del día 15/07<br />
 <br />
 <u>Resumen de la liquidación</u><br />
 Número liquidación:: ${object.number or ''}<br />
@@ -74,11 +74,10 @@ Núm. IBAN: ${iban}<br />
 <br />
 Aprovechamos para agradecerte una vez más tu implicación con nuestro proyecto.<br />
 <br />
-<br />
 Atentamente,<br />
 <br />
 Equipo de Som Energia<br />
-invertir@somenergia.coop<br />
+aporta@somenergia.coop<br />
 <a href="https://www.somenergia.coop">www.somenergia.coop</a><br />
 <br />
 % endif

@@ -1151,14 +1151,14 @@
 #    ca: 809864
 #    es: 810046
 #
-#liquidacioAportacioVoluntaria:
-#  template: input/correu-liquidacioAportacioVoluntaria.mako
-#  model: account.invoice
-#  poweremailId: 11
-#  cases:
-#    ca: 809864
-#    es: 810046
-#
+liquidacioAportacioVoluntaria:
+  template: input/correu-liquidacioAportacioVoluntaria.mako
+  model: account.invoice
+  poweremailId: 11
+  cases:
+    ca: 809864
+    es: 810046
+
 #liquidacioCertificatRetencions:
 #  template: input/correu-liquidacioCertificatRetencions.mako
 #  model: account.invoice
@@ -1225,38 +1225,38 @@
 #    normal_ca: 444848
 #    normal_es: 403834
 #
-#impagamentAnnex3:
-#  template: input/correu-impagamentAnnex3.mako
-#  model: giscedata.facturacio.factura
-#  poweremailId: 237
-#  cases:
-#    normal_ca: 7834586
-#    normal_es: 7721398
-#
-#impagamentAnnex2:
-#  template: input/correu-impagamentAnnex2.mako
-#  model: giscedata.facturacio.factura
-#  poweremailId: 264
-#  cases:
-#    normal_ca: 7834586
-#    normal_es: 7721398
-#
-#impagamentSociPreAnnex3:
-#  template: input/correu-impagamentSociPreAnnex3.mako
-#  model: giscedata.facturacio.factura
-#  poweremailId: 242
-#  cases:
-#    normal_ca: 444848
-#    normal_es: 403834
-#
-#impagamentAnnex4:
-#  template: input/correu-impagamentAnnex4.mako
-#  model: giscedata.facturacio.factura
-#  poweremailId: 240
-#  cases:
-#    normal_ca: 7834586
-#    normal_es: 7721398
-#
+impagamentAnnex3:
+  template: input/correu-impagamentAnnex3.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 237
+  cases:
+    normal_ca: 7834586
+    normal_es: 7721398
+
+impagamentAnnex2:
+  template: input/correu-impagamentAnnex2.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 264
+  cases:
+    normal_ca: 7834586
+    normal_es: 7721398
+
+impagamentSociPreAnnex3:
+  template: input/correu-impagamentSociPreAnnex3.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 242
+  cases:
+    normal_ca: 444848
+    normal_es: 403834
+
+impagamentAnnex4:
+  template: input/correu-impagamentAnnex4.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 240
+  cases:
+    normal_ca: 7834586
+    normal_es: 7721398
+
 #impagamentTranferRebuda:
 #  template: input/correu-impagamentTransferRebuda.mako
 #  model: giscedata.facturacio.factura
