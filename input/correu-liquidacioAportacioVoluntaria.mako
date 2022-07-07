@@ -28,7 +28,7 @@ text_legal = render(t_obj.read(
 <br />
 Hola,<br />
 <br />
-Com recordaràs, l'Assemblea General de l'any passat va aprovar que el període de liquidació d'interessos s'ajustés al nostre calendari cooperatiu i que enlloc de seguir l'any natural agafaríem el període comprès entre 01/07 i el 30/06 de l'any següent. Per tal d'ajustar-nos a aquest canvi, l'any passat, el mes de juliol, vàrem va fer una liquidació d'interessos de només 6 mesos (01/01/2021 a 30/06/2021). Preparant les liquidacions d'interessos pel període 01/07/2021 a 30/06/2022 ens hem adonat que a tu no t'haviem liquidat encara aquests 6 mesos. T'adjuntem la liquidació d'interessos de l'any 2018 corresponent a la teva aportació voluntària al capital social de SOM ENERGIA SCCL.<br />
+Com recordaràs, l'Assemblea General de l'any passat va aprovar que el període de liquidació d'interessos s'ajustés al nostre calendari cooperatiu i que enlloc de seguir l'any natural agafaríem el període comprès entre 01/07 i el 30/06 de l'any següent. Per tal d'ajustar-nos a aquest canvi, l'any passat, el mes de juliol, vàrem va fer una liquidació d'interessos de només 6 mesos (01/01/2021 a 30/06/2021). Preparant les liquidacions d'interessos pel període 01/07/2021 a 30/06/2022 ens hem adonat que a tu no t'haviem liquidat encara aquests 6 mesos.<br />
 <br />
 T'adjuntem ara la liquidació, perdona per l'errada. Revisa si us plau que el número de compte bancari d'abonament sigui el correcte i, en cas que hi hagi algun error, escriu-nos urgentment a aquest mateix correu (aporta@somenergia.coop).<br />
 <br />
