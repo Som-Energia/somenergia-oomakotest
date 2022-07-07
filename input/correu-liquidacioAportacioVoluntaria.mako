@@ -37,7 +37,7 @@ Aquests interessos seran transferits a partir del dia 15/07<br />
 <u>Resum de la liquidació</u><br />
 Número liquidació: ${object.number or ''}<br />
 Titular: ${object.partner_id.name}<br />
-Període del ${object.invoice_line[0].name.split(' ')[1]} al ${object.invoice_line[-1].name.split(' ')[3]}<br />
+Període del ${object.invoice_line[0].name.split(' ')[3]} al ${object.invoice_line[0].name.split(' ')[6]}<br />
 <strong>Import total: ${object.amount_total}€</strong><br />
 <br />
 Núm. IBAN: ${iban}<br />
@@ -67,7 +67,7 @@ Estos intereses se transferirán a partir del día 15/07<br />
 <u>Resumen de la liquidación</u><br />
 Número liquidación:: ${object.number or ''}<br />
 Titular: ${object.partner_id.name}<br />
-Período del ${object.invoice_line[0].name.split(' ')[1]} al ${object.invoice_line[-1].name.split(' ')[3]}<br />
+Período del ${object.invoice_line[0].name.split(' ')[3]} al ${object.invoice_line[0].name.split(' ')[6]}<br />
 <strong>Importe total: ${object.amount_total}€</strong><br />
 <br />
 Núm. IBAN: ${iban}<br />
