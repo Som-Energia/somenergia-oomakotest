@@ -32,7 +32,7 @@ Com recordaràs, l'Assemblea General de l'any passat va aprovar que el període 
 <br />
 T'adjuntem ara la liquidació, perdona per l'errada. Revisa si us plau que el número de compte bancari d'abonament sigui el correcte i, en cas que hi hagi algun error, escriu-nos urgentment a aquest mateix correu (aporta@somenergia.coop).<br />
 <br />
-Aquesta interessos seran transferits a partir del dia 15/07<br />
+Aquests interessos seran transferits a partir del dia 15/07<br />
 <br />
 <u>Resum de la liquidació</u><br />
 Número liquidació: ${object.number or ''}<br />
