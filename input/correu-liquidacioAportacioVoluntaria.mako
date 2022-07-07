@@ -65,7 +65,7 @@ Te adjuntamos ahora la liquidación, perdona por el error. Revisa por favor que 
 Estos intereses se transferirán a partir del día 15/07<br />
 <br />
 <u>Resumen de la liquidación</u><br />
-Número liquidación:: ${object.number or ''}<br />
+Número liquidación: ${object.number or ''}<br />
 Titular: ${object.partner_id.name}<br />
 Período del ${object.invoice_line[0].name.split(' ')[3]} al ${object.invoice_line[0].name.split(' ')[6]}<br />
 <strong>Importe total: ${object.amount_total}€</strong><br />
