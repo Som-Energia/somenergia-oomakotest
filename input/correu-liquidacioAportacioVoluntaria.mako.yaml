@@ -1,8 +1,8 @@
-lang: ${object.partner_id.lang}
+lang: ${object.invoice_id.partner_id.lang}
 cc: false
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
-to: ${object.address_invoice_id.email}
+to: ${object.invoice_id.address_invoice_id.email}
 subject_translations:
-  es_ES: Liquidación intereses aportación voluntaria 2021
-  ca_ES: Liquidació interessos aportació voluntària 2021
-subject: Liquidación intereses aportación voluntaria 2021
+  es_ES: Liquidación intereses aportación voluntaria 2022
+  ca_ES: Liquidació interessos aportació voluntària 2022
+subject: Liquidación intereses aportación voluntaria 2022
