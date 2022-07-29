@@ -51,14 +51,9 @@ T'escrivim per recordar-te el contracte ${object.polissa_id.name} ubicat a ${obj
 <br>
 Després de diversos intents sense èxit per regularitzar aquesta situació, el proper ${data_juridic} passarem el cas als nostres serveis jurídics perquè emprenguin les accions que considerin oportunes.<br>
 <br>
-T'informem que comunicarem aquest deute als serveis d'informació sobre solvència patrimonial i de crèdit (ASNEF), d'acord amb la normativa aplicable a aquest efecte.<br>
-<br>
-A continuació et passem un resum de la factura pendent i les instruccions de pagament com a última oportunitat per saldar el deute pendent abans de passar el cas als nostres advocats.<br>
 <br>
 % endif
-Per regularitzar la següent factura, has fer el pagament mitjançant el document adjunt amb codi de barres. <br/>
-<br/>
-Pots realitzar-lo des del següent  <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
+A continuació trobaràs un resum de la factura pendent i les instruccions per regularitzar-la.<br> 
 <br/>
 Resum de la teva factura<br/>
 <br/>
@@ -69,6 +64,15 @@ Resum de la teva factura<br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
 - <B>Import total: ${object.invoice_id.amount_total}€</B> <br/>
+<br/>
+Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
+<br/>
+<ul>
+  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li>
+  <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
+</ul>
+<br/>
+Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
 % if data_baixa:
     T'informem que rebràs tants correus com factures tinguis pendents de pagament.<br>
@@ -98,10 +102,8 @@ Te informamos que también comunicaremos esta deuda a los servicios de informaci
 A continuación te pasamos un resumen de las facturas impagadas y nuestro número de cuenta bancaria como última oportunidad para saldar las deudas pendientes antes de pasar el caso a nuestros abogados.<br>
 <br>
 % endif
-Para regularizar la siguiente factura, debes hacer el pago mediante el documento adjunto con código de barras.<br/>
 <br/>
-Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
-
+A continuación encontrarás un resúmen de la factura pendiente de pago y las instrucciones para regularizarla.
 <br/>
 Resumen de tu factura<br/>
 <br/>
@@ -113,6 +115,15 @@ Resumen de tu factura<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
 - <B>Importe total: ${object.invoice_id.amount_total}</B>€<br/>
 <br/>
+Para regularizar la factura tienes estas dos opciones:<br/>
+<br/>
+<ul>
+  <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</>a. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">este artículo.</a></li>
+  <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
+</ul>
+<br/>
+En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">¿Como hacer el pago mediante código de barras?</a>
+
 % if data_baixa:
 Te informamos que recibirás tantos correos como facturas tengas pendientes de pago.<br>
 <br>
