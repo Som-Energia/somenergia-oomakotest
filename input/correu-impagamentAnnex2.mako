@@ -60,12 +60,10 @@ Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses 
 % endif
 <br/>
 Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
-<br/>
 <ul>
-  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li>
+  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li><br/>
   <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
 </ul>
-<br/>
 Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
 O si ho prefereixes, podem tornar a passar pel banc aquesta factura sempre que t’asseguris que hi ha saldo suficient i que no hi hagi cap problema amb la domiciliació. En aquest cas, necessitem que responguis aquest correu amb la petició.<br/>
@@ -141,16 +139,14 @@ Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos po
 % endif
 <br/>
 Para regularizarla, puedes hacerlo mediante:<br/>
-<br/>
 <ul>
-  <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</>a. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">este artículo.</a></li>
+  <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a>. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">este artículo.</a></li><br/>
   <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
 </ul>
-<br/>
-En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">¿Como hacer el pago mediante código de barras?</a>
+En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Como hacer el pago mediante código de barras?</a><br/>
 <br/>
 O si lo prefieres, podemos volver a pasar por el banco esta factura, siempre que te asegures que haya saldo suficiente y que no haya ningún problema con la domiciliación. En este caso, necesitamos que respondas este correo con la petición.<br/>
-<br>
+<br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>
 Un saludo,<br/>

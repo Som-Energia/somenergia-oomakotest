@@ -51,7 +51,6 @@ T'escrivim per recordar-te el contracte ${object.polissa_id.name} ubicat a ${obj
 <br>
 Després de diversos intents sense èxit per regularitzar aquesta situació, el proper ${data_juridic} passarem el cas als nostres serveis jurídics perquè emprenguin les accions que considerin oportunes.<br>
 <br>
-<br>
 % endif
 A continuació trobaràs un resum de la factura pendent i les instruccions per regularitzar-la.<br> 
 <br/>
@@ -66,12 +65,10 @@ Resum de la teva factura<br/>
 - <B>Import total: ${object.invoice_id.amount_total}€</B> <br/>
 <br/>
 Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
-<br/>
 <ul>
-  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li>
+  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li><br/>
   <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
 </ul>
-<br/>
 Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
 % if data_baixa:
@@ -97,12 +94,7 @@ Te escribimos para recordarte que el contrato ${object.polissa_id.name} ubicado 
 <br>
 Después de varios intentos sin éxito para regularizar la situación, el próximo ${data_juridic} pasaremos el caso a nuestros servicios jurídicos para que emprendan las acciones que consideren oportunas.<br>
 <br>
-Te informamos que también comunicaremos esta deuda a los servicios de información sobre solvencia patrimonial y de crédito (ASNEF), de acuerdo con la normativa aplicable a este efecto.<br>
-<br>
-A continuación te pasamos un resumen de las facturas impagadas y nuestro número de cuenta bancaria como última oportunidad para saldar las deudas pendientes antes de pasar el caso a nuestros abogados.<br>
-<br>
 % endif
-<br/>
 A continuación encontrarás un resúmen de la factura pendiente de pago y las instrucciones para regularizarla.
 <br/>
 Resumen de tu factura<br/>
@@ -116,13 +108,11 @@ Resumen de tu factura<br/>
 - <B>Importe total: ${object.invoice_id.amount_total}</B>€<br/>
 <br/>
 Para regularizar la factura tienes estas dos opciones:<br/>
-<br/>
 <ul>
-  <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</>a. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">este artículo.</a></li>
+  <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a>. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">este artículo.</a></li><br/>
   <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
 </ul>
-<br/>
-En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">¿Como hacer el pago mediante código de barras?</a>
+En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Como hacer el pago mediante código de barras?</a>
 
 % if data_baixa:
 Te informamos que recibirás tantos correos como facturas tengas pendientes de pago.<br>
