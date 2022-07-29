@@ -27,8 +27,8 @@ text_legal = render(t_obj.read(
 <%
 try:
   p_obj = object.pool.get('res.partner')
-  if not p_obj.vat_es_empresa(object._cr, object._uid,'object.partner_id.vat'):
-    nom_pagador =' ' + object.partner_id.name.split(',')[1].lstrip()
+  if not p_obj.vat_es_empresa(object._cr, object._uid,'object.polissa_id.pagador.vat'):
+    nom_pagador =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.polissa_id.pagador.name)['nom']
   else:
     nom_pagador = ''
 except:
@@ -41,32 +41,31 @@ Hola${nom_pagador},<br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Vam enviar el rebut de la factura d'electricitat a la teva entitat bancària però ens l’ha retornat.<br/>
 <br/>
-T‘agrairem que contestis aquest correu i ens indiquis com i quan es pagarà aquesta factura. Per fer-ho, tens dues opcions:<br/>
+Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
 <br/>
-Realitzar el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
+<ul>
+  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li>
+  <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
+</ul>
 <br/>
-O si ho prefereixes, podem tornar a passar pel banc aquesta factura sempre que t’asseguris que hi ha saldo suficient i que no hi hagi cap problema amb la domiciliació.<br/>
+Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
 <br/>
-T’informem que si et trobes en una situació de vulnerabilitat econòmica, i en compliment de la legislació vigent (Reial decret 897/2017, de 6 d’octubre, pel qual es regula la figura del consumidor vulnerable, el bo social i altres mesures de protecció per als consumidors domèstics d’energia elèctrica), el teu contracte hauria de passar a la comercialitzadora de referència per poder-te acollir al bo social. Som Energia no el pot aplicar per llei, malgrat que el financi.<br/>
-<br/>
-Per canviar de comercialitzadora pots fer el tràmit tu mateix contractant amb ella. Tanmateix, si vols que ho gestioni directament Som Energia, contesta’ns aquest correu i t’enviarem un document de conformitat que ens hauràs de retornar signat.<br/>
+O si ho prefereixes, podem tornar a passar pel banc aquesta factura sempre que t’asseguris que hi ha saldo suficient i que no hi hagi cap problema amb la domiciliació. En aquest cas, necessitem que responguis aquest correu amb la petició.<br/>
 <br/>
 <U>Resum de la teva factura</U><br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
 - Codi CUPS: ${object.cups_id.name}<br/>
-<br/>
 - Número de factura: <B>${object.number}</B><br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
 -<B> Import total: ${object.invoice_id.amount_total}€</B> <br/>
-% if object.invoice_id.amount_total != object.invoice_id.residual:
-- <B>Import pendent: ${object.invoice_id.residual}€</B><br/>
-% endif
+<br/>
+T’informem que si et trobes en una situació de vulnerabilitat econòmica, i en compliment de la legislació vigent (Reial decret 897/2017, de 6 d’octubre, pel qual es regula la figura del consumidor vulnerable, el bo social i altres mesures de protecció per als consumidors domèstics d’energia elèctrica), el teu contracte hauria de passar a la comercialitzadora de referència per poder-te acollir al bo social. Som Energia no el pot aplicar per llei, malgrat que el financi.<br/>
 <br/>
 Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
-Salutacions,<br/>
+Cordialment,<br/>
 <br/>
 Equip de Som Energia<br/>
 factura@somenergia.coop<br/>
@@ -77,7 +76,7 @@ Si compliu els requisits per ser consumidor vulnerable, podeu sol·licitar a una
 <br/>
 L’enllaç a la pàgina web de la CNMC, en la qual trobareu les dades necessàries per contactar amb la comercialitzadora de referència, és el següent: <a href="https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados">https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados</a><br/>
 <br/>
-Addicionalment,, si compliu els requisits per ser vulnerable sever, us podeu posar en contacte amb els serveis socials del municipi i la comunitat autònoma en què residiu perquè us informin sobre la possibilitat d’atendre el pagament del vostre subministrament d’electricitat. Els requisits per ser consumidor vulnerable es recullen a l’article 3 del Reial decret 897/2017, de 6 d’octubre, pel qual es regula la figura del consumidor vulnerable, el bo social i altres mesures de protecció per als consumidors domèstics d’energia elèctrica, del qual us remetem un extracte.<br/>
+Addicionalment, si compliu els requisits per ser vulnerable sever, us podeu posar en contacte amb els serveis socials del municipi i la comunitat autònoma en què residiu perquè us informin sobre la possibilitat d’atendre el pagament del vostre subministrament d’electricitat. Els requisits per ser consumidor vulnerable es recullen a l’article 3 del Reial decret 897/2017, de 6 d’octubre, pel qual es regula la figura del consumidor vulnerable, el bo social i altres mesures de protecció per als consumidors domèstics d’energia elèctrica, del qual us remetem un extracte.<br/>
 <br/>
 Article 3. Definició de consumidor vulnerable.<br/>
 <br/>
@@ -115,32 +114,31 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 Hace unos días enviamos el recibo de tu factura de electricidad a tu entidad bancaria pero nos ha venido devuelto.<br/>
 <br/>
-Te agradeceremos que respondas a este correo y nos indiques cómo y cuándo se pagará esta factura. Para ello, tienes dos opciones:<br/>
+Para regularizarla, puedes hacerlo mediante:<br/>
 <br/>
-Realizar el pago mediante el documento adjunto con código de barras. Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www1.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
+<ul>
+  <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</>a. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">este artículo.</a></li>
+  <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
+</ul>
 <br/>
-O si lo prefieres, podemos volver a pasar por el banco esta factura siempre que te asegures que hay saldo suficiente y que no haya ningún problema con la domiciliación.<br/>
+En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">¿Como hacer el pago mediante código de barras?</a>
 <br/>
-Te informamos que si te encuentras en una situación de vulnerabilidad económica, y en cumplimiento de la legislación vigente (Real Decreto 897/2017, de 6 de ocutbre, por el cual se regula la figura del consumidor vulnerable, el bono social y otras medidas de protección para los consumidores domésticos de energía eléctrica), tu contrato tendría que pasar a la comercializadora de referencia para poderte acoger al bono social. Som Energia no lo puede aplicar por ley, a pesar de que lo financia.<br/>
-<br/>
-Para cambiar de comercializadora puedes hacer el trámite tu mismo contactando con ella. Sin embargo, si quieres que lo gestione directamente Som Energia, contéstanos este correo y te enviaremos un documento que tendrás que devolver firmado.<br/>
+O si lo prefieres, podemos volver a pasar por el banco esta factura, siempre que te asegures que haya saldo suficiente y que no haya ningún problema con la domiciliación. En este caso, necesitamos que respondas este correo con la petición.<br/>
 <br/>
 <U>Resumen de la factura</U><br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
 - Código CUPS: ${object.cups_id.name}<br/>
-<br/>
 - Número factura: <B>${object.number}</B><br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
 - <B>Importe total: ${object.invoice_id.amount_total}€</B><br/>
-% if object.invoice_id.amount_total != object.invoice_id.residual:
-- <B>Importe pendiente: ${object.invoice_id.residual}€</B><br/>
-% endif
+<br/>
+Te informamos que si te encuentras en una situación de vulnerabilidad económica, y en cumplimiento de la legislación vigente (Real Decreto 897/2017, de 6 de ocutbre, por el cual se regula la figura del consumidor vulnerable, el bono social y otras medidas de protección para los consumidores domésticos de energía eléctrica), tu contrato tendría que pasar a la comercializadora de referencia para poderte acoger al bono social. Som Energia no lo puede aplicar por ley, a pesar de que lo financia.<br/>
 <br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>
-Un saludo,<br/>
+Saludos,<br/>
 <br/>
 Equipo de Som Energia<br/>
 factura@somenergia.coop<br/>
