@@ -40,8 +40,17 @@ Hola ${nom_pagador},<br />
 % if object.invoice_id.partner_id.lang != "es_ES":
 Ens posem en contacte amb tu per informar-te que a dia d’avui no s’han satisfet els imports del deute contret amb Som Energia de les factures pendents de subministrament elèctric. Per aquest motiu, l’empresa distribuïdora de la teva zona <b>tallarà la llum</b> del punt de subministrament amb adreça <b>${object.cups_id.direccio}</b> del qual ets titular. Avisarem l’empresa distribuïdora, perquè faci efectiu el tall de subministrament, 48h després de l’enviament d’aquest correu.<br />
 <br />
-Has de fer el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
+Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
 <br/>
+<ul>
+  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li>
+  <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
+</ul>
+<br/>
+Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
+<br/>
+Un cop hagis fet el pagament és important que ens enviïs el justificant de pagament contestant aquest correu. El pagament pot tardar en arribar-nos i d’aquesta manera, no arribarem a demanar el tall de subministrament per impagament.
+<br>
 Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
 <br />
 <U>Resum de la teva factura</U><br/>
@@ -109,8 +118,17 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 Nos ponemos en contacto contigo para informarte que a día de hoy no se han satisfecho los importes de la deuda contraída con Som Energia de las facturas pendientes de suministro eléctrico. Por este motivo, la empresa distribuidora de tu zona procederá a <b>cortar la luz</b> del punto de suministro con dirección <b>${object.cups_id.direccio}</b> del cual eres titular. Daremos aviso a la empresa distribuidora para que haga efectivo el corte de suministro, 48h después del envío de este correo.<br/>
-<br />
-Tienes que hacer el pago mediante el documento adjunto con código de barras. Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www1.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
+<br/>
+Para regularizarla, puedes hacerlo mediante:<br/>
+<br/>
+<ul>
+  <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</>a. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">este artículo.</a></li>
+  <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
+</ul>
+<br/>
+En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">¿Como hacer el pago mediante código de barras?</a><br/>
+<br/>
+Una vez realizado el pago es importante que nos envíes el justificante de pago contestando este correo. El pago puede tardar en llegarnos y de esta forma, no llegaremos a pedir el corte de suministro por impago.<br/>
 <br/>
 Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
 <br/>
