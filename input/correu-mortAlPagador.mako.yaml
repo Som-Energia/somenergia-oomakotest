@@ -1,0 +1,6 @@
+lang: ${object.polissa_id.titular.lang}
+cc: 'False'
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.polissa_id.titular.address[0].email},${object.polissa_id.pagador.address[0].email}
+subject_translations: {}
+subject: Situació irregular amb el contracte de llum ${object.polissa_id.name}
