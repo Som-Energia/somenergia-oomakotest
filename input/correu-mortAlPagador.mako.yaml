@@ -3,6 +3,6 @@ cc: false
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.polissa_id.titular.address[0].email}
 subject_translations:
-  es_ES: Situación irregular con el contrato de luz ${object.polissa_id.name}
   ca_ES: Situació irregular amb el contracte de llum ${object.polissa_id.name}
+  es_ES: Situación irregular con el contrato de luz ${object.polissa_id.name}
 subject: Situació irregular amb el contracte de llum ${object.polissa_id.name}
