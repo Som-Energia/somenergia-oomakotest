@@ -51,13 +51,14 @@ Al següent article t’expliquem amb més detall com funcionen aquests dos mèt
 O si ho prefereixes, podem tornar a passar pel banc aquesta factura sempre que t’asseguris que hi ha saldo suficient i que no hi hagi cap problema amb la domiciliació. En aquest cas, necessitem que responguis aquest correu amb la petició.<br/>
 <br/>
 <U>Resum de la teva factura</U><br/>
+<br/>
 - Adreça punt subministrament: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
 - Codi CUPS: ${object.cups_id.name}<br/>
-- Número de factura: <B>${object.number}</B><br/>
+- Número de factura: ${object.number}<br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
--<B> Import total: ${object.invoice_id.amount_total}€</B> <br/>
+- Import total: ${object.invoice_id.amount_total}€<br/>
 <br/>
 T’informem que si et trobes en una situació de vulnerabilitat econòmica, i en compliment de la legislació vigent (Reial decret 897/2017, de 6 d’octubre, pel qual es regula la figura del consumidor vulnerable, el bo social i altres mesures de protecció per als consumidors domèstics d’energia elèctrica), el teu contracte hauria de passar a la comercialitzadora de referència per poder-te acollir al bo social. Som Energia no el pot aplicar per llei, malgrat que el financi.<br/>
 <br/>
@@ -122,13 +123,14 @@ En el siguiente artículo te explicamos con más detalle como funcionan estos do
 O si lo prefieres, podemos volver a pasar por el banco esta factura, siempre que te asegures que haya saldo suficiente y que no haya ningún problema con la domiciliación. En este caso, necesitamos que respondas este correo con la petición.<br/>
 <br/>
 <U>Resumen de la factura</U><br/>
+<br/>
 - Dirección punto suministro: ${object.cups_id.direccio}<br/>
 - Titular: ${object.polissa_id.titular.name}<br/>
 - Código CUPS: ${object.cups_id.name}<br/>
-- Número factura: <B>${object.number}</B><br/>
+- Número factura: ${object.number}<br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
-- <B>Importe total: ${object.invoice_id.amount_total}€</B><br/>
+- Importe total: ${object.invoice_id.amount_total}€<br/>
 <br/>
 Te informamos que si te encuentras en una situación de vulnerabilidad económica, y en cumplimiento de la legislación vigente (Real Decreto 897/2017, de 6 de ocutbre, por el cual se regula la figura del consumidor vulnerable, el bono social y otras medidas de protección para los consumidores domésticos de energía eléctrica), tu contrato tendría que pasar a la comercializadora de referencia para poderte acoger al bono social. Som Energia no lo puede aplicar por ley, a pesar de que lo financia.<br/>
 <br/>

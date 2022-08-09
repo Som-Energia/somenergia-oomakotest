@@ -42,18 +42,19 @@ T’informem que ha vençut el període de pagament de la factura emesa a contin
 <br/>
 Com a conseqüència, aviat se’t pot remetre un requeriment fefaent de pagament.<br/>
 <br/>
-En cas de no abonar-se la quantitat deguda, en un termini de  <b>2 mesos a partir de la notificació</b> a partir de la recepció d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
+En cas de no abonar-se la quantitat deguda, en un termini de  2 mesos a partir de la notificació a partir de la recepció d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
 Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
 <br/>
 <br/>
 <U>Resum de la teva factura</U><br/>
-- Número de factura: <B>${object.number}</B><br/>
+<br/>
+- Número de factura: ${object.number}<br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
-- <B>Import total: ${object.invoice_id.amount_total}€</B> <br/>
+- Import total: ${object.invoice_id.amount_total}€<br/>
 % if object.invoice_id.amount_total != object.invoice_id.residual:
-- <B>Import pendent: ${object.invoice_id.residual}€</B><br/>
+- Import pendent: ${object.invoice_id.residual}€<br/>
 % endif
 <br/>
 Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
@@ -124,12 +125,13 @@ Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos po
 <br/>
 <br/>
 <U>Resumen de la factura</U><br/>
-- Número factura: <B>${object.number}</B><br/>
+<br/>
+- Número factura: ${object.number}<br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
-- <B>Importe total: ${object.invoice_id.amount_total}</B>€<br/>
+- Importe total: ${object.invoice_id.amount_total}€<br/>
 % if object.invoice_id.amount_total != object.invoice_id.residual:
-- <B>Importe pendiente: ${object.invoice_id.residual}€</B><br/>
+- Importe pendiente: ${object.invoice_id.residual}€<br/>
 % endif
 <br/>
 Para regularizarla, puedes hacerlo mediante:<br/>

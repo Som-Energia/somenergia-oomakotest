@@ -36,30 +36,26 @@ try:
 except:
   nom_pagador = ''
 %>
-Hola ${nom_pagador},<br/>
+Hola,<br/>
 <br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Mitjançant aquest document, se’t requereix el pagament de les quantitats degudes en concepte de consum d’energia elèctrica.<br/>
 <br/>
-A dia d’avui, no has satisfet el pagament de la/les factura/es emesa/es a continuació detallades.<br/>
-<br/>
-En cas de no abonar-se la quantitat deguda, en un termini de <b>2 mesos a partir de la notificació</b> d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
+En cas de no abonar-se la quantitat deguda, en un termini de 2 mesos a partir de la notificació d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
 Sempre prevaldrà la data de notificació del primer requeriment de factura impagada.<br/>
 <br/>
 Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
 <br/>
 <br/>
-- Adreça punt subministrament: ${object.cups_id.direccio}<br/>
-- Titular: ${object.polissa_id.titular.name}<br/>
-- Codi CUPS: ${object.cups_id.name}<br/>
+<U>Resum de la teva factura</U><br/>
 <br/>
-- Número de factura: <B>${object.number}</B><br/>
+- Número de factura: ${object.number}<br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
-- <B>Import total: ${object.invoice_id.amount_total}€</B> <br/>
+- Import total: ${object.invoice_id.amount_total}€<br/>
 % if object.invoice_id.amount_total != object.invoice_id.residual:
-- <B>Import pendent: ${object.invoice_id.residual}€</B><br/>
+- Import pendent: ${object.invoice_id.residual}€<br/>
 % endif
 <br/>
 Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
@@ -74,7 +70,7 @@ Si ets una persona electrodependent o bé en el teu punt de subministrament viu 
 Salutacions,<br/>
 <br/>
 Equip de Som Energia<br/>
-factura@somenergia.coop<br/>
+cobraments@somenergia.coop<br/>
 <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
@@ -120,8 +116,6 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 Mediante la presente se te requiere el pago de las cantidades adeudadas en concepto de consumo de energía eléctrica.<br/>
 <br/>
-A día de hoy no has satisfecho el pago de las facturas emitidas a continuación detalladas.<br/>
-<br/>
 De no abonarse la cantidad adeudada en un plazo de 2 meses a partir de la notificación del presente requerimiento, la empresa distribuidora podrá suspender tu suministro de electricidad.<br/>
 <br/>
 Siempre prevaldrá la fecha de notificación del primer requerimiento de factura impagada.<br/>
@@ -129,16 +123,14 @@ Siempre prevaldrá la fecha de notificación del primer requerimiento de factura
 Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
 <br/>
 <br/>
-- Dirección punto suministro: ${object.cups_id.direccio}<br/>
-- Titular: ${object.polissa_id.titular.name}<br/>
-- Código CUPS: ${object.cups_id.name}<br/>
+<U>Resumen de la factura</U><br/>
 <br/>
-- Número factura: <B>${object.number}</B><br/>
+- Número factura: ${object.number}<br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
-- <B>Importe total: ${object.invoice_id.amount_total}</B>€<br/>
+- Importe total: ${object.invoice_id.amount_total}€<br/>
 % if object.invoice_id.amount_total != object.invoice_id.residual:
-- <B>Importe pendiente: ${object.invoice_id.residual}€</B><br/>
+- Importe pendiente: ${object.invoice_id.residual}€<br/>
 % endif
 <br/>
 Para regularizarla, puedes hacerlo mediante:<br/>
@@ -153,7 +145,7 @@ Si eres una persona electrodependiente o bien en tu punto de suministro vive una
 Un saludo,<br/>
 <br/>
 Equipo de Som Energia<br/>
-factura@somenergia.coop<br/>
+cobraments@somenergia.coop<br/>
 <a href="http://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
