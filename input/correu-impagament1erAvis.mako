@@ -36,7 +36,7 @@ except:
 %>
 <br/>
 <br/>
-Hola${nom_pagador},<br/>
+Hola,<br/>
 <br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Vam enviar el rebut de la factura d'electricitat a la teva entitat bancària però ens l’ha retornat.<br/>
@@ -66,7 +66,7 @@ Si ets una persona electrodependent o bé en el teu punt de subministrament viu 
 Cordialment,<br/>
 <br/>
 Equip de Som Energia<br/>
-factura@somenergia.coop<br/>
+cobraments@somenergia.coop<br/>
 <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
@@ -137,7 +137,7 @@ Si eres una persona electrodependiente o bien en tu punto de suministro vive una
 Saludos,<br/>
 <br/>
 Equipo de Som Energia<br/>
-factura@somenergia.coop<br/>
+cobraments@somenergia.coop<br/>
 <a href="http://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
