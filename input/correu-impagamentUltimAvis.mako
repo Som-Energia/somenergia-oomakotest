@@ -59,7 +59,7 @@ Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
 </ul>
 Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Què fer si una factura queda impagada?</a><br/>
 <br/>
-Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
+Si ets una persona electrodependent o bé en el teu punt de subministrament hi viu alguna persona que ho sigui, envia’ns el certificat d’empadronament i el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
 Cordialment,<br/>
 <br/>
@@ -102,7 +102,7 @@ Para regularizarla puedes hacerlo mediante:<br/>
 </ul>
 En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Qué hacer si una factura queda impagada?</a>
 <br>
-Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
+Si eres una persona electrodependiente o bien en tu punto de suministro vive alguna persona que lo sea, envíanos el certificado de empadronamiento y el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>
 Saludos,<br/>
 <br/>

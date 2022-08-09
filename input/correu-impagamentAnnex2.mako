@@ -38,13 +38,13 @@ except:
 Hola ${nom_pagador},<br/>
 <br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
-T’informem que ha vençut el període de pagament de la factura emesa a continuació detallades. <br/>
+T’informem que ha vençut el període de pagament de la factura emesa a continuació detallada. <br/>
 <br/>
 Com a conseqüència, aviat se’t pot remetre un requeriment fefaent de pagament.<br/>
 <br/>
-En cas de no abonar-se la quantitat deguda, en un termini de  2 mesos a partir de la notificació a partir de la recepció d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
+En cas de no abonar-se la quantitat deguda, en un termini de  2 mesos a partir de la notificació d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
-Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
+Et comuniquem que s'aplicarà automàticament, a la propera factura, un càrrec de 4 € + IVA, en concepte de despeses de gestió de l'impagament.<br/>
 <br/>
 <br/>
 <U>Resum de la factura</U><br/>

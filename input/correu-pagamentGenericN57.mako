@@ -60,7 +60,7 @@ Per regularitzar la factura tens aquestes dues opcions:<br/>
 Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Què fer si una factura queda impagada?</a><br/>
 % endif
 <br/>
-Resum de la teva factura<br/>
+<U>Resum de la factura</U><br/>
 <br/>
 - Número de factura: ${object.number}<br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
@@ -108,7 +108,8 @@ Para regularizar la factura puedes hacerlo mediante:<br/>
 </ul>
 En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Qué hacer si una factura queda impagada?</a>
 % endif
-Resumen de la factura<br/>
+<br/>
+<U>Resumen de la factura</U><br/>
 <br/>
 - Número factura: ${object.number}<br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>

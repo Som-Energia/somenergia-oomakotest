@@ -48,11 +48,13 @@ Hola,<br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Mitjançant aquest document, se’t requereix el pagament de les quantitats degudes en concepte de consum d’energia elèctrica.<br/>
 <br/>
+Actualment, no has satisfet el pagament de la factura que et detallem en aquest correu.<br/>
+<br/>
 En cas de no abonar-se la quantitat deguda, a partir del dia ${data_venciment} l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
 Sempre prevaldrà la data de notificació del primer requeriment de factura impagada.<br/>
 <br/>
-Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
+Et comuniquem que s'aplicarà automàticament, a la propera factura, un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament.<br/>
 <br/>
 <br/>
 <U>Resum de la factura</U><br/>
@@ -123,7 +125,7 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 Mediante la presente se te requiere el pago de las cantidades adeudadas en concepto de consumo de energía eléctrica.<br/>
 <br/>
-A día de hoy no has satisfecho el pago de la factura emitida a continuación detallada.<br/>
+Actualmente, no has satisfecho el pago de la factura que te detallamos en este correo.<br/>
 <br/>
 De no abonarse la cantidad adeudada, a partir del día <b>${data_venciment}</b> la empresa distribuidora podrá suspender tu suministro de electricidad.
 <br/>

@@ -51,7 +51,7 @@ Al següent article t’expliquem amb més detall com funcionen aquests dos mèt
 <br/>
 Per evitar el tall de subministrament, un cop fet el pagament, heu d'enviar el comprovant a cobraments@somenergia.coop<br/>
 <br/>
-Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
+Et comuniquem que s'aplicarà automàticament, a la propera factura, un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament.<br/>
 <br />
 <U>Resum de la factura</U><br/>
 <br/>
@@ -114,7 +114,7 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 % if  object.invoice_id.partner_id.lang != "ca_ES":
 Te escribimos para informarte de que, a día de hoy, no se han satisfecho los importes de la deuda contraída con Som Energia de las facturas pendientes de suministro eléctrico.<br/>
 <br/>
-Por este motivo, la empresa distribuidora de tu zona procederá a <b>cortar la luz</b> del punto de suministro con dirección <b>${object.cups_id.direccio}</b> del cual eres titular. Daremos aviso a la empresa distribuidora para que haga efectivo el corte de suministro, 48h después del envío de este correo.<br/>
+Por este motivo, la empresa distribuidora de tu zona cortará la luz del punto de suministro con dirección ${object.cups_id.direccio} del cual eres titular. Avisaremos a la empresa distribuidora para que haga efectivo el corte de suministro, 48h después del envío de este correo.<br/>
 <br/>
 Para regularizarla, puedes hacerlo mediante:<br/>
 <ul>
