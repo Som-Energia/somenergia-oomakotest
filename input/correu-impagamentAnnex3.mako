@@ -48,7 +48,7 @@ Sempre prevaldrà la data de notificació del primer requeriment de factura impa
 Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
 <br/>
 <br/>
-<U>Resum de la teva factura</U><br/>
+<U>Resum de la factura</U><br/>
 <br/>
 - Número de factura: ${object.number}<br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
@@ -63,11 +63,11 @@ Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
   <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li><br/>
   <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
 </ul>
-Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
+Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">¿Qué hacer si una factura queda impagada?</a><br/>
 <br/>
 Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
-Salutacions,<br/>
+Cordialment,<br/>
 <br/>
 Equip de Som Energia<br/>
 cobraments@somenergia.coop<br/>
@@ -142,10 +142,10 @@ En el siguiente artículo te explicamos con más detalle como funcionan estos do
 <br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>
-Un saludo,<br/>
+Saludos,<br/>
 <br/>
 Equipo de Som Energia<br/>
-cobraments@somenergia.coop<br/>
+cobros@somenergia.coop<br/>
 <a href="http://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">

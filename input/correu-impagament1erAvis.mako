@@ -46,15 +46,12 @@ Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
   <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li><br/>
   <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
 </ul>
-Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
+Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Què fer si una factura queda impagada?</a><br/>
 <br/>
 O si ho prefereixes, podem tornar a passar pel banc aquesta factura sempre que t’asseguris que hi ha saldo suficient i que no hi hagi cap problema amb la domiciliació. En aquest cas, necessitem que responguis aquest correu amb la petició.<br/>
 <br/>
-<U>Resum de la teva factura</U><br/>
+<U>Resum de la factura</U><br/>
 <br/>
-- Adreça punt subministrament: ${object.cups_id.direccio}<br/>
-- Titular: ${object.polissa_id.titular.name}<br/>
-- Codi CUPS: ${object.cups_id.name}<br/>
 - Número de factura: ${object.number}<br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
@@ -118,7 +115,7 @@ Para regularizarla, puedes hacerlo mediante:<br/>
   <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a>. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">este artículo.</a></li><br/>
   <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
 </ul>
-En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Como hacer el pago mediante código de barras?</a><br/>
+En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Qué hacer si una factura queda impagada?</a><br/>
 <br/>
 O si lo prefieres, podemos volver a pasar por el banco esta factura, siempre que te asegures que haya saldo suficiente y que no haya ningún problema con la domiciliación. En este caso, necesitamos que respondas este correo con la petición.<br/>
 <br/>
@@ -139,7 +136,7 @@ Si eres una persona electrodependiente o bien en tu punto de suministro vive una
 Saludos,<br/>
 <br/>
 Equipo de Som Energia<br/>
-cobraments@somenergia.coop<br/>
+cobros@somenergia.coop<br/>
 <a href="http://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
