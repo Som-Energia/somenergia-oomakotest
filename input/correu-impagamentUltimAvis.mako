@@ -34,7 +34,7 @@ try:
 except:
   nom_pagador = ''
 %>
-Hola${nom_pagador},<br/>
+Hola,<br/>
 <br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Malgrat l'enviament de diferents correus de reclamació, encara no hem rebut cap resposta, per la qual cosa et requerim, un cop més, el pagament d'aquesta factura.<br/>
@@ -43,25 +43,28 @@ En cas que no puguis abonar el total d’aquest import en aquests moments, t'ofe
 <br/>
 Si no rebem cap comunicació per part teva, entendrem que no hi ha voluntat de pagar i, per tant, ens veurem obligats a iniciar les accions legals oportunes en defensa dels interessos de la cooperativa.<br/>
 <br/>
-Per tal de saldar aquest deute, has de transferir l'import de la factura al següent número de compte. Recorda d’indicar, si us plau, el número de factura o el número de contracte en el concepte.<br/>
-<br/>
-<b>ES82 1491 0001 29 2027098223</b><br/>
-<br/>
 <u>Resum de la teva factura</u><br/>
-- Adreça punt subministrament: ${object.cups_id.direccio}<br/>
-- Titular: ${object.polissa_id.titular.name}<br/>
-- Codi CUPS: ${object.cups_id.name}<br/>
-- Número de factura: <b>${object.number}</b><br/>
+- Número de factura: ${object.number}<<br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
-- <b>Import total: ${object.invoice_id.amount_total}</b>€ <br/>
+- Import total: ${object.invoice_id.amount_total}€ <br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- Import pendent: ${object.invoice_id.residual}€<br/>
+% endif
+<br/>
+Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
+<ul>
+  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li><br/>
+  <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
+</ul>
+Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Què fer si una factura queda impagada?</a><br/>
 <br/>
 Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
-Salutacions,<br/>
+Cordialment,<br/>
 <br/>
 Equip de Som Energia<br/>
-factura@somenergia.coop<br/>
+cobraments@somenergia.coop<br/>
 <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 <br/>
 <font size="2">Avís a les persones en situació de <b>RISC D'EXCLUSIÓ RESIDENCIAL</b>:<br/>
@@ -83,27 +86,28 @@ En el caso de que no puedas abonar el total del importe en estos momentos, te of
 <br/>
 En el supuesto de que no recibamos ninguna comunicación por tu parte, entenderemos que no hay voluntad de pago y, por consiguiente, nos veremos obligados a iniciar las acciones legales oportunas en defensa de los intereses de la cooperativa.<br/>
 <br/>
-Para saldar esta deuda, debes transferir el importe de la factura al siguiente número de cuenta. Recuerda indicar, por favor, el número de factura o el número de contrato en el concepto.<br/>
-<br/>
-<b>ES82 1491 0001 29 2027098223</b><br/>
-<br/>
 <u>Resumen de la factura</u><br/>
-- Dirección punto suministro: ${object.cups_id.direccio}<br/>
-- Titular: ${object.polissa_id.titular.name}<br/>
-- Codigo CUPS: ${object.cups_id.name}<br/>
-- Número factura: <b>${object.number}</b><br/>
+- Número factura: ${object.number}<br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
-- <b>Importe total: ${object.invoice_id.amount_total}€</b><br/>
+- Importe total: ${object.invoice_id.amount_total}€<br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- Importe pendiente: ${object.invoice_id.residual}€<br/>
+% endif
 <br/>
+Para regularizarla puedes hacerlo mediante:<br/>
+<ul>
+  <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a>. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">este artículo.</a></li><br/>
+  <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
+</ul>
+En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Qué hacer si una factura queda impagada?</a>
+<br>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>
-Atentamente,<br/>
-<br/>
-Un saludo,<br/>
+Saludos,<br/>
 <br/>
 Equipo de Som Energia<br/>
-factura@somenergia.coop<br/>
+cobros@somenergia.coop<br/>
 <a href="https://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
 <font size="2">Aviso a las personas en situación de <b>RIESGO DE EXCLUSIÓN RESIDENCIAL</b>:<br/>
