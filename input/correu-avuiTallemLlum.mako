@@ -63,7 +63,7 @@ Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses 
 - Import pendent: ${object.invoice_id.residual}€<<br/>
 % endif
 <br/>
-Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
+Si ets una persona electrodependent o bé en el teu punt de subministrament hi viu alguna persona que ho sigui, envia’ns el certificat d’empadronament i el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
 Cordialment,<br />
 <br />
@@ -139,7 +139,7 @@ Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos po
 <br/>
 Una vez realizado el pago, tienes que mandar el comprobante a cobros@somenergia.coop para evitar el corte de suministro
 <br/><br/>
-Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br />
+Si eres una persona electrodependiente o bien en tu punto de suministro vive alguna persona que lo sea, envíanos el certificado de empadronamiento y el certificado médico oficial que lo acredite a cobros@somenergia.coop<br />
 <br />
 Saludos,<br />
 <br />

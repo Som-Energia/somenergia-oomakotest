@@ -66,7 +66,7 @@ Al següent article t’expliquem amb més detall com funcionen aquests dos mèt
 <br/>
 O si ho prefereixes, podem tornar a passar pel banc aquesta factura sempre que t’asseguris que hi ha saldo suficient i que no hi hagi cap problema amb la domiciliació. En aquest cas, necessitem que responguis aquest correu amb la petició.<br/>
 <br/>
-Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
+Si ets una persona electrodependent o bé en el teu punt de subministrament hi viu alguna persona que ho sigui, envia’ns el certificat d’empadronament i el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
 Cordialment,<br/>
 <br/>
@@ -143,7 +143,7 @@ En el siguiente artículo te explicamos con más detalle como funcionan estos do
 <br/>
 O si lo prefieres, podemos volver a pasar por el banco esta factura, siempre que te asegures que haya saldo suficiente y que no haya ningún problema con la domiciliación. En este caso, necesitamos que respondas este correo con la petición.<br/>
 <br/>
-Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
+Si eres una persona electrodependiente o bien en tu punto de suministro vive alguna persona que lo sea, envíanos el certificado de empadronamiento y el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>
 Saludos,<br/>
 <br/>
