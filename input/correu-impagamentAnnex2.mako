@@ -47,10 +47,7 @@ En cas de no abonar-se la quantitat deguda, en un termini de  <b>2 mesos a parti
 Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
 <br/>
 <br/>
-- Adreça punt subministrament: ${object.cups_id.direccio}<br/>
-- Titular: ${object.polissa_id.titular.name}<br/>
-- Codi CUPS: ${object.cups_id.name}<br/>
-<br/>
+<U>Resum de la teva factura</U><br/>
 - Número de factura: <B>${object.number}</B><br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
@@ -73,7 +70,7 @@ Si ets una persona electrodependent o bé en el teu punt de subministrament viu 
 Cordialment,<br/>
 <br/>
 Equip de Som Energia<br/>
-factura@somenergia.coop<br/>
+cobraments@somenergia.coop<br/>
 <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
@@ -126,10 +123,7 @@ De no abonarse la cantidad adeudada en un plazo de 2 meses  a partir de la recep
 Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
 <br/>
 <br/>
-- Dirección punto suministro: ${object.cups_id.direccio}<br/>
-- Titular: ${object.polissa_id.titular.name}<br/>
-- Código CUPS: ${object.cups_id.name}<br/>
-<br/>
+<U>Resumen de la factura</U><br/>
 - Número factura: <B>${object.number}</B><br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
@@ -152,7 +146,7 @@ Si eres una persona electrodependiente o bien en tu punto de suministro vive una
 Un saludo,<br/>
 <br/>
 Equipo de Som Energia<br/>
-factura@somenergia.coop<br/>
+cobraments@somenergia.coop<br/>
 <a href="http://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
