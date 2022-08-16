@@ -5,4 +5,4 @@ to: ${object.polissa_id.titular.address[0].email}
 subject_translations:
   ca_ES: Situació irregular amb el contracte de llum ${object.polissa_id.name}
   es_ES: Situación irregular con el contrato de luz ${object.polissa_id.name}
-subject: Situació irregular amb el contracte de llum ${object.polissa_id.name}
+subject: Situación irregular con el contrato de luz ${object.polissa_id.name}
