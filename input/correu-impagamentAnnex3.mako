@@ -29,14 +29,14 @@ text_legal = render(t_obj.read(
 <%
 try:
   p_obj = object.pool.get('res.partner')
-  if not p_obj.vat_es_empresa(object._cr, object._uid,'object.polissa_id.pagador_nif'):
-    nom_pagador =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.polissa_id.pagador)['nom']
+  if not p_obj.vat_es_empresa(object._cr, object._uid,'object.partner_id.vat'):
+    nom_pagador =' ' + object.partner_id.name.split(',')[1].lstrip()
   else:
     nom_pagador = ''
 except:
   nom_pagador = ''
 %>
-Hola,<br/>
+Hola ${nom_pagador},<br/>
 <br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Mitjançant aquest document, se’t requereix el pagament de les quantitats degudes en concepte de consum d’energia elèctrica.<br/>
@@ -120,7 +120,7 @@ De no abonarse la cantidad adeudada en un plazo de 2 meses a partir de la notifi
 <br/>
 Siempre prevaldrá la fecha de notificación del primer requerimiento de factura impagada.<br/>
 <br/>
-Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
+Te comunicamos que se aplicará automáticamente, en la próxima factura, un cargo de 4€ + IVA en concepto de gastos de gestión del impago.<br/>
 <br/>
 <br/>
 <U>Resumen de la factura</U><br/>
@@ -138,7 +138,7 @@ Para regularizarla, puedes hacerlo mediante:<br/>
   <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a>. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">este artículo.</a></li><br/>
   <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
 </ul>
-En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Como hacer el pago mediante código de barras?</a><br/>
+En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Qué hacer si una factura queda impagada?</a><br/>
 <br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado de empadronamiento y el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>

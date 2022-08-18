@@ -115,13 +115,13 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 <HR align="LEFT" size="1" width="400" color="Black" noshade>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
-Te informamos que ha vencido el período de pago de las facturas emitidas a continuación detalladas.<br/>
+Te informamos que ha vencido el período de pago de la factura emitida que detallamos a continuación.<br/>
 <br/>
-Como consecuencia, próximamente te podrá ser remitido un requerimiento fehaciente de pago.<br/>
+Como consecuencia, pronto se te puede remitir un requerimiento fehaciente de pago.​<br/>
 <br/>
-De no abonarse la cantidad adeudada en un plazo de 2 meses  a partir de la recepción de dicho requerimiento, la empresa distribuidora podrá suspender tu suministro de electricidad.<br/>
+En el caso de no abonar la cantidad debida, en un plazo de 2 meses a partir de la notificación de este requerimiento, la empresa distribuidora puede suspender el suministro de electricidad.​<br/>
 <br/>
-Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
+Te comunicamos que se aplicará automáticamente, en la próxima factura, un cargo de 4€ + IVA en concepto de gastos de gestión del impago.<br/>
 <br/>
 <br/>
 <U>Resumen de la factura</U><br/>

@@ -35,7 +35,7 @@ try:
 except:
   nom_pagador = ''
 %>
-Hola,<br />
+Hola ${nom_pagador},<br/>
 <br />
 % if object.invoice_id.partner_id.lang != "es_ES":
 T’escrivim per informar-te que, actualment, no s'han satisfet els imports del deute contret amb Som Energia de les factures pendents de subministrament elèctric.<br/>
@@ -125,7 +125,7 @@ En el siguiente artículo te explicamos con más detalle como funcionan estos do
 <br/>
 Para evitar el corte de suministro, una vez realizado el pago, debes enviar el comprobante a cobros@somenergia.coop <br/>
 <br/>
-Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
+Te comunicamos que se aplicará automáticamente, en la próxima factura, un cargo de 4€ + IVA en concepto de gastos de gestión del impago.<br/>
 <br/>
 <U>Resumen de la factura</U><br/>
 <br/>
@@ -136,8 +136,6 @@ Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos po
 % if object.invoice_id.amount_total != object.invoice_id.residual:
 - Importe pendiente: ${object.invoice_id.residual}€<br/>
 % endif
-<br/>
-Una vez realizado el pago, tienes que mandar el comprobante a cobros@somenergia.coop para evitar el corte de suministro
 <br/><br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive alguna persona que lo sea, envíanos el certificado de empadronamiento y el certificado médico oficial que lo acredite a cobros@somenergia.coop<br />
 <br />

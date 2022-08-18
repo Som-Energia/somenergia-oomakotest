@@ -43,7 +43,7 @@ except:
   nom_pagador = ''
 %>
 <br/>
-Hola,<br/>
+Hola ${nom_pagador},<br/>
 <br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Mitjançant aquest document, se’t requereix el pagament de les quantitats degudes en concepte de consum d’energia elèctrica.<br/>
@@ -127,11 +127,11 @@ Mediante la presente se te requiere el pago de las cantidades adeudadas en conce
 <br/>
 Actualmente, no has satisfecho el pago de la factura que te detallamos en este correo.<br/>
 <br/>
-De no abonarse la cantidad adeudada, a partir del día <b>${data_venciment}</b> la empresa distribuidora podrá suspender tu suministro de electricidad.
+De no abonarse la cantidad adeudada, a partir del día <b>${data_venciment}</b> la empresa distribuidora podrá suspender tu suministro de electricidad.<br/>
 <br/>
 Siempre prevaldrá la fecha de notificación del primer requerimiento de factura impagada.<br/>
 <br/>
-Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
+Te comunicamos que se aplicará automáticamente, en la próxima factura, un cargo de 4€ + IVA en concepto de gastos de gestión del impago.<br/>
 <br/>
 <br/>
 <U>Resumen de la factura</U><br/>

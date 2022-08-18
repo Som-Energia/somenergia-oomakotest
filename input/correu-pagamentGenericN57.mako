@@ -43,7 +43,7 @@ else:
   date = datetime.strptime(object.polissa_id.data_baixa, '%Y-%m-%d')
   data_baixa = date.strftime('%d/%m/%Y')
 %>
-Hola,<br/>
+Hola ${nom_pagador},<br/>
 <br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 % if data_baixa:
@@ -125,7 +125,7 @@ Para regularizarla puedes hacerlo mediante:<br/>
   <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a>. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">este artículo.</a></li><br/>
   <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
 </ul>
-En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Qué hacer si una factura queda impagada?</a>
+En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Qué hacer si una factura queda impagada?</a><br>
 <br>
 Te informamos que recibirás tantos correos como facturas tengas pendientes de pago.<br>
 <br>

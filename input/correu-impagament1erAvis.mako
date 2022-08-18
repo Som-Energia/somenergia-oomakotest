@@ -36,7 +36,7 @@ except:
 %>
 <br/>
 <br/>
-Hola,<br/>
+Hola ${nom_pagador},<br/>
 <br/>
 % if object.invoice_id.partner_id.lang != "es_ES":
 Vam enviar el rebut de la factura d'electricitat a la teva entitat bancària però ens l’ha retornat.<br/>
@@ -121,9 +121,6 @@ O si lo prefieres, podemos volver a pasar por el banco esta factura, siempre que
 <br/>
 <U>Resumen de la factura</U><br/>
 <br/>
-- Dirección punto suministro: ${object.cups_id.direccio}<br/>
-- Titular: ${object.polissa_id.titular.name}<br/>
-- Código CUPS: ${object.cups_id.name}<br/>
 - Número factura: ${object.number}<br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
