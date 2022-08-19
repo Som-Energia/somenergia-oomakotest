@@ -5,6 +5,6 @@ cc: ${object.polissa_id.titular.www_email}, correo@certificado.lleida.net,<% mai
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
-  ca_ES: Tall de llum (Annex IV)
-  es_ES: Corte de luz (Anexo IV)
-subject: Corte de luz (Anexo IV) / Tall de llum (Annex IV)
+  ca_ES: 'Tall de llum (Annex IV) factura ${object.number}'
+  es_ES: 'Corte de luz (Anexo IV) factura ${object.number}'
+subject: 'Corte de luz (Anexo IV) / Tall de llum (Annex IV) factura ${object.number}'

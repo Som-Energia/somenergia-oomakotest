@@ -5,7 +5,7 @@ cc: ${object.polissa_id.titular.www_email}, correo@certificado.lleida.net,<% mai
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
-  ca_ES: Procediment tall de llum (Annex III)
-  es_ES: Procedimiento corte de luz (Anexo III)
-subject: Procedimiento corte de luz (Anexo III) / Procediment tall de llum (Annex
-  III)
+  ca_ES: 'Procediment tall de llum (Annex III) factura ${object.number}'
+  es_ES: 'Procedimiento corte de luz (Anexo III) factura ${object.number}'
+subject: 'Procedimiento corte de luz (Anexo III) / Procediment tall de llum (Annex III) factura ${object.number}'
+

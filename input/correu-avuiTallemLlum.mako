@@ -35,36 +35,40 @@ try:
 except:
   nom_pagador = ''
 %>
-Hola ${nom_pagador},<br />
+Hola ${nom_pagador},<br/>
 <br />
 % if object.invoice_id.partner_id.lang != "es_ES":
-Ens posem en contacte amb tu per informar-te que a dia d’avui no s’han satisfet els imports del deute contret amb Som Energia de les factures pendents de subministrament elèctric. Per aquest motiu, l’empresa distribuïdora de la teva zona <b>tallarà la llum</b> del punt de subministrament amb adreça <b>${object.cups_id.direccio}</b> del qual ets titular. Avisarem l’empresa distribuïdora, perquè faci efectiu el tall de subministrament, 48h després de l’enviament d’aquest correu.<br />
-<br />
-Has de fer el pagament mitjançant el document adjunt amb codi de barres. Pots realitzar-lo des del següent <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_ca.html">enllaç</a> o bé en els caixers de l’entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. Si tens qualsevol dubte consulta l’enllaç: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Com fer el pagament mitjançant codi de barres?</a><br/>
+T’escrivim per informar-te que, actualment, no s'han satisfet els imports del deute contret amb Som Energia de les factures pendents de subministrament elèctric.<br/>
 <br/>
-Et comuniquem que s'aplicarà un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament, a través de la nostra factura.<br/>
+Per aquest motiu, l’empresa distribuïdora de la teva zona tallarà la llum del punt de subministrament amb adreça ${object.cups_id.direccio} del qual ets titular. Avisarem l’empresa distribuïdora, perquè faci efectiu el tall de subministrament, 48h després de l’enviament d’aquest correu.<br/>
 <br />
-<U>Resum de la teva factura</U><br/>
-- Adreça punt subministrament: ${object.cups_id.direccio}<br/>
-- Titular: ${object.polissa_id.titular.name}<br/>
-- Codi CUPS: ${object.cups_id.name}<br/>
+Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
+<ul>
+  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li><br/>
+  <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
+</ul>
+Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Què fer si una factura queda impagada?</a><br/>
 <br/>
-- Número de factura: <b>${object.number}</b><br/>
+Per evitar el tall de subministrament, un cop fet el pagament, heu d'enviar el comprovant a cobraments@somenergia.coop<br/>
+<br/>
+Et comuniquem que s'aplicarà automàticament, a la propera factura, un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament.<br/>
+<br />
+<U>Resum de la factura</U><br/>
+<br/>
+- Número de factura: ${object.number}<br/>
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
-- <b>Import total: ${object.invoice_id.amount_total}€</b> <br/>
+- Import total: ${object.invoice_id.amount_total}€<br/>
 % if object.invoice_id.amount_total != object.invoice_id.residual:
-- <B>Import pendent: ${object.invoice_id.residual}€</B><br/>
+- Import pendent: ${object.invoice_id.residual}€<<br/>
 % endif
 <br/>
-Un cop fet el pagament, heu d'enviar el comprovant a cobraments@somenergia.coop per evitar el tall de subministrament.<br/>
+Si ets una persona electrodependent o bé en el teu punt de subministrament hi viu alguna persona que ho sigui, envia’ns el certificat d’empadronament i el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
-Si ets una persona electrodependent o bé en el teu punt de subministrament viu alguna persona que ho sigui, envia’ns el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
-<br/>
-Salutacions,<br />
+Cordialment,<br />
 <br />
 Equip de Som Energia<br />
-factura@somenergia.coop<br />
+cobraments@somenergia.coop<br />
 <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br />
 <br />
 <font size="1" style="color:grey">
@@ -108,35 +112,37 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 <HR align="LEFT" size="1" width="400" color="Black" noshade>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
-Nos ponemos en contacto contigo para informarte que a día de hoy no se han satisfecho los importes de la deuda contraída con Som Energia de las facturas pendientes de suministro eléctrico. Por este motivo, la empresa distribuidora de tu zona procederá a <b>cortar la luz</b> del punto de suministro con dirección <b>${object.cups_id.direccio}</b> del cual eres titular. Daremos aviso a la empresa distribuidora para que haga efectivo el corte de suministro, 48h después del envío de este correo.<br/>
-<br />
-Tienes que hacer el pago mediante el documento adjunto con código de barras. Puedes realizarlo desde el siguiente <a href="https://www4.caixabank.es/apl/pagos/codigoBarras_es.html">enlace</a> o bien en los cajeros de la entidad <a href="https://www1.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. Si tienes cualquier duda consulta el enlace: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">Cómo hacer el pago mediante código de barras?</a><br/>
+Te escribimos para informarte de que, a día de hoy, no se han satisfecho los importes de la deuda contraída con Som Energia de las facturas pendientes de suministro eléctrico.<br/>
 <br/>
-Te comunicamos que se aplicará un cargo de 4 € + IVA en concepto de gastos por la gestión del impago, a través de nuestra factura.<br/>
+Por este motivo, la empresa distribuidora de tu zona cortará la luz del punto de suministro con dirección ${object.cups_id.direccio} del cual eres titular. Avisaremos a la empresa distribuidora para que haga efectivo el corte de suministro, 48h después del envío de este correo.<br/>
+<br/>
+Para regularizarla, puedes hacerlo mediante:<br/>
+<ul>
+  <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a>. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">este artículo.</a></li><br/>
+  <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
+</ul>
+En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Qué hacer si una factura queda impagada?</a><br/>
+<br/>
+Para evitar el corte de suministro, una vez realizado el pago, debes enviar el comprobante a cobros@somenergia.coop <br/>
+<br/>
+Te comunicamos que se aplicará automáticamente, en la próxima factura, un cargo de 4€ + IVA en concepto de gastos de gestión del impago.<br/>
 <br/>
 <U>Resumen de la factura</U><br/>
-- Dirección punto suministro: ${object.cups_id.direccio}<br/>
-- Titular: ${object.polissa_id.titular.name}<br/>
-- Código CUPS: ${object.cups_id.name}<br/>
 <br/>
-- Número factura: <b>${object.number}</b><br/>
+- Número factura: ${object.number}<br/>
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
-- <b>Importe total: ${object.invoice_id.amount_total}</b>€<br/>
+- Importe total: ${object.invoice_id.amount_total}€<br/>
 % if object.invoice_id.amount_total != object.invoice_id.residual:
-- <B>Importe pendiente: ${object.invoice_id.residual}€</B><br/>
+- Importe pendiente: ${object.invoice_id.residual}€<br/>
 % endif
-<br/>
-Una vez realizado el pago, tienes que mandar el comprobante a cobros@somenergia.coop para evitar el corte de suministro
 <br/><br/>
-Si eres una persona electrodependiente o bien en tu punto de suministro vive una persona que lo sea, envíanos el certificado médico oficial que lo acredite a cobros@somenergia.coop<br />
-<br />
-Para cualquier aclaración, seguimos en contacto. <br />
+Si eres una persona electrodependiente o bien en tu punto de suministro vive alguna persona que lo sea, envíanos el certificado de empadronamiento y el certificado médico oficial que lo acredite a cobros@somenergia.coop<br />
 <br />
 Saludos,<br />
 <br />
 Equipo de Som Energia<br />
-factura@somenergia.coop<br />
+cobros@somenergia.coop<br />
 <a href="https://www.somenergia.coop">www.somenergia.coop</a><br />
 <br />
 <font size="1" style="color:grey">
