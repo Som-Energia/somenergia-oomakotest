@@ -1256,7 +1256,6 @@ impagamentAnnex4:
   cases:
     normal_ca: 7834586
     normal_es: 7721398
-
 #impagamentTranferRebuda:
 #  template: input/correu-impagamentTransferRebuda.mako
 #  model: giscedata.facturacio.factura
@@ -1521,10 +1520,14 @@ pagamentGenericN57:
 #
 #cobramentsAvisTPV:
 #  template: input/correu-cobramentsAvisTPV.mako
-#  model: giscedata.facturacio.factura 
+#  model: giscedata.facturacio.factura
 #  poweremailId: som_account_invoice_pending.tpv_pay_alert_template_som
 #  cases:
 #    ca: 444848
-#    es: 403834  
-# 
+#    es: 403834
+#
+# mortAlPagador:
+#   template: input/correu-mortAlPagador.mako
+#   model: som.enviament.massiu
+#   poweremailId: som_infoenergia.correu_titular_pagador_diferents
 # vim: et ts=2 sw=2
