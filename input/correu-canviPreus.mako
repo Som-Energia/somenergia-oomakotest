@@ -440,6 +440,7 @@ elif object.polissa_id.fiscal_position_id.id in [25, 34]:
   impost_aplicat = "IGIC del 0"
 
 consum_total = formatNumber(round(consum_total/100.0)*100)
+te_gkwh = object.polissa_id.te_assignacio_gkwh
 
 try:
   p_obj = object.pool.get('res.partner')
