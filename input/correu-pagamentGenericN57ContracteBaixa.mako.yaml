@@ -1,0 +1,6 @@
+lang: false
+cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
+subject_translations: {}
+subject: Pagament factura / Pago Factura ${object.number} de Som Energia
