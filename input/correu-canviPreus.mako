@@ -17,6 +17,130 @@ text_legal = render(t_obj.read(
 )
 
 NEW_TARIFF_PRICES = {
+  "2.0TD": {
+        "power": [
+            ("P1", 27.984),
+            ("P2", 2.963),
+        ],
+        "energy": [
+            ("P1", 0.343),
+            ("P2", 0.281),
+            ("P3", 0.234),
+        ],
+        "gkwh": [
+            ("P1", 0.170),
+            ("P2", 0.120),
+            ("P3", 0.095),
+        ]
+    },
+    "3.0TD": {
+        "power": [
+            ("P1", 14.440099),
+            ("P2", 11.127305),
+            ("P3", 5.123259),
+            ("P4", 4.237486),
+            ("P5", 2.557580),
+            ("P6", 1.780529),
+        ],
+        "energy": [
+            ("P1", 0.342),
+            ("P2", 0.312),
+            ("P3", 0.279),
+            ("P4", 0.256),
+            ("P5", 0.234),
+            ("P6", 0.224),
+        ],
+        "gkwh": [
+            ("P1", 0.144),
+            ("P2", 0.132),
+            ("P3", 0.104),
+            ("P4", 0.093),
+            ("P5", 0.082),
+            ("P6", 0.089),
+        ]
+    },
+    "6.1TD": {
+        "power": [
+            ("P1", 22.417110),
+            ("P2", 20.370815),
+            ("P3", 11.478137),
+            ("P4", 9.055455),
+            ("P5", 1.992116),
+            ("P6", 1.185268),
+        ],
+        "energy": [
+            ("P1", 0.302),
+            ("P2", 0.277),
+            ("P3", 0.254),
+            ("P4", 0.245),
+            ("P5", 0.227),
+            ("P6", 0.216),
+        ],
+        "gkwh": [
+            ("P1", 0.104),
+            ("P2", 0.095),
+            ("P3", 0.077),
+            ("P4", 0.071),
+            ("P5", 0.062),
+            ("P6", 0.068),
+        ]
+    },
+    "3.0TDVE": {
+        "power": [
+            ("P1", 2.600765),
+            ("P2", 2.266264),
+            ("P3", 0.915907),
+            ("P4", 0.696758),
+            ("P5", 0.274140),
+            ("P6", 0.274140),
+        ],
+        "energy": [
+            ("P1", 0.427),
+            ("P2", 0.38),
+            ("P3", 0.316),
+            ("P4", 0.278),
+            ("P5", 0.238),
+            ("P6", 0.227),
+        ],
+        "gkwh": [
+            ("P1", 0.229),
+            ("P2", 0.200),
+            ("P3", 0.140),
+            ("P4", 0.116),
+            ("P5", 0.087),
+            ("P6", 0.092),
+        ]
+    },
+    "6.1TDVE": {
+        "power": [
+            ("P1", 4.107961),
+            ("P2", 4.107961),
+            ("P3", 2.239713),
+            ("P4", 1.696452),
+            ("P5", 0.112654),
+            ("P6", 0.112654),
+        ],
+        "energy": [
+            ("P1", 0.444),
+            ("P2", 0.390),
+            ("P3", 0.319),
+            ("P4", 0.286),
+            ("P5", 0.233),
+            ("P6", 0.221),
+        ],
+        "gkwh": [
+            ("P1", 0.246),
+            ("P2", 0.209),
+            ("P3", 0.141),
+            ("P4", 0.112),
+            ("P5", 0.068),
+            ("P6", 0.073),
+        ]
+    },
+}
+
+
+OLD_TARIFF_PRICES = {
     "2.0TD": {
         "power": [
             ("P1", 27.984),
@@ -139,128 +263,6 @@ NEW_TARIFF_PRICES = {
     },
 }
 
-OLD_TARIFF_PRICES = {
-    "2.0TD": {
-        "power": [
-            ("P1", 27.984),
-            ("P2", 2.963),
-        ],
-        "energy": [
-            ("P1", 0.380),
-            ("P2", 0.315),
-            ("P3", 0.261),
-        ],
-        "gkwh": [
-            ("P1", 0.183),
-            ("P2", 0.132),
-            ("P3", 0.109),
-        ]
-    },
-    "3.0TD": {
-        "power": [
-            ("P1", 14.440099),
-            ("P2", 11.127305),
-            ("P3", 5.123259),
-            ("P4", 4.237486),
-            ("P5", 2.557580),
-            ("P6", 1.780529),
-        ],
-        "energy": [
-            ("P1", 0.373),
-            ("P2", 0.340),
-            ("P3", 0.313),
-            ("P4", 0.290),
-            ("P5", 0.264),
-            ("P6", 0.252),
-        ],
-        "gkwh": [
-            ("P1", 0.148),
-            ("P2", 0.135),
-            ("P3", 0.114),
-            ("P4", 0.104),
-            ("P5", 0.093),
-            ("P6", 0.099),
-        ]
-    },
-    "6.1TD": {
-        "power": [
-            ("P1", 22.417110),
-            ("P2", 20.370815),
-            ("P3", 11.478137),
-            ("P4", 9.055455),
-            ("P5", 1.992116),
-            ("P6", 1.185268),
-        ],
-        "energy": [
-            ("P1", 0.332),
-            ("P2", 0.305),
-            ("P3", 0.287),
-            ("P4", 0.265),
-            ("P5", 0.242),
-            ("P6", 0.231),
-        ],
-        "gkwh": [
-            ("P1", 0.107),
-            ("P2", 0.099),
-            ("P3", 0.086),
-            ("P4", 0.080),
-            ("P5", 0.069),
-            ("P6", 0.076),
-        ]
-    },
-    "3.0TDVE": {
-        "power": [
-            ("P1", 2.600765),
-            ("P2", 2.266264),
-            ("P3", 0.915907),
-            ("P4", 0.696758),
-            ("P5", 0.274140),
-            ("P6", 0.274140),
-        ],
-        "energy": [
-            ("P1", 0.458),
-            ("P2", 0.407),
-            ("P3", 0.350),
-            ("P4", 0.312),
-            ("P5", 0.269),
-            ("P6", 0.255),
-        ],
-        "gkwh": [
-            ("P1", 0.233),
-            ("P2", 0.203),
-            ("P3", 0.151),
-            ("P4", 0.127),
-            ("P5", 0.097),
-            ("P6", 0.102),
-        ]
-    },
-    "6.1TDVE": {
-        "power": [
-            ("P1", 4.107961),
-            ("P2", 4.107961),
-            ("P3", 2.239713),
-            ("P4", 1.696452),
-            ("P5", 0.112654),
-            ("P6", 0.112654),
-        ],
-        "energy": [
-            ("P1", 0.473),
-            ("P2", 0.418),
-            ("P3", 0.352),
-            ("P4", 0.306),
-            ("P5", 0.248),
-            ("P6", 0.235),
-        ],
-        "gkwh": [
-            ("P1", 0.249),
-            ("P2", 0.212),
-            ("P3", 0.150),
-            ("P4", 0.120),
-            ("P5", 0.075),
-            ("P6", 0.080),
-        ]
-    },
-}
 
 def getConsumEstimatPotencia(potencia):
   res = 0
@@ -329,8 +331,8 @@ def getPotenciesPolissa(pol):
       potencies[pot.periode_id.name] = pot.potencia
   return potencies
 
-def calcularPreuTotal(consums, potencies, tarifa, preus):
-
+def calcularPreuTotal(consums, potencies, tarifa, preus, afegir_maj):
+  maj_price = 0.140 #€/kWh
   types =  {
     'power': potencies or {},
     'energy': consums or {}
@@ -338,7 +340,10 @@ def calcularPreuTotal(consums, potencies, tarifa, preus):
   imports = 0
   for terme, values in types.items():
     for periode, quantity in values.items():
-      imports += dict(preus[tarifa][terme])[periode] * quantity
+      preu_periode = dict(preus[tarifa][terme])[periode]
+      if afegir_maj and terme == 'energy':
+        preu_periode += maj_price
+      imports += preu_periode * quantity
 
   return imports
 
@@ -387,6 +392,7 @@ def formatNumber(number):
   return format(number, "1,.0f").replace(',','.')
 
 potencies = getPotenciesPolissa(object.polissa_id)
+insular = "INSULAR" in object.polissa_id.llista_preu.name
 
 tarifa = object.polissa_id.tarifa.name
 consums = ''
@@ -414,8 +420,9 @@ else:
   else:
     quintextes = 'casA'
 
-preu_vell = calcularPreuTotal(consums, potencies, tarifa, OLD_TARIFF_PRICES)
-preu_nou = calcularPreuTotal(consums, potencies, tarifa, NEW_TARIFF_PRICES)
+preu_vell = calcularPreuTotal(consums, potencies, tarifa, OLD_TARIFF_PRICES, False)
+afegir_maj = not insular
+preu_nou = calcularPreuTotal(consums, potencies, tarifa, NEW_TARIFF_PRICES, afegir_maj)
 
 preu_vell_imp_int = calcularImpostos(preu_vell, object.polissa_id.fiscal_position_id)
 preu_nou_imp_int = calcularImpostos(preu_nou, object.polissa_id.fiscal_position_id)
@@ -433,8 +440,6 @@ elif object.polissa_id.fiscal_position_id.id in [25, 34]:
   impost_aplicat = "IGIC del 0"
 
 consum_total = formatNumber(round(consum_total/100.0)*100)
-
-insular = "INSULAR" in object.polissa_id.llista_preu.name
 
 try:
   p_obj = object.pool.get('res.partner')
@@ -519,11 +524,11 @@ ${text_legal}
 <p dir="ltr" style="margin-top: 2em;"><strong>Comparativa estimada&nbsp;</strong></p>
 <p dir="ltr">La normativa estableix que hem d&rsquo;incloure, junt amb la informaci&oacute; de noves tarifes, una estimaci&oacute; del cost anual que cada contracte hauria de pagar amb els nous preus i una comparaci&oacute; amb el total anual si no modifiqu&eacute;ssim les tarifes. A continuaci&oacute; incloem aquesta estimaci&oacute;, per&ograve; <strong>t&rsquo;alertem que el resultat no &eacute;s fiable</strong>, doncs estem comparant uns preus fixos (els que hi havia fins ara) amb uns preus que inclouen un terme variable que no podem con&egrave;ixer amb antelaci&oacute;. Aquesta comparaci&oacute;, doncs, <strong>no pot servir de guia</strong> per calcular quin total anual haur&agrave; de pagar cada contracte. Aix&iacute; doncs,&nbsp;
 % if quintextes == 'casA':
-tal com estableix la normativa, hem fet una estimaci&oacute; orientativa, a partir de les dades que tenim del teu hist&ograve;ric recent d&rsquo;&uacute;s d&rsquo;electricitat (aproximadament [XXX] kWh anuals), aplicant el preu del MAG de les &uacute;ltimes setmanes com si fos igual durant tot l&rsquo;any, i prenent com a refer&egrave;ncia el repartiment horari d&rsquo;un contracte est&agrave;ndard, sense autoproducci&oacute; ni Generation kWh. Segons aquestes dades, l&rsquo;actualitzaci&oacute; dels nous preus podria suposar un augment aproximat de [XXX] euros anuals a la factura respecte al que costaria si mantingu&eacute;ssim els preus actuals durant tot l&rsquo;any. Aix&iacute; doncs, en resultaria un cost anual aproximat de [XXX] euros amb el nou sistema de preus, i un cost anual aproximat de [XXX] euros sense actualitzar-ho. En els dos casos l&rsquo;estimaci&oacute; inclou ${impost_aplicat} i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense les rebaixes vigents. Tingues en compte que aix&ograve; s&oacute;n estimacions, i que els imports finals <strong>no els podem saber, doncs dependran molt de circumst&agrave;ncies i preus que no podem preveure</strong>, com per exemple el preu del gas.</p>
+tal com estableix la normativa, hem fet una estimaci&oacute; orientativa, a partir de les dades que tenim del teu hist&ograve;ric recent d&rsquo;&uacute;s d&rsquo;electricitat (aproximadament ${consum_total} kWh anuals), aplicant el preu del MAG de les &uacute;ltimes setmanes com si fos igual durant tot l&rsquo;any, i prenent com a refer&egrave;ncia el repartiment horari d&rsquo;un contracte est&agrave;ndard, sense autoproducci&oacute; ni Generation kWh. Segons aquestes dades, l&rsquo;actualitzaci&oacute; dels nous preus podria suposar un augment aproximat de ${increment_total} euros anuals a la factura respecte al que costaria si mantingu&eacute;ssim els preus actuals durant tot l&rsquo;any. Aix&iacute; doncs, en resultaria un cost anual aproximat de ${preu_nou_imp} euros amb el nou sistema de preus, i un cost anual aproximat de ${preu_vell_imp} euros sense actualitzar-ho. En els dos casos l&rsquo;estimaci&oacute; inclou l'${impost_aplicat}% i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense les rebaixes vigents. Tingues en compte que aix&ograve; s&oacute;n estimacions, i que els imports finals <strong>no els podem saber, doncs dependran molt de circumst&agrave;ncies i preus que no podem preveure</strong>, com per exemple el preu del gas.</p>
 % elif quintextes == 'casB':
-tal com estableix la normativa, hem fet una <strong>estimaci&oacute; de car&agrave;cter orientatiu</strong>, en funci&oacute; de la pot&egrave;ncia contractada que tens i l&rsquo;&uacute;s d&rsquo;electricitat que sol haver-hi amb aquestes pot&egrave;ncies, aplicant el preu del MAG de les &uacute;ltimes setmanes com si fos igual durant tot l&rsquo;any, i agafant de refer&egrave;ncia un contracte est&agrave;ndard, sense autoproducci&oacute; ni Generation kWh. Segons aquestes dades, l&rsquo;actualitzaci&oacute; de preus podria suposar un augment aproximat de [XXX] euros anuals a la factura respecte al que costaria si mantingu&eacute;ssim els preus actuals durant tot l&rsquo;any. Aix&iacute; doncs, en resultaria un cost anual aproximat de [XXX] euros amb l&rsquo;actualitzaci&oacute;, i un cost anual aproximat de [XXX] euros sense l&rsquo;actualitzaci&oacute;. En els dos casos l&rsquo;estimaci&oacute; inclou ${impost_aplicat} i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense les rebaixes vigents. Tingues en compte que aix&ograve; s&oacute;n estimacions aproximades, i que els imports finals <strong>no els podem saber, doncs dependran molt de circumst&agrave;ncies i preus que no podem preveure</strong>, com per exemple el preu del gas.</p>
+tal com estableix la normativa, hem fet una <strong>estimaci&oacute; de car&agrave;cter orientatiu</strong>, en funci&oacute; de la pot&egrave;ncia contractada que tens i l&rsquo;&uacute;s d&rsquo;electricitat que sol haver-hi amb aquestes pot&egrave;ncies, aplicant el preu del MAG de les &uacute;ltimes setmanes com si fos igual durant tot l&rsquo;any, i agafant de refer&egrave;ncia un contracte est&agrave;ndard, sense autoproducci&oacute; ni Generation kWh. Segons aquestes dades, l&rsquo;actualitzaci&oacute; de preus podria suposar un augment aproximat de ${increment_total} euros anuals a la factura respecte al que costaria si mantingu&eacute;ssim els preus actuals durant tot l&rsquo;any. Aix&iacute; doncs, en resultaria un cost anual aproximat de ${preu_nou_imp} euros amb l&rsquo;actualitzaci&oacute;, i un cost anual aproximat de ${preu_vell_imp} euros sense l&rsquo;actualitzaci&oacute;. En els dos casos l&rsquo;estimaci&oacute; inclou l'${impost_aplicat}% i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense les rebaixes vigents. Tingues en compte que aix&ograve; s&oacute;n estimacions aproximades, i que els imports finals <strong>no els podem saber, doncs dependran molt de circumst&agrave;ncies i preus que no podem preveure</strong>, com per exemple el preu del gas.</p>
 % elif quintextes == 'casC':
-tal com estableix la normativa, hem fet una <strong>estimaci&oacute; de car&agrave;cter orientatiu</strong>, a partir de les dades que tenim del teu hist&ograve;ric recent d&rsquo;&uacute;s d&rsquo;electricitat (aproximadament [XXX] kWh anuals), aplicant el preu del MAG de les &uacute;ltimes setmanes com si fos igual durant tot l&rsquo;any, i sense tenir en compte l&rsquo;autoproducci&oacute; ni el Generation kWh. Segons aquesta estimaci&oacute;, l&rsquo;actualitzaci&oacute; de les tarifes podria suposar un augment aproximat de [XXX] euros anuals a la factura respecte al que costaria si mantingu&eacute;ssim els preus actuals durant tot l&rsquo;any. Aix&iacute; doncs, en resultaria un cost anual aproximat de [XXX] euros amb l&rsquo;actualitzaci&oacute;, i un cost anual aproximat de [XXX] euros sense actualitzar tarifes. En els dos casos l&rsquo;estimaci&oacute; inclou ${impost_aplicat} i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense rebaixes del govern. Tingues en compte que aix&ograve; s&oacute;n estimacions aproximades, i que els imports finals <strong>no els podem saber, doncs dependran de circumst&agrave;ncies i preus que no podem preveure</strong>, com per exemple el preu del gas.</p>
+tal com estableix la normativa, hem fet una <strong>estimaci&oacute; de car&agrave;cter orientatiu</strong>, a partir de les dades que tenim del teu hist&ograve;ric recent d&rsquo;&uacute;s d&rsquo;electricitat (aproximadament ${consum_total} kWh anuals), aplicant el preu del MAG de les &uacute;ltimes setmanes com si fos igual durant tot l&rsquo;any, i sense tenir en compte l&rsquo;autoproducci&oacute; ni el Generation kWh. Segons aquesta estimaci&oacute;, l&rsquo;actualitzaci&oacute; de les tarifes podria suposar un augment aproximat de ${increment_total} euros anuals a la factura respecte al que costaria si mantingu&eacute;ssim els preus actuals durant tot l&rsquo;any. Aix&iacute; doncs, en resultaria un cost anual aproximat de ${preu_nou_imp} euros amb l&rsquo;actualitzaci&oacute;, i un cost anual aproximat de ${preu_vell_imp} euros sense actualitzar tarifes. En els dos casos l&rsquo;estimaci&oacute; inclou l'${impost_aplicat}% i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense rebaixes del govern. Tingues en compte que aix&ograve; s&oacute;n estimacions aproximades, i que els imports finals <strong>no els podem saber, doncs dependran de circumst&agrave;ncies i preus que no podem preveure</strong>, com per exemple el preu del gas.</p>
 % endif
 <p dir="ltr">T&rsquo;adjuntem en aquest correu el teu contracte actualitzat. Hi trobar&agrave;s, per una banda, els preus vigents fins al 30 de setembre. Per altra banda, tamb&eacute; trobar&agrave;s els nous preus que aplicarem a partir de l&rsquo;1 d&rsquo;octubre (que no inclouen la part del mecanisme d&rsquo;ajust del gas), aix&iacute; com el detall de la manera com calcularem la part corresponent al MAG. Com et coment&agrave;vem, aquest canvi es comen&ccedil;ar&agrave; a aplicar el dia 1 d&rsquo;octubre de 2022. Si hi est&agrave;s d&rsquo;acord, <strong>no cal que responguis aquest correu</strong> ni que ens retornis el document signat, ja que l'actualitzaci&oacute; de les nostres tarifes s'aplicar&agrave; autom&agrave;ticament. Si lamentablement aquest canvi et fes replantejar la teva pertinen&ccedil;a a la cooperativa, podries donar de baixa el teu contracte amb nosaltres, b&eacute; comunicant-nos-ho directament, o b&eacute; mitjan&ccedil;ant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni cl&agrave;usules de perman&egrave;ncia en cap moment. Aix&iacute; doncs, si decidissis marxar, nom&eacute;s et facturar&iacute;em el consum realitzat fins al dia de finalitzaci&oacute; del contracte, amb els preus vigents a cada moment.<strong><br></strong></p>
 <p dir="ltr" style="margin-top: 2em;"><strong>Aclariment legal</strong></p>
@@ -586,11 +591,11 @@ tal com estableix la normativa, hem fet una <strong>estimaci&oacute; de car&agra
 <p dir="ltr" style="margin-top: 2em;"><strong>Comparativa estimada&nbsp;</strong></p>
 <p dir="ltr">La normativa establece que debemos incluir, junto con la informaci&oacute;n de nuevas tarifas, una estimaci&oacute;n del coste anual que cada contrato deber&iacute;a pagar con los nuevos precios y una comparaci&oacute;n con el total anual si no modific&aacute;ramos las tarifas. A continuaci&oacute;n incluimos esta estimaci&oacute;n, pero<strong> te alertamos de que el resultado no es fiable</strong>, pues estamos comparando unos precios fijos (los que hab&iacute;a hasta ahora) con unos precios que incluyen un t&eacute;rmino variable que no podemos conocer con antelaci&oacute;n. Esta comparaci&oacute;n, pues, <strong>no puede servir de gu&iacute;a </strong>para calcular qu&eacute; total anual tendr&aacute; que pagar cada contrato. As&iacute; pues,&nbsp;
 % if quintextes == 'casA':
-tal y como establece la normativa, hemos hecho una estimaci&oacute;n orientativa, a partir de los datos que tenemos de tu hist&oacute;rico reciente de uso de electricidad (aproximadamente [XXX] kWh anuales), aplicando el precio del MAG de las &uacute;ltimas semanas como si fuese igual durante todo el a&ntilde;o, y tomando como referencia el reparto horario de un contrato est&aacute;ndar, sin autoproducci&oacute;n ni Generation kWh. Seg&uacute;n estos datos, la actualizaci&oacute;n de los nuevos precios podr&iacute;a suponer un aumento aproximado de [XXX] euros anuales en la factura respecto a lo que costar&iacute;a si mantuvi&eacute;semos los precios actuales durante todo el a&ntilde;o. As&iacute; pues, resultar&iacute;a un coste anual aproximado de [XXX] euros con el nuevo sistema de precios, y un coste anual aproximado de [XXX] euros sin actualizarlo. En ambos casos la estimaci&oacute;n incluye [el IVA del 21%] [el IGIC del 3%] [el IGIC del 0%] y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin las rebajas vigentes. Ten en cuenta que esto son estimaciones, y que los importes finales <strong>no los podemos saber, pues depender&aacute;n mucho de circunstancias y precios que no podemos prever</strong>, como por ejemplo el precio del gas.</p>
+tal y como establece la normativa, hemos hecho una estimaci&oacute;n orientativa, a partir de los datos que tenemos de tu hist&oacute;rico reciente de uso de electricidad (aproximadamente ${consum_total} kWh anuales), aplicando el precio del MAG de las &uacute;ltimas semanas como si fuese igual durante todo el a&ntilde;o, y tomando como referencia el reparto horario de un contrato est&aacute;ndar, sin autoproducci&oacute;n ni Generation kWh. Seg&uacute;n estos datos, la actualizaci&oacute;n de los nuevos precios podr&iacute;a suponer un aumento aproximado de ${increment_total} euros anuales en la factura respecto a lo que costar&iacute;a si mantuvi&eacute;semos los precios actuales durante todo el a&ntilde;o. As&iacute; pues, resultar&iacute;a un coste anual aproximado de ${preu_nou_imp} euros con el nuevo sistema de precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizarlo. En ambos casos la estimaci&oacute;n incluye el ${impost_aplicat}% y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin las rebajas vigentes. Ten en cuenta que esto son estimaciones, y que los importes finales <strong>no los podemos saber, pues depender&aacute;n mucho de circunstancias y precios que no podemos prever</strong>, como por ejemplo el precio del gas.</p>
 % elif quintextes == 'casB':
-tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de car&aacute;cter orientativo,</strong> en funci&oacute;n de la potencia contratada que tienes y el uso de electricidad que suele haber con estas potencias, aplicando el precio del MAG de las &uacute;ltimas semanas como si fuera igual durante todo el a&ntilde;o, y cogiendo de referencia un contrato est&aacute;ndar, sin autoproducci&oacute;n ni Generation kWh. Seg&uacute;n estos datos, la actualizaci&oacute;n de precios podr&iacute;a suponer un aumento aproximado de [XXX] euros anuales en la factura respecto a lo que costar&iacute;a si mantuvi&eacute;semos los precios actuales durante todo el a&ntilde;o. As&iacute; pues, resultar&iacute;a un coste anual aproximado de [XXX] euros con la actualizaci&oacute;n, y un coste anual aproximado de [XXX] euros sin la actualizaci&oacute;n. En ambos casos la estimaci&oacute;n incluye [el IVA del 21%] [el IGIC del 3%] [el IGIC del 0%] y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin las rebajas vigentes. Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>no los podemos saberlos, pues depender&aacute;n mucho de circunstancias y precios que no podemos prever</strong>, como por ejemplo el precio del gas.</p>
+tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de car&aacute;cter orientativo,</strong> en funci&oacute;n de la potencia contratada que tienes y el uso de electricidad que suele haber con estas potencias, aplicando el precio del MAG de las &uacute;ltimas semanas como si fuera igual durante todo el a&ntilde;o, y cogiendo de referencia un contrato est&aacute;ndar, sin autoproducci&oacute;n ni Generation kWh. Seg&uacute;n estos datos, la actualizaci&oacute;n de precios podr&iacute;a suponer un aumento aproximado de ${increment_total} euros anuales en la factura respecto a lo que costar&iacute;a si mantuvi&eacute;semos los precios actuales durante todo el a&ntilde;o. As&iacute; pues, resultar&iacute;a un coste anual aproximado de ${preu_nou_imp} euros con la actualizaci&oacute;n, y un coste anual aproximado de ${preu_vell_imp} euros sin la actualizaci&oacute;n. En ambos casos la estimaci&oacute;n incluye el ${impost_aplicat}% y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin las rebajas vigentes. Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>no los podemos saberlos, pues depender&aacute;n mucho de circunstancias y precios que no podemos prever</strong>, como por ejemplo el precio del gas.</p>
 % elif quintextes == 'casC':
-tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de car&aacute;cter orientativo</strong>, a partir de los datos que tenemos de tu hist&oacute;rico reciente de uso de electricidad (aproximadamente [XXX] kWh anuales), aplicando el precio del MAG de las &uacute;ltimas semanas como si fuese igual durante todo el a&ntilde;o, y sin tener en cuenta la autoproducci&oacute;n ni el Generation kWh. Seg&uacute;n esta estimaci&oacute;n, la actualizaci&oacute;n de las tarifas podr&iacute;a suponer un aumento aproximado de [XXX] euros anuales en la factura respecto a lo que costar&iacute;a si mantuvi&eacute;semos los precios actuales durante todo el a&ntilde;o. As&iacute; pues, resultar&iacute;a un coste anual aproximado de [XXX] euros con la actualizaci&oacute;n, y un coste anual aproximado de [XXX] euros sin actualizar tarifas. En ambos casos la estimaci&oacute;n incluye [el IVA del 21%] [el IGIC del 3%] [el IGIC del 0%] y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin rebajas del gobierno. Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>no los podemos saber, pues depender&aacute;n de circunstancias y precios que no podemos prever</strong>, como por ejemplo el precio del gas.</p>
+tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de car&aacute;cter orientativo</strong>, a partir de los datos que tenemos de tu hist&oacute;rico reciente de uso de electricidad (aproximadamente ${consum_total} kWh anuales), aplicando el precio del MAG de las &uacute;ltimas semanas como si fuese igual durante todo el a&ntilde;o, y sin tener en cuenta la autoproducci&oacute;n ni el Generation kWh. Seg&uacute;n esta estimaci&oacute;n, la actualizaci&oacute;n de las tarifas podr&iacute;a suponer un aumento aproximado de ${increment_total} euros anuales en la factura respecto a lo que costar&iacute;a si mantuvi&eacute;semos los precios actuales durante todo el a&ntilde;o. As&iacute; pues, resultar&iacute;a un coste anual aproximado de ${preu_nou_imp} euros con la actualizaci&oacute;n, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar tarifas. En ambos casos la estimaci&oacute;n incluye el ${impost_aplicat}% y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin rebajas del gobierno. Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>no los podemos saber, pues depender&aacute;n de circunstancias y precios que no podemos prever</strong>, como por ejemplo el precio del gas.</p>
 % endif
 <p dir="ltr">Te adjuntamos en este correo tu contrato actualizado. Encontrar&aacute;s, por un lado, los precios vigentes hasta el 30 de septiembre. Por otra parte, tambi&eacute;n encontrar&aacute;s los nuevos precios que aplicaremos a partir del 1 de octubre (que no incluyen la parte del mecanismo de ajuste del gas), as&iacute; como el detalle de la forma en que calcularemos la parte correspondiente al MAG. Como te coment&aacute;bamos, este cambio se empezar&aacute; a aplicar el d&iacute;a 1 de octubre de 2022. Si est&aacute;s de acuerdo, <strong>no es necesario que respondas a este correo</strong> ni que nos devuelvas el documento firmado, ya que la actualizaci&oacute;n de nuestras tarifas se aplicar&aacute; autom&aacute;ticamente. Si lamentablemente este cambio te hiciera replantear tu pertenencia a la cooperativa, podr&iacute;as dar de baja tu contrato con Som Energia, bien comunic&aacute;ndonoslo directamente, o mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cl&aacute;usulas de permanencia en ning&uacute;n momento. As&iacute; pues, si decidieras marcharte, s&oacute;lo te facturar&iacute;amos el consumo realizado hasta el d&iacute;a de finalizaci&oacute;n del contrato, con los precios vigentes en cada momento.</p>
 <p dir="ltr" style="margin-top: 2em;"><strong>Aclaraci&oacute;n legal</strong></p>
@@ -610,13 +615,13 @@ tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de 
 <p dir="ltr">Si tens curiositat o vols saber m&eacute;s detalls de l&rsquo;afectaci&oacute; del mecanisme a la resta de contractes, pots llegir <a href="https://blog.somenergia.coop/?p=43135">aquesta not&iacute;cia</a> del blog.</p>
 <p dir="ltr" style="margin-top: 2em;"><strong>Estimaci&oacute;</strong></p>
 % if quintextes == 'casA':
-<p dir="ltr">Tal com estableix la normativa, hem fet una <strong>estimaci&oacute; orientativa</strong>, a partir de les dades que tenim del teu hist&ograve;ric recent d&rsquo;&uacute;s d&rsquo;electricitat (aproximadament [XXX] kWh anuals) i prenent com a refer&egrave;ncia el repartiment horari d&rsquo;un contracte est&agrave;ndard, sense autoproducci&oacute; ni Generation kWh. Segons aquestes dades, l&rsquo;actualitzaci&oacute; dels nous preus podria suposar una disminuci&oacute; aproximada de [XXX] euros anuals a la factura respecte al que costaria si mantingu&eacute;ssim els preus actuals durant tot l&rsquo;any. Aix&iacute; doncs, en resultaria un cost anual aproximat de [XXX] euros amb els nous preus, i un cost anual aproximat de [XXX] euros sense actualitzar els preus. En els dos casos l&rsquo;estimaci&oacute; inclou ${impost_aplicat} i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense les rebaixes vigents.</p>
+<p dir="ltr">Tal com estableix la normativa, hem fet una <strong>estimaci&oacute; orientativa</strong>, a partir de les dades que tenim del teu hist&ograve;ric recent d&rsquo;&uacute;s d&rsquo;electricitat (aproximadament ${consum_total} kWh anuals) i prenent com a refer&egrave;ncia el repartiment horari d&rsquo;un contracte est&agrave;ndard, sense autoproducci&oacute; ni Generation kWh. Segons aquestes dades, l&rsquo;actualitzaci&oacute; dels nous preus podria suposar una disminuci&oacute; aproximada de ${increment_total} euros anuals a la factura respecte al que costaria si mantingu&eacute;ssim els preus actuals durant tot l&rsquo;any. Aix&iacute; doncs, en resultaria un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense actualitzar els preus. En els dos casos l&rsquo;estimaci&oacute; inclou l'${impost_aplicat}% i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense les rebaixes vigents.</p>
 <p dir="ltr">Tingues en compte que aix&ograve; s&oacute;n estimacions aproximades, i que els imports finals <strong>dependran de circumst&agrave;ncies</strong> que no podem preveure, com per exemple els horaris i l&rsquo;&uacute;s d&rsquo;energia que finalment facis, altres variacions de preus durant el 2022, o canvis que pugui haver al mercat el&egrave;ctric.</p>
 % elif quintextes == 'casB':
-<p dir="ltr">Tal com estableix la normativa, hem fet una <strong>estimaci&oacute; de car&agrave;cter orientatiu</strong>, en funci&oacute; de la pot&egrave;ncia contractada que tens i l&rsquo;&uacute;s d&rsquo;electricitat que sol haver-hi amb aquestes pot&egrave;ncies, agafant de refer&egrave;ncia un contracte est&agrave;ndard, sense autoproducci&oacute; ni Generation kWh. Segons aquestes dades, l&rsquo;actualitzaci&oacute; de preus podria suposar una disminuci&oacute; aproximada de [XXX] euros anuals a la factura respecte al que costaria sense aplicar-hi els nous preus (&eacute;s a dir, si mantingu&eacute;ssim els preus actuals durant tot l&rsquo;any). Aix&iacute; doncs, en resultaria un cost anual aproximat de [XXX] euros amb els nous preus, i un cost anual aproximat de [XXX] euros sense aplicar el canvi de preus. En els dos casos l&rsquo;estimaci&oacute; inclou ${impost_aplicat} i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense les rebaixes vigents.</p>
+<p dir="ltr">Tal com estableix la normativa, hem fet una <strong>estimaci&oacute; de car&agrave;cter orientatiu</strong>, en funci&oacute; de la pot&egrave;ncia contractada que tens i l&rsquo;&uacute;s d&rsquo;electricitat que sol haver-hi amb aquestes pot&egrave;ncies, agafant de refer&egrave;ncia un contracte est&agrave;ndard, sense autoproducci&oacute; ni Generation kWh. Segons aquestes dades, l&rsquo;actualitzaci&oacute; de preus podria suposar una disminuci&oacute; aproximada de ${increment_total} euros anuals a la factura respecte al que costaria sense aplicar-hi els nous preus (&eacute;s a dir, si mantingu&eacute;ssim els preus actuals durant tot l&rsquo;any). Aix&iacute; doncs, en resultaria un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense aplicar el canvi de preus. En els dos casos l&rsquo;estimaci&oacute; inclou l'${impost_aplicat}% i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense les rebaixes vigents.</p>
 <p dir="ltr">Tingues en compte que aix&ograve; s&oacute;n estimacions aproximades a partir d&rsquo;usos t&iacute;pics, i que els imports finals <strong>dependran de circumst&agrave;ncies</strong> que no podem preveure, com per exemple els horaris i el consum real d&rsquo;energia que facis, altres variacions de preus durant el 2022, o canvis que pugui haver al mercat el&egrave;ctric.</p>
 % elif quintextes == 'casC':
-<p>Tal com estableix la normativa, hem fet una <strong>estimaci&oacute; de car&agrave;cter orientatiu</strong>, a partir de les dades que tenim del teu hist&ograve;ric recent d&rsquo;&uacute;s d&rsquo;electricitat (aproximadament [XXX] kWh anuals) i sense tenir en compte l&rsquo;autoproducci&oacute; ni el Generation kWh. Segons aquesta estimaci&oacute;, l&rsquo;actualitzaci&oacute; dels nous preus podria suposar una disminuci&oacute; aproximada de [XXX] euros anuals a la factura respecte al que costaria si mantingu&eacute;ssim els preus vigents actualment, durant tot l&rsquo;any. Aix&iacute; doncs, en resultaria un cost anual aproximat de [XXX] euros amb els nous preus, i un cost anual aproximat de [XXX] euros sense aplicar els nous preus. En els dos casos l&rsquo;estimaci&oacute; inclou ${impost_aplicat} i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense rebaixes del govern.</p>
+<p>Tal com estableix la normativa, hem fet una <strong>estimaci&oacute; de car&agrave;cter orientatiu</strong>, a partir de les dades que tenim del teu hist&ograve;ric recent d&rsquo;&uacute;s d&rsquo;electricitat (aproximadament ${consum_total} kWh anuals) i sense tenir en compte l&rsquo;autoproducci&oacute; ni el Generation kWh. Segons aquesta estimaci&oacute;, l&rsquo;actualitzaci&oacute; dels nous preus podria suposar una disminuci&oacute; aproximada de ${increment_total} euros anuals a la factura respecte al que costaria si mantingu&eacute;ssim els preus vigents actualment, durant tot l&rsquo;any. Aix&iacute; doncs, en resultaria un cost anual aproximat de ${preu_nou_imp} euros amb els nous preus, i un cost anual aproximat de ${preu_vell_imp} euros sense aplicar els nous preus. En els dos casos l&rsquo;estimaci&oacute; inclou l'${impost_aplicat}% i l&rsquo;impost el&egrave;ctric del 5,11%, &eacute;s a dir, impostos sense rebaixes del govern.</p>
 <p>Tingues en compte que aix&ograve; s&oacute;n estimacions aproximades, i que els imports finals <strong>dependran de circumst&agrave;ncies</strong> que no podem preveure, com per exemple els horaris i el consum real d&rsquo;energia que facis, variacions de preus durant el 2022, o altres canvis que pugui haver al mercat el&egrave;ctric.</p>
 % endif
 % if tarifa == '2.0TD':
@@ -640,13 +645,13 @@ tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de 
 <p dir="ltr">Si tienes curiosidad o quieres saber m&aacute;s detalles de la afectaci&oacute;n del mecanismo en el resto de contratos, puedes leer <a href="https://blog.somenergia.coop/?p=43137">esta noticia</a> del blog.</p>
 <p style="margin-top: 2em;"><strong>Estimaci&oacute;n</strong></p>
 % if quintextes == 'casA':
-<p dir="ltr">Tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n orientativa</strong>, a partir de los datos que tenemos de tu hist&oacute;rico reciente de uso de electricidad (aproximadamente [XXX] kWh anuales) y tomando como referencia el reparto horario de un contrato est&aacute;ndar, sin autoproducci&oacute;n ni Generation kWh. Seg&uacute;n estos datos, la actualizaci&oacute;n de los nuevos precios podr&iacute;a suponer una disminuci&oacute;n aproximada de [XXX] euros anuales en la factura respecto a lo que costar&iacute;a si mantuvi&eacute;semos los precios actuales durante todo el a&ntilde;o. As&iacute; pues, resultar&iacute;a un coste anual aproximado de [XXX] euros con los nuevos precios, y un coste anual aproximado de [XXX] euros sin actualizar los precios. En ambos casos la estimaci&oacute;n incluye [el IVA del 21%] [el IGIC del 3%] [el IGIC del 0%] y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin las rebajas vigentes.</p>
+<p dir="ltr">Tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n orientativa</strong>, a partir de los datos que tenemos de tu hist&oacute;rico reciente de uso de electricidad (aproximadamente ${consum_total} kWh anuales) y tomando como referencia el reparto horario de un contrato est&aacute;ndar, sin autoproducci&oacute;n ni Generation kWh. Seg&uacute;n estos datos, la actualizaci&oacute;n de los nuevos precios podr&iacute;a suponer una disminuci&oacute;n aproximada de ${increment_total} euros anuales en la factura respecto a lo que costar&iacute;a si mantuvi&eacute;semos los precios actuales durante todo el a&ntilde;o. As&iacute; pues, resultar&iacute;a un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin actualizar los precios. En ambos casos la estimaci&oacute;n incluye el ${impost_aplicat}% y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin las rebajas vigentes.</p>
 <p dir="ltr">Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>depender&aacute;n de circunstancias</strong> que no podemos prever, como los horarios y el uso de energ&iacute;a que finalmente hagas, otras variaciones de precios durante el 2022, o cambios que pueda haber en el mercado el&eacute;ctrico.</p>
 % elif quintextes == 'casB':
-<p dir="ltr">Tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de car&aacute;cter orientativo</strong>, en funci&oacute;n de la potencia contratada que tienes y el uso de electricidad que suele haber con estas potencias, cogiendo de referencia un contrato est&aacute;ndar, sin autoproducci&oacute;n ni Generation kWh. Seg&uacute;n estos datos, la actualizaci&oacute;n de precios podr&iacute;a suponer una disminuci&oacute;n aproximada de [XXX] euros anuales en la factura respecto a lo que costar&iacute;a sin aplicar los nuevos precios (es decir, si mantuvi&eacute;semos los precios actuales durante todo el a&ntilde;o). As&iacute; pues, resultar&iacute;a un coste anual aproximado de [XXX] euros con los nuevos precios, y un coste anual aproximado de [XXX] euros sin aplicar el cambio de precios. En ambos casos la estimaci&oacute;n incluye [el IVA del 21%] [el IGIC del 3%] [el IGIC del 0%] y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin las rebajas vigentes.</p>
+<p dir="ltr">Tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de car&aacute;cter orientativo</strong>, en funci&oacute;n de la potencia contratada que tienes y el uso de electricidad que suele haber con estas potencias, cogiendo de referencia un contrato est&aacute;ndar, sin autoproducci&oacute;n ni Generation kWh. Seg&uacute;n estos datos, la actualizaci&oacute;n de precios podr&iacute;a suponer una disminuci&oacute;n aproximada de ${increment_total} euros anuales en la factura respecto a lo que costar&iacute;a sin aplicar los nuevos precios (es decir, si mantuvi&eacute;semos los precios actuales durante todo el a&ntilde;o). As&iacute; pues, resultar&iacute;a un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin aplicar el cambio de precios. En ambos casos la estimaci&oacute;n incluye el ${impost_aplicat}% y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin las rebajas vigentes.</p>
 <p dir="ltr">Ten en cuenta que esto son estimaciones aproximadas a partir de usos t&iacute;picos, y que los importes finales <strong>depender&aacute;n de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el consumo real de energ&iacute;a que realices, otras variaciones de precios durante el 2022, o cambios que pueda haber en el mercado el&eacute;ctrico.</p>
 % elif quintextes == 'casC':
-<p dir="ltr">Tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de car&aacute;cter orientativo</strong>, a partir de los datos que tenemos de tu hist&oacute;rico reciente de uso de electricidad (aproximadamente [XXX] kWh anuales) y sin tener en cuenta la autoproducci&oacute;n ni el Generation kWh. Seg&uacute;n esta estimaci&oacute;n, la actualizaci&oacute;n de los nuevos precios podr&iacute;a suponer una disminuci&oacute;n aproximada de [XXX] euros anuales en la factura respecto a lo que costar&iacute;a si mantuvi&eacute;ramos los precios actualmente vigentes, durante todo el a&ntilde;o. As&iacute; pues, resultar&iacute;a un coste anual aproximado de [XXX] euros con los nuevos precios, y un coste anual aproximado de [XXX] euros sin aplicar los nuevos precios. En ambos casos la estimaci&oacute;n incluye [el IVA del 21%] [el IGIC del 3%] [el IGIC del 0%] y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin rebajas del gobierno.</p>
+<p dir="ltr">Tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de car&aacute;cter orientativo</strong>, a partir de los datos que tenemos de tu hist&oacute;rico reciente de uso de electricidad (aproximadamente ${consum_total} kWh anuales) y sin tener en cuenta la autoproducci&oacute;n ni el Generation kWh. Seg&uacute;n esta estimaci&oacute;n, la actualizaci&oacute;n de los nuevos precios podr&iacute;a suponer una disminuci&oacute;n aproximada de ${increment_total} euros anuales en la factura respecto a lo que costar&iacute;a si mantuvi&eacute;ramos los precios actualmente vigentes, durante todo el a&ntilde;o. As&iacute; pues, resultar&iacute;a un coste anual aproximado de ${preu_nou_imp} euros con los nuevos precios, y un coste anual aproximado de ${preu_vell_imp} euros sin aplicar los nuevos precios. En ambos casos la estimaci&oacute;n incluye el ${impost_aplicat}% y el impuesto el&eacute;ctrico del 5,11%, es decir, impuestos sin rebajas del gobierno.</p>
 <p dir="ltr">Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>depender&aacute;n de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el consumo real de energ&iacute;a que realices, variaciones de precios durante 2022, u otros cambios que pueda haber en el mercado el&eacute;ctrico.</p>
 % endif
 % if tarifa == '2.0TD':
