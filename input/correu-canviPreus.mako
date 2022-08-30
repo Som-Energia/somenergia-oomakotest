@@ -536,9 +536,9 @@ tal com estableix la normativa, hem fet una <strong>estimaci&oacute; de car&agra
 <p dir="ltr" style="margin-top: 2em;"><strong>Aclariment legal</strong></p>
 <p dir="ltr">El mecanisme d&rsquo;ajust del gas l&rsquo;aplicarem a la part del preu que es preveu a la cl&agrave;usula 5.3 (ii) de les <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">Condicions Generals</a> del contracte de subministrament.</p>
 <br>
-<p dir="ltr">Una salutaci&oacute; cordial,</p>
-<p dir="ltr">Equip de Som Energia</p>
-<p dir="ltr"><a href="https://somenergia.coop/ca">www.somenergia.coop</a>​</p>
+<p dir="ltr">Una salutaci&oacute; cordial,<br>
+Equip de Som Energia<br>
+<a href="https://somenergia.coop/ca">www.somenergia.coop</a></p>
 % endif
 % if  object.polissa_id.titular.lang != "ca_ES":
 <p dir="ltr" style="margin-top: 2em;">El d&iacute;a 1 de octubre tendremos que cambiar las tarifas de Som Energia, para repercutir de otra manera el coste del mecanismo de ajuste del gas. Esto supondr&aacute; que no podremos saber con antelaci&oacute;n los precios finales, que probablemente ser&aacute;n m&aacute;s elevados que los actuales. Este nuevo sistema de tarifas es temporal y en principio, seg&uacute;n el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2022-7843">RDL 10/2022</a>, no se extender&aacute; m&aacute;s all&aacute; del 31 de mayo de 2023.</p>
@@ -603,15 +603,15 @@ tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de 
 <p dir="ltr" style="margin-top: 2em;"><strong>Aclaraci&oacute;n legal</strong></p>
 <p dir="ltr">El mecanismo de ajuste del gas lo aplicaremos en la parte del precio previsto en la cl&aacute;usula 5.3 (ii) de las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">Condiciones Generales</a> del contrato de suministro.</p>
 <br>
-<p dir="ltr">Un saludo cordial,</p>
-<p dir="ltr">Equipo de Som Energia</p>
-<p dir="ltr"><a href="https://www.somenergia.coop/es/">www.somenergia.coop</a></p>
+<p dir="ltr">Un saludo cordial,<br>
+Equipo de Som Energia<br>
+<a href="https://www.somenergia.coop/es/">www.somenergia.coop</a></p>
 % endif
 </%def>
 <%def name="correu_insular()">
 % if object.polissa_id.titular.lang == "ca_ES":
 <p dir="ltr" style="margin-top: 2em;">El dia 1 d&rsquo;octubre haurem de canviar les tarifes de Som Energia, per tal de repercutir-hi el cost del mecanisme d&rsquo;ajust del gas. Aquest nou sistema de tarifes &eacute;s temporal i en principi, segons el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2022-7843">RDL 10/2022</a>, no s&rsquo;estendr&agrave; m&eacute;s enll&agrave; del 31 de maig de 2023.</p>
-<p dir="ltr">Les illes Balears i Can&agrave;ries no es regeixen pel mateix mercat el&egrave;ctric que la resta de l&rsquo;estat espanyol. La normativa estableix que, en aquest cas, el mecanisme d&rsquo;ajust del gas no aplica per als territoris insulars. Aix&iacute; doncs, com que des de Som Energia no hem de pagar el mecanisme d&rsquo;ajust del gas per a l&rsquo;energia que comercialitzem a les illes Balears i Can&agrave;ries, tampoc aplicarem aquest preu a les tarifes corresponents.</p>
+<p dir="ltr">Les Illes Balears i Can&agrave;ries no es regeixen pel mateix mercat el&egrave;ctric que la resta de l&rsquo;estat espanyol. La normativa estableix que, en aquest cas, el mecanisme d&rsquo;ajust del gas no aplica per als territoris insulars. Aix&iacute; doncs, com que des de Som Energia no hem de pagar el mecanisme d&rsquo;ajust del gas per a l&rsquo;energia que comercialitzem a les Illes Balears i Can&agrave;ries, tampoc aplicarem aquest preu a les tarifes corresponents.</p>
 <p dir="ltr">Aix&iacute; doncs, per a aquests contractes (entre ells, el teu), l&rsquo;actualitzaci&oacute; de tarifes ser&agrave; a la baixa. Pots veure els preus finals a l&rsquo;<a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/">apartat de tarifes del web</a>. Si vols fer-ne comparacions, pots accedir a l&rsquo;<a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">hist&ograve;ric de tarifes</a>, per&ograve; tingues en compte que els nous preus no tenen incl&ograve;s el mecanisme d&rsquo;ajust del gas (que s&iacute; que s&rsquo;aplica als contractes de la pen&iacute;nsula).</p>
 <p dir="ltr">Si tens curiositat o vols saber m&eacute;s detalls de l&rsquo;afectaci&oacute; del mecanisme a la resta de contractes, pots llegir <a href="https://blog.somenergia.coop/?p=43135">aquesta not&iacute;cia</a> del blog.</p>
 <p dir="ltr" style="margin-top: 2em;"><strong>Estimaci&oacute;</strong></p>
@@ -635,13 +635,13 @@ tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de 
 <br>
 <p dir="ltr">T&rsquo;adjuntem en aquest correu el teu contracte actualitzat amb els preus actuals, vigents fins al 30 de setembre, i els nous preus, que comen&ccedil;arem a aplicar el dia 1 d&rsquo;octubre de 2022. Si hi est&agrave;s d&rsquo;acord, <strong>no cal que responguis aquest correu</strong> ni que ens retornis el document signat, ja que l'actualitzaci&oacute; de les nostres tarifes s'aplicar&agrave; autom&agrave;ticament. Si lamentablement aquest canvi et fes replantejar la teva pertinen&ccedil;a a la cooperativa, podries donar de baixa el teu contracte amb nosaltres, b&eacute; comunicant-nos-ho directament, o b&eacute; mitjan&ccedil;ant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni cl&agrave;usules de perman&egrave;ncia en cap moment. Aix&iacute; doncs, si decidissis marxar, nom&eacute;s et facturar&iacute;em el consum realitzat fins al dia de finalitzaci&oacute; del contracte, amb els preus vigents a cada moment.<strong><br></strong></p>
 <br>
-<p dir="ltr">Una salutaci&oacute; cordial,</p>
-<p dir="ltr">Equip de Som Energia</p>
-<p dir="ltr"><a href="https://somenergia.coop/">www.somenergia.coop</a></p>
+<p dir="ltr">Una salutaci&oacute; cordial,<br>
+Equip de Som Energia<br>
+<a href="https://somenergia.coop/">www.somenergia.coop</a></p>
 % endif
 % if object.polissa_id.titular.lang != "ca_ES":
 <p dir="ltr" style="margin-top: 2em;">El d&iacute;a 1 de octubre tendremos que cambiar las tarifas de Som Energia, para repercutir el coste del mecanismo de ajuste del gas. Este nuevo sistema de tarifas es temporal y en principio, seg&uacute;n el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2022-7843">RDL 10/2022</a>, no se extender&aacute; m&aacute;s all&aacute; del 31 de mayo de 2023.</p>
-<p dir="ltr">Las islas Baleares y Canarias no se rigen por el mismo mercado el&eacute;ctrico que el resto del estado espa&ntilde;ol. La normativa establece que, en ese caso, el mecanismo de ajuste del gas no aplica para los territorios insulares. As&iacute; pues, como desde Som Energia no tenemos que pagar el mecanismo de ajuste del gas para la energ&iacute;a que comercializamos en Baleares y Canarias, tampoco aplicaremos este precio a las tarifas correspondientes.</p>
+<p dir="ltr">Las Islas Baleares y Canarias no se rigen por el mismo mercado el&eacute;ctrico que el resto del estado espa&ntilde;ol. La normativa establece que, en ese caso, el mecanismo de ajuste del gas no aplica para los territorios insulares. As&iacute; pues, como desde Som Energia no tenemos que pagar el mecanismo de ajuste del gas para la energ&iacute;a que comercializamos en Baleares y Canarias, tampoco aplicaremos este precio a las tarifas correspondientes.</p>
 <p dir="ltr">As&iacute; pues, para estos contratos (entre ellos, el tuyo), la actualizaci&oacute;n de tarifas ser&aacute; a la baja. Puedes ver los precios finales en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/">apartado de tarifas de la web</a>. Si quieres realizar comparaciones, puedes acceder al <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/historico-de-tarifas-de-electricidad/">hist&oacute;rico de tarifas</a>, pero ten en cuenta que los nuevos precios no tienen incluido el mecanismo de ajuste del gas (que s&iacute; se aplica a los contratos de la pen&iacute;nsula).</p>
 <p dir="ltr">Si tienes curiosidad o quieres saber m&aacute;s detalles de la afectaci&oacute;n del mecanismo en el resto de contratos, puedes leer <a href="https://blog.somenergia.coop/?p=43137">esta noticia</a> del blog.</p>
 <p style="margin-top: 2em;"><strong>Estimaci&oacute;n</strong></p>
@@ -665,8 +665,8 @@ tal y como establece la normativa, hemos hecho una <strong>estimaci&oacute;n de 
 <br>
 <p dir="ltr">Te adjuntamos en este correo tu contrato actualizado con los precios actuales, vigentes hasta el 30 de septiembre, y los nuevos precios, que empezaremos a aplicar el d&iacute;a 1 de octubre de 2022. Si est&aacute;s de acuerdo, <strong>no es necesario que respondas a este correo</strong> ni que nos devuelvas el documento firmado, ya que la actualizaci&oacute;n de nuestras tarifas se aplicar&aacute; autom&aacute;ticamente. Si lamentablemente este cambio te hiciera replantear tu pertenencia a la cooperativa, podr&iacute;as dar de baja tu contrato con Som Energia, bien comunic&aacute;ndonoslo directamente, o mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cl&aacute;usulas de permanencia en ning&uacute;n momento. As&iacute; pues, si decidieras marcharte, s&oacute;lo te facturar&iacute;amos el consumo realizado hasta el d&iacute;a de finalizaci&oacute;n del contrato, con los precios vigentes en cada momento.</p>
 <br>
-<p dir="ltr">Un saludo cordial,</p>
-<p dir="ltr">Equipo de Som Energia</p>
-<p dir="ltr"><a href="https://www.somenergia.coop/es">www.somenergia.coop</a></p>
+<p dir="ltr">Un saludo cordial,<br>
+Equipo de Som Energia<br>
+<a href="https://www.somenergia.coop/es">www.somenergia.coop</a></p>
 % endif
 </%def>
