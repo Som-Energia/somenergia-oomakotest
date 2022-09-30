@@ -908,21 +908,21 @@
 #     30TD_es: 358661  #par 11326
 #     30TD_ca: 357413  #par 11326
 #
-activacioM105_automatica:
-  template: input/correu-activacioM105.mako
-  model: giscedata.switching
-  poweremailId: giscedata_switching.notification_atr_M1_05
-  cases:
-    2TD_ca: 360760 #par 7101
-    2TD_es: 360584 #par 11326
-    30TD_es: 358661  #par 11326
-    30TD_ca: 357413  #par 11326
-    trifasica_ca: 272480 #this is not a TD contract
-    trifasica_es: 271979 #this is not a TD contract
-    monofasica_ca: 273113 #this is not a TD contract
-    monofasica_es: 273331 #this is not a TD contract
-    es: 310210 #this is not a TD contract
-    ca: 308466 #this is not a TD contract
+# activacioM105_automatica:
+#   template: input/correu-activacioM105.mako
+#   model: giscedata.switching
+#   poweremailId: giscedata_switching.notification_atr_M1_05
+#   cases:
+#     2TD_ca: 360760 #par 7101
+#     2TD_es: 360584 #par 11326
+#     30TD_es: 358661  #par 11326
+#     30TD_ca: 357413  #par 11326
+#     trifasica_ca: 272480 #this is not a TD contract
+#     trifasica_es: 271979 #this is not a TD contract
+#     monofasica_ca: 273113 #this is not a TD contract
+#     monofasica_es: 273331 #this is not a TD contract
+#     es: 310210 #this is not a TD contract
+#     ca: 308466 #this is not a TD contract
 
 #activacionE106_automatica:
 #  template: input/correu-activacioE106.mako
