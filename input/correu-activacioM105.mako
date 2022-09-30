@@ -52,8 +52,11 @@
     pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
     pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
 
-    is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
-    is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
+    if len(object.step_ids) == 1:
+        is_pot_tar = True
+    else:
+        is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
+        is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
 
     mapaTarifes = dict(M105.fields_get(object._cr, object._uid)['tarifaATR']['selection'])
     tarifaATR = mapaTarifes[pas05.tarifaATR]
