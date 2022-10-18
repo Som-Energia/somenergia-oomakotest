@@ -1304,8 +1304,14 @@ pagamentGenericN57:
   cases:
     ca: 444848
     es: 403834
-    es_baixa: 6850168
-    ca_baixa: 6906042
+
+pagamentGenericN57ContracteBaixa:
+  template: input/correu-pagamentGenericN57ContracteBaixa.mako
+  model: giscedata.facturacio.factura
+  poweremailId: 114 #amb nomes som_account_invoice_pending
+  cases:
+    es: 6850168
+    ca: 6906042
 
 ########################################
 ## Infoenergia
