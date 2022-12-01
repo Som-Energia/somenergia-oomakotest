@@ -31,13 +31,16 @@
     GiscedataPolissa = object.pool.get('giscedata.polissa')
     polissa_nif = GiscedataPolissa.read(object._cr, object._uid, polissa.id, ['titular_nif'])['titular_nif']
     pot_installada = ' '
-
+    autoconsum_actiu = False
     d = object.step_ids[0].pas_id
     if d.motiu_canvi == '04':
         if d.generadors:
             nif_generador = d.generadors[0].identificador
             if nif_generador != polissa_nif:
                 partner_diferent = True
+    elif d.motiu_canvi == '06':
+        if object.cups_polissa_id.autoconsumo in ['42', '43'] and object.cups_polissa_id.ac_state == 'actiu':
+            autoconsum_actiu = True
     elif d.motiu_canvi == '07':
         if d.generadors:
             pot_installada = d.generadors[0].pot_installada_gen or ' '
@@ -69,6 +72,14 @@
         ${correu_ca_motiu_01()}
     % elif d.motiu_canvi == '01' and object.cups_polissa_id.titular.lang == "es_ES":
         ${correu_es_motiu_01()}
+    % elif d.motiu_canvi == '06' and autoconsum_actiu and object.cups_polissa_id.titular.lang == "ca_ES":
+        ${correu_ca_motiu_06_auto_actiu()}
+    % elif d.motiu_canvi == '06' and autoconsum_actiu and object.cups_polissa_id.titular.lang == "es_ES":
+        ${correu_es_motiu_06_auto_actiu()}
+    % elif d.motiu_canvi == '06' and not autoconsum_actiu and object.cups_polissa_id.titular.lang == "ca_ES":
+        ${correu_ca_motiu_06_auto_no_actiu()}
+    % elif d.motiu_canvi == '06' and not autoconsum_actiu and object.cups_polissa_id.titular.lang == "es_ES":
+        ${correu_es_motiu_06_auto_no_actiu()}
     % elif d.motiu_canvi == '07' and object.cups_polissa_id.titular.lang == "ca_ES":
         ${correu_ca_motiu_07()}
     % elif d.motiu_canvi == '07' and object.cups_polissa_id.titular.lang == "es_ES":
@@ -224,7 +235,106 @@
     <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
     <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
 </%def>
+<%def name="correu_ca_motiu_06_auto_actiu()">
+    <p>
+        Hola${get_partner_name(object)},
+    </p>
+    <p>
+    L'empresa de distribució elèctrica de la teva zona ens comunica que s’ha sol·licitat una modificació en l’acord de repartiment d’excedents de la instal·lació d'autoproducció col·lectiva a la qual està associat el teu punt de subministrament amb codi CUPS ${object.cups_id.name} corresponent a l’adreça ${object.cups_id.direccio}.
+    </p>
+    <p>
+    Per tal que s’apliqui el nou acord, serà necessari que tots els contractes implicats tramitin una modificació contractual a través de la seva comercialitzadora.
+    </p>
+    <p>
+    Així doncs, si vols que gestionem la modificació de l’acord de repartiment per al teu contracte, serà necessari que ens feu arribar la següent documentació a través de la teva <a href="http://oficinavirtual.somenergia.coop/ca">Oficina Virtual</a>: <b>Contractes > Els meus tràmits d'autoconsum > Modificació acord de repartiment</b>
+    </p>
+    <ul>
+        <li><b>Acord de repartiment</b>: Han de constar clarament els coeficients de repartiment per a cada CUPS, i la signatura de totes les persones titulars.</li>
+        <li><b>Fitxer de coeficients de repartiment</b>: Pots consultar el format d’aquest fitxer en el següent enllaç <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2021-18706">TED 1247/2021</a>.</li>
+    </ul>
+    <br>
+    <p>Quedem pendents de la vostra resposta.</p>
+    <p>Salutacions,</p>
+</%def>
 
+<%def name="correu_ca_motiu_06_auto_no_actiu()">
+    <p>
+        Hola${get_partner_name(object)},
+    </p>
+    <p>
+    L'empresa de distribució elèctrica de la teva zona ens comunica que el punt de subministrament amb codi CUPS ${object.cups_id.name} corresponent a l'adreça ${object.cups_id.direccio} s’ha adherit a l’acord de repartiment d’una instal·lació d’autoconsum col·lectiva.
+    </p>
+    <p>
+    Pots accedir a aquesta informació a través d'<a href="http://oficinavirtual.somenergia.coop/ca">aquest enllaç</a> a la teva oficina virtual seguint aquests passos: <b>Apartat Contractes > Els meus tràmits d'autoconsum > Detalls</b>
+    </p>
+    <p>
+    En cas que la informació sigui correcta, i hagis acceptat el tràmit, podràs demanar la modificació del contracte per aplicar la modalitat triada seguint els passos que et va indicant l'oficina virtual. També et permet sol·licitar alguna altra modificació del contracte com pot ser la potència, tarifa o tensió del subministrament; si vols, pots aprofitar aquest mateix tràmit per fer-ho.
+    </p>
+    <p>
+    Per fer la modificació del teu contracte cap a la modalitat d’autoconsum de compensació d’excedents, l’empresa de distribució elèctrica de la teva zona ens demana la següent documentació, que ens pots fer arribar a través de la teva Oficina Virtual:
+    </p>
+    <ul>
+       <li><b>Acord de repartiment</b>: Han de constar clarament els coeficients de repartiment per a cada CUPS, i la signatura de totes les persones titulars.</li>
+       <li><b>Fitxer de coeficients de repartiment</b>: Pots consultar el format d’aquest fitxer en el següent enllaç <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2021-18706">TED 1247/2021</a>.</li>
+    </ul>
+    <p>
+    Recorda que tens més informació sobre l'autoconsum, el preu de compensació, les modalitats, i els tràmits associats al centre d'ajuda de la nostra web dins l'apartat <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">Autoproducció</a>. També pots consultar en el següent enllaç les <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">condicions generals</a> de contractació que vas acceptar en el moment de contractar amb Som Energia (la clàusula 8 tracta l'autoconsum).
+    </p>
+    <br>
+    <p>Quedem pendents de la vostra resposta.</p>
+    <p>Salutacions,</p>
+</%def>
+<%def name="correu_es_motiu_06_auto_actiu()">
+    <p>
+        Hola${get_partner_name(object)},
+    </p>
+    <p>
+    La empresa de distribución eléctrica de tu zona, nos comunica que se ha solicitado una modificación en el acuerdo de reparto de excedentes de la instalación de autoproducción colectiva a la que está asociado tu punto de suministro con código CUPS ${object.cups_id.name} situado en ${object.cups_id.direccio}.
+    </p>
+    <p>
+    Para que se aplique el nuevo acuerdo, será necesario que todos los contratos implicados tramiten una modificación contractual a través de su comercializadora.
+    </p>
+    <p>
+    Si quieres que gestionemos la modificación del acuerdo de reparto de tu contrato, será necesario que nos facilitéis la siguiente documentación a través de la  <a href="http://oficinavirtual.somenergia.coop/es"> Oficina Virtual</a>: <b>Contratos > > Mis trámites de autoconsumo > Modificación del acuerdo de reparto </b>.
+    <ul>
+        <li> <b>Acuerdo de reparto:</b> tienen que constar claramente los coeficientes de reparto para cada CUPS, y la firma de todas las personas titulares.
+    </li>
+        <li> <b>Fichero de coeficientes de reparto:</b> Puedes consultar el formato de este fichero en el siguiente enlace <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2021-18706">TED 1247/2021</a>.</li>
+    </ul>
+    </p>
+    <br>
+    <p>
+    Quedamos a la espera de vuestra respuesta.
+    </p>
+    <p>Saludos,</p>
+</%def>
+<%def name="correu_es_motiu_06_auto_no_actiu()">
+    <p>
+        Hola${get_partner_name(object)},
+    </p>
+    <p>
+    La empresa de distribución eléctrica de tu zona nos comunica que el punto de suministro con código CUPS ${object.cups_id.name} situado en ${object.cups_id.direccio} se ha adherido al acuerdo de reparto de una instalación de autoconsumo colectiva.
+    </p>
+    <p>
+    Puedes acceder a esta información a través de <a href="https://oficinavirtual.somenergia.coop/es/">este enlace</a> a tu oficina virtual siguiendo estos pasos: <b>Apartado Contratos> Mis trámites de autoconsumo> Detalles</b>
+    </p>
+    <p>
+    En caso de que la información sea correcta, y hayas aceptado el trámite, podrás pedir la modificación del contrato para aplicar la modalidad elegida siguiendo los pasos que te va indicando la oficina virtual. También te permite solicitar alguna otra modificación del contrato como puede ser la potencia, tarifa o tensión del suministro; si quieres, puedes aprovechar este mismo trámite para hacerlo.
+    </p>
+    <p>
+    Para tramitar la modificación de tu contrato hacia la modalidad de autoconsumo con compensación de excedentes, la empresa de distribución eléctrica nos solicita la siguiente documentación, que nos puedes adjuntar a través de tu Oficina Virtual:
+    </p>
+    <ul>
+        <li><b>Acuerdo de reparto</b>: tienen que constar claramente los coeficientes de reparto para cada CUPS, y la firma de todas las personas titulares.</li>
+        <li>Fichero de coeficientes de reparto. Puedes consultar el formato de este fichero en el siguiente enlace <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2021-18706">TED 1247/2021</a>.</li>
+    </ul>
+    <p>
+    Recuerda que tienes más información sobre el autoconsumo, el precio de compensación, las modalidades, y los trámites asociados en el centro de ayuda de nuestra web dentro del apartado <a href="https://es.support.somenergia.coop/category/779-autoproduccion">Autoproducción</a>. También puedes consultar en el siguiente enlace las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">condiciones generales</a> de contratación que aceptaste en el momento de contratar con Som Energia (la cláusula 8 trata el autoconsumo).
+    </p>
+    <br>
+    <p>Quedamos a la espera de vuestra respuesta.</p>
+    <p>Saludos,</p>
+</%def>
 <%def name="correu_ca_motiu_07()">
     <p>
         Hola${get_partner_name(object)},
