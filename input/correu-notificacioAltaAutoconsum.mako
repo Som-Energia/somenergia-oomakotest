@@ -295,7 +295,7 @@
     Para que se aplique el nuevo acuerdo, será necesario que todos los contratos implicados tramiten una modificación contractual a través de su comercializadora.
     </p>
     <p>
-    Si quieres que gestionemos la modificación del acuerdo de reparto de tu contrato, será necesario que nos facilitéis la siguiente documentación a través de la  <a href="http://oficinavirtual.somenergia.coop/es"> Oficina Virtual</a>: <b>Contratos > > Mis trámites de autoconsumo > Modificación del acuerdo de reparto </b>.
+    Si quieres que gestionemos la modificación del acuerdo de reparto de tu contrato, será necesario que nos facilitéis la siguiente documentación a través de la  <a href="http://oficinavirtual.somenergia.coop/es"> Oficina Virtual</a>: <b>Contratos > Mis trámites de autoconsumo > Modificación del acuerdo de reparto </b>.
     <ul>
         <li> <b>Acuerdo de reparto:</b> tienen que constar claramente los coeficientes de reparto para cada CUPS, y la firma de todas las personas titulares.
     </li>
