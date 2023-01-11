@@ -71,6 +71,7 @@ def loadErp(dbcfg):
     tools.config['init'] = []
     tools.config['demo'] = []
     tools.config['update'] = []
+    tools.config['run_scripts'] = []
 
     import pooler
     import osv
