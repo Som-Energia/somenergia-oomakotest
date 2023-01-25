@@ -67,12 +67,12 @@ text_legal = render(t_obj.read(
 <p><strong>Ahorro gracias a la tarifa Generation kWh: </strong>${format_currency(invoice_data['irpfSaving'],'EUR', locale='es_ES')}<br><strong>Retenci&oacute;n para Hacienda (19% del ahorro):</strong> ${format_currency(invoice_data['irpfAmount'],'EUR', locale='es_ES')}</p>
 <p>&nbsp;</p>
 <p>Por otro lado, debemos hacerte el <strong>retorno parcial</strong> de la aportaci&oacute;n que hiciste al Generation kWh. En este caso, es la liquidaci&oacute;n n&uacute;mero ${num_amortization} de 24, y es de ${format_currency(amort_value,'EUR', locale='es_ES')}:</p>
-<p><strong>Aportaci&oacute;n:</strong> ${format_currency(nominal_amount,'EUR', locale='es_ES')}<br><strong>Referencia de la aportaci&oacute;n:</strong> ${object.name or ''}<br><strong>Importe del retorno parcial:</strong> ${format_currency(amort_value,'EUR', locale='es_ES')}<br><strong>N&uacute;mero de pago: </strong>${num_amortization} de 24.</p>
+<p><strong>Aportaci&oacute;n:</strong> ${format_currency(nominal_amount,'EUR', locale='es_ES')}<br><strong>Referencia de la aportaci&oacute;n:</strong> ${investment_name or ''}<br><strong>Importe del retorno parcial:</strong> ${format_currency(amort_value,'EUR', locale='es_ES')}<br><strong>N&uacute;mero de pago: </strong>${num_amortization} de 24.</p>
 <p>&nbsp;</p>
 <p>Aprovecharemos para hacerlo todo en una misma operaci&oacute;n. Por lo tanto, quedar&aacute; de esta manera:</p>
 <p dir="ltr"><strong>Retenci&oacute;n para Hacienda por el ahorro:</strong> ${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')}<br><strong>Retorno parcial del pr&eacute;stamo Generation kWh:</strong> ${format_currency(amort_value,'EUR', locale='es_ES')}&nbsp;</p>
 % if object.amount_total >= 0:
-<p dir="ltr"><strong><strong id="docs-internal-guid-9d67b90b-7fff-7f01-5c3b-2cd6c4e651ca">Pendiente de cobrar&nbsp;</strong>(${format_currency(amort_value,'EUR', locale='es_ES')} - ${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')}): ${format_currency(object.amount_total,'EUR', locale='es_ES')}.&nbsp;</strong></p>
+<p dir="ltr"><strong><strong id="docs-internal-guid-9d67b90b-7fff-7f01-5c3b-2cd6c4e651ca">Pendiente de devolverte&nbsp;</strong>(${format_currency(amort_value,'EUR', locale='es_ES')} - ${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')}): ${format_currency(object.amount_total,'EUR', locale='es_ES')}.&nbsp;</strong></p>
 <p dir="ltr">&nbsp;</p>
 <p dir="ltr">En los pr&oacute;ximos d&iacute;as procederemos a hacer efectivo el pago del importe a la siguiente cuenta bancaria: ${bank_account}.</p>
 % else:
@@ -98,12 +98,12 @@ text_legal = render(t_obj.read(
 <p><strong>Estalvi gr&agrave;cies a la tarifa Generation kWh: </strong>${format_currency(invoice_data['irpfSaving'],'EUR', locale='ca_ES')}<br><strong>Retenci&oacute; per a Hisenda (19% de l'estalvi): </strong>${format_currency(invoice_data['irpfAmount'],'EUR', locale='ca_ES')}</p>
 <p>&nbsp;</p>
 <p>D'altra banda, t'hem de fer el&nbsp;<strong>retorn parcial</strong> de l'aportaci&oacute; que vas fer al Generation kWh. En aquest cas, &eacute;s la liquidaci&oacute; n&uacute;mero ${num_amortization} de 24, i &eacute;s de ${format_currency(amort_value,'EUR', locale='ca_ES')}:</p>
-<p><strong>Aportaci&oacute;:</strong> ${format_currency(nominal_amount,'EUR', locale='ca_ES')}<br><strong>Refer&egrave;ncia de l'aportaci&oacute;: </strong>${object.name or ''}<br><strong>Import del retorn parcial:</strong> ${format_currency(amort_value,'EUR', locale='ca_ES')}<br><strong>N&uacute;mero de pagament: </strong>${num_amortization} de 24.</p>
+<p><strong>Aportaci&oacute;:</strong> ${format_currency(nominal_amount,'EUR', locale='ca_ES')}<br><strong>Refer&egrave;ncia de l'aportaci&oacute;: </strong>${investment_name or ''}<br><strong>Import del retorn parcial:</strong> ${format_currency(amort_value,'EUR', locale='ca_ES')}<br><strong>N&uacute;mero de pagament: </strong>${num_amortization} de 24.</p>
 <p>&nbsp;</p>
 <p>Aprofitarem per fer-ho tot en una mateixa operaci&oacute;. Per tant, quedar&agrave; d&rsquo;aquesta manera:</p>
 <p><strong>Retenci&oacute; per a Hisenda per l'estalvi:</strong> ${format_currency(irpf_values['irpf_amount'],'EUR', locale='ca_ES')}<br><strong>Retorn parcial del pr&eacute;stec Generation kWh: </strong>${format_currency(amort_value,'EUR', locale='ca_ES')}</p>
 % if object.amount_total >= 0:
-<p dir="ltr"><strong><strong id="docs-internal-guid-9d67b90b-7fff-7f01-5c3b-2cd6c4e651ca"><strong id="docs-internal-guid-6db616c4-7fff-d322-d19b-49802294163c">Pendent de cobrar</strong> </strong>(${format_currency(amort_value,'EUR', locale='es_ES')} - ${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')}): ${format_currency(object.amount_total,'EUR', locale='es_ES')}.&nbsp;</strong></p>
+<p dir="ltr"><strong><strong id="docs-internal-guid-9d67b90b-7fff-7f01-5c3b-2cd6c4e651ca"><strong id="docs-internal-guid-6db616c4-7fff-d322-d19b-49802294163c">Pendent de retornar-te</strong> </strong>(${format_currency(amort_value,'EUR', locale='es_ES')} - ${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')}): ${format_currency(object.amount_total,'EUR', locale='es_ES')}.&nbsp;</strong></p>
 <p dir="ltr">&nbsp;</p>
 <p dir="ltr">En els propers dies procedirem a fer efectiu el pagament de l&rsquo;import al compte bancari seg&uuml;ent: ${bank_account}.</p>
 % else:
