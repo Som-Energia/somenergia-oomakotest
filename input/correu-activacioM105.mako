@@ -244,7 +244,7 @@
         <p>
             Hola${nom_titular},
         </p>
-        %if is_pot_tar:
+        %if is_pot_tar or is_auto_uni:
             ${pot_tar_es()}
         %elif is_canvi_tit:
             ${canvi_tit_es()}
