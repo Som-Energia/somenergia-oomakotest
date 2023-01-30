@@ -52,8 +52,13 @@
     pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
     pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
 
-    is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
-    is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
+    is_auto_uni = len(object.step_ids) == 1
+    if not is_auto_uni:
+        is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
+        is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
+    else:
+        is_canvi_tit = False
+        is_pot_tar = False
 
     mapaTarifes = dict(M105.fields_get(object._cr, object._uid)['tarifaATR']['selection'])
     tarifaATR = mapaTarifes[pas05.tarifaATR]
@@ -70,8 +75,9 @@
     polissa = object.polissa_ref_id if is_canvi_tit else object.cups_polissa_id
 
     tipus_tensio = False
-    if pas01 and pas01.solicitud_tensio == "S" and pas05.tensio_suministre:
-        tipus_tensio = get_tension_type(object, pas05, polissa.titular.lang)
+    if not is_auto_uni:
+        if pas01 and pas01.solicitud_tensio == "S" and pas05.tensio_suministre:
+            tipus_tensio = get_tension_type(object, pas05, polissa.titular.lang)
 
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
@@ -144,7 +150,7 @@
         <p>
             Hola${nom_titular},
         </p>
-        %if is_pot_tar:
+        %if is_pot_tar or is_auto_uni:
             ${pot_tar_cat()}
         %elif is_canvi_tit:
             ${canvi_tit_cat()}
@@ -238,7 +244,7 @@
         <p>
             Hola${nom_titular},
         </p>
-        %if is_pot_tar:
+        %if is_pot_tar or is_auto_uni:
             ${pot_tar_es()}
         %elif is_canvi_tit:
             ${canvi_tit_es()}
