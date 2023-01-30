@@ -147,6 +147,13 @@
 #    es_1_2_1: 112738
 #    es_1_2_0: 188333
 #
+#refacturacioAutoG:
+#  template: input/correu-refacturacioAutoG.mako
+#  model: giscedata.polissa
+#  poweremailId: som_facturacio_comer.refacturacio_auto_g
+#  cases:
+#    ca: 57157
+#
 #notificacioFacturaEndarreridaAvancem:
 #  template: input/correu-notificacioFacturaEndarreridaAvancem.mako
 #  model: giscedata.polissa
@@ -1306,6 +1313,16 @@
 #     es: 403834
 #     es_baixa: 6850168
 #     ca_baixa: 6906042
+
+
+# pagamentGenericN57ContracteBaixa:
+#   template: input/correu-pagamentGenericN57ContracteBaixa.mako
+#   model: giscedata.facturacio.factura
+#   poweremailId: som_account_invoice_pending.email_generic_previ_advocats
+#   cases:
+#     es: 6850168
+#     ca: 6906042
+
 
 ########################################
 ## Infoenergia

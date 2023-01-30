@@ -56,6 +56,9 @@ O si ho prefereixes, podem tornar a passar pel banc aquesta factura sempre que t
 - Data factura: ${object.invoice_id.date_invoice}<br/>
 - Període del  ${object.data_inici} al  ${object.data_final}<br/>
 - Import total: ${object.invoice_id.amount_total}€<br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- Import pendent: ${object.invoice_id.residual}€<br/>
+% endif
 <br/>
 T’informem que si et trobes en una situació de vulnerabilitat econòmica, i en compliment de la legislació vigent (Reial decret 897/2017, de 6 d’octubre, pel qual es regula la figura del consumidor vulnerable, el bo social i altres mesures de protecció per als consumidors domèstics d’energia elèctrica), el teu contracte hauria de passar a la comercialitzadora de referència per poder-te acollir al bo social. Som Energia no el pot aplicar per llei, malgrat que el financi.<br/>
 <br/>
@@ -125,6 +128,9 @@ O si lo prefieres, podemos volver a pasar por el banco esta factura, siempre que
 - Fecha factura: ${object.invoice_id.date_invoice}<br/>
 - Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
 - Importe total: ${object.invoice_id.amount_total}€<br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- <B>Importe pendiente: ${object.invoice_id.residual}€</B><br/>
+% endif
 <br/>
 Te informamos que si te encuentras en una situación de vulnerabilidad económica, y en cumplimiento de la legislación vigente (Real Decreto 897/2017, de 6 de ocutbre, por el cual se regula la figura del consumidor vulnerable, el bono social y otras medidas de protección para los consumidores domésticos de energía eléctrica), tu contrato tendría que pasar a la comercializadora de referencia para poderte acoger al bono social. Som Energia no lo puede aplicar por ley, a pesar de que lo financia.<br/>
 <br/>
