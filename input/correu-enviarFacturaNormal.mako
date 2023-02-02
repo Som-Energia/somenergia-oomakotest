@@ -1,6 +1,3 @@
-<!doctype html>
-<html>
-<head><meta charset='utf8'></head><body>
 <%
 import datetime
 data_inici = datetime.datetime.strptime(object.data_inici, '%Y-%m-%d').strftime('%d-%m-%Y')
@@ -68,92 +65,75 @@ def isTariffChange(f):
 <div align="right"><img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></div>
 % endif:
 % if object.partner_id.lang != "es_ES":
-<p><br>
-Benvolgut/da,<br>
-<br>
-T'enviem
+<p><br>Benvolgut, benvolguda,</p>
+<p>T'enviem
 % if not polissa_retrocedida:
- la
+la
 % else:
- una altra
+una altra
 %endif
- <B>factura</B> d'electricitat de Som Energia. <br>
-<br>
+<strong>factura</strong> d'electricitat de Som Energia.</p>
 % if polissa_retrocedida:
-Aquest mes has rebut més d’una factura a causa d'un endarreriment de les factures, o perquè la distribuïdora ens ha enviat lectures d’un període més curt. Si vols, podem canviar la data de venciment per cobrar-la quan et vagi millor.<br>
-<br>
+<p>Aquest mes has rebut m&eacute;s d&rsquo;una factura a causa d'un endarreriment de les factures, o perqu&egrave; la distribu&iuml;dora ens ha enviat lectures d&rsquo;un per&iacute;ode m&eacute;s curt. Si vols, podem canviar la data de venciment per cobrar-la quan et vagi millor.</p>
 % endif
-Al Centre d’Ajuda també t’expliquem detalladament a què correspon <b><a href="https://ca.support.somenergia.coop/article/488-entendre-la-factura">cadascun dels apartats de la factura</a></b>.<br>
-<br>
-Carregarem l'import d'aquesta factura al teu número de compte durant els propers dies.<br>
-</p>
-<br>
-<U><B>Resum de la factura</B></U><br>
-<ul><li>Número de factura: ${object.number}</li><br>
-<li>Codi CUPS: ${object.cups_id.name}</li><br>
-<li>Adreça punt subministrament: ${object.cups_id.direccio}</li><br>
-<li>Titular: ${object.polissa_id.titular.name}</li><br>
-<li>Període del  ${data_inici} al  ${data_final}</li><br>
-<li><B> Import total: ${object.invoice_id.amount_total}</B>€</li><br>
+<p dir="ltr">Com sempre, carregarem l'import d'aquesta factura al teu n&uacute;mero de compte durant els pr&ograve;xims dies.</p>
+<p dir="ltr"><span style="text-decoration: underline;"><strong>Resum del contingut de la factura</strong></span></p>
+<ul>
+<li>N&uacute;mero de factura: ${object.number}</li>
+<li>El per&iacute;ode facturat &eacute;s del<strong id="docs-internal-guid-6536ca4e-7fff-dbd9-04a0-3e9d7d100756"> </strong>${data_inici} al ${data_final}</li>
+<li>Titular del contracte: ${object.polissa_id.titular.name}</li>
+<li>N&uacute;mero de contracte: ${object.polissa_id.name}</li>
+<li>Codi CUPS: ${object.cups_id.name}</li>
+<li>Adre&ccedil;a del punt de subministrament: ${object.cups_id.direccio}</li>
+<li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import a carregar</strong>: ${object.invoice_id.amount_total}</strong>&euro;</li>
 </ul>
-Pots accedir a l'<b><a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a></b> per veure les teves factures i gestionar els contractes que tens amb la cooperativa. Si detectes algun error en la factura, ens ho pots comunicar responent aquest mateix correu. T’informem que l’Equip de Treball de Som Energia es troba en un <b><a href="https://blog.somenergia.coop/som-energia/2021/09/moment-excepcional-en-el-servei-de-comercialitzacio-de-som-energia/">moment excepcional</a></b> de càrrega de feina i això pot fer que triguem uns dies més en respondre.<br>
-<br>
+<p dir="ltr">Al Centre d'Ajuda t'expliquem <a href="https://ca.support.somenergia.coop/article/488-entendre-la-factura">els diferents apartats de la factura</a>.</p>
+<p dir="ltr">Pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure les teves factures i gestionar els contractes que tens amb la cooperativa. Si hi detectes algun error, ens ho pots comunicar responent a aquest mateix correu.&nbsp;</p>
+<p dir="ltr">Aprofitem per recordar-te que els per&iacute;odes horaris que t&rsquo;afecten s&oacute;n els que descrivim al nostre web. Si tens la tarifa 2.0TD (la que tenen la majoria de contractes dom&egrave;stics), continues tenint vigents els tres per&iacute;odes: punta, pla i vall (descrits a l&rsquo;<a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/#tarifa20TD">apartat de tarifes</a> del web, i en <a href="https://ca.support.somenergia.coop/article/1003-la-tarifa-2-0td">aquest article</a> del Centre d&rsquo;Ajuda). No cal que facis cas del que diuen alguns mitjans de comunicaci&oacute; i aplicacions sobre &ldquo;l&rsquo;hora m&eacute;s barata del dia&rdquo;, ja que es refereixen &uacute;nicament a les tarifes del mercat regulat, i Som Energia est&agrave; al mercat lliure.<strong id="docs-internal-guid-e9117f73-7fff-25dd-bcc5-080017a0d8b8"></strong></p>
 % if isTariffChange(object):
-Com que en el període que comprèn la teva factura hi ha hagut un canvi de tarifes, una part del terme d’energia i del terme de potència està facturada amb les tarifes d’abans del canvi, i l’altra part està facturada amb les noves tarifes. Això fa que, a la factura, apareguin dues línies (amb els dos preus) de cadascun dels conceptes d’energia i potència.<br>
-<br>
+<p>Com que en el per&iacute;ode que compr&egrave;n la teva factura hi ha hagut un canvi de tarifes, una part del terme d&rsquo;energia i del terme de pot&egrave;ncia est&agrave; facturada amb les tarifes d&rsquo;abans del canvi, i l&rsquo;altra part est&agrave; facturada amb les noves tarifes. Aix&ograve; fa que, a la factura, apareguin dues l&iacute;nies (amb els dos preus) de cadascun dels conceptes d&rsquo;energia i pot&egrave;ncia.</p>
 % endif
-Atentament,<br>
-<br>
-Equip de Som Energia<br>
-<a href="http://ca.support.somenergia.coop/category/183-ja-tinc-la-llum-contractada">Centre d'ajuda</a><br>
-factura@somenergia.coop<br>
-<a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
+<p>Atentament,</p>
+<p>Equip de Som Energia</p>
+<a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://www.somenergia.coop/factura/dubtes_socia_som_energia.png" alt="" width="189" height="182"></a>
+<p dir="ltr" style="text-align: center;"><a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum"><strong>Resol els teus dubtes amb la factura</strong></a></p>
 % endif
 % if object.partner_id.lang != "ca_ES" and object.partner_id.lang != "es_ES":
-----------------------------------------------------------------------------------------------------
+<p>----------------------------------------------------------------------------------------------------</p>
 % endif
 % if object.partner_id.lang != "ca_ES":
-<p><br>
-Saludos,<br>
-<br>
-Te enviamos
+<p><br>Estimado, estimada,</p>
+<p>Te enviamos
 % if not polissa_retrocedida:
- la
+la
 % else:
- otra
+otra
 %endif
- <B>factura</B> de electricidad de Som Energia. <br>
-<br>
+<strong>factura</strong> de electricidad de Som Energia.</p>
 % if polissa_retrocedida:
-Este mes has recibido más de una factura debido a un retraso de las facturas, o porque la distribuidora nos ha enviado lecturas de un período más corto. Si quieres, podemos cambiar la fecha de vencimiento para cobrarla cuando te vaya mejor.<br>
-<br>
+<p>Este mes has recibido m&aacute;s de una factura debido a un retraso de las facturas, o porque la distribuidora nos ha enviado lecturas de un per&iacute;odo m&aacute;s corto. Si quieres, podemos cambiar la fecha de vencimiento para cobrarla cuando te vaya mejor.</p>
 % endif
-En el Centro de Ayuda también te explicamos detalladamente <b><a href="https://es.support.somenergia.coop/article/489-entender-la-factura">a qué corresponde cada uno de los apartados de la factura</a></b>.<br>
-<br>
-Cargaremos el importe en tu cuenta bancaria durante los próximos días. <br>
-</p>
-<br>
-<U><B>Resumen de la factura</B></U><br>
-<ul><li>Número factura: ${object.number}</li><br>
-<li>Codigo CUPS: ${object.cups_id.name}</li><br>
-<li>Dirección punto suministro: ${object.cups_id.direccio}</li><br>
-<li>Titular: ${object.polissa_id.titular.name}</li><br>
-<li>Periodo del  ${data_inici} al  ${data_final}</li><br>
-<li><B>Importe total: ${object.invoice_id.amount_total}</B>€</li><br>
+<p dir="ltr">En el Centro de Ayuda te explicamos <a href="https://es.support.somenergia.coop/article/489-entender-la-factura-20td">los diferentes apartados de la factura</a>.</p>
+<p dir="ltr">Como siempre, cargaremos el importe de esta factura en tu n&uacute;mero de cuenta durante los pr&oacute;ximos d&iacute;as.</p>
+<p dir="ltr"><span style="text-decoration: underline;"><strong>Resumen del contenido de la factura</strong></span></p>
+<ul>
+<li>N&uacute;mero factura: ${object.number}</li>
+<li>El periodo facturado es del ${data_inici} al ${data_final}</li>
+<li>Titular del contrato: ${object.polissa_id.titular.name}</li>
+<li>N&uacute;mero de contrato: ${object.polissa_id.name}</li>
+<li>Codigo CUPS: ${object.cups_id.name}</li>
+<li>Direcci&oacute;n del punto de suministro: ${object.cups_id.direccio}</li>
+<li><strong>Importe a cargar: ${object.invoice_id.amount_total}</strong>&euro;</li>
 </ul>
-Accede a la <b><a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a></b> para ver tus facturas y gestionar tus contratos de la cooperativa. Si detectas algún error en la factura, nos lo puedes comunicar respondiendo este mismo correo. Te informamos que el Equipo de Som Energia se encuentra en un <b><a href="https://blog.somenergia.coop/som-energia/2021/09/momento-excepcional-en-el-servicio-de-comercializacion-de-som-energia/">momento excepcional</a></b> de carga de trabajo y esto puede suponer que tardemos unos días más en responder.<br>
-<br>
+<p dir="ltr">Puedes acceder a la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a> para ver tus facturas y gestionar tus contratos con la cooperativa. Si detectas alg&uacute;n error, puedes comunicarlo respondiendo a este mismo correo.</p>
+<p dir="ltr">Aprovechamos para recordarte que los periodos horarios que te afectan son los que describimos en nuestro web. Si tienes la tarifa 2.0TD (la que tienen la mayor&iacute;a de contratos dom&eacute;sticos), sigues teniendo vigentes los tres periodos: punta, llano y valle (descritos en el&nbsp;<a href="https://www.somenergia.coop/es/tarifas-de-electricidad/">apartado de tarifas</a> del web, y en <a href="https://es.support.somenergia.coop/article/1004-la-tarifa-2-0td">este art&iacute;culo</a> del Centro de Ayuda). No hace falta que hagas caso de lo que dicen algunos medios de comunicaci&oacute;n y aplicaciones sobre &ldquo;la hora m&aacute;s barata del d&iacute;a&rdquo;, ya que se refieren &uacute;nicamente a las tarifas del mercado regulado, y Som Energia est&aacute; en el mercado libre.</p>
 % if isTariffChange(object):
-Como en el periodo que comprende tu factura ha habido un cambio de tarifas, una parte del término de energía y del término de potencia está facturada con las tarifas de antes del cambio, y la otra parte está facturada con las nuevas tarifas. Esto hace que, en la factura, aparezcan dos líneas (con los precios distintos) de cada uno de los conceptos de energía y potencia.<br>
-<br>
+<p>Como en el periodo que comprende tu factura ha habido un cambio de tarifas, una parte del t&eacute;rmino de energ&iacute;a y del t&eacute;rmino de potencia est&aacute; facturada con las tarifas de antes del cambio, y la otra parte est&aacute; facturada con las nuevas tarifas. Esto hace que, en la factura, aparezcan dos l&iacute;neas (con los precios distintos) de cada uno de los conceptos de energ&iacute;a y potencia.</p>
 % endif
-Atentamente,<br>
-<br>
-Equipo de Som Energia<br>
-<a href="http://es.support.somenergia.coop/category/139-ya-tengo-la-luz-contratada">Centro de Ayuda</a><br>
-factura@somenergia.coop<br>
-<a href="http://www.somenergia.coop">www.somenergia.coop</a><br>
+<p>Atentamente,</p>
+<p>Equipo de Som Energia</p>
+<a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://www.somenergia.coop/factura/dubtes_socia_som_energia.png" alt="" width="189" height="182"></a>
+<p dir="ltr" style="text-align: center;"><strong><a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz">Resuelve tus dudas con la factura</a></strong></p>
+<p style="text-align: center;">&nbsp;</p>
 % endif
-${text_legal}
-</body>
-</html>
+<p>${text_legal}</p>
