@@ -113,7 +113,6 @@ otra
 % if polissa_retrocedida:
 <p>Este mes has recibido m&aacute;s de una factura debido a un retraso de las facturas, o porque la distribuidora nos ha enviado lecturas de un per&iacute;odo m&aacute;s corto. Si quieres, podemos cambiar la fecha de vencimiento para cobrarla cuando te vaya mejor.</p>
 % endif
-<p dir="ltr">En el Centro de Ayuda te explicamos <a href="https://es.support.somenergia.coop/article/489-entender-la-factura-20td">los diferentes apartados de la factura</a>.</p>
 <p dir="ltr">Como siempre, cargaremos el importe de esta factura en tu n&uacute;mero de cuenta durante los pr&oacute;ximos d&iacute;as.</p>
 <p dir="ltr"><span style="text-decoration: underline;"><strong>Resumen del contenido de la factura</strong></span></p>
 <ul>
@@ -125,6 +124,7 @@ otra
 <li>Direcci&oacute;n del punto de suministro: ${object.cups_id.direccio}</li>
 <li><strong>Importe a cargar: ${object.invoice_id.amount_total}</strong>&euro;</li>
 </ul>
+<p dir="ltr">En el Centro de Ayuda te explicamos <a href="https://es.support.somenergia.coop/article/489-entender-la-factura-20td">los diferentes apartados de la factura</a>.</p>
 <p dir="ltr">Puedes acceder a la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a> para ver tus facturas y gestionar tus contratos con la cooperativa. Si detectas alg&uacute;n error, puedes comunicarlo respondiendo a este mismo correo.</p>
 <p dir="ltr">Aprovechamos para recordarte que los periodos horarios que te afectan son los que describimos en nuestro web. Si tienes la tarifa 2.0TD (la que tienen la mayor&iacute;a de contratos dom&eacute;sticos), sigues teniendo vigentes los tres periodos: punta, llano y valle (descritos en el&nbsp;<a href="https://www.somenergia.coop/es/tarifas-de-electricidad/">apartado de tarifas</a> del web, y en <a href="https://es.support.somenergia.coop/article/1004-la-tarifa-2-0td">este art&iacute;culo</a> del Centro de Ayuda). No hace falta que hagas caso de lo que dicen algunos medios de comunicaci&oacute;n y aplicaciones sobre &ldquo;la hora m&aacute;s barata del d&iacute;a&rdquo;, ya que se refieren &uacute;nicamente a las tarifas del mercado regulado, y Som Energia est&aacute; en el mercado libre.</p>
 % if isTariffChange(object):
