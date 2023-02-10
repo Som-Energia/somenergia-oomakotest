@@ -95,7 +95,7 @@ una altra
 % endif
 <p>Atentament,</p>
 <p>Equip de Som Energia</p>
-<a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://www.somenergia.coop/factura/dubtes_socia_som_energia.png" alt="" width="189" height="182"></a>
+<div style="text-align: center;"><a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum"><img style="width: 189px; margin-left: auto; margin-right: auto" src="https://www.somenergia.coop/factura/dubtes_socia_som_energia.png" alt="" height="182"></a></div>
 <p dir="ltr" style="text-align: center;"><a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum"><strong>Resol els teus dubtes amb la factura</strong></a></p>
 % endif
 % if object.partner_id.lang != "ca_ES" and object.partner_id.lang != "es_ES":
@@ -132,7 +132,7 @@ otra
 % endif
 <p>Atentamente,</p>
 <p>Equipo de Som Energia</p>
-<a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://www.somenergia.coop/factura/dubtes_socia_som_energia.png" alt="" width="189" height="182"></a>
+<div style="text-align: center;"><a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz"><img style="width: 189px; margin-left: auto; margin-right: auto" src="https://www.somenergia.coop/factura/dubtes_socia_som_energia.png" alt="" height="182"></a></div>
 <p dir="ltr" style="text-align: center;"><strong><a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz">Resuelve tus dudas con la factura</a></strong></p>
 <p style="text-align: center;">&nbsp;</p>
 % endif
