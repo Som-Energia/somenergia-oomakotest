@@ -22,6 +22,8 @@ for line in object.invoice_line:
     if line.product_id.id == amort_product_id:
         amort_value += line.price_subtotal
 
+amort_value = abs(amort_value)
+
 nominal_amount = investment_obj[0]['nshares']*100
 amount_amortization = nominal_amount*4/100
 num_amortization = int(investment_obj[0]['amortized_amount']/amount_amortization)
@@ -71,12 +73,12 @@ text_legal = render(t_obj.read(
 <p>&nbsp;</p>
 <p>Aprovecharemos para hacerlo todo en una misma operaci&oacute;n. Por lo tanto, quedar&aacute; de esta manera:</p>
 <p dir="ltr"><strong>Retenci&oacute;n para Hacienda por el ahorro:</strong> ${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')}<br><strong>Retorno parcial del pr&eacute;stamo Generation kWh:</strong> ${format_currency(amort_value,'EUR', locale='es_ES')}&nbsp;</p>
-% if object.amount_total >= 0:
+% if object.type == "in_invoice":
 <p dir="ltr"><strong><strong id="docs-internal-guid-9d67b90b-7fff-7f01-5c3b-2cd6c4e651ca">Pendiente de devolverte&nbsp;</strong>(${format_currency(amort_value,'EUR', locale='es_ES')} - ${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')}): ${format_currency(object.amount_total,'EUR', locale='es_ES')}.&nbsp;</strong></p>
 <p dir="ltr">&nbsp;</p>
 <p dir="ltr">En los pr&oacute;ximos d&iacute;as procederemos a hacer efectivo el pago del importe a la siguiente cuenta bancaria: ${bank_account}.</p>
 % else:
-<p><strong><strong id="docs-internal-guid-8017ceb8-7fff-a43b-779b-8e916dbb4e3d">Pendiente de devolver a Som Energia</strong> (${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')} - ${format_currency(amort_value,'EUR', locale='es_ES')}): ${format_currency(abs(object.amount_total),'EUR', locale='es_ES')}.&nbsp;</strong></p>
+<p><strong><strong id="docs-internal-guid-8017ceb8-7fff-a43b-779b-8e916dbb4e3d">Pendiente de devolver a Som Energia</strong> (${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')} - ${format_currency(amort_value,'EUR', locale='es_ES')}): ${format_currency(object.amount_total,'EUR', locale='es_ES')}.&nbsp;</strong></p>
 <p>&nbsp;</p>
 <p>En los pr&oacute;ximos d&iacute;as procederemos a hacer efectivo el cobro del importe a la siguiente cuenta bancaria: ${bank_account}.</p>
 % endif
@@ -102,12 +104,12 @@ text_legal = render(t_obj.read(
 <p>&nbsp;</p>
 <p>Aprofitarem per fer-ho tot en una mateixa operaci&oacute;. Per tant, quedar&agrave; d&rsquo;aquesta manera:</p>
 <p><strong>Retenci&oacute; per a Hisenda per l'estalvi:</strong> ${format_currency(irpf_values['irpf_amount'],'EUR', locale='ca_ES')}<br><strong>Retorn parcial del pr&eacute;stec Generation kWh: </strong>${format_currency(amort_value,'EUR', locale='ca_ES')}</p>
-% if object.amount_total >= 0:
+% if object.type == "in_invoice":
 <p dir="ltr"><strong><strong id="docs-internal-guid-9d67b90b-7fff-7f01-5c3b-2cd6c4e651ca"><strong id="docs-internal-guid-6db616c4-7fff-d322-d19b-49802294163c">Pendent de retornar-te</strong> </strong>(${format_currency(amort_value,'EUR', locale='es_ES')} - ${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')}): ${format_currency(object.amount_total,'EUR', locale='es_ES')}.&nbsp;</strong></p>
 <p dir="ltr">&nbsp;</p>
 <p dir="ltr">En els propers dies procedirem a fer efectiu el pagament de l&rsquo;import al compte bancari seg&uuml;ent: ${bank_account}.</p>
 % else:
-<p><strong>Pendent de retornar a Som Energia&nbsp;(${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')} - ${format_currency(amort_value,'EUR', locale='es_ES')}): ${format_currency(abs(object.amount_total),'EUR', locale='es_ES')}.&nbsp;</strong></p>
+<p><strong>Pendent de retornar a Som Energia&nbsp;(${format_currency(irpf_values['irpf_amount'],'EUR', locale='es_ES')} - ${format_currency(amort_value,'EUR', locale='es_ES')}): ${format_currency(object.amount_total,'EUR', locale='es_ES')}.&nbsp;</strong></p>
 <p>&nbsp;</p>
 <p>En els propers dies procedirem a fer efectiu el cobrament de l&rsquo;import al compte bancari seg&uuml;ent: ${bank_account}.</p>
 % endif
