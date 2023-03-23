@@ -1,7 +1,8 @@
+lang: ${object.partner_id.lang}
 cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.partner_id.address[0].email}
 subject_translations:
-  ca_ES: Generation kWh Som Energia Ref. ${object.number or ''}
-  es_ES: Generation kWh Som Energia Ref. ${object.number or ''}
-subject: Generation kWh Som Energia Ref. ${object.number or ''}
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+  es_ES: "Generation kWh: liquidación 2022 y amortización 2023 (Ref. ${object.origin or ''})"
+  ca_ES: "Generation kWh: liquidació 2022 i amortització 2023 (Ref. ${object.origin or ''})"
+subject: "Generation kWh: liquidación 2022 y amortización 2023 (Ref. ${object.origin or ''})"
