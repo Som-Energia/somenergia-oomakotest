@@ -331,8 +331,9 @@ def getPotenciesPolissa(pol):
       potencies[pot.periode_id.name] = pot.potencia
   return potencies
 
-def calcularPreuTotal(consums, potencies, tarifa, preus, afegir_maj):
+def calcularPreuTotal(consums, potencies, tarifa, preus, afegir_maj, bo_social_separat):
   maj_price = 0.140 #€/kWh
+  bo_social_price = 14.035934
   types =  {
     'power': potencies or {},
     'energy': consums or {}
@@ -344,6 +345,8 @@ def calcularPreuTotal(consums, potencies, tarifa, preus, afegir_maj):
       if afegir_maj and terme == 'energy':
         preu_periode += maj_price
       imports += preu_periode * quantity
+  if bo_social_separat:
+    imports += bo_social_price
 
   return imports
 
@@ -377,9 +380,11 @@ def aplicarCoeficients(consum_anual, tarifa):
   }
   return consums
 
-def calcularImpostos(preu, fiscal_position):
+def calcularImpostos(preu, fiscal_position, potencies):
   iva = 0.21
-  impost_electric = 0.051127
+  impost_electric = 0.005
+  if all([potencia <= 10 for potencia in potencies.values()]):
+    iva = 0.05
   if fiscal_position:
     if fiscal_position.id in [19,33]:
       iva = 0.03
@@ -420,12 +425,13 @@ else:
   else:
     quintextes = 'casA'
 
-preu_vell = calcularPreuTotal(consums, potencies, tarifa, OLD_TARIFF_PRICES, False)
 afegir_maj = not insular
-preu_nou = calcularPreuTotal(consums, potencies, tarifa, NEW_TARIFF_PRICES, afegir_maj)
+preu_vell = calcularPreuTotal(consums, potencies, tarifa, OLD_TARIFF_PRICES, afegir_maj, False)
 
-preu_vell_imp_int = calcularImpostos(preu_vell, object.polissa_id.fiscal_position_id)
-preu_nou_imp_int = calcularImpostos(preu_nou, object.polissa_id.fiscal_position_id)
+preu_nou = calcularPreuTotal(consums, potencies, tarifa, NEW_TARIFF_PRICES, False, True)
+
+preu_vell_imp_int = calcularImpostos(preu_vell, object.polissa_id.fiscal_position_id, potencies)
+preu_nou_imp_int = calcularImpostos(preu_nou, object.polissa_id.fiscal_position_id, potencies)
 
 increment_total = formatNumber(abs(preu_nou_imp_int - preu_vell_imp_int))
 increment_mensual = abs((preu_nou_imp_int - preu_vell_imp_int) / 12)
@@ -434,6 +440,8 @@ preu_vell_imp = formatNumber(preu_vell_imp_int)
 preu_nou_imp = formatNumber(preu_nou_imp_int)
 
 impost_aplicat = 'IVA del 21'
+if all([potencia <= 10 for potencia in potencies.values()]):
+  impost_aplicat = 'IVA del 5'
 if object.polissa_id.fiscal_position_id.id in [19, 33]:
   impost_aplicat = "IGIC del 3"
 elif object.polissa_id.fiscal_position_id.id in [25, 34]:
