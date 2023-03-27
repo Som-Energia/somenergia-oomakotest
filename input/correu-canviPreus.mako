@@ -500,6 +500,8 @@ Hola ${nom_titular}
 <p><span style="font-weight: 400;">Tingues en compte que aix&ograve; s&oacute;n estimacions aproximades, i que els imports finals </span><strong>dependran de circumst&agrave;ncies</strong><span style="font-weight: 400;"> que no podem preveure, com per exemple els horaris i l&rsquo;&uacute;s d&rsquo;energia que finalment facis, altres variacions de preus durant l&rsquo;any, o canvis que pugui haver al mercat el&egrave;ctric.</span></p>
 % endif
 
+<br>
+
 <p><span style="font-weight: 400;">T&rsquo;adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si est&agrave;s d&rsquo;acord amb la baixada de preus, </span><strong>no cal que ens retornis el document signat</strong><span style="font-weight: 400;">, ja que l'actualitzaci&oacute; dels preus de les nostres tarifes s'aplica autom&agrave;ticament. Igualment, hem d&rsquo;informar-te que si, per alguna ra&oacute;, aquest canvi de preus et fes replantejar la teva pertinen&ccedil;a a la cooperativa, podries donar de baixa el teu contracte amb nosaltres, b&eacute; comunicant-nos-ho directament, o b&eacute; mitjan&ccedil;ant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni cl&agrave;usules de perman&egrave;ncia en cap moment. Aix&iacute; doncs, si decidissis marxar, nom&eacute;s et facturar&iacute;em el consum realitzat fins al dia de finalitzaci&oacute; del contracte, amb els preus vigents a cada moment.</span></p>
 
 <br>
@@ -544,7 +546,11 @@ Equip de Som Energia
 <p><span style="font-weight: 400;">Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales </span><strong>depender&aacute;n de circunstancias</strong><span style="font-weight: 400;"> que no podemos prever, como por ejemplo los horarios y el uso de energ&iacute;a que finalmente realices, otras variaciones de precios durante el a&ntilde;o, o cambios que pueda haber en el mercado el&eacute;ctrico.</span></p>
 % endif
 
+<br>
+
 <p><span style="font-weight: 400;">Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Si est&aacute;s de acuerdo con los nuevos de precios, </span><strong>no es necesario que nos devuelvas el documento firmado</strong><span style="font-weight: 400;">, puesto que la actualizaci&oacute;n de los precios de nuestras tarifas se aplica autom&aacute;ticamente. Igualmente, debemos informarte de que si, por alguna raz&oacute;n, este cambio de precios te hiciese replantear tu pertenencia a la cooperativa, podr&iacute;as dar de baja tu contrato con nosotros, bien comunic&aacute;ndolo directamente, o mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cl&aacute;usulas de permanencia en ning&uacute;n momento. As&iacute; pues, si decidieras marcharte, s&oacute;lo te facturar&iacute;amos el consumo realizado hasta el d&iacute;a de finalizaci&oacute;n del contrato, con los precios vigentes en cada momento.</span></p>
+
+<br>
 
 <p dir="ltr">Un saludo cordial,
 <br>
