@@ -471,9 +471,8 @@ except:
 <br>
 <br>
 
-<p><strong>TEST: ${object.polissa_id.name}</strong></p>
-
-<br>
+## <p><strong>TEST: ${object.polissa_id.name}</strong></p>
+## <br>
 
 <p>Hola ${nom_titular}</p>
 
