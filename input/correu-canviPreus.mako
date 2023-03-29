@@ -450,11 +450,11 @@ te_gkwh = object.polissa_id.te_assignacio_gkwh
 try:
   p_obj = object.pool.get('res.partner')
   if not p_obj.vat_es_empresa(object._cr, object._uid, object.polissa_id.titular.vat):
-    nom_titular = object.polissa_id.titular.name.split(',')[1].lstrip() + ','
+    nom_titular = ' ' + object.polissa_id.titular.name.split(',')[1].lstrip() + ','
   else:
-    nom_titular = ''
+    nom_titular = ','
 except:
-  nom_titular = ''
+  nom_titular = ','
 %>
 <!doctype html>
 <head>
@@ -467,17 +467,23 @@ except:
 <body style="text-align: justify; font-family: 'Roboto Mono', Arial; font-size: 14px; line-height: 175%;" >
 <div style="width:96%;max-width:1200px;margin:20px auto;">
 
-<img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png">
+% if object.polissa_id.titular.lang == "ca_ES":
+<a href="https://www.somenergia.coop/ca/"><img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></a>
+%endif
+% if object.polissa_id.titular.lang != "ca_ES":
+<a href="https://www.somenergia.coop/es/"><img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></a>
+%endif
+
 <br>
 <br>
 
 ## <p><strong>TEST: ${object.polissa_id.name}</strong></p>
 ## <br>
 
-<p>Hola ${nom_titular}</p>
+<p>Hola${nom_titular}</p>
 
 % if object.polissa_id.titular.lang == "ca_ES":
-<br>
+
 <p><span style="font-weight: 400;">A partir de l&rsquo;1 de maig tindrem uns nous preus de l&rsquo;electricitat a Som Energia. El preu de l&rsquo;energia al mercat de futurs (on comprem la major part de l&rsquo;energia) s&rsquo;est&agrave; moderant lleugerament, per tant, ens permet </span><strong>abaixar les nostres tarifes</strong><span style="font-weight: 400;">. N&rsquo;expliquem tots els detalls a </span><a href="https://blog.somenergia.coop/?p=44830"><span style="font-weight: 400;">aquesta not&iacute;cia</span></a><span style="font-weight: 400;"> del blog, i a la p&agrave;gina web pots consultar en qualsevol moment </span><a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/"><span style="font-weight: 400;">totes les tarifes</span></a><span style="font-weight: 400;">. Si vols fer-ne comparacions, pots accedir a l&rsquo;apartat</span> <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/"><span style="font-weight: 400;">hist&ograve;ric de tarifes</span></a><span style="font-weight: 400;">, on hi ha tamb&eacute; els preus vigents fins al 30 d&rsquo;abril i els de per&iacute;odes anteriors.</span></p>
 
 <br>
@@ -527,7 +533,7 @@ Equip de Som Energia
 % endif
 
 % if  object.polissa_id.titular.lang != "ca_ES":
-<br>
+
 <p><span style="font-weight: 400;">A partir del 1 de mayo tendremos nuevos precios de la electricidad en Som Energia. El precio de la energ&iacute;a en el mercado de futuros (donde compramos la mayor parte de la energ&iacute;a) se est&aacute; moderando ligeramente, por tanto, nos permite </span><strong>bajar nuestras tarifas</strong><span style="font-weight: 400;">. Explicamos todos los detalles en </span><a href="https://blog.somenergia.coop/?p=44832"><span style="font-weight: 400;">esta noticia</span></a><span style="font-weight: 400;"> del blog, y en la p&aacute;gina web puedes consultar en cualquier momento </span><a href="https://www.somenergia.coop/es/tarifas-de-electricidad/"><span style="font-weight: 400;">todas las tarifas</span></a><span style="font-weight: 400;">. Si quieres hacer comparaciones, puedes acceder al apartado</span> <a href="https://www.somenergia.coop/es/tarifas-de-electricidad/historico-de-tarifas-de-electricidad/"><span style="font-weight: 400;">hist&oacute;rico de tarifas</span></a><span style="font-weight: 400;">, donde est&aacute;n tambi&eacute;n los precios vigentes hasta el 30 de abril y los de per&iacute;odos anteriores.</span></p>
 
 <br>
