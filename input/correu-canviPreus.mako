@@ -371,6 +371,14 @@ def aplicarCoeficients(consum_anual, tarifa):
       'P5': 0.052448855573218,
       'P6': 0.430676652787213,
     },
+    '3.0TDVE':{
+      'P1':0.112062097,
+      'P2':0.146848881,
+      'P3':0.137274931,
+      'P4':0.160997487,
+      'P5':0.066871062,
+      'P6':0.375945543
+      },
   }
   consums = {
     k: consum_anual * coeficients[tarifa][k]
