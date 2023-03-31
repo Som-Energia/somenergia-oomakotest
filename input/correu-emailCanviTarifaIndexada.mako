@@ -21,7 +21,7 @@ text_legal = render(t_obj.read(
 <!doctype html>
 <html>
 <br>
-Hola${titular.name},<br>
+Hola${object.titular.name},<br>
 <br>
 % if object.titular.lang == 'ca_ES':
     ${correu_cat()}
