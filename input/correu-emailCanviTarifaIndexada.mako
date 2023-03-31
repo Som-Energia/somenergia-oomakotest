@@ -15,13 +15,16 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
+p_obj = object.pool.get('res.partner')
+nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.titular.name)['nom']
+
 %>
 
 
 <!doctype html>
 <html>
 <br>
-Hola${object.titular.name},<br>
+Hola${nom_titular},<br>
 <br>
 % if object.titular.lang == 'ca_ES':
     ${correu_cat()}
@@ -73,7 +76,7 @@ ${text_legal}
 
         <b>Dades de la sol·licitud:</b>
         <ul>
-        <li> Modificació de tarifa comercialitzadora: <b>${object.llista_preu.name}</b> </li>
+        <li> Modificació de tarifa comercialitzadora: <b>${object.modcontractuals_ids[0].llista_preu.name}</b> </li>
         </ul>
         <br>
 
@@ -147,7 +150,7 @@ ${text_legal}
 
       <b>Dades de la sol·licitud:</b>
       <ul>
-      <li> Modificación de tarifa comercializadora: <b>${object.llista_preu.name}</b> </li>
+      <li> Modificación de tarifa comercializadora: <b>${object.modcontractuals_ids[0].llista_preu.name}</b> </li>
       </ul>
       <br>
 
