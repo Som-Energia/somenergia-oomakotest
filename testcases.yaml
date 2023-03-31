@@ -49,7 +49,7 @@
 # emailCanviTarifaIndexada:
 #   template: input/correu-emailCanviTarifaIndexada.mako
 #   model: giscedata.polissa
-#   poweremailId: giscedata_polissa.email_canvi_tarifa_a_indexada
+#   poweremailId: som_indexada.email_canvi_tarifa_a_indexada
 #   cases:
 #     ca: 4
 
