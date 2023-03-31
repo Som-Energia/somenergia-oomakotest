@@ -46,6 +46,13 @@
 #    cases:
 #      ca: som_polissa_soci.soci_0001
 
+#  emailCanviTarifaIndexada:
+#    template: input/correu-emailCanviTarifaIndexada.mako
+#    model: somenergia.soci
+#    poweremailId: giscedata_polissa.email_canvi_tarifa_a_indexada
+#    cases:
+#      ca: 4
+
 ######################################################
 ## Facturació
 #
