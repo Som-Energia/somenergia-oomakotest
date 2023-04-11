@@ -523,6 +523,13 @@
 #    2.0_A3_ca: 66599
 #    2.0_A3_es: 68012
 #
+# emailActivacioTarifaIndexada:
+#   template: input/correu-emailActivacioTarifaIndexada.mako
+#   model: giscedata.polissa
+#   poweremailId: som_indexada.email_activacio_tarifa_indexada
+#   cases:
+#     ca: 4
+
 ## REBUTJOS PLANTILLA POWER.EMAIL
 ## --------
 #rebuigM104:
