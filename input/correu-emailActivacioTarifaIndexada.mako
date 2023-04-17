@@ -64,7 +64,7 @@ ${text_legal}
         <br>
         Hola,<br>
         <br>
-        <p>La modificació contractual de tarifa ha estat ACTIVADA, amb data ${object.}</p>
+        <p>La <b><span style="color: #008000;">modificació contractual de tarifa ha estat ACTIVADA</span></b>, amb data ${object.}</p>
         <br>
         <p>Les condicions contractuals actuals del teu contracte amb Som Energia són:</p>
         <br>
