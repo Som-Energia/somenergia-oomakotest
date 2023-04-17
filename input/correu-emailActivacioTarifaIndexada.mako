@@ -1,5 +1,7 @@
 <%
 from mako.template import Template
+from datetime import datetime
+
 def render(text_to_render, object_):
     templ = Template(text_to_render)
     return templ.render_unicode(
@@ -18,6 +20,7 @@ text_legal = render(t_obj.read(
 p_obj = object.pool.get('res.partner')
 nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.titular.name)['nom']
 
+date_activacio = datetime.strptime(object.modcontractuals_ids[0].data_inici, '%Y-%m-%d').strftime('%d/%m/%Y')
 %>
 
 
@@ -64,7 +67,7 @@ ${text_legal}
         <br>
         Hola,<br>
         <br>
-        <p>La <b><span style="color: #008000;">modificació contractual de tarifa ha estat ACTIVADA</span></b>, amb data ${object.}</p>
+        <p>La <b><span style="color: #008000;">modificació contractual de tarifa ha estat ACTIVADA</span></b>, amb data ${date_activacio}.</p>
         <br>
         <p>Les condicions contractuals actuals del teu contracte amb Som Energia són:</p>
         <br>
@@ -117,7 +120,7 @@ ${text_legal}
         <br>
         Hola,<br>
         <br>
-        <p>La modificación contractual de tarifa ha sido ACTIVADA con fecha ${object.}</p>
+        <p>La <b><span style="color: #008000;">modificación contractual de tarifa ha sido ACTIVADA</span></b> con fecha ${date_activacio}.</p>
         <br>
         <p>Las condiciones contractuales actuales de tu contrato con Som Energia son:</p>
         <br>
