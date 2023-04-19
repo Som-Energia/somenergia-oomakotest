@@ -79,7 +79,6 @@ ${text_legal}
         <br>
         Atentament,<br>
         <br>
-        Equip de Som Energia<br>
         <p>
             Equip de Som Energia <br>
             <a href="mailto:comercializacion@somenergia.coop">comercializacion@somenergia.coop</a><br>
