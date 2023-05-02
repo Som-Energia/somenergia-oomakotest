@@ -1,0 +1,8 @@
+lang: ${object.partner_id.lang}
+cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.partner_id.address[0].email}
+subject_translations:
+  ca_ES: Certificat IRPF 2022 Títols - Som Energia
+  es_ES: Certificado IRPF 2022 Títulos  - Som Energia
+subject: Certificat IRPF 2022 Títols - Som Energia
