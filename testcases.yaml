@@ -1205,6 +1205,20 @@
 #  cases:
 #    es: 5293
 #    ca: 192
+# certificatRetencionsTitols:
+#   template: input/correu-certificatRetencionsTitols.mako
+#   model: som.enviament.massiu
+#   poweremailId: 358
+#   cases:
+#     ca:
+#     es:
+# certificatRetencionsAportacions:
+#   template: input/correu-certificatRetencionsAportacions.mako
+#   model: som.enviament.massiu
+#   poweremailId: 362
+#   cases:
+#     ca:
+#     es:
 ######################################################
 ## Impagats
 #
