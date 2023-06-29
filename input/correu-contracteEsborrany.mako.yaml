@@ -1,4 +1,5 @@
 cc: false
+lang: ${object.titular.lang}
 to: ${object.direccio_pagament.email}
 subject_translations:
   ca_ES: Contractació Som Energia ${object.name}
