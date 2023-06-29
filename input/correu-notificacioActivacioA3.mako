@@ -73,7 +73,11 @@ text_legal = render(t_obj.read(
 Hola${nom_titular},<br />
 <br />
 % if object.cups_polissa_id.titular.lang != "es_ES":
+% if object.cups_polissa_id.mode_facturacio == "index":
+Ens plau comunicar-te que el procés d'alta de subministrament ha finalitzat,  <FONT COLOR="green"><strong>el contracte està activat amb Som Energia</strong></FONT> des del ${data_activacio}. En aquest sentit, t’adjuntem les condicions generals, específiques i particulars resultants després dels tràmits amb la companyia distribuïdora.<br />
+% else:
 Ens plau comunicar-te que el procés d'alta de subministrament ha finalitzat,  <FONT COLOR="green"><strong>el contracte està activat amb Som Energia</strong></FONT> des del ${data_activacio}. En aquest sentit, t’adjuntem les condicions generals i particulars resultants després dels tràmits amb la companyia distribuïdora.<br />
+% endif
 <br />
 Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br />
 <ul>
@@ -83,7 +87,7 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br />
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${TarifaATR}</li>
+<li><strong> Tarifa: </strong>${object.cups_polissa_id.llista_preu.name}</li>
 <li><strong> Potència: </strong>
 ${lineesDePotencia_ca}</li>
 </ul>
@@ -108,7 +112,11 @@ comercialitzacio@somenergia.coop<br />
 <br />----------------------------------------------------------------------------------------------------<br />
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
+% if object.cups_polissa_id.mode_facturacio == "index":
+Nos complace informarte que el proceso de alta de suministro ha finalizado, <FONT COLOR="green"><strong>tu contrato con Som Energia está activado </strong></FONT> desde el ${data_activacio}. En este sentido, te adjuntamos las condiciones generales, específicas y particulares resultantes después de los trámites con la compañía distribuidora.<br />
+% else:
 Nos complace informarte que el proceso de alta de suministro ha finalizado, <FONT COLOR="green"><strong>tu contrato con Som Energia está activado </strong></FONT> desde el ${data_activacio}. En este sentido, te adjuntamos las condiciones generales y particulares resultantes después de los trámites con la compañía distribuidora.<br />
+% endif
 <br />
 Los datos del nuevo contrato son:<br />
 <ul>
@@ -118,7 +126,7 @@ Los datos del nuevo contrato son:<br />
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${TarifaATR}</li>
+<li><strong> Tarifa: </strong>${object.cups_polissa_id.llista_preu.name}</li>
 <li><strong> Potencia: </strong>
 ${lineesDePotencia_es}</li>
 </ul>
