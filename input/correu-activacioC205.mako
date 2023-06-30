@@ -76,14 +76,14 @@ text_legal = render(t_obj.read(
     object
 )
 %>
-<br/>
-<br/>
-Hola${nom_titular},<br/>
-<br/>
+<br>
+<br>
+Hola${nom_titular},<br>
+<br>
 % if object.cups_polissa_id.titular.lang != "es_ES":
-Ens plau comunicar-te que el procés de canvi de comercialitzadora ha finalitzat,  <font COLOR="green"><strong>el contracte està activat amb Som Energia</strong></font> des del ${data_activacio}.<br/>
-<br/>
-Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br/>
+Ens plau comunicar-te que el procés de canvi de comercialitzadora ha finalitzat,  <font COLOR="green"><strong>el contracte està activat amb Som Energia</strong></font> des del ${data_activacio}.<br>
+<br>
+Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br>
 <ul>
 <li><strong>Número de contracte amb Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
@@ -98,35 +98,35 @@ ${lineesDePotencia_ca}</li>
     <li><strong> Modalitat autoconsum: </strong> ${autoconsum_description}</li>
 %endif
 </ul>
-<br/>
+<br>
 % if object.cups_polissa_id.mode_facturacio == "index":
-T’adjuntem les condicions particulars, generals i específiques. Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br />
+T’adjuntem les condicions particulars, generals i específiques. Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br>
 % else:
-T’adjuntem les condicions particulars i generals. Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br />
+T’adjuntem les condicions particulars i generals. Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br>
 % endif
-<br/>
-A l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> també pots consultar les dades del contracte i veure totes les teves factures.<br/>
-<br/>
+<br>
+A l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> també pots consultar les dades del contracte i veure totes les teves factures.<br>
+<br>
 %if subministrament_essencial:
-Si aquest contracte de llum correspon a un <a href="https://ca.support.somenergia.coop/article/1226-subministraments-essencials">subministrament essencial</a>, per tal de disposar d’una protecció especial i que no es pugui suspendre el subministrament elèctric, cal que ens ho indiqueu responent aquest mateix correu.<br />
-<br />
+Si aquest contracte de llum correspon a un <a href="https://ca.support.somenergia.coop/article/1226-subministraments-essencials">subministrament essencial</a>, per tal de disposar d’una protecció especial i que no es pugui suspendre el subministrament elèctric, cal que ens ho indiqueu responent aquest mateix correu.<br>
+<br>
 %endif
-Si tens algun dubte, trobaràs les preguntes més freqüents al <a href="https://ca.support.somenergia.coop/">Centre de Suport</a>.<br/>
-<br/>
-<br/>
-Atentament,<br/>
-<br/>
-Equip de Som Energia<br/>
-comercialitzacio@somenergia.coop<br/>
-<a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br/>
+Si tens algun dubte, trobaràs les preguntes més freqüents al <a href="https://ca.support.somenergia.coop/">Centre de Suport</a>.<br>
+<br>
+<br>
+Atentament,<br>
+<br>
+Equip de Som Energia<br>
+comercialitzacio@somenergia.coop<br>
+<a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br>
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES" and object.cups_polissa_id.titular.lang != "es_ES":
-<br/>----------------------------------------------------------------------------------------------------<br/>
+<br>----------------------------------------------------------------------------------------------------<br>
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
-Nos complace informarte que el proceso de cambio de comercializadora ha finalizado, <font COLOR="green"><strong>tu contrato con Som Energia está activado </strong></font> desde el ${data_activacio}.<br/>
-<br/>
-Los datos del nuevo contrato son:<br/>
+Nos complace informarte que el proceso de cambio de comercializadora ha finalizado, <font COLOR="green"><strong>tu contrato con Som Energia está activado </strong></font> desde el ${data_activacio}.<br>
+<br>
+Los datos del nuevo contrato son:<br>
 <ul>
 <li><strong>Número de contrato con Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
@@ -141,30 +141,30 @@ ${lineesDePotencia_es}</li>
     <li><strong> Modalidad autoconsumo: </strong> ${autoconsum_description}</li>
 %endif
 </ul>
-<br/>
+<br>
 % if object.cups_polissa_id.mode_facturacio == "index":
-Te adjuntamos las condiciones particulares, generales y específicas. Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con el anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br/>
+Te adjuntamos las condiciones particulares, generales y específicas. Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con el anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br>
 % else:
-Te adjuntamos las condiciones particulares y generales. Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con el anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br/>
+Te adjuntamos las condiciones particulares y generales. Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con el anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br>
 % endif
-<br/>
-En la <a href="https://oficinavirtual.somenergia.coop/es/login/"> Oficina Virtual </a> también puedes consultar los datos del contrato y ver todas tus facturas. <br/>
-<br/>
+<br>
+En la <a href="https://oficinavirtual.somenergia.coop/es/login/"> Oficina Virtual </a> también puedes consultar los datos del contrato y ver todas tus facturas. <br>
+<br>
 %if subministrament_essencial:
-Si este contrato de luz corresponde a un <a href="https://es.support.somenergia.coop/article/1227-suministros-esenciales">suministro esencial</a>, para disponer de una protección especial y que no se pueda suspender el suministro eléctrico, es necesario que nos lo indiquéis respondiendo este mismo correo.<br />
-<br />
+Si este contrato de luz corresponde a un <a href="https://es.support.somenergia.coop/article/1227-suministros-esenciales">suministro esencial</a>, para disponer de una protección especial y que no se pueda suspender el suministro eléctrico, es necesario que nos lo indiquéis respondiendo este mismo correo.<br>
+<br>
 %endif
-Si tienes alguna duda, encontrarás las preguntas más frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br/>
-<br/>
-<br/>
-Atentamente,<br/>
-<br/>
-Equipo de Som Energia<br/>
-comercializacion@somenergia.coop<br/>
-<a href="https://www.somenergia.coop">www.somenergia.coop</a><br/>
+Si tienes alguna duda, encontrarás las preguntas más frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br>
+<br>
+<br>
+Atentamente,<br>
+<br>
+Equipo de Som Energia<br>
+comercializacion@somenergia.coop<br>
+<a href="https://www.somenergia.coop">www.somenergia.coop</a><br>
 % endif
-<br/>
+<br>
 ${text_legal}
-<br/>
+<br>
 </body>
 </html>
