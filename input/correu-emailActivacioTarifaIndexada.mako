@@ -71,7 +71,7 @@ ${text_legal}
         <br>
         <p>Les condicions contractuals actuals del teu contracte amb Som Energia són:</p>
         <br>
-        <b>Tarifa comercialitzadora: ${object.llista_preu.name}</b>
+        <b>Tarifa comercialitzadora: ${object.modcontractuals_ids[0].llista_preu.name}</b>
         <br>
         <p>Recorda que a la propera factura ja començarem a aplicar-te la nova tarifa.</p>
         <br>
@@ -123,7 +123,7 @@ ${text_legal}
         <br>
         <p>Las condiciones contractuales actuales de tu contrato con Som Energia son:</p>
         <br>
-        <b>Tarifa: comercializadora: ${object.llista_preu.name}</b>
+        <b>Tarifa comercializadora: ${object.modcontractuals_ids[0].llista_preu.name}</b>
         <br>
         <p>Recuerda que en la próxima factura ya empezaremos a aplicar-te la nueva tarifa.</p>
         <br>

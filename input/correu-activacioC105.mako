@@ -93,7 +93,7 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br>
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${object.cups_polissa_id.llista_preu.name}</li>
+<li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
 <li><strong> Potència: </strong>
 ${lineesDePotencia_ca}</li>
 %if autoconsum_description:
@@ -136,7 +136,7 @@ Los datos del nuevo contrato son:<br>
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${object.cups_polissa_id.llista_preu.name}</li>
+<li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
 <li><strong> Potencia: </strong>
 ${lineesDePotencia_es}</li>
 
