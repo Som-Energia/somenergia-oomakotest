@@ -56,23 +56,6 @@ if pas5.tipus_autoconsum != '00' and pas5.tipus_autoconsum:
 subministrament_essencial = False
 if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
   subministrament_essencial = True
-tarifaComer = ""
-try:
-  wiz_o = object.pool.get('wizard.change.to.indexada')
-  pricelist_obj = object.pool.get('product.pricelist')
-  pricelist_id = wiz_o.get_new_pricelist(
-        cursor,
-        uid,
-        contract,
-        context=context,
-      )
-  new_pricelist = pricelist_obj.browse(
-    cursor, uid, pricelist_id, context={'prefetch': False})
-  tarifaComer = new_pricelist.name
-except Exception:
-  # if we get an exception is because we haven't found a list price, so, empy list
-  pass
-
 %>
 <%
 from mako.template import Template
@@ -107,7 +90,7 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br>
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${tarifaComer}</li>
+<li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
 <li><strong> Potència: </strong>
 ${lineesDePotencia_ca}</li>
 %if autoconsum_description:
@@ -116,9 +99,9 @@ ${lineesDePotencia_ca}</li>
 </ul>
 <br>
 % if object.cups_polissa_id.mode_facturacio == "index":
-T’adjuntem les condicions particulars, generals i específiques. Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br>
+T’adjuntem les condicions particulars, generals i específiques. Recorda que el contracte <strong> s'activa amb les mateixes potències que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br>
 % else:
-T’adjuntem les condicions particulars i generals. Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br>
+T’adjuntem les condicions particulars i generals. Recorda que el contracte <strong> s'activa amb les mateixes potències que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br>
 % endif
 <br>
 A l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> també pots consultar les dades del contracte i veure totes les teves factures.<br>
@@ -150,7 +133,7 @@ Los datos del nuevo contrato son:<br>
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${tarifaComer}</li>
+<li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
 <li><strong> Potencia: </strong>
 ${lineesDePotencia_es}</li>
 %if autoconsum_description:
@@ -159,9 +142,9 @@ ${lineesDePotencia_es}</li>
 </ul>
 <br>
 % if object.cups_polissa_id.mode_facturacio == "index":
-Te adjuntamos las condiciones particulares, generales y específicas. Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con el anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br>
+Te adjuntamos las condiciones particulares, generales y específicas. Recuerda que el contrato <strong> se ha activado con las mismas potencias que tenías con la anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br>
 % else:
-Te adjuntamos las condiciones particulares y generales. Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con el anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br>
+Te adjuntamos las condiciones particulares y generales. Recuerda que el contrato <strong> se ha activado con las mismas potencias que tenías con la anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br>
 % endif
 <br>
 En la <a href="https://oficinavirtual.somenergia.coop/es/login/"> Oficina Virtual </a> también puedes consultar los datos del contrato y ver todas tus facturas. <br>

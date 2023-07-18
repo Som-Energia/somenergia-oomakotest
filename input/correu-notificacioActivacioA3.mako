@@ -48,24 +48,6 @@ if TarifaATR == "2.0TD":
 subministrament_essencial = False
 if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
   subministrament_essencial = True
-
-tarifaComer = ""
-try:
-  wiz_o = object.pool.get('wizard.change.to.indexada')
-  pricelist_obj = object.pool.get('product.pricelist')
-  pricelist_id = wiz_o.get_new_pricelist(
-        cursor,
-        uid,
-        contract,
-        context=context,
-      )
-  new_pricelist = pricelist_obj.browse(
-    cursor, uid, pricelist_id, context={'prefetch': False})
-  tarifaComer = new_pricelist.name
-except Exception:
-  # if we get an exception is because we haven't found a list price, so, empy list
-  pass
-
 %>
 <%
 from mako.template import Template
@@ -104,7 +86,7 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br />
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${tarifaComer}</li>
+<li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
 <li><strong> Potència: </strong>
 ${lineesDePotencia_ca}</li>
 </ul>
@@ -143,7 +125,7 @@ Los datos del nuevo contrato son:<br />
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${tarifaComer}</li>
+<li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
 <li><strong> Potencia: </strong>
 ${lineesDePotencia_es}</li>
 </ul>
