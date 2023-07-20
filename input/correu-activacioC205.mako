@@ -1,11 +1,43 @@
 <!doctype html>
 <html>
+
 % if object.cups_polissa_id.titular.lang == "ca_ES":
-<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><font SIZE=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><font SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><font SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><font SIZE=1> Titular: ${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
+<table width="100%" frame="below" bgcolor="#E8F1D4">
+<tbody>
+<tr>
+<td height="2px"><span style="font-size: small;"><strong>Contracte Som Energia n&ordm; ${object.cups_polissa_id.name}</strong></span></td>
+<td rowspan="4" valign="TOP"><img src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png" width="130" height="65"></td>
+</tr>
+<tr>
+<td height="2px"><span style="font-size: xx-small;">Adre&ccedil;a punt subministrament: ${object.cups_id.direccio}</span></td>
+</tr>
+<tr>
+<td height="2px"><span style="font-size: xx-small;">Codi CUPS: ${object.cups_id.name}</span></td>
+</tr>
+<tr>
+<td width="100%" height="2px"><span style="font-size: xx-small;"> Titular: ${object.cups_polissa_id.titular.name} </span></td>
+</tr>
+</tbody>
+</table>
 % else:
-<head><meta charset="utf-8" /><table width="100%" frame="below" BGCOLOR="#E8F1D4"><tr><td height = 2px><font SIZE=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><font SIZE=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><font SIZE=1>Código CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><font SIZE=1>Titular:${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
+<table width="100%" frame="below" bgcolor="#E8F1D4">
+<tbody>
+<tr>
+<td height="2px"><span style="font-size: small;"><strong>Contrato Som Energia n&ordm; ${object.cups_polissa_id.name}</strong></span></td>
+<td rowspan="4" valign="TOP"><img src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png" width="130" height="65"></td>
+</tr>
+<tr>
+<td height="2px"><span style="font-size: xx-small;">Direcci&oacute;n punto suministro: ${object.cups_id.direccio}</span></td>
+</tr>
+<tr>
+<td height="2px"><span style="font-size: xx-small;">C&oacute;digo CUPS: ${object.cups_id.name}</span></td>
+</tr>
+<tr>
+<td width="100%" height="2px"><span style="font-size: xx-small;">Titular:${object.cups_polissa_id.titular.name} </span></td>
+</tr>
+</tbody>
+</table>
 % endif
-<body>
 <%
 import sys
 
@@ -75,6 +107,7 @@ text_legal = render(t_obj.read(
     object
 )
 %>
+
 <br>
 <br>
 Hola${nom_titular},<br>
@@ -84,9 +117,9 @@ Ens plau comunicar-te que el procés de canvi de comercialitzadora ha finalitzat
 <br>
 Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br>
 <ul>
-<li><strong>Número de contracte amb Som Energia: </strong>${object.cups_polissa_id.name}</li>
+<li><strong>N&uacute;mero de contracte amb Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
-<li><strong>Direcció del punt de subministrament: </strong>${object.cups_id.direccio}</li>
+<li><strong>Direcci&oacute; del punt de subministrament: </strong>${object.cups_id.direccio}</li>
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
@@ -94,9 +127,10 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br>
 <li><strong> Potència: </strong>
 ${lineesDePotencia_ca}</li>
 %if autoconsum_description:
-    <li><strong> Modalitat autoconsum: </strong> ${autoconsum_description}</li>
-%endif
+<ul>
+<li><strong> Modalitat autoconsum: </strong> ${autoconsum_description}</li>
 </ul>
+
 <br>
 % if object.cups_polissa_id.mode_facturacio == "index":
 T’adjuntem les condicions particulars, generals i específiques. Recorda que el contracte <strong> s'activa amb les mateixes potències que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br>
@@ -127,9 +161,9 @@ Nos complace informarte que el proceso de cambio de comercializadora ha finaliza
 <br>
 Los datos del nuevo contrato son:<br>
 <ul>
-<li><strong>Número de contrato con Som Energia: </strong>${object.cups_polissa_id.name}</li>
+<li><strong>N&uacute;mero de contrato con Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
-<li><strong>Dirección del punto de suministro: </strong>${object.cups_id.direccio}</li>
+<li><strong>Direcci&oacute;n del punto de suministro: </strong>${object.cups_id.direccio}</li>
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
@@ -137,8 +171,8 @@ Los datos del nuevo contrato son:<br>
 <li><strong> Potencia: </strong>
 ${lineesDePotencia_es}</li>
 %if autoconsum_description:
-    <li><strong> Modalidad autoconsumo: </strong> ${autoconsum_description}</li>
-%endif
+<ul>
+<li><strong> Modalidad autoconsumo: </strong> ${autoconsum_description}</li>
 </ul>
 <br>
 % if object.cups_polissa_id.mode_facturacio == "index":

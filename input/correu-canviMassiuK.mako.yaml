@@ -1,0 +1,8 @@
+lang: ${object.polissa_id.titular.lang}
+cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.polissa_id.titular.address[0].email}
+subject_translations:
+  ca_ES: "[IMPORTANT] Actualitzem el preu (franja K) de la tarifa indexada a partir del juliol"
+  es_ES: "[IMPORTANTE] Actualizamos el precio (franja K) de la tarifa indexada a partir de julio"
+subject: "[IMPORTANTE] Actualizamos el precio (franja K) de la tarifa indexada a partir de julio"
