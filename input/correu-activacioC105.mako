@@ -89,6 +89,7 @@ if pas5.tipus_autoconsum != '00' and pas5.tipus_autoconsum:
 subministrament_essencial = False
 if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
   subministrament_essencial = True
+tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
 %>
 <%
 from mako.template import Template
@@ -123,7 +124,7 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br>
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
+<li><strong> Tarifa: </strong>${tarifaComer}</li>
 <li><strong> Potència: </strong>
 ${lineesDePotencia_ca}</li>
 %if autoconsum_description:
@@ -166,7 +167,7 @@ Los datos del nuevo contrato son:<br>
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
+<li><strong> Tarifa: </strong>${tarifaComer}</li>
 <li><strong> Potencia: </strong>
 ${lineesDePotencia_es}</li>
 </ul>

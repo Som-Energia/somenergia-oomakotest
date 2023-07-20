@@ -66,6 +66,7 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
+tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
 %>
 <br />
 <br />
@@ -86,7 +87,7 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br />
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
+<li><strong> Tarifa: </strong>${tarifaComer}</li>
 <li><strong> Potència: </strong>
 ${lineesDePotencia_ca}</li>
 </ul>
@@ -125,7 +126,7 @@ Los datos del nuevo contrato son:<br />
 <li><strong>Titular del contrato: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
-<li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
+<li><strong> Tarifa: </strong>${tarifaComer}</li>
 <li><strong> Potencia: </strong>
 ${lineesDePotencia_es}</li>
 </ul>
