@@ -123,7 +123,6 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br>
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
-
 <li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
 <li><strong> Potència: </strong>
 ${lineesDePotencia_ca}</li>
@@ -170,8 +169,6 @@ Los datos del nuevo contrato son:<br>
 <li><strong> Tarifa: </strong>${object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name}</li>
 <li><strong> Potencia: </strong>
 ${lineesDePotencia_es}</li>
-<li><strong> Tarifa: </strong>${TarifaATR}</li>
-<li><strong> Potencia: </strong>${lineesDePotencia_es}</li>
 </ul>
 %if autoconsum_description:
 <ul>
