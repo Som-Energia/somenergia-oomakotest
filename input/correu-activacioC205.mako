@@ -88,6 +88,8 @@ if pas5.tipus_autoconsum != '00' and pas5.tipus_autoconsum:
 subministrament_essencial = False
 if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
   subministrament_essencial = True
+
+tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
 %>
 <%
 from mako.template import Template
@@ -106,7 +108,7 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
-tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
+
 %>
 
 <br>
@@ -126,12 +128,13 @@ Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
 <li><strong> Tarifa: </strong>${tarifaComer}</li>
 <li><strong> Potència: </strong>
-${lineesDePotencia_ca}</li>
+${lineesDePotencia_ca}</li></ul>
 %if autoconsum_description:
 <ul>
 <li><strong> Modalitat autoconsum: </strong> ${autoconsum_description}</li>
 </ul>
-
+<br>
+%endif
 <br>
 % if object.cups_polissa_id.mode_facturacio == "index":
 T’adjuntem les condicions particulars, generals i específiques. Recorda que el contracte <strong> s'activa amb les mateixes potències que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br>
@@ -170,11 +173,13 @@ Los datos del nuevo contrato son:<br>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
 <li><strong> Tarifa: </strong>${tarifaComer}</li>
 <li><strong> Potencia: </strong>
-${lineesDePotencia_es}</li>
+${lineesDePotencia_es}</li></ul>
 %if autoconsum_description:
 <ul>
 <li><strong> Modalidad autoconsumo: </strong> ${autoconsum_description}</li>
 </ul>
+<br>
+%endif
 <br>
 % if object.cups_polissa_id.mode_facturacio == "index":
 Te adjuntamos las condiciones particulares, generales y específicas. Recuerda que el contrato <strong> se ha activado con las mismas potencias que tenías con la anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br>
