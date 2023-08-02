@@ -28,6 +28,12 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
+pobresa_energetica = False
+pobresa_id = md_obj.get_object_reference(
+  cursor, uid, 'som_polissa', 'categ_pobresa_energetica'
+)[1]
+if pobresa_id and object.polissa_id.category_id and pobresa_id in [x.id for x in object.polissa_id.category_id]:
+  pobresa_energetica = True
 %>
 <%
 import datetime
@@ -54,7 +60,9 @@ En cas de no abonar-se la quantitat deguda, a partir del dia ${data_venciment} l
 <br/>
 Sempre prevaldrà la data de notificació del primer requeriment de factura impagada.<br/>
 <br/>
-Et comuniquem que s'aplicarà automàticament, a la propera factura, un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament.<br/>
+% if not pobresa_energetica:
+  Et comuniquem que s'aplicarà automàticament, a la propera factura, un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament.<br/>
+% endif
 <br/>
 <br/>
 <U>Resum de la factura</U><br/>
