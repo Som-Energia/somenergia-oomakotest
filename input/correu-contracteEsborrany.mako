@@ -123,7 +123,7 @@ text_legal = render(t_obj.read(
                 &nbsp;&nbsp;&nbsp;&nbsp;- Socio/a de Som Energia: ${object.soci.name}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Titular del contrato de electricidad: ${object.titular.name}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Dirección punto de suministro: ${object.cups_direccio}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Código CUPS: ${object.cups.name}
+                &nbsp;&nbsp;&nbsp;&nbsp;- Código CUPS: ${object.cups.name}<br>
             </p>
             % if not object.observacions or 'proces: A3' not in object.observacions:
                 <p>
