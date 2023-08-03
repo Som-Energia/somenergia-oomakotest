@@ -73,7 +73,7 @@ ${text_legal}
 
         <b>Dades de la sol·licitud:</b>
         <ul>
-        <li> Modificació de tarifa comercialitzadora: <b>${tarifaComer}</b> </li>
+        <li>Modificació de tarifa comercialitzadora: <b>${tarifaComer}</b> </li>
         </ul>
         <p>T'enviarem un nou correu electrònic quan se't comenci a aplicar la nova tarifa.</p>
         <br>
@@ -143,9 +143,9 @@ ${text_legal}
       <li>Dirección: ${object.cups.direccio} </li>
       </ul>
 
-      <b>Dades de la sol·licitud:</b>
+      <b>Datos de la solicitud:</b>
       <ul>
-      <li> Modificación de tarifa comercializadora: <b>${tarifaComer}</b> </li>
+      <li>Modificación de tarifa comercializadora: <b>${tarifaComer}</b> </li>
       </ul>
 
       <p>Te enviaremos un nuevo correo electrónico cuando se te empiece a aplicar la nueva tarifa. </p><br>

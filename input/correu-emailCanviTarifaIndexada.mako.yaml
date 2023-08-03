@@ -5,5 +5,5 @@ to: ${object.direccio_pagament.email},${object.direccio_notificacio.email}
 subject_translations:
   ca_ES: Sol·licitud de modificació contracte ${object.name}
   es_ES: Solicitud de modificación de contrato ${object.name}
-subject: Sol·licitud de modificació contracte ${object.name}
+subject: Sol·licitud de modificació contracte ${object.name} / Solicitud de modificación de contrato ${object.name}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
