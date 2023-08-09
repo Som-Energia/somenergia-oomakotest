@@ -27,7 +27,7 @@ text_legal = render(t_obj.read(
 )
 pobresa_energetica = False
 pobresa_id = md_obj.get_object_reference(
-  cursor, uid, 'som_polissa', 'categ_pobresa_energetica'
+  object._cr, object._uid, 'som_polissa', 'categ_pobresa_energetica'
 )[1]
 if pobresa_id and object.polissa_id.category_id and pobresa_id in [x.id for x in object.polissa_id.category_id]:
   pobresa_energetica = True
