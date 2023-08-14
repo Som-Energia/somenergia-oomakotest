@@ -19,11 +19,12 @@ text_legal = render(t_obj.read(
 tarifa_a_mostrar = ""
 
 try:
+    lang = object.titular.lang
     pol_o = object.pool.get('giscedata.polissa')
     llista_preu_o = object.pool.get('product.pricelist')
 
     tarifes_ids = llista_preu_o.search(object._cr, object._uid, [])
-    llista_preus = pol_o.escull_llista_preus(object._cr, object._uid, object.id, tarifes_ids)
+    llista_preus = pol_o.escull_llista_preus(object._cr, object._uid, object.id, tarifes_ids, context={'lang': lang})
 
     tarifa_a_mostrar = llista_preus.nom_comercial or llista_preus.name
 except Exception as error:
