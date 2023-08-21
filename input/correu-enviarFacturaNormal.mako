@@ -214,3 +214,4 @@
     <p dir="ltr" style="text-align: center;"><strong><a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz">¿Crees que tu factura contiene errores?</a></strong></p>
     <p style="text-align: center;">&nbsp;</p>
 %endif
+<p>${data['text_legal']}</p>
