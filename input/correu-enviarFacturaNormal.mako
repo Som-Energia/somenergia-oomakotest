@@ -20,7 +20,7 @@
     <p dir="ltr"><span style="text-decoration: underline;"><strong>Resum del contingut de la factura</strong></span></p>
     <ul>
         <li>Número de factura: ${data['factura']['numero']}</li>
-        <li>El període facturat és del<strong id="docs-internal-guid-6536ca4e-7fff-dbd9-04a0-3e9d7d100756"> </strong>${data['data']['alta']} al ${data['data']['fi']}</li>
+        <li>El període facturat és del<strong id="docs-internal-guid-6536ca4e-7fff-dbd9-04a0-3e9d7d100756"> </strong>${data['factura']['data']['inici']} al ${data['factura']['data']['fi']}</li>
         <li>Tarifa: ${data['polissa']['llista_preus']}</li>
         <li>Titular del contracte: ${data['polissa']['titular']['nom']}</li>
         <li>Número de contracte: ${data['polissa']['numero']}</li>
@@ -122,7 +122,7 @@
     <p dir="ltr"><span style="text-decoration: underline;"><strong>Resumen de la factura</strong></span></p>
     <ul>
         <li>Número de factura: ${data['factura']['numero']}</li>
-        <li>Periodo facturado: del<strong id="docs-internal-guid-6536ca4e-7fff-dbd9-04a0-3e9d7d100756"> </strong>${data['data']['alta']} al ${data['data']['fi']}</li>
+        <li>Periodo facturado: del<strong id="docs-internal-guid-6536ca4e-7fff-dbd9-04a0-3e9d7d100756"> </strong>${data['factura']['data']['inici']} al ${data['factura']['data']['fi']}</li>
         <li>Tarifa: ${data['polissa']['llista_preus']}</li>
         <li>Titular del contrato: ${data['polissa']['titular']['nom']}</li>
         <li>Número de contracte: ${data['polissa']['numero']}</li>
