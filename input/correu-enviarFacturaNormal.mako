@@ -103,10 +103,10 @@
     <p dir="ltr" style="text-align: center;"><a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum"><strong>Creus que la teva factura és errònia?</strong></a></p>
     </p>
 % endif
-% if object.partner_id.lang != "ca_ES" and object.partner_id.lang != "es_ES":
+% if data['lang'] != "ca_ES" and data['lang'] != "es_ES":
     <p>----------------------------------------------------------------------------------------------------</p>
 % endif
-% if object.partner_id.lang != "ca_ES":
+% if data['lang'] != "ca_ES":
     <p><br>Estimado, estimada,</p>
     <p>Te enviamos
     % if not polissa_retrocedida:
@@ -214,4 +214,4 @@
     <p dir="ltr" style="text-align: center;"><strong><a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz">¿Crees que tu factura contiene errores?</a></strong></p>
     <p style="text-align: center;">&nbsp;</p>
 %endif
-<p>${data['text_legal']}</p>
+<p>${data['text_correu']['text_legal']}</p>
