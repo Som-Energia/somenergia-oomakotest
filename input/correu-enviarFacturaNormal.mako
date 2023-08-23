@@ -26,7 +26,7 @@
         <li>Número de contracte: ${data['polissa']['numero']}</li>
         <li>Codi CUPS: ${data['polissa']['cups']['codi']}</li>
         <li>Adreça del punt de subministrament: ${data['polissa']['cups']['adreca']}</li>
-        <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import a carregar</strong>: ${data['factura']['import']}</strong> euros</li>
+        <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import a carregar</strong>: ${data['factura']['import']} euros</strong></li>
     </ul>
     <p>
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
@@ -131,7 +131,7 @@
         <li>Número de contracte: ${data['polissa']['numero']}</li>
         <li>Código CUPS: ${data['polissa']['cups']['codi']}</li>
         <li>Dirección del punto de suministro: ${data['polissa']['cups']['adreca']}</li>
-        <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Importe a carregar</strong>: ${data['factura']['import']}</strong> euros</li>
+        <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Importe a carregar</strong>: ${data['factura']['import']} euros</strong></li>
     </ul>
     <p dir="ltr"></p>
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
