@@ -1,6 +1,6 @@
 <%
     email_o = object.pool.get('report.backend.invoice.email')
-    data = email_o.get_data(object._cr, object._uid, object.id, context=None)
+    data = email_o.get_data(object._cr, object._uid, object.id, context={'lang': object.partner_id.lang})
     polissa_retrocedida = data['polissa']['polissa_retrocedida']
 %>
 <div align="right">${data['comerci']['logo']}</div>
