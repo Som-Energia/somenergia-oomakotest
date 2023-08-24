@@ -16,7 +16,7 @@
     % if polissa_retrocedida:
         <p>Aquest mes has rebut més d'una factura a causa d'un endarreriment de les factures, o perquè la distribuïdora ens ha enviat lectures d'un període més curt. Si vols, podem canviar la data de venciment per cobrar-la quan et vagi millor.</p>
     % endif
-    <p dir="ltr">Durant els pròxims dies carregarem l’import d'aquesta factura al compte corrent associat a aquest contracte.</p>
+    <p dir="ltr">Durant els pròxims dies carregarem l'import d'aquesta factura al compte corrent associat a aquest contracte.</p>
     <p dir="ltr"><span style="text-decoration: underline;"><strong>Resum del contingut de la factura</strong></span></p>
     <ul>
         <li>Número de factura: ${data['factura']['numero']}</li>
@@ -31,10 +31,10 @@
     <p>
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
         <p dir="ltr">
-            Sempre que vulguis, pots accedir a l’<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
+            Sempre que vulguis, pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
         </p>
         <p dir="ltr">
-            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1003-la-tarifa-2-0td">la tarifa 2.0TD períodes</a>, i al web pots veure’n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa20TD">preus</a>.
+            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1003-la-tarifa-2-0td">la tarifa 2.0TD períodes</a>, i al web pots veure'n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa20TD">preus</a>.
         </p>
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-resol-els-teus-dubtes-sobre-la-factura">aquest enllaç</a>, o bé ens ho pots comunicar responent aquest mateix correu. I si vols saber més sobre la factura, trobaràs la informació detallada en l’article que explica <a href="https://ca.support.somenergia.coop/article/488-entendre-la-factura-20td">la factura en la tarifa 2.0TD períodes</a> del Centre d’Ajuda.
@@ -44,7 +44,7 @@
             Sempre que vulguis, pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
         </p>
         <p dir="ltr">
-            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1323-la-tarifa-2-0td-indexada">la tarifa 2.0TD indexada</a>, i al web pots veure’n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#tarifa20TD">preus</a>.
+            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1323-la-tarifa-2-0td-indexada">la tarifa 2.0TD indexada</a>, i al web pots veure'n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#tarifa20TD">preus</a>.
         </p>
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
@@ -61,7 +61,7 @@
             Sempre que vulguis, pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
         </p>
         <p dir="ltr">
-            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1115-la-tarifa-3-0td">la tarifa 3.0TD períodes</a>, i al web pots veure’n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa30TD">preus</a>.
+            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1115-la-tarifa-3-0td">la tarifa 3.0TD períodes</a>, i al web pots veure'n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa30TD">preus</a>.
         </p>
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
@@ -71,7 +71,7 @@
             Sempre que vulguis, pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
         </p>
         <p dir="ltr">
-            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1324-la-tarifa-3-0td-indexada">la tarifa 3.0TD indexada</a>, i al web pots veure’n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#tarifa30TD">preus</a>.
+            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1324-la-tarifa-3-0td-indexada">la tarifa 3.0TD indexada</a>, i al web pots veure'n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#tarifa30TD">preus</a>.
         </p>
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
@@ -81,7 +81,7 @@
             Sempre que vulguis, pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
         </p>
         <p dir="ltr">
-            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1163-tarifes-dalta-tensio-6-1td-6-2td-6-3td-i-6-4td">les tarifes d'alta tensió 6.1TD, 6.2TD, 6.3TD i 6.4TD períodes</a>, i al web pots veure’n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa61TD">preus</a>.
+            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1163-tarifes-dalta-tensio-6-1td-6-2td-6-3td-i-6-4td">les tarifes d'alta tensió 6.1TD, 6.2TD, 6.3TD i 6.4TD períodes</a>, i al web pots veure'n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa61TD">preus</a>.
         </p>
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
@@ -91,7 +91,7 @@
             Sempre que vulguis, pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
         </p>
         <p dir="ltr">
-            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1337-tarifes-dalta-tensio-6-1td-6-2td-6-3td-i-6-4td-indexades">les tarifes d'alta tensió 6.1TD, 6.2TD, 6.3TD i 6.4TD indexades</a>, i al web pots veure’n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#tarifa61TD">preus</a>.
+            Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1337-tarifes-dalta-tensio-6-1td-6-2td-6-3td-i-6-4td-indexades">les tarifes d'alta tensió 6.1TD, 6.2TD, 6.3TD i 6.4TD indexades</a>, i al web pots veure'n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#tarifa61TD">preus</a>.
         </p>
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
@@ -131,7 +131,7 @@
         <li>Número de contracte: ${data['polissa']['numero']}</li>
         <li>Código CUPS: ${data['polissa']['cups']['codi']}</li>
         <li>Dirección del punto de suministro: ${data['polissa']['cups']['adreca']}</li>
-        <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Importe a carregar</strong>: ${data['factura']['import']} euros</strong></li>
+        <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Importe a cargar</strong>: ${data['factura']['import']} euros</strong></li>
     </ul>
     <p dir="ltr"></p>
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
@@ -199,13 +199,13 @@
         </p>
     %elif data['polissa']['tarifa'] == '6.1TD' and data['polissa']['mode_facturacio'] == 'index':
         <p dir="ltr">
-        Siempre que quieras, puedes acceder a la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a> para ver y descargar tus facturas y gestionar tus contratos con la cooperativa.
+            Siempre que quieras, puedes acceder a la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a> para ver y descargar tus facturas y gestionar tus contratos con la cooperativa.
         </p>
         <p dir="ltr">
-        Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1337-tarifes-dalta-tensio-6-1td-6-2td-6-3td-i-6-4td-indexades">les tarifes d'alta tensió 6.1TD, 6.2TD, 6.3TD i 6.4TD indexades</a>, i al web pots veure’n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#tarifa61TD">preus</a>.
+            Puedes consultar el funcionamiento de la tarifa que tienes contratada en este artículo: las <a href="https://es.support.somenergia.coop/article/1164-tarifas-de-alta-tension-6-1td-6-2td-6-3td-y-6-4td">tarifas de alta tensión  6.1TD, 6.2TD, 6.3TD i 6.4TD periodos</a>, y en el web puedes ver sus <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#tarifa61TD">precios</a>.
         </p>
         <p dir="ltr">
-        Si detectas algún error en la factura, puedes consultar este <a href="https://es.support.somenergia.coop/article/927-resuelve-tus-dudas-de-la-factura">enlace</a> o bien nos lo puedes comunicar respondiendo a este mismo correo.
+            Si detectas algún error en la factura, puedes consultar este <a href="https://es.support.somenergia.coop/article/927-resuelve-tus-dudas-de-la-factura">enlace</a> o bien nos lo puedes comunicar respondiendo a este mismo correo.
         </p>
     %endif
     % if data['factura']['isTariffChange']:
