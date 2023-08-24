@@ -17,7 +17,7 @@
         <p>Aquest mes has rebut més d'una factura a causa d'un endarreriment de les factures, o perquè la distribuïdora ens ha enviat lectures d'un període més curt. Si vols, podem canviar la data de venciment per cobrar-la quan et vagi millor.</p>
     % endif
     <p dir="ltr">Durant els pròxims dies carregarem l'import d'aquesta factura al compte corrent associat a aquest contracte.</p>
-    <p dir="ltr"><span style="text-decoration: underline;"><strong>Resum del contingut de la factura</strong></span></p>
+    <p dir="ltr"><span style="text-decoration: underline;"><strong>Resum de la factura</strong></span></p>
     <ul>
         <li>Número de factura: ${data['factura']['numero']}</li>
         <li>Període facturat: del<strong id="docs-internal-guid-6536ca4e-7fff-dbd9-04a0-3e9d7d100756"> </strong>${data['factura']['data']['inici']} al ${data['factura']['data']['fi']}</li>
@@ -37,7 +37,7 @@
             Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1003-la-tarifa-2-0td">la tarifa 2.0TD períodes</a>, i al web pots veure'n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa20TD">preus</a>.
         </p>
         <p dir="ltr">
-            Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-resol-els-teus-dubtes-sobre-la-factura">aquest enllaç</a>, o bé ens ho pots comunicar responent aquest mateix correu. I si vols saber més sobre la factura, trobaràs la informació detallada en larticle que explica <a href="https://ca.support.somenergia.coop/article/488-entendre-la-factura-20td">la factura en la tarifa 2.0TD períodes</a> del Centre d'Ajuda.
+            Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-resol-els-teus-dubtes-sobre-la-factura">aquest enllaç</a>, o bé ens ho pots comunicar responent aquest mateix correu. I si vols saber més sobre la factura, trobaràs la informació detallada en l'article que explica <a href="https://ca.support.somenergia.coop/article/488-entendre-la-factura-20td">la factura en la tarifa 2.0TD períodes</a> del Centre d'Ajuda.
         </p>
     %elif data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'index':
         <p dir="ltr">
@@ -101,7 +101,7 @@
         </p>
     %endif
     %if data['factura']['isTariffChange']:
-        <p>Com que en el període que comprén la teva factura hi ha hagut un canvi de tarifes, una part del terme d'energia i del terme de potència està facturada amb les tarifes d'abans del canvi, i l'altra part està facturada amb les noves tarifes. Això fa que, a la factura, apareguin dues línies (amb els dos preus) de cadascun dels conceptes d'energia i potència.</p>
+        <p>Com que en el període que comprèn la teva factura hi ha hagut un canvi de tarifes, una part del terme d'energia i del terme de potència està facturada amb les tarifes d'abans del canvi, i l'altra part està facturada amb les noves tarifes. Això fa que, a la factura, apareguin dues línies (amb els dos preus) de cadascun dels conceptes d'energia i potència.</p>
     %endif
     <p>Atentament,</p>
     <p>Equip de Som Energia</p>
@@ -131,7 +131,7 @@
         <li>Periodo facturado: del<strong id="docs-internal-guid-6536ca4e-7fff-dbd9-04a0-3e9d7d100756"> </strong>${data['factura']['data']['inici']} al ${data['factura']['data']['fi']}</li>
         <li>Tarifa: ${data['polissa']['llista_preus']}</li>
         <li>Titular del contrato: ${data['polissa']['titular']['nom']}</li>
-        <li>Número de contracte: ${data['polissa']['numero']}</li>
+        <li>Número de contrato: ${data['polissa']['numero']}</li>
         <li>Código CUPS: ${data['polissa']['cups']['codi']}</li>
         <li>Dirección del punto de suministro: ${data['polissa']['cups']['adreca']}</li>
         <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Importe a cargar</strong>: ${data['factura']['import']} euros</strong></li>
