@@ -1,5 +1,7 @@
 <%
+from giscedata_facturacio.report.utils import get_atr_price, get_comming_atr_price
 from mako.template import Template
+
 def render(text_to_render, object_):
     templ = Template(text_to_render)
     return templ.render_unicode(
@@ -15,252 +17,6 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
-
-NEW_TARIFF_PRICES = {
-    "2.0TD": {
-        "power": [
-            ("P1", 26.881),
-            ("P2", 2.841),
-        ],
-        "energy": [
-            ("P1", 0.295),
-            ("P2", 0.237),
-            ("P3", 0.199),
-        ],
-        "gkwh": [
-            ("P1", 0.197),
-            ("P2", 0.150),
-            ("P3", 0.126),
-        ]
-    },
-    "3.0TD": {
-        "power": [
-            ("P1", 13.982509),
-            ("P2", 11.899074),
-            ("P3", 4.002045),
-            ("P4", 3.653973),
-            ("P5", 2.732707),
-            ("P6", 2.001136),
-        ],
-        "energy": [
-            ("P1", 0.233),
-            ("P2", 0.254),
-            ("P3", 0.23),
-            ("P4", 0.213),
-            ("P5", 0.213),
-            ("P6", 0.196),
-        ],
-        "gkwh": [
-            ("P1", 0.159),
-            ("P2", 0.152),
-            ("P3", 0.127),
-            ("P4", 0.118),
-            ("P5", 0.118),
-            ("P6", 0.119),
-        ]
-    },
-    "6.1TD": {
-        "power": [
-            ("P1", 22.965215),
-            ("P2", 19.841178),
-            ("P3", 10.327582),
-            ("P4", 8.560662),
-            ("P5", 1.908583),
-            ("P6", 1.148958),
-        ],
-        "energy": [
-            ("P1", 0.207),
-            ("P2", 0.221),
-            ("P3", 0.207),
-            ("P4", 0.195),
-            ("P5", 0.189),
-            ("P6", 0.180),
-        ],
-        "gkwh": [
-            ("P1", 0.129),
-            ("P2", 0.12),
-            ("P3", 0.104),
-            ("P4", 0.099),
-            ("P5", 0.095),
-            ("P6", 0.099),
-        ]
-    },
-    "3.0TDVE": {
-        "power": [
-            ("P1", 2.558984),
-            ("P2", 2.503926),
-            ("P3", 0.664441),
-            ("P4", 0.573622),
-            ("P5", 0.338303),
-            ("P6", 0.338303),
-        ],
-        "energy": [
-            ("P1", 0.320),
-            ("P2", 0.329),
-            ("P3", 0.26),
-            ("P4", 0.233),
-            ("P5", 0.217),
-            ("P6", 0.203),
-        ],
-        "gkwh": [
-            ("P1", 0.246),
-            ("P2", 0.227),
-            ("P3", 0.157),
-            ("P4", 0.138),
-            ("P5", 0.122),
-            ("P6", 0.125),
-        ]
-    },
-    "6.1TDVE": {
-        "power": [
-            ("P1", 4.269983),
-            ("P2", 4.002324),
-            ("P3", 1.994267),
-            ("P4", 1.599721),
-            ("P5", 0.113126),
-            ("P6", 0.113126),
-        ],
-        "energy": [
-            ("P1", 0.355),
-            ("P2", 0.337),
-            ("P3", 0.258),
-            ("P4", 0.235),
-            ("P5", 0.196),
-            ("P6", 0.185),
-        ],
-        "gkwh": [
-            ("P1", 0.277),
-            ("P2", 0.237),
-            ("P3", 0.155),
-            ("P4", 0.140),
-            ("P5", 0.101),
-            ("P6", 0.104),
-        ]
-    },
-}
-
-OLD_TARIFF_PRICES = {
-  "2.0TD": {
-        "power": [
-            ("P1", 27.203),
-            ("P2", 3.163),
-        ],
-        "energy": [
-            ("P1", 0.342),
-            ("P2", 0.281),
-            ("P3", 0.234),
-        ],
-        "gkwh": [
-            ("P1", 0.183),
-            ("P2", 0.135),
-            ("P3", 0.111),
-        ]
-    },
-    "3.0TD": {
-        "power": [
-            ("P1", 13.982509),
-            ("P2", 11.899074),
-            ("P3", 4.002045),
-            ("P4", 3.653973),
-            ("P5", 2.732707),
-            ("P6", 2.001136),
-        ],
-        "energy": [
-            ("P1", 0.342),
-            ("P2", 0.312),
-            ("P3", 0.277),
-            ("P4", 0.254),
-            ("P5", 0.234),
-            ("P6", 0.224),
-        ],
-        "gkwh": [
-            ("P1", 0.159),
-            ("P2", 0.147),
-            ("P3", 0.116),
-            ("P4", 0.107),
-            ("P5", 0.097),
-            ("P6", 0.104),
-        ]
-    },
-    "6.1TD": {
-        "power": [
-            ("P1", 22.965215),
-            ("P2", 19.841178),
-            ("P3", 10.327582),
-            ("P4", 8.560662),
-            ("P5", 1.908583),
-            ("P6", 1.148958),
-        ],
-        "energy": [
-            ("P1", 0.302),
-            ("P2", 0.276),
-            ("P3", 0.252),
-            ("P4", 0.244),
-            ("P5", 0.227),
-            ("P6", 0.216),
-        ],
-        "gkwh": [
-            ("P1", 0.119),
-            ("P2", 0.110),
-            ("P3", 0.090),
-            ("P4", 0.085),
-            ("P5", 0.077),
-            ("P6", 0.083),
-        ]
-    },
-    "3.0TDVE": {
-        "power": [
-            ("P1", 2.558984),
-            ("P2", 2.503926),
-            ("P3", 0.664441),
-            ("P4", 0.573622),
-            ("P5", 0.338303),
-            ("P6", 0.338303),
-        ],
-        "energy": [
-            ("P1", 0.429),
-            ("P2", 0.38),
-            ("P3", 0.307),
-            ("P4", 0.274),
-            ("P5", 0.238),
-            ("P6", 0.227),
-        ],
-        "gkwh": [
-            ("P1", 0.246),
-            ("P2", 0.216),
-            ("P3", 0.147),
-            ("P4", 0.127),
-            ("P5", 0.102),
-            ("P6", 0.108),
-        ]
-    },
-    "6.1TDVE": {
-        "power": [
-            ("P1", 4.269983),
-            ("P2", 4.002324),
-            ("P3", 1.994267),
-            ("P4", 1.599721),
-            ("P5", 0.113126),
-            ("P6", 0.113126),
-        ],
-        "energy": [
-            ("P1", 0.450),
-            ("P2", 0.392),
-            ("P3", 0.303),
-            ("P4", 0.278),
-            ("P5", 0.233),
-            ("P6", 0.221),
-        ],
-        "gkwh": [
-            ("P1", 0.267),
-            ("P2", 0.226),
-            ("P3", 0.141),
-            ("P4", 0.120),
-            ("P5", 0.083),
-            ("P6", 0.088),
-        ]
-    },
-}
 
 def getConsumEstimatPotencia(potencia):
   res = 0
@@ -329,18 +85,25 @@ def getPotenciesPolissa(pol):
       potencies[pot.periode_id.name] = pot.potencia
   return potencies
 
-def calcularPreuTotal(consums, potencies, tarifa, preus, afegir_maj, bo_social_separat):
+def calcularPreuTotal(consums, potencies, tarifa, afegir_maj, bo_social_separat, date=None):
+  ctx = {}
+  if date:
+    ctx['date'] = date
+  ctx['potencia_anual'] = True
+  ctx['sense_agrupar'] = True
   maj_price = 0.140 #€/kWh
   bo_social_price = 14.035934
   types =  {
-    'power': potencies or {},
-    'energy': consums or {}
+    'tp': potencies or {},
+    'te': consums or {}
   }
   imports = 0
   for terme, values in types.items():
     for periode, quantity in values.items():
-      preu_periode = dict(preus[tarifa][terme])[periode]
-      if afegir_maj and terme == 'energy':
+      preu_periode = get_atr_price(
+        object._cr, object._uid, object.polissa_id, periode, terme, ctx, with_taxes=False
+      )[0]
+      if afegir_maj and terme == 'te':
         preu_periode += maj_price
       imports += preu_periode * quantity
   if bo_social_separat:
@@ -431,9 +194,8 @@ else:
   else:
     quintextes = 'casA'
 
-preu_vell = calcularPreuTotal(consums, potencies, tarifa, OLD_TARIFF_PRICES, False, False)
-
-preu_nou = calcularPreuTotal(consums, potencies, tarifa, NEW_TARIFF_PRICES, False, True)
+preu_vell = calcularPreuTotal(consums, potencies, tarifa, False, False, '2023-06-01')
+preu_nou = calcularPreuTotal(consums, potencies, tarifa, False, True, '2023-12-01')
 
 preu_vell_imp_int = calcularImpostos(preu_vell, object.polissa_id.fiscal_position_id, potencies)
 preu_nou_imp_int = calcularImpostos(preu_nou, object.polissa_id.fiscal_position_id, potencies)
