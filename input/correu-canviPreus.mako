@@ -1,6 +1,9 @@
 <%
+from datetime import date
 from giscedata_facturacio.report.utils import get_atr_price, get_comming_atr_price
 from mako.template import Template
+
+PRICE_CHANGE_DATE = '2023-11-01'
 
 def render(text_to_render, object_):
     templ = Template(text_to_render)
@@ -194,8 +197,8 @@ else:
   else:
     quintextes = 'casA'
 
-preu_vell = calcularPreuTotal(consums, potencies, tarifa, False, False, '2023-06-01')
-preu_nou = calcularPreuTotal(consums, potencies, tarifa, False, True, '2023-12-01')
+preu_vell = calcularPreuTotal(consums, potencies, tarifa, False, False, date.today().strftime("%Y-%m-%d"))
+preu_nou = calcularPreuTotal(consums, potencies, tarifa, False, True, PRICE_CHANGE_DATE)
 
 preu_vell_imp_int = calcularImpostos(preu_vell, object.polissa_id.fiscal_position_id, potencies)
 preu_nou_imp_int = calcularImpostos(preu_nou, object.polissa_id.fiscal_position_id, potencies)
