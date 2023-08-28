@@ -1,6 +1,6 @@
 <%
 from datetime import date
-from giscedata_facturacio.report.utils import get_atr_price, get_comming_atr_price
+from giscedata_facturacio.report.utils import get_atr_price
 from mako.template import Template
 
 PRICE_CHANGE_DATE = '2023-11-01'
