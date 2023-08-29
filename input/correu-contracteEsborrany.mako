@@ -15,6 +15,21 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
+
+tarifa_a_mostrar = ""
+
+try:
+    lang = object.titular.lang
+    pol_o = object.pool.get('giscedata.polissa')
+    llista_preu_o = object.pool.get('product.pricelist')
+
+    tarifes_ids = llista_preu_o.search(object._cr, object._uid, [])
+    llista_preus = pol_o.escull_llista_preus(object._cr, object._uid, object.id, tarifes_ids, context={'lang': lang})
+
+    tarifa_a_mostrar = llista_preus.nom_comercial or llista_preus.name
+except Exception as error:
+    pass
+
 %>
 
 <!doctype html>
@@ -44,6 +59,7 @@ text_legal = render(t_obj.read(
                 &nbsp;&nbsp;&nbsp;&nbsp;- Titular del contracte d'electricitat: ${object.titular.name}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Adreça punt subministrament: ${object.cups_direccio}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Codi CUPS: ${object.cups.name}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Tarifa: ${tarifa_a_mostrar}<br>
             </p>
             % if not object.observacions or 'proces: A3' not in object.observacions:
                 <p>
@@ -124,6 +140,7 @@ text_legal = render(t_obj.read(
                 &nbsp;&nbsp;&nbsp;&nbsp;- Titular del contrato de electricidad: ${object.titular.name}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Dirección punto de suministro: ${object.cups_direccio}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Código CUPS: ${object.cups.name}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Tarifa: ${tarifa_a_mostrar}<br>
             </p>
             % if not object.observacions or 'proces: A3' not in object.observacions:
                 <p>
