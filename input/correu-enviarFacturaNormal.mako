@@ -2,6 +2,9 @@
     email_o = object.pool.get('report.backend.invoice.email')
     data = email_o.get_data(object._cr, object._uid, object.id, context={'lang': object.partner_id.lang})
     polissa_retrocedida = data['polissa']['polissa_retrocedida']
+    donatiu = data['linies']['total']['donatiu']['import']
+    fraccionament = data['linies']['total']['fraccionament']['import']
+    total_linies_impostos = data['linies']['total']['total_linies_impostos']['import']
 %>
 <div align="right"><a href="https://somenergia.coop"><img src="${data['comerci']['logo']}"/></a></div>
 % if data['lang'] != "es_ES":
