@@ -3,7 +3,7 @@
     data = email_o.get_data(object._cr, object._uid, object.id, context={'lang': object.partner_id.lang})
     polissa_retrocedida = data['polissa']['polissa_retrocedida']
 %>
-<div align="right">${data['comerci']['logo']}</div>
+<div align="right"><a href="https://somenergia.coop"><img src="${data['comerci']['logo']}"/></a></div>
 % if data['lang'] != "es_ES":
     <p><br>Benvolgut, benvolguda,</p>
     <p>T'enviem
