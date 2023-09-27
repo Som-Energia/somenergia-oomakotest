@@ -19,8 +19,47 @@
     % if polissa_retrocedida:
         <p>Aquest mes has rebut més d'una factura a causa d'un endarreriment de les factures, o perquè la distribuïdora ens ha enviat lectures d'un període més curt. Si vols, podem canviar la data de venciment per cobrar-la quan et vagi millor.</p>
     % endif
-    <p dir="ltr">Durant els pròxims dies carregarem l'import d'aquesta factura al compte corrent associat a aquest contracte.</p>
-    <p dir="ltr"><span style="text-decoration: underline;"><strong>Resum de la factura</strong></span></p>
+    %if fraccionament and donatiu:
+        <p>
+            T'informem també de l'import del donatiu voluntari corresponent, així com els imports dels fraccionaments pendents.
+            Fins fa poc, aquests conceptes estaven inclosos a la factura, però els hem extret per separar els conceptes que no formen part de la factura d'electricitat actual. En el cas dels fraccionaments, corresponen a d'altres factures d'electricitat anteriors.
+        </p>
+        <p>
+            Per altra banda, veuràs que a la factura hi hem afegit una columna amb l'IVA o IGIC que aplica a cada concepte.
+        </p>
+        <p dir="ltr">
+            Com sempre, carregarem l'import total (factura més donatiu voluntari més fraccionaments) al teu número de compte durant els pròxims dies.
+        </p>
+    %elif donatiu:
+        <p>
+            T'informem també de l'import del donatiu voluntari corresponent.
+            Fins fa poc, aquest concepte estava inclòs a la factura, però l'hem extret per separar els conceptes que no formen part de la factura d'electricitat.
+        </p>
+        <p>
+            Per altra banda, veuràs que a la factura hi hem afegit una columna amb l'IVA o IGIC que aplica a cada concepte.
+        </p>
+        <p dir="ltr">
+            Com sempre, carregarem l'import total (factura més donatiu voluntari) al teu número de compte durant els pròxims dies.
+        </p>
+    %elif fraccionament:
+        <p>
+            T'informem també de l'import dels fraccionaments pendents.
+            Fins fa poc, aquests conceptes estaven inclosos a la factura, però els hem extret per separar els conceptes que no formen part de la factura d'electricitat actual.
+        </p>
+        <p>
+            Per altra banda, veuràs que a la factura hi hem afegit una columna amb l'IVA o IGIC que aplica a cada concepte.
+        </p>
+        <p dir="ltr">
+            Com sempre, carregarem l'import total (factura més donatiu voluntari) al teu número de compte durant els pròxims dies.
+        </p>
+    %else:
+        <p>
+        Veuràs que a la factura hi hem afegit una columna amb l’IVA o IGIC que aplica a cada concepte.
+        </p>
+        <p dir="ltr">Com sempre, carregarem l'import total al teu número de compte durant els pròxims dies.</p>
+    %endif
+
+    <p dir="ltr"><span style="text-decoration: underline;"><strong>Dades de la factura</strong></span></p>
     <ul>
         <li>Número de factura: ${data['factura']['numero']}</li>
         <li>Període facturat: del<strong id="docs-internal-guid-6536ca4e-7fff-dbd9-04a0-3e9d7d100756"> </strong>${data['factura']['data']['inici']} al ${data['factura']['data']['fi']}</li>
@@ -29,9 +68,46 @@
         <li>Número de contracte: ${data['polissa']['numero']}</li>
         <li>Codi CUPS: ${data['polissa']['cups']['codi']}</li>
         <li>Adreça del punt de subministrament: ${data['polissa']['cups']['adreca']}</li>
-        <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import a carregar</strong>: ${data['factura']['import']} euros</strong></li>
+        <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import de la factura elèctrica</strong>: ${total_linies_impostos} euros</strong></li>
     </ul>
     <p>
+
+    %if donatiu:
+        <p dir="ltr"><span style="text-decoration: underline;"><strong>Dades del donatiu voluntari</strong></span></p>
+        <ul>
+            <li>Donatiu per kWh d’electricitat utilitzada: 0,01 euros.</li>
+            <li>Electricitat utilitzada: ${data['linies']['donatiu'][0]['quantitat']} kWh</li>
+            <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import del donatiu voluntari: 0,01 x ${data['linies']['donatiu'][0]['quantitat']} = ${donatiu} euros.</li>
+        </ul>
+        <p>
+    %endif
+
+    %if fraccionament:
+        <p dir="ltr"><span style="text-decoration: underline;"><strong>Dades dels fraccionaments</strong></span></p>
+        <ul>
+            %for item in data['linies']['fraccionament']:
+                <li>${item['concepte']}: ${item['import']} euros.</li>
+            %endfor
+            <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import corresponent als fraccionaments: ${fraccionament} euros.</li>
+        </ul>
+        <p>
+    %endif
+
+    %if donatiu or fraccionament:
+        <p dir="ltr"><span style="text-decoration: underline;"><strong>Import total</strong></span></p>
+        <ul>
+            <li>Import de la factura elèctrica: ${total_linies_impostos} euros.</li>
+            %if donatiu:
+                <li>Import del donatiu voluntari: ${donatiu} euros.</li>
+            %endif
+            %if fraccionament:
+                <li>Import dels fraccionaments: ${fraccionament} euros.</li>
+            %endif
+            <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import total a carregar: ${data['factura']['import']} euros.</li>
+        </ul>
+        <p>
+    %endif
+
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
         <p dir="ltr">
             Sempre que vulguis, pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
