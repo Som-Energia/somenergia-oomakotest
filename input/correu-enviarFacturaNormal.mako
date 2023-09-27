@@ -4,7 +4,7 @@
     polissa_retrocedida = data['polissa']['polissa_retrocedida']
     donatiu = data['linies']['total']['donatiu']['import']
     fraccionament = data['linies']['total']['fraccionament']['import']
-    total_linies_impostos = data['linies']['total']['total_linies_impostos']['import']
+    total_linies_impostos = data['factura']['total_linies_impostos']
 %>
 <div align="right"><a href="https://somenergia.coop"><img src="${data['comerci']['logo']}"/></a></div>
 % if data['lang'] != "es_ES":
@@ -86,7 +86,7 @@
         <p dir="ltr"><span style="text-decoration: underline;"><strong>Dades dels fraccionaments</strong></span></p>
         <ul>
             %for item in data['linies']['fraccionament']:
-                <li>${item['concepte']}: ${item['import']} euros.</li>
+                <li>${item['concepte'] if 'concepte' in item else item['periode']}: ${item['import']} euros.</li>
             %endfor
             <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import corresponent als fraccionaments: ${fraccionament} euros.</li>
         </ul>
