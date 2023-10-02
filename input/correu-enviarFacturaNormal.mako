@@ -49,7 +49,7 @@
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
         </p>
-    %elif data['polissa']['tarifa'] in ['3.0TD', '6.1TD'] and data['polissa']['mode_facturacio'] == 'index' and 'mpresa' in data['polissa']['llista_preus']:
+    %elif data['polissa']['tarifa'] in ['3.0TD', '6.1TD'] and data['polissa']['mode_facturacio'] == 'index' and data['polissa']['has_business_tariff']:
         <p dir="ltr">
             Sempre que vulguis, pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
         </p>
@@ -170,7 +170,7 @@
         <p dir="ltr">
             Y si quieres saber más sobre la factura, encontrarás la información detallada en el artículo que explica la factura en <a href="https://es.support.somenergia.coop/article/1378-entender-la-factura-2-0td-indexada">la tarifa 2.0TD indexada</a> del Centro de Ayuda.
         </p>
-    %elif data['polissa']['tarifa'] in ['3.0TD', '6.1TD'] and data['polissa']['mode_facturacio'] == 'index' and 'mpresa' in data['polissa']['llista_preus']:
+    %elif data['polissa']['tarifa'] in ['3.0TD', '6.1TD'] and data['polissa']['mode_facturacio'] == 'index' and data['polissa']['has_business_tariff']:
         <p dir="ltr">
             Siempre que quieras, puedes acceder a la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a> para ver y descargar tus facturas y gestionar tus contratos con la cooperativa.
         </p>
