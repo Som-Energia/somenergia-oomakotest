@@ -34,7 +34,7 @@ amb_auto_compensacio = gp_obj.read(object._cr, object._uid, object.polissa_id.id
 <body>
 <!-- CATALÀ -->
 % if object.polissa_id.titular.lang != "es_ES":
-<p>Hola ${nom_titular},</p>
+<p>Hola${nom_titular},</p>
 
 % if amb_auto_compensacio:
 <p>Estem molt contentes de poder anunciar-te que&nbsp;<strong>d'aquí a un mes entrarà en funcionament el Flux Solar</strong>, l'eina que permetrà obtenir un descompte pels excedents generats d'autoproducció que no s'hagin compensat a la factura.</p>
@@ -124,7 +124,7 @@ amb_auto_compensacio = gp_obj.read(object._cr, object._uid, object.polissa_id.id
 <!-- FI CATALÀ -->
 <!-- CASTELLÀ -->
 % if object.polissa_id.titular.lang != "ca_ES":
-<p>Hola ${nom_titular},</p>
+<p>Hola${nom_titular},</p>
 
 % if amb_auto_compensacio:
 <p>Estamos muy contentas de poder anunciarte que <strong>de aqu&iacute; a un mes entrar&aacute; en funcionamiento el Flux Solar,</strong> la herramienta que permitir&aacute; obtener un descuento por los excedentes generados de autoproducci&oacute;n que no se hayan compensado en la factura.</p>
