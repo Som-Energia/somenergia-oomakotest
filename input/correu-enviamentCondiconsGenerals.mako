@@ -124,7 +124,92 @@ amb_auto_compensacio = gp_obj.read(object._cr, object._uid, object.polissa_id.id
 <!-- FI CATALÀ -->
 <!-- CASTELLÀ -->
 % if object.polissa_id.titular.lang != "ca_ES":
-<p>WIP</p>
+<p>Hola ${nom_titular},</p>
+
+% if amb_auto_compensacio:
+<p>Estamos muy contentas de poder anunciarte que <strong>de aqu&iacute; a un mes entrar&aacute; en funcionamiento el Flux Solar,</strong> la herramienta que permitir&aacute; obtener un descuento por los excedentes generados de autoproducci&oacute;n que no se hayan compensado en la factura.</p>
+<p>Somos conscientes de que es una mejora esperada desde hace tiempo, y nos habr&iacute;a gustado poder ofrecerla antes, pero es un desarrollo complejo, y lamentablemente no nos ha sido posible.&nbsp;</p>
+<p>Poner en marcha el Flux Solar supone un <strong>cambio en las Condiciones Generales</strong> del contrato de suministro de energ&iacute;a el&eacute;ctrica, y aprovechamos para actualizar alguna otra modificaci&oacute;n que ten&iacute;amos pendiente. A continuaci&oacute;n, te resumimos lo m&aacute;s importante de cada punto.</p>
+% else:
+<p>Despu&eacute;s de muchos meses trabajando, estamos a punto de poner en marcha el <strong>Flux Solar</strong>, la herramienta que permitir&aacute;, a las personas y empresas que tienen autoproducci&oacute;n con compensaci&oacute;n simplificada, obtener un descuento por los excedentes generados que no se les haya compensado. Si est&aacute;s pensando en ponerte placas solares, o conoces personas que tienen, esto os puede interesar.</p>
+<p>Poner en marcha esta herramienta supone un <strong>cambio en las Condiciones Generales</strong> del contrato de suministro de energ&iacute;a el&eacute;ctrica, y aprovechamos para actualizar alguna otra modificaci&oacute;n que ten&iacute;amos pendiente. Las nuevas Condiciones Generales <strong>se aplicar&aacute;n autom&aacute;ticamente a partir del 18 de noviembre</strong> (no hay que hacer nada, ni firmar el documento, ni enviarlo).</p>
+% endif
+<br>
+% if amb_auto_compensacio:
+<figure class="table">
+    <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <td>
+                    <p><strong>Flux Solar</strong></p>
+                    <ul style="display: grid;">
+                        <li style="padding-bottom:1em"><strong>&iquest;De qu&eacute; va, exactamente?</strong> Los excedentes de autoproducci&oacute;n generados que no se hayan podido compensar en la factura del periodo en cuesti&oacute;n, se guardan en forma de &ldquo;Soles&rdquo;, descuentos que se a&ntilde;adir&aacute;n a las facturas posteriores.</li>
+                        <li style="padding-bottom:1em"><strong>&iquest;Cu&aacute;ndo se pondr&aacute; en marcha?</strong> El Flux Solar se pondr&aacute; en marcha con el cambio de condiciones generales, el d&iacute;a 18 de noviembre<strong>.</strong> A partir de esta fecha ya podr&aacute;s tener facturas con el descuento aplicado.</li>
+                        <li style="padding-bottom:1em"><strong>&iquest;Qu&eacute; tengo que hacer para que se me active?</strong> No hace falta que hagas nada, ser&aacute; autom&aacute;tico. Cuando se active el Flux Solar, en tu Oficina Virtual ya aparecer&aacute;n los Soles que hayas podido generar desde enero de 2022 (siempre que hayas mantenido tu contrato activo con Som Energia y tengas la compensaci&oacute;n simplificada de excedentes activada).</li>
+                        <li style="padding-bottom:1em"><strong>&iquest;De cu&aacute;nto ser&aacute; el descuento?</strong> El descuento ser&aacute; del 80% del valor de los excedentes no compensados en tu facturaci&oacute;n mensual (con el l&iacute;mite de no tener facturas negativas).</li>
+                        <li><strong>Tengo m&aacute;s dudas&hellip; &rarr; </strong>en la <a href="https://blog.somenergia.coop/?p=45981" style="text-decoration:none"><u>noticia del blog</u></a> te explicamos en qu&eacute; parte de la factura se descuenta, por qu&eacute; se aplica un 80%, c&oacute;mo ver los Soles disponibles y el resto de caracter&iacute;sticas del Flux Solar. En el Centro de Ayuda encontrar&aacute;s un <a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar" style="text-decoration:none"><u>art&iacute;culo</u></a> con m&aacute;s detalles.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <figure class="table">
+                        <table  align="center" style="background-color: #98A43C;" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr align="center">
+                                    <td align="center" style="border-radius: 2px;text-align: center;" bgcolor="#98A43C">
+                                        <a href="https://blog.somenergia.coop/?p=45981" target="_blank" style="padding: 8px 12px; border: 1px solid #98A43C;border-radius: 2px;font-family: Arial, Helvetica, sans-serif;font-size: 14px; color: #ffffff;text-decoration: none;font-weight:bold;display: inline-block;">
+                                            ¡Quiero saber más!
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+<br>
+% endif
+<figure class="table">
+    <table style="background-color: #D3E5C3; border: 4px solid #657557; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <td>
+                    % if amb_auto_compensacio:
+                    <p><strong>Otros cambios en las Condiciones Generales:</strong></p>
+                    <ul style="display: grid;padding-bottom: 1em">
+                    % else:
+                    <p><strong>A continuación te resumimos los cambios:</strong></p>
+                    <ul style="display: grid;padding-bottom: 1em">
+                        <li style="padding-bottom:1em"><strong>Flux Solar (cl&aacute;usula 8.6)</strong>: a todos los contratos que tengan autoproducci&oacute;n activada con compensaci&oacute;n simplificada se les aplicar&aacute;, autom&aacute;ticamente, el Flux Solar: una herramienta que otorga descuentos por los excedentes de autoproducci&oacute;n no compensados. Estos descuentos se aplicar&aacute;n en las pr&oacute;ximas facturas, y su valor ser&aacute; del 80% del valor de los excedentes no compensados. Todos los detalles los explicamos en esta <a href="https://blog.somenergia.coop/?p=45981" style="text-decoration:none"><u>noticia del blog</u></a>.</li>
+                    % endif
+                        <li style="padding-bottom:1em"><strong>Modificaciones de contrato (cl&aacute;usula 9.5): </strong>hay algunas modificaciones de contrato que no es posible tramitar a la vez. Es decir:
+                        <ul style="display: grid;padding-bottom: 1em">
+                            <li style="padding-bottom:1em">Si est&aacute;s tramitando un cambio de tarifa (de periodos a indexada o al rev&eacute;s), no puedes iniciar una modificaci&oacute;n contractual (de potencia, de tensi&oacute;n, de modalidad de autoproducci&oacute;n&hellip;). Tendr&aacute;s que esperar a que se haga efectivo el cambio de tarifa (si todo va como est&aacute; previsto, a partir del d&iacute;a despu&eacute;s de la siguiente factura), para poder pedir cualquier otro cambio.</li>
+                            <li style="padding-bottom:1em">Si est&aacute;s tramitando una modificaci&oacute;n contractual (de potencia, de tensi&oacute;n, de modalidad de autoproducci&oacute;n&hellip;), y te decides a cambiar la tarifa (de periodos a indexada o a la inversa), tendr&aacute;s que esperar que se haga efectiva la modificaci&oacute;n contractual (aproximadamente, entre una y tres semanas, seg&uacute;n el tr&aacute;mite), antes de hacer la petici&oacute;n de cambio de tarifa.</li>
+                            <li style="list-style: none;padding-bottom:1em">Este a&ntilde;adido a las Condiciones Generales es para adaptarlas a la nueva tarifa indexada que tenemos disponible desde el verano. Ten&eacute;is toda la informaci&oacute;n en la<a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/" style="text-decoration:none"> <u>web</u></a> y en el<a href="https://blog.somenergia.coop/tarifas-electricidad-y-sector-electrico/2023/07/la-nueva-tarifa-indexada/" style="text-decoration:none"><u> blog</u></a>.</li>
+                        </ul>
+                        </li>
+                        <li style="padding-bottom:1em"><strong>Baja de punto de suministro (cl&aacute;usula 6.5): </strong>especificamos que las bajas de suministro corresponden, legalmente, a las<a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad?utm_source=linkidiomes&amp;utm_medium=cda&amp;utm_campaign=castellano" style="text-decoration:none"><u> empresas distribuidoras</u></a>. Desde Som Energia (empresa<a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad?utm_source=linkidiomes&amp;utm_medium=cda&amp;utm_campaign=castellano" style="text-decoration:none"><u> comercializadora</u></a>), cuando recibimos una petici&oacute;n de baja de suministro, la remitimos a la distribuidora correspondiente, que tiene un plazo para hacer efectiva la baja. Por eso, desde Som Energia no podemos garantizar en qu&eacute; fecha se har&aacute; efectiva. Por otro lado, puede ser que la distribuidora necesite acceder al equipo de medida (contador de electricidad) para poder hacer una &uacute;ltima lectura de datos. Por lo tanto, si alguna vez dejas una vivienda o local y quieres dar de baja la electricidad, es posible que, despu&eacute;s de hab&eacute;rnoslo solicitado, tengas que facilitar el acceso al contador a la empresa distribuidora. La factura final a pagar llegar&aacute; hasta la fecha en que la distribuidora haga efectiva la baja.&nbsp;</li>
+                        <li style="padding-bottom:1em"><strong>Activaci&oacute;n de autoconsumo (cl&aacute;usula 8.1): </strong>cuando, en Som Energia, una distribuidora nos remite una petici&oacute;n de activaci&oacute;n de autoconsumo de un contrato, desde la cooperativa enviamos un correo a la persona o entidad titular de aquel contrato para que confirme que los datos son correctos. Desde hace un tiempo, en algunas&nbsp; ocasiones (no todas), la distribuidora activa el cambio de modalidad sin esperar que haya la confirmaci&oacute;n por parte de la persona o entidad titular. En estos casos, desde Som Energia aplicaremos el cambio a la modalidad de autoconsumo correspondiente, entendiendo que si la persona titular no ha respondido, ha aceptado t&aacute;citamente el cambio. En todos los casos, en el momento de activar la modalidad de autoconsumo, desde Som Energia enviaremos un correo informando a la persona o entidad titular.</li>
+                        <li style="padding-bottom:1em"><strong>Peque&ntilde;as modificaciones </strong>para adaptar las condiciones a la nueva redacci&oacute;n de la<a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-20555" style="text-decoration:none"> <u>Ley general de defensa de las personas consumidoras y usuarias</u></a>, enfocadas a proteger mejor a las personas y empresas consumidoras. Se modifican algunos conceptos para que queden m&aacute;s claros y definidos, y que no cambian sustancialmente el sentido de las condiciones existentes.</li>
+                        <li style="padding-bottom:1em"><strong>Adaptaci&oacute;n de la medida de la tipograf&iacute;a y el interlineado </strong>de las condiciones generales, para facilitar su lectura y que sea m&aacute;s inclusivo.</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+<br>
+<p>Te adjuntamos en este correo las nuevas condiciones generales, en un archivo donde tambi&eacute;n est&aacute;n las condiciones espec&iacute;ficas (en caso de que tengas tarifa indexada) y las condiciones particulares. Si est&aacute;s de acuerdo, <strong>no hace falta que nos devuelvas el documento firmado,</strong> porque esta actualizaci&oacute;n se aplicar&aacute; autom&aacute;ticamente el 18 de noviembre. Igualmente, tenemos que informarte que si, por alguna raz&oacute;n, estos cambios te hicieran replantear tu pertenencia a la cooperativa, podr&iacute;as dar de baja tu contrato con nosotros, bien comunic&aacute;ndonoslo directamente o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cl&aacute;usulas de permanencia en ning&uacute;n momento. As&iacute; pues, si decidieras marchar, solo te facturar&iacute;amos el consumo realizado hasta el d&iacute;a de finalizaci&oacute;n del contrato, con los precios vigentes en cada momento.</p>
+<p>&nbsp;</p>
+<p>Un cordial saludo,</p>
+<p>&nbsp;</p>
+<p>Equipo de Som Energia</p>
+<p><a href="https://www.somenergia.coop/es"><u>www.somenergia.coop</u></a></p>
 % endif
 <!-- FI CASTELLÀ -->
 <p>${text_legal}</p>
