@@ -1,0 +1,8 @@
+lang: ${object.polissa_id.titular.lang}
+cc: ''
+bcc: ''
+to: ${object.polissa_id.titular.address[0].email}
+subject_translations:
+  ca_ES: En breu arribarà el Flux Solar! I actualitzem les Condicions Generals
+  es_ES: ¡En breve llegará el Flux Solar! Y actualizamos las Condiciones Generales
+subject: ¡En breve llegará el Flux Solar! Y actualizamos las Condiciones Generales
