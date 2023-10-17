@@ -1540,4 +1540,12 @@
 #    ca: 444848
 #    es: 403834  
 # 
+enviamentCondiconsGenerals:
+  template: input/correu-enviamentCondiconsGenerals.mako
+  model: som.enviament.massiu
+  poweremailId: 343
+  cases:
+    ca: 1913038
+    es: 1913041
+#
 # vim: et ts=2 sw=2
