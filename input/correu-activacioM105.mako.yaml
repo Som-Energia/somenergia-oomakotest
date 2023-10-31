@@ -1,3 +1,4 @@
+lang: ${object.partner_id.lang}
 cc: <% mail = '{}'.format(object.polissa_ref_id.titular.address[0].email if object.polissa_ref_id.titular
   != object.polissa_ref_id.pagador else '') %> ${mail}
 to: ${object.polissa_ref_id.direccio_pagament.email}, <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email

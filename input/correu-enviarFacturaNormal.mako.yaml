@@ -1,3 +1,4 @@
+lang: ${object.polissa_id.titular.lang}
 cc: <% mail = '{}'.format(object.polissa_id.administradora.address[0].email if object.polissa_id.administradora
   else '') %>  ${mail}
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}

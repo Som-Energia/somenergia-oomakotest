@@ -1,0 +1,9 @@
+lang: ${object.titular.lang}
+cc: <% mail = '{}'.format(object.administradora.address[0].email if object.administradora
+  else '') %>  ${mail}
+to: ${object.direccio_pagament.email},${object.direccio_notificacio.email}
+subject_translations:
+  ca_ES: "Som Energia: Modificació activada contracte ${object.name}"
+  es_ES: "Som Energia: Modificación activada contrato ${object.name}"
+subject: "Som Energia: Modificació activada contracte ${object.name} / Som Energia: Modificación activada contrato ${object.name}"
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

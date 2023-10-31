@@ -46,6 +46,13 @@
 #    cases:
 #      ca: som_polissa_soci.soci_0001
 
+# emailCanviTarifaIndexada:
+#   template: input/correu-emailCanviTarifaIndexada.mako
+#   model: giscedata.polissa
+#   poweremailId: som_indexada.email_canvi_tarifa_a_indexada
+#   cases:
+#     ca: 4
+
 ######################################################
 ## Facturació
 #
@@ -523,6 +530,13 @@
 #    2.0_A3_ca: 66599
 #    2.0_A3_es: 68012
 #
+# emailActivacioTarifaIndexada:
+#   template: input/correu-emailActivacioTarifaIndexada.mako
+#   model: giscedata.polissa
+#   poweremailId: som_indexada.email_activacio_tarifa_indexada
+#   cases:
+#     ca: 4
+
 ## REBUTJOS PLANTILLA POWER.EMAIL
 ## --------
 #rebuigM104:
@@ -930,7 +944,7 @@
 #     monofasica_es: 273331 #this is not a TD contract
 #     es: 310210 #this is not a TD contract
 #     ca: 308466 #this is not a TD contract
-#
+
 #activacionE106_automatica:
 #  template: input/correu-activacioE106.mako
 #  model: giscedata.switching
@@ -1205,6 +1219,20 @@
 #  cases:
 #    es: 5293
 #    ca: 192
+# certificatRetencionsTitols:
+#   template: input/correu-certificatRetencionsTitols.mako
+#   model: som.enviament.massiu
+#   poweremailId: som_inversions.email_certificat_retencions_titols
+#   cases:
+#     ca:
+#     es:
+# certificatRetencionsAportacions:
+#   template: input/correu-certificatRetencionsAportacions.mako
+#   model: som.enviament.massiu
+#   poweremailId: som_inversions.email_certificat_retencions_aportacions
+#   cases:
+#     ca:
+#     es:
 ######################################################
 ## Impagats
 #
@@ -1311,6 +1339,9 @@
 #   cases:
 #     ca: 444848
 #     es: 403834
+#     es_baixa: 6850168
+#     ca_baixa: 6906042
+
 
 # pagamentGenericN57ContracteBaixa:
 #   template: input/correu-pagamentGenericN57ContracteBaixa.mako
@@ -1319,6 +1350,7 @@
 #   cases:
 #     es: 6850168
 #     ca: 6906042
+
 
 ########################################
 ## Infoenergia
@@ -1534,18 +1566,26 @@
 #
 #cobramentsAvisTPV:
 #  template: input/correu-cobramentsAvisTPV.mako
-#  model: giscedata.facturacio.factura 
+#  model: giscedata.facturacio.factura
 #  poweremailId: som_account_invoice_pending.tpv_pay_alert_template_som
 #  cases:
 #    ca: 444848
 #    es: 403834  
 # 
-enviamentCondiconsGenerals:
-  template: input/correu-enviamentCondiconsGenerals.mako
-  model: som.enviament.massiu
-  poweremailId: 343
-  cases:
-    ca: 1913038
-    es: 1913041
+#enviamentCondiconsGenerals:
+#  template: input/correu-enviamentCondiconsGenerals.mako
+#  model: som.enviament.massiu
+#  poweremailId: 343
+#  cases:
+#    ca: 1913038
+#    es: 1913041
 #
+#
+# canviMassiuK:
+#  template: input/correu-canviMassiuK.mako
+#  model: som.enviament.massiu
+#  poweremailId: som_indexada.email_canvi_massiu_k
+#  cases:
+#    ca:
+#    es:
 # vim: et ts=2 sw=2

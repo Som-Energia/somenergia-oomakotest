@@ -33,7 +33,7 @@
     pot_installada = ' '
 
     d = object.step_ids[0].pas_id
-    if d.motiu_canvi == '04':
+    if d.motiu_canvi == '04' or d.motiu_canvi == '15':
         if d.generadors:
             nif_generador = d.generadors[0].identificador
             if nif_generador != polissa_nif:

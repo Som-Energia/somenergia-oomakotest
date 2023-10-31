@@ -15,6 +15,21 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
+
+tarifa_a_mostrar = ""
+
+try:
+    lang = object.titular.lang
+    pol_o = object.pool.get('giscedata.polissa')
+    llista_preu_o = object.pool.get('product.pricelist')
+
+    tarifes_ids = llista_preu_o.search(object._cr, object._uid, [])
+    llista_preus = pol_o.escull_llista_preus(object._cr, object._uid, object.id, tarifes_ids, context={'lang': lang})
+
+    tarifa_a_mostrar = llista_preus.nom_comercial or llista_preus.name
+except Exception as error:
+    pass
+
 %>
 
 <!doctype html>
@@ -29,17 +44,22 @@ text_legal = render(t_obj.read(
             <p>
                 Ja has completat la sol·licitud per contractar el teu subministrament elèctric amb Som Energia.
             </p>
+            % if object.mode_facturacio == "index":
+            <p>
+                T'adjuntem les condicions generals, específiques i particulars del teu contracte.
+            </p>
+            % else:
             <p>
                 T'adjuntem les condicions generals i particulars del teu contracte.
             </p>
+            % endif
             <p>
                 Aquest és el resum de les dades facilitades en el formulari de contractació d'electricitat: <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Soci/a de Som Energia: ${object.soci.name} <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Titular del contracte d'electricitat: ${object.titular.name}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Titular del compte bancari: ${object.pagador.name}<br>
-                <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Adreça punt subministrament: ${object.cups_direccio}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Codi CUPS: ${object.cups.name}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Tarifa: ${tarifa_a_mostrar}<br>
             </p>
             % if not object.observacions or 'proces: A3' not in object.observacions:
                 <p>
@@ -52,7 +72,7 @@ text_legal = render(t_obj.read(
                     <br>
                     2. <b>Recepció de la resposta per part de la distribuïdora</b>. En un període màxim d'una setmana rebrem la resposta de si el procés de canvi de companyia es pot efectuar o si requereixen més informació. Si la sol·licitud s'ha acceptat, t'informarem via correu electrònic de la data prevista d'activació del teu contracte amb Som Energia. En cas contrari, també ens posarem en contacte amb tu.<br>
                     <br>
-                    3. <b>Activació del contracte</b>. Una vegada la distribuïdora ens confirmi que el canvi s’ha fet efectiu i el contracte ja està <b>actiu</b> amb la cooperativa t’ho comunicarem per correu electrònic. A partir d'aleshores ja facturarem des de Som Energia, però tingues en compte que encara rebràs l'última factura de la teva antiga comercialitzadora. En cas de voler fer <b> un canvi de potència o de tarifa</b> serà a partir d'aquest moment que ho podràs sol·licitar <a href="http://ca.support.somenergia.coop/article/271-com-puc-fer-una-modificacio-de-potencia-o-de-tarifa-i-quant-costa">(més informació)</a>.
+                    3. <b>Activació del contracte</b>. Una vegada la distribuïdora ens confirmi que el canvi s’ha fet efectiu i el contracte ja està <b>actiu</b> amb la cooperativa t’ho comunicarem per correu electrònic. A partir d'aleshores ja facturarem des de Som Energia, però tingues en compte que encara rebràs l'última factura de la teva antiga comercialitzadora. En cas de voler fer <b> un canvi de potència</b> serà a partir d'aquest moment que ho podràs sol·licitar <a href="http://ca.support.somenergia.coop/article/271-com-puc-fer-una-modificacio-de-potencia-o-de-tarifa-i-quant-costa">(més informació)</a>.
                 </p>
             % else:
                 <p>
@@ -105,17 +125,22 @@ text_legal = render(t_obj.read(
             <p>
                 Ya has completado la solicitud para contratar tu suministro eléctrico a través de la cooperativa Som Energia.
             </p>
+            % if object.mode_facturacio == "index":
+            <p>
+                Te adjuntamos las condiciones generales, específicas y particulares de tu contrato.
+            </p>
+            % else:
             <p>
                 Te adjuntamos las condiciones generales y particulares de tu contrato.
             </p>
+            % endif
             <p>
                 Este es el resumen de los datos facilitados en el formulario de contratación de electricidad:<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Socio/a de Som Energia: ${object.soci.name}<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Titular del contrato de electricidad: ${object.titular.name}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Titular de la cuenta bancaria: ${object.pagador.name}<br>
-                <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;- Dirección punto de suministro: ${object.cups_direccio}<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Código CUPS: ${object.cups.name}
+                &nbsp;&nbsp;&nbsp;&nbsp;- Código CUPS: ${object.cups.name}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Tarifa: ${tarifa_a_mostrar}<br>
             </p>
             % if not object.observacions or 'proces: A3' not in object.observacions:
                 <p>
@@ -127,7 +152,7 @@ text_legal = render(t_obj.read(
                     <br>
                     2. <b>Recepción de la respuesta por parte de la distribuidora</b>. En un periodo máximo de una semana, recibiremos la respuesta de si el proceso de cambio de compañía se puede efectuar, o si requieren más información.  Si la solicitud se ha aceptado, te informaremos vía correo electrónico de la fecha prevista de activación de tu contrato con Som Energia. En caso contrario, también nos pondremos en contacto contigo.<br>
                     <br>
-                    3. <b> Activación del contrato </b>. Una vez la distribuidora nos confirme que el cambio se ha hecho efectivo y que el contrato ya está <b>activo</b> con la cooperativa, te lo comunicaremos por correo electrónico. A partir de entonces ya facturaremos desde Som Energia, pero ten en cuenta que aún recibirás la última factura de tu antigua comercializadora. En caso de querer hacer <b> un cambio de potencia o de tarifa </b> será a partir de este momento cuando lo podrás solicitar <a href="http://es.support.somenergia.coop/article/284-como-puedo-hacer-una-modificacion-de-potencia-o-de-tarifa-y-cuanto-cuesta">(más información)</a>.<br>
+                    3. <b> Activación del contrato </b>. Una vez la distribuidora nos confirme que el cambio se ha hecho efectivo y que el contrato ya está <b>activo</b> con la cooperativa, te lo comunicaremos por correo electrónico. A partir de entonces ya facturaremos desde Som Energia, pero ten en cuenta que aún recibirás la última factura de tu antigua comercializadora. En caso de querer hacer <b> un cambio de potencia</b> será a partir de este momento cuando lo podrás solicitar <a href="http://es.support.somenergia.coop/article/284-como-puedo-hacer-una-modificacion-de-potencia-o-de-tarifa-y-cuanto-cuesta">(más información)</a>.<br>
                     <br>
                 </p>
             % else:
