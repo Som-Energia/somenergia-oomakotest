@@ -1570,7 +1570,15 @@
 #  poweremailId: som_account_invoice_pending.tpv_pay_alert_template_som
 #  cases:
 #    ca: 444848
-#    es: 403834
+#    es: 403834  
+# 
+#enviamentCondiconsGenerals:
+#  template: input/correu-enviamentCondiconsGenerals.mako
+#  model: som.enviament.massiu
+#  poweremailId: 343
+#  cases:
+#    ca: 1913038
+#    es: 1913041
 #
 #
 # canviMassiuK:
@@ -1580,5 +1588,4 @@
 #  cases:
 #    ca:
 #    es:
-
 # vim: et ts=2 sw=2
