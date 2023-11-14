@@ -15,6 +15,11 @@
 #    poweremailId: som_poweremail_common_templates.common_template_legal_footer
 #    cases: {}
 #
+# legal_footer_representa:
+#    template: input/common/legal_footer_representa.mako
+#    poweremailId: som_users.common_template_legal_footer_representa
+#    cases: {}
+#
 #legal_footer_rejection:
 #  template: input/common/legal_footer_with_rejection.mako
 #  poweremailId: som_poweremail_common_templates.common_template_rejection_footer
@@ -46,12 +51,12 @@
 #    cases:
 #      ca: som_polissa_soci.soci_0001
 
-# emailCanviTarifaIndexada:
-#   template: input/correu-emailCanviTarifaIndexada.mako
-#   model: giscedata.polissa
-#   poweremailId: som_indexada.email_canvi_tarifa_a_indexada
-#   cases:
-#     ca: 4
+#  emailCanviTarifaIndexada:
+#    template: input/correu-emailCanviTarifaIndexada.mako
+#    model: giscedata.polissa
+#    poweremailId: som_indexada.email_canvi_tarifa_a_indexada
+#    cases:
+#      ca: 4
 
 ######################################################
 ## Facturació
@@ -1588,4 +1593,16 @@
 #  cases:
 #    ca:
 #    es:
+
+######################################################
+## Representa
+#
+# enviarCanviContrassenya:
+#    template: input/correu-email_create_change_password.mako
+#    model: res.partner
+#    poweremailId: som_users.email_create_change_password
+#    cases:
+#       ca:
+#       es:
+
 # vim: et ts=2 sw=2
