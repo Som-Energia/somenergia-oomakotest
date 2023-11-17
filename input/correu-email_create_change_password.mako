@@ -56,7 +56,7 @@ Hola, ${titular},<br>
 
 <p>Per accedir-hi hauràs de definir una nova contrasenya a través d’aquest enllaç.</p>
 
-% if ${PASSWORD}:
+% if PASSWORD != False:
 <p>Contrassenya temporal: <b>${PASSWORD}</b></p>
 % else:
 <p>No s'ha pogut generar la teva contrassenya. Contacta amb Som Energia </p>
