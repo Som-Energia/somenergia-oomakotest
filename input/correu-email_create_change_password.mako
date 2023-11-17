@@ -36,6 +36,17 @@ def get_clean_name(composed_name, vat, name_only):
     return '{} {}{}{}'.format(name['nom'],name['cognoms'][0],'' if name['fuzzy'] else ' ',name['cognoms'][1])
 
 titular = get_clean_name(object.name, object.vat, False)
+
+def get_password(comment):
+    start_key = 'generated_ov_password='
+    end_key = '(generated_ov_password)\n'
+    password = False
+    if start_key in comment:
+        password = comment.split(start_key)[1]
+        password = password.split(end_key)[0]
+    return password
+
+PASSWORD = get_password(object.comment)
 %>
 <br>
 Hola, ${titular},<br>
@@ -44,6 +55,12 @@ Hola, ${titular},<br>
 <p>Reps aquest correu perquè o bé el teu usuari ha estat donat d’alta a l’oficina virtual del servei de representació a mercat de Som Energia per primera vegada o bé has sol·licitat recuperar la contrasenya.</p>
 
 <p>Per accedir-hi hauràs de definir una nova contrasenya a través d’aquest enllaç.</p>
+
+% if ${PASSWORD}:
+<p>Contrassenya temporal: <b>${PASSWORD}</b></p>
+% else:
+<p>No s'ha pogut generar la teva contrassenya. Contacta amb Som Energia </p>
+% endif
 
 <p>El teu nom d'usuari, en cas que no el sàpigues o l'hagis oblidat és el ${object.vat}.</p>
 
