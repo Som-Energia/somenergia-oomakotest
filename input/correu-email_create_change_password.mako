@@ -52,29 +52,53 @@ PASSWORD = get_password(object.comment)
 Hola, ${titular},<br>
 <br>
 % if  mail_lang == "ca_ES":
-<p>Reps aquest correu perquè o bé el teu usuari ha estat donat d’alta a l’<a href=https://ov-representa.somenergia.coop/>Oficina virtual del servei de representació a mercat de Som Energia</a> o bé has sol·licitat recuperar la contrasenya.</p>
+
+<p>Reps aquest correu perquè o bé el teu usuari ha estat donat d’alta a l’<a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servei de Som Energia per representar-te en el mercat elèctric</a> o bé has sol·licitat recuperar la contrasenya.</p>
 
 <p>Per accedir-hi, has d’iniciar sessió amb el teu nom d’usuari i la teva contrasenya.</p>
 
-<p>De moment, t’hem assignat una contrasenya temporal que et recomanem que modifiquis una vegada hagis iniciat sessió.</p>
+<p>De moment, t’hem assignat una contrasenya temporal. Et recomanem que modifiquis una vegada hagis començat la sessió.</p>
 
 % if PASSWORD != False:
-<p>Contrasenya temporal: <b>${PASSWORD}</b></p>
+<ul><li>Contrasenya temporal: <b>${PASSWORD}</b></li></ul>
 % endif
 
-<p>El teu nom d'usuari, en cas que no el sàpigues o l'hagis oblidat, és el ${object.vat}.</p>
+<p>El teu nom d'usuari, en cas que no el sàpigues o l'hagis oblidat, és el <b>${object.vat[2:]}</b>.</p>
 
 <p>Gràcies per utilitzar el servei.</p>
 
 <br>
 <br>
--------------------------------------------------
-Representació en el mercat elèctric - Som Energia
-<a href="https://www.somenergia.coop/">www.somenergia.coop</a><br>
+------------------------------------------------------------
+<br>
+Representació en el mercat elèctric - Som Energia <br>
+<a target="_blank" href="https://www.somenergia.coop/">www.somenergia.coop</a><br>
 representa@somenergia.coop
 
 % else:
-<p>Email en español</p>
+
+<p>Recibes este correo porque o bien te has dado de alta en la <a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servicio de Som Energia para representarte en el mercado eléctrico</a> o bien has solicitado recuperar la contraseña.</p>
+
+<p>Para acceder, tienes que iniciar la sesión con tu nombre de usuario y tu contraseña.</p>
+
+<p>De momento, te hemos asignado una contraseña temporal. Te recomendamos que la modifiques cuando hayas comenzado la sesión.</p>
+
+% if PASSWORD != False:
+<ul><li>Contraseña temporal: <b>${PASSWORD}</b></li></ul>
+% endif
+
+<p>Tu nombre de usuario, en caso de que no lo sepas o lo hayas olvidado, es el <b>${object.vat[2:]}</b>.</p>
+
+<p>Gracias por utilizar el servicio.</p>
+
+<br>
+<br>
+-----------------------------------------------------------------
+<br>
+Representación en el mercado eléctrico - Som Energia <br>
+<a target="_blank" href="https://www.somenergia.coop/">www.somenergia.coop</a><br>
+representa@somenergia.coop
+
 % endif
 </body>
 ${text_legal_representa}
