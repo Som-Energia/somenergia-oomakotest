@@ -199,6 +199,92 @@
 
 % endif
 
+% if data['Periodes20TDPeninsulaFins10kw'] or data['Periodes20TDPeninsulaMesDe10kw'] or data['Periodes20TDCanaries']:
+
+<br>
+<p><strong>Nous preus i comparativa amb preus actuals</strong></p>
+<p><span style="font-weight: 400;">Respecte a la tarifa Generation kWh, hem actualitzat els components que formen la tarifa, i en resulta una lleugera disminució.</span></p>
+<br>
+<p><strong>Tarifa 2.0TD períodes</strong></p>
+<br>
+<p><strong>Preu del terme de potència (en euros)</strong></p>
+<br>
+<figure class="table">
+    <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th colspan="2">Nous preus</th>
+                <th colspan="2">Preus actuals</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Període punta</td>
+                <td>Període vall</td>
+                <td>Període punta</td>
+                <td>Període vall</td>
+            </tr>
+            <tr>
+                <td>Abans d’impostos</td>
+                <td>${data['preus_antics']['tp']['p1']}</td>
+                <td>${data['preus_antics']['tp']['p2']}</td>
+                <td>${data['preus_nous']['tp']['p1']}</td>
+                <td>${data['preus_nous']['tp']['p2']}</td>
+            </tr>
+            <tr>
+                <td>Després d’impostos</td>
+                <td>${data['preus_antics_imp']['tp']['p1']}</td>
+                <td>${data['preus_antics_imp']['tp']['p2']}</td>
+                <td>${data['preus_nous_imp']['tp']['p1']}</td>
+                <td>${data['preus_nous_imp']['tp']['p2']}</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+<br>
+<p><strong>Preu del terme d’energia (en euros)</strong></p>
+<br>
+<figure class="table">
+    <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th colspan="3">Nous preus</th>
+                <th colspan="3">Preus actuals</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Període punta</td>
+                <td>Període pla</td>
+                <td>Període vall</td>
+                <td>Període punta</td>
+                <td>Període pla</td>
+                <td>Període vall</td>
+            </tr>
+            <tr>
+                <td>Abans d’impostos</td>
+                <td>${data['preus_antics']['te']['p1']}</td>
+                <td>${data['preus_antics']['te']['p2']}</td>
+                <td>${data['preus_antics']['te']['p3']}</td>
+                <td>${data['preus_nous']['te']['p1']}</td>
+                <td>${data['preus_nous']['te']['p2']}</td>
+                <td>${data['preus_nous']['te']['p3']}</td>
+            </tr>
+            <tr>
+                <td>Després d’impostos</td>
+                <td>${data['preus_antics_imp']['te']['p1']}</td>
+                <td>${data['preus_antics_imp']['te']['p2']}</td>
+                <td>${data['preus_antics_imp']['te']['p3']}</td>
+                <td>${data['preus_nous_imp']['te']['p1']}</td>
+                <td>${data['preus_nous_imp']['te']['p2']}</td>
+                <td>${data['preus_nous_imp']['te']['p3']}</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+% endif
+
 
 <br>
 <p dir="ltr">Una salutaci&oacute; cordial,
