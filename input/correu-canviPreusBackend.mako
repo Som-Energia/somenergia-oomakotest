@@ -28,7 +28,7 @@
 
 <p>Hola${data['nom_titular']}</p>
 
-% if data['lang'] == "ca_ES":
+## % if data['lang'] == "ca_ES":
 
 
 
@@ -64,10 +64,8 @@
 <p><ul style="display: grid;padding-top: 1em">
     <li style="padding-bottom:1em">El preu de l’energia baixarà, ja que el mercat de futurs (on comprem la major part de l’energia) segueix moderant-se.</li>
     <li style="padding-bottom:1em">El preu de la potència pujarà lleugerament. Això és així perquè augmentem lleugerament el marge per a la viabilitat de la cooperativa (segueix estant dins els paràmetres que va marcar l’Assemblea General).</li>
+    <li style="padding-bottom:1em">En total en resultarà una disminució.</li>
     <li style="list-style: none;padding-bottom:1em">Al Centre d’Ajuda tens més informació sobre la <a href="https://ca.support.somenergia.coop/article/1302-com-establim-els-preus-a-som-energia">composició dels preus</a> de les nostres tarifes.</li>
-    <li><ul style="display: grid;padding-top: 1em">
-    <li>En total en resultarà una disminució.</li>
-    </ul></li>
 </li>
 </ul></p>
 <p><span style="font-weight: 400;">Respecte als impostos i altres càrrecs que estableix el govern:</span></p>
@@ -226,17 +224,17 @@
             </tr>
             <tr>
                 <td>Abans d’impostos</td>
-                <td>${data['preus_antics']['tp']['p1']}</td>
-                <td>${data['preus_antics']['tp']['p2']}</td>
-                <td>${data['preus_nous']['tp']['p1']}</td>
-                <td>${data['preus_nous']['tp']['p2']}</td>
+                <td>${data['preus_antics']['tp']['P1']}</td>
+                <td>${data['preus_antics']['tp']['P2']}</td>
+                <td>${data['preus_nous']['tp']['P1']}</td>
+                <td>${data['preus_nous']['tp']['P2']}</td>
             </tr>
             <tr>
                 <td>Després d’impostos</td>
-                <td>${data['preus_antics_imp']['tp']['p1']}</td>
-                <td>${data['preus_antics_imp']['tp']['p2']}</td>
-                <td>${data['preus_nous_imp']['tp']['p1']}</td>
-                <td>${data['preus_nous_imp']['tp']['p2']}</td>
+                <td>${data['preus_antics_imp']['tp']['P1']}</td>
+                <td>${data['preus_antics_imp']['tp']['P2']}</td>
+                <td>${data['preus_nous_imp']['tp']['P1']}</td>
+                <td>${data['preus_nous_imp']['tp']['P2']}</td>
             </tr>
         </tbody>
     </table>
@@ -263,21 +261,21 @@
             </tr>
             <tr>
                 <td>Abans d’impostos</td>
-                <td>${data['preus_antics']['te']['p1']}</td>
-                <td>${data['preus_antics']['te']['p2']}</td>
-                <td>${data['preus_antics']['te']['p3']}</td>
-                <td>${data['preus_nous']['te']['p1']}</td>
-                <td>${data['preus_nous']['te']['p2']}</td>
-                <td>${data['preus_nous']['te']['p3']}</td>
+                <td>${data['preus_antics']['te']['P1']}</td>
+                <td>${data['preus_antics']['te']['P2']}</td>
+                <td>${data['preus_antics']['te']['P3']}</td>
+                <td>${data['preus_nous']['te']['P1']}</td>
+                <td>${data['preus_nous']['te']['P2']}</td>
+                <td>${data['preus_nous']['te']['P3']}</td>
             </tr>
             <tr>
                 <td>Després d’impostos</td>
-                <td>${data['preus_antics_imp']['te']['p1']}</td>
-                <td>${data['preus_antics_imp']['te']['p2']}</td>
-                <td>${data['preus_antics_imp']['te']['p3']}</td>
-                <td>${data['preus_nous_imp']['te']['p1']}</td>
-                <td>${data['preus_nous_imp']['te']['p2']}</td>
-                <td>${data['preus_nous_imp']['te']['p3']}</td>
+                <td>${data['preus_antics_imp']['te']['P1']}</td>
+                <td>${data['preus_antics_imp']['te']['P2']}</td>
+                <td>${data['preus_antics_imp']['te']['P3']}</td>
+                <td>${data['preus_nous_imp']['te']['P1']}</td>
+                <td>${data['preus_nous_imp']['te']['P2']}</td>
+                <td>${data['preus_nous_imp']['te']['P3']}</td>
             </tr>
         </tbody>
     </table>
@@ -285,6 +283,158 @@
 
 % endif
 
+% if data['origen'] == 'consums':
+
+<br>
+<p><strong>Estimació</strong></p>
+<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció ni Generation kWh. A continuació trobaràs l’estimació aproximada del cost anual si apliquéssim els preus actuals, i del cost anual si apliquéssim els nous preus. </span></p>
+<p><span style="font-weight: 400;">En els dos casos l’estimació inclou l'${data['impostos_str']} i l’impost elèctric del 5,11%, és a dir, els impostos que s’aplicaran a partir del gener (tingues en compte que durant el 2023 alguns contractes han tingut impostos rebaixats).</span></p>
+<br>
+<p><strong>Cost anual estimat (euros/any)</strong></p>
+<figure class="table">
+    <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th>Cost estimat amb els nous preus</th>
+                <th>Cost estimat amb els preus actuals</th>
+            </tr>
+            <tr>
+                <td>Abans d’impostos</td>
+                <td>${data['preu_vell']}</td>
+                <td>${data['preu_nou']}</td>
+            </tr>
+            <tr>
+                <td>Després d’impostos</td>
+                <td>${data['preu_vell_imp']}</td>
+                <td>${data['preu_nou_imp']}</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+<p><span style="font-weight: 400;">Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l’ús d’energia que finalment facis, altres variacions de preus durant l’any, o canvis que pugui haver al mercat elèctric.</span></p>
+
+<p><span style="font-weight: 400;">Al nostre blog trobaràs la <a href="https://blog.somenergia.coop/?p=46595">notícia</a> del canvi de tarifes, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.</span></p>
+
+% endif
+
+% if data['origen'] == 'cnmc':
+
+<br>
+<p><strong>Estimació</strong></p>
+<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, a partir de les dades que tenim dels teus consums (sense tenir en compte autoproducció ni Generation kWh), i extrapolant-les segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n’hem obtingut un consum anual, que és el que comparem a continuació, amb els preus actuals i els nous preus.</span></p>
+<p><span style="font-weight: 400;">En els dos casos l’estimació inclou l'${data['impostos_str']} i l’impost elèctric del 5,11%, és a dir, els impostos que s’aplicaran a partir del gener (tingues en compte que durant el 2023 alguns contractes han tingut impostos rebaixats).</span></p>
+<br>
+<p><strong>Cost anual estimat (euros/any)</strong></p>
+<figure class="table">
+    <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th>Cost estimat amb els nous preus</th>
+                <th>Cost estimat amb els preus actuals</th>
+            </tr>
+            <tr>
+                <td>Abans d’impostos</td>
+                <td>${data['preu_vell']}</td>
+                <td>${data['preu_nou']}</td>
+            </tr>
+            <tr>
+                <td>Després d’impostos</td>
+                <td>${data['preu_vell_imp']}</td>
+                <td>${data['preu_nou_imp']}</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+<p><span style="font-weight: 400;">Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l’ús d’energia que finalment facis, altres variacions de preus durant l’any, o canvis que pugui haver al mercat elèctric.</span></p>
+
+<p><span style="font-weight: 400;">Al nostre blog trobaràs la <a href="https://blog.somenergia.coop/?p=46595">notícia</a> del canvi de tarifes, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.</span></p>
+
+% endif
+
+% if data['origen'] == 'estadistic':
+
+<br>
+<p><strong>Estimació</strong></p>
+<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, en funció de la potència contractada més alta que tens (${data['potencia_max']} kW), l’ús d’electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh.</span></p>
+<p><span style="font-weight: 400;">En els dos casos l’estimació inclou l'${data['impostos_str']} i l’impost elèctric del 5,11%, és a dir, els impostos que s’aplicaran a partir del gener (tingues en compte que durant el 2023 alguns contractes han tingut impostos rebaixats).</span></p>
+<br>
+<p><strong>Cost anual estimat (euros/any)</strong></p>
+<figure class="table">
+    <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th>Cost estimat amb els nous preus</th>
+                <th>Cost estimat amb els preus actuals</th>
+            </tr>
+            <tr>
+                <td>Abans d’impostos</td>
+                <td>${data['preu_vell']}</td>
+                <td>${data['preu_nou']}</td>
+            </tr>
+            <tr>
+                <td>Després d’impostos</td>
+                <td>${data['preu_vell_imp']}</td>
+                <td>${data['preu_nou_imp']}</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+<p><span style="font-weight: 400;">Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l’ús d’energia que finalment facis, altres variacions de preus durant l’any, o canvis que pugui haver al mercat elèctric.</span></p>
+
+<p><span style="font-weight: 400;">Al nostre blog trobaràs la <a href="https://blog.somenergia.coop/?p=46595">notícia</a> del canvi de tarifes, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.</span></p>
+
+% endif
+
+
+% if data['origen'] == 'indexada':
+
+<br>
+<p><strong>Estimació</strong></p>
+<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una estimació del cost de la factura de la llum, en funció del teu consum energètic durant l’últim any (aproximadament ${data['consum_total']} kWh), amb el canvi de preus. Com que el preu de l’energia en la tarifa indexada varia cada hora, per fer l’estimació hem utilitzat un preu mitjà en funció de les previsions actuals de preus per al 2024. Tingues en compte, però, que justament com que el preu de l’energia a mercat evoluciona cada dia i cada hora, és molt possible que l’<strong>estimació no reflexi el que acabi passant</strong>.</span></p>
+<br>
+<p><strong>Cost anual estimat (euros/any)</strong></p>
+<figure class="table">
+    <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th>Cost estimat amb els nous preus</th>
+                <th>Cost estimat amb els preus actuals</th>
+            </tr>
+            <tr>
+                <td>Abans d’impostos</td>
+                <td>${data['preu_vell']}</td>
+                <td>${data['preu_nou']}</td>
+            </tr>
+            <tr>
+                <td>Després d’impostos</td>
+                <td>${data['preu_vell_imp']}</td>
+                <td>${data['preu_nou_imp']}</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+
+<p><span style="font-weight: 400;">Els impostos aplicats són, en els dos casos, els que estaran vigents a partir de l’1 de gener (${data['impostos_str']} i impost elèctric del 5,11%).</span></p>
+<p><span style="font-weight: 400;">Com et dèiem, això són estimacions aproximades, i els imports finals <strong>dependran de circumstàncies</strong> que no es poden saber a dia d’avui, com és <strong>el preu de l’energia per als propers mesos</strong>, els horaris i l’ús d’energia que finalment facis, o altres canvis que pugui haver al mercat elèctric.</span></p>
+<p><span style="font-weight: 400;">Al nostre blog trobaràs la <a href="https://blog.somenergia.coop/?p=46595">notícia</a> del canvi de tarifes, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.</span></p>
+% endif
+
+
+<p><span style="font-weight: 400;">T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d’acord, no cal que ens retornis el document signat, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d’informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la 
+% if data['indexada']:
+<a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/">tarifa per períodes</a>
+% else:
+<a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">tarifa per indexada</a>
+% endif
+
+(<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.</span></p>
 
 <br>
 <p dir="ltr">Una salutaci&oacute; cordial,
@@ -293,19 +443,19 @@ Equip de Som Energia
 <br>
 <a href="https://somenergia.coop/ca">www.somenergia.coop</a></p>
 
-% endif
+## % endif
 
-% if  data['lang'] != "ca_ES":
+## % if  data['lang'] != "ca_ES":
 
 
-<br>
-<p dir="ltr">Un saludo cordial,
-<br>
-Equipo de Som Energia
-<br>
-<a href="https://www.somenergia.coop/es/">www.somenergia.coop</a></p>
+## <br>
+## <p dir="ltr">Un saludo cordial,
+## <br>
+## Equipo de Som Energia
+## <br>
+## <a href="https://www.somenergia.coop/es/">www.somenergia.coop</a></p>
 
-% endif
+## % endif
 
 <br>
 
