@@ -53,11 +53,11 @@ Hola, ${titular},<br>
 <br>
 % if  mail_lang == "ca_ES":
 
-<p>Reps aquest correu perquè o bé el teu usuari ha estat donat d’alta a l’<a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servei de Som Energia per representar-te en el mercat elèctric</a> o bé has sol·licitat recuperar la contrasenya.</p>
+<p>Reps aquest correu perquè o bé hem donat d’alta el teu usuari perquè puguis accedir a l’<a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servei de Som Energia per representar-te en el mercat elèctric</a> o bé has sol·licitat recuperar la contrasenya.</p>
 
 <p>Per accedir-hi, has d’iniciar sessió amb el teu nom d’usuari i la teva contrasenya.</p>
 
-<p>De moment, t’hem assignat una contrasenya temporal. Et recomanem que modifiquis una vegada hagis començat la sessió.</p>
+<p>De moment, t’hem assignat una contrasenya temporal. Et recomanem que la modifiquis una vegada hagis començat la sessió.</p>
 
 % if PASSWORD != False:
 <ul><li>Contrasenya temporal: <b>${PASSWORD}</b></li></ul>
@@ -71,13 +71,14 @@ Hola, ${titular},<br>
 <br>
 ------------------------------------------------------------
 <br>
-Representació en el mercat elèctric - Som Energia <br>
+Som Energia - Representació en el mercat elèctric <br>
+<br>
 <a target="_blank" href="https://www.somenergia.coop/">www.somenergia.coop</a><br>
-representa@somenergia.coop
+<a href="mailto:representa@somenergia.coop">representa@somenergia.coop</a><br>
 
 % else:
 
-<p>Recibes este correo porque o bien te has dado de alta en la <a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servicio de Som Energia para representarte en el mercado eléctrico</a> o bien has solicitado recuperar la contraseña.</p>
+<p>Recibes este correo porque o bien hemos dado de alta a tu usuario para que puedas acceder a la <a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servicio de Som Energia para representarte en el mercado eléctrico</a> o bien has solicitado recuperar la contraseña.</p>
 
 <p>Para acceder, tienes que iniciar la sesión con tu nombre de usuario y tu contraseña.</p>
 
@@ -95,9 +96,10 @@ representa@somenergia.coop
 <br>
 -----------------------------------------------------------------
 <br>
-Representación en el mercado eléctrico - Som Energia <br>
+Som Energia - Representación en el mercado eléctrico <br>
+<br>
 <a target="_blank" href="https://www.somenergia.coop/">www.somenergia.coop</a><br>
-representa@somenergia.coop
+<a href="mailto:representa@somenergia.coop">representa@somenergia.coop</a><br>
 
 % endif
 </body>
