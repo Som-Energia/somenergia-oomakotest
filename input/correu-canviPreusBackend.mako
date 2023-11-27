@@ -281,7 +281,178 @@
     </table>
 </figure>
 
+    %if data['te_gkwh']:
+        <br>
+        <p><strong>Generation: preu del terme d’energia (en euros)</strong></p>
+        <br>
+        <figure class="table">
+            <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th colspan="3">Nous preus</th>
+                        <th colspan="3">Preus actuals</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Període punta</td>
+                        <td>Període pla</td>
+                        <td>Període vall</td>
+                        <td>Període punta</td>
+                        <td>Període pla</td>
+                        <td>Període vall</td>
+                    </tr>
+                    <tr>
+                        <td>Abans d’impostos</td>
+                        <td>${data['preus_antics_generation']['P1']}</td>
+                        <td>${data['preus_antics_generation']['P2']}</td>
+                        <td>${data['preus_antics_generation']['P3']}</td>
+                        <td>${data['preus_nous_generation']['P1']}</td>
+                        <td>${data['preus_nous_generation']['P2']}</td>
+                        <td>${data['preus_nous_generation']['P3']}</td>
+                    </tr>
+                    <tr>
+                        <td>Després d’impostos</td>
+                        <td>${data['preus_antics_generation_imp']['P1']}</td>
+                        <td>${data['preus_antics_generation_imp']['P2']}</td>
+                        <td>${data['preus_antics_generation_imp']['P3']}</td>
+                        <td>${data['preus_nous_generation_imp']['P1']}</td>
+                        <td>${data['preus_nous_generation_imp']['P2']}</td>
+                        <td>${data['preus_nous_generation_imp']['P3']}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+    %endif
+
 % endif
+
+% if data['Periodes30i60TDCanaries'] or data['Periodes30i60TDPeninsula']:
+
+<br>
+<p><strong>Nous preus i comparativa amb preus actuals</strong></p>
+<p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus d’energia i potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos els impostos aplicats són: 21% d’IVA i 5,11% d’impost elèctric. </span></p>
+<br>
+<p><strong>Tarifa ${data['tarifa_access']} períodes</strong></p>
+<br>
+<p><strong>Preu del terme de potència (en euros)</strong></p>
+<br>
+<figure class="table">
+    <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th></th>
+                <th colspan="2">Abans d'impostos</th>
+                <th colspan="2">Després d'impostos</th>
+            </tr>
+            <tr>
+                <td rowspan="6">Abans d’impostos</td>
+                <td>${data['preus_nous']['tp']['P1']}</td>
+                <td>${data['preus_nous_imp']['tp']['P1']}</td>
+            </tr>
+            % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                <tr>
+                    <td>${data['preus_nous']['tp'][periode]}</td>
+                    <td>${data['preus_nous_imp']['tp'][periode]}</td>
+                </tr>
+            % endfor
+            <tr>
+                <td rowspan="6">Després d’impostos</td>
+                <td>${data['preus_antics']['tp']['P1']}</td>
+                <td>${data['preus_antics_imp']['tp']['P1']}</td>
+            </tr>
+            % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                <tr>
+                    <td>${data['preus_antics']['tp'][periode]}</td>
+                    <td>${data['preus_antics_imp']['tp'][periode]}</td>
+                </tr>
+            % endfor
+        </tbody>
+    </table>
+</figure>
+
+<br>
+<p><strong>Preu del terme de energia (en euros)</strong></p>
+<br>
+<figure class="table">
+    <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th></th>
+                <th colspan="2">Abans d'impostos</th>
+                <th colspan="2">Després d'impostos</th>
+            </tr>
+            <tr>
+                <td rowspan="6">Abans d’impostos</td>
+                <td>${data['preus_nous']['te']['P1']}</td>
+                <td>${data['preus_nous_imp']['te']['P1']}</td>
+            </tr>
+            % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                <tr>
+                    <td>${data['preus_nous']['te'][periode]}</td>
+                    <td>${data['preus_nous_imp']['te'][periode]}</td>
+                </tr>
+            % endfor
+            <tr>
+                <td rowspan="6">Després d’impostos</td>
+                <td>${data['preus_antics']['te']['P1']}</td>
+                <td>${data['preus_antics_imp']['te']['P1']}</td>
+            </tr>
+            % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                <tr>
+                    <td>${data['preus_antics']['te'][periode]}</td>
+                    <td>${data['preus_antics_imp']['te'][periode]}</td>
+                </tr>
+            % endfor
+        </tbody>
+    </table>
+</figure>
+
+    %if data['te_gkwh']:
+        <br>
+        <p><strong>Generation: preu del terme d’energia (en euros)</strong></p>
+        <br>
+        <figure class="table">
+            <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th colspan="2">Abans d'impostos</th>
+                        <th colspan="2">Després d'impostos</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="6">Abans d’impostos</td>
+                        <td>${data['preus_nous_generation']['P1']}</td>
+                        <td>${data['preus_nous_generation_imp']['P1']}</td>
+                    </tr>
+                    % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                        <tr>
+                            <td>${data['preus_nous_generation'][periode]}</td>
+                            <td>${data['preus_nous_generation_imp'][periode]}</td>
+                        </tr>
+                    % endfor
+                    <tr>
+                        <td rowspan="6">Després d’impostos</td>
+                        <td>${data['preus_antics_generation']['P1']}</td>
+                        <td>${data['preus_antics_generation_imp']['P1']}</td>
+                    </tr>
+                    % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                        <tr>
+                            <td>${data['preus_antics_generation'][periode]}</td>
+                            <td>${data['preus_antics_generation_imp'][periode]}</td>
+                        </tr>
+                    % endfor
+                </tbody>
+            </table>
+        </figure>
+    %endif
+
+% endif
+
+#TODO preu d'execents
 
 % if data['origen'] == 'consums':
 
@@ -427,7 +598,7 @@
 % endif
 
 
-<p><span style="font-weight: 400;">T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d’acord, no cal que ens retornis el document signat, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d’informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la 
+<p><span style="font-weight: 400;">T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d’acord, no cal que ens retornis el document signat, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d’informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la
 % if data['indexada']:
 <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/">tarifa per períodes</a>
 % else:
