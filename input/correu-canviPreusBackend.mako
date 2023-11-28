@@ -200,10 +200,10 @@
 % endif
 
 % if data['Periodes20TDPeninsulaFins10kw'] or data['Periodes20TDPeninsulaMesDe10kw'] or data['Periodes20TDCanaries']:
-
 <br>
 <p><strong>Nous preus i comparativa amb preus actuals</strong></p>
-<p><span style="font-weight: 400;">Respecte a la tarifa Generation kWh, hem actualitzat els components que formen la tarifa, i en resulta una lleugera disminució.</span></p>
+<br>
+<p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus d’energia i potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos els impostos aplicats són sense rebaixes, és a dir, ${data['impostos_str']} i 5,11% d’impost elèctric.</span></p>
 <br>
 <p><strong>Tarifa 2.0TD períodes</strong></p>
 <br>
@@ -226,17 +226,17 @@
             </tr>
             <tr>
                 <td>Abans d’impostos</td>
-                <td>${data['preus_antics']['tp']['P1']}</td>
-                <td>${data['preus_antics']['tp']['P2']}</td>
                 <td>${data['preus_nous']['tp']['P1']}</td>
                 <td>${data['preus_nous']['tp']['P2']}</td>
+                <td>${data['preus_antics']['tp']['P1']}</td>
+                <td>${data['preus_antics']['tp']['P2']}</td>
             </tr>
             <tr>
                 <td>Després d’impostos</td>
-                <td>${data['preus_antics_imp']['tp']['P1']}</td>
-                <td>${data['preus_antics_imp']['tp']['P2']}</td>
                 <td>${data['preus_nous_imp']['tp']['P1']}</td>
                 <td>${data['preus_nous_imp']['tp']['P2']}</td>
+                <td>${data['preus_antics_imp']['tp']['P1']}</td>
+                <td>${data['preus_antics_imp']['tp']['P2']}</td>
             </tr>
         </tbody>
     </table>
@@ -263,21 +263,21 @@
             </tr>
             <tr>
                 <td>Abans d’impostos</td>
-                <td>${data['preus_antics']['te']['P1']}</td>
-                <td>${data['preus_antics']['te']['P2']}</td>
-                <td>${data['preus_antics']['te']['P3']}</td>
                 <td>${data['preus_nous']['te']['P1']}</td>
                 <td>${data['preus_nous']['te']['P2']}</td>
                 <td>${data['preus_nous']['te']['P3']}</td>
+                <td>${data['preus_antics']['te']['P1']}</td>
+                <td>${data['preus_antics']['te']['P2']}</td>
+                <td>${data['preus_antics']['te']['P3']}</td>
             </tr>
             <tr>
                 <td>Després d’impostos</td>
-                <td>${data['preus_antics_imp']['te']['P1']}</td>
-                <td>${data['preus_antics_imp']['te']['P2']}</td>
-                <td>${data['preus_antics_imp']['te']['P3']}</td>
                 <td>${data['preus_nous_imp']['te']['P1']}</td>
                 <td>${data['preus_nous_imp']['te']['P2']}</td>
                 <td>${data['preus_nous_imp']['te']['P3']}</td>
+                <td>${data['preus_antics_imp']['te']['P1']}</td>
+                <td>${data['preus_antics_imp']['te']['P2']}</td>
+                <td>${data['preus_antics_imp']['te']['P3']}</td>
             </tr>
         </tbody>
     </table>
@@ -306,21 +306,21 @@
                     </tr>
                     <tr>
                         <td>Abans d’impostos</td>
-                        <td>${data['preus_antics_generation']['P1']}</td>
-                        <td>${data['preus_antics_generation']['P2']}</td>
-                        <td>${data['preus_antics_generation']['P3']}</td>
                         <td>${data['preus_nous_generation']['P1']}</td>
                         <td>${data['preus_nous_generation']['P2']}</td>
                         <td>${data['preus_nous_generation']['P3']}</td>
+                        <td>${data['preus_antics_generation']['P1']}</td>
+                        <td>${data['preus_antics_generation']['P2']}</td>
+                        <td>${data['preus_antics_generation']['P3']}</td>
                     </tr>
                     <tr>
                         <td>Després d’impostos</td>
-                        <td>${data['preus_antics_generation_imp']['P1']}</td>
-                        <td>${data['preus_antics_generation_imp']['P2']}</td>
-                        <td>${data['preus_antics_generation_imp']['P3']}</td>
                         <td>${data['preus_nous_generation_imp']['P1']}</td>
                         <td>${data['preus_nous_generation_imp']['P2']}</td>
                         <td>${data['preus_nous_generation_imp']['P3']}</td>
+                        <td>${data['preus_antics_generation_imp']['P1']}</td>
+                        <td>${data['preus_antics_generation_imp']['P2']}</td>
+                        <td>${data['preus_antics_generation_imp']['P3']}</td>
                     </tr>
                 </tbody>
             </table>
@@ -349,7 +349,7 @@
                 <th colspan="2">Després d'impostos</th>
             </tr>
             <tr>
-                <td rowspan="6">Abans d’impostos</td>
+                <td rowspan="6">Nous preus</td>
                 <td>${data['preus_nous']['tp']['P1']}</td>
                 <td>${data['preus_nous_imp']['tp']['P1']}</td>
             </tr>
@@ -360,7 +360,7 @@
                 </tr>
             % endfor
             <tr>
-                <td rowspan="6">Després d’impostos</td>
+                <td rowspan="6">Preus actuals</td>
                 <td>${data['preus_antics']['tp']['P1']}</td>
                 <td>${data['preus_antics_imp']['tp']['P1']}</td>
             </tr>
@@ -387,7 +387,7 @@
                 <th colspan="2">Després d'impostos</th>
             </tr>
             <tr>
-                <td rowspan="6">Abans d’impostos</td>
+                <td rowspan="6">Nous preus</td>
                 <td>${data['preus_nous']['te']['P1']}</td>
                 <td>${data['preus_nous_imp']['te']['P1']}</td>
             </tr>
@@ -398,7 +398,7 @@
                 </tr>
             % endfor
             <tr>
-                <td rowspan="6">Després d’impostos</td>
+                <td rowspan="6">Preus actuals</td>
                 <td>${data['preus_antics']['te']['P1']}</td>
                 <td>${data['preus_antics_imp']['te']['P1']}</td>
             </tr>
@@ -426,7 +426,7 @@
                         <th colspan="2">Després d'impostos</th>
                     </tr>
                     <tr>
-                        <td rowspan="6">Abans d’impostos</td>
+                        <td rowspan="6">Nous preus</td>
                         <td>${data['preus_nous_generation']['P1']}</td>
                         <td>${data['preus_nous_generation_imp']['P1']}</td>
                     </tr>
@@ -437,7 +437,7 @@
                         </tr>
                     % endfor
                     <tr>
-                        <td rowspan="6">Després d’impostos</td>
+                        <td rowspan="6">Preus actuals</td>
                         <td>${data['preus_antics_generation']['P1']}</td>
                         <td>${data['preus_antics_generation_imp']['P1']}</td>
                     </tr>
@@ -476,7 +476,7 @@
                 <th colspan="2">Després d'impostos</th>
             </tr>
             <tr>
-                <td rowspan="6">Abans d’impostos</td>
+                <td rowspan="6">Nous preus</td>
                 <td>${data['preus_nous']['tp']['P1']}</td>
                 <td>${data['preus_nous_imp']['tp']['P1']}</td>
             </tr>
@@ -487,7 +487,7 @@
                 </tr>
             % endfor
             <tr>
-                <td rowspan="6">Després d’impostos</td>
+                <td rowspan="6">Preus actuals</td>
                 <td>${data['preus_antics']['tp']['P1']}</td>
                 <td>${data['preus_antics_imp']['tp']['P1']}</td>
             </tr>
@@ -602,13 +602,13 @@
             </tr>
             <tr>
                 <td>Abans d’impostos</td>
-                <td>${data['preu_vell']}</td>
                 <td>${data['preu_nou']}</td>
+                <td>${data['preu_vell']}</td>
             </tr>
             <tr>
                 <td>Després d’impostos</td>
-                <td>${data['preu_vell_imp']}</td>
                 <td>${data['preu_nou_imp']}</td>
+                <td>${data['preu_vell_imp']}</td>
             </tr>
         </tbody>
     </table>
@@ -638,13 +638,13 @@
             </tr>
             <tr>
                 <td>Abans d’impostos</td>
-                <td>${data['preu_vell']}</td>
                 <td>${data['preu_nou']}</td>
+                <td>${data['preu_vell']}</td>
             </tr>
             <tr>
                 <td>Després d’impostos</td>
-                <td>${data['preu_vell_imp']}</td>
                 <td>${data['preu_nou_imp']}</td>
+                <td>${data['preu_vell_imp']}</td>
             </tr>
         </tbody>
     </table>
@@ -663,12 +663,12 @@
 <p><span style="font-weight: 400;">Pots accedir al comparador d’ofertes que elabora la Comissió Nacional dels Mercats i la Competència (CNMC) a través d’<a href="https://comparador.cnmc.gob.es">aquest enllaç</a>. El comparador permet consultar i comparar les diferents ofertes vigents de les comercialitzadores del mercat lliure. Tingues en compte que possiblement, al moment de llegir aquest correu, les noves tarifes de Som Energia encara no hi seran reflectides.</span></p>
 % endif
 
-<p><span style="font-weight: 400;">T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d’acord, no cal que ens retornis el document signat, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d’informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la
+<p><span style="font-weight: 400;">T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d’acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d’informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la
 
 % if data['indexada']:
 <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/">tarifa per períodes</a>
 % else:
-<a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">tarifa per indexada</a>
+<a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">tarifa indexada</a>
 % endif
 
 (<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.</span></p>
