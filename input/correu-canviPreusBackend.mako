@@ -335,7 +335,7 @@
 <p><strong>Nous preus i comparativa amb preus actuals</strong></p>
 <p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus d’energia i potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos els impostos aplicats són: l'${data['impostos_str']} i 5,11% d’impost elèctric. </span></p>
 <br>
-<p><strong>Tarifa ${data['tarifa_access']} períodes</strong></p>
+<p><strong>Tarifa ${data['tarifa_acces']} períodes</strong></p>
 <br>
 <p><strong>Preu del terme de potència (en euros)</strong></p>
 <br>
@@ -344,9 +344,8 @@
         <tbody>
             <tr>
                 <th></th>
-                <th></th>
-                <th colspan="2">Abans d'impostos</th>
-                <th colspan="2">Després d'impostos</th>
+                <th>Abans d'impostos</th>
+                <th>Després d'impostos</th>
             </tr>
             <tr>
                 <td rowspan="6">Nous preus</td>
@@ -382,9 +381,8 @@
         <tbody>
             <tr>
                 <th></th>
-                <th></th>
-                <th colspan="2">Abans d'impostos</th>
-                <th colspan="2">Després d'impostos</th>
+                <th>Abans d'impostos</th>
+                <th>Després d'impostos</th>
             </tr>
             <tr>
                 <td rowspan="6">Nous preus</td>
@@ -421,9 +419,8 @@
                 <tbody>
                     <tr>
                         <th></th>
-                        <th></th>
-                        <th colspan="2">Abans d'impostos</th>
-                        <th colspan="2">Després d'impostos</th>
+                        <th>Abans d'impostos</th>
+                        <th>Després d'impostos</th>
                     </tr>
                     <tr>
                         <td rowspan="6">Nous preus</td>
@@ -462,7 +459,7 @@
 <p><strong>Nous preus i comparativa amb preus actuals</strong></p>
 <p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus del terme de potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos, els impostos aplicats són els que s’aplicaran a partir del gener, és a dir, l'${data['impostos_str']} i impost elèctric del 5,11%. </span></p>
 <br>
-<p><strong>Tarifa ${data['tarifa_access']} períodes</strong></p>
+<p><strong>Tarifa ${data['tarifa_acces']} indexada</strong></p>
 <br>
 <p><strong>Preu del terme de potència (en euros)</strong></p>
 <br>
@@ -471,32 +468,27 @@
         <tbody>
             <tr>
                 <th></th>
-                <th></th>
-                <th colspan="2">Abans d'impostos</th>
-                <th colspan="2">Després d'impostos</th>
+                <th>Abans d'impostos</th>
+                <th>Després d'impostos</th>
             </tr>
             <tr>
-                <td rowspan="6">Nous preus</td>
+                <td rowspan="2">Nous preus</td>
                 <td>${data['preus_nous']['tp']['P1']}</td>
                 <td>${data['preus_nous_imp']['tp']['P1']}</td>
             </tr>
-            % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
-                <tr>
-                    <td>${data['preus_nous']['tp'][periode]}</td>
-                    <td>${data['preus_nous_imp']['tp'][periode]}</td>
-                </tr>
-            % endfor
             <tr>
-                <td rowspan="6">Preus actuals</td>
+                <td>${data['preus_nous']['tp']['P2']}</td>
+                <td>${data['preus_nous_imp']['tp']['P2']}</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Preus actuals</td>
                 <td>${data['preus_antics']['tp']['P1']}</td>
                 <td>${data['preus_antics_imp']['tp']['P1']}</td>
             </tr>
-            % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
-                <tr>
-                    <td>${data['preus_antics']['tp'][periode]}</td>
-                    <td>${data['preus_antics_imp']['tp'][periode]}</td>
-                </tr>
-            % endfor
+            <tr>
+                <td>${data['preus_antics']['tp']['P2']}</td>
+                <td>${data['preus_antics_imp']['tp']['P2']}</td>
+            </tr>
         </tbody>
     </table>
 </figure>
