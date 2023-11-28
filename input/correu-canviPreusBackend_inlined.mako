@@ -4,19 +4,10 @@
 %>
 <!doctype html>
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-<style>
-    body{ font-family: 'Roboto Mono', Arial; font-size: 16px; text-align:'justify'}
-    .margin_top{ margin-top: 2em; }
 
-    td, th {
-        border: 1px solid;
-        padding: 4px 10px;
-        text-align: center;
-    }
-</style>
+
 </head>
-<body style="text-align: justify; font-family: 'Roboto Mono', Arial; font-size: 14px; line-height: 175%;" >
+<body style="text-align: justify; font-family: 'Roboto Mono', Arial; font-size: 14px; line-height: 175%;">
 <div style="width:96%;max-width:1200px;margin:20px auto;">
 
 % if data['lang'] == "ca_ES":
@@ -48,7 +39,7 @@
     <li style="padding-bottom:1em">El preu de la potència pujarà lleugerament. Això és així perquè augmentem lleugerament el marge per a la viabilitat de la cooperativa (segueix estant dins els paràmetres que va marcar l’Assemblea General).</li>
     <li style="padding-bottom:1em">En total en resultarà una disminució dels preus que estableix Som Energia.</li>
     <li style="list-style: none;padding-bottom:1em">Al Centre d’Ajuda tens més informació sobre la <a href="https://ca.support.somenergia.coop/article/1302-com-establim-els-preus-a-som-energia">composició dels preus</a> de les nostres tarifes.</li>
-</li>
+
 </ul></p>
 <p><span style="font-weight: 400;">Respecte als impostos i altres càrrecs que estableix el govern:</span></p>
 <p><ul style="display: grid;padding-top: 1em">
@@ -70,7 +61,7 @@
     <li style="padding-bottom:1em">El preu de la potència pujarà lleugerament. Això és així perquè augmentem lleugerament el marge per a la viabilitat de la cooperativa (segueix estant dins els paràmetres que va marcar l’Assemblea General).</li>
     <li style="padding-bottom:1em">En total en resultarà una disminució.</li>
     <li style="list-style: none;padding-bottom:1em">Al Centre d’Ajuda tens més informació sobre la <a href="https://ca.support.somenergia.coop/article/1302-com-establim-els-preus-a-som-energia">composició dels preus</a> de les nostres tarifes.</li>
-</li>
+
 </ul></p>
 <p><span style="font-weight: 400;">Respecte als impostos i altres càrrecs que estableix el govern:</span></p>
 <p><ul style="display: grid;padding-top: 1em">
@@ -92,7 +83,7 @@
     <li style="padding-bottom:1em">El preu de la potència pujarà lleugerament. Això és així perquè augmentem lleugerament el marge per a la viabilitat de la cooperativa (segueix estant dins els paràmetres que va marcar l’Assemblea General).</li>
     <li style="padding-bottom:1em">En total en resultarà una disminució dels preus que estableix Som Energia.</li>
     <li style="list-style: none;padding-bottom:1em">Al Centre d’Ajuda tens més informació sobre la <a href="https://ca.support.somenergia.coop/article/1302-com-establim-els-preus-a-som-energia">composició dels preus</a> de les nostres tarifes.</li>
-</li>
+
 </ul></p>
 <p><span style="font-weight: 400;">Respecte als impostos i altres càrrecs que estableix la normativa:</span></p>
 <p><ul style="display: grid;padding-top: 1em">
@@ -113,7 +104,7 @@
 <p><ul style="display: grid;padding-top: 1em">
     <li style="padding-bottom:1em">El preu de l’energia baixarà, ja que el mercat de futurs (on comprem la major part de l’energia) segueix moderant-se.</li>
     <li style="list-style: none;padding-bottom:1em">Al Centre d’Ajuda tens més informació sobre la <a href="https://ca.support.somenergia.coop/article/1302-com-establim-els-preus-a-som-energia">composició dels preus</a> de les nostres tarifes.</li>
-</li>
+
 </ul></p>
 <p><span style="font-weight: 400;">Respecte als impostos i altres càrrecs que estableix la normativa:</span></p>
 <p><ul style="display: grid;padding-top: 1em">
@@ -133,7 +124,7 @@
 <p><ul style="display: grid;padding-top: 1em">
     <li style="padding-bottom:1em">El preu de l’energia baixarà, ja que el mercat de futurs (on comprem la major part de l’energia) segueix moderant-se.</li>
     <li style="list-style: none;padding-bottom:1em">Al Centre d’Ajuda tens més informació sobre la <a href="https://ca.support.somenergia.coop/article/1302-com-establim-els-preus-a-som-energia">composició dels preus</a> de les nostres tarifes.</li>
-</li>
+
 </ul></p>
 <p><span style="font-weight: 400;">Respecte als impostos i altres càrrecs que estableix la normativa:</span></p>
 <p><ul style="display: grid;padding-top: 1em">
@@ -213,30 +204,30 @@
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th></th>
-                <th colspan="2">Nous preus</th>
-                <th colspan="2">Preus actuals</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Nous preus</th>
+                <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Preus actuals</th>
             </tr>
             <tr>
-                <td></td>
-                <td>Període punta</td>
-                <td>Període vall</td>
-                <td>Període punta</td>
-                <td>Període vall</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;"></td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període punta</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període vall</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període punta</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període vall</td>
             </tr>
             <tr>
-                <td>Abans d’impostos</td>
-                <td>${data['preus_antics']['tp']['P1']}</td>
-                <td>${data['preus_antics']['tp']['P2']}</td>
-                <td>${data['preus_nous']['tp']['P1']}</td>
-                <td>${data['preus_nous']['tp']['P2']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['tp']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['tp']['P2']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['tp']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['tp']['P2']}</td>
             </tr>
             <tr>
-                <td>Després d’impostos</td>
-                <td>${data['preus_antics_imp']['tp']['P1']}</td>
-                <td>${data['preus_antics_imp']['tp']['P2']}</td>
-                <td>${data['preus_nous_imp']['tp']['P1']}</td>
-                <td>${data['preus_nous_imp']['tp']['P2']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['tp']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['tp']['P2']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['tp']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['tp']['P2']}</td>
             </tr>
         </tbody>
     </table>
@@ -248,36 +239,36 @@
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th></th>
-                <th colspan="3">Nous preus</th>
-                <th colspan="3">Preus actuals</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th colspan="3" style="border: 1px solid;padding: 4px 10px;text-align: center;">Nous preus</th>
+                <th colspan="3" style="border: 1px solid;padding: 4px 10px;text-align: center;">Preus actuals</th>
             </tr>
             <tr>
-                <td></td>
-                <td>Període punta</td>
-                <td>Període pla</td>
-                <td>Període vall</td>
-                <td>Període punta</td>
-                <td>Període pla</td>
-                <td>Període vall</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;"></td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període punta</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període pla</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període vall</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període punta</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període pla</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període vall</td>
             </tr>
             <tr>
-                <td>Abans d’impostos</td>
-                <td>${data['preus_antics']['te']['P1']}</td>
-                <td>${data['preus_antics']['te']['P2']}</td>
-                <td>${data['preus_antics']['te']['P3']}</td>
-                <td>${data['preus_nous']['te']['P1']}</td>
-                <td>${data['preus_nous']['te']['P2']}</td>
-                <td>${data['preus_nous']['te']['P3']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['te']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['te']['P2']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['te']['P3']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['te']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['te']['P2']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['te']['P3']}</td>
             </tr>
             <tr>
-                <td>Després d’impostos</td>
-                <td>${data['preus_antics_imp']['te']['P1']}</td>
-                <td>${data['preus_antics_imp']['te']['P2']}</td>
-                <td>${data['preus_antics_imp']['te']['P3']}</td>
-                <td>${data['preus_nous_imp']['te']['P1']}</td>
-                <td>${data['preus_nous_imp']['te']['P2']}</td>
-                <td>${data['preus_nous_imp']['te']['P3']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['te']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['te']['P2']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['te']['P3']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['te']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['te']['P2']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['te']['P3']}</td>
             </tr>
         </tbody>
     </table>
@@ -291,36 +282,36 @@
             <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
                 <tbody>
                     <tr>
-                        <th></th>
-                        <th colspan="3">Nous preus</th>
-                        <th colspan="3">Preus actuals</th>
+                        <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                        <th colspan="3" style="border: 1px solid;padding: 4px 10px;text-align: center;">Nous preus</th>
+                        <th colspan="3" style="border: 1px solid;padding: 4px 10px;text-align: center;">Preus actuals</th>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>Període punta</td>
-                        <td>Període pla</td>
-                        <td>Període vall</td>
-                        <td>Període punta</td>
-                        <td>Període pla</td>
-                        <td>Període vall</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;"></td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període punta</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període pla</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període vall</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període punta</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període pla</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Període vall</td>
                     </tr>
                     <tr>
-                        <td>Abans d’impostos</td>
-                        <td>${data['preus_antics_generation']['P1']}</td>
-                        <td>${data['preus_antics_generation']['P2']}</td>
-                        <td>${data['preus_antics_generation']['P3']}</td>
-                        <td>${data['preus_nous_generation']['P1']}</td>
-                        <td>${data['preus_nous_generation']['P2']}</td>
-                        <td>${data['preus_nous_generation']['P3']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation']['P1']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation']['P2']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation']['P3']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation']['P1']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation']['P2']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation']['P3']}</td>
                     </tr>
                     <tr>
-                        <td>Després d’impostos</td>
-                        <td>${data['preus_antics_generation_imp']['P1']}</td>
-                        <td>${data['preus_antics_generation_imp']['P2']}</td>
-                        <td>${data['preus_antics_generation_imp']['P3']}</td>
-                        <td>${data['preus_nous_generation_imp']['P1']}</td>
-                        <td>${data['preus_nous_generation_imp']['P2']}</td>
-                        <td>${data['preus_nous_generation_imp']['P3']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation_imp']['P1']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation_imp']['P2']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation_imp']['P3']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation_imp']['P1']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation_imp']['P2']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation_imp']['P3']}</td>
                     </tr>
                 </tbody>
             </table>
@@ -343,31 +334,31 @@
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th></th>
-                <th></th>
-                <th colspan="2">Abans d'impostos</th>
-                <th colspan="2">Després d'impostos</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d'impostos</th>
+                <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d'impostos</th>
             </tr>
             <tr>
-                <td rowspan="6">Abans d’impostos</td>
-                <td>${data['preus_nous']['tp']['P1']}</td>
-                <td>${data['preus_nous_imp']['tp']['P1']}</td>
+                <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['tp']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['tp']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
-                    <td>${data['preus_nous']['tp'][periode]}</td>
-                    <td>${data['preus_nous_imp']['tp'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['tp'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['tp'][periode]}</td>
                 </tr>
             % endfor
             <tr>
-                <td rowspan="6">Després d’impostos</td>
-                <td>${data['preus_antics']['tp']['P1']}</td>
-                <td>${data['preus_antics_imp']['tp']['P1']}</td>
+                <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['tp']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['tp']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
-                    <td>${data['preus_antics']['tp'][periode]}</td>
-                    <td>${data['preus_antics_imp']['tp'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['tp'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['tp'][periode]}</td>
                 </tr>
             % endfor
         </tbody>
@@ -381,31 +372,31 @@
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th></th>
-                <th></th>
-                <th colspan="2">Abans d'impostos</th>
-                <th colspan="2">Després d'impostos</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d'impostos</th>
+                <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d'impostos</th>
             </tr>
             <tr>
-                <td rowspan="6">Abans d’impostos</td>
-                <td>${data['preus_nous']['te']['P1']}</td>
-                <td>${data['preus_nous_imp']['te']['P1']}</td>
+                <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['te']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['te']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
-                    <td>${data['preus_nous']['te'][periode]}</td>
-                    <td>${data['preus_nous_imp']['te'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['te'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['te'][periode]}</td>
                 </tr>
             % endfor
             <tr>
-                <td rowspan="6">Després d’impostos</td>
-                <td>${data['preus_antics']['te']['P1']}</td>
-                <td>${data['preus_antics_imp']['te']['P1']}</td>
+                <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['te']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['te']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
-                    <td>${data['preus_antics']['te'][periode]}</td>
-                    <td>${data['preus_antics_imp']['te'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['te'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['te'][periode]}</td>
                 </tr>
             % endfor
         </tbody>
@@ -420,31 +411,31 @@
             <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
                 <tbody>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th colspan="2">Abans d'impostos</th>
-                        <th colspan="2">Després d'impostos</th>
+                        <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                        <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                        <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d'impostos</th>
+                        <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d'impostos</th>
                     </tr>
                     <tr>
-                        <td rowspan="6">Abans d’impostos</td>
-                        <td>${data['preus_nous_generation']['P1']}</td>
-                        <td>${data['preus_nous_generation_imp']['P1']}</td>
+                        <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation']['P1']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation_imp']['P1']}</td>
                     </tr>
                     % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                         <tr>
-                            <td>${data['preus_nous_generation'][periode]}</td>
-                            <td>${data['preus_nous_generation_imp'][periode]}</td>
+                            <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation'][periode]}</td>
+                            <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation_imp'][periode]}</td>
                         </tr>
                     % endfor
                     <tr>
-                        <td rowspan="6">Després d’impostos</td>
-                        <td>${data['preus_antics_generation']['P1']}</td>
-                        <td>${data['preus_antics_generation_imp']['P1']}</td>
+                        <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation']['P1']}</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation_imp']['P1']}</td>
                     </tr>
                     % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                         <tr>
-                            <td>${data['preus_antics_generation'][periode]}</td>
-                            <td>${data['preus_antics_generation_imp'][periode]}</td>
+                            <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation'][periode]}</td>
+                            <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation_imp'][periode]}</td>
                         </tr>
                     % endfor
                 </tbody>
@@ -470,31 +461,31 @@
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th></th>
-                <th></th>
-                <th colspan="2">Abans d'impostos</th>
-                <th colspan="2">Després d'impostos</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d'impostos</th>
+                <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d'impostos</th>
             </tr>
             <tr>
-                <td rowspan="6">Abans d’impostos</td>
-                <td>${data['preus_nous']['tp']['P1']}</td>
-                <td>${data['preus_nous_imp']['tp']['P1']}</td>
+                <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['tp']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['tp']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
-                    <td>${data['preus_nous']['tp'][periode]}</td>
-                    <td>${data['preus_nous_imp']['tp'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['tp'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['tp'][periode]}</td>
                 </tr>
             % endfor
             <tr>
-                <td rowspan="6">Després d’impostos</td>
-                <td>${data['preus_antics']['tp']['P1']}</td>
-                <td>${data['preus_antics_imp']['tp']['P1']}</td>
+                <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['tp']['P1']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['tp']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
-                    <td>${data['preus_antics']['tp'][periode]}</td>
-                    <td>${data['preus_antics_imp']['tp'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['tp'][periode]}</td>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['tp'][periode]}</td>
                 </tr>
             % endfor
         </tbody>
@@ -524,19 +515,19 @@
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th></th>
-                <th>Cost estimat amb els nous preus</th>
-                <th>Cost estimat amb els preus actuals</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Cost estimat amb els nous preus</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Cost estimat amb els preus actuals</th>
             </tr>
             <tr>
-                <td>Abans d’impostos</td>
-                <td>${data['preu_vell']}</td>
-                <td>${data['preu_nou']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou']}</td>
             </tr>
             <tr>
-                <td>Després d’impostos</td>
-                <td>${data['preu_vell_imp']}</td>
-                <td>${data['preu_nou_imp']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell_imp']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou_imp']}</td>
             </tr>
         </tbody>
     </table>
@@ -560,19 +551,19 @@
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th></th>
-                <th>Cost estimat amb els nous preus</th>
-                <th>Cost estimat amb els preus actuals</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Cost estimat amb els nous preus</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Cost estimat amb els preus actuals</th>
             </tr>
             <tr>
-                <td>Abans d’impostos</td>
-                <td>${data['preu_vell']}</td>
-                <td>${data['preu_nou']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou']}</td>
             </tr>
             <tr>
-                <td>Després d’impostos</td>
-                <td>${data['preu_vell_imp']}</td>
-                <td>${data['preu_nou_imp']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell_imp']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou_imp']}</td>
             </tr>
         </tbody>
     </table>
@@ -596,19 +587,19 @@
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th></th>
-                <th>Cost estimat amb els nous preus</th>
-                <th>Cost estimat amb els preus actuals</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Cost estimat amb els nous preus</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Cost estimat amb els preus actuals</th>
             </tr>
             <tr>
-                <td>Abans d’impostos</td>
-                <td>${data['preu_vell']}</td>
-                <td>${data['preu_nou']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou']}</td>
             </tr>
             <tr>
-                <td>Després d’impostos</td>
-                <td>${data['preu_vell_imp']}</td>
-                <td>${data['preu_nou_imp']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell_imp']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou_imp']}</td>
             </tr>
         </tbody>
     </table>
@@ -632,19 +623,19 @@
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th></th>
-                <th>Cost estimat amb els nous preus</th>
-                <th>Cost estimat amb els preus actuals</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Cost estimat amb els nous preus</th>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Cost estimat amb els preus actuals</th>
             </tr>
             <tr>
-                <td>Abans d’impostos</td>
-                <td>${data['preu_vell']}</td>
-                <td>${data['preu_nou']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou']}</td>
             </tr>
             <tr>
-                <td>Després d’impostos</td>
-                <td>${data['preu_vell_imp']}</td>
-                <td>${data['preu_nou_imp']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell_imp']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou_imp']}</td>
             </tr>
         </tbody>
     </table>
@@ -698,4 +689,4 @@ Equip de Som Energia
 ${data['text_legal']}
 </div>
 </body>
-</html>
+
