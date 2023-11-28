@@ -331,7 +331,7 @@
 
 <br>
 <p><strong>Nous preus i comparativa amb preus actuals</strong></p>
-<p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus d’energia i potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos els impostos aplicats són: 21% d’IVA i 5,11% d’impost elèctric. </span></p>
+<p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus d’energia i potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos els impostos aplicats són: l'${data['impostos_str']} i 5,11% d’impost elèctric. </span></p>
 <br>
 <p><strong>Tarifa ${data['tarifa_access']} períodes</strong></p>
 <br>
@@ -452,7 +452,63 @@
 
 % endif
 
-#TODO preu d'execents
+
+
+% if data['Indexada20TDCanaries'] or data['Indexada20TDPeninsulaBalearsFins10kw'] or data['Indexada20TDPeninsulaBalearsMesDe10kw']:
+
+<br>
+<p><strong>Nous preus i comparativa amb preus actuals</strong></p>
+<p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus del terme de potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos, els impostos aplicats són els que s’aplicaran a partir del gener, és a dir, l'${data['impostos_str']} i impost elèctric del 5,11%. </span></p>
+<br>
+<p><strong>Tarifa ${data['tarifa_access']} períodes</strong></p>
+<br>
+<p><strong>Preu del terme de potència (en euros)</strong></p>
+<br>
+<figure class="table">
+    <table style="background-color: #eeeeee; border: 4px solid gray; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <th></th>
+                <th></th>
+                <th colspan="2">Abans d'impostos</th>
+                <th colspan="2">Després d'impostos</th>
+            </tr>
+            <tr>
+                <td rowspan="6">Abans d’impostos</td>
+                <td>${data['preus_nous']['tp']['P1']}</td>
+                <td>${data['preus_nous_imp']['tp']['P1']}</td>
+            </tr>
+            % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                <tr>
+                    <td>${data['preus_nous']['tp'][periode]}</td>
+                    <td>${data['preus_nous_imp']['tp'][periode]}</td>
+                </tr>
+            % endfor
+            <tr>
+                <td rowspan="6">Després d’impostos</td>
+                <td>${data['preus_antics']['tp']['P1']}</td>
+                <td>${data['preus_antics_imp']['tp']['P1']}</td>
+            </tr>
+            % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                <tr>
+                    <td>${data['preus_antics']['tp'][periode]}</td>
+                    <td>${data['preus_antics_imp']['tp'][periode]}</td>
+                </tr>
+            % endfor
+        </tbody>
+    </table>
+</figure>
+
+<br>
+<p><span style="font-weight: 400;">Respecte al preu de l’<strong>energia</strong>, com saps, en les tarifes indexades responen a una fórmula. Et posem la fórmula, que en aquest cas, no ha variat.</span></p>
+<p><span style="font-weight: 400;color:gray">PH = 1,015 * [(PHM + PHMA + Pc + Sc + I + POsOm) (1 + Perd) + FE + F] + PTD + CA </span></p>
+<p><span style="font-weight: 400;">Al <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#formula-indexada">nostre web</a> pots veure a què correspon cada terme.</span></p>
+<p><span style="font-weight: 400;">La franja de la cooperativa, la “F” (la part que estableix Som Energia) seguirà sent de 0,020 euros/kWh.</span></p>
+
+% endif
+
+
+## TODO preu d'execents
 
 % if data['origen'] == 'consums':
 
@@ -597,8 +653,16 @@
 <p><span style="font-weight: 400;">Al nostre blog trobaràs la <a href="https://blog.somenergia.coop/?p=46595">notícia</a> del canvi de tarifes, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.</span></p>
 % endif
 
+<p><strong>Informació legal</strong></p>
+
+<p><span style="font-weight: 400;">Les <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/#preu-i-actualitzacio">clàusules contractuals de les Condicions Generals</a> que ens autoritzen a fer aquest canvi de preus són la clàusula 5.3 (i) per als canvis regulats per normativa (per exemple, els impostos), i la clàusula 5.3 (ii) per a les modificacions de la part del preu no regulada.</span></p>
+
+% if not data['indexada']:
+<p><span style="font-weight: 400;">Pots accedir al comparador d’ofertes que elabora la Comissió Nacional dels Mercats i la Competència (CNMC) a través d’<a href="https://comparador.cnmc.gob.es">aquest enllaç</a>. El comparador permet consultar i comparar les diferents ofertes vigents de les comercialitzadores del mercat lliure. Tingues en compte que possiblement, al moment de llegir aquest correu, les noves tarifes de Som Energia encara no hi seran reflectides.</span></p>
+% endif
 
 <p><span style="font-weight: 400;">T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d’acord, no cal que ens retornis el document signat, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d’informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la
+
 % if data['indexada']:
 <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/">tarifa per períodes</a>
 % else:
@@ -617,7 +681,6 @@ Equip de Som Energia
 ## % endif
 
 ## % if  data['lang'] != "ca_ES":
-
 
 ## <br>
 ## <p dir="ltr">Un saludo cordial,
