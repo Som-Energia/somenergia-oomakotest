@@ -525,7 +525,7 @@
 
 <br>
 <p><strong>Estimació</strong></p>
-<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció ni Generation kWh. A continuació trobaràs l’estimació aproximada del cost anual si apliquéssim els preus actuals, i del cost anual si apliquéssim els nous preus. </span></p>
+<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció ni Generation kWh ni lloguer de comptador. A continuació trobaràs l’estimació aproximada del cost anual si apliquéssim els preus actuals, i del cost anual si apliquéssim els nous preus. </span></p>
 <p><span style="font-weight: 400;">En els dos casos l’estimació inclou l'${data['impostos_str']} i l’impost elèctric del 5,11%, és a dir, els impostos que s’aplicaran a partir del gener (tingues en compte que durant el 2023 alguns contractes han tingut impostos rebaixats).</span></p>
 <br>
 <p><strong>Cost anual estimat (euros/any)</strong></p>
@@ -561,7 +561,7 @@
 
 <br>
 <p><strong>Estimació</strong></p>
-<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, a partir de les dades que tenim dels teus consums (sense tenir en compte autoproducció ni Generation kWh), i extrapolant-les segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n’hem obtingut un consum anual, que és el que comparem a continuació, amb els preus actuals i els nous preus.</span></p>
+<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, a partir de les dades que tenim dels teus consums (sense tenir en compte autoproducció ni Generation kWh ni lloguer de comptador), i extrapolant-les segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n’hem obtingut un consum anual, que és el que comparem a continuació, amb els preus actuals i els nous preus.</span></p>
 <p><span style="font-weight: 400;">En els dos casos l’estimació inclou l'${data['impostos_str']} i l’impost elèctric del 5,11%, és a dir, els impostos que s’aplicaran a partir del gener (tingues en compte que durant el 2023 alguns contractes han tingut impostos rebaixats).</span></p>
 <br>
 <p><strong>Cost anual estimat (euros/any)</strong></p>
@@ -597,8 +597,9 @@
 
 <br>
 <p><strong>Estimació</strong></p>
-<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, en funció de la potència contractada més alta que tens (${data['potencia_max']} kW), l’ús d’electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh.</span></p>
+<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, en funció de la potència contractada més alta que tens (${data['potencia_max']} kW), l’ús d’electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh ni lloguer de comptador.</span></p>
 <p><span style="font-weight: 400;">En els dos casos l’estimació inclou l'${data['impostos_str']} i l’impost elèctric del 5,11%, és a dir, els impostos que s’aplicaran a partir del gener (tingues en compte que durant el 2023 alguns contractes han tingut impostos rebaixats).</span></p>
+<p><span style="font-weight: 400;">Així doncs, et mostrem a continuació l’estimació aproximada del cost anual si apliquéssim els preus actuals, i el cost anual si apliquéssim els nous preus.</span></p>
 <br>
 <p><strong>Cost anual estimat (euros/any)</strong></p>
 <figure class="table">
