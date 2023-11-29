@@ -197,7 +197,7 @@
 <p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus d’energia i potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos els impostos aplicats són sense rebaixes, és a dir, ${data['impostos_str']} i 5,11% d’impost elèctric.</span></p>
 <br>
 <p><strong>Tarifa 2.0TD períodes</strong></p>
-<p><strong>Preu del terme de potència (en euros)</strong></p>
+<p><strong>Preu del terme de potència (en euros/kW i dia)</strong></p>
 <figure class="table">
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
@@ -231,7 +231,7 @@
     </table>
 </figure>
 <br>
-<p><strong>Preu del terme d’energia (en euros)</strong></p>
+<p><strong>Preu del terme d’energia (en euros/kWh)</strong></p>
 <figure class="table">
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
@@ -273,7 +273,7 @@
 
     %if data['te_gkwh']:
         <br>
-        <p><strong>Generation: preu del terme d’energia (en euros)</strong></p>
+        <p><strong>Generation: preu del terme d’energia (en euros/kWh)</strong></p>
         <figure class="table">
             <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
                 <tbody>
@@ -323,33 +323,38 @@
 <p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus d’energia i potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos els impostos aplicats són: l'${data['impostos_str']} i 5,11% d’impost elèctric. </span></p>
 <br>
 <p><strong>Tarifa ${data['tarifa_acces']} períodes</strong></p>
-<p><strong>Preu del terme de potència (en euros)</strong></p>
+<p><strong>Preu del terme de potència (en euros/kW i dia)</strong></p>
 <figure class="table">
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
                 <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
                 <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d'impostos</th>
                 <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d'impostos</th>
             </tr>
             <tr>
                 <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Nous preus</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">P1</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['tp']['P1']}</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['tp']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${periode}</td>
                     <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['tp'][periode]}</td>
                     <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['tp'][periode]}</td>
                 </tr>
             % endfor
             <tr>
                 <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Preus actuals</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">P1</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['tp']['P1']}</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['tp']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${periode}</td>
                     <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['tp'][periode]}</td>
                     <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['tp'][periode]}</td>
                 </tr>
@@ -359,33 +364,38 @@
 </figure>
 
 <br>
-<p><strong>Preu del terme de energia (en euros)</strong></p>
+<p><strong>Preu del terme d’energia (en euros/kWh)</strong></p>
 <figure class="table">
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
+                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
                 <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
                 <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d'impostos</th>
                 <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d'impostos</th>
             </tr>
             <tr>
                 <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Nous preus</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">P1</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['te']['P1']}</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['te']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${periode}</td>
                     <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous']['te'][periode]}</td>
                     <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_imp']['te'][periode]}</td>
                 </tr>
             % endfor
             <tr>
                 <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Preus actuals</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">P1</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['te']['P1']}</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['te']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
+                    <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${periode}</td>
                     <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics']['te'][periode]}</td>
                     <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_imp']['te'][periode]}</td>
                 </tr>
@@ -396,33 +406,38 @@
 
     %if data['te_gkwh']:
         <br>
-        <p><strong>Generation: preu del terme d’energia (en euros)</strong></p>
+        <p><strong>Generation: preu del terme d’energia (en euros/kWh)</strong></p>
         <figure class="table">
             <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
                 <tbody>
                     <tr>
+                        <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
                         <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
                         <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d'impostos</th>
                         <th style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d'impostos</th>
                     </tr>
                     <tr>
                         <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Nous preus</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">P1</td>
                         <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation']['P1']}</td>
                         <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation_imp']['P1']}</td>
                     </tr>
                     % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                         <tr>
+                            <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${periode}</td>
                             <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation'][periode]}</td>
                             <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_nous_generation_imp'][periode]}</td>
                         </tr>
                     % endfor
                     <tr>
                         <td rowspan="6" style="border: 1px solid;padding: 4px 10px;text-align: center;">Preus actuals</td>
+                        <td style="border: 1px solid;padding: 4px 10px;text-align: center;">P1</td>
                         <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation']['P1']}</td>
                         <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation_imp']['P1']}</td>
                     </tr>
                     % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                         <tr>
+                            <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${periode}</td>
                             <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation'][periode]}</td>
                             <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preus_antics_generation_imp'][periode]}</td>
                         </tr>
@@ -443,12 +458,12 @@
 <p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus del terme de potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos, els impostos aplicats són els que s’aplicaran a partir del gener, és a dir, l'${data['impostos_str']} i impost elèctric del 5,11%. </span></p>
 <br>
 <p><strong>Tarifa ${data['tarifa_acces']} indexada</strong></p>
-<p><strong>Preu del terme de potència (en euros)</strong></p>
+<p><strong>Preu del terme de potència (en euros/kW i dia)</strong></p>
 <figure class="table">
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
+            <th style="border: 1px solid;padding: 4px 10px;text-align: center;"></th>
                 <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Nous preus</th>
                 <th colspan="2" style="border: 1px solid;padding: 4px 10px;text-align: center;">Preus actuals</th>
             </tr>
@@ -489,7 +504,7 @@
 % if not data['indexada']:
 
 <br>
-<p><strong>Preu de compensació d’excedents d’autoproducció</strong></p>
+<p><strong>Preu de compensació d’excedents d’autoproducció (en euros/kWh)</strong></p>
 <figure class="table">
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
@@ -519,7 +534,7 @@
 
 <br>
 <p><strong>Estimació</strong></p>
-<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció ni Generation kWh. A continuació trobaràs l’estimació aproximada del cost anual si apliquéssim els preus actuals, i del cost anual si apliquéssim els nous preus. </span></p>
+<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció ni Generation kWh ni lloguer de comptador. A continuació trobaràs l’estimació aproximada del cost anual si apliquéssim els preus actuals, i del cost anual si apliquéssim els nous preus. </span></p>
 <p><span style="font-weight: 400;">En els dos casos l’estimació inclou l'${data['impostos_str']} i l’impost elèctric del 5,11%, és a dir, els impostos que s’aplicaran a partir del gener (tingues en compte que durant el 2023 alguns contractes han tingut impostos rebaixats).</span></p>
 <br>
 <p><strong>Cost anual estimat (euros/any)</strong></p>
@@ -533,13 +548,13 @@
             </tr>
             <tr>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
-                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell']}</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell']}</td>
             </tr>
             <tr>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
-                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell_imp']}</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou_imp']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell_imp']}</td>
             </tr>
         </tbody>
     </table>
@@ -555,7 +570,7 @@
 
 <br>
 <p><strong>Estimació</strong></p>
-<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, a partir de les dades que tenim dels teus consums (sense tenir en compte autoproducció ni Generation kWh), i extrapolant-les segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n’hem obtingut un consum anual, que és el que comparem a continuació, amb els preus actuals i els nous preus.</span></p>
+<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, a partir de les dades que tenim dels teus consums (sense tenir en compte autoproducció ni Generation kWh ni lloguer de comptador), i extrapolant-les segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n’hem obtingut un consum anual, que és el que comparem a continuació, amb els preus actuals i els nous preus.</span></p>
 <p><span style="font-weight: 400;">En els dos casos l’estimació inclou l'${data['impostos_str']} i l’impost elèctric del 5,11%, és a dir, els impostos que s’aplicaran a partir del gener (tingues en compte que durant el 2023 alguns contractes han tingut impostos rebaixats).</span></p>
 <br>
 <p><strong>Cost anual estimat (euros/any)</strong></p>
@@ -569,13 +584,13 @@
             </tr>
             <tr>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Abans d’impostos</td>
-                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell']}</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell']}</td>
             </tr>
             <tr>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">Després d’impostos</td>
-                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell_imp']}</td>
                 <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_nou_imp']}</td>
+                <td style="border: 1px solid;padding: 4px 10px;text-align: center;">${data['preu_vell_imp']}</td>
             </tr>
         </tbody>
     </table>
@@ -591,8 +606,9 @@
 
 <br>
 <p><strong>Estimació</strong></p>
-<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, en funció de la potència contractada més alta que tens (${data['potencia_max']} kW), l’ús d’electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh.</span></p>
+<p><span style="font-weight: 400;">Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong>, en funció de la potència contractada més alta que tens (${data['potencia_max']} kW), l’ús d’electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh ni lloguer de comptador.</span></p>
 <p><span style="font-weight: 400;">En els dos casos l’estimació inclou l'${data['impostos_str']} i l’impost elèctric del 5,11%, és a dir, els impostos que s’aplicaran a partir del gener (tingues en compte que durant el 2023 alguns contractes han tingut impostos rebaixats).</span></p>
+<p><span style="font-weight: 400;">Així doncs, et mostrem a continuació l’estimació aproximada del cost anual si apliquéssim els preus actuals, i el cost anual si apliquéssim els nous preus.</span></p>
 <br>
 <p><strong>Cost anual estimat (euros/any)</strong></p>
 <figure class="table">
@@ -651,12 +667,12 @@
             </tr>
         </tbody>
     </table>
-</figure>
+</figure>   
 
 <p><span style="font-weight: 400;">Els impostos aplicats són, en els dos casos, els que estaran vigents a partir de l’1 de gener (${data['impostos_str']} i impost elèctric del 5,11%).</span></p>
 <p><span style="font-weight: 400;">Com et dèiem, això són estimacions aproximades, i els imports finals <strong>dependran de circumstàncies</strong> que no es poden saber a dia d’avui, com és <strong>el preu de l’energia per als propers mesos</strong>, els horaris i l’ús d’energia que finalment facis, o altres canvis que pugui haver al mercat elèctric.</span></p>
 <br>
-<p><span style="font-weight: 400;">Al nostre blog trobaràs la <a href="https://blog.somenergia.coop/?p=46595">notícia</a> del canvi de tarifes, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.</span></p>
+<p><span style="font-weight: 400;">Al nostre blog trobaràs la <a href="https://blog.somenergia.coop/?p=46595">notícia</a> del canvi de tarifes, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim">totes les tarifes</a>.</span></p>
 % endif
 <br>
 <p><strong>Informació legal</strong></p>

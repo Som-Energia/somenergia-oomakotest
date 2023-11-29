@@ -282,7 +282,7 @@
 
     %if data['te_gkwh']:
         <br>
-        <p><strong>Generation: preu del terme d’energia (en euros)</strong></p>
+        <p><strong>Generation: preu del terme d’energia (en euros/kWh)</strong></p>
         <figure class="table">
             <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
                 <tbody>
@@ -338,27 +338,32 @@
         <tbody>
             <tr>
                 <th></th>
+                <th></th>
                 <th>Abans d'impostos</th>
                 <th>Després d'impostos</th>
             </tr>
             <tr>
                 <td rowspan="6">Nous preus</td>
+                <td>P1</td>
                 <td>${data['preus_nous']['tp']['P1']}</td>
                 <td>${data['preus_nous_imp']['tp']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
+                    <td>${periode}</td>
                     <td>${data['preus_nous']['tp'][periode]}</td>
                     <td>${data['preus_nous_imp']['tp'][periode]}</td>
                 </tr>
             % endfor
             <tr>
                 <td rowspan="6">Preus actuals</td>
+                <td>P1</td>
                 <td>${data['preus_antics']['tp']['P1']}</td>
                 <td>${data['preus_antics_imp']['tp']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
+                    <td>${periode}</td>
                     <td>${data['preus_antics']['tp'][periode]}</td>
                     <td>${data['preus_antics_imp']['tp'][periode]}</td>
                 </tr>
@@ -374,27 +379,32 @@
         <tbody>
             <tr>
                 <th></th>
+                <th></th>
                 <th>Abans d'impostos</th>
                 <th>Després d'impostos</th>
             </tr>
             <tr>
                 <td rowspan="6">Nous preus</td>
+                <td>P1</td>
                 <td>${data['preus_nous']['te']['P1']}</td>
                 <td>${data['preus_nous_imp']['te']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
+                    <td>${periode}</td>
                     <td>${data['preus_nous']['te'][periode]}</td>
                     <td>${data['preus_nous_imp']['te'][periode]}</td>
                 </tr>
             % endfor
             <tr>
                 <td rowspan="6">Preus actuals</td>
+                <td>P1</td>
                 <td>${data['preus_antics']['te']['P1']}</td>
                 <td>${data['preus_antics_imp']['te']['P1']}</td>
             </tr>
             % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                 <tr>
+                    <td>${periode}</td>
                     <td>${data['preus_antics']['te'][periode]}</td>
                     <td>${data['preus_antics_imp']['te'][periode]}</td>
                 </tr>
@@ -405,33 +415,38 @@
 
     %if data['te_gkwh']:
         <br>
-        <p><strong>Generation: preu del terme d’energia (en euros)</strong></p>
+        <p><strong>Generation: preu del terme d’energia (en euros/kWh)</strong></p>
         <figure class="table">
             <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
                 <tbody>
                     <tr>
+                        <th></th>
                         <th></th>
                         <th>Abans d'impostos</th>
                         <th>Després d'impostos</th>
                     </tr>
                     <tr>
                         <td rowspan="6">Nous preus</td>
+                        <td>P1</td>
                         <td>${data['preus_nous_generation']['P1']}</td>
                         <td>${data['preus_nous_generation_imp']['P1']}</td>
                     </tr>
                     % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                         <tr>
+                            <td>${periode}</td>
                             <td>${data['preus_nous_generation'][periode]}</td>
                             <td>${data['preus_nous_generation_imp'][periode]}</td>
                         </tr>
                     % endfor
                     <tr>
                         <td rowspan="6">Preus actuals</td>
+                        <td>P1</td>
                         <td>${data['preus_antics_generation']['P1']}</td>
                         <td>${data['preus_antics_generation_imp']['P1']}</td>
                     </tr>
                     % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
                         <tr>
+                            <td>${periode}</td>
                             <td>${data['preus_antics_generation'][periode]}</td>
                             <td>${data['preus_antics_generation_imp'][periode]}</td>
                         </tr>
@@ -457,26 +472,29 @@
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
             <tr>
-                <th></th>
-                <th>Abans d'impostos</th>
-                <th>Després d'impostos</th>
+            <th></th>
+                <th colspan="2">Nous preus</th>
+                <th colspan="2">Preus actuals</th>
             </tr>
             <tr>
-                <td rowspan="2">Nous preus</td>
+                <td></td>
+                <td>Període punta</td>
+                <td>Període vall</td>
+                <td>Període punta</td>
+                <td>Període vall</td>
+            </tr>
+            <tr>
+                <td>Abans d’impostos</td>
                 <td>${data['preus_nous']['tp']['P1']}</td>
-                <td>${data['preus_nous_imp']['tp']['P1']}</td>
-            </tr>
-            <tr>
                 <td>${data['preus_nous']['tp']['P2']}</td>
-                <td>${data['preus_nous_imp']['tp']['P2']}</td>
-            </tr>
-            <tr>
-                <td rowspan="2">Preus actuals</td>
                 <td>${data['preus_antics']['tp']['P1']}</td>
-                <td>${data['preus_antics_imp']['tp']['P1']}</td>
+                <td>${data['preus_antics']['tp']['P2']}</td>
             </tr>
             <tr>
-                <td>${data['preus_antics']['tp']['P2']}</td>
+                <td>Després d’impostos</td>
+                <td>${data['preus_nous_imp']['tp']['P1']}</td>
+                <td>${data['preus_nous_imp']['tp']['P2']}</td>
+                <td>${data['preus_antics_imp']['tp']['P1']}</td>
                 <td>${data['preus_antics_imp']['tp']['P2']}</td>
             </tr>
         </tbody>
@@ -495,7 +513,7 @@
 % if not data['indexada']:
 
 <br>
-<p><strong>Preu de compensació d’excedents d’autoproducció</strong></p>
+<p><strong>Preu de compensació d’excedents d’autoproducció (en euros/kWh)</strong></p>
 <figure class="table">
     <table style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
         <tbody>
@@ -539,13 +557,13 @@
             </tr>
             <tr>
                 <td>Abans d’impostos</td>
-                <td>${data['preu_vell']}</td>
                 <td>${data['preu_nou']}</td>
+                <td>${data['preu_vell']}</td>
             </tr>
             <tr>
                 <td>Després d’impostos</td>
-                <td>${data['preu_vell_imp']}</td>
                 <td>${data['preu_nou_imp']}</td>
+                <td>${data['preu_vell_imp']}</td>
             </tr>
         </tbody>
     </table>
@@ -575,13 +593,13 @@
             </tr>
             <tr>
                 <td>Abans d’impostos</td>
-                <td>${data['preu_vell']}</td>
                 <td>${data['preu_nou']}</td>
+                <td>${data['preu_vell']}</td>
             </tr>
             <tr>
                 <td>Després d’impostos</td>
-                <td>${data['preu_vell_imp']}</td>
                 <td>${data['preu_nou_imp']}</td>
+                <td>${data['preu_vell_imp']}</td>
             </tr>
         </tbody>
     </table>
@@ -658,7 +676,7 @@
             </tr>
         </tbody>
     </table>
-</figure>
+</figure>   
 
 <p><span style="font-weight: 400;">Els impostos aplicats són, en els dos casos, els que estaran vigents a partir de l’1 de gener (${data['impostos_str']} i impost elèctric del 5,11%).</span></p>
 <p><span style="font-weight: 400;">Com et dèiem, això són estimacions aproximades, i els imports finals <strong>dependran de circumstàncies</strong> que no es poden saber a dia d’avui, com és <strong>el preu de l’energia per als propers mesos</strong>, els horaris i l’ús d’energia que finalment facis, o altres canvis que pugui haver al mercat elèctric.</span></p>
