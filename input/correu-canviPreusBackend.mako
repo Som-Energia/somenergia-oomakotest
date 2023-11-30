@@ -39,7 +39,6 @@
 % if data['lang'] == "ca_ES":
 
 % if data['modcon']:
-<p><span style="font-weight: 400;">El dia 1 de gener actualitzarem els preus de les tarifes d’electricitat de Som Energia.</span></p>
 <figure class="table">
     <table style="background-color: #D3E5C3; border: 4px solid #657557; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
         <tbody>
@@ -64,33 +63,16 @@
 </figure>
 </table>
 
+<br/>
+% if data['periodes']:
+<h3>Canvis de preus de la tarifa ${data['tarifa_acces']} períodes</h3>
 % endif
 
-
-% if data['Periodes20TDPeninsulaFins10kw']:
-
-<p><span style="font-weight: 400;">L’1 de gener actualitzarem els preus de les tarifes d’electricitat de Som Energia.</span></p>
-<p><span style="font-weight: 400;">En aquesta modificació tenim un gran exemple de la complexitat del sector energètic, ja que hi ha diversos canvis en diversos sentits. Així, a grans trets:</span></p>
-<p><span style="font-weight: 400;">Respecte als preus que estableix Som Energia:</span></p>
-<p><ul style="display: grid;padding-top: 1em">
-    <li style="padding-bottom:1em">El preu de l’energia baixarà, ja que el mercat de futurs (on comprem la major part de l’energia) segueix moderant-se.</li>
-    <li style="padding-bottom:1em">El preu de la potència pujarà lleugerament. Això és així perquè augmentem lleugerament el marge per a la viabilitat de la cooperativa (segueix estant dins els paràmetres que va marcar l’Assemblea General).</li>
-    <li style="padding-bottom:1em">En total en resultarà una disminució dels preus que estableix Som Energia.</li>
-    <li style="list-style: none;padding-bottom:1em">Al Centre d’Ajuda tens més informació sobre la <a href="https://ca.support.somenergia.coop/article/1302-com-establim-els-preus-a-som-energia">composició dels preus</a> de les nostres tarifes.</li>
-</li>
-</ul></p>
-<p><span style="font-weight: 400;">Respecte als impostos i altres càrrecs que estableix el govern:</span></p>
-<p><ul style="display: grid;padding-top: 1em">
-    <li style="padding-bottom:1em">L’IVA pujarà al 21%, i l’impost elèctric, al 5,11%. El govern havia establert mesures provisionals, com ara la rebaixa de l’IVA al 5% per a alguns casos (com el teu), i la rebaixa de l’impost elèctric al 0,5%. Aquestes mesures, segons es va establir, deixaran d’estar en vigor l’1 de gener.</li>
-    <li style="padding-bottom:1em">És possible que el govern anunciï variacions d’altres càrrecs, que seran d’aplicació immediata o quan ho estableixi el decret. Acostuma a passar quan canvia l’any, i normalment són modificacions de decimals, que no tenen gaire afectació al preu final.</li>
-</ul></p>
-<p><strong>Resultat:</strong></p>
-<p><span style="font-weight: 400;">Tot plegat farà que, en general, en resulti un augment de les factures d’electricitat. Més avall trobaràs una <strong>estimació</strong> de com podria afectar aquesta modificació de tarifes en el teu cas.</span></p>
-
+% if data['indexada']:
+<h3>Canvis de preus de la tarifa ${data['tarifa_acces']} indexada</h3>
 % endif
 
-
-
+% endif
 
 
 % if data['Periodes20TDPeninsulaFins10kw']:
@@ -257,7 +239,7 @@
 % if data['Periodes20TDPeninsulaFins10kw'] or data['Periodes20TDPeninsulaMesDe10kw'] or data['Periodes20TDCanaries']:
 <br>
 <p><strong>Nous preus i comparativa amb preus actuals</strong></p>
-<p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus d’energia i potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos els impostos aplicats són sense rebaixes, és a dir, ${data['impostos_str']} i impost elèctric del 5,11%.</span></p>
+<p><span style="font-weight: 400;">A continuació tens una taula amb els nous preus d’energia i potència (vigents a partir de l’1 de gener de 2024), i una comparació amb els preus actuals (vigents fins a 31 de desembre de 2023) de la tarifa que tens contractada actualment. En els dos casos els impostos aplicats són ${data['impostos_str']} i impost elèctric del 5,11%.</span></p>
 <br>
 <p><strong>Tarifa 2.0TD períodes</strong></p>
 <p><strong>Preu del terme de potència (en euros/kW i dia)</strong></p>
@@ -560,6 +542,50 @@
 <p><span style="font-weight: 400;">Al <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#formula-indexada">nostre web</a> pots veure a què correspon cada terme.</span></p>
 <p><span style="font-weight: 400;">La franja de la cooperativa, la “F” (la part que estableix Som Energia) seguirà sent de 0,020 euros/kWh.</span></p>
 
+    %if data['te_gkwh']:
+        <br>
+        <p><strong>Generation kWh: preu del terme d’energia (en euros/kWh)</strong></p>
+        <figure class="table">
+            <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th colspan="3">Nous preus</th>
+                        <th colspan="3">Preus actuals</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Període punta</td>
+                        <td>Període pla</td>
+                        <td>Període vall</td>
+                        <td>Període punta</td>
+                        <td>Període pla</td>
+                        <td>Període vall</td>
+                    </tr>
+                    <tr>
+                        <td>Abans d’impostos</td>
+                        <td>${data['preus_nous_generation']['P1']}</td>
+                        <td>${data['preus_nous_generation']['P2']}</td>
+                        <td>${data['preus_nous_generation']['P3']}</td>
+                        <td>${data['preus_antics_generation']['P1']}</td>
+                        <td>${data['preus_antics_generation']['P2']}</td>
+                        <td>${data['preus_antics_generation']['P3']}</td>
+                    </tr>
+                    <tr>
+                        <td>Després d’impostos</td>
+                        <td>${data['preus_nous_generation_imp']['P1']}</td>
+                        <td>${data['preus_nous_generation_imp']['P2']}</td>
+                        <td>${data['preus_nous_generation_imp']['P3']}</td>
+                        <td>${data['preus_antics_generation_imp']['P1']}</td>
+                        <td>${data['preus_antics_generation_imp']['P2']}</td>
+                        <td>${data['preus_antics_generation_imp']['P3']}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+    %endif
+
+
 % endif
 
 
@@ -768,7 +794,6 @@ Equip de Som Energia
 % if  data['lang'] != "ca_ES":
 
 % if data['modcon']:
-<p><span style="font-weight: 400;">El día 1 de enero actualizaremos los precios de las tarifas de electricidad de Som Energia.</span></p>
 <figure class="table">
     <table style="background-color: #D3E5C3; border: 4px solid #657557; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
         <tbody>
@@ -776,7 +801,7 @@ Equip de Som Energia
                 <td>
 % if data['modcon'] == 'index' and ( data['Periodes20TDPeninsulaFins10kw'] or data['Periodes20TDPeninsulaMesDe10kw'] or data['Periodes20TDCanaries'] ):
                     <p><span style="font-weight: 400;text-align: left;">Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} períodos, te explicamos más abajo los cambios de precio que le aplicaremos a partir del 1 de enero, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa períodos.</span></p>
-                    <p><span style="font-weight: 400;text-align: left;">En nuestra web puedes encontrar, desde hoy, los <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">nuevos precios de la tarifa indexada</a>. Así grosso modo, aumenta un poco el precio de la potencia y se recuperan el$ {data['impostos_str']} y el impuesto eléctrico del 5,11% en los contratos que los tenían rebajados.</span></p>
+                    <p><span style="font-weight: 400;text-align: left;">En nuestra web puedes encontrar, desde hoy, los <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">nuevos precios de la tarifa indexada</a>. Así grosso modo, aumenta un poco el precio de la potencia y se recuperan el ${data['impostos_str']} y el impuesto eléctrico del 5,11% en los contratos que los tenían rebajados.</span></p>
 % endif
 % if data['modcon'] == 'index' and ( data['Periodes30i60TDCanaries'] or data['Periodes30i60TDPeninsula'] ):
                     <p><span style="font-weight: 400;text-align: left;">Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} períodos, te explicamos más abajo los cambios de precio que le aplicaremos a partir del 1 de enero, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa períodos.</span></p>
@@ -793,12 +818,23 @@ Equip de Som Energia
 </figure>
 </table>
 
+<br/>
+<br/>
+% if data['periodes']:
+<h3>Cambios de precios de la tarifa ${data['tarifa_acces']} periodos</h3>
+% endif
+
+% if data['indexada']:
+<h3>Cambios de precios de la tarifa ${data['tarifa_acces']} indexada</h3>
+% endif
+
+
 % endif
 
 
 % if data['Periodes20TDPeninsulaFins10kw']:
 
-<p><span style="font-weight: 400;">El día 1 de enero actualizaremos los precios de las tarifas de electricidad de Som Energia.</span></p>
+<p><span style="font-weight: 400;">El 1 de enero actualizaremos los precios de las tarifas de electricidad de Som Energia.</span></p>
 <p><span style="font-weight: 400;">En esta modificación tenemos un gran ejemplo de la complejidad del sector energético, ya que existen varios cambios en distintos sentidos. Así, a grandes rasgos:</span></p>
 <p><span style="font-weight: 400;">Respecto a los precios que establece Som Energia:</span></p>
 <p><ul style="display: grid;padding-top: 1em">
@@ -838,7 +874,7 @@ Equip de Som Energia
     <li style="padding-bottom:1em">Es posible que el gobierno anuncie variaciones de otros cargos, que serán de aplicación inmediata o cuando lo establezca el decreto. Suele pasar cuando cambia el año, y normalmente son modificaciones de decimales, que no tienen demasiada afectación sobre el precio final.</li>
 </ul></p>
 <p><strong>Resultado:</strong></p>
-<p><span style="font-weight: 400;">Todo lo anterior hará que, en general, resulte una disminución de las facturas de electricidad. Más abajo encontrarás una <strong>estimación</strong> de cómo podría afectar a esta modificación de tarifas en tu caso.</span></p>
+<p><span style="font-weight: 400;">Todo lo anterior hará que, en general, resulte una disminución de las facturas de electricidad. Más abajo encontrarás una <strong>estimación</strong> de cómo podría afectar esta modificación de tarifas en tu caso.</span></p>
 
 % endif
 
@@ -959,7 +995,7 @@ Equip de Som Energia
 % if data['Periodes20TDPeninsulaFins10kw'] or data['Periodes20TDPeninsulaMesDe10kw'] or data['Periodes20TDCanaries']:
 <br>
 <p><strong>Nuevos precios y comparativa con precios actuales</strong></p>
-<p><span style="font-weight: 400;">A continuación tienes una tabla con los nuevos precios de energía y potencia (vigentes a partir del 1 de enero de 2024), y una comparación con los precios actuales (vigentes hasta 31 de diciembre de 2023) de la tarifa que tienes contratada actualmente. En ambos casos los impuestos aplicados son ${data['impostos_str']} y impuesto eléctrico del 5,11%.</span></p>
+<p><span style="font-weight: 400;">A continuación tienes una tabla con los nuevos precios de energía y potencia (vigentes a partir del 1 de enero de 2024), y una comparación con los precios actuales (vigentes hasta 31 de diciembre de 2023) de la tarifa que tienes contratada actualmente. En ambos casos los impuestos aplicados son ${data['impostos_str']} e impuesto eléctrico del 5,11%.</span></p>
 <br>
 <p><strong>Tarifa 2.0TD períodos</strong></p>
 <p><strong>Precio del término de potencia (en euros/kW y día)</strong></p>
@@ -1085,7 +1121,7 @@ Equip de Som Energia
 
 <br>
 <p><strong>Nuevos precios y comparativa con precios actuales</strong></p>
-<p><span style="font-weight: 400;">A continuación tienes una tabla con los nuevos precios de energía y potencia (vigentes a partir del 1 de enero de 2024), y una comparación con los precios actuales (vigentes hasta 31 de diciembre de 2023) de la tarifa que tienes contratada actualmente. En ambos casos los impuestos aplicados son: ${data['impostos_str']} y impuesto eléctrico del 5,11%.</span></p>
+<p><span style="font-weight: 400;">A continuación tienes una tabla con los nuevos precios de energía y potencia (vigentes a partir del 1 de enero de 2024), y una comparación con los precios actuales (vigentes hasta 31 de diciembre de 2023) de la tarifa que tienes contratada actualmente. En ambos casos los impuestos aplicados son: ${data['impostos_str']} e impuesto eléctrico del 5,11%.</span></p>
 <br>
 <p><strong>Tarifa ${data['tarifa_acces']} periodos</strong></p>
 <p><strong>Precio del término de potencia (en euros/kW y día)</strong></p>
@@ -1262,6 +1298,49 @@ Equip de Som Energia
 <p><span style="font-weight: 400;">En <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#formula-indexada">nuestra web</a> puedes ver a qué corresponde cada término.</span></p>
 <p><span style="font-weight: 400;">La franja de la cooperativa, la “F” (la parte que establece Som Energia) seguirá siendo de 0,020 euros/kWh.</span></p>
 
+    %if data['te_gkwh']:
+        <br>
+        <p><strong>Generation kWh: precio del término de energía (en euros/kWh)</strong></p>
+        <figure class="table">
+            <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th colspan="3">Nuevos precios</th>
+                        <th colspan="3">Precios actuales</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Periodo punta</td>
+                        <td>Periodo llano</td>
+                        <td>Periodo valle</td>
+                        <td>Periodo punta</td>
+                        <td>Periodo llano</td>
+                        <td>Periodo valle</td>
+                    </tr>
+                    <tr>
+                        <td>Antes de impuestos</td>
+                        <td>${data['preus_nous_generation']['P1']}</td>
+                        <td>${data['preus_nous_generation']['P2']}</td>
+                        <td>${data['preus_nous_generation']['P3']}</td>
+                        <td>${data['preus_antics_generation']['P1']}</td>
+                        <td>${data['preus_antics_generation']['P2']}</td>
+                        <td>${data['preus_antics_generation']['P3']}</td>
+                    </tr>
+                    <tr>
+                        <td>Después de impuestos</td>
+                        <td>${data['preus_nous_generation_imp']['P1']}</td>
+                        <td>${data['preus_nous_generation_imp']['P2']}</td>
+                        <td>${data['preus_nous_generation_imp']['P3']}</td>
+                        <td>${data['preus_antics_generation_imp']['P1']}</td>
+                        <td>${data['preus_antics_generation_imp']['P2']}</td>
+                        <td>${data['preus_antics_generation_imp']['P3']}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
+    %endif
+
 % endif
 
 
@@ -1400,7 +1479,7 @@ Equip de Som Energia
     </table>
 </figure>
 
-<p><span style="font-weight: 400;">Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependran de circumstàncies</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente realices, otras variaciones de precios durante el año, o cambios que pueda haber en el mercado eléctrico.</span></p>
+<p><span style="font-weight: 400;">Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente realices, otras variaciones de precios durante el año, o cambios que pueda haber en el mercado eléctrico.</span></p>
 <br>
 <p><span style="font-weight: 400;">En nuestro blog encontrarás la <a href="https://blog.somenergia.coop/?p=46598">noticia</a> del cambio de tarifas, y en la página web puedes consultar en cualquier momento <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">histórico de tarifas</a>, donde están también los precios vigentes hasta el 31 de diciembre y los de periodos anteriores.</span></p>
 
