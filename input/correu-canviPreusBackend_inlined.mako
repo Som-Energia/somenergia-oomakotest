@@ -20,11 +20,6 @@
 
 <br>
 <br>
-
-<p><strong>PLANTILLA DE TEST, PÒLISSA ${object.polissa_id.name}</strong></p>
-<br>
-
-
 <p>Hola${data['nom_titular']}</p>
 
 % if data['lang'] == "ca_ES":
@@ -52,7 +47,6 @@
         </tbody>
     </table>
 </figure>
-
 
 <br>
 % if data['periodes']:

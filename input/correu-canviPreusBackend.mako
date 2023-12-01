@@ -29,11 +29,6 @@
 
 <br>
 <br>
-
-<p><strong>PLANTILLA DE TEST, PÒLISSA ${object.polissa_id.name}</strong></p>
-<br>
-
-
 <p>Hola${data['nom_titular']}</p>
 
 % if data['lang'] == "ca_ES":
@@ -62,7 +57,6 @@
     </table>
 </figure>
 </table>
-
 <br/>
 % if data['periodes']:
 <h3>Canvis de preus de la tarifa ${data['tarifa_acces']} períodes</h3>
