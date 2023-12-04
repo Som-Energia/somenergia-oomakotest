@@ -72,10 +72,9 @@ Hola, ${titular},<br>
 ------------------------------------------------------------
 <br>
 Som Energia - Representació en el mercat elèctric <br>
-<br>
 <a target="_blank" href="https://www.somenergia.coop/">www.somenergia.coop</a><br>
 <a href="mailto:representa@somenergia.coop">representa@somenergia.coop</a><br>
-
+<br>
 % else:
 
 <p>Recibes este correo porque o bien hemos dado de alta a tu usuario para que puedas acceder a la <a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servicio de Som Energia para representarte en el mercado eléctrico</a> o bien has solicitado recuperar la contraseña.</p>
