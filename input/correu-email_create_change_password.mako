@@ -97,10 +97,9 @@ Som Energia - Representació en el mercat elèctric <br>
 -----------------------------------------------------------------
 <br>
 Som Energia - Representación en el mercado eléctrico <br>
-<br>
 <a target="_blank" href="https://www.somenergia.coop/">www.somenergia.coop</a><br>
 <a href="mailto:representa@somenergia.coop">representa@somenergia.coop</a><br>
-
+<br>
 % endif
 </body>
 ${text_legal_representa}
