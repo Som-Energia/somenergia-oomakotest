@@ -43,8 +43,6 @@ T'informem de com queden actualment els nous preus, i hi incloem també una comp
 amb els preus actuals (en el cas dels impostos, hi hem aplicat els que seran vigents
 a partir del gener).
 </p>
-
-<p><strong>Preus Generation kWh (en euros)</strong></p>
 %endif
 
 % if not is_cat:
@@ -60,8 +58,6 @@ Te informamos de cómo quedan actualmente los nuevos precios, e incluimos tambi�
 comparación con los precios actuales (en el caso de los impuestos,
 hemos aplicado los que serán vigentes a partir de enero).
 </p>
-
-<p><strong>Precios Generation kWh (en euros)</strong></p>
 %endif
 
 <figure class="table">
@@ -77,7 +73,7 @@ hemos aplicado los que serán vigentes a partir de enero).
         <tr class="bordsota" style="border-bottom: 1px solid black!important;">
             <th class="centertxt grisfosc" rowspan="2" style="font-family: Roboto;font-size: 1em;line-height: 1.3em;text-align: center;text-transform: initial;background: #4D4D4D;color: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">Tarifa</th>
             <th class="centertxt grisfosc" rowspan="2" style="font-family: Roboto;font-size: 1em;line-height: 1.3em;text-align: center;text-transform: initial;background: #4D4D4D;color: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">
-                ${'Període' if is_cat else 'Período'}
+                ${'Període' if is_cat else 'Periodo'}
             </th>
             <th class="centertxt verdc" rowspan="2" style="font-family: Roboto;font-size: 1em;line-height: 1.3em;text-align: center;text-transform: initial;background: #E0E723;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">
                 ${'Preu de la potència contractada' if is_cat else 'Precio de la potencia contratada'}
@@ -89,7 +85,7 @@ hemos aplicado los que serán vigentes a partir de enero).
         </tr>
         <tr>
             <th class="centertxt verd" style="font-family: Roboto;font-size: 1em;line-height: 1.3em;text-align: center;text-transform: initial;background: #97D700;border: none;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">
-                ${'Preu estàndard' if is_cat else 'Precio estándar'}
+                ${'Preu tarifes per períodes' if is_cat else 'Precio tarifas por periodos'}
             </th>
             <th class="centertxt verd" style="font-family: Roboto;font-size: 1em;line-height: 1.3em;text-align: center;text-transform: initial;background: #97D700;border: none;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">
                 ${'Preu Generation kWh' if is_cat else 'Precio Generation kWh'}
@@ -98,7 +94,7 @@ hemos aplicado los que serán vigentes a partir de enero).
     </thead>
     <tbody>
         <tr class="trfwhite">
-            <td class="centertxt" rowspan="3" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">2.0TD</td>
+            <td class="centertxt" rowspan="3" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">2.0TD ${'períodes' if is_cat else 'periodos'}</td>
             <td class="senseborder" style="border-bottom: none;border-top: none;text-align: center;background: white;border-right: 1px solid black!important;">Punta</td>
             <td class="centertxt" rowspan="2" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">27,474</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">0,247</td>
@@ -116,7 +112,7 @@ hemos aplicado los que serán vigentes a partir de enero).
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">0,116</td>
         </tr>
         <tr class="trfgris">
-            <td class="centertxt" rowspan="6" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">3.0TD</td>
+            <td class="centertxt" rowspan="6" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">3.0TD ${'períodes' if is_cat else 'periodos'}</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">P1</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">13,982509</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">0,215</td>
@@ -153,7 +149,7 @@ hemos aplicado los que serán vigentes a partir de enero).
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">0,108</td>
         </tr>
         <tr class="trfwhite">
-            <td class="centertxt" rowspan="6" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">6.1TD</td>
+            <td class="centertxt" rowspan="6" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">6.1TD ${'períodes' if is_cat else 'periodos'}</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">P1</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">22,965215</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">0,184</td>
@@ -190,7 +186,7 @@ hemos aplicado los que serán vigentes a partir de enero).
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">0,092</td>
         </tr>
         <tr class="trfgris">
-            <td class="centertxt" rowspan="6" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">3.0TDVE</td>
+            <td class="centertxt" rowspan="6" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">3.0TDVE ${'períodes' if is_cat else 'periodos'}</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">P1</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">2,558984</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">0,302</td>
@@ -227,7 +223,7 @@ hemos aplicado los que serán vigentes a partir de enero).
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: #EFEFEF;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">0,111</td>
         </tr>
         <tr class="trfwhite">
-            <td class="centertxt" rowspan="6" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">6.1TDVE</td>
+            <td class="centertxt" rowspan="6" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">6.1TDVE ${'períodes' if is_cat else 'periodos'}</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">P1</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">4,269983</td>
             <td class="centertxt" style="text-align: center;text-transform: initial;font-family: Roboto;font-size: 1em;line-height: 1.3em;background: white;border-collapse: collapse!important;padding: 6px!important;border-right: 1px solid black!important;">0,332</td>

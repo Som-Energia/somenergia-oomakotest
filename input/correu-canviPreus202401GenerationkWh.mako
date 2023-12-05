@@ -99,8 +99,6 @@ T'informem de com queden actualment els nous preus, i hi incloem també una comp
 amb els preus actuals (en el cas dels impostos, hi hem aplicat els que seran vigents
 a partir del gener).
 </p>
-
-<p><strong>Preus Generation kWh (en euros)</strong></p>
 %endif
 
 % if not is_cat:
@@ -116,8 +114,6 @@ Te informamos de cómo quedan actualmente los nuevos precios, e incluimos tambi�
 comparación con los precios actuales (en el caso de los impuestos,
 hemos aplicado los que serán vigentes a partir de enero).
 </p>
-
-<p><strong>Precios Generation kWh (en euros)</strong></p>
 %endif
 
 <figure class="table">
@@ -133,7 +129,7 @@ hemos aplicado los que serán vigentes a partir de enero).
         <tr class="bordsota">
             <th class="centertxt grisfosc" rowspan="2">Tarifa</th>
             <th class="centertxt grisfosc" rowspan="2">
-                ${'Període' if is_cat else 'Período'}
+                ${'Període' if is_cat else 'Periodo'}
             </th>
             <th class="centertxt verdc" rowspan="2">
                 ${'Preu de la potència contractada' if is_cat else 'Precio de la potencia contratada'}
@@ -145,7 +141,7 @@ hemos aplicado los que serán vigentes a partir de enero).
         </tr>
         <tr>
             <th class="centertxt verd">
-                ${'Preu estàndard' if is_cat else 'Precio estándar'}
+                ${'Preu tarifes per períodes' if is_cat else 'Precio tarifas por periodos'}
             </th>
             <th class="centertxt verd">
                 ${'Preu Generation kWh' if is_cat else 'Precio Generation kWh'}
@@ -154,7 +150,7 @@ hemos aplicado los que serán vigentes a partir de enero).
     </thead>
     <tbody>
         <tr class="trfwhite">
-            <td class="centertxt" rowspan="3">2.0TD</td>
+            <td class="centertxt" rowspan="3">2.0TD ${'períodes' if is_cat else 'periodos'}</td>
             <td class="senseborder">Punta</td>
             <td class="centertxt" rowspan="2">27,474</td>
             <td class="centertxt">0,247</td>
@@ -172,7 +168,7 @@ hemos aplicado los que serán vigentes a partir de enero).
             <td class="centertxt">0,116</td>
         </tr>
         <tr class="trfgris">
-            <td class="centertxt" rowspan="6">3.0TD</td>
+            <td class="centertxt" rowspan="6">3.0TD ${'períodes' if is_cat else 'periodos'}</td>
             <td class="centertxt">P1</td>
             <td class="centertxt">13,982509</td>
             <td class="centertxt">0,215</td>
@@ -209,7 +205,7 @@ hemos aplicado los que serán vigentes a partir de enero).
             <td class="centertxt">0,108</td>
         </tr>
         <tr class="trfwhite">
-            <td class="centertxt" rowspan="6">6.1TD</td>
+            <td class="centertxt" rowspan="6">6.1TD ${'períodes' if is_cat else 'periodos'}</td>
             <td class="centertxt">P1</td>
             <td class="centertxt">22,965215</td>
             <td class="centertxt">0,184</td>
@@ -246,7 +242,7 @@ hemos aplicado los que serán vigentes a partir de enero).
             <td class="centertxt">0,092</td>
         </tr>
         <tr class="trfgris">
-            <td class="centertxt" rowspan="6">3.0TDVE</td>
+            <td class="centertxt" rowspan="6">3.0TDVE ${'períodes' if is_cat else 'periodos'}</td>
             <td class="centertxt">P1</td>
             <td class="centertxt">2,558984</td>
             <td class="centertxt">0,302</td>
@@ -283,7 +279,7 @@ hemos aplicado los que serán vigentes a partir de enero).
             <td class="centertxt">0,111</td>
         </tr>
         <tr class="trfwhite">
-            <td class="centertxt" rowspan="6">6.1TDVE</td>
+            <td class="centertxt" rowspan="6">6.1TDVE ${'períodes' if is_cat else 'periodos'}</td>
             <td class="centertxt">P1</td>
             <td class="centertxt">4,269983</td>
             <td class="centertxt">0,332</td>
