@@ -2,6 +2,7 @@
     email_o = object.pool.get('report.backend.invoice.email')
     data = email_o.get_data(object._cr, object._uid, object.id, context={'lang': object.partner_id.lang})
     polissa_retrocedida = data['polissa']['polissa_retrocedida']
+    potencies = [float(x['potencia'].replace(',','.')) for x in data['polissa']['potencies']['contractades']]
 %>
 <div align="right"><a href="https://somenergia.coop"><img src="${data['comerci']['logo']}"/></a></div>
 % if data['lang'] != "es_ES":
@@ -108,6 +109,11 @@
         </p>
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
+        </p>
+    %endif
+    %if max(potencies) <= 10:
+        <p dir="ltr">
+            El govern espanyol ha establert que l’IVA de l’electricitat no serà del 21%, com estava previst, sinó que serà del 10% durant tot el 2024 (durant el 2023 va ser del 5%). Això suposa que l’augment en les factures no serà tan elevat com si s’hagués retornat a l’IVA sense rebaixes. Tens més informació al <a href="https://blog.somenergia.coop/?p=46826">nostre blog</a>.
         </p>
     %endif
     %if data['factura']['isTariffChange']:
@@ -229,6 +235,11 @@
         </p>
         <p dir="ltr">
             Si detectas algún error en la factura, puedes consultar este <a href="https://es.support.somenergia.coop/article/927-resuelve-tus-dudas-de-la-factura">enlace</a> o bien nos lo puedes comunicar respondiendo a este mismo correo.
+        </p>
+    %endif
+    %if max(potencies) <= 10:
+        <p dir="ltr">
+            El gobierno español ha establecido que el IVA de la electricidad no será del 21%, como estaba previsto, sino que será del 10% durante todo 2024 (durante 2023 fue del 5%). Esto supone que el aumento en las facturas no será tan elevado como si se hubiera vuelto al IVA sin rebajas. Tienes más información en <a href="https://blog.somenergia.coop/?p=46828">nuestro blog</a>.
         </p>
     %endif
     % if data['factura']['isTariffChange']:
