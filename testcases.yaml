@@ -64,6 +64,7 @@
 #        normal_ca: 444848
 #        normal_es: 403834
 #        energetica: 5084228
+#        10pluspot_ca: 15561632
 #
 #enviarAbonament:
 #    template: input/correu-enviarAbonament.mako
