@@ -20,7 +20,7 @@ def render(text_to_render, object_):
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
 template_id = md_obj.get_object_reference(
-                    object._cr, object._uid,  'som_users', 'common_template_legal_footer_representa'
+                    object._cr, object._uid,  'som_ov_users', 'common_template_legal_footer_representa'
                 )[1]
 text_legal_representa = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
