@@ -261,16 +261,14 @@
                     <br/>
                 % endif
 
-                %if True: # autoproduccio and sense autoproduccio amb compensacio simplificada: #TODO
-
+                %if data['autoconsum']['es_autoconsum'] and not data['autoconsum']['compensacio']:
                     <p><strong>Autoproducció</strong></p>
                     <p><span style="font-weight: 400;">
                         Com que ha baixat el preu de l'energia, abaixem també el preu de compensació dels excedents d'autoproducció. Els contractes que tenen compensació simplificada també tenen activat el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats/">Flux Solar</a>, que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada.
                     </span></p>
                 %endif
 
-                %if False: # autoproduccio and autoproduccio amb compensacio simplifcata #TODO
-
+                %if data['autoconsum']['es_autoconsum'] and data['autoconsum']['compensacio']:
                     <p><strong>Autoproducció</strong></p>
                     <p><span style="font-weight: 400;">
                         Per als contractes que teniu autoproducció amb compensació simplificada, els excedents d'autoproducció els continuarem compensant al mateix valor de referència del cost de l'energia que fem servir per calcular el preu de venda. Com que el cost de referència de l'energia en hores de producció fotovoltaica ha baixat, disminueix també la compensació d'excedents, i se situa a valors de mitjans de 2021.
@@ -412,7 +410,7 @@
                 <p><span style="font-weight: 400;">
                     Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any
                     %if iva10: #TODO
-                        [, la possible recuperació de l'IVA al 21% per a algun mes,]
+                        , la possible recuperació de l'IVA al 21% per a algun mes,
                     %endif
                     o canvis que hi pugui haver al mercat elèctric.
                 </span></p>
@@ -676,7 +674,7 @@
                     <br/>
                 % endif
 
-                %if True: # autoproduccio and sense autoproduccio amb compensacio simplificada: #TODO
+                %if data['autoconsum']['es_autoconsum'] and not data['autoconsum']['compensacio']:
 
                     <p><strong>Autoproducción</strong></p>
                     <p><span style="font-weight: 400;">
@@ -684,7 +682,7 @@
                     </span></p>
                 %endif
 
-                %if False: # autoproduccio and autoproduccio amb compensacio simplifcata #TODO
+                %if data['autoconsum']['es_autoconsum'] and data['autoconsum']['compensacio']:
 
                     <p><strong>Autoproducción</strong></p>
                     <p><span style="font-weight: 400;">
@@ -827,7 +825,7 @@
                 <p><span style="font-weight: 400;">
                     Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año
                     %if iva10: #TODO
-                        [, la posible recuperación del IVA al 21% para algún mes,]
+                        , la posible recuperación del IVA al 21% para algún mes,
                     %endif
                     o cambios que pueda haber en el mercado eléctrico.
                 </span></p>
