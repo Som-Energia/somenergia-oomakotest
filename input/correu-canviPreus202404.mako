@@ -14,6 +14,9 @@
                 padding: 4px 10px;
                 text-align: center;
             }
+            h4 {
+                font-size: 16px;
+            }
         </style>
     </head>
     ## TODO: Passar sempre l'inliner: https://templates.mailchimp.com/resources/inline-css/
@@ -21,10 +24,10 @@
         <div style="width:96%;max-width:1200px;margin:20px auto;">
 
             % if data['lang'] == "ca_ES":
-                <a href="https://www.somenergia.coop/ca/"><img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></a>
+                <a href="https://www.somenergia.coop/ca/"><img src="https://www.somenergia.coop/logo/logo.png"></a>
             %endif
             % if data['lang'] != "ca_ES":
-                <a href="https://www.somenergia.coop/es/"><img src="http://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"></a>
+                <a href="https://www.somenergia.coop/es/"><img src="https://www.somenergia.coop/logo/logo.png"></a>
             %endif
 
             <br>
@@ -77,7 +80,7 @@
                     El preu de l'energia al mercat majorista ha baixat, i les previsions per als propers mesos indiquen que seguiran sent baixos; això ens permet, doncs, abaixar el preu de l'energia de les nostres tarifes per períodes.
                 </span></p>
 
-                <p><span style="font-weight: 400;"><strong>Impostos regulats</strong></span></p>
+                <h3><span style="font-weight: 400;"><strong>Impostos regulats</strong></span></h3>
 
                 <p><span style="font-weight: 400;">
                     Per altra banda, l'impost elèctric passarà del 2,5% al 3,8%. Forma part de les mesures que va establir el govern al <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Reial decret llei 8/2023</a>, de recuperació progressiva dels impostos.
@@ -87,22 +90,21 @@
                 </span></p>
 
                 % if data['Periodes20TDPeninsulaFins10kw'] or data['Periodes20TDPeninsulaMesDe10kw'] or data['Periodes20TDCanaries']:
-                    <p><span style="font-weight: 400;">
+                    <h3><span style="font-weight: 300;">
                         <strong>Nous preus i comparativa amb preus actuals </strong>
-                    </span></p>
+                    </span></h3>
                     <p><span style="font-weight: 400;">
                         A continuació tens una taula amb els nous preus (vigents a partir de l'1 d'abril), i una comparació amb els preus actuals (vigents fins a 31 de març) de la tarifa que tens contractada. Els impostos aplicats són els vigents a cada moment (${data['impostos_str']}, i impost elèctric del 2,5% per als preus actuals, i del 3,8% per als preus nous).
                     </span></p>
-                    <br>
-                    <p><strong>Tarifa 2.0TD períodes</strong></p>
-                    <p><strong>Preu del terme d'energia (en euros/kWh)</strong></p>
+                    <h4><span style="font-weight: 350;"><strong>Tarifa 2.0TD períodes</strong></span></h4>
+                    <p><span style="font-weight: 300;"><strong>Preu del terme d'energia (en euros/kWh)</strong></span></p>
                     <figure class="table">
                         <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
                             <tbody>
                                 <tr>
                                     <th></th>
-                                    <th colspan="3">Nous preus</th>
-                                    <th colspan="3">Preus actuals</th>
+                                    <th colspan="3"><strong>Nous preus</strong></th>
+                                    <th colspan="3"><strong>Preus actuals</strong></th>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -134,14 +136,14 @@
                             </tbody>
                         </table>
                     </figure>
-                    <p><strong>Preu del terme de potència (en euros/kW a l'any)</strong></p>
+                     <p><span style="font-weight: 300;"><strong>Preu del terme de potència (en euros/kW a l'any)</strong></span></p>
                     <figure class="table">
                         <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
                             <tbody>
                                 <tr>
                                     <th></th>
-                                    <th colspan="2">Nous preus</th>
-                                    <th colspan="2">Preus actuals</th>
+                                    <th colspan="2"><strong>Nous preus</strong></th>
+                                    <th colspan="2"><strong>Preus actuals</strong></th>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -171,12 +173,14 @@
                 %endif
 
                 % if data['Periodes30i60TDPeninsula']:
-                    <p><strong>Nous preus i comparativa amb preus actuals</strong></p>
+                    <h3><span style="font-weight: 300;">
+                        <strong>Nous preus i comparativa amb preus actuals </strong>
+                    </span></h3>
                     <p><span style="font-weight: 400;">
                         A continuació tens una taula amb els nous preus (vigents a partir de l'1 d'abril) i els preus actuals (vigents fins al 31 de març) de la tarifa que tens contractada. Els impostos aplicats són els vigents a cada moment (${data['impostos_str']}, i impost elèctric del 2,5% per als preus actuals, i del 3,8% per als preus nous).
                     </span></p>
                     <br/>
-                    <p><strong>Tarifa ${data['tarifa_acces']} períodes</strong></p>
+                    <h4><strong>Tarifa ${data['tarifa_acces']} períodes</strong></h4>
                     <p><strong>Preu del terme d'energia (en euros/kWh)</strong></p>
                     <figure class="table">
                         <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
@@ -188,7 +192,7 @@
                                     <th>Amb impostos aplicats</th>
                                 </tr>
                                 <tr>
-                                    <td rowspan="6">Nous preus</td>
+                                    <td rowspan="6"><strong>Nous preus</strong></td>
                                     <td>P1</td>
                                     <td>${data['preus_nous']['te']['P1']}</td>
                                     <td>${data['preus_nous_imp']['te']['P1']}</td>
@@ -201,7 +205,7 @@
                                     </tr>
                                 % endfor
                                 <tr>
-                                    <td rowspan="6">Preus actuals</td>
+                                    <td rowspan="6"><strong>Preus actuals</strong></td>
                                     <td>P1</td>
                                     <td>${data['preus_antics']['te']['P1']}</td>
                                     <td>${data['preus_antics_imp']['te']['P1']}</td>
@@ -227,7 +231,7 @@
                                     <th>Amb impostos aplicats</th>
                                 </tr>
                                 <tr>
-                                    <td rowspan="6">Nous preus</td>
+                                    <td rowspan="6"><strong>Nous preus</strong></td>
                                     <td>P1</td>
                                     <td>${data['preus_nous']['tp']['P1']}</td>
                                     <td>${data['preus_nous_imp']['tp']['P1']}</td>
@@ -240,7 +244,7 @@
                                     </tr>
                                 % endfor
                                 <tr>
-                                    <td rowspan="6">Preus actuals</td>
+                                    <td rowspan="6"><strong>Preus actuals</strong></td>
                                     <td>P1</td>
                                     <td>${data['preus_antics']['tp']['P1']}</td>
                                     <td>${data['preus_antics_imp']['tp']['P1']}</td>
@@ -258,19 +262,11 @@
                     <br/>
                 % endif
 
-                %if data['autoconsum']['es_autoconsum'] and not data['autoconsum']['compensacio']:
-                    <p><strong>Autoproducció</strong></p>
-                    <p><span style="font-weight: 400;">
-                        Com que ha baixat el preu de l'energia, abaixem també el preu de compensació dels excedents d'autoproducció. Els contractes que tenen compensació simplificada també tenen activat el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats/">Flux Solar</a>, que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada.
-                    </span></p>
-                %endif
-
                 %if data['autoconsum']['es_autoconsum'] and data['autoconsum']['compensacio']:
-                    <p><strong>Autoproducció</strong></p>
+                    <h3><strong>Autoproducció</strong></h3>
                     <p><span style="font-weight: 400;">
                         Per als contractes que teniu autoproducció amb compensació simplificada, els excedents d'autoproducció els continuarem compensant al mateix valor de referència del cost de l'energia que fem servir per calcular el preu de venda. Com que el cost de referència de l'energia en hores de producció fotovoltaica ha baixat, disminueix també la compensació d'excedents, i se situa a valors de mitjans de 2021.
                     </span></p>
-                    <br/>
 
                     <p><strong>Preu de compensació d'excedents d'autoproducció (en euros/kWh)</strong></p>
                     <figure class="table">
@@ -278,8 +274,8 @@
                             <tbody>
                                 <tr>
                                     <th></th>
-                                    <th>Nous preus</th>
-                                    <th>Preus actuals</th>
+                                    <th><strong>Nous preus</strong></th>
+                                    <th><strong>Preus actuals</strong></th>
                                 </tr>
                                 <tr>
                                     <td>Sense impostos aplicats</td>
@@ -298,10 +294,15 @@
                     <p><span style="font-weight: 400;">
                         Et recordem que també tens activat el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats/">Flux Solar</a>", que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada. Pots veure si tens Sols disponibles a la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a> (<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar#sols">aquí</a> t'expliquem el camí). Si és el cas, se t'aniran aplicant a les properes factures.
                     </span></p>
+                %else:
+                    <h3><strong>Autoproducció</strong></h3>
+                    <p><span style="font-weight: 400;">
+                        Com que ha baixat el preu de l'energia, abaixem també el preu de compensació dels excedents d'autoproducció. Els contractes que tenen compensació simplificada també tenen activat el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats/">Flux Solar</a>, que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada.
+                    </span></p>
                 %endif
 
                 %if data['te_gkwh']:
-                    <p><strong>Generation kWh</strong></p>
+                    <h3><strong>Generation kWh</strong></h3>
                     <p><span style="font-weight: 400;">
                         Respecte a la tarifa Generation kWh, el preu ha disminuït lleugerament. No ha variat el cost de l'energia (ja que no depèn del mercat majorista), sinó que ha baixat algun dels altres components del preu, com per exemple el que està relacionat amb les pèrdues d'energia pel trasllat per la xarxa.
                     </span></p>
@@ -311,8 +312,8 @@
                             <tbody>
                                 <tr>
                                     <th></th>
-                                    <th colspan="3">Nous preus</th>
-                                    <th colspan="3">Preus actuals</th>
+                                    <th colspan="3"><strong>Nous preus</strong></th>
+                                    <th colspan="3"><strong>Preus actuals</strong></th>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -346,7 +347,8 @@
                     </figure>
                 %endif
 
-                <p><strong>Estimació</strong></p>
+                <h3><strong>Estimació</strong></h3>
+                ## TODO validar primer paragraf que agafi bé l'origen
                 %if data['origen'] == 'consums': # Factura
                     <p><span style="font-weight: 400;">
                         Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, si apliquéssim els preus actuals i si apliquéssim els preus nous. L'estimació l'hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció, ni Generation kWh, ni lloguer de comptador.
@@ -402,17 +404,16 @@
                         </tbody>
                     </table>
                 </figure>
-                <br/>
-
                 <p><span style="font-weight: 400;">
                     Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any,${" la possible recuperació de l'IVA al 21% per a algun mes," if data['te_iva10'] else ""} o canvis que hi pugui haver al mercat elèctric.
                 </span></p>
+                <br/>
 
                 <p><span style="font-weight: 400;">
                     Al nostre blog trobaràs la <a href="https://blog.somenergia.coop/?p=47158">notícia</a> del canvi de tarifes, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l'apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de març i els de períodes anteriors.
                 </span></p>
 
-                <p><strong>Informació legal</strong></p>
+                <h3><strong>Informació legal</strong></h3>
 
                 <p><span style="font-weight: 400;">
                     Les <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/#preu-i-actualitzacio">clàusules contractuals de les Condicions Generals</a> que ens autoritzen a fer aquest canvi de preus són la clàusula 5.3 (i) per als canvis regulats per normativa (per exemple, els impostos), i la clàusula 5.3 (ii) per a les modificacions de la part del preu no regulada.
@@ -421,9 +422,15 @@
                     Pots accedir al comparador d'ofertes que elabora la Comissió Nacional dels Mercats i la Competència (CNMC) a través d'<a href="https://comparador.cnmc.gob.es">aquest enllaç</a>. El comparador permet consultar i comparar les diferents ofertes vigents de les comercialitzadores del mercat lliure. Tingues en compte que possiblement, al moment de llegir aquest correu, les noves tarifes de Som Energia encara no hi seran reflectides.
                 </span></p>
 
-                <p><span style="font-weight: 400;">
-                    T'adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d'acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d'informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">tarifa indexada</a> (<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
-                </span></p>
+                % if data['modcon']:
+                    <p><span style="font-weight: 400;">
+                        Després d’haver-te compartit aquesta informació, si aquest canvi de preus et fes replantejar seguir amb la modificació sol·licitada, podries demanar que s’aturi la modificació de tarifa (escrivint-nos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bé podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
+                    </span></p>
+                %else:
+                    <p><span style="font-weight: 400;">
+                        T'adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d'acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d'informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">tarifa indexada</a> (<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
+                    </span></p>
+                %endif
 
                 <p><span style="font-weight: 400;">
                     Una salutació cordial,
@@ -481,7 +488,7 @@
                     El precio de la energía en el mercado mayorista ha bajado, y las previsiones para los próximos meses indican que seguirán siendo bajos; esto nos permite, pues, bajar el precio de la energía de nuestras tarifas por periodos.
                 </span></p>
 
-                <p><span style="font-weight: 400;"><strong>Impuestos regulados</strong></span></p>
+                <h3><span style="font-weight: 400;"><strong>Impuestos regulados</strong></span></h3>
 
                 <p><span style="font-weight: 400;">
                     Por su parte, el impuesto eléctrico pasará del 2,5% al 3,8%. Forma parte de las medidas que estableció el gobierno en el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Real decreto ley 8/2023</a>, de recuperación progresiva de los impuestos.
@@ -491,22 +498,21 @@
                 </span></p>
 
                 % if data['Periodes20TDPeninsulaFins10kw'] or data['Periodes20TDPeninsulaMesDe10kw'] or data['Periodes20TDCanaries']:
-                    <p><span style="font-weight: 400;">
+                    <h3><span style="font-weight: 300;">
                         <strong>Nuevos precios y comparativa con precios actuales</strong>
-                    </span></p>
+                    </span></h3>
                     <p><span style="font-weight: 400;">
                         A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de abril) y una comparación con los precios actuales (vigentes hasta el 31 de marzo) de la tarifa que tienes contratada. Los impuestos aplicados son los vigentes en cada momento (${data['impostos_str']}, e impuesto eléctrico del 2,5% para los precios actuales, y del 3,8% para los precios nuevos).
                     </span></p>
-                    <br>
-                    <p><strong>Tarifa 2.0TD periodos</strong></p>
-                    <p><strong>Precio del término de energía (en euros/kWh)</strong></p>
+                    <h4><span style="font-weight: 350;"><strong>Tarifa 2.0TD periodos</strong></span></h4>
+                    <p><span style="font-weight: 300;"><strong>Precio del término de energía (en euros/kWh)</strong></span></p>
                     <figure class="table">
                         <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
                             <tbody>
                                 <tr>
                                     <th></th>
-                                    <th colspan="3">Nuevos precios</th>
-                                    <th colspan="3">Precios actuales</th>
+                                    <th colspan="3"><strong>Nuevos precios</strong></th>
+                                    <th colspan="3"><strong>Precios actuales</strong></th>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -514,7 +520,7 @@
                                     <td>Periodo llano</td>
                                     <td>Periodo valle</td>
                                     <td>Periodo punta</td>
-                                    <td>Periodo lano</td>
+                                    <td>Periodo llano</td>
                                     <td>Periodo valle</td>
                                 </tr>
                                 <tr>
@@ -539,14 +545,14 @@
                         </table>
                     </figure>
                     <br/>
-                    <p><strong>Precio del término de potencia (en euros/kW al año)</strong></p>
+                    <p><span style="font-weight: 300;"><strong>Precio del término de potencia (en euros/kW al año)</strong></span></p>
                     <figure class="table">
                         <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
                             <tbody>
                                 <tr>
                                     <th></th>
-                                    <th colspan="2">Nuevos precios</th>
-                                    <th colspan="2">Precios actuales</th>
+                                    <th colspan="2"><strong>Nuevos precios</strong></th>
+                                    <th colspan="2"><strong>Precios actuales</strong></th>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -576,12 +582,14 @@
                 %endif
 
                 % if data['Periodes30i60TDPeninsula']:
-                    <p><strong>Nuevos precios y comparativa con precios actuales</strong></p>
+                    <h3><span style="font-weight: 300;">
+                        <strong>Nuevos precios y comparativa con precios actuales</strong>
+                    </span></h3>
                     <p><span style="font-weight: 400;">
                         A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de abril) y los precios actuales (vigentes hasta el 31 de marzo) de la tarifa contratada. Los impuestos aplicados son los vigentes en cada momento (${data['impostos_str']}, e impuesto eléctrico del 2,5% para los precios actuales, y del 3,8% para los precios nuevos).
                     </span></p>
                     <br/>
-                    <p><strong>Tarifa ${data['tarifa_acces']} periodos</strong></p>
+                    <h4><strong>Tarifa ${data['tarifa_acces']} periodos</strong></h4>
                     <p><strong>Precio del término de energía (en euros/kWh)</strong></p>
                     <figure class="table">
                         <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
@@ -593,7 +601,7 @@
                                     <th>Con impuestos aplicados</th>
                                 </tr>
                                 <tr>
-                                    <td rowspan="6">Nuevos precios</td>
+                                    <td rowspan="6"><strong>Nuevos precios</strong></td>
                                     <td>P1</td>
                                     <td>${data['preus_nous']['te']['P1']}</td>
                                     <td>${data['preus_nous_imp']['te']['P1']}</td>
@@ -606,7 +614,7 @@
                                     </tr>
                                 % endfor
                                 <tr>
-                                    <td rowspan="6">Precios actuales</td>
+                                    <td rowspan="6"><strong>Precios actuales</strong></td>
                                     <td>P1</td>
                                     <td>${data['preus_antics']['te']['P1']}</td>
                                     <td>${data['preus_antics_imp']['te']['P1']}</td>
@@ -633,7 +641,7 @@
                                     <th>Con impuestos aplicados</th>
                                 </tr>
                                 <tr>
-                                    <td rowspan="6">Nuevos precios</td>
+                                    <td rowspan="6"><strong>Nuevos precios</strong></td>
                                     <td>P1</td>
                                     <td>${data['preus_nous']['tp']['P1']}</td>
                                     <td>${data['preus_nous_imp']['tp']['P1']}</td>
@@ -646,7 +654,7 @@
                                     </tr>
                                 % endfor
                                 <tr>
-                                    <td rowspan="6">Precios actuales</td>
+                                    <td rowspan="6"><strong>Precios actuales</strong></td>
                                     <td>P1</td>
                                     <td>${data['preus_antics']['tp']['P1']}</td>
                                     <td>${data['preus_antics_imp']['tp']['P1']}</td>
@@ -664,19 +672,11 @@
                     <br/>
                 % endif
 
-                %if data['autoconsum']['es_autoconsum'] and not data['autoconsum']['compensacio']:
-
-                    <p><strong>Autoproducción</strong></p>
-                    <p><span style="font-weight: 400;">
-                        Como ha bajado el precio de la energía, bajamos también el precio de compensación de los excedentes de autoproducción. Los contratos que tienen compensación simplificada también tienen activado el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-la-herramienta-que-proporciona-descuentos-por-los-excedentes-de-autoproduccion-no-compensados/">Flux Solar</a>, que proporciona descuentos para los excedentes que no pueden ser compensados con la compensación simplificada.
-                    </span></p>
-                %endif
-
                 %if data['autoconsum']['es_autoconsum'] and data['autoconsum']['compensacio']:
 
-                    <p><strong>Autoproducción</strong></p>
+                    <h3><strong>Autoproducción</strong></h3>
                     <p><span style="font-weight: 400;">
-                        Para los contratos que tienen autoproducción con compensación simplificada, los excedentes de autoproducción los seguiremos compensando al mismo valor de referencia del coste de la energía que utilizamos para calcular el precio de venta. Dado que el coste de referencia de la energía en horas de producción fotovoltaica ha bajado, disminuye también la compensación de excedentes, situándose en valores de mediados de 2021.
+                        Para los contratos que tienen autoproducción con compensación simplificada, como es tu caso, los excedentes de autoproducción los seguiremos compensando al mismo valor de referencia del coste de la energía que utilizamos para calcular el precio de venta. Dado que el coste de referencia de la energía en horas de producción fotovoltaica ha bajado, disminuye también la compensación de excedentes, situándose en valores de mediados de 2021.
                     </span></p>
                     <br/>
 
@@ -686,8 +686,8 @@
                             <tbody>
                                 <tr>
                                     <th></th>
-                                    <th>Nuevos precios</th>
-                                    <th>Precios actuales</th>
+                                    <th><strong>Nuevos precios</strong></th>
+                                    <th><strong>Precios actuales</strong></th>
                                 </tr>
                                 <tr>
                                     <td>Sin impuestos aplicados</td>
@@ -706,10 +706,15 @@
                     <p><span style="font-weight: 400;">
                         Te recordamos que también tienes activado el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-la-herramienta-que-proporciona-descuentos-por-los-excedentes-de-autoproduccion-no-compensados/">Flux Solar</a>, que proporciona descuentos para los excedentes que no pueden compensarse con la compensación simplificada. Puedes ver si tienes Sols disponibles en tu <a href="https://oficinavirtual.somenergia.coop/es">Oficina Virtual</a> (<a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar#soles">aquí</a> te explicamos el camino). Si es el caso, se te irán aplicando en las próximas facturas.
                     </span></p>
+                %else:
+                    <h3><strong>Autoproducción</strong></h3>
+                    <p><span style="font-weight: 400;">
+                        Como ha bajado el precio de la energía, bajamos también el precio de compensación de los excedentes de autoproducción. Los contratos que tienen compensación simplificada también tienen activado el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-la-herramienta-que-proporciona-descuentos-por-los-excedentes-de-autoproduccion-no-compensados/">Flux Solar</a>, que proporciona descuentos para los excedentes que no pueden ser compensados ​​con la compensación simplificada.
+                    </span></p>
                 %endif
 
                 %if data['te_gkwh']:
-                    <p><strong>Generation kWh</strong></p>
+                    <h3><strong>Generation kWh</strong></h3>
                     <p><span style="font-weight: 400;">
                         Respecto a la tarifa Generation kWh, el precio ha disminuido ligeramente. No ha variado el coste de la energía (ya que no depende del mercado mayorista), sino que ha bajado alguno de los otros componentes del precio, como por ejemplo el relacionado con las pérdidas de energía por el traslado por la red.
                     </span></p>
@@ -719,8 +724,8 @@
                             <tbody>
                                 <tr>
                                     <th></th>
-                                    <th colspan="3">Nuevos precios</th>
-                                    <th colspan="3">Precios actuales</th>
+                                    <th colspan="3"><strong>Nuevos precios</strong></th>
+                                    <th colspan="3"><strong>Precios actuales</strong></th>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -754,7 +759,7 @@
                     </figure>
                 %endif
 
-                <p><strong>Estimación</strong></p>
+                <h3><strong>Estimación</strong></h3>
                 %if data['origen'] == 'consums': # Factura
                     <p><span style="font-weight: 400;">
                         Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales y si aplicáramos los precios nuevos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo que has consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
@@ -810,17 +815,16 @@
                         </tbody>
                     </table>
                 </figure>
-                <br/>
-
                 <p><span style="font-weight: 400;">
                     Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año,${" la posible recuperación del IVA al 21% para algún mes," if data['te_iva10'] else ""} o cambios que pueda haber en el mercado eléctrico.
                 </span></p>
+                <br/>
 
                 <p><span style="font-weight: 400;">
                     En nuestro blog encontrarás la <a href="https://blog.somenergia.coop/?p=47160">noticia</a> del cambio de tarifas, y en la página web puedes consultar en cualquier momento <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">histórico de tarifas</a>, donde están también los precios vigentes hasta el 31 de marzo y los de periodos anteriores.
                 </span></p>
 
-                <p><strong>Información legal</strong></p>
+                <h3><strong>Información legal</strong></h3>
 
                 <p><span style="font-weight: 400;">
                     Las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/#precio-y-actualizacion">cláusulas contractuales de las Condiciones Generales</a> que nos autorizan a realizar este cambio de precios son la cláusula 5.3 (i) para los cambios regulados por normativa (por ejemplo, los impuestos), y la cláusula 5.3 (ii) para las modificaciones de la parte del precio no regulada.
@@ -829,9 +833,15 @@
                     Puedes acceder al comparador de ofertas que elabora la Comisión Nacional de los Mercados y la Competencia (CNMC) a través de <a href="https://comparador.cnmc.gob.es">este enlace</a>. El comparador permite consultar y comparar las distintas ofertas vigentes de las comercializadoras del mercado libre. Ten en cuenta que posiblemente, en el momento de leer este correo, las nuevas tarifas de Som Energia todavía no estarán reflejadas.
                 </span></p>
 
-                <p><span style="font-weight: 400;">
-                    Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmadoz</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio de precios te hiciese replantear seguir con esta tarifa, podrías cambiarte a la <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">tarifa indexada</a> (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">a través de tu Oficina Virtual</a>),o podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente, o mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
-                </span></p>
+                % if data['modcon']:
+                    <p><span style="font-weight: 400;">
+                        Después de haberte compartido esta información, si este cambio de precios te hiciese replantear seguir con la modificación solicitada, podrías pedir que se detenga la modificación de tarifa (escribiéndonos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>), o bien podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente, o mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
+                    </span></p>
+                %else:
+                    <p><span style="font-weight: 400;">
+                        Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmadoz</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio de precios te hiciese replantear seguir con esta tarifa, podrías cambiarte a la <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">tarifa indexada</a> (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">a través de tu Oficina Virtual</a>),o podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente, o mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
+                    </span></p>
+                %endif
 
                 <p><span style="font-weight: 400;">
                     Un cordial saludo,
