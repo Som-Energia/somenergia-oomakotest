@@ -307,44 +307,85 @@
                         Respecte a la tarifa Generation kWh, el preu ha disminuït lleugerament. No ha variat el cost de l'energia (ja que no depèn del mercat majorista), sinó que ha baixat algun dels altres components del preu, com per exemple el que està relacionat amb les pèrdues d'energia pel trasllat per la xarxa.
                     </span></p>
                     <p><strong>Generation kWh: preu del terme d'energia (en euros/kWh)</strong></p>
-                    <figure class="table">
-                        <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <th colspan="3"><strong>Nous preus</strong></th>
-                                    <th colspan="3"><strong>Preus actuals</strong></th>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Període punta</td>
-                                    <td>Període pla</td>
-                                    <td>Període vall</td>
-                                    <td>Període punta</td>
-                                    <td>Període pla</td>
-                                    <td>Període vall</td>
-                                </tr>
-                                <tr>
-                                    <td>Sense impostos aplicats</td>
-                                    <td>${data['preus_nous_generation']['P1']}</td>
-                                    <td>${data['preus_nous_generation']['P2']}</td>
-                                    <td>${data['preus_nous_generation']['P3']}</td>
-                                    <td>${data['preus_antics_generation']['P1']}</td>
-                                    <td>${data['preus_antics_generation']['P2']}</td>
-                                    <td>${data['preus_antics_generation']['P3']}</td>
-                                </tr>
-                                <tr>
-                                    <td>Amb impostos aplicats</td>
-                                    <td>${data['preus_nous_generation_imp']['P1']}</td>
-                                    <td>${data['preus_nous_generation_imp']['P2']}</td>
-                                    <td>${data['preus_nous_generation_imp']['P3']}</td>
-                                    <td>${data['preus_antics_generation_imp']['P1']}</td>
-                                    <td>${data['preus_antics_generation_imp']['P2']}</td>
-                                    <td>${data['preus_antics_generation_imp']['P3']}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </figure>
+                    %if data['Periodes20TDPeninsulaFins10kw'] or data['Periodes20TDPeninsulaMesDe10kw'] or data['Periodes20TDCanaries']:
+                        <figure class="table">
+                            <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <th colspan="3"><strong>Nous preus</strong></th>
+                                        <th colspan="3"><strong>Preus actuals</strong></th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Període punta</td>
+                                        <td>Període pla</td>
+                                        <td>Període vall</td>
+                                        <td>Període punta</td>
+                                        <td>Període pla</td>
+                                        <td>Període vall</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sense impostos aplicats</td>
+                                        <td>${data['preus_nous_generation']['P1']}</td>
+                                        <td>${data['preus_nous_generation']['P2']}</td>
+                                        <td>${data['preus_nous_generation']['P3']}</td>
+                                        <td>${data['preus_antics_generation']['P1']}</td>
+                                        <td>${data['preus_antics_generation']['P2']}</td>
+                                        <td>${data['preus_antics_generation']['P3']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amb impostos aplicats</td>
+                                        <td>${data['preus_nous_generation_imp']['P1']}</td>
+                                        <td>${data['preus_nous_generation_imp']['P2']}</td>
+                                        <td>${data['preus_nous_generation_imp']['P3']}</td>
+                                        <td>${data['preus_antics_generation_imp']['P1']}</td>
+                                        <td>${data['preus_antics_generation_imp']['P2']}</td>
+                                        <td>${data['preus_antics_generation_imp']['P3']}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </figure>
+                    %else:
+                        <figure class="table">
+                            <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>Abans d'impostos</th>
+                                        <th>Després d'impostos</th>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="6">Nous preus</td>
+                                        <td>P1</td>
+                                        <td>${data['preus_nous_generation']['P1']}</td>
+                                        <td>${data['preus_nous_generation_imp']['P1']}</td>
+                                    </tr>
+                                    % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                                        <tr>
+                                            <td>${periode}</td>
+                                            <td>${data['preus_nous_generation'][periode]}</td>
+                                            <td>${data['preus_nous_generation_imp'][periode]}</td>
+                                        </tr>
+                                    % endfor
+                                    <tr>
+                                        <td rowspan="6">Preus actuals</td>
+                                        <td>P1</td>
+                                        <td>${data['preus_antics_generation']['P1']}</td>
+                                        <td>${data['preus_antics_generation_imp']['P1']}</td>
+                                    </tr>
+                                    % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                                        <tr>
+                                            <td>${periode}</td>
+                                            <td>${data['preus_antics_generation'][periode]}</td>
+                                            <td>${data['preus_antics_generation_imp'][periode]}</td>
+                                        </tr>
+                                    % endfor
+                                </tbody>
+                            </table>
+                        </figure>
+                    %endif
                 %endif
 
                 <h3><strong>Estimació</strong></h3>
