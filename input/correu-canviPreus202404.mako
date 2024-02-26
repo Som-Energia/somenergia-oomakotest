@@ -84,7 +84,7 @@
 
                 <p><span style="font-weight: 400;">
                     Per altra banda, l'impost elèctric passarà del 2,5% al 3,8%. Forma part de les mesures que va establir el govern al <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Reial decret llei 8/2023</a>, de recuperació progressiva dels impostos.
-                    %if data['Periodes20TDPeninsulaFins10kw']:
+                    %if data['te_iva10']:
                         El mateix decret estableix que l'IVA de l'electricitat seguirà rebaixat al 10% a no ser que el preu de l'energia baixi molt. Si baixa molt (si la mitjana mensual del preu de l'energia al mercat diari és inferior a 45 euros), l'IVA a aplicar serà del 21%.
                     %endif
                 </span></p>
@@ -353,8 +353,8 @@
                                     <tr>
                                         <th></th>
                                         <th></th>
-                                        <th>Abans d'impostos</th>
-                                        <th>Després d'impostos</th>
+                                        <th>Sense impostos aplicats</th>
+                                        <th>Amb impostos aplicats</th>
                                     </tr>
                                     <tr>
                                         <td rowspan="6">Nous preus</td>
@@ -503,7 +503,7 @@
                                                 Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} periodos</strong> que debería producirse en las próximas semanas. A la tarifa por periodos le aplicaremos un cambio de precios <strong>ligeramente a la baja</strong> a partir del 1 de abril. Te informamos de ello a continuación.
                                             </span></p>
                                             <p><span style="font-weight: 400;text-align: left;">
-                                                La tarifa indexada (que te será de aplicación mientras no se te active el cambio) no tiene actualización de precios más allá de la variación del impuesto eléctrico que, tal y como <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">estableció el gobierno</a>, el 1 de abril pasará del 2,5% al 3,8%. Ésta es una actualización legal que se aplica a todos los contratos de electricidad. En nuestra web puedes encontrar, como siempre, los <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#opciones-de-la-tarifa-por-periodos">precios de las tarifas por periodos</a> que aplicaremos a partir del 1 de abril y los de <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">las tarifas indexadas</a>. También puedes ver, en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">apartado histórico</a>, los precios anteriores a 1 de abril de 2024.
+                                                La tarifa indexada (que te será de aplicación mientras no se te active el cambio) no tiene actualización de precios más allá de la variación del impuesto eléctrico que, tal y como <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">estableció el gobierno</a>, el 1 de abril pasará del 2,5% al 3,8%. Esta es una actualización legal que se aplica a todos los contratos de electricidad. En nuestra web puedes encontrar, como siempre, los <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#opciones-de-la-tarifa-por-periodos">precios de las tarifas por periodos</a> que aplicaremos a partir del 1 de abril y los de <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">las tarifas indexadas</a>. También puedes ver, en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">apartado histórico</a>, los precios anteriores a 1 de abril de 2024.
                                             </span></p>
                                         %endif
                                     </td>
@@ -533,7 +533,7 @@
 
                 <p><span style="font-weight: 400;">
                     Por su parte, el impuesto eléctrico pasará del 2,5% al 3,8%. Forma parte de las medidas que estableció el gobierno en el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Real decreto ley 8/2023</a>, de recuperación progresiva de los impuestos.
-                    %if data['Periodes20TDPeninsulaFins10kw']:
+                    %if data['te_iva10']:
                         El mismo decreto establece que el IVA de la electricidad seguirá rebajado al 10% a menos que el precio de la energía baje mucho. Si baja mucho (si la media mensual del precio de la energía en el mercado diario es inferior a 45 euros), el IVA a aplicar será del 21%.
                     %endif
                 </span></p>
@@ -760,44 +760,85 @@
                         Respecto a la tarifa Generation kWh, el precio ha disminuido ligeramente. No ha variado el coste de la energía (ya que no depende del mercado mayorista), sino que ha bajado alguno de los otros componentes del precio, como por ejemplo el relacionado con las pérdidas de energía por el traslado por la red.
                     </span></p>
                     <p><strong>Generation: precio del término de energía (en euros/kWh)</strong></p>
-                    <figure class="table">
-                        <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <th colspan="3"><strong>Nuevos precios</strong></th>
-                                    <th colspan="3"><strong>Precios actuales</strong></th>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>Periodo punta</td>
-                                    <td>Periodo llano</td>
-                                    <td>Periodo valle</td>
-                                    <td>Periodo punta</td>
-                                    <td>Periodo llano</td>
-                                    <td>Periodo valle</td>
-                                </tr>
-                                <tr>
-                                    <td>Sin impuestos aplicados</td>
-                                    <td>${data['preus_nous_generation']['P1']}</td>
-                                    <td>${data['preus_nous_generation']['P2']}</td>
-                                    <td>${data['preus_nous_generation']['P3']}</td>
-                                    <td>${data['preus_antics_generation']['P1']}</td>
-                                    <td>${data['preus_antics_generation']['P2']}</td>
-                                    <td>${data['preus_antics_generation']['P3']}</td>
-                                </tr>
-                                <tr>
-                                    <td>Con impuestos aplicados</td>
-                                    <td>${data['preus_nous_generation_imp']['P1']}</td>
-                                    <td>${data['preus_nous_generation_imp']['P2']}</td>
-                                    <td>${data['preus_nous_generation_imp']['P3']}</td>
-                                    <td>${data['preus_antics_generation_imp']['P1']}</td>
-                                    <td>${data['preus_antics_generation_imp']['P2']}</td>
-                                    <td>${data['preus_antics_generation_imp']['P3']}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </figure>
+                    %if data['Periodes20TDPeninsulaFins10kw'] or data['Periodes20TDPeninsulaMesDe10kw'] or data['Periodes20TDCanaries']:
+                        <figure class="table">
+                            <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <th colspan="3"><strong>Nuevos precios</strong></th>
+                                        <th colspan="3"><strong>Precios actuales</strong></th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Periodo punta</td>
+                                        <td>Periodo llano</td>
+                                        <td>Periodo valle</td>
+                                        <td>Periodo punta</td>
+                                        <td>Periodo llano</td>
+                                        <td>Periodo valle</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sin impuestos aplicados</td>
+                                        <td>${data['preus_nous_generation']['P1']}</td>
+                                        <td>${data['preus_nous_generation']['P2']}</td>
+                                        <td>${data['preus_nous_generation']['P3']}</td>
+                                        <td>${data['preus_antics_generation']['P1']}</td>
+                                        <td>${data['preus_antics_generation']['P2']}</td>
+                                        <td>${data['preus_antics_generation']['P3']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Con impuestos aplicados</td>
+                                        <td>${data['preus_nous_generation_imp']['P1']}</td>
+                                        <td>${data['preus_nous_generation_imp']['P2']}</td>
+                                        <td>${data['preus_nous_generation_imp']['P3']}</td>
+                                        <td>${data['preus_antics_generation_imp']['P1']}</td>
+                                        <td>${data['preus_antics_generation_imp']['P2']}</td>
+                                        <td>${data['preus_antics_generation_imp']['P3']}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </figure>
+                    %else:
+                        <figure class="table">
+                            <table class="cuadricula" style="background-color: #eeeeee; border: 4px solid gray; border-collapse: collapse;">
+                                <tbody>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>Sin impuestos aplicados</th>
+                                        <th>Con impuestos aplicados</th>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="6">Nuevos precios</td>
+                                        <td>P1</td>
+                                        <td>${data['preus_nous_generation']['P1']}</td>
+                                        <td>${data['preus_nous_generation_imp']['P1']}</td>
+                                    </tr>
+                                    % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                                        <tr>
+                                            <td>${periode}</td>
+                                            <td>${data['preus_nous_generation'][periode]}</td>
+                                            <td>${data['preus_nous_generation_imp'][periode]}</td>
+                                        </tr>
+                                    % endfor
+                                    <tr>
+                                        <td rowspan="6">Precios actuales</td>
+                                        <td>P1</td>
+                                        <td>${data['preus_antics_generation']['P1']}</td>
+                                        <td>${data['preus_antics_generation_imp']['P1']}</td>
+                                    </tr>
+                                    % for periode in ('P2', 'P3', 'P4', 'P5', 'P6'):
+                                        <tr>
+                                            <td>${periode}</td>
+                                            <td>${data['preus_antics_generation'][periode]}</td>
+                                            <td>${data['preus_antics_generation_imp'][periode]}</td>
+                                        </tr>
+                                    % endfor
+                                </tbody>
+                            </table>
+                        </figure>
+                    %endif
                 %endif
 
                 <h3><strong>Estimación</strong></h3>
