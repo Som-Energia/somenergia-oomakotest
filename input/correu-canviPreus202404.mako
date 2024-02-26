@@ -627,7 +627,7 @@
                         <strong>Nuevos precios y comparativa con precios actuales</strong>
                     </span></h3>
                     <p><span style="font-weight: 400;">
-                        A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de abril) y los precios actuales (vigentes hasta el 31 de marzo) de la tarifa contratada. Los impuestos aplicados son los vigentes en cada momento (${data['impostos_str']}, e impuesto eléctrico del 2,5% para los precios actuales, y del 3,8% para los precios nuevos).
+                        A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de abril) y los precios actuales (vigentes hasta el 31 de marzo) de la tarifa que tienes contratada. Los impuestos aplicados son los vigentes en cada momento (${data['impostos_str']}, e impuesto eléctrico del 2,5% para los precios actuales, y del 3,8% para los precios nuevos).
                     </span></p>
                     <br/>
                     <h4><strong>Tarifa ${data['tarifa_acces']} periodos</strong></h4>
