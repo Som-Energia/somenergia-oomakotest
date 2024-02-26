@@ -1,4 +1,24 @@
 <%
+    from mako.template import Template
+
+    def render(text_to_render, object_):
+        templ = Template(text_to_render)
+        return templ.render_unicode(
+            object=object_,
+            format_exceptions=True
+        )
+
+    t_obj = object.pool.get('poweremail.templates')
+    md_obj = object.pool.get('ir.model.data')
+    template_id = md_obj.get_object_reference(
+        object._cr, object._uid,
+        'som_poweremail_common_templates', 'common_template_legal_footer'
+    )[1]
+    text_legal = render(t_obj.read(
+        object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+        object
+    )
+
     is_cat = object.partner_id.lang == "ca_ES"
     try:
         p_obj = object.pool.get('res.partner')
@@ -105,6 +125,8 @@ Este tipo de apoyo es uno de los que nos ayuda a caminar hacia la transformació
 
 <p>Som Energia.</p>
 
+<br>
+${text_legal}
 </div>
 </body>
 </html>
