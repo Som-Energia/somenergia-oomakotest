@@ -13,6 +13,10 @@
                 margin-top: 30px;
             }
 
+            table {
+                font-size: 14px;
+            }
+
             .cuadricula td, .cuadricula th {
                 border: 1px solid;
                 padding: 4px 10px;
@@ -171,7 +175,6 @@
                     <p><span style="font-weight: 400;">
                         A continuació tens una taula amb els nous preus (vigents a partir de l'1 d'abril) i els preus actuals (vigents fins al 31 de març) de la tarifa que tens contractada. Els impostos aplicats són els vigents a cada moment (${data['impostos_str']}, i impost elèctric del 2,5% per als preus actuals, i del 3,8% per als preus nous).
                     </span></p>
-                    <br/>
                     <h4>Tarifa ${data['tarifa_acces']} períodes</h4>
                     <p><strong>Preu del terme d'energia (en euros/kWh)</strong></p>
                     <figure class="table">
@@ -254,7 +257,7 @@
                 % endif
 
                 % if not (data['indexada'] and data['modcon']):
-                    %if  data['autoconsum']['es_autoconsum'] and data['autoconsum']['compensacio']:
+                    %if data['autoconsum']['es_autoconsum'] and data['autoconsum']['compensacio']:
                         <h3>Autoproducció</h3>
                         <p><span style="font-weight: 400;">
                             Per als contractes que teniu autoproducció amb compensació simplificada, els excedents d'autoproducció els continuarem compensant al mateix valor de referència del cost de l'energia que fem servir per calcular el preu de venda. Com que el cost de referència de l'energia en hores de producció fotovoltaica ha baixat, disminueix també la compensació d'excedents, i se situa a valors de mitjans de 2021.
@@ -292,7 +295,6 @@
                             Com que ha baixat el preu de l'energia, abaixem també el preu de compensació dels excedents d'autoproducció. Els contractes que tenen compensació simplificada també tenen activat el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats/">Flux Solar</a>, que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada.
                         </span></p>
                     %endif
-                
 
                     %if data['te_gkwh']:
                         <h3>Generation kWh</h3>
@@ -609,7 +611,6 @@
                     <p><span style="font-weight: 400;">
                         A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de abril) y los precios actuales (vigentes hasta el 31 de marzo) de la tarifa que tienes contratada. Los impuestos aplicados son los vigentes en cada momento (${data['impostos_str']}, e impuesto eléctrico del 2,5% para los precios actuales, y del 3,8% para los precios nuevos).
                     </span></p>
-                    <br/>
                     <h4>Tarifa ${data['tarifa_acces']} periodos</h4>
                     <p><strong>Precio del término de energía (en euros/kWh)</strong></p>
                     <figure class="table">
