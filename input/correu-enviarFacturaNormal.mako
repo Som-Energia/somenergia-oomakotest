@@ -30,6 +30,9 @@
         <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import a carregar</strong>: ${data['factura']['import']} euros</strong></li>
     </ul>
     <p>
+    %if data['factura']['te_iva_21']:
+        <p>Com veuràs a la factura, l'IVA que t'apliquem és del 21%, i no del 10%. Això és així perquè la rebaixa de l'IVA al 10% només es pot aplicar si el preu mitjà de l'energia al mercat majorista no baixa per sota dels 45 €/MWh. </p>
+    %endif
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
         <p dir="ltr">
             Sempre que vulguis, pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
@@ -119,6 +122,13 @@
     %if data['factura']['isTariffChange']:
         <p>Com que en el període que comprèn la teva factura hi ha hagut un canvi de tarifes, una part del terme d'energia i del terme de potència està facturada amb les tarifes d'abans del canvi, i l'altra part està facturada amb les noves tarifes. Això fa que, a la factura, apareguin dues línies (amb els dos preus) de cadascun dels conceptes d'energia i potència.</p>
     %endif
+    <p dir="ltr"><span style="text-decoration: none;"><strong>Avís sobre estafes</strong></span></p>
+    <p dir="ltr">
+        Últimament ha crescut el número d'<strong>estafes i trucades fraudulentes al mercat elèctric</strong>. Sovint acaben en un canvi de companyia no desitjat per la persona titular del contracte, i en ocasions, qui truca fa referència a alguna legislació o nova normativa, actualització de dades, canvi de comptador o altres.
+    </p>
+    <p dir="ltr">
+        Aprofitem, doncs, per recordar-te que, a no ser que estiguis fent un tràmit amb Som Energia, no et trucarem. <strong>Si reps una trucada i sospites o tens dubtes</strong>, et recomanem que pengis, i contactis tu amb Som Energia (sigui per telèfon o per correu electrònic). Al nostre Centre d'Ajuda et donem <a href="https://ca.support.somenergia.coop/article/775-enganys-i-estafes-en-el-mercat-electric">més consells per evitar enganys</a>.
+    </p>
     <p>Atentament,</p>
     <p>Equip de Som Energia</p>
     <div style="text-align: center;"><a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum"><img style="width: 189px; margin-left: auto; margin-right: auto" src="https://www.somenergia.coop/factura/dubtes_socia_som_energia.png" alt="" height="182"></a></div>
@@ -153,6 +163,9 @@
         <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Importe a cargar</strong>: ${data['factura']['import']} euros</strong></li>
     </ul>
     <p dir="ltr"></p>
+    %if data['factura']['te_iva_21']:
+        <p>Como verás en la factura, el IVA que te aplicamos es del 21%, y no del 10%. Esto es así porque la rebaja del IVA al 10% sólo puede aplicarse si el precio medio de la energía en el mercado mayorista no baja por debajo de los 45 €/MWh.</p>
+    %endif
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
         <p dir="ltr">
             Siempre que quieras, puedes acceder a la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a> para ver y descargar tus facturas y gestionar tus contratos con la cooperativa.
@@ -243,8 +256,15 @@
         </p>
     %endif
     % if data['factura']['isTariffChange']:
-    <p>Como en el periodo que comprende tu factura ha habido un cambio de tarifas, una parte del término de energía y del término de potencia está facturada con las tarifas de antes del cambio, y la otra parte está facturada con las nuevas tarifas. Esto hace que, en la factura, aparezcan dos líneas (con los precios distintos) de cada uno de los conceptos de energía y potencia.</p>
+        <p>Como en el periodo que comprende tu factura ha habido un cambio de tarifas, una parte del término de energía y del término de potencia está facturada con las tarifas de antes del cambio, y la otra parte está facturada con las nuevas tarifas. Esto hace que, en la factura, aparezcan dos líneas (con los precios distintos) de cada uno de los conceptos de energía y potencia.</p>
     % endif
+    <p dir="ltr"><span style="text-decoration: none;"><strong>Aviso sobre estafas</strong></span></p>
+    <p dir="ltr">
+        Últimamente ha crecido el número de <strong>estafas y llamadas fraudulentas en el mercado eléctrico</strong>. A menudo terminan en un cambio de compañía no deseado por la persona titular del contrato, y en ocasiones, quien llama hace referencia a alguna legislación o nueva normativa, actualización de datos, cambio de contador u otros.
+    </p>
+    <p dir="ltr">
+        Aprovechamos, pues, para recordarte que, a menos que estés haciendo un trámite con Som Energia, no te llamaremos. <strong>Si recibes una llamada y sospechas o tienes dudas</strong>, te recomendamos que cuelgues, y contactes tú con Som Energia (sea por teléfono o por correo electrónico). En nuestro Centro de Ayuda te damos <a href="https://es.support.somenergia.coop/article/776-enganos-y-estafas-en-el-mercado-electrico?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">más consejos para evitar engaños</a>.
+    </p>
     <p>Atentamente,</p>
     <p>Equipo de Som Energia</p>
     <div style="text-align: center;"><a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz"><img style="width: 189px; margin-left: auto; margin-right: auto" src="https://www.somenergia.coop/factura/dubtes_socia_som_energia.png" alt="" height="182"></a></div>
