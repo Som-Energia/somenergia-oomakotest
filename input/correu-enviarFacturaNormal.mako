@@ -30,7 +30,7 @@
         <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import a carregar</strong>: ${data['factura']['import']} euros</strong></li>
     </ul>
     <p>
-    %if data['factura']['te_iva_21']:
+    %if data['factura']['te_iva_21'] and potencies and max(potencies) <= 10:
         <p>Com veuràs a la factura, l'IVA que t'apliquem és del 21%, i no del 10%. Això és així perquè la rebaixa de l'IVA al 10% només es pot aplicar si el preu mitjà de l'energia al mercat majorista no baixa per sota dels 45 €/MWh. </p>
     %endif
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
@@ -114,11 +114,6 @@
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
         </p>
     %endif
-    %if potencies and max(potencies) <= 10:
-        <p dir="ltr">
-            El govern espanyol ha establert que l’IVA de l’electricitat no serà del 21%, com estava previst, sinó que serà del 10% durant tot el 2024 (durant el 2023 va ser del 5%). Això suposa que l’augment en les factures no serà tan elevat com si s’hagués retornat a l’IVA sense rebaixes. Tens més informació al <a href="https://blog.somenergia.coop/?p=46826">nostre blog</a>.
-        </p>
-    %endif
     %if data['factura']['isTariffChange']:
         <p>Com que en el període que comprèn la teva factura hi ha hagut un canvi de tarifes, una part del terme d'energia i del terme de potència està facturada amb les tarifes d'abans del canvi, i l'altra part està facturada amb les noves tarifes. Això fa que, a la factura, apareguin dues línies (amb els dos preus) de cadascun dels conceptes d'energia i potència.</p>
     %endif
@@ -163,7 +158,7 @@
         <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Importe a cargar</strong>: ${data['factura']['import']} euros</strong></li>
     </ul>
     <p dir="ltr"></p>
-    %if data['factura']['te_iva_21']:
+    %if data['factura']['te_iva_21'] and potencies and max(potencies) <= 10:
         <p>Como verás en la factura, el IVA que te aplicamos es del 21%, y no del 10%. Esto es así porque la rebaja del IVA al 10% sólo puede aplicarse si el precio medio de la energía en el mercado mayorista no baja por debajo de los 45 €/MWh.</p>
     %endif
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
@@ -248,11 +243,6 @@
         </p>
         <p dir="ltr">
             Si detectas algún error en la factura, puedes consultar este <a href="https://es.support.somenergia.coop/article/927-resuelve-tus-dudas-de-la-factura">enlace</a> o bien nos lo puedes comunicar respondiendo a este mismo correo.
-        </p>
-    %endif
-    %if potencies and max(potencies) <= 10:
-        <p dir="ltr">
-            El gobierno español ha establecido que el IVA de la electricidad no será del 21%, como estaba previsto, sino que será del 10% durante todo 2024 (durante 2023 fue del 5%). Esto supone que el aumento en las facturas no será tan elevado como si se hubiera vuelto al IVA sin rebajas. Tienes más información en <a href="https://blog.somenergia.coop/?p=46828">nuestro blog</a>.
         </p>
     %endif
     % if data['factura']['isTariffChange']:
