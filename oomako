@@ -65,7 +65,7 @@ def loadErp(dbcfg):
     tools.config['root_path'] = root_path
     tools.config['addons_path'] = addons_path
     tools.config['oomako_path'] = oomako_path
-    tools.config['log_level'] = None #'warn'
+    tools.config['log_level'] = 0 #'warn'
     tools.config['log_file'] = open('/dev/null','w')
     #tools.config['log_handler'] = [':WARNING']
     tools.config['init'] = []
