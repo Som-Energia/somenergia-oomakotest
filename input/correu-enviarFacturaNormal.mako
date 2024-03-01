@@ -32,6 +32,7 @@
     <p>
     %if data['factura']['te_iva_21'] and potencies and max(potencies) <= 10:
         <p>Com veuràs a la factura, l'IVA que t'apliquem és del 21%, i no del 10%. Això és així perquè la rebaixa de l'IVA al 10% només es pot aplicar si el preu mitjà de l'energia al mercat majorista no baixa per sota dels 45 €/MWh. </p>
+        <p>Com que el preu de l'energia (el preu mitjà del mes natural anterior a l'últim dia del període de facturació, segons estableix el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Reial decret</a>), ha baixat per sota dels 45 €/MWh, en aquesta factura hem d'aplicar un IVA del 21%. </p>
     %endif
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
         <p dir="ltr">
@@ -117,6 +118,7 @@
     %if data['factura']['isTariffChange']:
         <p>Com que en el període que comprèn la teva factura hi ha hagut un canvi de tarifes, una part del terme d'energia i del terme de potència està facturada amb les tarifes d'abans del canvi, i l'altra part està facturada amb les noves tarifes. Això fa que, a la factura, apareguin dues línies (amb els dos preus) de cadascun dels conceptes d'energia i potència.</p>
     %endif
+    <br>
     <p dir="ltr"><span style="text-decoration: none;"><strong>Avís sobre estafes</strong></span></p>
     <p dir="ltr">
         Últimament ha crescut el número d'<strong>estafes i trucades fraudulentes al mercat elèctric</strong>. Sovint acaben en un canvi de companyia no desitjat per la persona titular del contracte, i en ocasions, qui truca fa referència a alguna legislació o nova normativa, actualització de dades, canvi de comptador o altres.
@@ -160,6 +162,7 @@
     <p dir="ltr"></p>
     %if data['factura']['te_iva_21'] and potencies and max(potencies) <= 10:
         <p>Como verás en la factura, el IVA que te aplicamos es del 21%, y no del 10%. Esto es así porque la rebaja del IVA al 10% sólo puede aplicarse si el precio medio de la energía en el mercado mayorista no baja por debajo de los 45 €/MWh.</p>
+        <p>Debido a que el precio de la energía (el precio medio del mes natural anterior al último día del período de facturación, según establece el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Real decreto</a>), ha sido inferior a 45 €/MWh, en esta factura debemos aplicar un IVA del 21%. </p>
     %endif
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
         <p dir="ltr">
@@ -248,6 +251,7 @@
     % if data['factura']['isTariffChange']:
         <p>Como en el periodo que comprende tu factura ha habido un cambio de tarifas, una parte del término de energía y del término de potencia está facturada con las tarifas de antes del cambio, y la otra parte está facturada con las nuevas tarifas. Esto hace que, en la factura, aparezcan dos líneas (con los precios distintos) de cada uno de los conceptos de energía y potencia.</p>
     % endif
+    <br>
     <p dir="ltr"><span style="text-decoration: none;"><strong>Aviso sobre estafas</strong></span></p>
     <p dir="ltr">
         Últimamente ha crecido el número de <strong>estafas y llamadas fraudulentas en el mercado eléctrico</strong>. A menudo terminan en un cambio de compañía no deseado por la persona titular del contrato, y en ocasiones, quien llama hace referencia a alguna legislación o nueva normativa, actualización de datos, cambio de contador u otros.
