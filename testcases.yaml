@@ -1317,6 +1317,14 @@
 #    normal_ca: 444848
 #    normal_es: 403834
 #
+#impagamentRecordatoriFUE:
+#  template: input/correu-correu-impagamentRecordatoriFUE.mako
+#  model: som.enviament.massiu
+#  poweremailId: som_account_invoice_pending.email_fue_reminder
+#  cases:
+#    ca:
+#    es:
+#
 #facturaMailEnBlanc:
 #  template: input/correu-facturaEnBlanc.mako
 #  model: giscedata.facturacio.factura
