@@ -1,7 +1,7 @@
 lang: ${object.polissa_id.titular.lang}
 cc: correo@certificado.lleida.net
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
-to: ${{object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}}
+to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
   ca_ES: "Recordatori factura aturada pendent resolució Organisme competent"
   es_ES: "Recordatorio factura parada pendiente resolución Organismo competente"

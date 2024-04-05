@@ -44,7 +44,7 @@ Este correo electrónico es para recordarte, en nombre y representación de Som 
 Cordialmente,<br />
 <br />
 Equipo de Som Energia<br />
-cobraments@somenergia.coop<br />
+cobros@somenergia.coop<br />
 <a href="https://www.somenergia.coop">www.somenergia.coop</a><br />
 % endif
 <br />
