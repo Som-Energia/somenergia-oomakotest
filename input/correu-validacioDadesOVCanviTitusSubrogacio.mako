@@ -65,7 +65,6 @@
     </head>
     % if pas01.dades_client and pas01.dades_client.lang == "ca_ES":
         ${correu_cat()}
-        ${text_rejection_ca}
     % else:
         ${correu_es()}
     % endif
