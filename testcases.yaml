@@ -29,6 +29,15 @@
 #    template: input/common/rejection_text_ca.mako
 #    poweremailId: som_poweremail_common_templates.common_template_rejection_text_ca
 #    cases: {}
+# modi_rejection_text_es:
+#    template: input/common/modi_rejection_text_es.mako
+#    poweremailId: som_poweremail_common_templates.common_template_modi_rejection_text_es
+#    cases: {}
+#
+# modi_rejection_text_ca:
+#    template: input/common/modi_rejection_text_ca.mako
+#    poweremailId: som_poweremail_common_templates.common_template_modi_rejection_text_ca
+#    cases: {}
 ######################################################
 ## Forms
 #
