@@ -8,13 +8,8 @@ def render(text_to_render, object_):
     )
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
-if object.cups_polissa_id.titular.lang != "ca_ES":
-    template_id = md_obj.get_object_reference(
-        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_modi_rejection_text_es'
-    )[1]
-else:
-    template_id = md_obj.get_object_reference(
-        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_modi_rejection_text_ca'
+template_id = md_obj.get_object_reference(
+        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_modi_rejection_text'
     )[1]
 
 text_desistiment = render(
