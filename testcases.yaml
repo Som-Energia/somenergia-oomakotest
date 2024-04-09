@@ -15,24 +15,14 @@
 #    poweremailId: som_poweremail_common_templates.common_template_legal_footer
 #    cases: {}
 #
-#legal_footer_rejection:
-#  template: input/common/legal_footer_with_rejection.mako
-#  poweremailId: som_poweremail_common_templates.common_template_rejection_footer
-#  cases: {}
-#
-# rejection_text_es:
-#    template: input/common/rejection_text_es.mako
-#    poweremailId: som_poweremail_common_templates.common_template_rejection_text_es
-#    cases: {}
-# #
-# rejection_text_ca:
-#    template: input/common/rejection_text_ca.mako
-#    poweremailId: som_poweremail_common_templates.common_template_rejection_text_ca
-#    cases: {}
-# modi_rejection_text:
-#    template: input/common/modi_rejection_text.mako
-#    poweremailId: som_poweremail_common_templates.common_template_modi_rejection_text
-#    cases: {}
+#rejection_text:
+#   template: input/common/rejection_text.mako
+#   poweremailId: som_poweremail_common_templates.common_template_rejection_text
+#   cases: {}
+#modi_rejection_text:
+#   template: input/common/modi_rejection_text.mako
+#   poweremailId: som_poweremail_common_templates.common_template_modi_rejection_text
+#   cases: {}
 ######################################################
 ## Forms
 #
