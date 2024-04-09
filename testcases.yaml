@@ -1589,4 +1589,16 @@
 #  cases:
 #    ca:
 #    es:
+#
+#######################################
+### Comunicació Contractes
+##
+#subministramentsEssencials:
+#  template: input/correu-subministramentsEssencials.mako
+#  model: som.enviament.massiu
+#  poweremailId: som_infoenergia.correu_confirmacio_subministraments_essencials
+#  cases:
+#    ca: 1913038
+#    es: 1913041
+#
 # vim: et ts=2 sw=2
