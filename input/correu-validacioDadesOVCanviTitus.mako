@@ -53,8 +53,7 @@
     cut_iban = hide_code(pas01.bank.iban, 0, 8)
 
 
-    text_rejection_es = render_template(object, "common_template_rejection_text_es")
-    text_rejection_ca = render_template(object, "common_template_rejection_text_ca")
+    text_rejection = render_template(object, "common_template_rejection_text")
     text_legal = render_template(object, "common_template_legal_footer")
 
 %>
@@ -120,7 +119,7 @@
 		        - Número de compte: ${cut_iban}<br>
 		    </p>
         <br>
-        ${text_rejection_ca}
+        ${text_rejection}
         <br><br>
         Salutacions,<br>
         <br>
@@ -178,7 +177,7 @@
 		        - Número de cuenta: ${cut_iban}<br/>
         </p>
         <br>
-        ${text_rejection_es}
+        ${text_rejection}
         <br>
         <br>
 		    Saludos,<br/>
