@@ -35,6 +35,9 @@
         object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
     )
+
+    M101 = object.pool.get('giscedata.switching.m1.01')
+    is_auto_uni = M101.search(object._cr, object._uid, [('sw_id', '=', object.id)]) == []
 %>
 
 
@@ -85,6 +88,8 @@ ${text_legal}
             ${pot_tar_cat()}
         %elif is_canvi_tit:
             ${canvi_tit_cat()}
+        %elif is_auto_uni:
+            ${unidireccional_cat()}
         %endif
         Atentament,<br>
         <br>
@@ -92,6 +97,17 @@ ${text_legal}
         <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
         <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
     </body>
+</%def>
+
+<%def name="unidireccional_cat()">
+    <p>
+        Hola${nom_titular},<br>
+    </p>
+    <p>
+        L'empresa distribuïdora de la teva zona ens comunica que s'ha acceptat la modificació contractual d'autoconsum que estàs tramitant. <br>
+
+        Quan tinguem la confirmació per part de la distribuïdora t’enviarem un correu electrònic indicant la data exacta d'<strong>activació de la modificació.</strong><br>
+    </p>
 </%def>
 
 <%def name="pot_tar_cat()">
@@ -161,6 +177,8 @@ ${text_legal}
             ${pot_tar_es()}
         %elif is_canvi_tit:
             ${canvi_tit_es()}
+        %elif is_auto_uni:
+            ${unidireccional_es()}
         %endif
         Atentamente,<br>
         <br>
@@ -169,6 +187,17 @@ ${text_legal}
         <a href="http://www.somenergia.coop">www.somenergia.coop</a>
 
     </body>
+</%def>
+
+<%def name="unidireccional_es()">
+    <p>
+        Hola${nom_titular},<br>
+    </p>
+    <p>
+        La empresa distribuidora de tu zona nos comunica que ha aceptado la modificación de autoconsumo que estas tramitando.<br>
+        En el momento que tengamos la confirmación por parte de la distribuidora, te enviaremos un correo electrónico indicando la fecha exacta de <strong>activación de la modificación.</strong><br>
+    </p>
+
 </%def>
 
 <%def name="pot_tar_es()">

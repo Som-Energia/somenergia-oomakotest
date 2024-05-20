@@ -48,11 +48,12 @@
 %>
 
 <%
+    M101 = object.pool.get('giscedata.switching.m1.01')
     M105 = object.pool.get('giscedata.switching.m1.05')
     pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
     pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
 
-    is_auto_uni = len(object.step_ids) == 1
+    is_auto_uni = M101.search(object._cr, object._uid, [('sw_id', '=', object.id)]) == []
     if not is_auto_uni:
         is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
         is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
