@@ -104,6 +104,12 @@ Equip de Som Energia<br>
 
 % if object.polissa_id.titular.lang != "ca_ES":
 <span class="preheader">Queremos ayudaros a entender mejor los costes de la factura para que podáis ahorrar</span>
+<br>
+Hola,<br>
+<br>
+Con este informe personalizado del <a href="https://es.support.somenergia.coop/article/906-el-servicio-infoenergia-para-entidades-y-empresas">servicio Infoenergía para entidades y empresas</a> queremos ayudaros a entender mejor los costes de la factura para que podáis ahorrar.<br>
+<br>
+Os invitamos a leer el informe y optimizar vuestro contrato, si es posible.<br>
 <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
     <tr>
     <td colspan="2">
@@ -144,12 +150,6 @@ Equip de Som Energia<br>
     </td>
     </tr>
 </table>
-<br>
-Hola,<br>
-<br>
-Con este informe personalizado del <a href="https://es.support.somenergia.coop/article/906-el-servicio-infoenergia-para-entidades-y-empresas">servicio Infoenergía para entidades y empresas</a> queremos ayudaros a entender mejor los costes de la factura para que podáis ahorrar.<br>
-<br>
-Os invitamos a leer el informe y optimizar vuestro contrato, si es posible.<br>
 <br>
 Además, os recordamos que <strong>hasta junio el trámite de la modificación de potencias es gratuito para los contratos de empresas y trabajadores/as autónomos/as</strong> (podéis consultar más información <a href="https://es.support.somenergia.coop/article/1271-modificaciones-temporales-de-potencia-rd18-2022">aquí</a>).<br>
 <br>
