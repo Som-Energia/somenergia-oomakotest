@@ -5,3 +5,4 @@ subject_translations: {}
 subject: 'Som Energia: Sol·licitud de modificació de contracte ${object.cups_polissa_id.name}.
   Solicitud de modificación de contrato ${object.cups_polissa_id.name}.'
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+lang: ${object.cups_polissa_id.titular.lang}
