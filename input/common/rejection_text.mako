@@ -3,6 +3,8 @@
     # Hack to render only the legal footer paragraf of the language of the template object
     if object.__hasattr__('cups_polissa_id') and object.cups_polissa_id and object.cups_polissa_id.__hasattr__('titular') and object.cups_polissa_id.titular and object.cups_polissa_id.titular.lang:
         lang = object.cups_polissa_id.titular.lang
+    elif object.__hasattr__('titular') and object.titular and object.titular.lang:
+        lang = object.titular.lang
     else:
         lang = 'other'
 %>
