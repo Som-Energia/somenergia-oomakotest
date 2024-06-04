@@ -1,0 +1,1 @@
+../../openerp_som_addons/som_polissa_condicions_generals/report/condicions_particulars_puppeteer.mako
