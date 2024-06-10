@@ -31,10 +31,10 @@ ${plantilla_header}
               <tr>
                 <th>
                     % if data['lang'] == "ca_ES":
-                        <a href="https://www.somenergia.coop/ca/"><img src="https://www.somenergia.coop/logo/logo.png" alt="SOM Energia" style="height: 100px"></a>
+                        <a href="https://www.somenergia.coop/ca/"><img src="https://www.somenergia.coop/logo/Logotip-Som-Energia.png" alt="SOM Energia" style="height: 106px"/></a>
                     %endif
                     % if data['lang'] != "ca_ES":
-                        <a href="https://www.somenergia.coop/es/"><img src="https://www.somenergia.coop/logo/logo.png" alt="SOM Energia" style="height: 100px"></a>
+                        <a href="https://www.somenergia.coop/es/"><img src="https://www.somenergia.coop/logo/Logotip-Som-Energia.png" alt="SOM Energia" style="height: 106px"/></a>
                     %endif
                 </th>
               </tr>
@@ -90,7 +90,7 @@ ${plantilla_header}
                           Tendència de preus per a les properes hores
                         </h1>
                         <p>
-                          Recentment hem posat en funcionament un apartat web on es pot veure la previsió de preus d'energia de la indexada per a les pròximes 24 hores. Hi pots veure, doncs, la tendència de preus per al dia següent, i això et pot ser útil per saber a quines hores l'energia serà més barata (és a dir, quan convé més, per exemple, posar la rentadora).
+                          Recentment hem posat en funcionament un apartat web on es pot veure la previsió de preus d'energia de la indexada per a les pròximes 24 hores. Hi pots veure, doncs, la tendència de preus per al dia següent, i això et pot ser útil per saber <strong>a quines hores l'energia serà més barata</strong> (és a dir, quan convé més, per exemple, posar la rentadora).
                         </p>
                         <img src="https://www.generationkwh.org/wp-content/uploads/2024/05/infografia-que-es-GenerationkWh-CA.jpg" alt="GenerationDemo" width="550">
                         <p>
@@ -113,11 +113,59 @@ ${plantilla_header}
                           Canvi del marge en la tarifa
                         </h1>
                         <p>
-                          Per altra banda, t'informem que a partir de l'1 d'agost aplicarem un lleuger augment al marge de viabilitat de la tarifa indexada, per tal de seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'nteressa saber-ne els detalls.<p>
+                          Per altra banda, t'informem que a partir de l'1 d'agost aplicarem un <strong>lleuger augment al marge de viabilitat</strong> de la tarifa indexada, per tal de seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'nteressa saber-ne els detalls.<p>
                         </p>
                         <h2>
                           Explicació resumida
                         </h2>
+                        %if data['Indexada20TDPeninsula']:
+                         <p>
+                            En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia a un contracte amb un consum mitjà de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 15 euros l'any (poc més d'un euro al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                         </p>
+                        %endif
+                        %if data['Indexada30TDPeninsula']:
+                          <p>
+                            En el cas de la tarifa 3.0TD indexada (la teva), si els preus de l'energia seguissin sent com en l'últim any, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          </p>
+                        %endif
+                        %if data['Indexada61TDPeninsula']:
+                          <p>
+                            En el cas de la tarifa 6.1TD indexada (la teva), si els preus de l'energia seguissin sent com en l'últim any, a un contracte amb un consum mitjà de 15.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 79 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          </p>
+                        %endif
+                        %if data['Indexada30TDVEPeninsula']:
+                          <p>
+                            En el cas de la tarifa 3.0TDVE indexada (la teva), si els preus de l'energia seguissin sent com en l'últim any, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          </p>
+                        %endif
+                      <p>
+                        Aquesta és la informació bàsica, resumida. Si tens curiositat i vols saber més detalls del canvi, a continuació te'ls expliquem. Com sempre, pots trobar els preus a l' <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">apartat de tarifes del web</a>.
+                      </p>
+                      <h2>Explicació detallada dels canvis</h2>
+                      <h3>Canvis en la fórmula del càlcul del preu de l'energia</h3>
+                      <p>
+                        Com deus saber, la tarifa indexada obté el preu de l’energia a partir d’una fórmula, que inclou el cost de l’energia al mercat majorista, i inclou també altres conceptes (peatges, càrrecs…) que s’han de pagar per poder consumir energia.
+                      </p>
+                      <p>
+                        Un dels components de la fórmula és la “F”, la franja de la cooperativa. Fins ara, dins d’aquest concepte hi incloíem el marge per a la viabilitat de la cooperativa, més els costos dels Certificats de Garantia d’Origen 100 % renovable (GdO) i els costos de les desviacions. A partir de l’1 d’agost, la “F” contindrà únicament el marge per a la viabilitat de la cooperativa. Els Certificats de Garantia d’Origen i els costos de les desviacions seguiran formant part de la fórmula, però en uns conceptes separats de la franja.
+                      </p>
+                      <p>
+                        La nova fórmula, doncs, serà la següent:
+                      </p>
+                      <p>
+                        <strong style="font-size: 14px; text-align: center">
+                          PH = 1,015 × [(PHM + Pc + Sc + <span style="color:#7dbc09">Dsv</span> + <span style="color:#7dbc09">GdO</span> + POsOm) (1 + Perd) + FE + F] + PTD + CA
+                        </strong>
+                      </p>
+                      <p>
+                        (Al <a href="https://www.somenergia.coop">nostre web</a> pots veure a què correspon cada terme.)
+                      </p>
+                      <p>
+                        L'import dels certificats de garantia (a la fórmula: <span style="color:#7dbc09">GdO</span>) i dels costos de les desviacions (<span style="color:#7dbc09">Dsv</span>) s'anirà calculant en funció del que costin aquests conceptes, i es publicarà a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
+                      </p>
+                      <p>
+                        L'import de <strong> la franja (F) </strong> que ara serà únicament el marge, <strong> serà de ${data['dades_index']['f_nova']}</strong>.
+                      </p>
                     %endif
                   </div>
                 </td>
