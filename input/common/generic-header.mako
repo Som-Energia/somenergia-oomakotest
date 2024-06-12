@@ -20,7 +20,7 @@
     }
 
     a {
-      color: #7dbc09;
+      color: #AFBE3F;
     }
 
     p a:hover {
@@ -55,7 +55,7 @@
     }
 
     h1 {
-      margin-top: 0;
+      margin-top: 40px;
       color: #4d4d4d;
       font-size: 22px;
       font-weight: bold;
@@ -63,7 +63,7 @@
     }
 
     h2 {
-      margin-top: 0;
+      margin-top: 40px;
       color: #4d4d4d;
       font-size: 16px;
       font-weight: bold;
@@ -71,7 +71,7 @@
     }
 
     h3 {
-      margin-top: 0;
+      margin-top: 40px;
       color: #4d4d4d;
       font-size: 14px;
       font-weight: bold;
@@ -115,11 +115,11 @@
     /* Buttons ------------------------------ */
 
     .button {
-      background-color: #97D700;
-      border-top: 10px solid #97D700;
-      border-right: 18px solid #97D700;
-      border-bottom: 10px solid #97D700;
-      border-left: 18px solid #97D700;
+      background-color: #AFBE3F;
+      border-top: 10px solid #AFBE3F;
+      border-right: 18px solid #AFBE3F;
+      border-bottom: 10px solid #AFBE3F;
+      border-left: 18px solid #AFBE3F;
       display: inline-block;
       color: #FFF;
       text-decoration: none;
