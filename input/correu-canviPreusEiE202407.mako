@@ -145,7 +145,7 @@ ${plantilla_header}
                         Estimació orientativa
                       </h2>
                       <p>
-                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja F i la nova fórmula per calcular el preu de l'energia.</strong> Tenint en compte l'ús d'energia en els últims dotze mesos, el cost hauria estat de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mentre que amb la franja F actual i la fórmula el cost ha sigut de ${data['dades_index']['import_total_anual_nova_amb_impost']} €.
+                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja F i la nova fórmula per calcular el preu de l'energia.</strong> Tenint en compte l'ús d'energia en els últims dotze mesos, el cost hauria estat de ${data['dades_index']['import_total_anual_nova_amb_impost']} €, mentre que amb la franja F actual i la fórmula el cost ha sigut de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €.
                       </p>
                       <h2>Informació legal</h2>
                       <p>
