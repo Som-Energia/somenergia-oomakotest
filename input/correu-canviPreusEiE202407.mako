@@ -126,9 +126,11 @@ ${plantilla_header}
                       <p>
                         (Al <a href="https://www.somenergia.coop">nostre web</a> pots veure a què correspon cada terme.)
                       </p>
-                      <p>
-                        Pels contractes de les illes Balears i Canàries, també modifiquem el preu de compensació dels excedents perquè sigui igual al preu que els retribueix Red Eléctrica. Aquest canvi suposarà una petita disminució del preu de compensació, ja que al preu del mercat insular li passarem a restar un terme anomenat SphAuto.
-                      </p>
+                      %if data['canaries'] or data['balears']:
+                        <p>
+                          També modifiquem el preu de compensació dels excedents perquè sigui igual al preu que els retribueix Red Eléctrica. Aquest canvi suposarà una petita disminució del preu de compensació, ja que al preu del mercat insular li passarem a restar un terme anomenat SphAuto.
+                        </p>
+                      %endif
                       <h1>
                         Actualització anual de la franja de la cooperativa
                       </h1>
