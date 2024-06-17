@@ -20,7 +20,7 @@
     }
 
     a {
-      color: #AFBE3F;
+      color: #99A43C;
     }
 
     p a:hover {
@@ -115,11 +115,11 @@
     /* Buttons ------------------------------ */
 
     .button {
-      background-color: #AFBE3F;
-      border-top: 10px solid #AFBE3F;
-      border-right: 18px solid #AFBE3F;
-      border-bottom: 10px solid #AFBE3F;
-      border-left: 18px solid #AFBE3F;
+      background-color: #99A43C;
+      border-top: 10px solid #99A43C;
+      border-right: 18px solid #99A43C;
+      border-bottom: 10px solid #99A43C;
+      border-left: 18px solid #99A43C;
       display: inline-block;
       color: #FFF;
       text-decoration: none;
@@ -260,6 +260,15 @@
     .purchase_footer {
       padding-top: 15px;
       border-top: 1px solid #EAEAEC;
+    }
+
+    .purchase_borders {
+      padding-top: 12px;
+      padding-left: 5px;
+      border-top: 1px solid #EAEAEC;
+      border-right: 1px solid #EAEAEC;
+      border-left: 1px solid #EAEAEC;
+      border-bottom: 1px solid #EAEAEC;
     }
 
     .purchase_total {

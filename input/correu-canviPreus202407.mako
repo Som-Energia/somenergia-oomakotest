@@ -94,7 +94,7 @@ ${plantilla_header}
                         </p>
                         <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
                         <p>
-                          Si bé els preus no seran els definitius (caldrà afegir-hi un terme que es publicarà amb posterioritat), sí que donen una idea fiable de les hores més econòmiques i les més cares.
+                          Si bé els preus de l'apartat web no seran els definitius (caldrà afegir-hi un terme que es publicarà amb posterioritat), sí que donen una idea fiable de les hores més econòmiques i les més cares.
                         </p>
                         <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
@@ -102,7 +102,7 @@ ${plantilla_header}
                               <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                 <tr>
                                   <td align="center">
-                                    <a href="{{action_url}}" class="f-fallback button" target="_blank">Mira la pàgina</a>
+                                    <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/" class="f-fallback button" target="_blank">Mira la pàgina</a>
                                   </td>
                                 </tr>
                               </table>
@@ -154,14 +154,14 @@ ${plantilla_header}
                       </p>
                       <p>
                         <strong style="font-size: 14px; text-align: center">
-                          PH = 1,015 × [(PHM + Pc + Sc + <span style="color:#7dbc09">Dsv</span> + <span style="color:#7dbc09">GdO</span> + POsOm) (1 + Perd) + FE + F] + PTD + CA
+                          PH = 1,015 × [(PHM + Pc + Sc + <span style="color:#7a562e">Dsv</span> + <span style="color:#7a562e">GdO</span> + POsOm) (1 + Perd) + FE + F] + PTD + CA
                         </strong>
                       </p>
                       <p>
                         (Al <a href="https://www.somenergia.coop">nostre web</a> pots veure a què correspon cada terme.)
                       </p>
                       <p>
-                        L'import dels certificats de garantia (a la fórmula: <span style="color:#7dbc09">GdO</span>) i dels costos de les desviacions (<span style="color:#7dbc09">Dsv</span>) s'anirà calculant en funció del que costin aquests conceptes, i es publicarà a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
+                        L'import dels certificats de garantia (a la fórmula: <span style="color:#7a562e">GdO</span>) i dels costos de les desviacions (<span style="color:#7a562e">Dsv</span>) s'anirà calculant en funció del que costin aquests conceptes, i es publicarà a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
                       </p>
                       <p>
                         L'import de <strong> la franja (F) </strong> que ara serà únicament el marge, <strong> serà de ${data['dades_index']['f_nova']}</strong>.
@@ -235,35 +235,35 @@ ${plantilla_header}
                           <td colspan="3">
                             <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
                               <tr>
-                                <th class="purchase_heading" align="left">
+                                <td class="purchase_borders" align="left">
                                   <p class="f-fallback"></p>
-                                </th>
-                                <th class="purchase_heading" align="left">
-                                  <p class="f-fallback">Cost estimat amb els nous preus</p>
-                                </th>
-                                <th class="purchase_heading" align="left">
-                                  <p class="f-fallback">Cost estimat amb els preus actuals</p>
-                                </th>
+                                </td>
+                                <td class="purchase_borders" align="left">
+                                  <p class="f-fallback"><strong>Cost estimat amb els nous preus</strong></p>
+                                </td>
+                                <td class="purchase_borders" align="left">
+                                  <p class="f-fallback"><strong>Cost estimat amb els preus actuals</strong></p>
+                                </td>
                               </tr>
                               <tr>
-                                <td width="33%" class="purchase_footer" valign="middle">
+                                <td width="33%" class="purchase_borders" valign="middle">
                                   <p class="f-fallback">Abans d'impostos</p>
                                 </td>
-                                <td width="33%" class="purchase_footer" valign="middle">
+                                <td width="33%" class="purchase_borders" valign="middle">
                                   <p class="f-fallback">${data['dades_index']['import_total_anual_nova']}</p>
                                 </td>
-                                <td width="33%" class="purchase_footer" valign="middle">
+                                <td width="33%" class="purchase_borders" valign="middle">
                                   <p class="f-fallback">${data['dades_index']['import_total_anual_antiga']}</p>
                                 </td>
                               </tr>
                               <tr>
-                                <td width="33%" class="purchase_footer" valign="middle">
+                                <td width="33%" class="purchase_borders" valign="middle">
                                   <p class="f-fallback">Després d'impostos</p>
                                 </td>
-                                <td width="33%" class="purchase_footer" valign="middle">
+                                <td width="33%" class="purchase_borders" valign="middle">
                                   <p class="f-fallback">${data['dades_index']['import_total_anual_nova_amb_impost']}</p>
                                 </td>
-                                <td width="33%" class="purchase_footer" valign="middle">
+                                <td width="33%" class="purchase_borders" valign="middle">
                                   <p class="f-fallback">${data['dades_index']['import_total_anual_antiga_amb_impost']}</p>
                                 </td>
                               </tr>
