@@ -84,13 +84,13 @@ ${plantilla_header}
                             </span></p>
                         % endif
                         <p>
-                          T'escrivim per explicar-te dues novetats respecte a la tarifa indexada que tens contractada actualment. Per una banda, estrenem un nou apartat web on podràs veure la tendència de preus de les properes 24 hores. Per altra banda, t'informem d'un petit augment en el marge de la viabilitat de la cooperativa, que aplicarem a partir de l'1 d'agost.
+                          T'escrivim per explicar-te dues novetats respecte a la tarifa indexada que tens contractada actualment. Per una banda, estrenem un nou apartat web on podràs veure la tendència de preus de les properes 24 hores. Per altra banda, t'informem d'un petit augment en el marge de la viabilitat de la cooperativa, que forma part del preu de la teva tarifa indexada, i que aplicarem a partir de l'1 d'agost.
                         </p>
                         <h1>
                           Tendència de preus per a les properes hores
                         </h1>
                         <p>
-                          Recentment hem posat en funcionament un apartat web on es pot veure la previsió de preus d'energia de la indexada per a les pròximes 24 hores. Hi pots veure, doncs, la tendència de preus per al dia següent, i això et pot ser útil per saber <strong>a quines hores l'energia serà més barata</strong> (és a dir, quan convé més, per exemple, posar la rentadora).
+                          Recentment hem posat en funcionament un apartat web on es pot veure la previsió de preus d'energia de la indexada per a les pròximes 24 hores. Hi pots veure, doncs, la tendència de preus per al dia següent, i això et pot ser útil per saber <strong>a quines hores l'energia serà més barata </strong> (és a dir, quan convé més, per exemple, posar la rentadora).
                         </p>
                         <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
                         <p>
@@ -113,29 +113,29 @@ ${plantilla_header}
                           Canvi del marge en la tarifa
                         </h1>
                         <p>
-                          Per altra banda, t'informem que a partir de l'1 d'agost aplicarem un <strong>lleuger augment al marge de viabilitat</strong> de la tarifa indexada, per tal de seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'nteressa saber-ne els detalls.<p>
+                          Per altra banda, t'informem que a partir de l'1 d'agost aplicarem un <strong>lleuger augment al marge de viabilitat</strong> de la tarifa indexada, per tal de seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'interessa saber-ne els detalls.
                         </p>
                         <h2>
                           Explicació resumida
                         </h2>
                         %if data['Indexada20TDPeninsula']:
                          <p>
-                            En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia a un contracte amb un consum mitjà de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 15 euros l'any (poc més d'un euro al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                            En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 15 euros l'any (poc més d'un euro al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                          </p>
                         %endif
                         %if data['Indexada30TDPeninsula']:
                           <p>
-                            En el cas de la tarifa 3.0TD indexada (la teva), si els preus de l'energia seguissin sent com en l'últim any, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                            En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                           </p>
                         %endif
                         %if data['Indexada61TDPeninsula']:
                           <p>
-                            En el cas de la tarifa 6.1TD indexada (la teva), si els preus de l'energia seguissin sent com en l'últim any, a un contracte amb un consum mitjà de 15.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 79 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                            En el cas de la tarifa 6.1TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 15.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 79 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                           </p>
                         %endif
                         %if data['Indexada30TDVEPeninsula']:
                           <p>
-                            En el cas de la tarifa 3.0TDVE indexada (la teva), si els preus de l'energia seguissin sent com en l'últim any, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                            En el cas de la tarifa 3.0TDVE indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                           </p>
                         %endif
                       <p>
@@ -144,76 +144,29 @@ ${plantilla_header}
                       <h2>Explicació detallada dels canvis</h2>
                       <h3 style="margin-top: 20px;">Canvis en la fórmula del càlcul del preu de l'energia</h3>
                       <p>
-                        Com deus saber, la tarifa indexada obté el preu de l'energia a partir d'una fórmula, que inclou el cost de l'energia al mercat majorista, i inclou també altres conceptes (peatges, càrrecs…) que s'han de pagar per poder consumir energia.
+                        Com deus saber, la tarifa indexada obté el preu de l'energia a partir d'una fórmula, que inclou el cost de l'energia al mercat majorista, i inclou també altres conceptes (peatges, càrrecs…) que s'han de pagar per poder consumir energia. 
                       </p>
                       <p>
-                        Un dels components de la fórmula és la “F”, la franja de la cooperativa. Fins ara, dins d'aquest concepte hi incloíem el marge per a la viabilitat de la cooperativa, més els costos dels Certificats de Garantia d'Origen 100 % renovable (GdO) i els costos de les desviacions. A partir de l'1 d'agost, la “F” contindrà únicament el marge per a la viabilitat de la cooperativa. Els Certificats de Garantia d'Origen i els costos de les desviacions seguiran formant part de la fórmula, però en uns conceptes separats de la franja.
+                        Un dels components de la fórmula és la "F", la franja de la cooperativa. Fins ara, dins d'aquest concepte hi incloíem el marge per a la viabilitat de la cooperativa, més els costos dels Certificats de Garantia d'Origen 100 % renovable (GdO) i els costos de les desviacions. A partir de l'1 d'agost, la "F" contindrà únicament el marge per a la viabilitat de la cooperativa. Els Certificats de Garantia d'Origen i els costos de les desviacions seguiran formant part de la fórmula, però en uns conceptes separats de la franja.
                       </p>
                       <p>
                         La nova fórmula, doncs, serà la següent:
                       </p>
                       <p>
                         <strong style="font-size: 14px; text-align: center">
-                          PH = 1,015 × [(PHM + Pc + Sc + <span style="color:#7a562e">Dsv</span> + <span style="color:#7a562e">GdO</span> + POsOm) (1 + Perd) + FE + F] + PTD + CA
+                          PH = 1,015 × [(PHM + Pc + Sc + <span style="color:#7a562e">Dsv</span> + <span style="color:#7a562e">GdO</span> + P<sub>OsOm</sub>) (1 + Perd) + FE + F] + PTD + CA
                         </strong>
                       </p>
                       <p>
                         (Al <a href="https://www.somenergia.coop">nostre web</a> pots veure a què correspon cada terme.)
                       </p>
                       <p>
-                        L'import dels certificats de garantia (a la fórmula: <span style="color:#7a562e">GdO</span>) i dels costos de les desviacions (<span style="color:#7a562e">Dsv</span>) s'anirà calculant en funció del que costin aquests conceptes, i es publicarà a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
+                        L'import dels certificats de garantia (a la fórmula: <span style="color:#7a562e;font-weight:bold;">GdO</span>) i dels costos de les desviacions (<span style="color:#7a562e;font-weight:bold;">Dsv</span>) s'anirà calculant en funció del que costin aquests conceptes, i es publicarà a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
                       </p>
                       <p>
                         L'import de <strong> la franja (F) </strong> que ara serà únicament el marge, <strong> serà de ${data['dades_index']['f_nova']}</strong>.
                       </p>
-                      <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                        <tr>
-                          <td colspan="2">
-                            <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
-                              <tr>
-                                <th class="purchase_heading" align="left">
-                                  <p class="f-fallback">Fórmula actual</p>
-                                </th>
-                                <th class="purchase_heading" align="left">
-                                  <p class="f-fallback">Nova fórmula</p>
-                                </th>
-                              </tr>
-                              <tr>
-                                <td width="50%" class="purchase_footer" valign="middle">
-                                  <p class="f-fallback">Franja = marge + GdO + costos desviacions</p>
-                                </td>
-                                <td width="50%" class="purchase_footer" valign="middle">
-                                  <p class="f-fallback">Franja = marge</p>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td width="50%" class="purchase_footer" valign="middle">
-                                  <p class="f-fallback">Altres termes</p>
-                                </td>
-                                <td width="50%" class="purchase_footer" valign="middle">
-                                  <p class="f-fallback">Altres termes</p>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td width="50%" class="purchase_footer" valign="middle">
-                                  <p class="f-fallback"></p>
-                                </td>
-                                <td width="50%" class="purchase_footer" valign="middle">
-                                  <p class="f-fallback">Costos desviacions</p>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td width="50%" class="purchase_footer" valign="middle">
-                                  <p class="f-fallback"></p>
-                                </td>
-                                <td width="50%" class="purchase_footer" valign="middle">
-                                  <p class="f-fallback">GdO</p>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
+                      <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
                       <p>
                         Els preus de la potència, en aquest cas, no han canviat. Els pots trobar a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
                       </p>
@@ -272,7 +225,7 @@ ${plantilla_header}
                         </tr>
                       </table>
                       <p>
-                        Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l’any, o canvis que hi pugui haver al mercat elèctric.
+                        Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
                       </p>
                       <p>
                         Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">Centre d'Ajuda</a>. També hem publicat una <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">notícia al blog</a> que explica aquest canvi.
