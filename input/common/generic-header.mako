@@ -233,7 +233,7 @@
     .purchase_content {
       width: 100%;
       margin: 0;
-      padding: 25px 0 0 0;
+      padding: 10px 0 0 0;
       -premailer-width: 100%;
       -premailer-cellpadding: 0;
       -premailer-cellspacing: 0;
@@ -263,7 +263,6 @@
     }
 
     .purchase_borders {
-      padding-top: 12px;
       padding-left: 5px;
       border-top: 1px solid #EAEAEC;
       border-right: 1px solid #EAEAEC;

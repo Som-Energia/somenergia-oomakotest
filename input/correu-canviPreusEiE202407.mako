@@ -138,7 +138,7 @@ ${plantilla_header}
                         En la <strong>tarifa indexada empresa</strong> personalitzem el preu de la franja de la cooperativa (la variable F de la fórmula) segons el vostre ús d'energia anual. Per això, un cop a l'any, revisem el vostre ús d'energia dels últims dotze mesos i ajustem el preu de la franja: a major ús, el preu per kWh es redueix, i a la inversa, si l'ús disminueix el preu per kWh, s'incrementa.
                       </p>
                       <p>
-                        Per al vostre contracte, actualment la franja F (que també inclou els costos dels certificats de garantia d'origen 100% renovable i dels desviaments) és de ${data['dades_index']['f_antiga']} €/kWh, i a partir de l'1 d'agost (que tal com hem explicat, correspondrà al marge per la cooperativa) serà de: ${data['dades_index']['f_nova']} €/kWh.
+                        Per al vostre contracte, actualment la franja F (que també inclou els costos dels certificats de garantia d'origen 100% renovable i dels desviaments) és de ${data['dades_index']['f_antiga_eie']} €/kWh, i a partir de l'1 d'agost (que tal com hem explicat, correspondrà al marge per la cooperativa) serà de: ${data['dades_index']['f_nova_eie']} €/kWh.
                       </p>
                       <p>
                         Aquest preu està calculat tenint en compte el vostre ús d'energia dels últims dotze mesos: ${data['dades_index']['conany']} kWh.
