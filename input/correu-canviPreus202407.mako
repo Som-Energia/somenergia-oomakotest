@@ -171,12 +171,12 @@ ${plantilla_header}
                       %endif
                       %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
                         <p>
-                          En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 15 euros anuals (poc més d'un euro al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 19 euros l'any (poc més d'un euro i mig al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                         </p>
                       %endif
                       %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
                         <p>
-                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros anuals.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                         </p>
                       %endif
                       %if not data['canaries'] and not data['balears']:
@@ -284,7 +284,7 @@ ${plantilla_header}
                         %if data['autoconsum']['compensacio']:
                           <h1>Canvi del càlcul de compensació dels excedents</h1>
                           <p>
-                            Per altra banda, aplicarem també un canvi en el preu de compensació dels excedents. En les tarifes indexades compensem els excedents al mateix preu a què ens els paga Red Eléctrica a Som Energia. No hi afegim marge ni comissions. Per seguir fent-ho així, com que Red Eléctrica paga els excedents a preu de mercat insular i li resta el preu d'un terme anomenat SphAuto, també hem de restar aquest terme a la fórmula de compensació d'excedents de Som Energia. Això suposarà una <strong>petita disminució del preu de compensació.</strong>
+                            Per altra banda, aplicarem també un canvi en el preu de compensació dels excedents de Balears i Canàries. En les tarifes indexades compensem els excedents al mateix preu a què ens els paga Red Eléctrica a Som Energia. No hi afegim marge ni comissions. Per seguir fent-ho així, com que Red Eléctrica paga els excedents a preu de mercat insular i li resta el preu d'un terme anomenat SphAuto, també hem de restar aquest terme a la fórmula de compensació d'excedents de Som Energia. Això suposarà una <strong>petita disminució del preu de compensació.</strong>
                           </p>
                           <p>
                             Recorda que la manera de treure més profit de les instal·lacions d'autoproducció és utilitzant l'energia al mateix moment en què es genera.
@@ -292,9 +292,15 @@ ${plantilla_header}
                         %endif
                       %endif
                       <h2>Informació legal</h2>
-                      <p>
-                        La <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/#preu-i-actualitzacio">clàusula contractual de les Condicions Generals</a> que ens autoritza a fer aquest canvi de preus és la clàusula 5.3 (ii) per a les modificacions de la part del preu no regulada.
-                      </p>
+                      %if not data['canaries'] and not data['balears']:
+                        <p>
+                          La <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/#preu-i-actualitzacio">clàusula contractual de les Condicions Generals</a> que ens autoritza a fer aquest canvi de preus és la clàusula 5.3 (ii) per a les modificacions de la part del preu no regulada.
+                        </p>
+                      %else: ## Es Canaries o Balears
+                        <p>
+                          Les <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">clàusules contractuals de les Condicions Generals</a> que ens autoritzen a fer aquests canvis de preus són la clàusula 5.3 (ii) per a les modificacions de la part del preu no regulada, i la clàusula 8.5 per la modificació del preu de compensació d'excedents.
+                        </p>
+                      % endif
                       <p>
                         % if data['modcon'] != "atr" and data['modcon'] != "index":
                           T'adjuntem en aquest correu el teu contracte actualitzat amb els canvis aplicats. Si hi estàs d'acord, <strong>no cal que ens retornis el document signat,</strong> ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d'informar-te que si, per alguna raó, aquest canvi et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/">tarifa per períodes</a> (<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
