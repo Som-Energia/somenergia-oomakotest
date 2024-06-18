@@ -316,7 +316,7 @@ ${plantilla_header}
                       <a href="https://www.somenergia.coop/ca/">www.somenergia.coop</a>
                       </p>
 
-                    %else:
+                    %else: ## CASTELLANO
 
 
 
@@ -456,15 +456,15 @@ ${plantilla_header}
                         </p>
                       % endif
                       <h2>Explicación detallada de los cambios</h2>
-                      <h3 style="margin-top: 20px;">Canvis en la fórmula del càlcul del preu de l'energia</h3>
+                      <h3 style="margin-top: 20px;">Cambios en la fórmula del cálculo del precio de la energía</h3>
                       <p>
-                        Com deus saber, la tarifa indexada obté el preu de l'energia a partir d'una fórmula, que inclou el cost de l'energia al mercat majorista, i inclou també altres conceptes (peatges, càrrecs…) que s'han de pagar per poder consumir energia.
+                        Como quizás ya sabes, la tarifa indexada obtiene el precio de la energía a partir de una fórmula, que incluye el coste de la energía en el mercado mayorista, e incluye también otros conceptos (peajes, cargos…) que deben pagarse para poder consumir energía.
                       </p>
                       <p>
-                        Un dels components de la fórmula és la "F", la franja de la cooperativa. Fins ara, dins d'aquest concepte hi incloíem el marge per a la viabilitat de la cooperativa, més els costos dels Certificats de Garantia d'Origen 100 % renovable (GdO) i els costos de les desviacions. A partir de l'1 d'agost, la "F" contindrà únicament el marge per a la viabilitat de la cooperativa. Els Certificats de Garantia d'Origen i els costos de les desviacions seguiran formant part de la fórmula, però en uns conceptes separats de la franja.
+                        Uno de los componentes de la fórmula es la “F”, la franja de la cooperativa. Hasta ahora, dentro de este concepto incluíamos el margen para la viabilidad de la cooperativa, más los costes de los Certificados de Garantía de Origen 100% renovable (GdO) y los costes de las desviaciones. A partir del 1 de agosto, la “F” contendrá únicamente el margen para la viabilidad de la cooperativa. Los Certificados de Garantía de Origen y los costes de las desviaciones seguirán formando parte de la fórmula, pero en unos conceptos separados de la franja.
                       </p>
                       <p>
-                        La nova fórmula, doncs, serà la següent:
+                        La nueva fórmula, pues, será la siguiente:
                       </p>
                       <p>
                         <strong style="font-size: 14px; text-align: center">
@@ -472,31 +472,31 @@ ${plantilla_header}
                         </strong>
                       </p>
                       <p>
-                        (Al <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#formula-indexada">nostre web</a> pots veure a què correspon cada terme.)
+                        (En <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#formula-indexada">nuestra web</a> puedes ver a qué corresponde cada término.)
                       </p>
                       <p>
-                        L'import dels certificats de garantia (a la fórmula: <span style="color:#c68c43;font-weight:bold;">GdO</span>) i dels costos de les desviacions (<span style="color:#c68c43;font-weight:bold;">Dsv</span>) s'anirà calculant en funció del que costin aquests conceptes, i es publicarà a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
+                        El importe de los certificados de garantía (en la fórmula: <span style="color:#c68c43;font-weight:bold;">GdO</span>)  de los costes de las desviaciones (<span style="color:#c68c43;font-weight:bold;">Dsv</span>) se irá calculando en función de lo que cuesten estos conceptos, y se publicará en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">apartado web de tarifas</a>.
                       </p>
                       <p>
-                        L'import de <strong> la franja (F) </strong> que ara serà únicament el marge, <strong> serà de ${data['dades_index']['f_nova']}</strong>.
+                        El importe de <strong>la franja (F)</strong> que ahora será únicamente el margen, <strong>será de ${data['dades_index']['f_nova']}</strong>.
                       </p>
                       <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
                       <br/><br/>
                       <p>
-                        Els preus de la potència, en aquest cas, no han canviat. Els pots trobar a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
+                        Los precios de la potencia, en este caso, no han cambiado. Los puedes encontrar en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">apartado web de tarifas</a>.
                       </p>
-                      <h3>Estimació orientativa</h3>
+                      <h3>Estimación orientativa</h3>
                       <p>
-                        Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del cost de l'electricitat amb aquest augment del marge, i l'hem comparat amb el cost amb la tarifa actual. L'estimació l'hem fet en base a un usuari/a mitjà, amb un contracte estàndard, d'un consum tipus, de ${data['dades_index']['conany']} kWh anuals, i sense tenir autoproducció ni Generation kWh, ni lloguer de comptador.
-                      </p>
-                      <p>
-                        En els dos casos l'estimació inclou l'IVA del ${data['dades_index']['iva']}% i l'impost elèctric del ${data['dades_index']['ie']}%.
+                        Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> del coste de la electricidad con este aumento del margen, y lo hemos comparado con el coste con la actual tarifa. La estimación la hemos hecho en base a un usuario/a medio, con un contrato estándar, de un consumo tipo, de ${data['dades_index']['conany']} kWh anuales, y sin tener autoproducción ni Generation kWh, ni alquiler de contador.
                       </p>
                       <p>
-                        Així doncs, et mostrem a continuació l'estimació aproximada del cost anual si apliquéssim els preus actuals, i el cost anual si apliquéssim els nous preus.
+                        En ambos casos la estimación incluye ${data['dades_index']['iva']}% y el impuesto eléctrico del ${data['dades_index']['ie']}%.
+                      </p>
+                      <p>
+                        Así pues, te mostramos a continuación la estimación aproximada del coste anual si aplicáramos los precios actuales, y el coste anual si aplicáramos los nuevos precios.
                       </p>
                       <h3>
-                        Cost anual estimat (euros/any)
+                        Coste anual estimado (euros/año)
                       </h3>
                       <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                         <tr>
@@ -507,15 +507,15 @@ ${plantilla_header}
                                   <p class="f-fallback"  style="margin: 10px 0"></p>
                                 </td>
                                 <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                  <p class="f-fallback"  style="margin: 10px 0"><strong>Cost estimat amb els nous preus</strong></p>
+                                  <p class="f-fallback"  style="margin: 10px 0"><strong>Coste estimado con los nuevos precios</strong></p>
                                 </td>
                                 <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                  <p class="f-fallback" style="margin: 10px 0"><strong>Cost estimat amb els preus actuals</strong></p>
+                                  <p class="f-fallback" style="margin: 10px 0"><strong>Coste estimado con los precios actuales</strong></p>
                                 </td>
                               </tr>
                               <tr>
                                 <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                  <p class="f-fallback"  style="margin: 10px 0">Abans d'impostos</p>
+                                  <p class="f-fallback"  style="margin: 10px 0">Antes de impuestos</p>
                                 </td>
                                 <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
                                   <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['dades_index']['import_total_anual_nova']}</p>
@@ -526,7 +526,7 @@ ${plantilla_header}
                               </tr>
                               <tr>
                                 <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                  <p class="f-fallback" style="margin: 10px 0">Després d'impostos</p>
+                                  <p class="f-fallback" style="margin: 10px 0">Después de impuestos</p>
                                 </td>
                                 <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
                                   <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['dades_index']['import_total_anual_nova_amb_impost']}</p>
@@ -541,11 +541,11 @@ ${plantilla_header}
                       </table>
                       <br/>
                       <p>
-                        Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
+                        Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año, o cambios que puedan producirse en el mercado eléctrico.
                       </p>
                       %if not data['canaries'] and not data['balears']:
                         <p>
-                          Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">Centre d'Ajuda</a>. També hem publicat una <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">notícia al blog</a> que explica aquest canvi.
+                          Como siempre, puedes encontrar la información, precios y fórmula de la tarifa indexada en nuestra web, <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">apartado tarifa indexada</a>, y en el <a href="https://es.support.somenergia.coop/category/1361-las-tarifas-indexadas">Centro de Ayuda</a>. También hemos publicado <a href="https://blog.somenergia.coop/?p=48070">una noticia en el blog</a> que explica ese cambio.
                         </p>
                       %else: ## Es Canaries o Balears
                         %if data['autoconsum']['compensacio']:
@@ -558,23 +558,23 @@ ${plantilla_header}
                           </p>
                         %endif
                       %endif
-                      <h2>Informació legal</h2>
+                      <h2>Información legal</h2>
                       <p>
-                        La <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/#preu-i-actualitzacio">clàusula contractual de les Condicions Generals</a> que ens autoritza a fer aquest canvi de preus és la clàusula 5.3 (ii) per a les modificacions de la part del preu no regulada.
+                        La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/#precio-y-actualizacion">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios es la cláusula 5.3 (ii) para las modificaciones de la parte del precio no regulada.
                       </p>
                       <p>
                         % if data['modcon'] != "atr" and data['modcon'] != "index":
-                          T'adjuntem en aquest correu el teu contracte actualitzat amb els canvis aplicats. Si hi estàs d'acord, <strong>no cal que ens retornis el document signat,</strong> ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d'informar-te que si, per alguna raó, aquest canvi et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/">tarifa per períodes</a> (<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
+                          Te adjuntamos en este correo tu contrato actualizado con los cambios aplicados. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio te hiciese replantear seguir con esta tarifa, podrías cambiarte a la <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/">tarifa por períodos</a> (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">a través de tu Oficina Virtua</a>), o podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
                         %else:
                           T'adjuntem en aquest correu el teu contracte actualitzat amb els canvis aplicats. Si hi estàs d'acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d'informar-te que si, per alguna raó, aquest canvi et fes replantejar seguir amb aquesta tarifa, podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
                         %endif
                       </p>
                       <p>
-                        Una salutació cordial,
+                        Un cordial saludo,
                       </p>
                       <p>
-                      Equip de Som Energia <br/>
-                      <a href="https://www.somenergia.coop/ca/">www.somenergia.coop</a>
+                      Equipo de Som Energia <br/>
+                      <a href="https://www.somenergia.coop/es">www.somenergia.coop</a>
                       </p>
 
 
