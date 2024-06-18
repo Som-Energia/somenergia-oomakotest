@@ -368,15 +368,15 @@ ${plantilla_header}
                         %else: ## Es Canaries o Balears
                           %if data['autoconsum']['compensacio']:
                             <p>
-                              T'escrivim per explicar-te dos canvis respecte a la tarifa indexada que tens contractada actualment, i que aplicarem a partir de l'1 d'agost. Per una banda, augmentarem lleugerament el marge de viabilitat de la cooperativa, que forma part del preu de la tarifa indexada, i per altra banda modificarem la fórmula que estableix la compensació d'excedents d'autoproducció.
+                              Te escribimos para contarte dos cambios respecto a la tarifa indexada que tienes contratada actualmente, y que aplicaremos a partir del 1 de agosto. Por un lado, aumentaremos ligeramente el margen de viabilidad de la cooperativa, que forma parte del precio de la tarifa indexada, y por otra parte modificaremos la fórmula que establece la compensación de excedentes de autoproducción.
                             </p>
-                            <h1>Canvi del marge en la tarifa</h1>
+                            <h1>Cambio del marge en la tarifa</h1>
                             <p>
-                              Com et dèiem, a partir de l'1 d'agost aplicarem un <strong>petit augment al marge de viabilitat</strong> de la tarifa indexada, per tal de seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'interessa saber-ne els detalls.
+                              Como te decíamos, a partir del 1 de agosto aplicaremos un <strong>pequeño aumento al margen de viabilidad</strong> de la tarifa indexada, para seguir garantizando la viabilidad de la cooperativa. A continuación tienes una versión resumida, por si no quieres dedicarle mucho tiempo, y más abajo encontrarás una versión más detallada, por si te interesa saber los detalles.
                             </p>
                           %else:
                             <p>
-                              T'escrivim per explicar-te que a partir de l'1 d'agost augmentarem lleugerament el marge de viabilitat de les tarifes indexades, per seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'interessa saber-ne els detalls.
+                              Te escribimos para explicarte que a partir del 1 de agosto aumentaremos ligeramente el margen de viabilidad de las tarifas indexadas, para seguir garantizando la viabilidad de la cooperativa. A continuación tienes una versión resumida, por si no quieres dedicarle mucho tiempo, y más abajo encontrarás una versión más detallada, por si te interesa saber los detalles.
                             </p>
                           %endif
                         %endif
@@ -438,12 +438,12 @@ ${plantilla_header}
                       %endif
                       %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
                         <p>
-                          En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 15 euros anuals (poc més d'un euro al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          En el caso de la tarifa 2.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio, de 2.500 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 195 euros anuales (poco más de un euro y medio al mes)</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
                         </p>
                       %endif
                       %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
                         <p>
-                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros anuals.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          En el caso de la tarifa 3.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 58 euros anuales</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
                         </p>
                       %endif
                       %if not data['canaries'] and not data['balears']:
@@ -452,7 +452,7 @@ ${plantilla_header}
                         </p>
                       %else: ## Es Canaries o Balears
                         <p>
-                          Aquesta és la informació bàsica, resumida. Si tens curiositat i vols saber més detalls del canvi, a continuació te'ls expliquem.
+                          Esta es la información básica, resumida. Si tienes curiosidad y quieres saber más detalles del cambio, a continuación te los explicamos.
                         </p>
                       % endif
                       <h2>Explicación detallada de los cambios</h2>
@@ -549,19 +549,25 @@ ${plantilla_header}
                         </p>
                       %else: ## Es Canaries o Balears
                         %if data['autoconsum']['compensacio']:
-                          <h1>Canvi del càlcul de compensació dels excedents</h1>
+                          <h1>Cambio del cálculo de compensación de los excedentes</h1>
                           <p>
-                            Per altra banda, aplicarem també un canvi en el preu de compensació dels excedents. En les tarifes indexades compensem els excedents al mateix preu a què ens els paga Red Eléctrica a Som Energia. No hi afegim marge ni comissions. Per seguir fent-ho així, com que Red Eléctrica paga els excedents a preu de mercat insular i li resta el preu d'un terme anomenat SphAuto, també hem de restar aquest terme a la fórmula de compensació d'excedents de Som Energia. Això suposarà una <strong>petita disminució del preu de compensació.</strong>
+                            Por otra parte, aplicaremos también un cambio en el precio de compensación de los excedentes de Baleares y Canarias. En las tarifas indexadas compensamos los excedentes al mismo precio al que nos los paga Red Eléctrica a Som Energia. No añadimos margen ni comisiones. Para seguir haciéndolo así, como Red Eléctrica paga los excedentes a precio de mercado insular y le resta el precio de un término llamado Sph Auto, también debemos restar este término a la fórmula de compensación de excedentes de Som Energia. Esto supondrá una <strong>pequeña disminución del precio de compensación</strong>.
                           </p>
                           <p>
-                            Recorda que la manera de treure més profit de les instal·lacions d'autoproducció és utilitzant l'energia al mateix moment en què es genera.
+                            Recuerde que la forma de sacar más provecho de las instalaciones de autoproducción es utilizando la energía en el mismo momento en que se genera.
                           </p>
                         %endif
                       %endif
                       <h2>Información legal</h2>
-                      <p>
-                        La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/#precio-y-actualizacion">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios es la cláusula 5.3 (ii) para las modificaciones de la parte del precio no regulada.
-                      </p>
+                      %if not data['canaries'] and not data['balears']:
+                        <p>
+                          La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/#precio-y-actualizacion">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios es la cláusula 5.3 (ii) para las modificaciones de la parte del precio no regulada.
+                        </p>
+                      %else: ## Es Canaries o Balears
+                        <p>
+                          Las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">cláusulas contractuales de las Condiciones Generales</a> que nos autorizan a hacer estos cambios de precios son la cláusula 5.3 (ii) para las modificaciones de la parte del precio no regulada, y la cláusula 8.5 por la modificación del precio de compensación de excedentes.
+                        </p>
+                      % endif
                       <p>
                         % if data['modcon'] != "atr" and data['modcon'] != "index":
                           Te adjuntamos en este correo tu contrato actualizado con los cambios aplicados. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio te hiciese replantear seguir con esta tarifa, podrías cambiarte a la <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/">tarifa por períodos</a> (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">a través de tu Oficina Virtua</a>), o podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
