@@ -105,7 +105,7 @@ ${plantilla_header}
                               </p>
                               <h1>Canvi del marge en la tarifa</h1>
                               <p>
-                                Com et dèiem, a partir de l'1 d'agost aplicarem un petit augment al marge de viabilitat de la tarifa indexada, per tal de seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'interessa saber-ne els detalls.
+                                Com et dèiem, a partir de l'1 d'agost aplicarem un <strong>petit augment al marge de viabilitat</strong> de la tarifa indexada, per tal de seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'interessa saber-ne els detalls.
                               </p>
                             %else:
                               <p>
@@ -114,72 +114,80 @@ ${plantilla_header}
                             %endif
                           %endif
                         % endif
-                        <h1>
-                          Tendència de preus per a les properes hores
-                        </h1>
+                        %if not data['canaries'] and not data['balears']:
+                          <h1>
+                            Tendència de preus per a les properes hores
+                          </h1>
+                          <p>
+                            Recentment hem posat en funcionament un apartat web on es pot veure la previsió de preus d'energia de la indexada per a les pròximes 24 hores. Hi pots veure, doncs, la tendència de preus per al dia següent, i això et pot ser útil per saber <strong>a quines hores l'energia serà més barata </strong> (és a dir, quan convé més, per exemple, posar la rentadora).
+                          </p>
+                          <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
+                          <br/><br/><br/>
+                          <p>
+                            Si bé els preus de l'apartat web no seran els definitius (caldrà afegir-hi un terme que es publicarà amb posterioritat), sí que donen una idea fiable de les hores més econòmiques i les més cares.
+                          </p>
+                          <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                              <td align="center">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                  <tr>
+                                    <td align="center">
+                                      <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/" class="f-fallback button" target="_blank">Mira la pàgina</a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <h1>
+                            Canvi del marge en la tarifa
+                          </h1>
+                          <p>
+                            Per altra banda, t'informem que a partir de l'1 d'agost aplicarem un <strong>lleuger augment al marge de viabilitat</strong> de la tarifa indexada, per tal de seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'interessa saber-ne els detalls.
+                          </p>
+                        % endif
+                      <h2>
+                        Explicació resumida
+                      </h2>
+                      %if data['Indexada20TDPeninsula']:
                         <p>
-                          Recentment hem posat en funcionament un apartat web on es pot veure la previsió de preus d'energia de la indexada per a les pròximes 24 hores. Hi pots veure, doncs, la tendència de preus per al dia següent, i això et pot ser útil per saber <strong>a quines hores l'energia serà més barata </strong> (és a dir, quan convé més, per exemple, posar la rentadora).
+                          En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 19 euros l'any (un euro i mig al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                         </p>
-                        <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
-                        <br/><br/><br/>
+                      %endif
+                      %if data['Indexada30TDPeninsula']:
                         <p>
-                          Si bé els preus de l'apartat web no seran els definitius (caldrà afegir-hi un terme que es publicarà amb posterioritat), sí que donen una idea fiable de les hores més econòmiques i les més cares.
+                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                         </p>
-                        <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                          <tr>
-                            <td align="center">
-                              <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                                <tr>
-                                  <td align="center">
-                                    <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/" class="f-fallback button" target="_blank">Mira la pàgina</a>
-                                  </td>
-                                </tr>
-                              </table>
-                            </td>
-                          </tr>
-                        </table>
-                        <h1>
-                          Canvi del marge en la tarifa
-                        </h1>
+                      %endif
+                      %if data['Indexada61TDPeninsula']:
                         <p>
-                          Per altra banda, t'informem que a partir de l'1 d'agost aplicarem un <strong>lleuger augment al marge de viabilitat</strong> de la tarifa indexada, per tal de seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'interessa saber-ne els detalls.
+                          En el cas de la tarifa 6.1TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 15.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 79 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                         </p>
-                        <h2>
-                          Explicació resumida
-                        </h2>
-                        %if data['Indexada20TDPeninsula']:
-                         <p>
-                            En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 19 euros l'any (un euro i mig al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                         </p>
-                        %endif
-                        %if data['Indexada30TDPeninsula']:
-                          <p>
-                            En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                          </p>
-                        %endif
-                        %if data['Indexada61TDPeninsula']:
-                          <p>
-                            En el cas de la tarifa 6.1TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 15.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 79 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                          </p>
-                        %endif
-                        %if data['Indexada30TDVEPeninsula']:
-                          <p>
-                            En el cas de la tarifa 3.0TDVE indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                          </p>
-                        %endif
-                        %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
-                          <p>
-                            En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 15 euros anuals (poc més d'un euro al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                          </p>
-                        %endif
-                        %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
-                          <p>
-                            En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros anuals.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                          </p>
-                        %endif
-                      <p>
-                        Aquesta és la informació bàsica, resumida. Si tens curiositat i vols saber més detalls del canvi, a continuació te'ls expliquem. Com sempre, pots trobar els preus a l'<a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">apartat de tarifes del web</a>.
-                      </p>
+                      %endif
+                      %if data['Indexada30TDVEPeninsula']:
+                        <p>
+                          En el cas de la tarifa 3.0TDVE indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                        </p>
+                      %endif
+                      %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
+                        <p>
+                          En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 15 euros anuals (poc més d'un euro al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                        </p>
+                      %endif
+                      %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
+                        <p>
+                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros anuals.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                        </p>
+                      %endif
+                      %if not data['canaries'] and not data['balears']:
+                        <p>
+                          Aquesta és la informació bàsica, resumida. Si tens curiositat i vols saber més detalls del canvi, a continuació te'ls expliquem. Com sempre, pots trobar els preus a l'<a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">apartat de tarifes del web</a>.
+                        </p>
+                      %else: ## Es Canaries o Balears
+                        <p>
+                          Aquesta és la informació bàsica, resumida. Si tens curiositat i vols saber més detalls del canvi, a continuació te'ls expliquem.
+                        </p>
+                      % endif
                       <h2>Explicació detallada dels canvis</h2>
                       <h3 style="margin-top: 20px;">Canvis en la fórmula del càlcul del preu de l'energia</h3>
                       <p>
@@ -268,7 +276,7 @@ ${plantilla_header}
                       <p>
                         Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
                       </p>
-                      %if not data['canaries'] or not data['balears']:
+                      %if not data['canaries'] and not data['balears']:
                         <p>
                           Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">Centre d'Ajuda</a>. També hem publicat una <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">notícia al blog</a> que explica aquest canvi.
                         </p>
