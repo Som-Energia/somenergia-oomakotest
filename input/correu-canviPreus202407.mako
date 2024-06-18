@@ -79,7 +79,7 @@ ${plantilla_header}
                                           <td>
                                               <p>
                                                 <span style="font-weight: 400;text-align: left;">
-                                                  Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la tarifa ${data['tarifa_acces']} períodes, que s'hauria de produir a les pròximes setmanes. Igualment, com que encara estàs amb la tarifa ${data['tarifa_acces']} indexada, t'expliquem més avall els canvis que hi aplicarem a partir de l'1 d'agost, i que t'afectaran si, per algun motiu, el teu contracte segueix amb la tarifa indexada.
+                                                  Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} períodes,</strong> que s'hauria de produir a les pròximes setmanes. Igualment, com que encara estàs amb la tarifa ${data['tarifa_acces']} indexada, t'expliquem més avall els canvis que hi aplicarem a partir de l'1 d'agost, i que t'afectaran si, per algun motiu, el teu contracte segueix amb la tarifa indexada.
                                                 </span>
                                               </p>
                                               <p>
@@ -191,7 +191,7 @@ ${plantilla_header}
                       <h2>Explicació detallada dels canvis</h2>
                       <h3 style="margin-top: 20px;">Canvis en la fórmula del càlcul del preu de l'energia</h3>
                       <p>
-                        Com deus saber, la tarifa indexada obté el preu de l'energia a partir d'una fórmula, que inclou el cost de l'energia al mercat majorista, i inclou també altres conceptes (peatges, càrrecs…) que s'han de pagar per poder consumir energia. 
+                        Com deus saber, la tarifa indexada obté el preu de l'energia a partir d'una fórmula, que inclou el cost de l'energia al mercat majorista, i inclou també altres conceptes (peatges, càrrecs…) que s'han de pagar per poder consumir energia.
                       </p>
                       <p>
                         Un dels components de la fórmula és la "F", la franja de la cooperativa. Fins ara, dins d'aquest concepte hi incloíem el marge per a la viabilitat de la cooperativa, més els costos dels Certificats de Garantia d'Origen 100 % renovable (GdO) i els costos de les desviacions. A partir de l'1 d'agost, la "F" contindrà únicament el marge per a la viabilitat de la cooperativa. Els Certificats de Garantia d'Origen i els costos de les desviacions seguiran formant part de la fórmula, però en uns conceptes separats de la franja.
@@ -309,6 +309,279 @@ ${plantilla_header}
                       Equip de Som Energia <br/>
                       <a href="https://www.somenergia.coop/ca/">www.somenergia.coop</a>
                       </p>
+
+                    %else:
+
+
+
+
+
+                      % if data['modcon'] == "index":
+                          <figure class="table">
+                              <table style="background-color: #D3E5C3; border: 4px solid #657557; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+                                  <tbody>
+                                      <tr>
+                                          <td>
+                                              <p>
+                                                <span style="font-weight: 400;text-align: left;">
+                                                  Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que debería producirse en las próximas semanas. Te informamos, pues, de un pequeño cambio que aplicaremos en la tarifa indexada a partir del 1 de agosto, y de una nueva opción disponible: la tendencia de precios para las próximas 24 horas.
+                                                </span>
+                                              </p>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </figure>
+                      % elif data['modcon'] == "atr":
+                        <figure class="table">
+                            <table style="background-color: #D3E5C3; border: 4px solid #657557; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                              <span style="font-weight: 400;text-align: left;">
+                                                Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong> tarifa ${data['tarifa_acces']} periodos,</strong> que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} indexada, te explicamos más abajo los cambios que le aplicaremos a partir del 1 de agosto, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa indexada.
+                                              </span>
+                                            </p>
+                                            <p>
+                                              <span style="font-weight: 400;text-align: left;">
+                                                En nuestra web puedes encontrar la nueva fórmula de cálculo de <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">la tarifa indexada</a>. En resumen, aumenta ligeramente el margen del precio de la energía.
+                                              </span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </figure>
+                      % endif
+                      % if data['modcon'] != "atr" and data['modcon'] != "index":
+                        %if not data['canaries'] and not data['balears']:
+                          <p>
+                            Te escribimos para contarte dos novedades respecto a la tarifa indexada que tienes contratada actualmente. Por un lado, estrenamos un nuevo apartado web donde podrás ver la tendencia de precios de las próximas 24 horas. Por otra parte, te informamos de un pequeño aumento en el margen de la viabilidad de la cooperativa, que forma parte del precio de tu tarifa indexada, y que aplicaremos a partir del 1 de agosto.
+                          </p>
+                        %else: ## Es Canaries o Balears
+                          %if data['autoconsum']['compensacio']:
+                            <p>
+                              T'escrivim per explicar-te dos canvis respecte a la tarifa indexada que tens contractada actualment, i que aplicarem a partir de l'1 d'agost. Per una banda, augmentarem lleugerament el marge de viabilitat de la cooperativa, que forma part del preu de la tarifa indexada, i per altra banda modificarem la fórmula que estableix la compensació d'excedents d'autoproducció.
+                            </p>
+                            <h1>Canvi del marge en la tarifa</h1>
+                            <p>
+                              Com et dèiem, a partir de l'1 d'agost aplicarem un <strong>petit augment al marge de viabilitat</strong> de la tarifa indexada, per tal de seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'interessa saber-ne els detalls.
+                            </p>
+                          %else:
+                            <p>
+                              T'escrivim per explicar-te que a partir de l'1 d'agost augmentarem lleugerament el marge de viabilitat de les tarifes indexades, per seguir garantint la viabilitat de la cooperativa. A continuació tens una versió resumida, per si no hi vols dedicar molt de temps, i més avall trobaràs una versió més detallada, per si t'interessa saber-ne els detalls.
+                            </p>
+                          %endif
+                        %endif
+                      % endif
+                      %if not data['canaries'] and not data['balears']:
+                        <h1>
+                          Tendencia de precios para las próximas horas
+                        </h1>
+                        <p>
+                          Recientemente hemos puesto en funcionamiento un apartado web en el que se puede ver la previsión de precios de energía de la indexada para las próximas 24 horas. Puedes ver, pues, la tendencia de precios para el día siguiente, y esto te puede ser útil para saber <strong>a qué horas la energía será más barata </strong> (es decir, cuándo conviene más, por ejemplo, poner la lavadora).
+                        </p>
+                        <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
+                        <br/><br/><br/>
+                        <p>
+                          Si bien los precios del apartado web no serán los definitivos (habrá que añadir un término que se publicará con posterioridad), sí dan una idea fiable de las horas más económicas y las más caras.
+                        </p>
+                        <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                          <tr>
+                            <td align="center">
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                <tr>
+                                  <td align="center">
+                                    <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/" class="f-fallback button" target="_blank">Mira la página</a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <h1>
+                          Cambio del marge en la tarifa
+                        </h1>
+                        <p>
+                          Por otra parte, te informamos que a partir del 1 de agosto aplicaremos un <strong>ligero aumento al margen de viabilidad</strong> de la tarifa indexada, para seguir garantizando la viabilidad de la cooperativa. A continuación tienes una versión resumida, por si no quieres dedicarle mucho tiempo, y más abajo encontrarás una versión más detallada, por si te interesa saber los detalles.
+                        </p>
+                      % endif
+                      <h2>
+                        Explicación resumida
+                      </h2>
+                      %if data['Indexada20TDPeninsula']:
+                        <p>
+                          En el caso de la tarifa 2.0TD indexado (la tuya), sin tener en cuenta el precio de la energía, a un contrato con un consumo medio de 2.500 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 19 euros al año (un euro y medio al mes).</strong> Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                        </p>
+                      %endif
+                      %if data['Indexada30TDPeninsula']:
+                        <p>
+                          En el caso de la tarifa 3.0TD indexada (la tuya), sin tener en cuenta el precio de la energía, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 58 euros al año.</strong> Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                        </p>
+                      %endif
+                      %if data['Indexada61TDPeninsula']:
+                        <p>
+                          En el caso de la tarifa 6.1TD indexada (la tuya), sin tener en cuenta el precio de la energía, a un contrato con un consumo medio de 15.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 79 euros al año.</strong> Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                        </p>
+                      %endif
+                      %if data['Indexada30TDVEPeninsula']:
+                        <p>
+                          En el caso de la tarifa 3.0TDVE indexada (la tuya), sin tener en cuenta el precio de la energía, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 58 euros al año.</strong> Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                        </p>
+                      %endif
+                      %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
+                        <p>
+                          En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 15 euros anuals (poc més d'un euro al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                        </p>
+                      %endif
+                      %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
+                        <p>
+                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros anuals.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                        </p>
+                      %endif
+                      %if not data['canaries'] and not data['balears']:
+                        <p>
+                          Ésta es la información básica, resumida. Si tienes curiosidad y quieres saber más detalles del cambio, a continuación te los explicamos. Como siempre, puedes encontrar los precios en el<a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">apartado de tarifas</a> de la web.
+                        </p>
+                      %else: ## Es Canaries o Balears
+                        <p>
+                          Aquesta és la informació bàsica, resumida. Si tens curiositat i vols saber més detalls del canvi, a continuació te'ls expliquem.
+                        </p>
+                      % endif
+                      <h2>Explicación detallada de los cambios</h2>
+                      <h3 style="margin-top: 20px;">Canvis en la fórmula del càlcul del preu de l'energia</h3>
+                      <p>
+                        Com deus saber, la tarifa indexada obté el preu de l'energia a partir d'una fórmula, que inclou el cost de l'energia al mercat majorista, i inclou també altres conceptes (peatges, càrrecs…) que s'han de pagar per poder consumir energia.
+                      </p>
+                      <p>
+                        Un dels components de la fórmula és la "F", la franja de la cooperativa. Fins ara, dins d'aquest concepte hi incloíem el marge per a la viabilitat de la cooperativa, més els costos dels Certificats de Garantia d'Origen 100 % renovable (GdO) i els costos de les desviacions. A partir de l'1 d'agost, la "F" contindrà únicament el marge per a la viabilitat de la cooperativa. Els Certificats de Garantia d'Origen i els costos de les desviacions seguiran formant part de la fórmula, però en uns conceptes separats de la franja.
+                      </p>
+                      <p>
+                        La nova fórmula, doncs, serà la següent:
+                      </p>
+                      <p>
+                        <strong style="font-size: 14px; text-align: center">
+                          PH = 1,015 × [(PHM + Pc + Sc + <span style="color:#c68c43">Dsv</span> + <span style="color:#c68c43">GdO</span> + P<sub style="font-size: 9px;">OsOm</sub>) (1 + Perd) + FE + F] + PTD + CA
+                        </strong>
+                      </p>
+                      <p>
+                        (Al <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#formula-indexada">nostre web</a> pots veure a què correspon cada terme.)
+                      </p>
+                      <p>
+                        L'import dels certificats de garantia (a la fórmula: <span style="color:#c68c43;font-weight:bold;">GdO</span>) i dels costos de les desviacions (<span style="color:#c68c43;font-weight:bold;">Dsv</span>) s'anirà calculant en funció del que costin aquests conceptes, i es publicarà a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
+                      </p>
+                      <p>
+                        L'import de <strong> la franja (F) </strong> que ara serà únicament el marge, <strong> serà de ${data['dades_index']['f_nova']}</strong>.
+                      </p>
+                      <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
+                      <br/><br/>
+                      <p>
+                        Els preus de la potència, en aquest cas, no han canviat. Els pots trobar a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
+                      </p>
+                      <h3>Estimació orientativa</h3>
+                      <p>
+                        Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del cost de l'electricitat amb aquest augment del marge, i l'hem comparat amb el cost amb la tarifa actual. L'estimació l'hem fet en base a un usuari/a mitjà, amb un contracte estàndard, d'un consum tipus, de ${data['dades_index']['conany']} kWh anuals, i sense tenir autoproducció ni Generation kWh, ni lloguer de comptador.
+                      </p>
+                      <p>
+                        En els dos casos l'estimació inclou l'IVA del ${data['dades_index']['iva']}% i l'impost elèctric del ${data['dades_index']['ie']}%.
+                      </p>
+                      <p>
+                        Així doncs, et mostrem a continuació l'estimació aproximada del cost anual si apliquéssim els preus actuals, i el cost anual si apliquéssim els nous preus.
+                      </p>
+                      <h3>
+                        Cost anual estimat (euros/any)
+                      </h3>
+                      <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                          <td colspan="3">
+                            <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <p class="f-fallback"  style="margin: 10px 0"></p>
+                                </td>
+                                <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <p class="f-fallback"  style="margin: 10px 0"><strong>Cost estimat amb els nous preus</strong></p>
+                                </td>
+                                <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <p class="f-fallback" style="margin: 10px 0"><strong>Cost estimat amb els preus actuals</strong></p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback"  style="margin: 10px 0">Abans d'impostos</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['dades_index']['import_total_anual_nova']}</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['dades_index']['import_total_anual_antiga']}</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="margin: 10px 0">Després d'impostos</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['dades_index']['import_total_anual_nova_amb_impost']}</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['dades_index']['import_total_anual_antiga_amb_impost']}</p>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <br/>
+                      <p>
+                        Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
+                      </p>
+                      %if not data['canaries'] and not data['balears']:
+                        <p>
+                          Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">Centre d'Ajuda</a>. També hem publicat una <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">notícia al blog</a> que explica aquest canvi.
+                        </p>
+                      %else: ## Es Canaries o Balears
+                        %if data['autoconsum']['compensacio']:
+                          <h1>Canvi del càlcul de compensació dels excedents</h1>
+                          <p>
+                            Per altra banda, aplicarem també un canvi en el preu de compensació dels excedents. En les tarifes indexades compensem els excedents al mateix preu a què ens els paga Red Eléctrica a Som Energia. No hi afegim marge ni comissions. Per seguir fent-ho així, com que Red Eléctrica paga els excedents a preu de mercat insular i li resta el preu d'un terme anomenat SphAuto, també hem de restar aquest terme a la fórmula de compensació d'excedents de Som Energia. Això suposarà una <strong>petita disminució del preu de compensació.</strong>
+                          </p>
+                          <p>
+                            Recorda que la manera de treure més profit de les instal·lacions d'autoproducció és utilitzant l'energia al mateix moment en què es genera.
+                          </p>
+                        %endif
+                      %endif
+                      <h2>Informació legal</h2>
+                      <p>
+                        La <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/#preu-i-actualitzacio">clàusula contractual de les Condicions Generals</a> que ens autoritza a fer aquest canvi de preus és la clàusula 5.3 (ii) per a les modificacions de la part del preu no regulada.
+                      </p>
+                      <p>
+                        % if data['modcon'] != "atr" and data['modcon'] != "index":
+                          T'adjuntem en aquest correu el teu contracte actualitzat amb els canvis aplicats. Si hi estàs d'acord, <strong>no cal que ens retornis el document signat,</strong> ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d'informar-te que si, per alguna raó, aquest canvi et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/">tarifa per períodes</a> (<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
+                        %else:
+                          T'adjuntem en aquest correu el teu contracte actualitzat amb els canvis aplicats. Si hi estàs d'acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d'informar-te que si, per alguna raó, aquest canvi et fes replantejar seguir amb aquesta tarifa, podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
+                        %endif
+                      </p>
+                      <p>
+                        Una salutació cordial,
+                      </p>
+                      <p>
+                      Equip de Som Energia <br/>
+                      <a href="https://www.somenergia.coop/ca/">www.somenergia.coop</a>
+                      </p>
+
+
+
+
+
+
+
+
+
+
+
+
                     %endif
                   </div>
                 </td>
