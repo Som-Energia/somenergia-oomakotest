@@ -65,7 +65,7 @@
     h2 {
       margin-top: 40px;
       color: #4d4d4d;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: bold;
       text-align: left;
     }
@@ -73,7 +73,7 @@
     h3 {
       margin-top: 40px;
       color: #4d4d4d;
-      font-size: 14px;
+      font-size: 18px;
       font-weight: bold;
       text-align: left;
     }
