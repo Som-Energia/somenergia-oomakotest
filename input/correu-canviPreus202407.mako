@@ -121,7 +121,7 @@ ${plantilla_header}
                           <p>
                             Recentment hem posat en funcionament un apartat web on es pot veure la previsió de preus d'energia de la indexada per a les pròximes 24 hores. Hi pots veure, doncs, la tendència de preus per al dia següent, i això et pot ser útil per saber <strong>a quines hores l'energia serà més barata </strong> (és a dir, quan convé més, per exemple, posar la rentadora).
                           </p>
-                          <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
+                          <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24h-marge-CA.png" alt="GenerationDemo" width="550">
                           <br/><br/><br/>
                           <p>
                             Si bé els preus de l'apartat web no seran els definitius (caldrà afegir-hi un terme que es publicarà amb posterioritat), sí que donen una idea fiable de les hores més econòmiques i les més cares.
