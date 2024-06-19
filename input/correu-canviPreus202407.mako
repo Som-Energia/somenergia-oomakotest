@@ -223,7 +223,7 @@ ${plantilla_header}
                         Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del cost de l'electricitat amb aquest augment del marge, i l'hem comparat amb el cost amb la tarifa actual. L'estimació l'hem fet en base a un usuari/a mitjà, amb un contracte estàndard, d'un consum tipus, de ${data['dades_index']['conany']} kWh anuals, i sense tenir autoproducció ni Generation kWh, ni lloguer de comptador.
                       </p>
                       <p>
-                        En els dos casos l'estimació inclou l'IVA del ${data['dades_index']['iva']}% i l'impost elèctric del ${data['dades_index']['ie']}%.
+                        En els dos casos l'estimació inclou l'${data['impostos_str']} i l'impost elèctric del ${data['dades_index']['ie']}%.
                       </p>
                       <p>
                         Així doncs, et mostrem a continuació l'estimació aproximada del cost anual si apliquéssim els preus actuals, i el cost anual si apliquéssim els nous preus.
@@ -490,7 +490,7 @@ ${plantilla_header}
                         Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> del coste de la electricidad con este aumento del margen, y lo hemos comparado con el coste con la actual tarifa. La estimación la hemos hecho en base a un usuario/a medio, con un contrato estándar, de un consumo tipo, de ${data['dades_index']['conany']} kWh anuales, y sin tener autoproducción ni Generation kWh, ni alquiler de contador.
                       </p>
                       <p>
-                        En ambos casos la estimación incluye ${data['dades_index']['iva']}% y el impuesto eléctrico del ${data['dades_index']['ie']}%.
+                        En ambos casos la estimación incluye el ${data['impostos_str']} y el impuesto eléctrico del ${data['dades_index']['ie']}%.
                       </p>
                       <p>
                         Así pues, te mostramos a continuación la estimación aproximada del coste anual si aplicáramos los precios actuales, y el coste anual si aplicáramos los nuevos precios.
