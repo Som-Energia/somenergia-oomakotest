@@ -370,7 +370,7 @@ ${plantilla_header}
                             <p>
                               Te escribimos para contarte dos cambios respecto a la tarifa indexada que tienes contratada actualmente, y que aplicaremos a partir del 1 de agosto. Por un lado, aumentaremos ligeramente el margen de viabilidad de la cooperativa, que forma parte del precio de la tarifa indexada, y por otra parte modificaremos la fórmula que establece la compensación de excedentes de autoproducción.
                             </p>
-                            <h1>Cambio del marge en la tarifa</h1>
+                            <h1>Cambio del margen en la tarifa</h1>
                             <p>
                               Como te decíamos, a partir del 1 de agosto aplicaremos un <strong>pequeño aumento al margen de viabilidad</strong> de la tarifa indexada, para seguir garantizando la viabilidad de la cooperativa. A continuación tienes una versión resumida, por si no quieres dedicarle mucho tiempo, y más abajo encontrarás una versión más detallada, por si te interesa saber los detalles.
                             </p>
@@ -407,7 +407,7 @@ ${plantilla_header}
                           </tr>
                         </table>
                         <h1>
-                          Cambio del marge en la tarifa
+                          Cambio del margen en la tarifa
                         </h1>
                         <p>
                           Por otra parte, te informamos que a partir del 1 de agosto aplicaremos un <strong>ligero aumento al margen de viabilidad</strong> de la tarifa indexada, para seguir garantizando la viabilidad de la cooperativa. A continuación tienes una versión resumida, por si no quieres dedicarle mucho tiempo, y más abajo encontrarás una versión más detallada, por si te interesa saber los detalles.
@@ -438,7 +438,7 @@ ${plantilla_header}
                       %endif
                       %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
                         <p>
-                          En el caso de la tarifa 2.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio, de 2.500 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 195 euros anuales (poco más de un euro y medio al mes)</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                          En el caso de la tarifa 2.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio, de 2.500 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 19 euros anuales (poco más de un euro y medio al mes)</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
                         </p>
                       %endif
                       %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
