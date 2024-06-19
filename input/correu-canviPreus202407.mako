@@ -388,7 +388,7 @@ ${plantilla_header}
                         <p>
                           Recientemente hemos puesto en funcionamiento un apartado web en el que se puede ver la previsión de precios de energía de la indexada para las próximas 24 horas. Puedes ver, pues, la tendencia de precios para el día siguiente, y esto te puede ser útil para saber <strong>a qué horas la energía será más barata </strong> (es decir, cuándo conviene más, por ejemplo, poner la lavadora).
                         </p>
-                        <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
+                        <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24h-marge-ES.png" alt="GenerationDemo" width="550">
                         <br/><br/><br/>
                         <p>
                           Si bien los precios del apartado web no serán los definitivos (habrá que añadir un término que se publicará con posterioridad), sí dan una idea fiable de las horas más económicas y las más caras.
@@ -448,7 +448,7 @@ ${plantilla_header}
                       %endif
                       %if not data['canaries'] and not data['balears']:
                         <p>
-                          Ésta es la información básica, resumida. Si tienes curiosidad y quieres saber más detalles del cambio, a continuación te los explicamos. Como siempre, puedes encontrar los precios en el<a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">apartado de tarifas</a> de la web.
+                          Ésta es la información básica, resumida. Si tienes curiosidad y quieres saber más detalles del cambio, a continuación te los explicamos. Como siempre, puedes encontrar los precios en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">apartado de tarifas</a> de la web.
                         </p>
                       %else: ## Es Canaries o Balears
                         <p>
@@ -475,7 +475,7 @@ ${plantilla_header}
                         (En <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#formula-indexada">nuestra web</a> puedes ver a qué corresponde cada término.)
                       </p>
                       <p>
-                        El importe de los certificados de garantía (en la fórmula: <span style="color:#c68c43;font-weight:bold;">GdO</span>)  de los costes de las desviaciones (<span style="color:#c68c43;font-weight:bold;">Dsv</span>) se irá calculando en función de lo que cuesten estos conceptos, y se publicará en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">apartado web de tarifas</a>.
+                        El importe de los certificados de garantía (en la fórmula: <span style="color:#c68c43;font-weight:bold;">GdO</span>) y de los costes de las desviaciones (<span style="color:#c68c43;font-weight:bold;">Dsv</span>) se irá calculando en función de lo que cuesten estos conceptos, y se publicará en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">apartado web de tarifas</a>.
                       </p>
                       <p>
                         El importe de <strong>la franja (F)</strong> que ahora será únicamente el margen, <strong>será de ${data['dades_index']['f_nova']}</strong>.
@@ -554,7 +554,7 @@ ${plantilla_header}
                             Por otra parte, aplicaremos también un cambio en el precio de compensación de los excedentes de Baleares y Canarias. En las tarifas indexadas compensamos los excedentes al mismo precio al que nos los paga Red Eléctrica a Som Energia. No añadimos margen ni comisiones. Para seguir haciéndolo así, como Red Eléctrica paga los excedentes a precio de mercado insular y le resta el precio de un término llamado Sph Auto, también debemos restar este término a la fórmula de compensación de excedentes de Som Energia. Esto supondrá una <strong>pequeña disminución del precio de compensación</strong>.
                           </p>
                           <p>
-                            Recuerde que la forma de sacar más provecho de las instalaciones de autoproducción es utilizando la energía en el mismo momento en que se genera.
+                            Recuerda que la forma de sacar más provecho de las instalaciones de autoproducción es utilizando la energía en el mismo momento en que se genera.
                           </p>
                         %endif
                       %endif
@@ -565,14 +565,14 @@ ${plantilla_header}
                         </p>
                       %else: ## Es Canaries o Balears
                         <p>
-                          Las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">cláusulas contractuales de las Condiciones Generales</a> que nos autorizan a hacer estos cambios de precios son la cláusula 5.3 (ii) para las modificaciones de la parte del precio no regulada, y la cláusula 8.5 por la modificación del precio de compensación de excedentes.
+                          Las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">cláusulas contractuales de las Condiciones Generales</a> que nos autorizan a hacer estos cambios de precios son la cláusula 5.3 (ii) para las modificaciones de la parte del precio no regulada, y la cláusula 8.5 para la modificación del precio de compensación de excedentes.
                         </p>
                       % endif
                       <p>
                         % if data['modcon'] != "atr" and data['modcon'] != "index":
-                          Te adjuntamos en este correo tu contrato actualizado con los cambios aplicados. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio te hiciese replantear seguir con esta tarifa, podrías cambiarte a la <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/">tarifa por períodos</a> (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">a través de tu Oficina Virtua</a>), o podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
+                          Te adjuntamos en este correo tu contrato actualizado con los cambios aplicados. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio te hiciese replantear seguir con esta tarifa, podrías cambiarte a la <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/">tarifa por períodos</a> (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">a través de tu Oficina Virtual</a>), o podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
                         %else:
-                          T'adjuntem en aquest correu el teu contracte actualitzat amb els canvis aplicats. Si hi estàs d'acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d'informar-te que si, per alguna raó, aquest canvi et fes replantejar seguir amb aquesta tarifa, podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
+                          Te adjuntamos en este correo tu contrato actualizado con los cambios aplicados. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio te hiciese replantear seguir con esta tarifa, podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
                         %endif
                       </p>
                       <p>
