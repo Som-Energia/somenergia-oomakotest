@@ -115,30 +115,32 @@ ${plantilla_header}
                           %endif
                         % endif
                         %if not data['canaries'] and not data['balears']:
-                          <h1>
-                            Tendència de preus per a les properes hores
-                          </h1>
-                          <p>
-                            Recentment hem posat en funcionament un apartat web on es pot veure la previsió de preus d'energia de la indexada per a les pròximes 24 hores. Hi pots veure, doncs, la tendència de preus per al dia següent, i això et pot ser útil per saber <strong>a quines hores l'energia serà més barata </strong> (és a dir, quan convé més, per exemple, posar la rentadora).
-                          </p>
-                          <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24h-marge-CA.png" alt="GenerationDemo" width="550">
-                          <br/><br/><br/>
-                          <p>
-                            Si bé els preus de l'apartat web no seran els definitius (caldrà afegir-hi un terme que es publicarà amb posterioritat), sí que donen una idea fiable de les hores més econòmiques i les més cares.
-                          </p>
-                          <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr>
-                              <td align="center">
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                                  <tr>
-                                    <td align="center">
-                                      <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/" class="f-fallback button" target="_blank">Mira la pàgina</a>
-                                    </td>
-                                  </tr>
-                                </table>
-                              </td>
-                            </tr>
-                          </table>
+                          %if data['modcon'] != "atr":
+                            <h1>
+                              Tendència de preus per a les properes hores
+                            </h1>
+                            <p>
+                              Recentment hem posat en funcionament un apartat web on es pot veure la previsió de preus d'energia de la indexada per a les pròximes 24 hores. Hi pots veure, doncs, la tendència de preus per al dia següent, i això et pot ser útil per saber <strong>a quines hores l'energia serà més barata </strong> (és a dir, quan convé més, per exemple, posar la rentadora).
+                            </p>
+                            <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/"><img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24h-marge-CA.png" alt="GenerationDemo" width="550"></a>
+                            <br/><br/><br/>
+                            <p>
+                              Si bé els preus de l'apartat web no seran els definitius (caldrà afegir-hi un terme que es publicarà amb posterioritat), sí que donen una idea fiable de les hores més econòmiques i les més cares.
+                            </p>
+                            <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                              <tr>
+                                <td align="center">
+                                  <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                    <tr>
+                                      <td align="center">
+                                        <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/" class="f-fallback button" target="_blank">Mira la pàgina</a>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          % endif
                           <h1>
                             Canvi del marge en la tarifa
                           </h1>
@@ -156,17 +158,17 @@ ${plantilla_header}
                       %endif
                       %if data['Indexada30TDPeninsula']:
                         <p>
-                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 74 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                         </p>
                       %endif
                       %if data['Indexada61TDPeninsula']:
                         <p>
-                          En el cas de la tarifa 6.1TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 15.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 79 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          En el cas de la tarifa 6.1TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 15.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 100 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                         </p>
                       %endif
                       %if data['Indexada30TDVEPeninsula']:
                         <p>
-                          En el cas de la tarifa 3.0TDVE indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          En el cas de la tarifa 3.0TDVE indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 74 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                         </p>
                       %endif
                       %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
@@ -176,7 +178,7 @@ ${plantilla_header}
                       %endif
                       %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
                         <p>
-                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 58 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 74 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
                         </p>
                       %endif
                       %if not data['canaries'] and not data['balears']:
@@ -278,7 +280,7 @@ ${plantilla_header}
                       </p>
                       %if not data['canaries'] and not data['balears']:
                         <p>
-                          Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">Centre d'Ajuda</a>. També hem publicat una <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">notícia al blog</a> que explica aquest canvi.
+                          Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">Centre d'Ajuda</a>. També hem publicat una <a href="https://blog.somenergia.coop/?p=48067">notícia al blog</a> que explica aquest canvi.
                         </p>
                       %else: ## Es Canaries o Balears
                         %if data['autoconsum']['compensacio']:
@@ -381,31 +383,33 @@ ${plantilla_header}
                           %endif
                         %endif
                       % endif
-                      %if not data['canaries'] and not data['balears']:
-                        <h1>
-                          Tendencia de precios para las próximas horas
-                        </h1>
-                        <p>
-                          Recientemente hemos puesto en funcionamiento un apartado web en el que se puede ver la previsión de precios de energía de la indexada para las próximas 24 horas. Puedes ver, pues, la tendencia de precios para el día siguiente, y esto te puede ser útil para saber <strong>a qué horas la energía será más barata </strong> (es decir, cuándo conviene más, por ejemplo, poner la lavadora).
-                        </p>
-                        <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24h-marge-ES.png" alt="GenerationDemo" width="550">
-                        <br/><br/><br/>
-                        <p>
-                          Si bien los precios del apartado web no serán los definitivos (habrá que añadir un término que se publicará con posterioridad), sí dan una idea fiable de las horas más económicas y las más caras.
-                        </p>
-                        <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                          <tr>
-                            <td align="center">
-                              <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                                <tr>
-                                  <td align="center">
-                                    <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/" class="f-fallback button" target="_blank">Mira la página</a>
-                                  </td>
-                                </tr>
-                              </table>
-                            </td>
-                          </tr>
-                        </table>
+                      %if not data['canaries'] and not data['balears'] and not data['modcon'] == "atr":
+                        %if data['modcon'] != "atr":
+                          <h1>
+                            Tendencia de precios para las próximas horas
+                          </h1>
+                          <p>
+                            Recientemente hemos puesto en funcionamiento un apartado web en el que se puede ver la previsión de precios de energía de la indexada para las próximas 24 horas. Puedes ver, pues, la tendencia de precios para el día siguiente, y esto te puede ser útil para saber <strong>a qué horas la energía será más barata </strong> (es decir, cuándo conviene más, por ejemplo, poner la lavadora).
+                          </p>
+                          <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/"><img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24h-marge-ES.png" alt="GenerationDemo" width="550"></a>
+                          <br/><br/><br/>
+                          <p>
+                            Si bien los precios del apartado web no serán los definitivos (habrá que añadir un término que se publicará con posterioridad), sí dan una idea fiable de las horas más económicas y las más caras.
+                          </p>
+                          <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                              <td align="center">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                  <tr>
+                                    <td align="center">
+                                      <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/" class="f-fallback button" target="_blank">Mira la página</a>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        %endif
                         <h1>
                           Cambio del margen en la tarifa
                         </h1>
@@ -423,17 +427,17 @@ ${plantilla_header}
                       %endif
                       %if data['Indexada30TDPeninsula']:
                         <p>
-                          En el caso de la tarifa 3.0TD indexada (la tuya), sin tener en cuenta el precio de la energía, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 58 euros al año.</strong> Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                          En el caso de la tarifa 3.0TD indexada (la tuya), sin tener en cuenta el precio de la energía, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 74 euros al año.</strong> Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
                         </p>
                       %endif
                       %if data['Indexada61TDPeninsula']:
                         <p>
-                          En el caso de la tarifa 6.1TD indexada (la tuya), sin tener en cuenta el precio de la energía, a un contrato con un consumo medio de 15.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 79 euros al año.</strong> Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                          En el caso de la tarifa 6.1TD indexada (la tuya), sin tener en cuenta el precio de la energía, a un contrato con un consumo medio de 15.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 100 euros al año.</strong> Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
                         </p>
                       %endif
                       %if data['Indexada30TDVEPeninsula']:
                         <p>
-                          En el caso de la tarifa 3.0TDVE indexada (la tuya), sin tener en cuenta el precio de la energía, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 58 euros al año.</strong> Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                          En el caso de la tarifa 3.0TDVE indexada (la tuya), sin tener en cuenta el precio de la energía, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 74 euros al año.</strong> Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
                         </p>
                       %endif
                       %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
@@ -443,7 +447,7 @@ ${plantilla_header}
                       %endif
                       %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
                         <p>
-                          En el caso de la tarifa 3.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 58 euros anuales</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                          En el caso de la tarifa 3.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 74 euros anuales</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
                         </p>
                       %endif
                       %if not data['canaries'] and not data['balears']:
