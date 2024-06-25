@@ -55,8 +55,6 @@ ${plantilla_header}
                     </p>
 
                     % if data['lang'] == "ca_ES":
-
-
                       <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
                           <td colspan="2">
@@ -159,6 +157,114 @@ ${plantilla_header}
                       <p>Quedem a la vostra disposició per a qualsevol dubte o consulta.</p>
                       <p>
                         Una salutació cordial,
+                      </p>
+                      <p>
+                      Equip de Som Energia <br/>
+                      <a href="https://www.somenergia.coop/ca/">www.somenergia.coop</a>
+                      </p>
+                    %else:
+                      <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                          <td colspan="2">
+                              <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                              <tr>
+                                  <td width="50%" class="purchase_footer" valign="middle">
+                                  <p class="f-fallback purchase_total purchase_total--label">Contracte</p>
+                                  </td>
+                                  <td width="50%" class="purchase_footer" valign="middle">
+                                  <p class="f-fallback">${data['contract']['numero']}</p>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td width="50%" class="purchase_footer" valign="middle">
+                                  <p class="f-fallback purchase_total purchase_total--label">Adreça del punt de subministrament</p>
+                                  </td>
+                                  <td width="50%" class="purchase_footer" valign="middle">
+                                  <p class="f-fallback">${data['contract']['direccio_cups']}</p>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td width="50%" class="purchase_footer" valign="middle">
+                                  <p class="f-fallback purchase_total purchase_total--label">Codi CUPS</p>
+                                  </td>
+                                  <td width="50%" class="purchase_footer" valign="middle">
+                                  <p class="f-fallback">${data['contract']['cups']}</p>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td width="50%" class="purchase_footer" valign="middle">
+                                  <p class="f-fallback purchase_total purchase_total--label">Titular</p>
+                                  </td>
+                                  <td width="50%" class="purchase_footer" valign="middle">
+                                  <p class="f-fallback">${data['contract']['titular']}</p>
+                                  </td>
+                              </tr>
+                              </table>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <p>
+                        Nos ponemos en contacto para informaros que <strong>a partir del 1 de agosto aplicaremos unos pequeños cambios en el cálculo del precio de la energía</strong> con la tarifa indexada que tenéis contratada actualmente. También aprovechamos este momento para realizar la <strong>actualización anual de la franja de la cooperativa,</strong> personalizada según vuestro uso de energía de los últimos doce meses.
+                      </p>
+                      <h1>
+                        Cambios en el cálculo del precio de la energía
+                      </h1>
+                      <p>
+                        A partir del 1 de agosto aplicaremos los siguientes cambios en la fórmula para calcular el precio de la energía:
+                      </p>
+                      <ul>
+                        <li>
+                          Sacamos de la franja de la cooperativa (F) el coste de las garantías de origen 100% renovable (GdO) y de los desvíos (Dsv) y los ponemos con el resto de costes variables, de manera que la franja será únicamente el margen para la viabilidad de la cooperativa.
+                        </li>
+                        <li>
+                          Eliminamos del cálculo el precio del mecanismo de ajuste del gas (PHMA), que ya no es vigente y el coste del servicio de interrumpibilidad (I), porque es cero.
+                        </li>
+                      </ul>
+                      <p>
+                        La nueva fórmula, pues, será la siguiente:
+                      </p>
+                      <p>
+                        <strong style="font-size: 14px; text-align: center">
+                          PH = 1,015 × [(PHM + Pc + Sc + <span style="color:#7dbc09">Dsv</span> + <span style="color:#7dbc09">GdO</span> + POsOm) (1 + Perd) + FE + F] + PTD + CA
+                        </strong>
+                      </p>
+                      <p>
+                        (En <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#formula-indexada">nuestra web</a> podéis ver a qué corresponde cada término).
+                      </p>
+                      %if data['canaries'] or data['balears']:
+                        <p>
+                          También <strong>modificamos el precio de compensación de los excedentes</strong> para que sea igual al precio que los retribuye Red Eléctrica. Este cambio supondrá una <strong>  ligera disminución del precio de compensación,</strong> ya que al precio actual del mercado insular le pasaremos a restar un término llamado Sph Auto.
+                        </p>
+                      %endif
+                      <h1>
+                        Actualización anual de la franja de la cooperativa
+                      </h1>
+                      <p>
+                        En la <strong>tarifa indexada empresa</strong> personalizamos el precio de la franja de la cooperativa (la variable F de la fórmula) según vuestro uso de energía anual. Por este motivo, una vez al año, revisamos vuestro uso de energía de los últimos doce meses y ajustamos el precio de la franja (F): a mayor uso, el valor de esta variable se reduce, y a la inversa, si el uso ha disminuido, su valor se incrementa.
+                      </p>
+                      <p>
+                        Para vuestro contrato, actualmente la franja F (que también incluye los costes de las garantías de origen 100% renovable y de los desvíos) es de ${data['dades_index']['f_antiga_eie']} €/kWh y a partir del 1 de agosto (que tal y como os hemos explicado, corresponderá únicamente al margen per la cooperativa) será de: <strong>${data['dades_index']['f_nova_eie']} €/kWh.</strong>
+                      </p>
+                      <p>
+                        Este precio está calculado teniendo en cuento vuestro uso de energía de los últimos doce meses: <strong>${data['dades_index']['conany']} kWh.</strong>
+                      </p>
+                      <h2>
+                        Estimación orientativa
+                      </h2>
+                      <p>
+                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía con la nueva franja F y la nueva fórmula para calcular el precio de la energía.</strong> El coste de la energía en los últimos doce meses ha sido de ${data['dades_index']['import_total_anual_nova_amb_impost']} €, mientras que con la nueva franja F y la nueva fórmula el coste hubiese sido de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €.
+                      </p>
+                      <h2>Información legal</h2>
+                      <p>
+                        La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/#precio-y-actualizacion">cláusula 5.3 (ii) de las Condiciones Generales</a> nos autoriza a realizar este cambio de la parte del precio no regulada.
+                      </p>
+                      <p>
+                        En este correo adjuntamos el contrato actualizado con los cambios aplicados. Si estáis de acuerdo, <strong>no es necesario que retornéis el documento firmado,</strong> puesto que la actualización del precio se aplica automáticamente. Igualmente, debemos informaros que si, por alguna razón, este cambio os hiciera replantear la continuidad con la cooperativa, podéis dar de baja vuestro contrato mediante un cambio de comercializadora, ya que no aplicamos penalizaciones ni cláusulas de permanencia. Asimismo, si esta es vuestra decisión, os agradeceremos que nos lo comuniquéis con un preaviso de 30 días. En este caso, facturaríamos el consumo realizado hasta la fecha de baja del contrato, con los precios vigentes en cada momento.
+                      </p>
+                      <p>Quedamos a vuestra disposición para cualquier duda o consulta.</p>
+                      <p>
+                        Un cordial saludo,
                       </p>
                       <p>
                       Equip de Som Energia <br/>
