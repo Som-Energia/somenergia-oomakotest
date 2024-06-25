@@ -319,78 +319,83 @@
 #    es: 7612922
 #    ca: 7612850
 #
-#facturaPrincipal:
-#  template: input/report_giscedata_facturacio_factura_comer.mako
-#  model: giscedata.facturacio.factura
-#  reportXmlId: 400
-#  data:
-#    maxDiff: 0
-#    useErpMako: True
-#  cases:
-#    test: 7152113
-#    o_sense_l1: 7205811
-#    o_sense_l2: 7060199
-#    20A_ca: 7230520
-#    20A_es: 7224867
-#    20DHA_ca: 7224846
-#    20DHA_es: 7224767
-#    20DHS_ca: 7162193
-#    20DHS_es: 7173396
-#    20A_e_g_es : 7126127
-#    20DHA_g_ca : 7174080
-#    20DHS_g_ca : 7154332
-#    20DHS_g_es : 7163693
-#    21A_ca: 7174268
-#    21A_es: 7173702
-#    21DHA_ca: 7174119
-#    21DHA_es: 7174028
-#    21DHS_ca: 7117144
-#    21DHS_es: 7130922
-#    30A_ca: 7211816
-#    30A_es: 7195651
-#    31A_ca: 7125818
-#    31A_es: 7118249
-#    20A_auto_ca: 8764312
-#    20A_auto_es: 8729453
-#    20DHA_auto_es: 8761828
-#    20DHA_auto_ca: 8765011
-#    20A_auto_directe_es: 8658592
-#    20DHA_auto_g_es: 8673624
-#    61A : 7099377
-#    m_nou_20A_nomax_ca: 6693310
-#    m_ant_20A_nomax_ca: 5842065
-#    m_ant_20A_nomax_e_nocon_est_ca: 6012212
-#    m_ant_20A_max_ca: 6704585
-#    m_nou_2DHA_nomax_es: 6686391
-#    m_ant_2DHA_nomax_es: 6646034
-#    m_ant_2DHA_simax_supl_cat: 7715339
-#    m_ant_21A_nomax_ca: 6656944
-#    m_ant_21A_simax_ca: 6690828
-#    m_ant_21DHA_nomax_ca: 6686682
-#    m_ant_21DHA_simax_ca: 6698195
-#    m_ant_2HS_nomax_g_d_ca: 4399776
-#    m_nou_30_nomax_ca: 6657832
-#    m_ant_30_nomax_ca: 6702199
-#    m_ant_30_simax_reactiva_cat: 6773256
-#    m_nou_31_e_es: 6648703
-#    m_61_consum0_ca: 6726457
-#    61_es: 9468478
-#    20DHS_auto_es: 9487852
-#    30_ende_mo_lec_auto_es: 9586982
-#    20DHA_ende_no_lec_auto_g_ca: 9607095
-#    20A_ende_no_lec_auto_g_ca: 9445326
-#    31_3periods: 9470629
-#    30A_RRI_ca: 9822429
-#    20DHA_auto_col_es: 11070661
-#    6X_reactiva: 11482615
-#    6X_exces_pot: 11482610
-#    20TD_auto_gkwh_es_072021: 12802743
-#    20TD_auto_gkwh_multilines_es_092021: 13320679
-#    20TD_normal_cat_082021: 12985843
-#    20TD_reactiva_i_disc_es_202021: 13482363
-#    30TD_auto_exces_pot_cat_102021: 13341139
-#    61TD_exces_es_102021: 13317447
-#
+facturaPrincipal:
+  template: input/report_giscedata_facturacio_factura_comer.mako
+  model: giscedata.facturacio.factura
+  reportXmlId: 400
+  data:
+    maxDiff: 0
+    useErpMako: True
+  cases:
+    test: 7152113
+    o_sense_l1: 7205811
+    o_sense_l2: 7060199
+    20A_ca: 7230520
+    20A_es: 7224867
+    20DHA_ca: 7224846
+    20DHA_es: 7224767
+    20DHS_ca: 7162193
+    20DHS_es: 7173396
+    20A_e_g_es : 7126127
+    20DHA_g_ca : 7174080
+    20DHS_g_ca : 7154332
+    20DHS_g_es : 7163693
+    21A_ca: 7174268
+    21A_es: 7173702
+    21DHA_ca: 7174119
+    21DHA_es: 7174028
+    21DHS_ca: 7117144
+    21DHS_es: 7130922
+    30A_ca: 7211816
+    30A_es: 7195651
+    31A_ca: 7125818
+    31A_es: 7118249
+    20A_auto_ca: 8764312
+    20A_auto_es: 8729453
+    20DHA_auto_es: 8761828
+    20DHA_auto_ca: 8765011
+    20A_auto_directe_es: 8658592
+    20DHA_auto_g_es: 8673624
+    61A : 7099377
+    m_nou_20A_nomax_ca: 6693310
+    m_ant_20A_nomax_ca: 5842065
+    m_ant_20A_nomax_e_nocon_est_ca: 6012212
+    m_ant_20A_max_ca: 6704585
+    m_nou_2DHA_nomax_es: 6686391
+    m_ant_2DHA_nomax_es: 6646034
+    m_ant_2DHA_simax_supl_cat: 7715339
+    m_ant_21A_nomax_ca: 6656944
+    m_ant_21A_simax_ca: 6690828
+    m_ant_21DHA_nomax_ca: 6686682
+    m_ant_21DHA_simax_ca: 6698195
+    m_ant_2HS_nomax_g_d_ca: 4399776
+    m_nou_30_nomax_ca: 6657832
+    m_ant_30_nomax_ca: 6702199
+    m_ant_30_simax_reactiva_cat: 6773256
+    m_nou_31_e_es: 6648703
+    m_61_consum0_ca: 6726457
+    61_es: 9468478
+    20DHS_auto_es: 9487852
+    30_ende_mo_lec_auto_es: 9586982
+    20DHA_ende_no_lec_auto_g_ca: 9607095
+    20A_ende_no_lec_auto_g_ca: 9445326
+    31_3periods: 9470629
+    30A_RRI_ca: 9822429
+    20DHA_auto_col_es: 11070661
+    6X_reactiva: 11482615
+    6X_exces_pot: 11482610
+    20TD_auto_gkwh_es_072021: 12802743
+    20TD_auto_gkwh_multilines_es_092021: 13320679
+    20TD_normal_cat_082021: 12985843
+    20TD_reactiva_i_disc_es_202021: 13482363
+    30TD_auto_exces_pot_cat_102021: 13341139
+    61TD_exces_es_102021: 13317447
+    index_auto_exdent_negatiu_2024: 21915309
+    index_auto_total_tallat_2024: 21960257
+    20TD_normal_2024: 22036151
+    20TD_auto_gasta_flux_0_2024: 21457337
+    20TD_auto_genera_flux_2024: 21981561
+
 ######################################################
 ## Gestió de contractes
 # reportContracte:
