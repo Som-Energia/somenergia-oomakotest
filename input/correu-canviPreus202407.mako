@@ -172,14 +172,28 @@ ${plantilla_header}
                         </p>
                       %endif
                       %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
-                        <p>
-                          En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 19 euros l'any (poc més d'un euro i mig al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                        </p>
+                        %if data['Indexada20TDBalears']:
+                          <p>
+                            En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 19 euros l'any (poc més d'un euro i mig al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          </p>
+                        %endif
+                        %if data['Indexada20TDCanaries']:
+                          <p>
+                            En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 15 euros l'any (poc més d'un euro al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          </p>
+                        %endif
                       %endif
                       %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
-                        <p>
-                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 74 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                        </p>
+                        %if data['Indexada30TDBalears']:
+                          <p>
+                            En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 74 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          </p>
+                        %endif
+                        %if data['Indexada30TDCanaries']:
+                          <p>
+                            En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 63 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          </p>
+                        %endif
                       %endif
                       %if not data['canaries'] and not data['balears']:
                         <p>
@@ -213,7 +227,7 @@ ${plantilla_header}
                         L'import dels certificats de garantia (a la fórmula: <span style="color:#c68c43;font-weight:bold;">GdO</span>) i dels costos de les desviacions (<span style="color:#c68c43;font-weight:bold;">Dsv</span>) s'anirà calculant en funció del que costin aquests conceptes, i es publicarà a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
                       </p>
                       <p>
-                        L'import de <strong> la franja (F) </strong> que ara serà únicament el marge, <strong> serà de ${data['dades_index']['f_nova']}</strong> €/kWh.
+                        L'import de <strong> la franja (F) </strong> que ara serà únicament el marge, <strong> serà de ${data['dades_index']['f_nova']} €/kWh</strong>.
                       </p>
                       <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
                       <br/><br/>
@@ -441,14 +455,28 @@ ${plantilla_header}
                         </p>
                       %endif
                       %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
-                        <p>
-                          En el caso de la tarifa 2.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio, de 2.500 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 19 euros anuales (poco más de un euro y medio al mes)</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
-                        </p>
+                        %if data['Indexada20TDBalears']:
+                          <p>
+                            En el caso de la tarifa 2.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio, de 2.500 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 19 euros anuales (poco más de un euro y medio al mes)</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                          </p>
+                        %endif
+                        %if data['Indexada20TDCanaries']:
+                          <p>
+                            En el caso de la tarifa 2.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio, de 2.500 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 15 euros anuales (poco más de un euro)</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                          </p>
+                        %endif
                       %endif
                       %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
-                        <p>
-                          En el caso de la tarifa 3.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 74 euros anuales</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
-                        </p>
+                        %if data['Indexada30TDBalears']:
+                          <p>
+                            En el caso de la tarifa 3.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 74 euros anuales</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                          </p>
+                        %endif
+                        %if data['Indexada30TDCanaries']:
+                          <p>
+                            En el caso de la tarifa 3.0TD indexada (la tuya), sin tener en cuenta el precio de la energía ni la autoproducción, a un contrato con un consumo medio de 10.000 kWh anuales, este cambio le supondría un <strong>aumento aproximado de unos 63 euros anuales</strong>. Evidentemente, esta cifra cambiaría si variara el consumo, el precio de la energía u otros aspectos del mercado eléctrico.
+                          </p>
+                        %endif
                       %endif
                       %if not data['canaries'] and not data['balears']:
                         <p>
@@ -482,7 +510,7 @@ ${plantilla_header}
                         El importe de los certificados de garantía (en la fórmula: <span style="color:#c68c43;font-weight:bold;">GdO</span>) y de los costes de las desviaciones (<span style="color:#c68c43;font-weight:bold;">Dsv</span>) se irá calculando en función de lo que cuesten estos conceptos, y se publicará en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">apartado web de tarifas</a>.
                       </p>
                       <p>
-                        El importe de <strong>la franja (F)</strong> que ahora será únicamente el margen, <strong>será de ${data['dades_index']['f_nova']}</strong> €/kWh.
+                        El importe de <strong>la franja (F)</strong> que ahora será únicamente el margen, <strong>será de ${data['dades_index']['f_nova']} €/kWh</strong>.
                       </p>
                       <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
                       <br/><br/>
