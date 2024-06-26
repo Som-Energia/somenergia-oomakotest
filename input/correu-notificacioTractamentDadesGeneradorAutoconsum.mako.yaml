@@ -1,7 +1,8 @@
+lang: ${object.cups_polissa_id.titular.lang}
 cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.cups_polissa_id.autoconsum_id.generador_id[0].partner_id.www_email}
 subject_translations:
   ca_ES: Dades instal·lació autoconsum CUPS ${object.cups_id.name}
   es_ES: Datos instalación autoconsumo CUPS ${object.cups_id.name}
 subject: Datos instalación autoconsumo / Dades instal·lació autoconsum CUPS ${object.cups_id.name}
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net
