@@ -72,6 +72,7 @@ def loadErp(dbcfg):
     tools.config['demo'] = []
     tools.config['update'] = []
     tools.config['run_scripts'] = []
+    tools.config['redis_url'] = "redis://localhost"
 
     import pooler
     import osv
