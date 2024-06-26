@@ -229,7 +229,7 @@ ${plantilla_header}
                       <p>
                         L'import de <strong> la franja (F) </strong> que ara serà únicament el marge, <strong> serà de ${data['dades_index']['f_nova']} €/kWh</strong>.
                       </p>
-                      <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
+                      <img src="https://www.somenergia.coop/indexada/grafic-canvi-formula-indexada-CA.jpg" alt="GenerationDemo" width="550">
                       <br/><br/>
                       <p>
                         Els preus de la potència, en aquest cas, no han canviat. Els pots trobar a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
@@ -512,7 +512,7 @@ ${plantilla_header}
                       <p>
                         El importe de <strong>la franja (F)</strong> que ahora será únicamente el margen, <strong>será de ${data['dades_index']['f_nova']} €/kWh</strong>.
                       </p>
-                      <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
+                      <img src="https://www.somenergia.coop/indexada/grafic-canvi-formula-indexada-ES.jpg" alt="GenerationDemo" width="550">
                       <br/><br/>
                       <p>
                         Los precios de la potencia, en este caso, no han cambiado. Los puedes encontrar en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">apartado web de tarifas</a>.
