@@ -213,7 +213,7 @@ ${plantilla_header}
                         L'import dels certificats de garantia (a la fórmula: <span style="color:#c68c43;font-weight:bold;">GdO</span>) i dels costos de les desviacions (<span style="color:#c68c43;font-weight:bold;">Dsv</span>) s'anirà calculant en funció del que costin aquests conceptes, i es publicarà a <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">l'apartat web de tarifes.</a>
                       </p>
                       <p>
-                        L'import de <strong> la franja (F) </strong> que ara serà únicament el marge, <strong> serà de ${data['dades_index']['f_nova']}</strong>.
+                        L'import de <strong> la franja (F) </strong> que ara serà únicament el marge, <strong> serà de ${data['dades_index']['f_nova']}</strong> €/kWh.
                       </p>
                       <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
                       <br/><br/>
@@ -482,7 +482,7 @@ ${plantilla_header}
                         El importe de los certificados de garantía (en la fórmula: <span style="color:#c68c43;font-weight:bold;">GdO</span>) y de los costes de las desviaciones (<span style="color:#c68c43;font-weight:bold;">Dsv</span>) se irá calculando en función de lo que cuesten estos conceptos, y se publicará en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">apartado web de tarifas</a>.
                       </p>
                       <p>
-                        El importe de <strong>la franja (F)</strong> que ahora será únicamente el margen, <strong>será de ${data['dades_index']['f_nova']}</strong>.
+                        El importe de <strong>la franja (F)</strong> que ahora será únicamente el margen, <strong>será de ${data['dades_index']['f_nova']}</strong> €/kWh.
                       </p>
                       <img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24-CA.png" alt="GenerationDemo" width="550">
                       <br/><br/>
