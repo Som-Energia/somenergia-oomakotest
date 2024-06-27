@@ -114,7 +114,7 @@ ${plantilla_header}
                         </strong>
                       </p>
                       <p>
-                        (Al <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#formula-indexada">nostre web</a> pots veure a què correspon cada terme).
+                        (Al <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#formula-indexada">nostre web</a> podeu veure a què correspon cada terme).
                       </p>
                       %if data['canaries'] or data['balears']:
                         <p>
@@ -128,16 +128,16 @@ ${plantilla_header}
                         En la <strong>tarifa indexada empresa</strong> personalitzem el preu de la franja de la cooperativa (la variable F de la fórmula) segons el vostre ús d'energia anual. Per això, un cop a l'any, revisem el vostre ús d'energia dels últims dotze mesos i ajustem el preu de la franja (F): a major ús, el valor d'aquesta variable es redueix, i a la inversa, si l'ús disminueix, el seu valor s'incrementa.
                       </p>
                       <p>
-                        Per al vostre contracte, actualment la franja F (que també inclou els costos de les garanties d'origen 100% renovable i dels desviaments) és de ${data['dades_index']['f_antiga_eie']} €/kWh,  i a partir de l'1 d'agost (que tal com us hem explicat, correspondrà únicament al marge per la cooperativa) serà de:  ${data['dades_index']['f_nova_eie']} €/kWh.
+                        Per al vostre contracte, actualment la franja F (que també inclou els costos de les garanties d'origen 100% renovable i dels desviaments) és de ${data['dades_index']['f_antiga_eie']} €/kWh,  i a partir de l'1 d'agost (que tal com us hem explicat, correspondrà únicament al marge per la cooperativa) serà de:  <strong>${data['dades_index']['f_nova_eie']} €/kWh.</strong>
                       </p>
                       <p>
-                        Aquest preu està calculat tenint en compte el vostre ús d'energia dels últims dotze mesos: ${data['dades_index']['conany']} kWh.
+                        Aquest preu està calculat tenint en compte el vostre ús d'energia dels últims dotze mesos: <strong>${data['dades_index']['conany']} kWh.</strong>
                       </p>
                       <h2>
                         Estimació orientativa
                       </h2>
                       <p>
-                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja F i la nova fórmula per calcular el preu de l'energia.</strong> El cost de l'energia en els últims dotze mesos ha sigut de ${data['dades_index']['import_total_anual_nova_amb_impost']} €, mentre que amb la nova franja i la nova fórmula hauria estat de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €.
+                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja F i la nova fórmula per calcular el preu de l'energia.</strong> El cost de l'energia en els últims dotze mesos ha sigut de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mentre que amb la nova franja i la nova fórmula hauria estat de ${data['dades_index']['import_total_anual_nova_amb_impost']} €.
                       </p>
                       <h2>Informació legal</h2>
                       <p>
@@ -146,6 +146,23 @@ ${plantilla_header}
                       <p>
                         En aquest correu adjuntem el contracte actualitzat amb els canvis aplicats. Si hi esteu d'acord, <strong>no cal que ens retorneu el document signat,</strong> ja que l'actualització del preu s'aplica automàticament. Igualment, hem d'informar-vos que si, per alguna raó, aquest canvi us fes replantejar la continuïtat amb la cooperativa, podríeu donar de baixa el vostre contracte mitjançant un canvi de comercialitzadora, ja que no apliquem penalitzacions ni clàusules de permanència. Tanmateix, si aquesta és la vostra decisió, us agrairem que ens ho comuniqueu amb un preavís de 30 dies. En aquest cas, facturaríem el consum realitzat fins a la data de baixa del contracte, amb els preus vigents a cada moment.
                       </p>
+                      <h2>Nou apartat web: tendència de preus de les pròximes hores</h2>
+                      <p>
+                        Per acabar, us informem que hem estrenat un nou <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/">apartat web</a> on podeu <strong>consultar la previsió dels preus de l'energia en la tarifa indexada del mateix dia i de l'endemà.</strong> Tot i que els preus que mostrem estan calculats amb la franja general per 2.0TD, 3.0TD i 6.1TD (no amb la vostra franja personalitzada), i que no són els preus definitius (caldrà afegir-hi un terme que es publica amb posterioritat), és <strong>útil per saber a quines hores l'energia serà més barata o més cara.</strong>
+                      </p>
+                      <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                          <td align="center">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                              <tr>
+                                <td align="center">
+                                  <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/" class="f-fallback button" target="_blank">Mira la pàgina</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
                       <p>
                         Quedem a la vostra disposició per a qualsevol dubte o consulta.
                       </p>
@@ -233,13 +250,13 @@ ${plantilla_header}
                         Para vuestro contrato, actualmente la franja F (que también incluye los costes de las garantías de origen 100% renovable y de los desvíos) es de ${data['dades_index']['f_antiga_eie']} €/kWh y a partir del 1 de agosto (que tal y como os hemos explicado, corresponderá únicamente al margen per la cooperativa) será de: <strong>${data['dades_index']['f_nova_eie']} €/kWh.</strong>
                       </p>
                       <p>
-                        Este precio está calculado teniendo en cuento vuestro uso de energía de los últimos doce meses: <strong>${data['dades_index']['conany']} kWh.</strong>
+                        Este precio está calculado teniendo en cuenta vuestro uso de energía de los últimos doce meses: <strong>${data['dades_index']['conany']} kWh.</strong>
                       </p>
                       <h2>
                         Estimación orientativa
                       </h2>
                       <p>
-                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía con la nueva franja F y la nueva fórmula para calcular el precio de la energía.</strong> El coste de la energía en los últimos doce meses ha sido de ${data['dades_index']['import_total_anual_nova_amb_impost']} €, mientras que con la nueva franja F y la nueva fórmula el coste hubiese sido de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €.
+                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía con la nueva franja F y la nueva fórmula para calcular el precio de la energía.</strong> El coste de la energía en los últimos doce meses ha sido de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mientras que con la nueva franja F y la nueva fórmula el coste hubiese sido de ${data['dades_index']['import_total_anual_nova_amb_impost']} €.
                       </p>
                       <h2>Información legal</h2>
                       <p>
@@ -248,6 +265,23 @@ ${plantilla_header}
                       <p>
                         En este correo adjuntamos el contrato actualizado con los cambios aplicados. Si estáis de acuerdo, <strong>no es necesario que retornéis el documento firmado,</strong> puesto que la actualización del precio se aplica automáticamente. Igualmente, debemos informaros que si, por alguna razón, este cambio os hiciera replantear la continuidad con la cooperativa, podéis dar de baja vuestro contrato mediante un cambio de comercializadora, ya que no aplicamos penalizaciones ni cláusulas de permanencia. Asimismo, si esta es vuestra decisión, os agradeceremos que nos lo comuniquéis con un preaviso de 30 días. En este caso, facturaríamos el consumo realizado hasta la fecha de baja del contrato, con los precios vigentes en cada momento.
                       </p>
+                      <h2>Nuevo apartado web: tendencia de precios de las próximas horas</h2>
+                      <p>
+                        Para acabar, os informamos que hemos estrenado un nuevo <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/">apartado web</a> donde podéis <strong>consultar la previsión de precios de la energía en la tarifa indexada del mismo día y del día siguiente.</strong> A pesar de que los precios que mostramos están calculados con la franja general para 2.0TD, 3.0TD y 6.1TD (no vuestra franja personalizada), y que no son los precios definitivos (hay que añadir una variable que se publica con posterioridad), es <strong>útil para saber a qué horas la energía será más barata o más cara.</strong>
+                      </p>
+                      <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                          <td align="center">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                              <tr>
+                                <td align="center">
+                                  <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/" class="f-fallback button" target="_blank">Mira la pàgina</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
                       <p>Quedamos a vuestra disposición para cualquier duda o consulta.</p>
                       <p>
                         Un cordial saludo,
