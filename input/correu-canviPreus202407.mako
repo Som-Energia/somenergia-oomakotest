@@ -122,7 +122,7 @@ ${plantilla_header}
                             <p>
                               Recentment hem posat en funcionament un apartat web on es pot veure la previsió de preus d'energia de la indexada per a les pròximes 24 hores. Hi pots veure, doncs, la tendència de preus per al dia següent, i això et pot ser útil per saber <strong>a quines hores l'energia serà més barata </strong> (és a dir, quan convé més, per exemple, posar la rentadora).
                             </p>
-                            <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/"><img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24h-marge-CA.png" alt="GenerationDemo" width="550"></a>
+                            <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/"><img src="https://www.somenergia.coop/indexada/Captura-web-24h-marge-CA.png" alt="GenerationDemo" width="550"></a>
                             <br/><br/><br/>
                             <p>
                               Si bé els preus de l'apartat web no seran els definitius (caldrà afegir-hi un terme que es publicarà amb posterioritat), sí que donen una idea fiable de les hores més econòmiques i les més cares.
@@ -294,7 +294,7 @@ ${plantilla_header}
                       </p>
                       %if not data['canaries'] and not data['balears']:
                         <p>
-                          Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">Centre d'Ajuda</a>. També hem publicat una <a href="https://blog.somenergia.coop/?p=48067">notícia al blog</a> que explica aquest canvi.
+                          Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades">Centre d'Ajuda</a>. També hem publicat un <a href="https://blog.somenergia.coop/?p=48067">article al blog</a> que explica aquest canvi.
                         </p>
                       %else: ## Es Canaries o Balears
                         %if data['autoconsum']['compensacio']:
@@ -405,7 +405,7 @@ ${plantilla_header}
                           <p>
                             Recientemente hemos puesto en funcionamiento un apartado web en el que se puede ver la previsión de precios de energía de la indexada para las próximas 24 horas. Puedes ver, pues, la tendencia de precios para el día siguiente, y esto te puede ser útil para saber <strong>a qué horas la energía será más barata </strong> (es decir, cuándo conviene más, por ejemplo, poner la lavadora).
                           </p>
-                          <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/"><img src="https://blog.somenergia.coop/wp-content/uploads/2024/06/Captura-web-24h-marge-ES.png" alt="GenerationDemo" width="550"></a>
+                          <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/"><img src="https://www.somenergia.coop/indexada/Captura-web-24h-marge-ES.png" alt="GenerationDemo" width="550"></a>
                           <br/><br/><br/>
                           <p>
                             Si bien los precios del apartado web no serán los definitivos (habrá que añadir un término que se publicará con posterioridad), sí dan una idea fiable de las horas más económicas y las más caras.
@@ -577,7 +577,7 @@ ${plantilla_header}
                       </p>
                       %if not data['canaries'] and not data['balears']:
                         <p>
-                          Como siempre, puedes encontrar la información, precios y fórmula de la tarifa indexada en nuestra web, <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">apartado tarifa indexada</a>, y en el <a href="https://es.support.somenergia.coop/category/1361-las-tarifas-indexadas">Centro de Ayuda</a>. También hemos publicado <a href="https://blog.somenergia.coop/?p=48070">una noticia en el blog</a> que explica ese cambio.
+                          Como siempre, puedes encontrar la información, precios y fórmula de la tarifa indexada en nuestra web, <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">apartado tarifa indexada</a>, y en el <a href="https://es.support.somenergia.coop/category/1361-las-tarifas-indexadas">Centro de Ayuda</a>. También hemos publicado <a href="https://blog.somenergia.coop/?p=48070">un artículo en el blog</a> que explica ese cambio.
                         </p>
                       %else: ## Es Canaries o Balears
                         %if data['autoconsum']['compensacio']:
