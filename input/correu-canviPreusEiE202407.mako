@@ -137,7 +137,7 @@ ${plantilla_header}
                         Estimació orientativa
                       </h2>
                       <p>
-                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja F i la nova fórmula per calcular el preu de l'energia.</strong>  Tenint en compte el consum de l'últim any, el cost per als pròxims dotze mesos amb la fórmula i la franja F actual seria de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mentre que amb la nova franja i la nova fórmula seria de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En tots dos casos, l'estimació inclou els impostos vigents (21% d'IVA i 5,11% d'impost especial de l'electricitat).
+                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja F i la nova fórmula per calcular el preu de l'energia.</strong>  Tenint en compte el consum de l'últim any, el cost per als pròxims dotze mesos amb la fórmula i la franja F actual seria de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mentre que amb la nova franja i la nova fórmula seria de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En tots dos casos, l'estimació inclou el 21% d'IVA i 5,11% d'impost especial de l'electricitat.
                       </p>
                       <h2>Informació legal</h2>
                       <p>
@@ -256,7 +256,7 @@ ${plantilla_header}
                         Estimación orientativa
                       </h2>
                       <p>
-                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía con la nueva franja F y la nueva fórmula para calcular el precio de la energía.</strong> Teniendo en cuenta el consumo del último año, el coste para los próximos doce meses con la fórmula y la franja F actual sería de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mientras que con la nueva franja y la nueva fórmula seria de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En ambos casos, la estimación incluye los impuestos vigentes (21% de IVA y 5,11% del impuesto especial de la electricidad).
+                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía con la nueva franja F y la nueva fórmula para calcular el precio de la energía.</strong> Teniendo en cuenta el consumo del último año, el coste para los próximos doce meses con la fórmula y la franja F actual sería de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mientras que con la nueva franja y la nueva fórmula seria de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En ambos casos, la estimación incluye el 21% de IVA y 5,11% del impuesto especial de la electricidad.
                       </p>
                       <h2>Información legal</h2>
                       <p>
