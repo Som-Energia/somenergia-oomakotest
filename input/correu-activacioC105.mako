@@ -1,5 +1,4 @@
-<!doctype html>
-<html>
+
 % if object.cups_polissa_id.titular.lang == "ca_ES":
 <table width="100%" frame="below" bgcolor="#E8F1D4">
 <tbody>
@@ -109,59 +108,42 @@ text_legal = render(t_obj.read(
     object
 )
 %>
-<br>
-<br>
-Hola${nom_titular},<br>
-<br>
+<p><br><br>Hola${nom_titular},<br><br></p>
 % if object.cups_polissa_id.titular.lang != "es_ES":
-Ens plau comunicar-te que el procés de canvi de comercialitzadora ha finalitzat,  <font color="green"><strong>el contracte està activat amb Som Energia</strong></font> des del ${data_activacio}.<br>
-<br>
-Per a qualsevol consulta o aclariment, aquestes són les teves dades:<br>
+<p>Ens plau comunicar-te que el proc&eacute;s de canvi de comercialitzadora ha finalitzat, <span style="color: green;"><strong>el contracte est&agrave; activat amb Som Energia</strong></span> des del ${data_activacio}.<br><br>Per a qualsevol consulta o aclariment, aquestes s&oacute;n les teves dades:</p>
 <ul>
 <li><strong>N&uacute;mero de contracte amb Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
-<li><strong>Direcci&oacute; del punt de subministrament: </strong>${object.cups_id.direccio}</li>
+<li><strong>Adre&ccedil;a del punt de subministrament:&nbsp;</strong>${object.cups_id.direccio}</li>
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
 <li><strong> Tarifa: </strong>${tarifaComer}</li>
-<li><strong> Potència: </strong>
-${lineesDePotencia_ca}</li></ul>
+<li><strong> Pot&egrave;ncia: </strong>${lineesDePotencia_ca}</li>
+</ul>
 %if autoconsum_description:
 <ul>
 <li><strong> Modalitat autoconsum: </strong> ${autoconsum_description}</li>
 </ul>
-<br>
+<p>Si la teva modalitat d&rsquo;autoconsum &eacute;s amb compensaci&oacute; d&rsquo;excedents, tamb&eacute; s&rsquo;ha activat el&nbsp;<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar">Flux Solar</a>.&nbsp;</p>
 %endif
-<br>
+
 % if object.cups_polissa_id.mode_facturacio == "index":
-T’adjuntem les condicions particulars, generals i específiques. Recorda que el contracte <strong> s'activa amb les mateixes potències que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br>
+<p>T&rsquo;adjuntem les condicions particulars, generals i espec&iacute;fiques. Recorda que el contracte <strong> s'activa amb les mateixes pot&egrave;ncies que tenies amb l'anterior comercialitzadora. </strong> Si vols modificar-les pots fer-ho a trav&eacute;s de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.</p>
 % else:
-T’adjuntem les condicions particulars i generals. Recorda que el contracte <strong> s'activa amb les mateixes potències que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br>
+<p>T&rsquo;adjuntem les condicions particulars i generals. Recorda que el contracte <strong> s'activa amb les mateixes pot&egrave;ncies que tenies amb l'anterior comercialitzadora. </strong> Si vols modificar-les pots fer-ho a trav&eacute;s de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.</p>
 % endif
-<br>
-A l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> també pots consultar les dades del contracte i veure totes les teves factures.<br>
-<br>
+<p><br>A l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> tamb&eacute; pots consultar les dades del contracte i veure totes les teves factures.<br><br></p>
 %if subministrament_essencial:
-Si aquest contracte de llum correspon a un <a href="https://ca.support.somenergia.coop/article/1226-subministraments-essencials">subministrament essencial</a>, per tal de disposar d’una protecció especial i que no es pugui suspendre el subministrament elèctric, cal que ens ho indiqueu responent aquest mateix correu.<br>
-<br>
+<p>Si aquest contracte de llum correspon a un <a href="https://ca.support.somenergia.coop/article/1226-subministraments-essencials">subministrament essencial</a>, per tal de disposar d&rsquo;una protecci&oacute; especial i que no es pugui suspendre el subministrament el&egrave;ctric, cal que ens ho indiqueu responent aquest mateix correu.<br><br></p>
 %endif
-Si tens algun dubte, trobaràs les preguntes més freqüents al <a href="https://ca.support.somenergia.coop/">Centre de Suport</a>.<br>
-<br>
-<br>
-Atentament,<br>
-<br>
-Equip de Som Energia<br>
-comercialitzacio@somenergia.coop<br>
-<a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br>
+<p>Si tens algun dubte, trobar&agrave;s les preguntes m&eacute;s freq&uuml;ents al <a href="https://ca.support.somenergia.coop/">Centre de Suport</a>.<br><br><br>Atentament,<br><br>Equip de Som Energia<br>comercialitzacio@somenergia.coop<br><a href="https://www.somenergia.coop/ca">www.somenergia.coop</a></p>
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES" and object.cups_polissa_id.titular.lang != "es_ES":
-<br>----------------------------------------------------------------------------------------------------<br>
+<p><br>----------------------------------------------------------------------------------------------------</p>
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
-Nos complace informarte que el proceso de cambio de comercializadora ha finalizado, <font color="green"><strong>tu contrato con Som Energia está activado </strong></font> desde el ${data_activacio}.<br>
-<br>
-Los datos del nuevo contrato son:<br>
+<p>Nos complace informarte que el proceso de cambio de comercializadora ha finalizado, <span style="color: green;"><strong>tu contrato con Som Energia est&aacute; activado </strong></span> desde el ${data_activacio}.<br><br>Los datos del nuevo contrato son:</p>
 <ul>
 <li><strong>N&uacute;mero de contrato con Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
@@ -170,36 +152,24 @@ Los datos del nuevo contrato son:<br>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Socio/a vinculado/a: </strong>${object.cups_polissa_id.soci.name}</li>
 <li><strong> Tarifa: </strong>${tarifaComer}</li>
-<li><strong> Potencia: </strong>
-${lineesDePotencia_es}</li></ul>
+<li><strong> Potencia: </strong>${lineesDePotencia_es}</li>
 </ul>
 %if autoconsum_description:
 <ul>
 <li><strong> Modalidad autoconsumo: </strong> ${autoconsum_description}</li>
 </ul>
-<br>
+<p>Si tu modalidad de autoconsumo es con compensaci&oacute;n de excedentes, tambi&eacute;n se ha activado el <a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar">Flux Solar</a>.&nbsp;</p>
 %endif
-<br>
+
 % if object.cups_polissa_id.mode_facturacio == "index":
-Te adjuntamos las condiciones particulares, generales y específicas. Recuerda que el contrato <strong> se ha activado con las mismas potencias que tenías con la anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br/>
+<p>Te adjuntamos las condiciones particulares, generales y espec&iacute;ficas. Recuerda que el contrato <strong> se ha activado con las mismas potencias que ten&iacute;as con la anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a trav&eacute;s de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>.</p>
 % else:
-Te adjuntamos las condiciones particulares y generales. Recuerda que el contrato <strong> se ha activado con las mismas potencias que tenías con la anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br/>
+<p>Te adjuntamos las condiciones particulares y generales. Recuerda que el contrato <strong> se ha activado con las mismas potencias que ten&iacute;as con la anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a trav&eacute;s de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>.</p>
 % endif
-<br>
-En la <a href="https://oficinavirtual.somenergia.coop/es/login/"> Oficina Virtual </a> también puedes consultar los datos del contrato y ver todas tus facturas. <br>
-<br>
+<p><br>En la <a href="https://oficinavirtual.somenergia.coop/es/login/"> Oficina Virtual </a> tambi&eacute;n puedes consultar los datos del contrato y ver todas tus facturas. <br><br></p>
 %if subministrament_essencial:
-Si este contrato de luz corresponde a un <a href="https://es.support.somenergia.coop/article/1227-suministros-esenciales">suministro esencial</a>, para disponer de una protección especial y que no se pueda suspender el suministro eléctrico, es necesario que nos lo indiquéis respondiendo este mismo correo.<br>
-<br>
+<p>Si este contrato de luz corresponde a un <a href="https://es.support.somenergia.coop/article/1227-suministros-esenciales">suministro esencial</a>, para disponer de una protecci&oacute;n especial y que no se pueda suspender el suministro el&eacute;ctrico, es necesario que nos lo indiqu&eacute;is respondiendo este mismo correo.<br><br></p>
 %endif
-Si tienes alguna duda, encontrarás las preguntas más frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br>
-<br>
-Atentamente,<br>
-<br>
-Equipo de Som Energia<br>
-comercializacion@somenergia.coop<br>
-<a href="https://www.somenergia.coop">www.somenergia.coop</a><br>
-<br>
+<p>Si tienes alguna duda, encontrar&aacute;s las preguntas m&aacute;s frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br><br>Atentamente,<br><br>Equipo de Som Energia<br>comercializacion@somenergia.coop<br><a href="https://www.somenergia.coop">www.somenergia.coop</a><br><br></p>
 %endif
-${text_legal}
-</html>
+<p>${text_legal}</p>

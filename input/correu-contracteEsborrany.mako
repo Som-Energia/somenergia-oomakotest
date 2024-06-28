@@ -16,13 +16,13 @@ text_legal = render(t_obj.read(
     object
 )
 template_id = md_obj.get_object_reference(
-￼        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_rejection_text'
-￼    )[1]
-￼
+        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_rejection_text'
+    )[1]
+
 text_desistiment = render(
-￼    t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-￼    object
-￼)
+    t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+    object
+)
 tarifa_a_mostrar = ""
 
 try:
