@@ -1,0 +1,9 @@
+lang: ${object.cups_polissa_id.titular.lang}
+cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.cups_polissa_id.notificacio_email}
+subject_translations:
+  ca_ES: 'Sol·licitud autorització de dades titular autoconsum CUPS: ${object.cups_id.name}'
+  es_ES: 'Solicitud de autorización para el tratamiento de datos del titular autoconsumo
+    CUPS: ${object.cups_id.name}'
+subject: 'Sol·licitud autorització de dades titular autoconsum CUPS: ${object.cups_id.name}'

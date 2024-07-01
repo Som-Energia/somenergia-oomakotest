@@ -1059,13 +1059,20 @@
 #    ca: 304316
 #    es: 300707
 #
-# notificacioTractamentDadesGeneradorAutoconsum:
-#   template: input/correu-notificacioTractamentDadesGeneradorAutoconsum.mako
-#   model: giscedata.switching
-#   poweremailId: som_switching.notificacioTractamentDadesGeneradorAutoconsum
-#   cases:
-#     ca: 304316
-#     es: 300707
+notificacioTractamentDadesGeneradorAutoconsum:
+  template: input/correu-notificacioTractamentDadesGeneradorAutoconsum.mako
+  model: giscedata.switching
+  poweremailId: som_switching.notificacioTractamentDadesGeneradorAutoconsum
+  cases:
+    ca: 304316
+    es: 300707
+notificacioTractamentDadesTitularDiferentContracte:
+  template: input/correu-notificacioTractamentDadesTitularDiferentContracte.mako
+  model: giscedata.switching
+  poweremailId: som_switching.notificacioTractamentDadesTitularDiferentContracte
+  cases:
+    ca: 304316
+    es: 300707
 #peticioDocumentacioSubministres:
 #  template: input/correu-peticioDocumentacioSubministres.mako
 #  model: res.partner
