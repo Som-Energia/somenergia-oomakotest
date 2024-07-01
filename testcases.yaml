@@ -64,6 +64,7 @@
 #        normal_es: 403834
 #        energetica: 5084228
 #        10pluspot_ca: 15561632
+#        canaries_es: 15497189
 #
 #enviarAbonament:
 #    template: input/correu-enviarAbonament.mako
