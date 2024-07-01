@@ -180,6 +180,7 @@ def renderMakoPdf(template, report_id, id, data, uid=1):
         from c2c_webkit_report import webkit_report
         from report import report_sxw
         from tools import config
+        from report_puppeteer.report_puppeteer import PuppeteerParser
 
         class report_webkit_html(report_sxw.rml_parse):
             def __init__(self, cursor, uid, name, context):
@@ -195,6 +196,22 @@ def renderMakoPdf(template, report_id, id, data, uid=1):
         # forcing to use our .mako template
         if 'useErpMako' not in data or not data['useErpMako']:
             report_xml.report_webkit = os.path.join(config['oomako_path'],template)
+
+        if 'puppeteer' in data and data['puppeteer']:
+            pp = PuppeteerParser(
+                'report.report_condicions_particulars',
+                'report.backend.condicions.particulars',
+                'som_polissa_condicions_generals/report/condicions_particulars_puppeteer.mako',
+                params={}
+            )
+
+            pdf_path = pp.create_pdf(cursor, uid, id, m_data, report_xml, ctx)
+            html = pp.parse_mako(cursor, uid, id, m_data, report_xml, ctx)
+            pdf = []
+            with open(pdf_path[0],'r') as f:
+                pdf.append(f.read())
+
+            return html,pdf[0]
 
         wk = webkit_report.WebKitParser(
             "report."+report_xml.report_name,

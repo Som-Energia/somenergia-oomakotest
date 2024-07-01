@@ -464,6 +464,18 @@
 #  cases:
 #    destral_ca: 'giscedata_polissa.polissa_0002'
 #
+#reportCondicionsParticularsPuppeteer:
+#  template: input/condicions_particulars_puppeteer.mako
+#  model: giscedata.polissa
+#  reportXmlId: som_polissa_condicions_generals.action_report_condicions_particulars
+#  data:
+#    maxDiff: 0
+#    useErpMako: True
+#    puppeteer: True
+#  cases:
+#    t20TD: 19
+#    t61TD: 21
+#
 # reportCondicionsParticularsM101:
 #   template: input/report-condicionsParticularsM101.mako
 #   model: giscedata.switching
