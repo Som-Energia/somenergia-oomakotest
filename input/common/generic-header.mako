@@ -20,7 +20,7 @@
     }
 
     a {
-      color: #7dbc09;
+      color: #99A43C;
     }
 
     p a:hover {
@@ -55,7 +55,7 @@
     }
 
     h1 {
-      margin-top: 0;
+      margin-top: 40px;
       color: #4d4d4d;
       font-size: 22px;
       font-weight: bold;
@@ -63,17 +63,17 @@
     }
 
     h2 {
-      margin-top: 0;
+      margin-top: 40px;
       color: #4d4d4d;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: bold;
       text-align: left;
     }
 
     h3 {
-      margin-top: 0;
+      margin-top: 40px;
       color: #4d4d4d;
-      font-size: 14px;
+      font-size: 18px;
       font-weight: bold;
       text-align: left;
     }
@@ -115,11 +115,11 @@
     /* Buttons ------------------------------ */
 
     .button {
-      background-color: #97D700;
-      border-top: 10px solid #97D700;
-      border-right: 18px solid #97D700;
-      border-bottom: 10px solid #97D700;
-      border-left: 18px solid #97D700;
+      background-color: #99A43C;
+      border-top: 10px solid #99A43C;
+      border-right: 18px solid #99A43C;
+      border-bottom: 10px solid #99A43C;
+      border-left: 18px solid #99A43C;
       display: inline-block;
       color: #FFF;
       text-decoration: none;
@@ -233,7 +233,7 @@
     .purchase_content {
       width: 100%;
       margin: 0;
-      padding: 25px 0 0 0;
+      padding: 10px 0 0 0;
       -premailer-width: 100%;
       -premailer-cellpadding: 0;
       -premailer-cellspacing: 0;
@@ -260,6 +260,14 @@
     .purchase_footer {
       padding-top: 15px;
       border-top: 1px solid #EAEAEC;
+    }
+
+    .purchase_borders {
+      padding-left: 5px;
+      border-top: 1px solid #EAEAEC;
+      border-right: 1px solid #EAEAEC;
+      border-left: 1px solid #EAEAEC;
+      border-bottom: 1px solid #EAEAEC;
     }
 
     .purchase_total {

@@ -15,11 +15,22 @@
         object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'], object)
 %>
 
-    <table class="email-wrapper" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
       <tr>
-        <td class="content-cell" align="center">
-          <p class="f-fallback sub align-center">
-              <p>${text_legal}</p>
+        <td align="center">
+          <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+            <tr>
+              <td class="email-masthead">
+                <table align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" class="header">
+                  <tr>
+                    <th>
+                      <p>${text_legal}</p>
+                    </th>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
         </td>
       </tr>
     </table>
