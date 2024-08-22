@@ -224,7 +224,7 @@
 # validacioDadesOVCanviTitusSubrogacio:
 #   template: input/correu-validacioDadesOVCanviTitusSubrogacio.mako
 #   model: giscedata.switching
-#   poweremailId: som_polissa_condicions_generals_m101.notification_atr_M1_01_SS
+#   poweremailId: som_polissa_condicions_generals.notification_atr_M1_01_SS
 #   cases:
 #     ca_ambsoci: 249766
 #     es: 270811
