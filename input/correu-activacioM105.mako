@@ -94,10 +94,10 @@
     autoconsum_description = get_autoconsum_description(object, pas05.tipus_autoconsum, object.polissa_ref_id.titular.lang)
 
     # Campanya canvi titular sense soci
-    campanya_soci_id = md_obj.get_object_reference(
-        object._cr, object._uid,  'som_polissa_soci', 'soci_ct_sense_soci'
+    campanya_partner_soci_id = md_obj.get_object_reference(
+        object._cr, object._uid,  'som_polissa_soci', 'res_partner_soci_ct'
     )[1]
-    is_campanya_ct_sense_soci = campanya_soci_id == polissa.soci.id
+    is_campanya_ct_sense_soci = campanya_partner_soci_id == polissa.soci.id
 
     t_obj = object.pool.get('poweremail.templates')
 

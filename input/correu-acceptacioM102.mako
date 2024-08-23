@@ -26,10 +26,10 @@
     ).strftime('%d/%m/%Y')
 
     # Campanya canvi titular sense soci
-    campanya_soci_id = md_obj.get_object_reference(
-        object._cr, object._uid,  'som_polissa_soci', 'soci_ct_sense_soci'
+    campanya_partner_soci_id = md_obj.get_object_reference(
+        object._cr, object._uid,  'som_polissa_soci', 'res_partner_soci_ct'
     )[1]
-    is_campanya_ct_sense_soci = campanya_soci_id == object.cups_polissa_id.soci.id
+    is_campanya_ct_sense_soci = campanya_partner_soci_id == object.cups_polissa_id.soci.id
 
     t_obj = object.pool.get('poweremail.templates')
 
