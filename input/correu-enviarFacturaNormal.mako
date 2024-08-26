@@ -51,6 +51,11 @@
         <p dir="ltr">
             Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1323-la-tarifa-2-0td-indexada">la tarifa 2.0TD indexada</a>, i al web pots veure'n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#tarifa20TD">preus</a>.
         </p>
+        %if data['polissa']['cups']['is_peninsula']:
+            <p dir="ltr">
+                <strong>Els preus de les pròximes hores:</strong> si vols saber la tendència de preus per a les properes hores, pots visitar <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/">aquest apartat</a> del web.
+            </p>
+        %endif
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
         </p>
@@ -61,6 +66,11 @@
         <p dir="ltr">
             Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1272-les-tarifes-indexades">la tarifa indexada</a>.
         </p>
+        %if data['polissa']['cups']['is_peninsula']:
+            <p dir="ltr">
+                <strong>Els preus de les pròximes hores:</strong> si vols saber la tendència de preus per a les properes hores, pots visitar <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/">aquest apartat</a> del web.
+            </p>
+        %endif
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
         </p>
@@ -81,6 +91,11 @@
         <p dir="ltr">
             Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1324-la-tarifa-3-0td-indexada">la tarifa 3.0TD indexada</a>, i al web pots veure'n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#tarifa30TD">preus</a>.
         </p>
+        %if data['polissa']['cups']['is_peninsula']:
+            <p dir="ltr">
+                <strong>Els preus de les pròximes hores:</strong> si vols saber la tendència de preus per a les properes hores, pots visitar <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/">aquest apartat</a> del web.
+            </p>
+        %endif
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
         </p>
@@ -101,6 +116,11 @@
         <p dir="ltr">
             Pots consultar el funcionament de la tarifa que tens contractada en aquest article: <a href="https://ca.support.somenergia.coop/article/1337-tarifes-dalta-tensio-6-1td-6-2td-6-3td-i-6-4td-indexades">les tarifes d'alta tensió 6.1TD, 6.2TD, 6.3TD i 6.4TD indexades</a>, i al web pots veure'n els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#tarifa61TD">preus</a>.
         </p>
+        %if data['polissa']['cups']['is_peninsula']:
+            <p dir="ltr">
+                <strong>Els preus de les pròximes hores:</strong> si vols saber la tendència de preus per a les properes hores, pots visitar <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/">aquest apartat</a> del web.
+            </p>
+        %endif
         <p dir="ltr">
             Si detectes algun error en la factura, pots consultar <a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum">aquest enllaç</a> o bé, ens ho pots comunicar responent a aquest mateix correu.
         </p>
@@ -181,6 +201,11 @@
         <p dir="ltr">
             Puedes consultar el funcionamiento de la tarifa que tienes contratada en este artículo: <a href="https://es.support.somenergia.coop/article/1325-la-tarifa-2-0td-indexada">La tarifa 2.0TD indexada</a>, y en el web puedes ver sus <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#tarifa20TD">precios</a>.
         </p>
+        %if data['polissa']['cups']['is_peninsula']:
+            <p dir="ltr">
+                <strong>Los precios de las próximas horas:</strong> si quieres saber la tendencia de precios para las próximas horas, puedes visitar <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/">este apartado</a> de la web. También está disponible en <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/">catalán</a>, <a href="https://www.somenergia.coop/gl/tarifas-electricas-que-ofrecemos/tarifa-indexada/prezo-hoxe/">gallego</a> y <a href="https://www.somenergia.coop/eu/eskaintzen-ditugun-elektrizitate-tarifak/tarifa-indexatua/gaurko-prezioa/">euskera</a>.
+            </p>
+        %endif
         <p dir="ltr">
             Si detectas algún error en la factura, puedes consultar este <a href="https://es.support.somenergia.coop/article/927-resuelve-tus-dudas-de-la-factura">enlace</a> o bien nos lo puedes comunicar respondiendo a este mismo correo.
         </p>
@@ -194,6 +219,11 @@
         <p dir="ltr">
             Puedes consultar el funcionamiento de la tarifa que tienes contratada en este artículo: <a href="https://es.support.somenergia.coop/article/1273-las-tarifas-indexadas">La tarifa indexada</a>.
         </p>
+        %if data['polissa']['cups']['is_peninsula']:
+            <p dir="ltr">
+                <strong>Los precios de las próximas horas:</strong> si quieres saber la tendencia de precios para las próximas horas, puedes visitar <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/">este apartado</a> de la web. También está disponible en <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/">catalán</a>, <a href="https://www.somenergia.coop/gl/tarifas-electricas-que-ofrecemos/tarifa-indexada/prezo-hoxe/">gallego</a> y <a href="https://www.somenergia.coop/eu/eskaintzen-ditugun-elektrizitate-tarifak/tarifa-indexatua/gaurko-prezioa/">euskera</a>.
+            </p>
+        %endif
         <p dir="ltr">
             Si detectas algún error en la factura, puedes consultar este <a href="https://es.support.somenergia.coop/article/927-resuelve-tus-dudas-de-la-factura">enlace</a> o bien nos lo puedes comunicar respondiendo a este mismo correo.
         </p>
@@ -214,6 +244,11 @@
         <p dir="ltr">
             Puedes consultar el funcionamiento de la tarifa que tienes contratada en este artículo: <a href="https://es.support.somenergia.coop/article/1326-la-tarifa-3-0td-indexada">La tarifa 3.0TD indexada</a>, y en el web puedes ver sus <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#tarifa30TD">precios</a>.
         </p>
+        %if data['polissa']['cups']['is_peninsula']:
+            <p dir="ltr">
+                <strong>Los precios de las próximas horas:</strong> si quieres saber la tendencia de precios para las próximas horas, puedes visitar <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/">este apartado</a> de la web. También está disponible en <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/">catalán</a>, <a href="https://www.somenergia.coop/gl/tarifas-electricas-que-ofrecemos/tarifa-indexada/prezo-hoxe/">gallego</a> y <a href="https://www.somenergia.coop/eu/eskaintzen-ditugun-elektrizitate-tarifak/tarifa-indexatua/gaurko-prezioa/">euskera</a>.
+            </p>
+        %endif
         <p dir="ltr">
             Si detectas algún error en la factura, puedes consultar este <a href="https://es.support.somenergia.coop/article/927-resuelve-tus-dudas-de-la-factura">enlace</a> o bien nos lo puedes comunicar respondiendo a este mismo correo.
         </p>
@@ -234,6 +269,11 @@
         <p dir="ltr">
             Puedes consultar el funcionamiento de la tarifa que tienes contratada en este artículo: las <a href="https://es.support.somenergia.coop/article/1164-tarifas-de-alta-tension-6-1td-6-2td-6-3td-y-6-4td">tarifas de alta tensión  6.1TD, 6.2TD, 6.3TD i 6.4TD periodos</a>, y en el web puedes ver sus <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#tarifa61TD">precios</a>.
         </p>
+        %if data['polissa']['cups']['is_peninsula']:
+            <p dir="ltr">
+                <strong>Los precios de las próximas horas:</strong> si quieres saber la tendencia de precios para las próximas horas, puedes visitar <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/">este apartado</a> de la web. También está disponible en <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/">catalán</a>, <a href="https://www.somenergia.coop/gl/tarifas-electricas-que-ofrecemos/tarifa-indexada/prezo-hoxe/">gallego</a> y <a href="https://www.somenergia.coop/eu/eskaintzen-ditugun-elektrizitate-tarifak/tarifa-indexatua/gaurko-prezioa/">euskera</a>.
+            </p>
+        %endif
         <p dir="ltr">
             Si detectas algún error en la factura, puedes consultar este <a href="https://es.support.somenergia.coop/article/927-resuelve-tus-dudas-de-la-factura">enlace</a> o bien nos lo puedes comunicar respondiendo a este mismo correo.
         </p>
