@@ -1,56 +1,46 @@
 <%
     nom_partner = object.partner_id.name
     cif_partner = object.partner_vat
-    trimestre_1 = object.first_quarter
-    trimestre_2 = object.second_quarter
-    trimestre_3 = object.third_quarter
-    trimestre_4 = object.fourth_quarter
-    total = object.amount
+    formatLang(trimestre_1, monetary=True) = object.first_quarter
+    formatLang(trimestre_2, monetary=True) = object.second_quarter
+    formatLang(trimestre_3, monetary=True) = object.third_quarter
+    formatLang(trimestre_4, monetary=True) = object.fourth_quarter
+    formatLang(total, monetary=True) = object.amount
     report_obj = object.pool.get('l10n.es.aeat.mod347.report')
     report = report_obj.browse(object._cr, object._uid, object.report_id)
     any_exercici = object.report_id.fiscalyear_id.name
-    limit = object.report_id.operations_limit
+    formatLang(limit, monetary=True) = object.report_id.operations_limit
+    from mako.template import Template
+    def render(text_to_render, object_):
+        templ = Template(text_to_render)
+        return templ.render_unicode(
+        object=object_,
+        format_exceptions=True
+    )
+    t_obj = object.pool.get('poweremail.templates')
+    md_obj = object.pool.get('ir.model.data')
+    template_id = md_obj.get_object_reference(
+    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
+    )[1]
+    text_legal = render(t_obj.read(
+        object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
+        object
+    )
 %>
 
 
 <!doctype html>
 <html>
+    <body>
     % if object.partner_id.lang == "ca_ES":
         ${cabecera_cat()}
+        ${missatge_cat()}
+        ${footer_cat()}
     % else:
         ${cabecera_es()}
+        ${missatge_es()}
+        ${footer_es()}
     % endif
-    <body>
-    <%
-     from mako.template import Template
-     def render(text_to_render, object_):
-         templ = Template(text_to_render)
-         return templ.render_unicode(
-         object=object_,
-         format_exceptions=True
-     )
-     t_obj = object.pool.get('poweremail.templates')
-     md_obj = object.pool.get('ir.model.data')
-     template_id = md_obj.get_object_reference(
-       object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-     )[1]
-     text_legal = render(t_obj.read(
-          object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-          object
-     )
-    %>
-        <br>
-        <br>
-        % if object.partner_id.lang == "ca_ES":
-            ${missatge_cat()}
-        % else:
-            ${missatge_es()}
-        % endif
-        % if object.partner_id.lang == "ca_ES":
-            ${footer_cat()}
-        % else:
-            ${footer_es()}
-        % endif
         ${text_legal}
     </body>
 </html>
