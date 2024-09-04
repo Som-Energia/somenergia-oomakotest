@@ -119,45 +119,97 @@ ${plantilla_header}
                         <h2>
                           Preu del terme d'energia (en euros/kWh)
                         </h2>
-                      %endif
-                      %if data['Indexada30TDPeninsula']:
+                        <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                          <tr>
+                            <td colspan="3">
+                              <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nous preus</strong></p>
+                                  </td>
+                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback" style="margin: 10px 0"><strong>Preus actuals</strong></p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Període punta</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Període pla</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Període vall</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Període punta</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Període pla</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Període vall</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="margin: 10px 0">Sense impostos</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous']['te']['P1']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous']['te']['P2']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous']['te']['P3']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics']['te']['P1']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics']['te']['P2']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics']['te']['P3']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="margin: 10px 0">Amb impostos</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_imp']['te']['P1']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_imp']['te']['P2']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_imp']['te']['P3']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_imp']['te']['P1']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_imp']['te']['P2']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_imp']['te']['P3']}</p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
                         <p>
-                          En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 74 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
+                          El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#ambit-domestic">el que ja hi havia.</a>
                         </p>
-                      %endif
-                      %if data['Indexada61TDPeninsula']:
-                        <p>
-                          En el cas de la tarifa 6.1TD indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 15.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 100 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                        </p>
-                      %endif
-                      %if data['Indexada30TDVEPeninsula']:
-                        <p>
-                          En el cas de la tarifa 3.0TDVE indexada (la teva), sense tenir en compte el preu de l'energia, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 74 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                        </p>
-                      %endif
-                      %if data['Indexada20TDCanaries'] or data['Indexada20TDBalears']:
-                        %if data['Indexada20TDBalears']:
-                          <p>
-                            En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 19 euros l'any (poc més d'un euro i mig al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                          </p>
-                        %endif
-                        %if data['Indexada20TDCanaries']:
-                          <p>
-                            En el cas de la tarifa 2.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà, de 2.500 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 15 euros l'any (poc més d'un euro al mes).</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                          </p>
-                        %endif
-                      %endif
-                      %if data['Indexada30TDCanaries'] or data['Indexada30TDBalears']:
-                        %if data['Indexada30TDBalears']:
-                          <p>
-                            En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 74 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                          </p>
-                        %endif
-                        %if data['Indexada30TDCanaries']:
-                          <p>
-                            En el cas de la tarifa 3.0TD indexada (la teva), sense tenir en compte el preu de l'energia ni l'autoproducció, a un contracte amb un consum mitjà de 10.000 kWh anuals, aquest canvi li suposaria un <strong>augment aproximat d'uns 63 euros l'any.</strong> Evidentment, aquesta xifra canviaria si variés el consum, el preu de l'energia o altres aspectes del mercat elèctric.
-                          </p>
-                        %endif
                       %endif
                       %if not data['canaries'] and not data['balears']:
                         <p>
