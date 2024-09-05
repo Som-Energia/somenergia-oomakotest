@@ -98,7 +98,7 @@ ${plantilla_header}
                             L'1 de novembre actualitzarem el preu de l'electricitat de les tarifes per períodes (la que tens ara, ho és). Després de les baixades de l'any passat i d'aquest any, aplicarem un petit augment de preus. El cost de l'energia al mercat majorista ha pujat, i les previsions per als propers mesos indiquen que seguirà a l'alça; és per això que ho hem de reflectir a les nostres tarifes, que se situaran a valors similars de gener de 2024.
                           </p>
                         % endif
-                        %if not data['canaries'] and data['potencia'] <= 10:
+                        %if data['iva_reduit']:
                           <h1>
                             L'IVA segueix al 10%
                           </h1>
@@ -124,13 +124,13 @@ ${plantilla_header}
                             <td colspan="3">
                               <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback"  style="margin: 10px 0"><strong>Nous preus</strong></p>
                                   </td>
-                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback" style="margin: 10px 0"><strong>Preus actuals</strong></p>
                                   </td>
                                 </tr>
@@ -211,6 +211,57 @@ ${plantilla_header}
                           El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#ambit-domestic">el que ja hi havia.</a>
                         </p>
                       %endif
+                      %if data['autoconsum']['compensacio']:
+                        <h1>Autoproducció</h1>
+                        <p>
+                          Per als contractes que teniu autoproducció amb compensació simplificada, els excedents d'autoproducció els continuarem compensant al mateix valor de referència del cost de l'energia que fem servir per calcular el preu de venda. A diferència de la mitjana de cost general, que ha pujat, <strong>la mitjana de cost de l'energia en hores de producció fotovoltaica ha baixat.</strong> És per això que hem disminuït també el preu de la compensació d'excedents. T'ho expliquem en detall al <a href="https://blog.somenergia.coop/?p=48550">blog</a>.
+                        </p>
+                        <h2>Preu de compensació d'excedents d'autoproducció (en euros/kWh)</h2>
+                        <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                          <tr>
+                            <td colspan="3">
+                              <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nous preus</strong></p>
+                                  </td>
+                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback" style="margin: 10px 0"><strong>Preus actuals</strong></p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
+                                  </td>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou']}</p>
+                                  </td>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="margin: 10px 0">Amb impostos aplicats</p>
+                                  </td>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou_imp']}</p>
+                                  </td>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic_imp']}</p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <p>
+                          Et recordem que també tens activat el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats/">Flux Solar</a>, que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada. Pots veure si tens Sols disponibles a la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a> (<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar#sols">aquí</a> t'expliquem el camí). Si és el cas, se t'aniran aplicant a les properes factures.
+                        </p>
+                      %endif
                       %if data['origen'] == 'pdf':
                         <h1>Estimació</h1>
                         <p>
@@ -262,7 +313,7 @@ ${plantilla_header}
                           </tr>
                         </table>
                         <p>
-                          Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horris i la'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
+                          Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i la'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
                         </p>
                       %endif
                       <p>
