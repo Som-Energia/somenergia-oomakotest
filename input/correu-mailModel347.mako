@@ -1,6 +1,7 @@
 <%
     nom_partner = object.partner_id.name
     cif_partner = object.partner_vat
+    setLang(object.partner_id.lang)
     formatLang(trimestre_1, monetary=True) = object.first_quarter
     formatLang(trimestre_2, monetary=True) = object.second_quarter
     formatLang(trimestre_3, monetary=True) = object.third_quarter
@@ -41,7 +42,7 @@
         ${missatge_es()}
         ${footer_es()}
     % endif
-        ${text_legal}
+    ${text_legal}
     </body>
 </html>
 
