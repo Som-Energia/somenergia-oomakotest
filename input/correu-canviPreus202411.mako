@@ -464,60 +464,68 @@ ${plantilla_header}
                           Et recordem que també tens activat el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats/">Flux Solar</a>, que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada. Pots veure si tens Sols disponibles a la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a> (<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar#sols">aquí</a> t'expliquem el camí). Si és el cas, se t'aniran aplicant a les properes factures.
                         </p>
                       %endif
+                      <h1>Estimació</h1>
                       %if data['origen'] == 'pdf':
-                        <h1>Estimació</h1>
                         <p>
                           Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, si apliquéssim els preus actuals i si apliquéssim els preus nous. L'estimació l'hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció, ni Generation kWh, ni lloguer de comptador.
                         </p>
+                      %elif data['origen'] == 'cnmc':
                         <p>
-                          L'estimació la pots veure sense impostos i amb impostos inclosos, els vigents actualment (${data['impostos_str']} i l'impost elèctric del 5,11%).
+                          Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L'estimació l'hem fet a partir de les dades que tenim dels teus consums anteriors (sense tenir en compte autoproducció ni Generation kWh ni lloguer de comptador), extrapolant-les segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n'hem obtingut un consum anual, que és el que fem servir per a la comparació.
                         </p>
-                        <h2>Cost anual estimat, en euros/any, del subministrament (energia i potència):</h2>
-                        <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                          <tr>
-                            <td colspan="3">
-                              <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
-                                <tr>
-                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
-                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Cost estimat amb els nous preus</strong></p>
-                                  </td>
-                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback" style="margin: 10px 0"><strong>Cost estimat amb els preus actuals</strong></p>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
-                                  </td>
-                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_nou']}</p>
-                                  </td>
-                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell']}</p>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="margin: 10px 0">Amb impostos aplicats</p>
-                                  </td>
-                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_nou_imp']}</p>
-                                  </td>
-                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell_imp']}</p>
-                                  </td>
-                                </tr>
-                              </table>
-                            </td>
-                          </tr>
-                        </table>
+                      %elif data['origen'] == 'estadistic':
                         <p>
-                          Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i la'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
+                          Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L'estimació l'hem fet en funció de la potència contractada més alta que tens (${data['potencia']} kW), l'ús d'electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh ni lloguer de comptador.
                         </p>
                       %endif
+                      <p>
+                        L'estimació la pots veure sense impostos i amb impostos inclosos, els vigents actualment (${data['impostos_str']} i l'impost elèctric del 5,11%).
+                      </p>
+                      <h2>Cost anual estimat, en euros/any, del subministrament (energia i potència):</h2>
+                      <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                          <td colspan="3">
+                            <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <p class="f-fallback"  style="margin: 10px 0"></p>
+                                </td>
+                                <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <p class="f-fallback"  style="margin: 10px 0"><strong>Cost estimat amb els nous preus</strong></p>
+                                </td>
+                                <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <p class="f-fallback" style="margin: 10px 0"><strong>Cost estimat amb els preus actuals</strong></p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_nou']}</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell']}</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="margin: 10px 0">Amb impostos aplicats</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_nou_imp']}</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell_imp']}</p>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <p>
+                        Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i la'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
+                      </p>
                       <p>
                         Al nostre blog trobaràs <a href="https://blog.somenergia.coop/?p=48546">l'article del canvi de tarifes</a>, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l'apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 d'octubre i els de períodes anteriors.
                       </p>
