@@ -229,7 +229,8 @@ ${plantilla_header}
                         </p>
                       %endif
                       %if data['Periodes30TDPeninsula'] or data['Periodes30TDCanaries'] or data['Periodes30TDBalears'] or data['Periodes61TDPeninsula'] or data['Periodes61TDCanaries'] or data['Periodes61TDBalears'] or data['Periodes30TDVEPeninsula']:
-                        <h1>Preu del terme d'energia (en euros/kWh)</h1>
+                        <h1>Tarifa ${data['tarifa_acces']} períodes</h1>
+                        <h2>Preu del terme d'energia (en euros/kWh)</h2>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
                             <td colspan="4">
@@ -593,6 +594,9 @@ ${plantilla_header}
                                 </tbody>
                             </table>
                         </figure>
+                        <h1>
+                          Cambios de precios de la tarifa ${data['tarifa_acces']} periodos
+                        </h1>
                       % elif data['modcon'] == "atr":
                         <figure class="table">
                             <table style="background-color: #D3E5C3; border: 4px solid #657557; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
@@ -601,12 +605,15 @@ ${plantilla_header}
                                         <td>
                                             <p>
                                               <span style="font-weight: 400;text-align: left;">
-                                                Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} períodes,</strong> que s'hauria de produir a les pròximes setmanes. Igualment, com que encara estàs amb la tarifa ${data['tarifa_acces']} indexada, t'expliquem més avall els canvis que hi aplicarem a partir de l'1 d'agost, i que t'afectaran si, per algun motiu, el teu contracte segueix amb la tarifa indexada.
-                                              </span>
-                                            </p>
-                                            <p>
-                                              <span style="font-weight: 400;text-align: left;">
-                                                Al nostre web pots trobar la nova fórmula de càlcul de la <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">tarifa indexada</a>. En resum, augmenta lleugerament el marge del preu de l'energia.
+                                                <p>
+                                                  Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} periodos,</strong> que debería producirse en las próximas semanas. A la tarifa por periodos le aplicaremos un cambio de precios ligeramente al alza a partir del 1 de noviembre. Te informamos a continuación.
+                                                </p>
+                                                <p>
+                                                  La tarifa indexada (que te será de aplicación mientras no se te active el cambio) no tiene ninguna actualización por parte de Som Energia. Como sabes, el precio final cambia todos los días y cada hora en función del precio diario de la energía en el mercado mayorista.
+                                                </p>
+                                                <p>
+                                                  En nuestra web puedes encontrar los <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#opciones-de-la-tarifa-por-periodos">precios de las tarifas por periodos</a> que aplicaremos <strong>desde el 1 de noviembre</strong> y los de <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">las tarifas indexadas</a>. También puedes ver, en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">apartado histórico</a>, los precios anteriores a 1 de noviembre de 2024.
+                                                </p>
                                               </span>
                                             </p>
                                         </td>
@@ -614,13 +621,469 @@ ${plantilla_header}
                                 </tbody>
                             </table>
                         </figure>
-                      % endif
-                      % if data['modcon'] != "atr" and data['modcon'] != "index":
+                        <h1>
+                          Cambios de precios de la tarifa ${data['tarifa_acces']} periodos
+                        </h1>
                         <p>
-                          L'1 de novembre actualitzarem el preu de l'electricitat de les tarifes per períodes (la que tens ara, ho és). Després de les baixades de l'any passat i d'aquest any, aplicarem un petit augment de preus. El cost de l'energia al mercat majorista ha pujat, i les previsions per als propers mesos indiquen que seguirà a l'alça; és per això que ho hem de reflectir a les nostres tarifes, que se situaran a valors similars de gener de 2024.
+                          El 1 de noviembre actualizaremos el precio de la electricidad de las tarifas por periodos. Como quizás ya has notado estando en la tarifa indexada, el coste de la energía en el mercado mayorista ha subido, y las previsiones para los próximos meses indican que seguirá al alza; es por eso que debemos reflejarlo en las nuestras tarifas por periodos con un pequeño aumento de precios.
                         </p>
                       % endif
+                      % if data['modcon'] != "atr":
+                        <p>
+                          El 1 de noviembre actualizaremos el precio de la electricidad de las tarifas por periodos (la que tienes ahora, lo es). Después de las bajadas del año pasado y este año, aplicaremos un pequeño aumento de precios. El coste de la energía en el mercado mayorista ha subido, y las previsiones para los próximos meses indican que seguirá al alza; es por eso que debemos reflejarlo en nuestras tarifas, que se situarán a valores similares de enero de 2024.
+                        </p>
+                      % endif
+                      %if data['iva_reduit']:
+                        <h1>
+                          El IVA sigue al 10%
+                        </h1>
+                        <p>
+                          Según establece el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Real decreto ley 8/2023</a>, hasta el 31 de diciembre el IVA de la electricidad seguirá rebajado al 10% a menos que el precio de la energía baje mucho. Si baja mucho (si la media mensual del precio de la energía en el mercado diario es inferior a 45 euros/MWh), el IVA a aplicar será del 21%.
+                        </p>
+                      % endif
+                      <h1>
+                        Nuevos precios y comparativa con precios actuales
+                      </h1>
+                      <p>
+                        A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de noviembre) y una comparación con los precios actuales (hasta 31 de octubre) de la tarifa que tienes contratada. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
+                      </p>
 
+                      %if data['Periodes20TDPeninsula'] or data['Periodes20TDCanaries'] or data['Periodes20TDBalears']:
+                        <h1>
+                          Tarifa 2.0TD periodos
+                        </h1>
+                        <h2>
+                          Precio del término de energía (en euros/kWh)
+                        </h2>
+                        <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                          <tr>
+                            <td colspan="3">
+                              <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nuevos precios</strong></p>
+                                  </td>
+                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback" style="margin: 10px 0"><strong>Precios actuales</strong></p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Periodo punta</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Periodo llano</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Periodo valle</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Periodo punta</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Periodo llano</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Periodo valle</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="margin: 10px 0">Sin impuestos</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous']['te']['P1']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous']['te']['P2']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous']['te']['P3']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics']['te']['P1']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics']['te']['P2']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics']['te']['P3']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="margin: 10px 0">Con impuestos</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_imp']['te']['P1']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_imp']['te']['P2']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_imp']['te']['P3']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_imp']['te']['P1']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_imp']['te']['P2']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_imp']['te']['P3']}</p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <p>
+                          El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#ambit-domestic">el que ja hi havia.</a>
+                        </p>
+                      %endif
+
+                      %if data['Periodes30TDPeninsula'] or data['Periodes30TDCanaries'] or data['Periodes30TDBalears'] or data['Periodes61TDPeninsula'] or data['Periodes61TDCanaries'] or data['Periodes61TDBalears'] or data['Periodes30TDVEPeninsula']:
+                        <h1>Tarifa ${data['tarifa_acces']} periodos</h1>
+                        <h2>Precio del término de energía (en euros/kWh)</h2>
+                        <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                          <tr>
+                            <td colspan="4">
+                              <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+
+                                <tr>
+                                  <td width="15%" class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="5%" class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="40%" class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Sin impuestos aplicados</strong></p>
+                                  </td>
+                                  <td width="40%" class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback" style="margin: 10px 0"><strong>Con impuestos aplicados</strong></p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0;"><strong>Nuevos precios</strong></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P1</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P1']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P1']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P2</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P2']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P2']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P3</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P3']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P3']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P4</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P4']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P4']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P5</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P5']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P5']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P6</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P6']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P6']}</p>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0;"><strong>Precios actuales</strong></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P1</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P1']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P1']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P2</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P2']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P2']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P3</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P3']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P3']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P4</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P4']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P4']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P5</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P5']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P5']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">P6</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P6']}</p>
+                                  </td>
+                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P6']}</p>
+                                  </td>
+                                </tr>
+
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <p>
+                          El precio de la potencia no ha variado, sigue siendo <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#opciones-de-la-tarifa-por-periodos">el que ya había</a>.
+                        </p>
+                      %endif
+
+                      %if data['autoconsum']['compensacio']:
+                        <h1>Autoproducción</h1>
+                        <p>Para los contratos que tenéis autoproducción con compensación simplificada, los excedentes de autoproducción los seguiremos compensando al mismo valor de referencia del coste de la energía que utilizamos para calcular el precio de venta. A diferencia de la media de coste general, que ha subido, <strong>la media de coste de la energía en horas de producción fotovoltaica ha bajado.</strong> Por eso hemos disminuido también el precio de la compensación de excedentes. Te lo explicamos en detalle en el <a href="https://blog.somenergia.coop/?p=48552">blog</a>.
+                        </p>
+                        <h2>Precio de compensación de excedentes de autoproducción (en euros/kWh)</h2>
+                        <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                          <tr>
+                            <td colspan="3">
+                              <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  </td>
+                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nuevos precios</strong></p>
+                                  </td>
+                                  <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                    <p class="f-fallback" style="margin: 10px 0"><strong>Precios actuales</strong></p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback"  style="margin: 10px 0">Sin impuestos aplicados</p>
+                                  </td>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou']}</p>
+                                  </td>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="margin: 10px 0">Con impuestos aplicados</p>
+                                  </td>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou_imp']}</p>
+                                  </td>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic_imp']}</p>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <p>
+                          Te recordamos que también tienes activado el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-la-herramienta-que-proporciona-descuentos-por-los-excedentes-de-autoproduccion-no-compensados/">Flux Solar</a>, que proporciona descuentos para los excedentes que no pueden compensarse con la compensación simplificada. Puedes ver si tienes Sols disponibles en tu <a href="https://oficinavirtual.somenergia.coop/es">Oficina Virtual</a> (<a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar#sols">aquí</a> te explicamos el camino). Si es el caso, se te irán aplicando en las próximas facturas.
+                        </p>
+                      %endif
+
+                      <h1>Estimación</h1>
+                      %if data['origen'] == 'pdf':
+                        <p>
+                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales y si aplicáramos los precios nuevos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
+                        </p>
+                      %elif data['origen'] == 'cnmc':
+                        <p>
+                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador), extrapolándolas según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
+                        </p>
+                      %elif data['origen'] == 'estadistic':
+                        <p>
+                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh ni alquiler de contador.
+                        </p>
+                      %endif
+                      <p>
+                        La estimación la puedes ver sin impuestos y con impuestos incluidos, los vigentes actualmente (${data['impostos_str']} y el impuesto eléctrico del 5,11%).
+                      </p>
+
+
+                      <h2>Coste anual estimado, en euros/año, del suministro (energía y potencia):</h2>
+                      <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                          <td colspan="3">
+                            <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <p class="f-fallback"  style="margin: 10px 0"></p>
+                                </td>
+                                <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <p class="f-fallback"  style="margin: 10px 0"><strong>Coste estimado con los nuevos precios</strong></p>
+                                </td>
+                                <td class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <p class="f-fallback" style="margin: 10px 0"><strong>Coste estimado con los precios actuales </strong></p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback"  style="margin: 10px 0">Sin impuestos aplicados</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_nou']}</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell']}</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="margin: 10px 0">Con impuestos aplicados</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_nou_imp']}</p>
+                                </td>
+                                <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell_imp']}</p>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <p>
+                        Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año, o cambios que pueda haber en el mercado eléctrico.
+                      </p>
+                      <p>
+                        En nuestro blog encontrarás <a href="https://blog.somenergia.coop/?p=48548">el articulo del cambio de tarifas</a>, y en la página web puedes consultar en cualquier momento <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/">todas las tarifas</a>.  Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">histórico de tarifas</a>, donde están también los precios vigentes hasta el 31 de octubre y los de periodos anteriores.
+                      </p>
+                      <h2>Información legal</h2>
+                      <p>
+                        La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios es la cláusula 5.3 (ii).
+                      </p>
+                      <p>
+                        Puedes acceder al comparador de ofertas que elabora la Comisión Nacional de los Mercados y la Competencia (CNMC) a través de <a href="https://comparador.cnmc.gob.es">este enlace</a>. El comparador permite consultar y comparar las distintas ofertas vigentes de algunas de las comercializadoras del mercado libre. Ten en cuenta que las tarifas de Som Energia no están incluidas.
+                      </p>
+                      % if data['modcon'] == "atr" or data['modcon'] == "index":
+                        <p>
+                          Después de haberte compartido esta información, si este cambio de precios te hiciese replantear seguir con la modificación solicitada, podrías pedir que se pare la modificación de tarifa (escribiéndonos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bien podrías dar de baja tu contrato con nosotros, bueno <a href="https://drive.google.com/file/d/1YU78O8Fpr_Xcns3BepvDKlp-cRi1Utid/view?usp=sharing">comunicándonoslo directamente</a>, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejáramos de suministrarte energía, con los precios vigentes en cada momento.
+                        </p>
+                      %else:
+                        <p>
+                          Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio de precios te hiciese replantear seguir con esta tarifa, podrías cambiarte a la <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">tarifa indexada</a> (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">a través de la teva Oficina Virtual</a>), o podrías dar de baja tu contrato con nosotros, <a href="https://drive.google.com/file/d/1YU78O8Fpr_Xcns3BepvDKlp-cRi1Utid/view?usp=sharing">comunicándonoslo directamente</a>,  o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
+                        </p>
+                      %endif
                       <p>
                         Un cordial saludo,
                       </p>
