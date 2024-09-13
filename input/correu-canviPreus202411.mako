@@ -744,7 +744,7 @@ ${plantilla_header}
                           </tr>
                         </table>
                         <p>
-                          El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#ambit-domestic">el que ja hi havia.</a>
+                          El precio de la potencia no ha variado, sigue siendo <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#opciones-de-la-tarifa-por-periodos">el que ya había</a>
                         </p>
                       %endif
 
