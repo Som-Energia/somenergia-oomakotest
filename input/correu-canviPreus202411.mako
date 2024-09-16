@@ -156,27 +156,27 @@ ${plantilla_header}
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
                                   <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0">Període punta</p>
+                                    <p class="f-fallback"   style="margin: 10px 0; font-size: 14">Període punta</p>
                                   </td>
                                   <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0">Període pla</p>
+                                    <p class="f-fallback"  style="margin: 10px 0; font-size: 14">Període pla</p>
                                   </td>
                                   <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0">Període vall</p>
+                                    <p class="f-fallback"  style="margin: 10px 0; font-size: 14">Període vall</p>
                                   </td>
                                   <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0">Període punta</p>
+                                    <p class="f-fallback"  style="margin: 10px 0; font-size: 14">Període punta</p>
                                   </td>
                                   <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0">Període pla</p>
+                                    <p class="f-fallback"  style="margin: 10px 0; font-size: 14">Període pla</p>
                                   </td>
                                   <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0">Període vall</p>
+                                    <p class="f-fallback"  style="margin: 10px 0; font-size: 14">Període vall</p>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="margin: 10px 0">Sense impostos</p>
+                                    <p class="f-fallback" style="margin: 10px 0; font-size: 14">Sense impostos</p>
                                   </td>
                                   <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
                                     <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous']['te']['P1']}</p>
@@ -199,7 +199,7 @@ ${plantilla_header}
                                 </tr>
                                 <tr>
                                   <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="margin: 10px 0">Amb impostos</p>
+                                    <p class="f-fallback" style="margin: 10px 0; font-size: 14">Amb impostos</p>
                                   </td>
                                   <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
                                     <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_imp']['te']['P1']}</p>
@@ -237,186 +237,186 @@ ${plantilla_header}
                               <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
 
                                 <tr>
-                                  <td width="15%" class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <td width="25%" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="5%" class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <td width="10%" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="40%" class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <td width="32.5%" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback"  style="margin: 10px 0"><strong>Sense impostos aplicats</strong></p>
                                   </td>
-                                  <td width="40%" class="purchase_borders" style="vertical-align: center;" align="left">
+                                  <td width="32.5%" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback" style="margin: 10px 0"><strong>Amb impostos aplicats</strong></p>
                                   </td>
                                 </tr>
 
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0;"><strong>Nous preus</strong></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P1</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P1']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P1']}</p>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P2</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P2']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P2']}</p>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P3</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P3']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P3']}</p>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P4</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P4']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P4']}</p>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P5</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P5']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P5']}</p>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P6</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous']['te']['P6']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_imp']['te']['P6']}</p>
                                   </td>
                                 </tr>
 
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0;"><strong>Preus actuals</strong></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P1</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P1']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P1']}</p>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P2</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P2']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P2']}</p>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P3</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P3']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P3']}</p>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P4</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P4']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P4']}</p>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P5</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P5']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P5']}</p>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P6</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P6']}</p>
                                   </td>
-                                  <td width="14%" class="purchase_borders" style="vertical-align: left;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_imp']['te']['P6']}</p>
                                   </td>
                                 </tr>
