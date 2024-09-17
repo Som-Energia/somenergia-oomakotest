@@ -129,7 +129,7 @@ ${plantilla_header}
                       <p>
                         A continuació tens una taula amb els nous preus (vigents a partir de l'1 de novembre), i una comparació amb els preus actuals (fins a 31 d'octubre) de la tarifa que tens contractada. Els impostos aplicats són ${data['impostos_str']}, i l'impost elèctric del 5,11%.
                       </p>
-                      %if data['Periodes20TDPeninsula'] or data['Periodes20TDCanaries'] or data['Periodes20TDBalears']:
+                      %if data['tarifa_acces'] == '2.0TD':
                         <h1>
                           Tarifa 2.0TD períodes
                         </h1>
@@ -228,7 +228,7 @@ ${plantilla_header}
                           El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#ambit-domestic">el que ja hi havia.</a>
                         </p>
                       %endif
-                      %if data['Periodes30TDPeninsula'] or data['Periodes30TDCanaries'] or data['Periodes30TDBalears'] or data['Periodes61TDPeninsula'] or data['Periodes61TDCanaries'] or data['Periodes61TDBalears'] or data['Periodes30TDVEPeninsula']:
+                      %if data['tarifa_acces'] == '3.0TD' or data['tarifa_acces'] == '3.0TDVE' or data['tarifa_acces'] == '6.1TD':
                         <h1>Tarifa ${data['tarifa_acces']} períodes</h1>
                         <h3>Preu del terme d'energia (en euros/kWh)</h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -649,7 +649,7 @@ ${plantilla_header}
                         A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de noviembre) y una comparación con los precios actuales (hasta 31 de octubre) de la tarifa que tienes contratada. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
                       </p>
 
-                      %if data['Periodes20TDPeninsula'] or data['Periodes20TDCanaries'] or data['Periodes20TDBalears']:
+                      %if data['tarifa_acces'] == '2.0TD':
                         <h1>
                           Tarifa 2.0TD periodos
                         </h1>
@@ -749,7 +749,7 @@ ${plantilla_header}
                         </p>
                       %endif
 
-                      %if data['Periodes30TDPeninsula'] or data['Periodes30TDCanaries'] or data['Periodes30TDBalears'] or data['Periodes61TDPeninsula'] or data['Periodes61TDCanaries'] or data['Periodes61TDBalears'] or data['Periodes30TDVEPeninsula']:
+                      %if data['tarifa_acces'] == '3.0TD' or data['tarifa_acces'] == '3.0TDVE' or data['tarifa_acces'] == '6.1TD':
                         <h1>Tarifa ${data['tarifa_acces']} periodos</h1>
                         <h3>Precio del término de energía (en euros/kWh)</h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -1079,7 +1079,7 @@ ${plantilla_header}
                       </p>
                       % if data['modcon'] == "atr" or data['modcon'] == "index":
                         <p style="font-size: 10">
-                          Después de haberte compartido esta información, si este cambio de precios te hiciese replantear seguir con la modificación solicitada, podrías pedir que se pare la modificación de tarifa (escribiéndonos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bien podrías dar de baja tu contrato con nosotros, bueno <a href="https://drive.google.com/file/d/1YU78O8Fpr_Xcns3BepvDKlp-cRi1Utid/view?usp=sharing">comunicándonoslo directamente</a>, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejáramos de suministrarte energía, con los precios vigentes en cada momento.
+                          Después de haberte compartido esta información, si este cambio de precios te hiciese replantear seguir con la modificación solicitada, podrías pedir que se pare la modificación de tarifa (escribiéndonos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bien podrías dar de baja tu contrato con nosotros, bien <a href="https://drive.google.com/file/d/1YU78O8Fpr_Xcns3BepvDKlp-cRi1Utid/view?usp=sharing">comunicándonoslo directamente</a>, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejáramos de suministrarte energía, con los precios vigentes en cada momento.
                         </p>
                       %else:
                         <p style="font-size: 10">
