@@ -116,11 +116,11 @@ ${plantilla_header}
                           </p>
                         % endif
                         %if data['iva_reduit']:
-                          <h1>
+                          <h3>
                             L'IVA segueix al 10%
-                          </h1>
+                          </h3>
                           <p>
-                            Segons estableix el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Reial decret llei 8/2023</a> fins al 31 de desembre l'IVA de l'electricitat seguirà rebaixat al 10% a no ser que el preu de lenergia baixi molt. Si baixa molt (si la mitjana mensual del preu de l'energia al mercat diari és inferior a 45 euros/MWh), l'IVA a aplicar serà del 21%.
+                            Segons estableix el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Reial decret llei 8/2023</a>, fins al 31 de desembre l'IVA de l'electricitat seguirà rebaixat al 10% a no ser que el preu de l'energia baixi molt. Si baixa molt (si la mitjana mensual del preu de l'energia al mercat diari és inferior a 45 euros/MWh), l'IVA a aplicar serà del 21%.
                           </p>
                         % endif
                       <h1>
@@ -133,9 +133,9 @@ ${plantilla_header}
                         <h1>
                           Tarifa 2.0TD períodes
                         </h1>
-                        <h2>
+                        <h3>
                           Preu del terme d'energia (en euros/kWh)
-                        </h2>
+                        </h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
                             <td colspan="3">
@@ -144,11 +144,11 @@ ${plantilla_header}
                                   <td width="14%" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nous preus</strong></p>
+                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;">
+                                    <p class="f-fallback"  style="text-align: center; margin: 10px 0"><strong>Nous preus</strong></p>
                                   </td>
-                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback" style="margin: 10px 0"><strong>Preus actuals</strong></p>
+                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;">
+                                    <p class="f-fallback" style="text-align: center; margin: 10px 0"><strong>Preus actuals</strong></p>
                                   </td>
                                 </tr>
                                 <tr>
@@ -230,7 +230,7 @@ ${plantilla_header}
                       %endif
                       %if data['Periodes30TDPeninsula'] or data['Periodes30TDCanaries'] or data['Periodes30TDBalears'] or data['Periodes61TDPeninsula'] or data['Periodes61TDCanaries'] or data['Periodes61TDBalears'] or data['Periodes30TDVEPeninsula']:
                         <h1>Tarifa ${data['tarifa_acces']} períodes</h1>
-                        <h2>Preu del terme d'energia (en euros/kWh)</h2>
+                        <h3>Preu del terme d'energia (en euros/kWh)</h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
                             <td colspan="4">
@@ -432,11 +432,11 @@ ${plantilla_header}
 
                       %endif
                       %if data['autoconsum']['compensacio']:
-                        <h1>Autoproducció</h1>
+                        <h2>Autoproducció</h2>
                         <p>
                           Per als contractes que teniu autoproducció amb compensació simplificada, els excedents d'autoproducció els continuarem compensant al mateix valor de referència del cost de l'energia que fem servir per calcular el preu de venda. A diferència de la mitjana de cost general, que ha pujat, <strong>la mitjana de cost de l'energia en hores de producció fotovoltaica ha baixat.</strong> És per això que hem disminuït també el preu de la compensació d'excedents. T'ho expliquem en detall al <a href="https://blog.somenergia.coop/?p=48550">blog</a>.
                         </p>
-                        <h2>Preu de compensació d'excedents d'autoproducció (en euros/kWh)</h2>
+                        <h3>Preu de compensació d'excedents d'autoproducció (en euros/kWh)</h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
                             <td colspan="3">
@@ -499,7 +499,7 @@ ${plantilla_header}
                       <p>
                         L'estimació la pots veure sense impostos i amb impostos inclosos, els vigents actualment (${data['impostos_str']} i l'impost elèctric del 5,11%).
                       </p>
-                      <h2>Cost anual estimat, en euros/any, del subministrament (energia i potència):</h2>
+                      <h3>Cost anual estimat, en euros/any, del subministrament (energia i potència):</h3>
                       <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                         <tr>
                           <td colspan="3">
@@ -541,26 +541,27 @@ ${plantilla_header}
                           </td>
                         </tr>
                       </table>
+                      <br/>
                       <p>
-                        Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i la'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
+                        Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
                       </p>
                       <p>
                         Al nostre blog trobaràs <a href="https://blog.somenergia.coop/?p=48546">l'article del canvi de tarifes</a>, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l'apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 d'octubre i els de períodes anteriors.
                       </p>
 
-                      <h2>Informació legal</h2>
-                      <p>
+                      <h3>Informació legal</h3>
+                      <p style="font-size: 10">
                         La <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/#preu-i-actualitzacio">clàusula contractual de les Condicions Generals</a> que ens autoritza a fer aquest canvi de preus és la clàusula 5.3 (ii).
                       </p>
-                      <p>
+                      <p style="font-size: 10">
                         Pots accedir al comparador d'ofertes que elabora la Comissió Nacional dels Mercats i la Competència (CNMC) a través <a href="https://comparador.cnmc.gob.es">d'aquest enllaç</a>. El comparador permet consultar i comparar les diferents ofertes vigents d'algunes de les comercialitzadores del mercat lliure. Tingues en compte que les tarifes de Som Energia no hi estan incloses.
                       </p>
                       % if data['modcon'] == "atr" or data['modcon'] == "index":
-                        <p>
+                        <p style="font-size: 10">
                           Després d'haver-te compartit aquesta informació, si aquest canvi de preus et fes replantejar seguir amb la modificació sol·licitada, podries demanar que s'aturi la modificació de tarifa (escrivint-nos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bé podries donar de baixa el teu contracte amb nosaltres, bé <a href="https://drive.google.com/file/d/1t2VBo0c-Yr2FSltmzVegqJdQ1dZsuOOV/view">comunicant-nos-ho directament</a>, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
                         </p>
                       %else:
-                        <p>
+                        <p style="font-size: 10">
                           T'adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d'acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d'informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te a la <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/">tarifa indexada</a> (<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé <a href="https://drive.google.com/file/d/1t2VBo0c-Yr2FSltmzVegqJdQ1dZsuOOV/view">comunicant-nos-ho directament</a>, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
                         </p>
                       %endif
@@ -634,9 +635,9 @@ ${plantilla_header}
                         </p>
                       % endif
                       %if data['iva_reduit']:
-                        <h1>
+                        <h3>
                           El IVA sigue al 10%
-                        </h1>
+                        </h3>
                         <p>
                           Según establece el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Real decreto ley 8/2023</a>, hasta el 31 de diciembre el IVA de la electricidad seguirá rebajado al 10% a menos que el precio de la energía baje mucho. Si baja mucho (si la media mensual del precio de la energía en el mercado diario es inferior a 45 euros/MWh), el IVA a aplicar será del 21%.
                         </p>
@@ -652,9 +653,9 @@ ${plantilla_header}
                         <h1>
                           Tarifa 2.0TD periodos
                         </h1>
-                        <h2>
+                        <h3>
                           Precio del término de energía (en euros/kWh)
-                        </h2>
+                        </h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
                             <td colspan="3">
@@ -663,11 +664,11 @@ ${plantilla_header}
                                   <td width="14%" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nuevos precios</strong></p>
+                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;">
+                                    <p class="f-fallback"  style="text-align: center; margin: 10px 0"><strong>Nuevos precios</strong></p>
                                   </td>
-                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback" style="margin: 10px 0"><strong>Precios actuales</strong></p>
+                                  <td colspan="3" class="purchase_borders" style="vertical-align: center;">
+                                    <p class="f-fallback" style="text-align: center; margin: 10px 0"><strong>Precios actuales</strong></p>
                                   </td>
                                 </tr>
                                 <tr>
@@ -750,7 +751,7 @@ ${plantilla_header}
 
                       %if data['Periodes30TDPeninsula'] or data['Periodes30TDCanaries'] or data['Periodes30TDBalears'] or data['Periodes61TDPeninsula'] or data['Periodes61TDCanaries'] or data['Periodes61TDBalears'] or data['Periodes30TDVEPeninsula']:
                         <h1>Tarifa ${data['tarifa_acces']} periodos</h1>
-                        <h2>Precio del término de energía (en euros/kWh)</h2>
+                        <h3>Precio del término de energía (en euros/kWh)</h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
                             <td colspan="4">
@@ -951,10 +952,10 @@ ${plantilla_header}
                       %endif
 
                       %if data['autoconsum']['compensacio']:
-                        <h1>Autoproducción</h1>
+                        <h2>Autoproducción</h2>
                         <p>Para los contratos que tenéis autoproducción con compensación simplificada, los excedentes de autoproducción los seguiremos compensando al mismo valor de referencia del coste de la energía que utilizamos para calcular el precio de venta. A diferencia de la media de coste general, que ha subido, <strong>la media de coste de la energía en horas de producción fotovoltaica ha bajado.</strong> Por eso hemos disminuido también el precio de la compensación de excedentes. Te lo explicamos en detalle en el <a href="https://blog.somenergia.coop/?p=48552">blog</a>.
                         </p>
-                        <h2>Precio de compensación de excedentes de autoproducción (en euros/kWh)</h2>
+                        <h3>Precio de compensación de excedentes de autoproducción (en euros/kWh)</h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
                             <td colspan="3">
@@ -1020,7 +1021,7 @@ ${plantilla_header}
                       </p>
 
 
-                      <h2>Coste anual estimado, en euros/año, del suministro (energía y potencia):</h2>
+                      <h3>Coste anual estimado, en euros/año, del suministro (energía y potencia):</h3>
                       <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                         <tr>
                           <td colspan="3">
@@ -1062,25 +1063,26 @@ ${plantilla_header}
                           </td>
                         </tr>
                       </table>
+                      <br/>
                       <p>
                         Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año, o cambios que pueda haber en el mercado eléctrico.
                       </p>
                       <p>
                         En nuestro blog encontrarás <a href="https://blog.somenergia.coop/?p=48548">el articulo del cambio de tarifas</a>, y en la página web puedes consultar en cualquier momento <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/">todas las tarifas</a>.  Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">histórico de tarifas</a>, donde están también los precios vigentes hasta el 31 de octubre y los de periodos anteriores.
                       </p>
-                      <h2>Información legal</h2>
-                      <p>
+                      <h3>Información legal</h3>
+                      <p style="font-size: 10">
                         La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios es la cláusula 5.3 (ii).
                       </p>
-                      <p>
+                      <p style="font-size: 10">
                         Puedes acceder al comparador de ofertas que elabora la Comisión Nacional de los Mercados y la Competencia (CNMC) a través de <a href="https://comparador.cnmc.gob.es">este enlace</a>. El comparador permite consultar y comparar las distintas ofertas vigentes de algunas de las comercializadoras del mercado libre. Ten en cuenta que las tarifas de Som Energia no están incluidas.
                       </p>
                       % if data['modcon'] == "atr" or data['modcon'] == "index":
-                        <p>
+                        <p style="font-size: 10">
                           Después de haberte compartido esta información, si este cambio de precios te hiciese replantear seguir con la modificación solicitada, podrías pedir que se pare la modificación de tarifa (escribiéndonos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bien podrías dar de baja tu contrato con nosotros, bueno <a href="https://drive.google.com/file/d/1YU78O8Fpr_Xcns3BepvDKlp-cRi1Utid/view?usp=sharing">comunicándonoslo directamente</a>, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejáramos de suministrarte energía, con los precios vigentes en cada momento.
                         </p>
                       %else:
-                        <p>
+                        <p style="font-size: 10">
                           Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio de precios te hiciese replantear seguir con esta tarifa, podrías cambiarte a la <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">tarifa indexada</a> (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">a través de la teva Oficina Virtual</a>), o podrías dar de baja tu contrato con nosotros, <a href="https://drive.google.com/file/d/1YU78O8Fpr_Xcns3BepvDKlp-cRi1Utid/view?usp=sharing">comunicándonoslo directamente</a>,  o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
                         </p>
                       %endif
