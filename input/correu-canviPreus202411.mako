@@ -126,9 +126,15 @@ ${plantilla_header}
                       <h1>
                         Nous preus i comparativa amb preus actuals
                       </h1>
-                      <p>
-                        A continuació tens una taula amb els nous preus (vigents a partir de l'1 de novembre), i una comparació amb els preus actuals (fins a 31 d'octubre) de la tarifa per períodes. Els impostos aplicats són ${data['impostos_str']}, i l'impost elèctric del 5,11%.
-                      </p>
+                      %if data['modcon'] == 'atr':
+                        <p>
+                          A continuació tens una taula amb els nous preus (vigents a partir de l'1 de novembre), i una comparació amb els preus actuals (fins a 31 d'octubre) de la tarifa per períodes. Els impostos aplicats són ${data['impostos_str']}, i l'impost elèctric del 5,11%.
+                        </p>
+                      %else:
+                        <p>
+                          A continuació tens una taula amb els nous preus (vigents a partir de l'1 de novembre), i una comparació amb els preus actuals (fins a 31 d'octubre) de la tarifa que tens contractada. Els impostos aplicats són ${data['impostos_str']}, i l'impost elèctric del 5,11%.
+                        </p>
+                      %endif
                       %if data['tarifa_acces'] == '2.0TD':
                         <br/>
                         <h1>
@@ -468,32 +474,32 @@ ${plantilla_header}
                               <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
                                 <tr>
                                   <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Preus</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nous preus</strong></p>
+                                    <p class="f-fallback"  style="text-align: center; padding-left: 0; margin: 10px 0"><strong>Sense impostos aplicats</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback" style="margin: 10px 0"><strong>Preus actuals</strong></p>
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0"><strong>Amb impostos aplicats</strong></p>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nous</strong></p>
                                   </td>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
                                     <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou']}</p>
                                   </td>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic']}</p>
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou_imp']}</p>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="margin: 10px 0">Amb impostos aplicats</p>
+                                    <p class="f-fallback" style="margin: 10px 0"><strong>Actuals</strong></p>
                                   </td>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou_imp']}</p>
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic']}</p>
                                   </td>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
                                     <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic_imp']}</p>
@@ -673,9 +679,15 @@ ${plantilla_header}
                       <h1>
                         Nuevos precios y comparativa con precios actuales
                       </h1>
-                      <p>
-                        A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de noviembre) y una comparación con los precios actuales (hasta 31 de octubre) de la tarifa periodos. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
-                      </p>
+                      %if data['modcon'] == 'atr':
+                        <p>
+                          A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de noviembre) y una comparación con los precios actuales (hasta 31 de octubre) de la tarifa periodos. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
+                        </p>
+                      %else:
+                        <p>
+                          A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de noviembre) y una comparación con los precios actuales (hasta 31 de octubre) de la tarifa que tienes contratada. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
+                        </p>
+                      %endif
 
                       %if data['tarifa_acces'] == '2.0TD':
                         <br/>
@@ -1015,32 +1027,32 @@ ${plantilla_header}
                               <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
                                 <tr>
                                   <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Precios</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nuevos precios</strong></p>
+                                    <p class="f-fallback"  style="text-align: center; padding-left: 0; margin: 10px 0"><strong>Sin impuestos aplicados</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback" style="margin: 10px 0"><strong>Precios actuales</strong></p>
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0"><strong>Con impuestos aplicados</strong></p>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0">Sin impuestos aplicados</p>
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nuevos</strong></p>
                                   </td>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
                                     <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou']}</p>
                                   </td>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic']}</p>
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou_imp']}</p>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="margin: 10px 0">Con impuestos aplicados</p>
+                                    <p class="f-fallback" style="margin: 10px 0"><strong>Actuales</strong></p>
                                   </td>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou_imp']}</p>
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic']}</p>
                                   </td>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
                                     <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic_imp']}</p>
@@ -1059,7 +1071,7 @@ ${plantilla_header}
                       <h1>Estimación</h1>
                       %if data['origen'] == 'pdf':
                         <p>
-                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales de la tarifa periodos y si aplicáramos los precios nuevos, también de la tarifa perioodos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
+                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales de la tarifa periodos y si aplicáramos los precios nuevos, también de la tarifa periodos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
                         </p>
                       %elif data['origen'] == 'cnmc':
                         <p>
