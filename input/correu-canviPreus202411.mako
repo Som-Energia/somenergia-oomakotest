@@ -240,7 +240,7 @@ ${plantilla_header}
 
                                 <tr>
                                   <td width="25%" class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Preus</strong></p>
                                   </td>
                                   <td width="10%" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
@@ -255,9 +255,9 @@ ${plantilla_header}
 
                                 <tr>
                                   <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0;"><strong>Nous preus</strong></p>
+                                    <p class="f-fallback"  style="margin: 10px 0;"><strong>Nous</strong></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P1</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -271,7 +271,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P2</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -285,7 +285,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P3</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -299,7 +299,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P4</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -313,7 +313,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P5</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -327,7 +327,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P6</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -340,9 +340,9 @@ ${plantilla_header}
 
                                 <tr>
                                   <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0;"><strong>Preus actuals</strong></p>
+                                    <p class="f-fallback"  style="margin: 10px 0;"><strong>Actuals</strong></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P1</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -356,10 +356,10 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P2</p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics']['te']['P2']}</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -370,7 +370,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P3</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -384,7 +384,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P4</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -398,7 +398,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P5</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -412,7 +412,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P6</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -766,24 +766,24 @@ ${plantilla_header}
 
                                 <tr>
                                   <td width="27%" class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
+                                    <p class="f-fallback "  style="margin: 10px 0"><strong>Precios</strong></p>
                                   </td>
                                   <td width="10%" class="purchase_borders" style="vertical-align: center;" align="left">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
                                   <td width="31.5%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Sin impuestos aplicados</strong></p>
+                                    <p class="f-fallback "  style="margin: 10px 0"><strong>Sin impuestos aplicados</strong></p>
                                   </td>
                                   <td width="31.5%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="left">
-                                    <p class="f-fallback" style="margin: 10px 0"><strong>Con impuestos aplicados</strong></p>
+                                    <p class="f-fallback " style="margin: 10px 0"><strong>Con impuestos aplicados</strong></p>
                                   </td>
                                 </tr>
 
                                 <tr>
                                   <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0;"><strong>Nuevos precios</strong></p>
+                                    <p class="f-fallback "  style="margin: 10px 0;"><strong>Nuevos</strong></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P1</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -797,7 +797,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P2</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -811,7 +811,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P3</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -825,7 +825,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P4</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -839,7 +839,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P5</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -853,7 +853,7 @@ ${plantilla_header}
                                   <td class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
-                                  <td class="purchase_borders" style="text-align: center;" valign="middle">
+                                  <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P6</p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
@@ -866,7 +866,7 @@ ${plantilla_header}
 
                                 <tr>
                                   <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0;"><strong>Precios actuales</strong></p>
+                                    <p class="f-fallback"  style="margin: 10px 0;"><strong>Actuales</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P1</p>
