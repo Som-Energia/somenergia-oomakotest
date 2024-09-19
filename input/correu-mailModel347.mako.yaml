@@ -1,0 +1,8 @@
+cc: false
+to: ${object.partner_id.address[0].email}
+lang: ${object.partner_id.lang}
+subject_translations:
+  ca_ES: MODEL 347 - SOM ENERGIA SCCL ${object.report_id.fiscalyear_id.name}
+  es_ES: MODELO 347 - SOM ENERGIA SCCL ${object.report_id.fiscalyear_id.name}
+subject: MODEL 347 - SOM ENERGIA SCCL ${object.report_id.fiscalyear_id.name}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

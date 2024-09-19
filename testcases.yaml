@@ -311,6 +311,14 @@
 #    es: 7043159
 #    ca: 6956113
 #
+#mailModel347:
+#  template: input/correu-mailModel347.mako
+#  model: l10n.es.aeat.mod347.partner_record
+#  poweremailId: som_l10n_ES_aeat_mod347.email_model_347_resum
+#  cases:
+#    ca:
+#    es:
+#
 #mailAccountInvoicePagada:
 #  template: input/correu-emailNotifAccountInvoicePagada.mako
 #  model: account.invoice
