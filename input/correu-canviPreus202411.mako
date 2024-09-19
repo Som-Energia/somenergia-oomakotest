@@ -88,7 +88,7 @@ ${plantilla_header}
                                               <p>
                                                 <span style="font-weight: 400;text-align: left;">
                                                   <p>
-                                                    Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} períodes,</strong> que s'hauria de produir a les pròximes setmanes. A la tarifa per períodes li aplicarem un canvi de preus lleugerament a l'alça a partir de l'1 de novembre. Te n'informem a continuació.
+                                                    Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} períodes,</strong> que s'hauria de produir en les pròximes setmanes. A la tarifa per períodes li aplicarem un canvi de preus lleugerament a l'alça a partir de l'1 de novembre. Te n'informem a continuació.
                                                   </P>
                                                   <p>
                                                     La tarifa indexada (que et serà d'aplicació mentre no se t'activi el canvi) no té cap actualització per part de Som Energia. Com saps, el preu final canvia cada dia i cada hora en funció del preu diari de l'energia al mercat majorista.
@@ -127,7 +127,7 @@ ${plantilla_header}
                         Nous preus i comparativa amb preus actuals
                       </h1>
                       <p>
-                        A continuació tens una taula amb els nous preus (vigents a partir de l'1 de novembre), i una comparació amb els preus actuals (fins a 31 d'octubre) de la tarifa que tens contractada. Els impostos aplicats són ${data['impostos_str']}, i l'impost elèctric del 5,11%.
+                        A continuació tens una taula amb els nous preus (vigents a partir de l'1 de novembre), i una comparació amb els preus actuals (fins a 31 d'octubre) de la tarifa per períodes. Els impostos aplicats són ${data['impostos_str']}, i l'impost elèctric del 5,11%.
                       </p>
                       %if data['tarifa_acces'] == '2.0TD':
                         <br/>
@@ -230,7 +230,7 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left;border-top: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
@@ -511,7 +511,7 @@ ${plantilla_header}
                       <h1>Estimació</h1>
                       %if data['origen'] == 'pdf':
                         <p>
-                          Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, si apliquéssim els preus actuals i si apliquéssim els preus nous. L'estimació l'hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció, ni Generation kWh, ni lloguer de comptador.
+                          Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, si apliquéssim els preus actuals de la tarifa de períodes i si apliquéssim els preus nous, també de la tarifa de períodes. L'estimació l'hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció, ni Generation kWh, ni lloguer de comptador.
                         </p>
                       %elif data['origen'] == 'cnmc':
                         <p>
@@ -674,7 +674,7 @@ ${plantilla_header}
                         Nuevos precios y comparativa con precios actuales
                       </h1>
                       <p>
-                        A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de noviembre) y una comparación con los precios actuales (hasta 31 de octubre) de la tarifa que tienes contratada. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
+                        A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de noviembre) y una comparación con los precios actuales (hasta 31 de octubre) de la tarifa periodos. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
                       </p>
 
                       %if data['tarifa_acces'] == '2.0TD':
@@ -778,7 +778,7 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left;border-top: none;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
@@ -1059,11 +1059,11 @@ ${plantilla_header}
                       <h1>Estimación</h1>
                       %if data['origen'] == 'pdf':
                         <p>
-                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales y si aplicáramos los precios nuevos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
+                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales de la tarifa periodos y si aplicáramos los precios nuevos, también de la tarifa perioodos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
                         </p>
                       %elif data['origen'] == 'cnmc':
                         <p>
-                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador), extrapolándolas según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
+                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador), extrapolándolos según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
                         </p>
                       %elif data['origen'] == 'estadistic':
                         <p>
