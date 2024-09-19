@@ -95,7 +95,11 @@
     p.sub {
       font-size: 13px;
     }
+
     /* Utilities ------------------------------ */
+    .p-legal {
+      font-size: 12px;
+    }
 
     .align-right {
       text-align: right;
