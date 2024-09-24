@@ -1541,6 +1541,12 @@
 #    es_20_canaries_vivenda: 634577
 #    es_20_canaries_empresa: 643509
 #
+canviPreus202411:
+ template: input/correu-canviPreus202411.mako
+ model: som.enviament.massiu
+ poweremailId: 397
+ cases:
+   ca_20: 2477030
 #situacioExcepcional2022:
 #  template: input/correu-situacioExcepcional2022.mako
 #  model: som.enviament.massiu
