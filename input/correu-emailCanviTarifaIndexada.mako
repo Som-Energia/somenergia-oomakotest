@@ -7,6 +7,7 @@ def render(text_to_render, object_):
         format_exceptions=True
     )
 t_obj = object.pool.get('poweremail.templates')
+pp_obj = object.pool.get('product.pricelist')
 md_obj = object.pool.get('ir.model.data')
 template_id = md_obj.get_object_reference(
         object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_modi_rejection_text'
@@ -25,7 +26,8 @@ text_legal = render(t_obj.read(
 )
 p_obj = object.pool.get('res.partner')
 nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.titular.name)['nom']
-tarifaComer = object.modcontractuals_ids[0].llista_preu.nom_comercial or object.modcontractuals_ids[0].llista_preu.name
+tarifaComer =pp_obj.read(object.modcontractuals_ids[0].llista_preu,context={'lang': object.titular.lang})['nom_comercial'] or object.modcontractuals_ids[0].llista_preu.name
+
 %>
 
 
