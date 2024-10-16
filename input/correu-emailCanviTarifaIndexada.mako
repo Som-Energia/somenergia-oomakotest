@@ -26,7 +26,7 @@ text_legal = render(t_obj.read(
 )
 p_obj = object.pool.get('res.partner')
 nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.titular.name)['nom']
-tarifaComer =pp_obj.read(object.modcontractuals_ids[0].llista_preu,context={'lang': object.titular.lang})['nom_comercial'] or object.modcontractuals_ids[0].llista_preu.name
+tarifa_comer = pp_obj.read(object.modcontractuals_ids[0].llista_preu.id,context={'lang': object.titular.lang})['nom_comercial'] or object.modcontractuals_ids[0].llista_preu.name
 
 %>
 
@@ -83,7 +83,7 @@ ${text_legal}
 
         <b>Dades de la sol·licitud:</b>
         <ul>
-        <li>Modificació de tarifa comercialitzadora: <b>${tarifaComer}</b> </li>
+        <li>Modificació de tarifa comercialitzadora: <b>${tarifa_comer}</b> </li>
         </ul>
         <p>T'enviarem un nou correu electrònic quan se't comenci a aplicar la nova tarifa.</p>
         <br>
@@ -144,7 +144,7 @@ ${text_legal}
 
       <b>Datos de la solicitud:</b>
       <ul>
-      <li>Modificación de tarifa comercializadora: <b>${tarifaComer}</b> </li>
+      <li>Modificación de tarifa comercializadora: <b>${tarifa_comer}</b> </li>
       </ul>
 
       <p>Te enviaremos un nuevo correo electrónico cuando se te empiece a aplicar la nueva tarifa. </p><br>
