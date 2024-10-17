@@ -26,7 +26,7 @@ text_legal = render(t_obj.read(
 )
 p_obj = object.pool.get('res.partner')
 nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.titular.name)['nom']
-tarifa_comer = pp_obj.read(object.modcontractuals_ids[0].llista_preu.id,context={'lang': object.titular.lang})['nom_comercial'] or object.modcontractuals_ids[0].llista_preu.name
+tarifa_comer = pp_obj.read(object._cr, object._uid, object.modcontractuals_ids[0].llista_preu.id, ['nom_comercial'], context={'lang': object.titular.lang})['nom_comercial'] or object.modcontractuals_ids[0].llista_preu.name
 
 %>
 

@@ -10,6 +10,7 @@ def render(text_to_render, object_):
     )
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
+pp_obj = object.pool.get('product.pricelist')
 template_id = md_obj.get_object_reference(
                     object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
                 )[1]
@@ -21,6 +22,7 @@ p_obj = object.pool.get('res.partner')
 nom_titular =' ' + p_obj.separa_cognoms(object._cr, object._uid,object.titular.name)['nom']
 
 date_activacio = datetime.strptime(object.modcontractuals_ids[0].data_inici, '%Y-%m-%d').strftime('%d/%m/%Y')
+tarifa_comer = pp_obj.read(object._cr, object._uid, object.modcontractuals_ids[0].llista_preu.id, ['nom_comercial'], context={'lang': object.titular.lang})['nom_comercial'] or object.modcontractuals_ids[0].llista_preu.name
 %>
 
 
@@ -71,7 +73,7 @@ ${text_legal}
         <br>
         <p>Les condicions contractuals actuals del teu contracte amb Som Energia són:</p>
         <br>
-        <b>Tarifa comercialitzadora: ${object.modcontractuals_ids[0].llista_preu.name}</b>
+        <b>Tarifa comercialitzadora: ${tarifa_comer}</b>
         <br>
         <p>Recorda que a la propera factura ja començarem a aplicar-te la nova tarifa.</p>
         <br>
@@ -123,7 +125,7 @@ ${text_legal}
         <br>
         <p>Las condiciones contractuales actuales de tu contrato con Som Energia son:</p>
         <br>
-        <b>Tarifa comercializadora: ${object.modcontractuals_ids[0].llista_preu.name}</b>
+        <b>Tarifa comercializadora: ${tarifa_comer}</b>
         <br>
         <p>Recuerda que en la próxima factura ya empezaremos a aplicar-te la nueva tarifa.</p>
         <br>
