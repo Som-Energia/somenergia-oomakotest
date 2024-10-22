@@ -48,6 +48,7 @@
 %>
 
 <%
+    md_obj = object.pool.get('ir.model.data')
     M101 = object.pool.get('giscedata.switching.m1.01')
     M105 = object.pool.get('giscedata.switching.m1.05')
     pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
@@ -92,8 +93,13 @@
 
     autoconsum_description = get_autoconsum_description(object, pas05.tipus_autoconsum, object.polissa_ref_id.titular.lang)
 
+    # Campanya canvi titular sense soci
+    campanya_partner_soci_id = md_obj.get_object_reference(
+        object._cr, object._uid,  'som_polissa_soci', 'res_partner_soci_ct'
+    )[1]
+    is_campanya_ct_sense_soci = campanya_partner_soci_id == polissa.soci.id
+
     t_obj = object.pool.get('poweremail.templates')
-    md_obj = object.pool.get('ir.model.data')
 
     template_id = md_obj.get_object_reference(
         object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
@@ -210,6 +216,17 @@
     <p>
         Així doncs, des del <b>${date_activacio}</b> ets la nova persona titular del contracte. Ho veuràs reflectit en les factures i a la teva Oficina Virtual en els propers dies.
     </p>
+    %if is_campanya_ct_sense_soci:
+        <table width="100%" frame="below" bgcolor="#E8F1D4"><tr><td rowspan="4"><p>
+            Has contractat el teu subministrament elèctric amb Som Energia, cooperativa sense ànim de lucre, que té per missió impulsar un model energètic 100 % renovable i en mans de la ciutadania.
+            <br/><br/>
+            Normalment, els serveis de la cooperativa estan reservats a les persones sòcies. Ara, i durant un temps, estem oferint la possibilitat de <strong>contractar durant un any el subministrament elèctric</strong> a persones que, com tu, han arribat al nostre projecte a través d'un canvi de titular i <strong>prefereixen no associar-se a la cooperativa encara.</strong>
+            <br/><br/>
+            Durant els pròxims mesos t'anirem explicant més sobre nosaltres; qué és el que ens mou i quin és el nostre pla per a fomentar les energies renovables.
+            <br/><br/>
+            Amb quin objectiu? Ens agradaria que, quan ens coneguis una mica més, t'uneixis a la cooperativa fent-te soci/a. Ja som més de 85.000 persones que hem construit la cooperativa de forma col·lectiva i en volem ser moltes més!
+        </p></td></tr></table>
+    %endif
 </%def>
 
 
@@ -301,4 +318,15 @@
     <p>
         Así pues, desde la fecha <b>${date_activacio}</b> eres la nueva persona titular del contrato. Lo verás reflejado en las próximas facturas y en tu Oficina Virtual durante los próximos días.
     </p>
+    %if is_campanya_ct_sense_soci:
+        <table width="100%" frame="below" bgcolor="#E8F1D4"><tr><td rowspan="4"><p>
+            Has contratado tu suministro eléctrico con Som Energia, cooperativa sin ánimo de lucro, cuya misión es impulsar un modelo energético 100 % renovable en manos de la ciudadanía.
+            <br/><br/>
+            Normalmente, los servicios que prestamos están reservados a las personas socias. Ahora y durante tiempo, estamos ofreciendo la <strong>posibilidad de contratar durante un año</strong> el suministro eléctrico a personas que, como tú, llegan a nuestro proyecto a través de un cambio de titular y <strong>prefieren no asociarse a la cooperativa aún.</strong>
+            <br/><br/>
+            Durante los próximos meses te iremos explicando más sobre nosotros, qué es lo que nos mueve y cuál es nuestro plan para fomentar las energías limpias.
+            <br/><br/>
+            ¿Nuestro objetivo? Nos gustaría que, cuando nos conozcas un poco más, te unas a la cooperativa haciéndote socio/a. Ya somos más de 85.000 personas, que de forma colectiva hemos construido Som Energia y ¡queremos ser muchas más!
+        </p></td></tr></table>
+    %endif
 </%def>
