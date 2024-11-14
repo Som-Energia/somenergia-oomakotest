@@ -1,0 +1,8 @@
+lang: ${object.polissa_id.titular.lang}
+cc: false
+bcc:
+to:  ${object.polissa_id.direccio_notificacio.email}
+subject_translations:
+  ca_ES: 📢 [Important] Mesures especials DANA - El teu contracte amb Som Energia
+  es_ES: 📢 [Importante] Medidas especiales DANA - Tu contrato con Som Energia
+subject: 📢 [Important] Mesures especials DANA - El teu contracte amb Som Energia / Medidas especiales DANA - Tu contrato con Som Energia
