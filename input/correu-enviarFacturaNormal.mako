@@ -139,6 +139,10 @@
         <p>Com que en el període que comprèn la teva factura hi ha hagut un canvi de tarifes, una part del terme d'energia i del terme de potència està facturada amb les tarifes d'abans del canvi, i l'altra part està facturada amb les noves tarifes. Això fa que, a la factura, apareguin dues línies (amb els dos preus) de cadascun dels conceptes d'energia i potència.</p>
     %endif
     <br>
+    % if data['polissa']['autoconsum']:
+        <p>En cas que en aquesta factura hi aparegui un descompte per Flux Solar, t'informem que hem aplicat els impostos tal com estableix la normativa vigent (<a href="https://petete.tributos.hacienda.gob.es/consultas/?num_consulta=V1146-24" target="_blank" rel="noopener nofollow noreferrer">V1146-24</a>), és a dir, abans de descomptar els Sols del Flux Solar.</p>
+    % endif
+    <br>
     <p dir="ltr"><span style="text-decoration: none;"><strong>Avís sobre estafes</strong></span></p>
     <p dir="ltr">
         Últimament ha crescut el número d'<strong>estafes i trucades fraudulentes al mercat elèctric</strong>. Sovint acaben en un canvi de companyia no desitjat per la persona titular del contracte, i en ocasions, qui truca fa referència a alguna legislació o nova normativa, actualització de dades, canvi de comptador o altres.
@@ -290,6 +294,10 @@
     %endif
     % if data['factura']['isTariffChange']:
         <p>Como en el periodo que comprende tu factura ha habido un cambio de tarifas, una parte del término de energía y del término de potencia está facturada con las tarifas de antes del cambio, y la otra parte está facturada con las nuevas tarifas. Esto hace que, en la factura, aparezcan dos líneas (con los precios distintos) de cada uno de los conceptos de energía y potencia.</p>
+    % endif
+    <br>
+    % if data['polissa']['autoconsum']:
+        <p>En caso de que en esta factura aparezca un descuento por Flux Solar, te informamos que hemos aplicado los impuestos tal y como establece la normativa vigente (<a href="https://petete.tributos.hacienda.gob.es/consultas/?num_consulta=V1146-24">V1146-24</a>), es decir, antes de descontar los Sols del Flux Solar.</p>
     % endif
     <br>
     <p dir="ltr"><span style="text-decoration: none;"><strong>Aviso sobre estafas</strong></span></p>
