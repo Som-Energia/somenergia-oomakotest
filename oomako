@@ -52,8 +52,14 @@ def GetOOOP():
 def loadErp(dbcfg):
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin")))
 
-    root_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server"))
-    addons_path =  os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin/addons"))
+    root_path = (
+        os.environ['OPENERP_ROOT_PATH']
+        or os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server"))
+    )
+    addons_path = (
+        os.environ['OPENERP_ADDONS_PATH']
+        or os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../erp/server/bin/addons"))
+    )
 
     import netsvc
     import tools
