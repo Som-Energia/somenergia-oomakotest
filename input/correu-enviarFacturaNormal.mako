@@ -31,8 +31,7 @@
     </ul>
     <p>
     %if data['factura']['te_iva_21'] and potencies and max(potencies) <= 10:
-        <p>Com veuràs a la factura, l'IVA que t'apliquem és del 21%, i no del 10%. Això és així perquè la rebaixa de l'IVA al 10% només es pot aplicar si el preu mitjà de l'energia al mercat majorista no baixa per sota dels 45 €/MWh. </p>
-        <p>Com que el preu de l'energia (el preu mitjà del mes natural anterior a l'últim dia del període de facturació, segons estableix el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Reial decret</a>), ha baixat per sota dels 45 €/MWh, en aquesta factura hem d'aplicar un IVA del 21%. </p>
+        <p>Com deus haver vist, se t’ha aplicat un IVA del 21%. Això és així perquè, des de l’1 de gener, ha deixat d’estar en vigor la mesura de rebaixa de l’IVA, establerta al <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Reial decret llei 8-2023</a>. Si no hi ha canvis posteriors, l’IVA elèctric seguirà al 21%. </p>
     %endif
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
         <p dir="ltr">
@@ -185,8 +184,7 @@
     </ul>
     <p dir="ltr"></p>
     %if data['factura']['te_iva_21'] and potencies and max(potencies) <= 10:
-        <p>Como verás en la factura, el IVA que te aplicamos es del 21%, y no del 10%. Esto es así porque la rebaja del IVA al 10% sólo puede aplicarse si el precio medio de la energía en el mercado mayorista no baja por debajo de los 45 €/MWh.</p>
-        <p>Debido a que el precio de la energía (el precio medio del mes natural anterior al último día del período de facturación, según establece el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Real decreto</a>), ha sido inferior a 45 €/MWh, en esta factura debemos aplicar un IVA del 21%. </p>
+        <p>Como debes haber visto, se te ha aplicado un IVA del 21%. Esto es así porque, desde el 1 de enero, ya no está en vigor la medida de rebaja del IVA, establecida en el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Real decreto ley 8-2023</a>. Si no hay cambios posteriores, el IVA eléctrico seguirá al 21%. </p>
     %endif
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
         <p dir="ltr">
