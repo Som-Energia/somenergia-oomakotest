@@ -37,6 +37,8 @@ def get_clean_name(composed_name, vat, name_only):
 
 titular = get_clean_name(object.name, object.vat, False)
 
+ovu_obj = object.pool.get('somre.ov.users')
+es_comer = ovu_obj.get_execution_environment_values(object._cr, object._uid)['type'] == 'comer'
 %>
 <br>
 Hola, ${titular},<br>
