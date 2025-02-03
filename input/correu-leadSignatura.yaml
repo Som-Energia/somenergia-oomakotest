@@ -1,0 +1,7 @@
+cc: false
+to: ${env['signature']['recipient']['email']}
+subject_translations:
+  ca_ES: Firma contracte amb Som Energia
+  es_ES: Firma contrato con Som Energia
+subject: Firma contracte amb Som Energia / Firma contrato con Som Energia
+bcc:

@@ -41,7 +41,9 @@ plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_i
 <tr>
 <td class="content-cell">
 <p class="f-fallback" style="line-height: 1.5;"><br>Hola,</p>
-<p class="f-fallback" style="line-height: 1.5;">Com a representant de l’empresa o entitat <<NomEiE>>, t'enviem les condicions del contracte per la seva signatura.</p>
+<p class="f-fallback" style="line-height: 1.5;">Us recordem que està pendent la signatura del contracte de llum amb Som Energia.</p>
+<br>
+<p class="f-fallback" style="line-height: 1.5;">El termini per la firma del contracte acaba d'aquí a set dies. Si passat aquest temps no s’ha procedit a la signatura es cancel·larà el procés de contractació.</p>
 <br>
 
 <table class="body-action" role="presentation" width="100%" cellspacing="0" cellpadding="0" align="center">
@@ -104,7 +106,9 @@ plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_i
         <tr>
         <td class="content-cell">
         <p class="f-fallback" style="line-height: 1.5;"><br>Hola,</p>
-        <p class="f-fallback" style="line-height: 1.5;">Como representante de la empresa o entidad <<NomEiE>>, te enviamos las condiciones del contrato para su firma.</p>
+        <p class="f-fallback" style="line-height: 1.5;">Os recordamos que está pendiente la signatura del contrato de luz con Som Energia.</p>
+        <br>
+        <p class="f-fallback" style="line-height: 1.5;">El plazo para la firma del contrato acaba en siete días. Si pasado este tiempo no se ha procedido a la signatura se cancelará el proceso de contratación.</p>
         <br>
 
         <table class="body-action" role="presentation" width="100%" cellspacing="0" cellpadding="0" align="center">
