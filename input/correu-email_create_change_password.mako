@@ -39,13 +39,14 @@ titular = get_clean_name(object.name, object.vat, False)
 
 ovu_obj = object.pool.get('somre.ov.users')
 es_comer = ovu_obj.get_execution_environment_values(object._cr, object._uid)['type'] == 'comer'
+ov_link = 'https://ovrepresenta.somenergia.coop/' if es_comer else 'https://ovrepresenta.somrenovables.com/'
 %>
 <br>
 Hola, ${titular},<br>
 <br>
 % if  mail_lang == "ca_ES":
 
-<p>Reps aquest correu perquè o bé hem donat d’alta el teu usuari perquè puguis accedir a l’<a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servei de Som Energia per representar-te en el mercat elèctric</a> o bé has sol·licitat recuperar la contrasenya.</p>
+<p>Reps aquest correu perquè o bé hem donat d’alta el teu usuari perquè puguis accedir a l’<a target="_blank" href=${ov_link}>Oficina Virtual del servei de Som Energia per representar-te en el mercat elèctric</a> o bé has sol·licitat recuperar la contrasenya.</p>
 
 <p>Per accedir-hi, has d’iniciar sessió amb el teu nom d’usuari i la teva contrasenya.</p>
 
@@ -67,7 +68,7 @@ Som Energia - Representació en el mercat elèctric <br>
 <br>
 % else:
 
-<p>Recibes este correo porque o bien hemos dado de alta a tu usuario para que puedas acceder a la <a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servicio de Som Energia para representarte en el mercado eléctrico</a> o bien has solicitado recuperar la contraseña.</p>
+<p>Recibes este correo porque o bien hemos dado de alta a tu usuario para que puedas acceder a la <a target="_blank" href=${ov_link} >Oficina Virtual del servicio de Som Energia para representarte en el mercado eléctrico</a> o bien has solicitado recuperar la contraseña.</p>
 
 <p>Para acceder, tienes que iniciar la sesión con tu nombre de usuario y tu contraseña.</p>
 
