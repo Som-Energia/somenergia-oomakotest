@@ -146,7 +146,7 @@
     % if data['polissa']['flag_msg_counters_edistri']:
         <p dir="ltr"><span style="text-decoration: none;"><strong>Avís sobre campanya de substitució de comptadors d'E-Distribución</strong></span></p>
             <p dir="ltr">
-                La teva empresa de distribución elèctrica ens ha notificat que, d'acord amb l'aplicació de l'ordre <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-2573">ICT/155/2020</a>, aquest any s'iniciarà la substitució dels equips de mesura tipus 5, 4 i 3 de baixa tensió que hagin arribat al final de la seva vida útil (definida en 15 anys).
+                La teva empresa de distribució elèctrica ens ha notificat que, d'acord amb l'aplicació de l'ordre <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-2573">ICT/155/2020</a>, aquest any s'iniciarà la substitució dels equips de mesura tipus 5, 4 i 3 de baixa tensió que hagin arribat al final de la seva vida útil (definida en 15 anys).
             </p>
             <p dir="ltr">
                 En el cas que l'equip instaŀlat sigui propietat d'<strong>EDISTRIBUCIÓN REDES DIGITALES, S.L. Unipersonal</strong>, la substitució serà realitzada per part del personal acreditat.
