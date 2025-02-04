@@ -142,6 +142,15 @@
         <p>En cas que en aquesta factura hi aparegui un descompte per Flux Solar, t'informem que hem aplicat els impostos tal com estableix la normativa vigent (<a href="https://petete.tributos.hacienda.gob.es/consultas/?num_consulta=V1146-24" target="_blank" rel="noopener nofollow noreferrer">V1146-24</a>), és a dir, abans de descomptar els Sols del Flux Solar.</p>
     % endif
     <br>
+
+    % if data['polissa']['flag_msg_counters_edistri']:
+        <p dir="ltr"><span style="text-decoration: none;"><strong>Avís sobre campanya de substitució de comptadors d'E-Distribución</strong></span></p>
+            <p dir="ltr">
+                La teva empresa de distribución elèctrica ens ha notificat que, d'acord amb l'aplicació de l'ordre <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-2573">ICT/155/2020</a>, aquest any s'iniciarà la substitució dels equips de mesura tipus 5, 4 i 3 de baixa tensió que hagin arribat al final de la seva vida útil (definida en 15 anys).
+            </p>
+        <br>
+    % endif
+
     <p dir="ltr"><span style="text-decoration: none;"><strong>Avís sobre estafes</strong></span></p>
     <p dir="ltr">
         Últimament ha crescut el número d'<strong>estafes i trucades fraudulentes al mercat elèctric</strong>. Sovint acaben en un canvi de companyia no desitjat per la persona titular del contracte, i en ocasions, qui truca fa referència a alguna legislació o nova normativa, actualització de dades, canvi de comptador o altres.
