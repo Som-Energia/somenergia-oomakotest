@@ -148,6 +148,19 @@
             <p dir="ltr">
                 La teva empresa de distribución elèctrica ens ha notificat que, d'acord amb l'aplicació de l'ordre <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-2573">ICT/155/2020</a>, aquest any s'iniciarà la substitució dels equips de mesura tipus 5, 4 i 3 de baixa tensió que hagin arribat al final de la seva vida útil (definida en 15 anys).
             </p>
+            <p dir="ltr">
+                En el cas que l'equip instaŀlat sigui propietat d'<strong>EDISTRIBUCIÓN REDES DIGITALES, S.L. Unipersonal</strong>, la substitució serà realitzada per part del personal acreditat.
+            </p>
+            <p dir="ltr">
+                Si l'equip de mesura no és propietat de l'empresa distribuïdora,  la persona propietària haurà de complir amb aquesta obligació legal, optant per una de les següents opcions:
+                <ul>
+                    <li>Instaŀlar un nou comptador de la seva propietat, a través d'un instaŀlador autoritzat.</li>
+                    <li>Optar per un nou equip de mesura en règim de lloguer. En aquest cas, E-Distribución s'encarregarà de tot el procés d'instal·lació, connexió i manteniment.</li>
+                </ul>
+            </p>
+            <p dir="ltr">
+                Per tal de gestionar aquesta actualització, cal que comuniquis per telèfon al 854 573 573, o bé, per correu electrònic a: renovacioncontador@enel.com
+            </p>
         <br>
     % endif
 
@@ -307,6 +320,26 @@
         <p>En caso de que en esta factura aparezca un descuento por Flux Solar, te informamos que hemos aplicado los impuestos tal y como establece la normativa vigente (<a href="https://petete.tributos.hacienda.gob.es/consultas/?num_consulta=V1146-24">V1146-24</a>), es decir, antes de descontar los Sols del Flux Solar.</p>
     % endif
     <br>
+    % if data['polissa']['flag_msg_counters_edistri']:
+        <p dir="ltr"><span style="text-decoration: none;"><strong>Avís sobre campanya de substitució de comptadors d'E-Distribución</strong></span></p>
+            <p dir="ltr">
+                Tu empresa de distribución eléctrica nos ha notificado que, de acuerdo con la aplicación de la orden <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-2573">ICT/155/2020</a>, este año se iniciará la sustitución de los equipos de medida tipos 5, 4 y 3 de baja tensión que hayan llegado al final de su vida útil (definida en 15 años).
+            </p>
+            <p dir="ltr">
+                En caso de que el equipo instalado sea propiedad de <strong>EDISTRIBUCIÓN REDES DIGITALES, S.L. Unipersonal</strong>, la sustitución será realizada por el personal acreditado.
+            </p>
+            <p dir="ltr">
+                Si el equipo de medida no es propiedad de la empresa distribuidora, la persona propietaria deberá cumplir con esta obligación legal, optando por una de las siguientes opciones:
+                <ul>
+                    <li>Instalar un nuevo contador de su propiedad a través de un instalador autorizado.</li>
+                    <li>Optar por un nuevo equipo de medida en régimen de alquiler. En ese caso, E-Distribución se encargará de todo el proceso de instalación, conexión y mantenimiento.</li>
+                </ul>
+            </p>
+            <p dir="ltr">
+                Para gestionar esta actualización, es necesario que comuniques por teléfono al 854 573 573, o bien, por correo electrónico a: renovacioncontador@enel.com
+            </p>
+        <br>
+    % endif
     <p dir="ltr"><span style="text-decoration: none;"><strong>Aviso sobre estafas</strong></span></p>
     <p dir="ltr">
         Últimamente ha crecido el número de <strong>estafas y llamadas fraudulentas en el mercado eléctrico</strong>. A menudo terminan en un cambio de compañía no deseado por la persona titular del contrato, y en ocasiones, quien llama hace referencia a alguna legislación o nueva normativa, actualización de datos, cambio de contador u otros.
