@@ -139,7 +139,7 @@
     %endif
     <br>
     % if data['polissa']['autoconsum']:
-        <p>En cas que en aquesta factura hi aparegui un descompte per Flux Solar, t'informem que hem aplicat els impostos tal com estableix la normativa vigent (<a href="https://petete.tributos.hacienda.gob.es/consultas/?num_consulta=V1146-24" target="_blank" rel="noopener nofollow noreferrer">V1146-24</a>), és a dir, abans de descomptar els Sols del Flux Solar.</p>
+        <!-- En blanc perquè s'utilitzi des del uiqmako -->
     % endif
     <br>
 
@@ -317,7 +317,7 @@
     % endif
     <br>
     % if data['polissa']['autoconsum']:
-        <p>En caso de que en esta factura aparezca un descuento por Flux Solar, te informamos que hemos aplicado los impuestos tal y como establece la normativa vigente (<a href="https://petete.tributos.hacienda.gob.es/consultas/?num_consulta=V1146-24">V1146-24</a>), es decir, antes de descontar los Sols del Flux Solar.</p>
+        <!-- En blanc perquè s'utilitzi des del uiqmako -->
     % endif
     <br>
     % if data['polissa']['flag_msg_counters_edistri']:
