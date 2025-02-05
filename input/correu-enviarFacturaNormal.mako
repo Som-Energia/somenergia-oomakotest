@@ -321,7 +321,7 @@
     % endif
     <br>
     % if data['polissa']['flag_msg_counters_edistri']:
-        <p dir="ltr"><span style="text-decoration: none;"><strong>Avís sobre campanya de substitució de comptadors d'E-Distribución</strong></span></p>
+        <p dir="ltr"><span style="text-decoration: none;"><strong>Aviso: campaña de sustitución de contadores de E-Distribución</strong></span></p>
             <p dir="ltr">
                 Tu empresa de distribución eléctrica nos ha notificado que, de acuerdo con la aplicación de la orden <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2020-2573">ICT/155/2020</a>, este año se iniciará la sustitución de los equipos de medida tipos 5, 4 y 3 de baja tensión que hayan llegado al final de su vida útil (definida en 15 años).
             </p>
