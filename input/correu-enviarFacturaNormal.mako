@@ -159,7 +159,7 @@
                 </ul>
             </p>
             <p dir="ltr">
-                Per tal de gestionar aquesta actualització, cal que comuniquis per telèfon al 854 573 573, o bé, per correu electrònic a: renovacioncontador@enel.com
+                Per tal de gestionar aquesta actualització, cal que et comuniquis per telèfon al 854 573 573, o bé, per correu electrònic a: renovacioncontador@enel.com
             </p>
         <br>
     % endif
@@ -336,7 +336,7 @@
                 </ul>
             </p>
             <p dir="ltr">
-                Para gestionar esta actualización, es necesario que comuniques por teléfono al 854 573 573, o bien, por correo electrónico a: renovacioncontador@enel.com
+                Para gestionar esta actualización, es necesario que te comuniques por teléfono al 854 573 573, o bien, por correo electrónico a: renovacioncontador@enel.com
             </p>
         <br>
     % endif
