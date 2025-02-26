@@ -23,9 +23,9 @@
 #   template: input/common/modi_rejection_text.mako
 #   poweremailId: som_poweremail_common_templates.common_template_modi_rejection_text
 #   cases: {}
-# legal_footer_representa:
+#legal_footer_representa:
 #    template: input/common/legal_footer_representa.mako
-#    poweremailId: som_ov_users.common_template_legal_footer_representa
+#    poweremailId: somre_ov_module.common_template_legal_footer_representa
 #    cases: {}
 #
 ######################################################
@@ -1638,12 +1638,12 @@ canviPreus202411:
 ######################################################
 ## Representa
 #
-# enviarCanviContrassenya:
-#    template: input/correu-email_create_change_password.mako
-#    model: res.partner
-#    poweremailId: som_ov_users.email_create_change_password
-#    cases:
-#       ca:
-#       es:
+#enviarCanviContrassenya:
+#  template: input/correu-email_create_change_password.mako
+#  model: somre_ov_users
+#  poweremailId: somre_ov_module.email_create_change_password
+#  cases:
+#    ca:
+#    es:
 
 # vim: et ts=2 sw=2

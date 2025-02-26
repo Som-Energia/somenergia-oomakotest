@@ -20,7 +20,7 @@ def render(text_to_render, object_):
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
 template_id = md_obj.get_object_reference(
-                    object._cr, object._uid,  'som_ov_users', 'common_template_legal_footer_representa'
+                    object._cr, object._uid,  'somre_ov_module', 'common_template_legal_footer_representa'
                 )[1]
 text_legal_representa = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
@@ -37,31 +37,22 @@ def get_clean_name(composed_name, vat, name_only):
 
 titular = get_clean_name(object.name, object.vat, False)
 
-def get_password(comment):
-    start_key = 'generated_ov_password='
-    end_key = '(generated_ov_password)\n'
-    password = False
-    if start_key in comment:
-        password = comment.split(start_key)[1]
-        password = password.split(end_key)[0]
-    return password
-
-PASSWORD = get_password(object.comment)
+ovu_obj = object.pool.get('somre.ov.users')
+es_comer = ovu_obj.get_execution_environment_values(object._cr, object._uid)['type'] == 'comer'
+ov_link = 'https://ovrepresenta.somenergia.coop/' if es_comer else 'https://ovrepresenta.somrenovables.com/'
 %>
 <br>
 Hola, ${titular},<br>
 <br>
 % if  mail_lang == "ca_ES":
 
-<p>Reps aquest correu perquè o bé hem donat d’alta el teu usuari perquè puguis accedir a l’<a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servei de Som Energia per representar-te en el mercat elèctric</a> o bé has sol·licitat recuperar la contrasenya.</p>
+<p>Reps aquest correu perquè o bé hem donat d’alta el teu usuari perquè puguis accedir a l’<a target="_blank" href=${ov_link}>Oficina Virtual del servei de Som Energia per representar-te en el mercat elèctric</a> o bé has sol·licitat recuperar la contrasenya.</p>
 
 <p>Per accedir-hi, has d’iniciar sessió amb el teu nom d’usuari i la teva contrasenya.</p>
 
 <p>De moment, t’hem assignat una contrasenya temporal. Et recomanem que la modifiquis una vegada hagis començat la sessió.</p>
 
-% if PASSWORD != False:
-<ul><li>Contrasenya temporal: <b>${PASSWORD}</b></li></ul>
-% endif
+<ul><li>Contrasenya temporal: <b>${object.initial_password}</b></li></ul>
 
 <p>El teu nom d'usuari, en cas que no el sàpigues o l'hagis oblidat, és el <b>${object.vat[2:]}</b>.</p>
 
@@ -77,15 +68,13 @@ Som Energia - Representació en el mercat elèctric <br>
 <br>
 % else:
 
-<p>Recibes este correo porque o bien hemos dado de alta a tu usuario para que puedas acceder a la <a target="_blank" href=https://ov-representa.somenergia.coop/>Oficina Virtual del servicio de Som Energia para representarte en el mercado eléctrico</a> o bien has solicitado recuperar la contraseña.</p>
+<p>Recibes este correo porque o bien hemos dado de alta a tu usuario para que puedas acceder a la <a target="_blank" href=${ov_link} >Oficina Virtual del servicio de Som Energia para representarte en el mercado eléctrico</a> o bien has solicitado recuperar la contraseña.</p>
 
 <p>Para acceder, tienes que iniciar la sesión con tu nombre de usuario y tu contraseña.</p>
 
 <p>De momento, te hemos asignado una contraseña temporal. Te recomendamos que la modifiques cuando hayas comenzado la sesión.</p>
 
-% if PASSWORD != False:
-<ul><li>Contraseña temporal: <b>${PASSWORD}</b></li></ul>
-% endif
+<ul><li>Contraseña temporal: <b>${object.initial_password}</b></li></ul>
 
 <p>Tu nombre de usuario, en caso de que no lo sepas o lo hayas olvidado, es el <b>${object.vat[2:]}</b>.</p>
 
