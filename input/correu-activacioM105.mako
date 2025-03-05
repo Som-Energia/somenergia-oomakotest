@@ -275,6 +275,72 @@
     </body>
 </%def>
 
+<%def name="pot_gen_ca()">
+    <p>
+        La sol·licitud de la modificació contractual ha estat ACTIVADA, amb data ${date_activacio}.
+    </p>
+    <p>
+        Les condicions contractuals actuals del teu contracte amb Som Energia són:
+    </p>
+    <ul>
+        <li>Tarifa: ${tarifaATR}</li>
+        <li>Potència: ${pot_deseada_ca}</li>
+        <li>Autoconsum:
+            <ul>
+                <li>Modalitat: ${autoconsum_description}</li>
+                <li>Potència generació:  kW</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>
+        Les dades del contracte que s'ha fet la modificació contractual són les següents:
+    </p>
+    <ul>
+        <li>Titular del contracte: ${object.cups_polissa_id.titular.name}</li>
+        <li>Adreça: ${object.cups_polissa_id.cups_direccio}</li>
+        <li>CUPS: ${object.cups_id.name}</li>
+        <li>Número de contracte amb Som Energia: ${object.cups_polissa_id.name}</li>
+        <li>Soci/a Som Energia: ${object.cups_polissa_id.soci.name}</li>
+    </ul>
+    <p>
+        Estem en contacte per a qualsevol dubte o consulta.
+    </p>
+</%def>
+
+<%def name="pot_gen_es()">
+    <p>
+        La solicitud de la modificación contractual ha sido ACTIVADA con fecha ${date_activacio}.
+    </p>
+    <p>
+        Las condiciones contractuales actuales de tu contrato con Som Energia son:
+    </p>
+    <ul>
+        <li>Tarifa: ${tarifaATR}</li>
+        <li>Potencia: ${pot_deseada_es}</li>
+        <li>Autoconsumo:
+            <ul>
+                <li>Modalidad: ${autoconsum_description}</li>
+                <li>Potencia generación:  kW</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>
+        Los datos del contrato con el que se ha hecho la modificación contractual son los siguientes:
+    </p>
+    <ul>
+        <li>Titular del contrato: ${object.cups_polissa_id.titular.name}</li>
+        <li>Dirección: ${object.cups_polissa_id.cups_direccio}</li>
+        <li>CUPS: ${object.cups_id.name}</li>
+        <li>Número de contrato con Som Energia: ${object.cups_polissa_id.name}</li>
+        <li>Soci/a Som Energia: ${object.cups_polissa_id.soci.name}</li>
+    </ul>
+    <p>
+        Estamos en contacto para cualquier duda o consulta.
+    </p>
+</%def>
+
 <%def name="pot_tar_es()">
     <p>
         La solicitud de  <font color="green"><strong>la modificación contractual ha sido ACTIVADA</strong></font> con fecha ${date_activacio}.
