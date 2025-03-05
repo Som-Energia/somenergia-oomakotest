@@ -58,9 +58,11 @@
     if not is_auto_uni:
         is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
         is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
+        is_pot_gen = False
     else:
         is_canvi_tit = False
         is_pot_tar = False
+        is_pot_gen = object.step_ids[0].pas_id.sollicitudadm == 'N'
 
     mapaTarifes = dict(M105.fields_get(object._cr, object._uid)['tarifaATR']['selection'])
     tarifaATR = mapaTarifes[pas05.tarifaATR]
@@ -157,10 +159,12 @@
         <p>
             Hola${nom_titular},
         </p>
-        %if is_pot_tar or is_auto_uni:
+        %if is_pot_tar:
             ${pot_tar_cat()}
         %elif is_canvi_tit:
             ${canvi_tit_cat()}
+        %elif is_pot_gen:
+            ${pot_gen_es()}
         %endif
         Atentament,<br>
         <br>
@@ -262,10 +266,12 @@
         <p>
             Hola${nom_titular},
         </p>
-        %if is_pot_tar or is_auto_uni:
+        %if is_pot_tar:
             ${pot_tar_es()}
         %elif is_canvi_tit:
             ${canvi_tit_es()}
+        %elif is_pot_gen:
+            ${pot_gen_es()}
         %endif
         Atentamente,<br>
         <br>
