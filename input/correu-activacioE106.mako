@@ -68,7 +68,7 @@
         def selfconsumption_code(self):
             if hasattr(self, '_selfconsumption_code'):
                 return self._selfconsumption_code
-            
+
             self._selfconsumption_code = self.contract.autoconsumo
             return self._selfconsumption_code
 
@@ -86,7 +86,7 @@
                 description = selfconsumption_types.get(self.selfconsumption_code, '')
                 self._selfconsumption_description = description.replace('[', '').replace(']', '')
                 return self._selfconsumption_description
-            
+
             self._selfconsumption_description = ''
             return self._selfconsumption_description
 
@@ -103,7 +103,7 @@
         def atr_tariff(self):
             if hasattr(self, '_atr_tariff'):
                 return self._atr_tariff
-            
+
             tariff_map = dict(
                 self.E106.fields_get(
                     self.case._cr, self.case._uid
@@ -128,7 +128,7 @@
             if self.atr_tariff == "2.0TD" and self.lang == 'ca_ES':
                 self._powers_description = powers.replace("P1:", "Punta:").replace("P2:", "Vall:")
                 return self._powers_description
-            
+
             if self.atr_tariff == "2.0TD" and self.lang == 'es_ES':
                 self._powers_description = powers.replace("P1:", "Punta:").replace("P2:", "Valle:")
                 return self._powers_description
@@ -140,10 +140,10 @@
     class LegalTextTemplate:
         def __init__(self, object_):
             self._obj_instance = object_
-            
+
             self.Template = self._obj_instance.pool.get('poweremail.templates')
             self.ModelData = self._obj_instance.pool.get('ir.model.data')
-        
+
         @property
         def instance(self):
             return self._obj_instance
@@ -152,12 +152,12 @@
         def raw_text(self):
             if hasattr(self, '_raw_text'):
                 return self._raw_text
-            
+
             template_id = self.ModelData.get_object_reference(
-                self.instance._cr, self.instance._uid, 
+                self.instance._cr, self.instance._uid,
                 'som_poweremail_common_templates', 'common_template_legal_footer'
             )[1]
-            
+
             self._raw_text = self.Template.read(
                 self.instance._cr, self.instance._uid, [template_id], ['def_body_text']
             )[0]['def_body_text']
@@ -238,7 +238,7 @@
       <ul>
         <li><strong>Número de contracte amb Som Energia: </strong>${e106_template.contract_number}</li>
         <li><strong>CUPS: </strong>${e106_template.cups}</li>
-        <li><strong>Direcció del punt de subministrament: </strong>${e106_template.cups_address}</li>
+        <li><strong>Adreça del punt de subministrament: </strong>${e106_template.cups_address}</li>
         <li><strong>Titular: </strong>${e106_template.owner_name}</li>
         <li><strong>NIF/CIF/NIE Titular: </strong>${e106_template.owner_vat}</li>
         <li><strong>Soci/a vinculat/da: </strong>${e106_template.member_name}</li>
@@ -249,7 +249,7 @@
           <li><strong> Modalitat autoconsum: </strong> ${e106_template.selfconsumption_description}</li>
         %endif
       </ul>
-    </p> 
+    </p>
     <p>
       T’adjuntem les condicions particulars i generals. Recorda que el contracte <strong> s'activa amb les mateixes condicions contractuals (tarifa i potència) que tenies amb l'anterior comercialitzadora. </strong>  Si vols modificar-les pots fer-ho a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a>.<br/>
       <br/>
@@ -264,7 +264,7 @@
     Equip de Som Energia<br>
     <a href="mailto:comercialitzacio@somenergia.coop">comercialitzacio@somenergia.coop</a><br>
     <a href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
-       
+
 	</body>
 </%def>
 
@@ -299,7 +299,7 @@
   </head>
   <body>
     <br>
-    <br> 
+    <br>
     <p>
       Hola${nom_titular},<br/>
       <br>
@@ -321,7 +321,7 @@
             <li><strong> Modalidad autoconsumo: </strong> ${e106_template.selfconsumption_description}</li>
         % endif
       </ul>
-    </p> 
+    </p>
     <p>
       Te adjuntamos las condiciones particulares y generales. Recuerda que el contrato <strong> se activa con las mismas condiciones contractuales (tarifa y potencia) que tenías con el anterior comercializadora. </strong> Si quieres modificarlas puedes hacerlo a través de tu <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a>. <br/>
       <br/>
