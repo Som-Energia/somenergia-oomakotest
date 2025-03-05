@@ -73,6 +73,10 @@
         ${correu_ca_motiu_07()}
     % elif d.motiu_canvi == '07' and object.cups_polissa_id.titular.lang == "es_ES":
         ${correu_es_motiu_07()}
+    % elif d.motiu_canvi == '12' and object.cups_polissa_id.titular.lang == "ca_ES":
+        ${correu_ca_motiu_12()}
+    % elif d.motiu_canvi == '12' and object.cups_polissa_id.titular.lang == "es_ES":
+        ${correu_es_motiu_12()}
     % elif object.cups_polissa_id.titular.lang == "ca_ES":
         ${correu_cat()}
     % else:
@@ -303,7 +307,7 @@
 	<br>
 	La nueva potencia de generación indicada por la distribuidora es:<strong> ${pot_installada} kW</strong><br>
 	<br>
-    Si la información sea correcta, necesitamos que contestes a este mismo correo para tramitar la modificación contractual correspondiente.<br>
+    Si la información es correcta, necesitamos que contestes a este mismo correo para tramitar la modificación contractual correspondiente.<br>
     <br>
     Ten en cuenta que la distribuidora puede cobrar costes de gestión por este cambio que se verán reflejados en tu factura.<br>
     <br>
