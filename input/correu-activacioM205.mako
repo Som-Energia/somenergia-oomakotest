@@ -1,4 +1,4 @@
-<%!
+<%
     from mako.template import Template
     from datetime import datetime, timedelta
 
@@ -9,46 +9,36 @@
             format_exceptions=True
     )
 
-    def get_autoconsum_description(object_, auto_consum, lang):
+    def get_motiu_modificacio(object_, motiu, lang):
         M205 = object_.pool.get('giscedata.switching.m2.05')
-        tipus_autoconsum = dict(M205.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
+        motiu_modificacio = dict(M205.fields_get(object_._cr, object_._uid, context={'lang': lang})['motiu_modificacio']['selection'])
+        return motiu + " - " + motiu_modificacio[motiu]
 
-        return auto_consum + " - " + tipus_autoconsum[auto_consum]
-%>
-
-<%
-    md_obj = object.pool.get('ir.model.data')
-    M205 = object.pool.get('giscedata.switching.m2.05')
-    pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
-    pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
-
-    mapaTarifes = dict(M205.fields_get(object._cr, object._uid)['tarifaATR']['selection'])
-    tarifaATR = mapaTarifes[pas05.tarifaATR]
-
-    pot_deseada_ca = '\n'.join((
-        '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
-        for p in pas05.header_id.pot_ids
-        if p.potencia != 0
-    ))
-    pot_deseada_es = pot_deseada_ca
-    if tarifaATR == "2.0TD":
-        pot_deseada_ca = pot_deseada_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
-        pot_deseada_es = pot_deseada_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
-    polissa = object.cups_polissa_id
+    def get_potencia_generacio(object_, pas):
+        data = []
+        for cau in pas.dades_cau:
+            cau_name = cau.cau
+            cau_pot = 0
+            for instalacio in cau.dades_instalacio_gen:
+                cau_pot += instalacio.pot_installada_gen
+            data.append((cau_name, cau_pot))
+        return data
 
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
-        object._cr, object._uid, polissa.titular.name
+        object._cr, object._uid, object.cups_polissa_id.titular.name
         )['nom']) if not object.vat_enterprise() else ''
 
-
-    new_contract_number = object.cups_polissa_id.name
+    pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
+    pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
     date_activacio = datetime.strptime(pas05.data_activacio, '%Y-%m-%d').strftime('%d/%m/%Y')
 
-    autoconsum_description = get_autoconsum_description(object, pas05.tipus_autoconsum, object.cups_polissa_id.titular.lang)
+    motiu_modificacio = get_motiu_modificacio(object, pas05.motiu_modificacio, object.cups_polissa_id.titular.lang)
+    pots_generacio = get_potencia_generacio(object, pas05)
+    
 
     t_obj = object.pool.get('poweremail.templates')
-
+    md_obj = object.pool.get('ir.model.data')
     template_id = md_obj.get_object_reference(
         object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
     )[1]
@@ -67,6 +57,7 @@
     % if object.cups_polissa_id.titular.lang == "ca_ES":
         ${correu_cat()}
     % else:
+        adeu
         ${correu_es()}
     % endif
     ${text_legal}
@@ -78,7 +69,7 @@
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
-                    <font size=2><strong> Contracte Som Energia nº ${polissa.name}</strong></font>
+                    <font size=2><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
                 </td>
                 <td valign=top rowspan="4" align="right">
                     <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
@@ -105,7 +96,7 @@
         <p>
             Hola${nom_titular},
         </p>
-        ${pot_gen_es()}
+        ${pot_gen_ca()}
         Atentament,<br>
         <br>
         Equip de Som Energia<br>
@@ -119,7 +110,7 @@
         <table width="100%" frame="below" bgcolor="#E8F1D4">
             <tr>
                 <td height=2px>
-                    <font size=2><strong> Contracte Som Energia nº ${polissa.name}</strong></font>
+                    <font size=2><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
                 </td>
                 <td valign=top rowspan="4" align="right">
                     <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
@@ -163,12 +154,16 @@
         Les condicions contractuals actuals del teu contracte amb Som Energia són:
     </p>
     <ul>
-        <li>Tarifa: ${tarifaATR}</li>
-        <li>Potència: ${pot_deseada_ca}</li>
         <li>Autoconsum:
             <ul>
-                <li>Modalitat: ${autoconsum_description}</li>
-                <li>Potència generació:  kW</li>
+                <li>Motiu: ${motiu_modificacio}</li>
+                <li>Potència generació:
+                    <ul>
+                    % for pot_generacio in pots_generacio:
+                        <li>CAU: ${pot_generacio[0]} - ${pot_generacio[1]} kW</li>
+                    % endfor
+                    </ul>
+                </li>
             </ul>
         </li>
     </ul>
@@ -196,12 +191,16 @@
         Las condiciones contractuales actuales de tu contrato con Som Energia son:
     </p>
     <ul>
-        <li>Tarifa: ${tarifaATR}</li>
-        <li>Potencia: ${pot_deseada_es}</li>
         <li>Autoconsumo:
             <ul>
-                <li>Modalidad: ${autoconsum_description}</li>
-                <li>Potencia generación:  kW</li>
+                <li>Motiu: ${motiu_modificacio}</li>
+                <li>Potencia generación:
+                    <ul>
+                    % for pot_generacio in pots_generacio:
+                        <li>CAU: ${pot_generacio[0]} - ${pot_generacio[1]} kW</li>
+                    % endfor
+                    </ul>
+                </li>
             </ul>
         </li>
     </ul>
