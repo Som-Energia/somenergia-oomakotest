@@ -38,7 +38,7 @@
             nif_generador = d.generadors[0].identificador
             if nif_generador != polissa_nif:
                 partner_diferent = True
-    elif d.motiu_canvi == '07':
+    elif d.motiu_canvi == '07' or d.motiu_canvi == '12':
         if d.generadors:
             pot_installada = d.generadors[0].pot_installada_gen or ' '
 
@@ -73,6 +73,10 @@
         ${correu_ca_motiu_07()}
     % elif d.motiu_canvi == '07' and object.cups_polissa_id.titular.lang == "es_ES":
         ${correu_es_motiu_07()}
+    % elif d.motiu_canvi == '12' and object.cups_polissa_id.titular.lang == "ca_ES":
+        ${correu_ca_motiu_12()}
+    % elif d.motiu_canvi == '12' and object.cups_polissa_id.titular.lang == "es_ES":
+        ${correu_es_motiu_12()}
     % elif object.cups_polissa_id.titular.lang == "ca_ES":
         ${correu_cat()}
     % else:
@@ -260,6 +264,54 @@
     En caso de que la información sea correcta, necesitamos que contestes a este mismo correo, y tramitaremos la modificación contractual para actualizar este dato.<br>
     <br>
     Cualquier duda seguimos en contacto. <br>
+    <br>
+	Saludos,<br>
+    <br>
+    Equipo de Som Energia<br>
+    <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
+    <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
+</%def>
+
+<%def name="correu_ca_motiu_12()">
+    <p>
+        Hola${get_partner_name(object)},
+    </p>
+        L'empresa de distribució elèctrica de la teva zona ens comunica una <strong>modificació de potència de generació</strong> de la instal·lació d'autoproducció associada al punt de subministrament amb codi CUPS ${object.cups_id.name} corresponent a l’adreça ${object.cups_id.direccio}.
+    </p>
+    <p>
+    <p>
+        La nova potència de generació indicada per la distribuïdora és: <strong>${pot_installada} kW</strong>
+    </p>
+        En cas que la informació sigui correcta, necessitem que ens contestis aquest mateix correu, i tramitarem la modificació contractual per actualitzar aquesta dada.
+    </p>
+    <p>
+        Tingues en compte que l'empresa distribuïdora pot cobrar costos de gestió per aquest canvi que es veuran reflectits en la teva factura.
+    </p>
+    <p>
+        Qualsevol dubte continuem en contacte.
+    </p>
+    <p>
+        Salutacions,
+    </p>
+    <br>
+    Equip de Som Energia<br>
+    <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
+    <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
+</%def>
+
+<%def name="correu_es_motiu_12()">
+    <p>
+        Hola${get_partner_name(object)},
+    </p>
+	La empresa de distribución eléctrica de tu zona nos comunica una <strong>modificación de la potencia de generación </strong> de la instalación de autoproducción asociada al punto de suministro con código CUPS ${object.cups_id.name} correspondiente a la dirección ${object.cups_id.direccio}.<br>
+	<br>
+	La nueva potencia de generación indicada por la distribuidora es:<strong> ${pot_installada} kW</strong><br>
+	<br>
+    Si la información es correcta, necesitamos que contestes a este mismo correo para tramitar la modificación contractual correspondiente.<br>
+    <br>
+    Ten en cuenta que la distribuidora puede cobrar costes de gestión por este cambio que se verán reflejados en tu factura.<br>
+    <br>
+    Para cualquier otra aclaración, estamos en contacto.<br>
     <br>
 	Saludos,<br>
     <br>

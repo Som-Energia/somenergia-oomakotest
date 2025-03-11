@@ -1,0 +1,11 @@
+lang: ${object.partner_id.lang}
+cc: <% mail = '{}'.format(object.cups_polissa_id.titular.address[0].email if object.cups_polissa_id.titular
+  != object.cups_polissa_id.pagador else '') %> ${mail}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.cups_polissa_id.direccio_pagament.email}, <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email
+  if object.cups_polissa_id.administradora else '') %>  ${mail}
+subject_translations:
+  en_US: ''
+  ca_ES: '${object.company_id.name}: Recepció d''activació modificació unilateral per part de la seva distribuidora ${object.partner_id.name}'
+  es_ES: '${object.company_id.name}: Recepción de activación modificación unilateral por parte de su distribuidora ${object.partner_id.name}'
+subject: '${object.company_id.name}: Recepció d''activació modificació unilateral per part de la seva distribuidora ${object.partner_id.name}'
