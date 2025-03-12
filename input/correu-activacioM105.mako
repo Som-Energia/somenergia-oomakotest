@@ -292,12 +292,14 @@
     <ul>
         <li>Tarifa: ${tarifaATR}</li>
         <li>Potència: ${pot_deseada_ca}</li>
-        <li>Autoconsum:
-            <ul>
-                <li>Modalitat: ${autoconsum_description}</li>
-                <li>Potència generació:  kW</li>
-            </ul>
-        </li>
+        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+            <li>Autoconsum:
+                <ul>
+                    <li>Modalitat: ${autoconsum_description}</li>
+                    <li>Potència generació:  kW</li>
+                </ul>
+            </li>
+        %endif
     </ul>
 
     <p>
@@ -325,12 +327,14 @@
     <ul>
         <li>Tarifa: ${tarifaATR}</li>
         <li>Potencia: ${pot_deseada_es}</li>
-        <li>Autoconsumo:
-            <ul>
-                <li>Modalidad: ${autoconsum_description}</li>
-                <li>Potencia generación:  kW</li>
-            </ul>
-        </li>
+        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+            <li>Autoconsumo:
+                <ul>
+                    <li>Modalidad: ${autoconsum_description}</li>
+                    <li>Potencia generación:  kW</li>
+                </ul>
+            </li>
+        %endif
     </ul>
 
     <p>
@@ -363,7 +367,7 @@
             &nbsp;&nbsp; <strong> Tensión: ${tipus_tensio}</strong><br>
         %endif
 
-        %if pas05.tipus_autoconsum != '00':
+        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong>
         %endif
