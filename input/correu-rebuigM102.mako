@@ -39,7 +39,10 @@
     is_canvi_pot = pot_polissa != pot_solicitud
     is_canvi_ten = object.step_ids[0].pas_id.solicitud_tensio == 'S'
     is_canvi_tar = object.polissa_ref_id.tarifa_codi != tarifaATR
-    is_canvi_auto = object.step_ids[0].pas_id.tipus_autoconsum != object.polissa_ref_id.autoconsumo
+    if object.step_ids[0].pas_id.tipus_autoconsum is not False:
+        is_canvi_auto = object.step_ids[0].pas_id.tipus_autoconsum != object.polissa_ref_id.autoconsumo
+    else:
+        is_canvi_auto = False
 
     if is_canvi_auto:
         codi_auto = object.step_ids[0].pas_id.tipus_autoconsum
