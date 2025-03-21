@@ -30,9 +30,6 @@
         <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Import a carregar</strong>: ${data['factura']['import']} euros</strong></li>
     </ul>
     <p>
-    %if data['factura']['te_iva_21'] and potencies and max(potencies) <= 10:
-        <p>Com deus haver vist, se t’ha aplicat un IVA del 21%. Això és així perquè, des de l’1 de gener, ha deixat d’estar en vigor la mesura de rebaixa de l’IVA, establerta al <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Reial decret llei 8-2023</a>. Si no hi ha canvis posteriors, l’IVA elèctric seguirà al 21%. </p>
-    %endif
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
         <p dir="ltr">
             Sempre que vulguis, pots accedir a l'<a href="https://oficinavirtual.somenergia.coop/ca/login/">Oficina Virtual</a> per veure i descarregar les teves factures i gestionar els contractes que tens amb la cooperativa.
@@ -155,11 +152,8 @@
                 Si l'equip de mesura no és propietat de l'empresa distribuïdora,  la persona propietària haurà de complir amb aquesta obligació legal, optant per una de les següents opcions:
                 <ul>
                     <li>Instaŀlar un nou comptador de la seva propietat, a través d'un instaŀlador autoritzat.</li>
-                    <li>Optar per un nou equip de mesura en règim de lloguer. En aquest cas, E-Distribución s'encarregarà de tot el procés d'instal·lació, connexió i manteniment.</li>
+                    <li>Optar per un nou equip de mesura en règim de lloguer. En aquest cas, E-Distribución s'encarregarà de tot el procés d'instal·lació, connexió i manteniment. Per tal de gestionar aquesta actualització, cal que et comuniquis per telèfon al 854 573 573, o bé, per correu electrònic a: renovacioncontador@enel.com</li>
                 </ul>
-            </p>
-            <p dir="ltr">
-                Per tal de gestionar aquesta actualització, cal que et comuniquis per telèfon al 854 573 573, o bé, per correu electrònic a: renovacioncontador@enel.com
             </p>
         <br>
     % endif
@@ -205,9 +199,6 @@
         <li><strong><strong id="docs-internal-guid-531dd379-7fff-ff8b-79e9-ac3d592033e4">Importe a cargar</strong>: ${data['factura']['import']} euros</strong></li>
     </ul>
     <p dir="ltr"></p>
-    %if data['factura']['te_iva_21'] and potencies and max(potencies) <= 10:
-        <p>Como debes haber visto, se te ha aplicado un IVA del 21%. Esto es así porque, desde el 1 de enero, ya no está en vigor la medida de rebaja del IVA, establecida en el <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-26452">Real decreto ley 8-2023</a>. Si no hay cambios posteriores, el IVA eléctrico seguirá al 21%. </p>
-    %endif
     %if data['polissa']['tarifa'] == '2.0TD' and data['polissa']['mode_facturacio'] == 'atr':
         <p dir="ltr">
             Siempre que quieras, puedes acceder a la <a href="https://oficinavirtual.somenergia.coop/es/login/">Oficina Virtual</a> para ver y descargar tus facturas y gestionar tus contratos con la cooperativa.
@@ -332,11 +323,8 @@
                 Si el equipo de medida no es propiedad de la empresa distribuidora, la persona propietaria deberá cumplir con esta obligación legal, optando por una de las siguientes opciones:
                 <ul>
                     <li>Instalar un nuevo contador de su propiedad a través de un instalador autorizado.</li>
-                    <li>Optar por un nuevo equipo de medida en régimen de alquiler. En ese caso, E-Distribución se encargará de todo el proceso de instalación, conexión y mantenimiento.</li>
+                    <li>Optar por un nuevo equipo de medida en régimen de alquiler. En ese caso, E-Distribución se encargará de todo el proceso de instalación, conexión y mantenimiento. Para gestionar esta actualización, es necesario que te comuniques por teléfono al 854 573 573, o bien, por correo electrónico a: renovacioncontador@enel.com</li>
                 </ul>
-            </p>
-            <p dir="ltr">
-                Para gestionar esta actualización, es necesario que te comuniques por teléfono al 854 573 573, o bien, por correo electrónico a: renovacioncontador@enel.com
             </p>
         <br>
     % endif
