@@ -39,8 +39,12 @@
             if nif_generador != polissa_nif:
                 partner_diferent = True
     elif d.motiu_canvi == '07' or d.motiu_canvi == '12':
-        if d.generadors:
-            pot_installada = d.generadors[0].pot_installada_gen or ' '
+        if d.dades_cau:
+            sumatori_pot = 0
+            for cau in d.dades_cau:
+                for inst in cau.dades_instalacio_gen:
+                    sumatori_pot += inst.pot_installada_gen
+            pot_installada = sumatori_pot or ' '
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
