@@ -1,9 +1,9 @@
 lang: ${object.polissa_id.titular.lang}
 cc: <% mail = '{}'.format(object.polissa_id.administradora.address[0].email if object.polissa_id.administradora
   else '') %>  ${mail}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
   ca_ES: Factura ${object.number}
   es_ES: Factura ${object.number}
 subject: Factura ${object.number}
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net
