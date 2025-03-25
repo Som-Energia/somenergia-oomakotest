@@ -164,7 +164,7 @@
         %elif is_canvi_tit:
             ${canvi_tit_cat()}
         %elif is_pot_gen:
-            ${pot_gen_es()}
+            ${pot_gen_cat()}
         %endif
         Atentament,<br>
         <br>
@@ -190,7 +190,7 @@
             &nbsp;&nbsp; <strong> Tensió: ${tipus_tensio}</strong><br>
         %endif
 
-        %if pas05.tipus_autoconsum != '00':
+        %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsum: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong>
         %endif
@@ -281,7 +281,7 @@
     </body>
 </%def>
 
-<%def name="pot_gen_ca()">
+<%def name="pot_gen_cat()">
     <p>
         La sol·licitud de la modificació contractual ha estat ACTIVADA, amb data ${date_activacio}.
     </p>
@@ -362,7 +362,7 @@
             &nbsp;&nbsp; <strong> Tensión: ${tipus_tensio}</strong><br>
         %endif
 
-        %if pas05.tipus_autoconsum != '00':
+        %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong>
         %endif
