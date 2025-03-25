@@ -93,7 +93,7 @@
     new_contract_number = object.polissa_ref_id.name
     date_activacio = datetime.strptime(pas05.data_activacio, '%Y-%m-%d').strftime('%d/%m/%Y')
 
-    if pas.05.tipus_autoconsum is not False:
+    if pas05.tipus_autoconsum is not False:
         autoconsum_description = get_autoconsum_description(object, pas05.tipus_autoconsum, object.polissa_ref_id.titular.lang)
 
     # Campanya canvi titular sense soci
