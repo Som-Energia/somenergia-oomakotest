@@ -88,8 +88,9 @@ if pas1:
         tipus_tensio = get_tension_type(object, pas1, lang)
 
     nou_autoconsum = False
-    if object.cups_polissa_id.autoconsumo != pas1.tipus_autoconsum:
-        nou_autoconsum = get_autoconsum_description(object, pas1.tipus_autoconsum, object.cups_polissa_id.titular.lang)
+    if pas1.tipus_autoconsum is not False:
+        if object.cups_polissa_id.autoconsumo != pas1.tipus_autoconsum:
+            nou_autoconsum = get_autoconsum_description(object, pas1.tipus_autoconsum, object.cups_polissa_id.titular.lang)
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')

@@ -93,7 +93,8 @@
     new_contract_number = object.polissa_ref_id.name
     date_activacio = datetime.strptime(pas05.data_activacio, '%Y-%m-%d').strftime('%d/%m/%Y')
 
-    autoconsum_description = get_autoconsum_description(object, pas05.tipus_autoconsum, object.polissa_ref_id.titular.lang)
+    if pas.05.tipus_autoconsum is not False:
+        autoconsum_description = get_autoconsum_description(object, pas05.tipus_autoconsum, object.polissa_ref_id.titular.lang)
 
     # Campanya canvi titular sense soci
     campanya_partner_soci_id = md_obj.get_object_reference(
@@ -190,7 +191,7 @@
             &nbsp;&nbsp; <strong> Tensió: ${tipus_tensio}</strong><br>
         %endif
 
-        %if pas05.tipus_autoconsum != '00':
+        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsum: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong>
         %endif
@@ -291,12 +292,14 @@
     <ul>
         <li>Tarifa: ${tarifaATR}</li>
         <li>Potència: ${pot_deseada_ca}</li>
-        <li>Autoconsum:
-            <ul>
-                <li>Modalitat: ${autoconsum_description}</li>
-                <li>Potència generació:  kW</li>
-            </ul>
-        </li>
+        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+            <li>Autoconsum:
+                <ul>
+                    <li>Modalitat: ${autoconsum_description}</li>
+                    <li>Potència generació:  kW</li>
+                </ul>
+            </li>
+        %endif
     </ul>
 
     <p>
@@ -324,12 +327,14 @@
     <ul>
         <li>Tarifa: ${tarifaATR}</li>
         <li>Potencia: ${pot_deseada_es}</li>
-        <li>Autoconsumo:
-            <ul>
-                <li>Modalidad: ${autoconsum_description}</li>
-                <li>Potencia generación:  kW</li>
-            </ul>
-        </li>
+        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+            <li>Autoconsumo:
+                <ul>
+                    <li>Modalidad: ${autoconsum_description}</li>
+                    <li>Potencia generación:  kW</li>
+                </ul>
+            </li>
+        %endif
     </ul>
 
     <p>
@@ -362,7 +367,7 @@
             &nbsp;&nbsp; <strong> Tensión: ${tipus_tensio}</strong><br>
         %endif
 
-        %if pas05.tipus_autoconsum != '00':
+        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong>
         %endif

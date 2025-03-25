@@ -1,7 +1,7 @@
 lang: ${object.cups_polissa_id.titular.lang}
 cc: false
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
-to: ${object.cups_polissa_id.autoconsum_id.generador_id[0].partner_id.www_email}
+to: ${", ".join(instalacio.email for dades in altre_cas.step_ids[0].pas_id.dades_cau for instalacio in dades.dades_instalacio_gen)}
 subject_translations:
   ca_ES: Dades instal·lació autoconsum CUPS ${object.cups_id.name}
   es_ES: Datos instalación autoconsumo CUPS ${object.cups_id.name}
