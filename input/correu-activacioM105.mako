@@ -44,6 +44,12 @@
         pot_installada = sumatori_pot or ' '
         return pot_installada
 
+    def get_autoconsum_is_collectiu(object_, dades_cau):
+        for cau in dades_cau:
+            if cau.collectiu:
+                return True
+        return False
+
     def get_tension_type(object_, pas05, lang):
         codi_cnmc = pas05.tensio_suministre
         taula_cnmc = dict(TABLA_64)
@@ -106,11 +112,14 @@
 
     autoconsum_description = ''
     pot_gen = ''
+    is_collectiu = 'No'
     if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False:
         autoconsum_description = get_autoconsum_description(
             object, pas05.dades_cau[0].tipus_autoconsum, object.polissa_ref_id.titular.lang
         )
         pot_gen = get_autoconsum_pot_gen(object, pas05.dades_cau)
+        is_collectiu = get_autoconsum_is_collectiu(object, pas05.dades_cau)
+        is_collectiu = 'Sí' if is_collectiu else 'No'
 
     # Campanya canvi titular sense soci
     campanya_partner_soci_id = md_obj.get_object_reference(
@@ -210,7 +219,8 @@
         %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsum: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong> <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Potència generació: ${pot_gen} kW </strong>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Potència generació: ${pot_gen} kW </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Col·lectiu: ${is_collectiu} </strong>
         %endif
     </p>
 
@@ -314,6 +324,7 @@
                 <ul>
                     <li>Modalitat: ${autoconsum_description}</li>
                     <li>Potència generació: ${pot_gen} kW</li>
+                    <li>Col·lectiu: ${is_collectiu}</li>
                 </ul>
             </li>
         %endif
@@ -349,6 +360,7 @@
                 <ul>
                     <li>Modalidad: ${autoconsum_description}</li>
                     <li>Potencia generación: ${pot_gen} kW</li>
+                    <li>Colectivo: ${is_collectiu}</li>
                 </ul>
             </li>
         %endif
@@ -387,7 +399,8 @@
         %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong> <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Potencia generación: ${pot_gen} kW </strong>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Potencia generación: ${pot_gen} kW </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Colectivo: ${is_collectiu} </strong>
         %endif
     </p>
     <p>
