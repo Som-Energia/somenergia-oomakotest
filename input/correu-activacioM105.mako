@@ -28,8 +28,11 @@
         return Polissa.read(object_._cr, object_._uid, new_contract_id, [])['name']
 
     def get_autoconsum_description(object_, auto_consum, lang):
-        M105 = object_.pool.get('giscedata.switching.m1.05')
-        tipus_autoconsum = dict(M105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
+        ## M105 = object_.pool.get('giscedata.switching.m1.05')
+        dades_cau_obj = object_.pool.get('giscedata.switching.datos.cau')
+        tipus_autoconsum = dict(
+            dades_cau_obj.fields_get(object_._cr, object_._uid, context={'lang': lang}
+        )['tipus_autoconsum']['selection'])
 
         return auto_consum + " - " + tipus_autoconsum[auto_consum]
 
@@ -93,8 +96,11 @@
     new_contract_number = object.polissa_ref_id.name
     date_activacio = datetime.strptime(pas05.data_activacio, '%Y-%m-%d').strftime('%d/%m/%Y')
 
-    if pas05.tipus_autoconsum is not False:
-        autoconsum_description = get_autoconsum_description(object, pas05.tipus_autoconsum, object.polissa_ref_id.titular.lang)
+    autoconsum_description = ''
+    if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False:
+        autoconsum_description = get_autoconsum_description(
+            object, pas05.dades_cau[0].tipus_autoconsum, object.polissa_ref_id.titular.lang
+        )
 
     # Campanya canvi titular sense soci
     campanya_partner_soci_id = md_obj.get_object_reference(
@@ -191,7 +197,7 @@
             &nbsp;&nbsp; <strong> Tensió: ${tipus_tensio}</strong><br>
         %endif
 
-        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+        %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsum: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong>
         %endif
@@ -292,7 +298,7 @@
     <ul>
         <li>Tarifa: ${tarifaATR}</li>
         <li>Potència: ${pot_deseada_ca}</li>
-        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+        %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             <li>Autoconsum:
                 <ul>
                     <li>Modalitat: ${autoconsum_description}</li>
@@ -327,7 +333,7 @@
     <ul>
         <li>Tarifa: ${tarifaATR}</li>
         <li>Potencia: ${pot_deseada_es}</li>
-        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+        %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             <li>Autoconsumo:
                 <ul>
                     <li>Modalidad: ${autoconsum_description}</li>
@@ -367,7 +373,7 @@
             &nbsp;&nbsp; <strong> Tensión: ${tipus_tensio}</strong><br>
         %endif
 
-        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+        %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong>
         %endif
