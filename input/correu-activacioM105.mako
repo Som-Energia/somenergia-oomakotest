@@ -36,6 +36,14 @@
 
         return auto_consum + " - " + tipus_autoconsum[auto_consum]
 
+    def get_autoconsum_pot_gen(object_, dades_cau):
+        sumatori_pot = 0
+        for cau in dades_cau:
+            for inst in cau.dades_instalacio_gen:
+                sumatori_pot += inst.pot_installada_gen
+        pot_installada = sumatori_pot or ' '
+        return pot_installada
+
     def get_tension_type(object_, pas05, lang):
         codi_cnmc = pas05.tensio_suministre
         taula_cnmc = dict(TABLA_64)
@@ -97,10 +105,12 @@
     date_activacio = datetime.strptime(pas05.data_activacio, '%Y-%m-%d').strftime('%d/%m/%Y')
 
     autoconsum_description = ''
+    pot_gen = ''
     if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False:
         autoconsum_description = get_autoconsum_description(
             object, pas05.dades_cau[0].tipus_autoconsum, object.polissa_ref_id.titular.lang
         )
+        pot_gen = get_autoconsum_pot_gen(object, pas05.dades_cau)
 
     # Campanya canvi titular sense soci
     campanya_partner_soci_id = md_obj.get_object_reference(
@@ -171,7 +181,7 @@
         %elif is_canvi_tit:
             ${canvi_tit_cat()}
         %elif is_pot_gen:
-            ${pot_gen_es()}
+            ${pot_gen_cat()}
         %endif
         Atentament,<br>
         <br>
@@ -199,7 +209,8 @@
 
         %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsum: </strong> <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Potència generació: ${pot_gen} kW </strong>
         %endif
     </p>
 
@@ -288,7 +299,7 @@
     </body>
 </%def>
 
-<%def name="pot_gen_ca()">
+<%def name="pot_gen_cat()">
     <p>
         La sol·licitud de la modificació contractual ha estat ACTIVADA, amb data ${date_activacio}.
     </p>
@@ -302,7 +313,7 @@
             <li>Autoconsum:
                 <ul>
                     <li>Modalitat: ${autoconsum_description}</li>
-                    <li>Potència generació:  kW</li>
+                    <li>Potència generació: ${pot_gen} kW</li>
                 </ul>
             </li>
         %endif
@@ -337,7 +348,7 @@
             <li>Autoconsumo:
                 <ul>
                     <li>Modalidad: ${autoconsum_description}</li>
-                    <li>Potencia generación:  kW</li>
+                    <li>Potencia generación: ${pot_gen} kW</li>
                 </ul>
             </li>
         %endif
@@ -375,7 +386,8 @@
 
         %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Potencia generación: ${pot_gen} kW </strong>
         %endif
     </p>
     <p>
