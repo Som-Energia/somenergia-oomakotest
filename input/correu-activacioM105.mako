@@ -2,6 +2,7 @@
     from mako.template import Template
     from datetime import datetime, timedelta
     from gestionatr.defs import TABLA_64
+    from som_polissa.giscedata_cups import TABLA_113_dict
 
     THREEPHASE = {
         'ca_ES': "Trifàsica",
@@ -41,6 +42,8 @@
             dades_cau_obj.fields_get(object_._cr, object_._uid, context={'lang': lang}
         )['tipus_subseccio']['selection'])
 
+        ## tipus_subseccio_text = TABLA_113_dict["74"]
+        ## return tipus_subseccio + " - " + tipus_subseccio_text
         return tipus_subseccio + " - " + tipus_subseccio_selection[tipus_subseccio]
 
     def get_autoconsum_pot_gen(object_, dades_cau):
