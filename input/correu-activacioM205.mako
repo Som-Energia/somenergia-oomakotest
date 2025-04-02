@@ -35,7 +35,7 @@
 
     motiu_modificacio = get_motiu_modificacio(object, pas05.motiu_modificacio, object.cups_polissa_id.titular.lang)
     pots_generacio = get_potencia_generacio(object, pas05)
-    
+
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
@@ -57,7 +57,6 @@
     % if object.cups_polissa_id.titular.lang == "ca_ES":
         ${correu_cat()}
     % else:
-        adeu
         ${correu_es()}
     % endif
     ${text_legal}
