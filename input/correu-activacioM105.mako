@@ -2,7 +2,6 @@
     from mako.template import Template
     from datetime import datetime, timedelta
     from gestionatr.defs import TABLA_64
-    from som_polissa.giscedata_cups import TABLA_113_dict
 
     THREEPHASE = {
         'ca_ES': "Trifàsica",
@@ -12,6 +11,25 @@
     MONOPHASE = {
         'ca_ES': "Monofàsica",
         'es_ES': "Monofásica"
+    }
+
+    TABLA_133_dict = {
+        'ca_ES': {
+            '10': "Sense excedents No acollit a compensació",
+            '11': "Sense excedents acollit a compensació",
+            '20': "Amb excedents no acollits a compensació",
+            '21': "Amb excedents acollits a compensació",
+            '00': "Sense autoconsum",
+            '0C': "Baixa com a membre d'autoconsum col·lectiu",
+        },
+        'es_ES': {
+            '10': "Sin excedentes No acogido a compensación",
+            '11': "Sin excedentes acogido a compensación",
+            '20': "Con excedentes no acogidos a compensación",
+            '21': "Con excedentes acogidos a compensación",
+            '00': "Sin autoconsumo",
+            '0C': "Baja como miembro de autoconsumo colectivo",
+        }
     }
 
     def render(text_to_render, object_):
@@ -38,13 +56,9 @@
 
     def get_auto_tipus_subseccio_description(object_, tipus_subseccio, lang):
         dades_cau_obj = object_.pool.get('giscedata.switching.datos.cau')
-        tipus_subseccio_selection = dict(
-            dades_cau_obj.fields_get(object_._cr, object_._uid, context={'lang': lang}
-        )['tipus_subseccio']['selection'])
-
-        ## tipus_subseccio_text = TABLA_113_dict["74"]
-        ## return tipus_subseccio + " - " + tipus_subseccio_text
-        return tipus_subseccio + " - " + tipus_subseccio_selection[tipus_subseccio]
+        # TODO: Get translations with from som_polissa.giscedata_cups import TABLA_133_dict)
+        tipus_subseccio_text = TABLA_133_dict[lang].get(str(tipus_subseccio), '')
+        return tipus_subseccio + " - " + tipus_subseccio_text
 
     def get_autoconsum_pot_gen(object_, dades_cau):
         sumatori_pot = 0
@@ -338,6 +352,7 @@
             <li>Autoconsum:
                 <ul>
                     <li>Modalitat: ${autoconsum_description}</li>
+                    <li>Subsecció: ${tipus_subseccio_description}</li>
                     <li>Potència generació: ${pot_gen} kW</li>
                     <li>Col·lectiu: ${is_collectiu}</li>
                 </ul>
@@ -374,6 +389,7 @@
             <li>Autoconsumo:
                 <ul>
                     <li>Modalidad: ${autoconsum_description}</li>
+                    <li>Subsección: ${tipus_subseccio_description}</li>
                     <li>Potencia generación: ${pot_gen} kW</li>
                     <li>Colectivo: ${is_collectiu}</li>
                 </ul>
@@ -414,6 +430,7 @@
         %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Subsección: ${tipus_subseccio_description} </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Potencia generación: ${pot_gen} kW </strong> <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Colectivo: ${is_collectiu} </strong>
         %endif
