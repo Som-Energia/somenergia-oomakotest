@@ -13,6 +13,25 @@
         'es_ES': "Monofásica"
     }
 
+    TABLA_133_dict = {
+        'ca_ES': {
+            '10': "Sense excedents No acollit a compensació",
+            '11': "Sense excedents acollit a compensació",
+            '20': "Amb excedents no acollits a compensació",
+            '21': "Amb excedents acollits a compensació",
+            '00': "Sense autoconsum",
+            '0C': "Baixa com a membre d'autoconsum col·lectiu",
+        },
+        'es_ES': {
+            '10': "Sin excedentes No acogido a compensación",
+            '11': "Sin excedentes acogido a compensación",
+            '20': "Con excedentes no acogidos a compensación",
+            '21': "Con excedentes acogidos a compensación",
+            '00': "Sin autoconsumo",
+            '0C': "Baja como miembro de autoconsumo colectivo",
+        }
+    }
+
     def render(text_to_render, object_):
         templ = Template(text_to_render)
         return templ.render_unicode(
@@ -28,10 +47,32 @@
         return Polissa.read(object_._cr, object_._uid, new_contract_id, [])['name']
 
     def get_autoconsum_description(object_, auto_consum, lang):
-        M105 = object_.pool.get('giscedata.switching.m1.05')
-        tipus_autoconsum = dict(M105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
+        dades_cau_obj = object_.pool.get('giscedata.switching.datos.cau')
+        tipus_autoconsum = dict(
+            dades_cau_obj.fields_get(object_._cr, object_._uid, context={'lang': lang}
+        )['tipus_autoconsum']['selection'])
 
         return auto_consum + " - " + tipus_autoconsum[auto_consum]
+
+    def get_auto_tipus_subseccio_description(object_, tipus_subseccio, lang):
+        dades_cau_obj = object_.pool.get('giscedata.switching.datos.cau')
+        # TODO: Get translations with from som_polissa.giscedata_cups import TABLA_133_dict)
+        tipus_subseccio_text = TABLA_133_dict[lang].get(str(tipus_subseccio), '')
+        return tipus_subseccio + " - " + tipus_subseccio_text
+
+    def get_autoconsum_pot_gen(object_, dades_cau):
+        sumatori_pot = 0
+        for cau in dades_cau:
+            for inst in cau.dades_instalacio_gen:
+                sumatori_pot += inst.pot_installada_gen
+        pot_installada = sumatori_pot or ' '
+        return pot_installada
+
+    def get_autoconsum_is_collectiu(object_, dades_cau):
+        for cau in dades_cau:
+            if cau.collectiu:
+                return True
+        return False
 
     def get_tension_type(object_, pas05, lang):
         codi_cnmc = pas05.tensio_suministre
@@ -93,8 +134,20 @@
     new_contract_number = object.polissa_ref_id.name
     date_activacio = datetime.strptime(pas05.data_activacio, '%Y-%m-%d').strftime('%d/%m/%Y')
 
-    if pas.05.tipus_autoconsum is not False:
-        autoconsum_description = get_autoconsum_description(object, pas05.tipus_autoconsum, object.polissa_ref_id.titular.lang)
+    autoconsum_description = ''
+    pot_gen = ''
+    tipus_subseccio_description = ''
+    is_collectiu = 'No'
+    if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False:
+        autoconsum_description = get_autoconsum_description(
+            object, pas05.dades_cau[0].tipus_autoconsum, polissa.titular.lang
+        )
+        tipus_subseccio_description = get_auto_tipus_subseccio_description(
+            object, pas05.dades_cau[0].tipus_subseccio, polissa.titular.lang
+        )
+        pot_gen = get_autoconsum_pot_gen(object, pas05.dades_cau)
+        is_collectiu = get_autoconsum_is_collectiu(object, pas05.dades_cau)
+        is_collectiu = 'Sí' if is_collectiu else 'No'
 
     # Campanya canvi titular sense soci
     campanya_partner_soci_id = md_obj.get_object_reference(
@@ -165,7 +218,7 @@
         %elif is_canvi_tit:
             ${canvi_tit_cat()}
         %elif is_pot_gen:
-            ${pot_gen_es()}
+            ${pot_gen_cat()}
         %endif
         Atentament,<br>
         <br>
@@ -191,9 +244,12 @@
             &nbsp;&nbsp; <strong> Tensió: ${tipus_tensio}</strong><br>
         %endif
 
-        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+        %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsum: </strong> <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalitat: ${autoconsum_description} </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Subsecció: ${tipus_subseccio_description} </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Potència generació: ${pot_gen} kW </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Col·lectiu: ${is_collectiu} </strong>
         %endif
     </p>
 
@@ -282,7 +338,7 @@
     </body>
 </%def>
 
-<%def name="pot_gen_ca()">
+<%def name="pot_gen_cat()">
     <p>
         La sol·licitud de la modificació contractual ha estat ACTIVADA, amb data ${date_activacio}.
     </p>
@@ -292,11 +348,13 @@
     <ul>
         <li>Tarifa: ${tarifaATR}</li>
         <li>Potència: ${pot_deseada_ca}</li>
-        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+        %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             <li>Autoconsum:
                 <ul>
                     <li>Modalitat: ${autoconsum_description}</li>
-                    <li>Potència generació:  kW</li>
+                    <li>Subsecció: ${tipus_subseccio_description}</li>
+                    <li>Potència generació: ${pot_gen} kW</li>
+                    <li>Col·lectiu: ${is_collectiu}</li>
                 </ul>
             </li>
         %endif
@@ -327,11 +385,13 @@
     <ul>
         <li>Tarifa: ${tarifaATR}</li>
         <li>Potencia: ${pot_deseada_es}</li>
-        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+        %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             <li>Autoconsumo:
                 <ul>
                     <li>Modalidad: ${autoconsum_description}</li>
-                    <li>Potencia generación:  kW</li>
+                    <li>Subsección: ${tipus_subseccio_description}</li>
+                    <li>Potencia generación: ${pot_gen} kW</li>
+                    <li>Colectivo: ${is_collectiu}</li>
                 </ul>
             </li>
         %endif
@@ -367,9 +427,12 @@
             &nbsp;&nbsp; <strong> Tensión: ${tipus_tensio}</strong><br>
         %endif
 
-        %if pas05.tipus_autoconsum is not False and pas05.tipus_autoconsum != '00':
+        %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
             &nbsp;&nbsp;<strong> Autoconsumo: </strong> <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Modalidad: ${autoconsum_description} </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Subsección: ${tipus_subseccio_description} </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Potencia generación: ${pot_gen} kW </strong> <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <strong> - Colectivo: ${is_collectiu} </strong>
         %endif
     </p>
     <p>
