@@ -1,0 +1,9 @@
+lang: ${object.partner_id.lang}
+to: ${object.polissa_ref_id.direccio_pagament.email}, <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email if object.cups_polissa_id.administradora else '') %>  ${mail}
+subject_translations:
+  en_US: ''
+  ca_ES: "Som Energia: Rebuda comunicació d'activació de la reposició de contracte a la seva distribuidora ${object.partner_id.name}"
+  es_ES: "Som Energia: Recibida comunicación de activación de la reposición de contrato a su distribuidora ${object.partner_id.name}"
+subject: "Som Energia: Rebuda comunicació d'activació de la reposició de contracte a la seva distribuidora ${object.partner_id.name}.
+  Som Energia: Recibida comunicación de activación de la reposición de contrato a su distribuidora ${object.partner_id.name}"
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
