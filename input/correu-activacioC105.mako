@@ -38,12 +38,21 @@
 % endif
 <%
 import sys
+cups_obj = object_.pool.get('giscedata.cups')
 
-def get_autoconsum_description(object_, auto_consum, lang):
-  C105 = object_.pool.get('giscedata.switching.c1.05')
-  tipus_autoconsum = dict(C105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
+def get_autoconsum_pot_gen(object_, dades_cau):
+    sumatori_pot = 0
+    for cau in dades_cau:
+        for inst in cau.dades_instalacio_gen:
+            sumatori_pot += inst.pot_installada_gen
+    pot_installada = sumatori_pot or ' '
+    return pot_installada
 
-  return auto_consum + " - " + tipus_autoconsum[auto_consum]
+def get_autoconsum_is_collectiu(object_, dades_cau):
+    for cau in dades_cau:
+        if cau.collectiu:
+            return True
+    return False
 
 for step in object.step_ids:
   obj = step.pas_id
@@ -82,8 +91,9 @@ if TarifaATR == "2.0TD":
   lineesDePotencia_es = lineesDePotencia_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
 
 autoconsum_description = False
-if pas5.tipus_autoconsum != '00' and pas5.tipus_autoconsum:
-  autoconsum_description = get_autoconsum_description(object, pas5.tipus_autoconsum, object.cups_polissa_id.titular.lang)
+if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
+  autoconsum_description = cups_obj.get_autoconsum_description(object_._cr, object_._uid, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang)
+  tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object_._cr, object_._uid, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
 
 subministrament_essencial = False
 if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
@@ -124,6 +134,9 @@ text_legal = render(t_obj.read(
 %if autoconsum_description:
 <ul>
 <li><strong> Modalitat autoconsum: </strong> ${autoconsum_description}</li>
+<li><strong> Subsecció: </strong> ${tipus_subseccio_description}</li>
+<li><strong> Potència generació: </strong> ${pot_gen}</li>
+<li><strong> Coŀlectiu: </strong> ${tipus_subseccio_description}</li>
 </ul>
 <p>Si la teva modalitat d&rsquo;autoconsum &eacute;s amb compensaci&oacute; d&rsquo;excedents, tamb&eacute; s&rsquo;ha activat el&nbsp;<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar">Flux Solar</a>.&nbsp;</p>
 %endif
@@ -157,6 +170,9 @@ text_legal = render(t_obj.read(
 %if autoconsum_description:
 <ul>
 <li><strong> Modalidad autoconsumo: </strong> ${autoconsum_description}</li>
+<li><strong> Subsección: </strong> ${tipus_subseccio_description}</li>
+<li><strong> Potencia generación: </strong> ${pot_gen}</li>
+<li><strong> Colectivo: </strong> ${tipus_subseccio_description}</li>
 </ul>
 <p>Si tu modalidad de autoconsumo es con compensaci&oacute;n de excedentes, tambi&eacute;n se ha activado el <a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar">Flux Solar</a>.&nbsp;</p>
 %endif
