@@ -992,6 +992,13 @@
 #    30TD_es_auto: 356843
 #    30TD_ca_auto: 356375
 #
+#activacionE205_automatica:
+#  template: input/correu-activacioE205.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_E2_05
+#  cases:
+#    20TD_ca: 605528
+#
 #notificacioAcceptacioA3:
 #  template: input/correu-notificacioAcceptacioA3.mako
 #  model: giscedata.switching
