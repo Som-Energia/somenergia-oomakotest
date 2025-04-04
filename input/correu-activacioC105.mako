@@ -94,11 +94,14 @@ autoconsum_description = False
 if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
   autoconsum_description = cups_obj.get_autoconsum_description(object._cr, object._uid, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang)
   tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object._cr, object._uid, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
+  potencia_generacio_desc = get_autoconsum_pot_gen(object, pas05.dades_cau)
+  colectiu_desc = get_autoconsum_is_collectiu(object, pas05.dades_cau)
 
 subministrament_essencial = False
 if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
   subministrament_essencial = True
 tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
+
 %>
 <%
 from mako.template import Template
@@ -135,8 +138,10 @@ text_legal = render(t_obj.read(
 <ul>
 <li><strong> Modalitat autoconsum: </strong> ${autoconsum_description}</li>
 <li><strong> Subsecció: </strong> ${tipus_subseccio_description}</li>
-<li><strong> Potència generació: </strong> ${pot_gen}</li>
-<li><strong> Coŀlectiu: </strong> ${tipus_subseccio_description}</li>
+<li><strong> Potència generació: </strong> ${potencia_generacio_desc}</li>
+%if colectiu_desc:
+<li><strong> Coŀlectiu: </strong> Sí</li>
+%endif
 </ul>
 <p>Si la teva modalitat d&rsquo;autoconsum &eacute;s amb compensaci&oacute; d&rsquo;excedents, tamb&eacute; s&rsquo;ha activat el&nbsp;<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar">Flux Solar</a>.&nbsp;</p>
 %endif
@@ -171,8 +176,10 @@ text_legal = render(t_obj.read(
 <ul>
 <li><strong> Modalidad autoconsumo: </strong> ${autoconsum_description}</li>
 <li><strong> Subsección: </strong> ${tipus_subseccio_description}</li>
-<li><strong> Potencia generación: </strong> ${pot_gen}</li>
-<li><strong> Colectivo: </strong> ${tipus_subseccio_description}</li>
+<li><strong> Potencia generación: </strong> ${potencia_generacio_desc}</li>
+%if colectiu_desc:
+<li><strong> Colectivo: </strong> Sí</li>
+%endif
 </ul>
 <p>Si tu modalidad de autoconsumo es con compensaci&oacute;n de excedentes, tambi&eacute;n se ha activado el <a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar">Flux Solar</a>.&nbsp;</p>
 %endif
