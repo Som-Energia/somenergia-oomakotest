@@ -100,8 +100,8 @@ if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas0
 subministrament_essencial = False
 if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
   subministrament_essencial = True
-tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
 
+tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
 %>
 <%
 from mako.template import Template
@@ -120,6 +120,7 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
+
 %>
 <p><br><br>Hola${nom_titular},<br><br></p>
 % if object.cups_polissa_id.titular.lang != "es_ES":
@@ -127,7 +128,7 @@ text_legal = render(t_obj.read(
 <ul>
 <li><strong>N&uacute;mero de contracte amb Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
-<li><strong>Adre&ccedil;a del punt de subministrament:&nbsp;</strong>${object.cups_id.direccio}</li>
+<li><strong>Adre&ccedil;a del punt de subministrament: </strong>${object.cups_id.direccio}</li>
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
@@ -193,6 +194,6 @@ text_legal = render(t_obj.read(
 %if subministrament_essencial:
 <p>Si este contrato de luz corresponde a un <a href="https://es.support.somenergia.coop/article/1227-suministros-esenciales">suministro esencial</a>, para disponer de una protecci&oacute;n especial y que no se pueda suspender el suministro el&eacute;ctrico, es necesario que nos lo indiqu&eacute;is respondiendo este mismo correo.<br><br></p>
 %endif
-<p>Si tienes alguna duda, encontrar&aacute;s las preguntas m&aacute;s frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br><br>Atentamente,<br><br>Equipo de Som Energia<br>comercializacion@somenergia.coop<br><a href="https://www.somenergia.coop">www.somenergia.coop</a><br><br></p>
-%endif
-<p>${text_legal}</p>
+<p>Si tienes alguna duda, encontrar&aacute;s las preguntas m&aacute;s frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br><br><br>Atentamente,<br><br>Equipo de Som Energia<br>comercializacion@somenergia.coop<br><a href="https://www.somenergia.coop">www.somenergia.coop</a></p>
+% endif
+<p><br>${text_legal}</p>
