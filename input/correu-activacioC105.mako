@@ -38,12 +38,21 @@
 % endif
 <%
 import sys
+cups_obj = object.pool.get('giscedata.cups.ps')
 
-def get_autoconsum_description(object_, auto_consum, lang):
-  C105 = object_.pool.get('giscedata.switching.c1.05')
-  tipus_autoconsum = dict(C105.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
+def get_autoconsum_pot_gen(object_, dades_cau):
+    sumatori_pot = 0
+    for cau in dades_cau:
+        for inst in cau.dades_instalacio_gen:
+            sumatori_pot += inst.pot_installada_gen
+    pot_installada = sumatori_pot or ' '
+    return pot_installada
 
-  return auto_consum + " - " + tipus_autoconsum[auto_consum]
+def get_autoconsum_is_collectiu(object_, dades_cau):
+    for cau in dades_cau:
+        if cau.collectiu:
+            return True
+    return False
 
 for step in object.step_ids:
   obj = step.pas_id
@@ -54,11 +63,11 @@ for step in object.step_ids:
     model, res_id = step.pas_id.split(',')
     obj = object.pool.get(model).browse(object._cr, object._uid, int(res_id))
   if model.startswith('giscedata.switching.c1.05') or model.startswith('giscedata.switching.c2.05') or model.startswith('giscedata.switching.c2.07'):
-    pas5 = obj
+    pas05 = obj
     break
 try:
   from datetime import datetime, timedelta
-  date = datetime.strptime(pas5.data_activacio, '%Y-%m-%d')
+  date = datetime.strptime(pas05.data_activacio, '%Y-%m-%d')
   data_activacio = date.strftime('%d/%m/%Y')
 except:
   data_activacio = ''
@@ -69,10 +78,10 @@ if not object.vat_enterprise():
 else:
   nom_titular = ''
 
-TarifaATR=dict(object.pool.get(model).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas5.tarifaATR]
+TarifaATR=dict(object.pool.get(model).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas05.tarifaATR]
 lineesDePotencia_ca = '\n'.join((
   '\t- <strong> %s: </strong>%s W'%(p.name, p.potencia)
-  for p in pas5.header_id.pot_ids
+  for p in pas05.header_id.pot_ids
   if p.potencia != 0
   ))
 lineesDePotencia_es = lineesDePotencia_ca
@@ -82,12 +91,16 @@ if TarifaATR == "2.0TD":
   lineesDePotencia_es = lineesDePotencia_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
 
 autoconsum_description = False
-if pas5.tipus_autoconsum != '00' and pas5.tipus_autoconsum:
-  autoconsum_description = get_autoconsum_description(object, pas5.tipus_autoconsum, object.cups_polissa_id.titular.lang)
+if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
+  autoconsum_description = cups_obj.get_autoconsum_description(object._cr, object._uid, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang)
+  tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object._cr, object._uid, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
+  potencia_generacio_desc = get_autoconsum_pot_gen(object, pas05.dades_cau)
+  colectiu_desc = get_autoconsum_is_collectiu(object, pas05.dades_cau)
 
 subministrament_essencial = False
 if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
   subministrament_essencial = True
+
 tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
 %>
 <%
@@ -107,6 +120,7 @@ text_legal = render(t_obj.read(
     object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
     object
 )
+
 %>
 <p><br><br>Hola${nom_titular},<br><br></p>
 % if object.cups_polissa_id.titular.lang != "es_ES":
@@ -114,7 +128,7 @@ text_legal = render(t_obj.read(
 <ul>
 <li><strong>N&uacute;mero de contracte amb Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
-<li><strong>Adre&ccedil;a del punt de subministrament:&nbsp;</strong>${object.cups_id.direccio}</li>
+<li><strong>Adre&ccedil;a del punt de subministrament: </strong>${object.cups_id.direccio}</li>
 <li><strong>Titular: </strong>${object.cups_polissa_id.titular.name}</li>
 <li><strong>NIF/CIF/NIE Titular: </strong>${object.cups_polissa_id.titular_nif}</li>
 <li><strong>Soci/a vinculat/da: </strong>${object.cups_polissa_id.soci.name}</li>
@@ -124,6 +138,11 @@ text_legal = render(t_obj.read(
 %if autoconsum_description:
 <ul>
 <li><strong> Modalitat autoconsum: </strong> ${autoconsum_description}</li>
+<li><strong> Subsecció: </strong> ${tipus_subseccio_description}</li>
+<li><strong> Potència generació: </strong> ${potencia_generacio_desc}</li>
+%if colectiu_desc:
+<li><strong> Coŀlectiu: </strong> Sí</li>
+%endif
 </ul>
 <p>Si la teva modalitat d&rsquo;autoconsum &eacute;s amb compensaci&oacute; d&rsquo;excedents, tamb&eacute; s&rsquo;ha activat el&nbsp;<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar">Flux Solar</a>.&nbsp;</p>
 %endif
@@ -157,6 +176,11 @@ text_legal = render(t_obj.read(
 %if autoconsum_description:
 <ul>
 <li><strong> Modalidad autoconsumo: </strong> ${autoconsum_description}</li>
+<li><strong> Subsección: </strong> ${tipus_subseccio_description}</li>
+<li><strong> Potencia generación: </strong> ${potencia_generacio_desc}</li>
+%if colectiu_desc:
+<li><strong> Colectivo: </strong> Sí</li>
+%endif
 </ul>
 <p>Si tu modalidad de autoconsumo es con compensaci&oacute;n de excedentes, tambi&eacute;n se ha activado el <a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar">Flux Solar</a>.&nbsp;</p>
 %endif
@@ -170,6 +194,6 @@ text_legal = render(t_obj.read(
 %if subministrament_essencial:
 <p>Si este contrato de luz corresponde a un <a href="https://es.support.somenergia.coop/article/1227-suministros-esenciales">suministro esencial</a>, para disponer de una protecci&oacute;n especial y que no se pueda suspender el suministro el&eacute;ctrico, es necesario que nos lo indiqu&eacute;is respondiendo este mismo correo.<br><br></p>
 %endif
-<p>Si tienes alguna duda, encontrar&aacute;s las preguntas m&aacute;s frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br><br>Atentamente,<br><br>Equipo de Som Energia<br>comercializacion@somenergia.coop<br><a href="https://www.somenergia.coop">www.somenergia.coop</a><br><br></p>
-%endif
-<p>${text_legal}</p>
+<p>Si tienes alguna duda, encontrar&aacute;s las preguntas m&aacute;s frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br><br><br>Atentamente,<br><br>Equipo de Som Energia<br>comercializacion@somenergia.coop<br><a href="https://www.somenergia.coop">www.somenergia.coop</a></p>
+% endif
+<p><br>${text_legal}</p>
