@@ -38,7 +38,7 @@
 % endif
 <%
 import sys
-cups_obj = object_.pool.get('giscedata.cups')
+cups_obj = object.pool.get('giscedata.cups.ps')
 
 def get_autoconsum_pot_gen(object_, dades_cau):
     sumatori_pot = 0
@@ -63,11 +63,11 @@ for step in object.step_ids:
     model, res_id = step.pas_id.split(',')
     obj = object.pool.get(model).browse(object._cr, object._uid, int(res_id))
   if model.startswith('giscedata.switching.c1.05') or model.startswith('giscedata.switching.c2.05') or model.startswith('giscedata.switching.c2.07'):
-    pas5 = obj
+    pas05 = obj
     break
 try:
   from datetime import datetime, timedelta
-  date = datetime.strptime(pas5.data_activacio, '%Y-%m-%d')
+  date = datetime.strptime(pas05.data_activacio, '%Y-%m-%d')
   data_activacio = date.strftime('%d/%m/%Y')
 except:
   data_activacio = ''
@@ -78,10 +78,10 @@ if not object.vat_enterprise():
 else:
   nom_titular = ''
 
-TarifaATR=dict(object.pool.get(model).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas5.tarifaATR]
+TarifaATR=dict(object.pool.get(model).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas05.tarifaATR]
 lineesDePotencia_ca = '\n'.join((
   '\t- <strong> %s: </strong>%s W'%(p.name, p.potencia)
-  for p in pas5.header_id.pot_ids
+  for p in pas05.header_id.pot_ids
   if p.potencia != 0
   ))
 lineesDePotencia_es = lineesDePotencia_ca
@@ -92,8 +92,8 @@ if TarifaATR == "2.0TD":
 
 autoconsum_description = False
 if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
-  autoconsum_description = cups_obj.get_autoconsum_description(object_._cr, object_._uid, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang)
-  tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object_._cr, object_._uid, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
+  autoconsum_description = cups_obj.get_autoconsum_description(object._cr, object._uid, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang)
+  tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object._cr, object._uid, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
 
 subministrament_essencial = False
 if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
