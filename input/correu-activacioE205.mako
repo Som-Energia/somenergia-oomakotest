@@ -108,7 +108,7 @@
 
     p_obj = object.pool.get('res.partner')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
-        object._cr, object._uid, polissa.titular.name
+        object._cr, object._uid, object.cups_polissa_id.titular.name
         )['nom']) if not object.vat_enterprise() else ''
 
     data_activacio = datetime.strptime(pas05.data_activacio, '%Y-%m-%d').strftime('%d/%m/%Y')
@@ -119,10 +119,10 @@
     is_collectiu = 'No'
     if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False:
         autoconsum_description = get_autoconsum_description(
-            object, pas05.dades_cau[0].tipus_autoconsum, polissa.titular.lang
+            object, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang
         )
         tipus_subseccio_description = get_auto_tipus_subseccio_description(
-            object, pas05.dades_cau[0].tipus_subseccio, polissa.titular.lang
+            object, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang
         )
         pot_gen = get_autoconsum_pot_gen(object, pas05.dades_cau)
         is_collectiu = get_autoconsum_is_collectiu(object, pas05.dades_cau)
