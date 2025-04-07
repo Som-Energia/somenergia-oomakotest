@@ -1,36 +1,6 @@
 <%!
     from mako.template import Template
     from datetime import datetime, timedelta
-    from gestionatr.defs import TABLA_64
-
-    THREEPHASE = {
-        'ca_ES': "Trifàsica",
-        'es_ES': "Trifásica"
-    }
-
-    MONOPHASE = {
-        'ca_ES': "Monofàsica",
-        'es_ES': "Monofásica"
-    }
-
-    TABLA_133_dict = {
-        'ca_ES': {
-            '10': "Sense excedents No acollit a compensació",
-            '11': "Sense excedents acollit a compensació",
-            '20': "Amb excedents no acollits a compensació",
-            '21': "Amb excedents acollits a compensació",
-            '00': "Sense autoconsum",
-            '0C': "Baixa com a membre d'autoconsum col·lectiu",
-        },
-        'es_ES': {
-            '10': "Sin excedentes No acogido a compensación",
-            '11': "Sin excedentes acogido a compensación",
-            '20': "Con excedentes no acogidos a compensación",
-            '21': "Con excedentes acogidos a compensación",
-            '00': "Sin autoconsumo",
-            '0C': "Baja como miembro de autoconsumo colectivo",
-        }
-    }
 
     def render(text_to_render, object_):
         templ = Template(text_to_render)
@@ -38,27 +8,6 @@
             object=object_,
             format_exceptions=True
     )
-
-    def get_contract_number_by_cups(object_, cups):
-        Polissa = object_.pool.get('giscedata.polissa')
-        new_contract_id = Polissa.search(
-            object_._cr, object_._uid, [('cups.name', '=', cups)]
-        )[-1]
-        return Polissa.read(object_._cr, object_._uid, new_contract_id, [])['name']
-
-    def get_autoconsum_description(object_, auto_consum, lang):
-        dades_cau_obj = object_.pool.get('giscedata.switching.datos.cau')
-        tipus_autoconsum = dict(
-            dades_cau_obj.fields_get(object_._cr, object_._uid, context={'lang': lang}
-        )['tipus_autoconsum']['selection'])
-
-        return auto_consum + " - " + tipus_autoconsum[auto_consum]
-
-    def get_auto_tipus_subseccio_description(object_, tipus_subseccio, lang):
-        dades_cau_obj = object_.pool.get('giscedata.switching.datos.cau')
-        # TODO: Get translations with from som_polissa.giscedata_cups import TABLA_133_dict)
-        tipus_subseccio_text = TABLA_133_dict[lang].get(str(tipus_subseccio), '')
-        return tipus_subseccio + " - " + tipus_subseccio_text
 
     def get_autoconsum_pot_gen(object_, dades_cau):
         sumatori_pot = 0
@@ -73,22 +22,10 @@
             if cau.collectiu:
                 return True
         return False
-
-    def get_tension_type(object_, pas05, lang):
-        codi_cnmc = pas05.tensio_suministre
-        taula_cnmc = dict(TABLA_64)
-        tension_name = taula_cnmc.get(codi_cnmc, False)
-
-        if not tension_name:
-            return False
-
-        if tension_name.lower().startswith("3x"):
-            return THREEPHASE[lang]
-        return MONOPHASE[lang]
-
 %>
 
 <%
+    cups_obj = object.pool.get('giscedata.cups.ps')
     md_obj = object.pool.get('ir.model.data')
     E205 = object.pool.get('giscedata.switching.e2.05')
     pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
@@ -117,16 +54,11 @@
     pot_gen = ''
     tipus_subseccio_description = ''
     is_collectiu = 'No'
-    if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False:
-        autoconsum_description = get_autoconsum_description(
-            object, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang
-        )
-        tipus_subseccio_description = get_auto_tipus_subseccio_description(
-            object, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang
-        )
-        pot_gen = get_autoconsum_pot_gen(object, pas05.dades_cau)
-        is_collectiu = get_autoconsum_is_collectiu(object, pas05.dades_cau)
-        is_collectiu = 'Sí' if is_collectiu else 'No'
+    if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
+        autoconsum_description = cups_obj.get_autoconsum_description(object._cr, object._uid, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang)
+        tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object._cr, object._uid, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
+        potencia_generacio_desc = get_autoconsum_pot_gen(object, pas05.dades_cau)
+        colectiu_desc = get_autoconsum_is_collectiu(object, pas05.dades_cau)
 
     t_obj = object.pool.get('poweremail.templates')
 
@@ -177,8 +109,10 @@
                 <ul>
                     <li>Modalitat: ${autoconsum_description}</li>
                     <li>Subsecció: ${tipus_subseccio_description}</li>
-                    <li>Potència generació: ${pot_gen} kW</li>
-                    <li>Col·lectiu: ${is_collectiu}</li>
+                    <li>Potència generació: ${potencia_generacio_desc} kW</li>
+                    %if colectiu_desc:
+                    <li><strong> Coŀlectiu: </strong> Sí</li>
+                    %endif
                 </ul>
             </li>
             %endif
@@ -222,8 +156,10 @@
                 <ul>
                     <li>Modalidad: ${autoconsum_description}</li>
                     <li>Subsección: ${tipus_subseccio_description}</li>
-                    <li>Potencia de generación: ${pot_gen} kW</li>
-                    <li>Colectivo: ${is_collectiu}</li>
+                    <li>Potencia de generación: ${potencia_generacio_desc} kW</li>
+                    %if colectiu_desc:
+                    <li><strong> Colectivo: </strong> Sí</li>
+                    %endif
                 </ul>
             </li>
             %endif
