@@ -998,6 +998,7 @@
 #  poweremailId: giscedata_switching.notification_atr_E2_05
 #  cases:
 #    20TD_ca: 605528
+#    20TD_ca_auto: 606719
 #
 #notificacioAcceptacioA3:
 #  template: input/correu-notificacioAcceptacioA3.mako
