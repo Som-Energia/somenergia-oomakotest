@@ -448,16 +448,24 @@ ${plantilla_header}
                             </td>
                           </tr>
                         </table>
+                        %if data['tarifa_acces'] == '3.0TDVE':
+                        <p>
+                          El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa30TDVE">el que ja hi havia</a>.
+                        </p>
+                        %elif data['tarifa_acces'] == '6.1TD':
+                        <p>
+                          El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa61TD">el que ja hi havia</a>.
+                        </p>
+                        %else:
                         <p>
                           El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa30TD">el que ja hi havia</a>.
                         </p>
-
-
+                        %endif
                       %endif
                       %if data['autoconsum']['compensacio']:
                         <h2>Autoproducció</h2>
                         <p>
-                          Per als contractes que teniu autoproducció amb compensació simplificada, els excedents d'autoproducció els continuarem compensant al mateix valor de referència del cost de l'energia que fem servir per calcular el preu de venda. A diferència de la mitjana de cost general, que ha pujat, <strong>la mitjana de cost de l'energia en hores de producció fotovoltaica ha baixat.</strong> És per això que hem disminuït també el preu de la compensació d'excedents. T'ho expliquem en detall al <a href="https://blog.somenergia.coop/?p=48550">blog</a>.
+                          El preu de l'energia ha baixat en general, i la baixada ha estat més pronunciada durant les hores de sol. És per això que <strong>disminueix la compensació dels excedents d'autoproducció </strong>. La compensació la seguim fixant al mateix valor mitjà del cost de l'energia en hores solars (compensem l'energia excedentària al mateix valor que el que ens costaria comprar-la al mercat majorista). Te n'expliquem <a href="https://blog.somenergia.coop/?p=50304">més detalls al blog</a>.
                         </p>
                         <h3>Preu de compensació d'excedents d'autoproducció (en euros/kWh)</h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -466,35 +474,35 @@ ${plantilla_header}
                               <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
                                 <tr>
                                   <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Preus</strong></p>
+                                    <p class="f-fallback"  style="margin: 10px 0"></p>
                                   </td>
                                   <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback"  style="text-align: center; padding-left: 0; margin: 10px 0"><strong>Sense impostos aplicats</strong></p>
+                                    <p class="f-fallback"  style="text-align: center; padding-left: 0; margin: 10px 0"><strong>Preus actuals</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="vertical-align: center;" align="left">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0"><strong>Amb impostos aplicats</strong></p>
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0"><strong>Preus nous</strong></p>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Nous</strong></p>
-                                  </td>
-                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou']}</p>
-                                  </td>
-                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou_imp']}</p>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                    <p class="f-fallback" style="margin: 10px 0"><strong>Actuals</strong></p>
+                                    <p class="f-fallback"  style="margin: 10px 0"><strong>Sense impostos aplicats</strong></p>
                                   </td>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
                                     <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic']}</p>
                                   </td>
                                   <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou']}</p>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="margin: 10px 0"><strong>Amb impostos aplicats</strong></p>
+                                  </td>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
                                     <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_antic_imp']}</p>
+                                  </td>
+                                  <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                                    <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_auto_nou_imp']}</p>
                                   </td>
                                 </tr>
                               </table>
@@ -539,10 +547,10 @@ ${plantilla_header}
                                   <p class="f-fallback"  style="margin: 10px 0"></p>
                                 </td>
                                 <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left">
-                                  <p class="f-fallback"  style="margin: 10px 0"><strong>Cost estimat amb els nous preus</strong></p>
+                                  <p class="f-fallback"  style="margin: 10px 0"><strong>Cost estimat amb els preus actuals</strong></p>
                                 </td>
                                 <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left">
-                                  <p class="f-fallback" style="margin: 10px 0"><strong>Cost estimat amb els preus actuals</strong></p>
+                                  <p class="f-fallback" style="margin: 10px 0"><strong>Cost estimat amb els nous preus</strong></p>
                                 </td>
                               </tr>
                               <tr>
@@ -550,10 +558,10 @@ ${plantilla_header}
                                   <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
                                 </td>
                                 <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_nou']}</p>
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell']}</p>
                                 </td>
                                 <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell']}</p>
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_nou']}</p>
                                 </td>
                               </tr>
                               <tr>
@@ -561,10 +569,10 @@ ${plantilla_header}
                                   <p class="f-fallback" style="margin: 10px 0">Amb impostos aplicats</p>
                                 </td>
                                 <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_nou_imp']}</p>
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell_imp']}</p>
                                 </td>
                                 <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell_imp']}</p>
+                                  <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_nou_imp']}</p>
                                 </td>
                               </tr>
                             </table>
@@ -576,7 +584,7 @@ ${plantilla_header}
                         Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
                       </p>
                       <p>
-                        Al nostre blog trobaràs <a href="https://blog.somenergia.coop/?p=48546">l'article del canvi de tarifes</a>, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l'apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 d'octubre i els de períodes anteriors.
+                        Al nostre blog trobaràs <a href="https://blog.somenergia.coop/?p=50300">més detalls del canvi de tarifes</a>, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l'apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de maig i els de períodes anteriors.
                       </p>
 
                       <h3 style="font-size: 16px">Informació legal</h3>
