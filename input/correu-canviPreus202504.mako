@@ -626,7 +626,7 @@ ${plantilla_header}
                                             <p>
                                               <span style="font-weight: 400;text-align: left;">
                                                 <p>
-                                                  Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} periodos,  te explicamos más abajo los cambios de precio que le aplicaremos a partir del 1 de noviembre, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa periodos.
+                                                  Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} periodos,  te explicamos más abajo  la pequeña bajada de precio que le aplicaremos a partir del 1 de junio, y que te afectará si, por algún motivo, tu contrato sigue con la tarifa periodos.
                                                 </p>
                                                 <p>
                                                   <strong>La tarifa ${data['tarifa_acces']} indexada no cambia.</strong> En nuestra web puedes encontrar, como siempre, los <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">precios de la tarifa indexada</a>.
@@ -650,13 +650,13 @@ ${plantilla_header}
                                             <p>
                                               <span style="font-weight: 400;text-align: left;">
                                                 <p>
-                                                  Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} periodos,</strong> que debería producirse en las próximas semanas. A la tarifa por periodos le aplicaremos un cambio de precios ligeramente al alza a partir del 1 de noviembre. Te informamos a continuación.
+                                                  Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} periodos,</strong> que debería producirse en las próximas semanas. A la tarifa por periodos le aplicaremos un cambio de precios <strong>ligeramente a la baja</strong> a partir del 1 de junio. Te informamos de ello a continuación.
                                                 </p>
                                                 <p>
                                                   La tarifa indexada (que te será de aplicación mientras no se te active el cambio) no tiene ninguna actualización por parte de Som Energia. Como sabes, el precio final cambia todos los días y cada hora en función del precio diario de la energía en el mercado mayorista.
                                                 </p>
                                                 <p>
-                                                  En nuestra web puedes encontrar los <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#opciones-de-la-tarifa-por-periodos">precios de las tarifas por periodos</a> que aplicaremos <strong>desde el 1 de noviembre</strong> y los de <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">las tarifas indexadas</a>. También puedes ver, en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">apartado histórico</a>, los precios anteriores a 1 de noviembre de 2024.
+                                                  En nuestra web puedes encontrar los <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#opciones-de-la-tarifa-por-periodos">precios de las tarifas por periodos</a> que se aplican <strong>a partir del 1 de junio</strong> y los de <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#opciones-de-la-tarifa-indexada">las tarifas indexadas</a>. También puedes ver, en el <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">apartado histórico</a>, los precios anteriores a 1 de junio de 2025.
                                                 </p>
                                               </span>
                                             </p>
@@ -669,7 +669,7 @@ ${plantilla_header}
                           Cambios de precios de la tarifa ${data['tarifa_acces']} periodos
                         </h1>
                         <p>
-                          El 1 de noviembre actualizaremos el precio de la electricidad de las tarifas por periodos. Como quizás ya has notado estando en la tarifa indexada, el coste de la energía en el mercado mayorista ha subido, y las previsiones para los próximos meses indican que seguirá al alza; es por eso que debemos reflejarlo en las nuestras tarifas por periodos con un pequeño aumento de precios.
+                          El 1 de junio <strong>bajaremos el precio de la energía</strong> de las tarifas por periodos. El coste de la energía en el mercado mayorista ha bajado ligeramente, y las previsiones para los próximos meses indican que va a seguir siendo así. Como nuestro objetivo no es lucrarnos (somos una cooperativa sin ánimo de lucro), sino transformar el modelo energético y tener unas tarifas justas, reflejamos el coste real, también cuando este disminuye.
                         </p>
                       % endif
                       % if data['modcon'] != "atr":
@@ -1165,7 +1165,7 @@ ${plantilla_header}
                       %endif
                       % if data['modcon'] == "atr" or data['modcon'] == "index":
                         <p class="p-legal">
-                          Después de haberte compartido esta información, si este cambio de precios te hiciese replantear seguir con la modificación solicitada, podrías pedir que se pare la modificación de tarifa (escribiéndonos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bien podrías dar de baja tu contrato con nosotros, bien <a href="https://drive.google.com/file/d/1YU78O8Fpr_Xcns3BepvDKlp-cRi1Utid/view?usp=sharing">comunicándonoslo directamente</a>, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejáramos de suministrarte energía, con los precios vigentes en cada momento.
+                          Después de haberte compartido esta información, si este cambio de precios te hiciese replantear seguir con la modificación solicitada, podrías pedir que se pare la modificación de tarifa (escribiéndonos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bien podrías dar de baja tu contrato con nosotros, bien comunicándonoslo directamente, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejáramos de suministrarte energía, con los precios vigentes en cada momento.
                         </p>
                       %else:
                         <p class="p-legal">
