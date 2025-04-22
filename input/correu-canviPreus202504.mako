@@ -669,7 +669,7 @@ ${plantilla_header}
                           Cambios de precios de la tarifa ${data['tarifa_acces']} periodos
                         </h1>
                         <p>
-                          El 1 de junio <strong>bajaremos el precio de la energía</strong> de las tarifas por periodos. El coste de la energía en el mercado mayorista ha bajado ligeramente, y las previsiones para los próximos meses indican que va a seguir siendo así. Como nuestro objetivo no es lucrarnos (somos una cooperativa sin ánimo de lucro), sino transformar el modelo energético y tener unas tarifas justas, reflejamos el coste real, también cuando este disminuye.
+                          El 1 de junio <strong>bajaremos el precio de la energía</strong> de las tarifas por periodos. El coste de la energía en el mercado mayorista ha bajado ligeramente, y las previsiones para los próximos meses indican que va a seguir siendo así. Como nuestro objetivo no es lucrarnos (somos una cooperativa sin ánimo de lucro), sino transformar el modelo energético y tener unas tarifas justas, reflejamos el coste real, también cuando baja.
                         </p>
                       % endif
                       % if data['modcon'] != "atr":
