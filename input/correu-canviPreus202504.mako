@@ -64,7 +64,7 @@ ${plantilla_header}
                                                 <p>
                                                   <span style="font-weight: 400;text-align: left;">
                                                     <p>
-                                                      Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que s'hauria de produir en les pròximes setmanes. Igualment, com que encara estàs amb la tarifa ${data['tarifa_acces']} períodes, t'expliquem més avall els canvis de preu que hi aplicarem a partir de l'1 de novembre, i que t'afectaran si, per algun motiu, el teu contracte segueix amb la tarifa de períodes.
+                                                      Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que s'hauria de produir en les pròximes setmanes. Igualment, com que encara estàs amb la tarifa ${data['tarifa_acces']} períodes, t'expliquem més avall els canvis de preu que hi aplicarem a partir de l'1 de juny, i que t'afectaran si, per algun motiu, el teu contracte segueix amb la tarifa de períodes.
                                                     </p>
                                                     <p>
                                                       <strong>La tarifa ${data['tarifa_acces']} indexada no canvia.</strong> Al nostre web pots trobar, com sempre, els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada"> preus de la tarifa indexada</a>.
@@ -88,13 +88,13 @@ ${plantilla_header}
                                               <p>
                                                 <span style="font-weight: 400;text-align: left;">
                                                   <p>
-                                                    Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} períodes,</strong> que s'hauria de produir en les pròximes setmanes. A la tarifa per períodes li aplicarem un canvi de preus lleugerament a l'alça a partir de l'1 de novembre. Te n'informem a continuació.
+                                                    Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} períodes,</strong> que s'hauria de produir en les pròximes setmanes. A la tarifa per períodes li aplicarem un canvi de preus <strong>lleugerament a la baixa</strong> a partir de l'1 de juny. Te n'informem a continuació.
                                                   </P>
                                                   <p>
                                                     La tarifa indexada (que et serà d'aplicació mentre no se t'activi el canvi) no té cap actualització per part de Som Energia. Com saps, el preu final canvia cada dia i cada hora en funció del preu diari de l'energia al mercat majorista.
                                                   </p>
                                                   <p>
-                                                    Al nostre web pots trobar els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#opcions-de-la-tarifa-periodes"> preus de les tarifes per períodes</a> que aplicarem <strong>a partir de l'1 de novembre</strong> i els de <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">les tarifes indexades</a>. També pots veure, a l'<a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/historic-de-tarifes/">apartat històric</a>, els preus anteriors a 1 de novembre de 2024.
+                                                    Al nostre web pots trobar els <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#opcions-de-la-tarifa-periodes"> preus de les tarifes per períodes</a> que aplicarem <strong>a partir de l'1 de juny</strong> i els de <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">les tarifes indexades</a>. També pots veure, a l'<a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/historic-de-tarifes/">apartat històric</a>, els preus anteriors a 1 de juny de 2025.
                                                   </p>
                                                 </span>
                                               </p>
@@ -107,12 +107,12 @@ ${plantilla_header}
                             Canvis de preus de la tarifa ${data['tarifa_acces']} períodes
                           </h1>
                           <p>
-                            L'1 de juny <strong>abaixarem el preu de l'energia</strong> de les tarifes per períodes (la que tens ara, ho és). El cost de l'energia al mercat majorista ha baixat lleugerament, i les previsions per als propers mesos indiquen que seguirà així. Com que el nostre objectiu no és lucrar-nos (som una cooperativa sense ànim de lucre), sinó transformar el model energètic i tenir unes tarifes justes, hi reflectim el cost real, també quan baixa.
+                            L'1 de juny <strong>abaixarem el preu de l'energia</strong> de les tarifes per períodes. El cost de l'energia al mercat majorista ha baixat lleugerament, i les previsions per als propers mesos indiquen que seguirà així. Com que el nostre objectiu no és lucrar-nos (som una cooperativa sense ànim de lucre), sinó transformar el model energètic i tenir unes tarifes justes, hi reflectim el cost real, també quan baixa.
                           </p>
                         % endif
                         % if data['modcon'] != "atr":
                           <p>
-                            L'1 de novembre actualitzarem el preu de l'electricitat de les tarifes per períodes (la que tens ara, ho és). Després de les baixades de l'any passat i d'aquest any, aplicarem un petit augment de preus. El cost de l'energia al mercat majorista ha pujat, i les previsions per als propers mesos indiquen que seguirà a l'alça; és per això que ho hem de reflectir a les nostres tarifes, que se situaran a valors similars de gener de 2024.
+                            L'1 de juny <strong>abaixarem el preu de l'energia</strong> de les tarifes per períodes (la que tens ara, ho és). El cost de l'energia al mercat majorista ha baixat lleugerament, i les previsions per als propers mesos indiquen que seguirà així. Com que el nostre objectiu no és lucrar-nos (som una cooperativa sense ànim de lucre), sinó transformar el model energètic i tenir unes tarifes justes, hi reflectim el cost real, també quan baixa.
                           </p>
                         % endif
                       <h1>
@@ -120,7 +120,7 @@ ${plantilla_header}
                       </h1>
                       %if data['modcon'] == 'atr':
                         <p>
-                          A continuació tens una taula amb els nous preus (vigents a partir de l'1 de novembre), i una comparació amb els preus actuals (fins a 31 d'octubre) de la tarifa per períodes. Els impostos aplicats són ${data['impostos_str']}, i l'impost elèctric del 5,11%.
+                          A continuació tens una taula amb els nous preus (vigents a partir de l'1 de juny), i una comparació amb els preus actuals (fins a 31 de maig) de la tarifa per períodes. Els impostos aplicats són ${data['impostos_str']}, i l'impost elèctric del 5,11%.
                         </p>
                       %else:
                         <p>
@@ -599,7 +599,7 @@ ${plantilla_header}
                       %endif
                       %if data['modcon'] == "atr" or data['modcon'] == "index":
                         <p class="p-legal">
-                          Després d'haver-te compartit aquesta informació, si aquest canvi de preus et fes replantejar seguir amb la modificació sol·licitada, podries demanar que s'aturi la modificació de tarifa (escrivint-nos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bé podries donar de baixa el teu contracte amb nosaltres, bé <a href="https://drive.google.com/file/d/1t2VBo0c-Yr2FSltmzVegqJdQ1dZsuOOV/view">comunicant-nos-ho directament</a>, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
+                          Després d'haver-te compartit aquesta informació, si aquest canvi de preus et fes replantejar seguir amb la modificació sol·licitada, podries demanar que s'aturi la modificació de tarifa (escrivint-nos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bé podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
                         </p>
                       %else:
                         <p class="p-legal">
