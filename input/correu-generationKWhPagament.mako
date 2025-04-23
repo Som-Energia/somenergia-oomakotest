@@ -26,7 +26,7 @@ Hola ${object.partner_id.name.split(',')[-1]},<br/>
 <br/>
 Volem informar-te que a data d'avui hem girat l’import ${int(abs(object.amount_total))} € corresponent a la teva participació a la Generació kWh i, per tant, en dos o tres dies (laborables) es passarà el càrrec al teu compte bancari.<br/>
 <br/>
-T'adjuntem el contracte amb les condicions generals de la teva inversió i et recordem que per a qualsevol dubte o aclariment en relació amb la teva aportació pots respondre aquest correu, escriure a <a href="mailto:generationkwh@somenergia.coop">generationkwh@somenergia.coop</a> o consultar el <a href="https://ca.support.somenergia.coop/category/580-generation-kwh">centre d’ajuda</a> de la web.<br/>
+Et recordem que per a qualsevol dubte o aclariment en relació amb la teva aportació pots respondre aquest correu, escriure a <a href="mailto:generationkwh@somenergia.coop">generationkwh@somenergia.coop</a> o consultar el <a href="https://ca.support.somenergia.coop/category/580-generation-kwh">centre d’ajuda</a> de la web.<br/>
 <br/>
 Aprofitem per agrair-te, una vegada més, la teva implicació amb l’objectiu compartit d’assolir un model energètic 100% renovable! <br/>
 <br/>
@@ -46,7 +46,7 @@ Hola ${object.partner_id.name.split(',')[-1]},<br/>
 <br/>
 Queremos informarte que a fecha de hoy hemos girado el importe de ${int(abs(object.amount_total))} € correspondiente a tu participación en la Generación kWh y, por tanto, en dos o tres días (laborables) se pasará el cargo a tu cuenta bancaria.<br/>
 <br/>
-Te adjuntamos el contrato con las condiciones generales de tu inversión y te recordamos que para cualquier duda o aclaración en relación a tu aportación puedes responder a este correo, escribir a <a href="mailto:generationkwh@somenergia.coop">generationkwh@somenergia.coop</a> o consultar el <a href = "https://es.support.somenergia.coop/category/595-generation-kwh">centro de ayuda</a> de la web.<br/>
+Te recordamos que para cualquier duda o aclaración en relación a tu aportación puedes responder a este correo, escribir a <a href="mailto:generationkwh@somenergia.coop">generationkwh@somenergia.coop</a> o consultar el <a href = "https://es.support.somenergia.coop/category/595-generation-kwh">centro de ayuda</a> de la web.<br/>
 <br/>
 Aprovechamos para agradecerte, una vez más, tu implicación con el objetivo compartido de alcanzar un modelo energético 100% renovable.<br/>
 <br/>
