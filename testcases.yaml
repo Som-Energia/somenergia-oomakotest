@@ -1563,10 +1563,10 @@
 # poweremailId: 397
 # cases:
 #   ca_20: 2477030
-canviPreus202504:
- template: input/correu-canviPreus202504.mako
+canviPreus202506:
+ template: input/correu-canviPreus202506.mako
  model: som.enviament.massiu
- poweremailId: 397
+ poweremailId: 465
  cases:
    ca_20: 2477030
 #situacioExcepcional2022:

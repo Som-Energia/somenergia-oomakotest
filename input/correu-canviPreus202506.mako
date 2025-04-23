@@ -465,7 +465,7 @@ ${plantilla_header}
                       %if data['autoconsum']['compensacio']:
                         <h2>Autoproducció</h2>
                         <p>
-                          El preu de l'energia ha baixat en general, i la baixada ha estat més pronunciada durant les hores de sol. És per això que <strong>disminueix la compensació dels excedents d'autoproducció </strong>. La compensació la seguim fixant al mateix valor mitjà del cost de l'energia en hores solars (compensem l'energia excedentària al mateix valor que el que ens costaria comprar-la al mercat majorista). Te n'expliquem <a href="https://blog.somenergia.coop/?p=50304">més detalls al blog</a>.
+                          El preu de l'energia ha baixat en general, i la baixada ha estat més pronunciada durant les hores de sol. És per això que <strong>disminueix la compensació dels excedents d'autoproducció</strong>. La compensació la seguim fixant al mateix valor mitjà del cost de l'energia en hores solars (compensem l'energia excedentària al mateix valor que el que ens costaria comprar-la al mercat majorista). Te n'expliquem <a href="https://blog.somenergia.coop/?p=50304">més detalls al blog</a>.
                         </p>
                         <h3>Preu de compensació d'excedents d'autoproducció (en euros/kWh)</h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -516,7 +516,7 @@ ${plantilla_header}
                       %endif
                       <h1>Estimació</h1>
                       %if data['origen'] == 'pdf':
-                        %if data['modcon'] == 'atr':
+                        %if data['modcon'] == 'atr' or  data['modcon'] == 'index':
                           <p>
                             Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, si apliquéssim els preus actuals de la tarifa de períodes i si apliquéssim els preus nous, també de la tarifa de períodes. L'estimació l'hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció, ni Generation kWh, ni lloguer de comptador.
                           </p>
@@ -526,16 +526,28 @@ ${plantilla_header}
                           </p>
                         %endif
                       %elif data['origen'] == 'cnmc':
-                        <p>
-                          Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L'estimació l'hem fet a partir de les dades que tenim dels teus consums anteriors (sense tenir en compte autoproducció ni Generation kWh ni lloguer de comptador), extrapolant-les segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n'hem obtingut un consum anual, que és el que fem servir per a la comparació.
-                        </p>
+                        %if data['modcon'] == 'atr' or  data['modcon'] == 'index':
+                          <p>
+                            Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, si apliquéssim els preus actuals de la tarifa de períodes i si apliquéssim els preus nous, també de la tarifa de períodes. L'estimació l'hem fet a partir de les dades que tenim dels teus consums anteriors (sense tenir en compte autoproducció ni Generation kWh ni lloguer de comptador), extrapolant-les segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n'hem obtingut un consum anual, que és el que fem servir per a la comparació.
+                          </p>
+                        %else:
+                          <p>
+                            Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L'estimació l'hem fet a partir de les dades que tenim dels teus consums anteriors (sense tenir en compte autoproducció ni Generation kWh ni lloguer de comptador), extrapolant-les segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n'hem obtingut un consum anual, que és el que fem servir per a la comparació.
+                          </p>
+                        %endif
                       %elif data['origen'] == 'estadistic':
-                        <p>
-                          Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L'estimació l'hem fet en funció de la potència contractada més alta que tens (${data['potencia']} kW), l'ús d'electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh ni lloguer de comptador.
-                        </p>
+                        %if data['modcon'] == 'atr' or  data['modcon'] == 'index':
+                          <p>
+                            Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, si apliquéssim els preus actuals de la tarifa de períodes i si apliquéssim els preus nous, també de la tarifa de períodes. L'estimació l'hem fet en funció de la potència contractada més alta que tens (${data['potencia']} kW), l'ús d'electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh ni lloguer de comptador.
+                          </p>
+                        %else:
+                          <p>
+                            Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l'energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L'estimació l'hem fet en funció de la potència contractada més alta que tens (${data['potencia']} kW), l'ús d'electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh ni lloguer de comptador.
+                          </p>
+                        %endif
                       %endif
                       <p>
-                        L'estimació la pots veure sense impostos i amb impostos inclosos, els vigents actualment (${data['impostos_str']} i l'impost elèctric del 5,11%).
+                        L'estimació la pots veure sense impostos i amb impostos inclosos (${data['impostos_str']} i l'impost elèctric del 5,11%).
                       </p>
                       <h3>Cost anual estimat, en euros/any, del subministrament (energia i potència):</h3>
                       <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -682,11 +694,11 @@ ${plantilla_header}
                       </h1>
                       %if data['modcon'] == 'atr':
                         <p>
-                          A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de junio) y una comparación con los precios actuales (hasta 31 de mayo) de la tarifa periodos. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
+                          A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de junio) y una comparación con los precios actuales (hasta 31 de mayo) de la tarifa periodos. Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
                         </p>
                       %else:
                         <p>
-                          A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de junio) y una comparación con los precios actuales (hasta 31 de mayo) de la tarifa que tienes contratada. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
+                          A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de junio) y una comparación con los precios actuales (hasta 31 de mayo) de la tarifa que tienes contratada. Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
                         </p>
                       %endif
 
@@ -810,7 +822,7 @@ ${plantilla_header}
                           </tr>
                         </table>
                         <p>
-                          El precio de la potencia no ha variado, sigue siendo <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#opciones-de-la-tarifa-por-periodos">el que ya había</a>
+                          El precio de la potencia no ha variado, sigue siendo <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#opciones-de-la-tarifa-por-periodos">el que ya había.</a>
                         </p>
                       %endif
 
@@ -1100,7 +1112,7 @@ ${plantilla_header}
                         </p>
                       %endif
                       <p>
-                        La estimación la puedes ver sin impuestos y con impuestos incluidos, los vigentes actualmente (el ${data['impostos_str']} y el impuesto eléctrico del 5,11%).
+                        La estimación la puedes ver sin impuestos y con impuestos incluidos (el ${data['impostos_str']} y el impuesto eléctrico del 5,11%).
                       </p>
 
 
@@ -1155,7 +1167,7 @@ ${plantilla_header}
                       </p>
                       <h3 style="font-size: 16px">Información legal</h3>
                       <p class="p-legal">
-                        La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios es la cláusula 5.3 (ii).
+                        La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/#precio-y-actualizacion">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios es la cláusula 5.3 (ii).
                       </p>
                       <p class="p-legal">
                         Puedes acceder al comparador de ofertas que elabora la Comisión Nacional de los Mercados y la Competencia (CNMC) a través de <a href="https://comparador.cnmc.gob.es">este enlace</a>. El comparador permite consultar y comparar las distintas ofertas vigentes de algunas de las comercializadoras del mercado libre. Ten en cuenta que las tarifas de Som Energia no están incluidas.

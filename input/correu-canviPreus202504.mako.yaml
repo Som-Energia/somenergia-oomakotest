@@ -1,8 +1,0 @@
-lang: ${object.polissa_id.titular.lang}
-cc: false
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net
-to: ${object.polissa_id.titular.address[0].email}, ${object.polissa_id.direccio_notificacio.email}
-subject_translations:
-  ca_ES: Al juny modificarem les tarifes d’electricitat 
-  es_ES: En junio modificaremos las tarifas de electricidad 
-subject: Al juny modificarem les tarifes d’electricitat / En junio modificaremos las tarifas de electricidad
