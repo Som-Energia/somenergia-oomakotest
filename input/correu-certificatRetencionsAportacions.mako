@@ -28,7 +28,7 @@ previous_year = str(datetime.date.today().year - 1)
 <p>Benvolgut/da,</p>
 <br>
 <p>Com cada any per aquestes dates, ha començat la campanya de la Renda ${previous_year}.</p>
-<p>T'enviem, per si és del teu interès, el comunicat dels rendiments obtinguts i les retencions aplicades en relació a les teves inversions en aportacions voluntàries de SOM ENERGIA durant l'any ${previous_year}.</p>
+<p>T'enviem, per si és del teu interès, el comunicat dels rendiments obtinguts i les retencions aplicades de les teves aportacions voluntàries al capital social de SOM ENERGIA durant l'any ${previous_year}.</p>
 <p>Aprofitem per agrair-te una vegada més la teva implicació en el nostre projecte.</p>
 <br>
 <p>Atentament,</p>
@@ -45,7 +45,7 @@ previous_year = str(datetime.date.today().year - 1)
 <p>Apreciado/a,</p>
 <br>
 <p>Como cada año por estas fechas, ha empezado la campaña de Renta ${previous_year}.</p>
-<p>Te enviamos, por si es de tu interés, comunicado de los rendimientos obtenidos y retenciones aplicadas en relación a tus inversiones en aportaciones voluntarias de SOM ENERGIA durante el año ${previous_year}.</p>
+<p>Te enviamos, por si es de tu interés, comunicado de los rendimientos y retenciones aplicadas a tus aportaciones voluntarias al capital social de SOM ENERGIA durante el año ${previous_year}.</p>
 <p>Aprovechamos una vez más para agradecer tu implicación en nuestro proyecto.</p>
 <br>
 <p>Atentamente,</p>
