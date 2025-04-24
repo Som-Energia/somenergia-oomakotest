@@ -157,7 +157,7 @@ ${plantilla_header}
                                 </tr>
 
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle" colspan=3>
                                     <p class="f-fallback"  style="margin: 10px 0;"><strong>Sense impostos</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
@@ -171,9 +171,9 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
+                                  ## <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
+                                  ##   <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  ## </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">Pla</p>
                                   </td>
@@ -185,9 +185,9 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
+                                  ## <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
+                                  ##   <p class="f-fallback"  style="margin: 10px 0"></p>
+                                  ## </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">Vall</p>
                                   </td>
