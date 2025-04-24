@@ -120,11 +120,11 @@ ${plantilla_header}
                       </h1>
                       %if data['modcon'] == 'atr':
                         <p>
-                          A continuació tens una taula amb els nous preus (vigents a partir de l'1 de juny), i una comparació amb els preus actuals (fins a 31 de maig) de la tarifa per períodes. Els impostos aplicats són ${data['impostos_str']}, i l'impost elèctric del 5,11%.
+                          A continuació tens una taula amb els nous preus (vigents a partir de l'1 de juny), i una comparació amb els preus actuals (fins a 31 de maig) de la tarifa per períodes. Els impostos aplicats són l'${data['impostos_str']}, i l'impost elèctric del 5,11%.
                         </p>
                       %else:
                         <p>
-                          A continuació tens una taula amb els nous preus (vigents a partir de l'1 de juny), i una comparació amb els preus actuals (fins a 31 de maig) de la tarifa que tens contractada. Els impostos aplicats són ${data['impostos_str']}, i l'impost elèctric del 5,11%.
+                          A continuació tens una taula amb els nous preus (vigents a partir de l'1 de juny), i una comparació amb els preus actuals (fins a 31 de maig) de la tarifa que tens contractada. Els impostos aplicats són l'${data['impostos_str']}, i l'impost elèctric del 5,11%.
                         </p>
                       %endif
                       %if data['tarifa_acces'] == '2.0TD':
@@ -547,7 +547,7 @@ ${plantilla_header}
                         %endif
                       %endif
                       <p>
-                        L'estimació la pots veure sense impostos i amb impostos inclosos (${data['impostos_str']} i l'impost elèctric del 5,11%).
+                        L'estimació la pots veure sense impostos i amb impostos inclosos (l'${data['impostos_str']} i l'impost elèctric del 5,11%).
                       </p>
                       <h3>Cost anual estimat, en euros/any, del subministrament (energia i potència):</h3>
                       <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -607,7 +607,9 @@ ${plantilla_header}
                         Pots accedir al comparador d'ofertes que elabora la Comissió Nacional dels Mercats i la Competència (CNMC) a través <a href="https://comparador.cnmc.gob.es">d'aquest enllaç</a>. El comparador permet consultar i comparar les diferents ofertes vigents d'algunes de les comercialitzadores del mercat lliure. Tingues en compte que les tarifes de Som Energia no hi estan incloses.
                       </p>
                       %if data['gurb']:
-                        <p> Veuràs que t'enviem tota la documentació del paquet contractual (Condicions Generals, Condicions Específiques del servei GURB, Condicions particulars del contracte, i la resta de la documentació relacionada amb el servei de GURB). Et recordem que aquest canvi només afecta el preu de l'energia de la tarifa períodes, i no afecta, per tant, el servei de GURB.</p>
+                        <p class="p-legal">
+                          Veuràs que t'enviem tota la documentació del paquet contractual (Condicions Generals, Condicions Específiques del servei GURB, Condicions particulars del contracte, i la resta de la documentació relacionada amb el servei de GURB). Et recordem que aquest canvi només afecta el preu de l'energia de la tarifa períodes, i no afecta, per tant, el servei de GURB.
+                        </p>
                       %endif
                       %if data['modcon'] == "atr" or data['modcon'] == "index":
                         <p class="p-legal">
@@ -1173,7 +1175,9 @@ ${plantilla_header}
                         Puedes acceder al comparador de ofertas que elabora la Comisión Nacional de los Mercados y la Competencia (CNMC) a través de <a href="https://comparador.cnmc.gob.es">este enlace</a>. El comparador permite consultar y comparar las distintas ofertas vigentes de algunas de las comercializadoras del mercado libre. Ten en cuenta que las tarifas de Som Energia no están incluidas.
                       </p>
                       %if data['gurb']:
-                        <p> Verás que te enviamos toda la documentación del paquete contractual (Condiciones Generales, Condiciones Específicas del servicio GURB, Condiciones particulares del contrato, y demás documentación relacionada con el servicio de GURB). Te recordamos que este cambio sólo afecta al precio de la energía de la tarifa periodos, y no afecta, por tanto, al servicio de GURB.</p>
+                        <p class="p-legal"> 
+                          Verás que te enviamos toda la documentación del paquete contractual (Condiciones Generales, Condiciones Específicas del servicio GURB, Condiciones particulares del contrato, y demás documentación relacionada con el servicio de GURB). Te recordamos que este cambio sólo afecta al precio de la energía de la tarifa periodos, y no afecta, por tanto, al servicio de GURB.
+                        </p>
                       %endif
                       % if data['modcon'] == "atr" or data['modcon'] == "index":
                         <p class="p-legal">
