@@ -31,10 +31,10 @@ ${plantilla_header}
               <tr>
                 <th>
                     % if data['lang'] == "ca_ES":
-                        <a href="https://www.somenergia.coop/ca/"><img src="https://www.somenergia.coop/logo/Logotip-Som-Energia.png" alt="SOM Energia" style="height: 106px"/></a>
+                        <a href="https://www.somenergia.coop/ca/"><img src="https://www.somenergia.coop/logo/Logotip-Som-Energia.png" alt="" style="height: 106px"/></a>
                     %endif
                     % if data['lang'] != "ca_ES":
-                        <a href="https://www.somenergia.coop/es/"><img src="https://www.somenergia.coop/logo/Logotip-Som-Energia.png" alt="SOM Energia" style="height: 106px"/></a>
+                        <a href="https://www.somenergia.coop/es/"><img src="https://www.somenergia.coop/logo/Logotip-Som-Energia.png" alt="" style="height: 106px"/></a>
                     %endif
                 </th>
               </tr>
@@ -157,7 +157,7 @@ ${plantilla_header}
                                 </tr>
 
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle" colspan=3>
+                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle" rowspan=3>
                                     <p class="f-fallback"  style="margin: 10px 0;"><strong>Sense impostos</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
@@ -171,9 +171,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  ## <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
-                                  ##   <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  ## </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">Pla</p>
                                   </td>
@@ -185,9 +182,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  ## <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
-                                  ##   <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  ## </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">Vall</p>
                                   </td>
@@ -200,7 +194,7 @@ ${plantilla_header}
                                 </tr>
 
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle" rowspan=3>
                                     <p class="f-fallback"  style="margin: 10px 0;"><strong>Amb impostos</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
@@ -214,9 +208,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">Pla</p>
                                   </td>
@@ -228,9 +219,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left;border-top: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">Vall</p>
                                   </td>
@@ -275,7 +263,7 @@ ${plantilla_header}
                                 </tr>
 
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle" rowspan=6>
                                     <p class="f-fallback"  style="margin: 10px 0;"><strong>Sense impostos aplicats</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
@@ -289,9 +277,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P2</p>
                                   </td>
@@ -303,9 +288,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P3</p>
                                   </td>
@@ -317,9 +299,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P4</p>
                                   </td>
@@ -331,9 +310,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P5</p>
                                   </td>
@@ -345,9 +321,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P6</p>
                                   </td>
@@ -360,7 +333,7 @@ ${plantilla_header}
                                 </tr>
 
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle">
+                                  <td class="purchase_borders" style="vertical-align: left; border-bottom: none;" valign="middle" rowspan=6>
                                     <p class="f-fallback"  style="margin: 10px 0;"><strong>Amb impostos aplicats</strong></p>
                                   </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
@@ -374,9 +347,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P2</p>
                                   </td>
@@ -388,9 +358,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left;border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P3</p>
                                   </td>
@@ -402,9 +369,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P4</p>
                                   </td>
@@ -416,9 +380,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-top: none; border-bottom: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P5</p>
                                   </td>
@@ -430,9 +391,6 @@ ${plantilla_header}
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td class="purchase_borders" style="vertical-align: left; border-top: none;" valign="middle">
-                                    <p class="f-fallback"  style="margin: 10px 0"></p>
-                                  </td>
                                   <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
                                     <p class="f-fallback"  style="margin: 10px 0">P6</p>
                                   </td>
@@ -1095,7 +1053,7 @@ ${plantilla_header}
 
                       <h1>Estimación</h1>
                       %if data['origen'] == 'pdf':
-                        %if data['modcon'] == 'atr':
+                        %if data['modcon'] == 'atr' or data['modcon'] == 'index':
                           <p>
                             Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales de la tarifa periodos y si aplicáramos los precios nuevos, también de la tarifa periodos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
                           </p>
@@ -1105,13 +1063,25 @@ ${plantilla_header}
                           </p>
                         %endif
                       %elif data['origen'] == 'cnmc':
-                        <p>
-                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador), extrapolándolos según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
-                        </p>
+                        %if data['modcon'] == 'atr' or data['modcon'] == 'index':
+                          <p>
+                            Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos, ambos de la tarifa periodos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador), extrapolándolos según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
+                          </p>
+                        %else:
+                          <p>
+                            Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador), extrapolándolos según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
+                          </p>
+                        %endif
                       %elif data['origen'] == 'estadistic':
-                        <p>
-                          Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh ni alquiler de contador.
-                        </p>
+                        %if data['modcon'] == 'atr' or data['modcon'] == 'index':
+                          <p>
+                            Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos, ambos de la tarifa periodos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh ni alquiler de contador.
+                          </p>
+                        %else:
+                          <p>
+                            Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh ni alquiler de contador.
+                          </p>
+                        %endif
                       %endif
                       <p>
                         La estimación la puedes ver sin impuestos y con impuestos incluidos (el ${data['impostos_str']} y el impuesto eléctrico del 5,11%).
@@ -1175,7 +1145,7 @@ ${plantilla_header}
                         Puedes acceder al comparador de ofertas que elabora la Comisión Nacional de los Mercados y la Competencia (CNMC) a través de <a href="https://comparador.cnmc.gob.es">este enlace</a>. El comparador permite consultar y comparar las distintas ofertas vigentes de algunas de las comercializadoras del mercado libre. Ten en cuenta que las tarifas de Som Energia no están incluidas.
                       </p>
                       %if data['gurb']:
-                        <p class="p-legal"> 
+                        <p class="p-legal">
                           Verás que te enviamos toda la documentación del paquete contractual (Condiciones Generales, Condiciones Específicas del servicio GURB, Condiciones particulares del contrato, y demás documentación relacionada con el servicio de GURB). Te recordamos que este cambio sólo afecta al precio de la energía de la tarifa periodos, y no afecta, por tanto, al servicio de GURB.
                         </p>
                       %endif
