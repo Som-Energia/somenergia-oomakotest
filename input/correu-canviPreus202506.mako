@@ -115,6 +115,9 @@ ${plantilla_header}
                             L'1 de juny <strong>abaixarem el preu de l'energia</strong> de les tarifes per períodes (la que tens ara, ho és). El cost de l'energia al mercat majorista ha baixat lleugerament, i les previsions per als propers mesos indiquen que seguirà així. Com que el nostre objectiu no és lucrar-nos (som una cooperativa sense ànim de lucre), sinó transformar el model energètic i tenir unes tarifes justes, hi reflectim el cost real, també quan baixa.
                           </p>
                         % endif
+                        <p>
+                          (Aquest canvi de preus no està relacionat amb l'apagada generalitzada de llum de dilluns.)
+                        </p>
                       <h1>
                         Nous preus i comparativa amb preus actuals
                       </h1>
@@ -649,6 +652,9 @@ ${plantilla_header}
                           El 1 de junio <strong>bajaremos el precio de la energía</strong> de las tarifas por periodos (la que tienes ahora, lo es). El coste de la energía en el mercado mayorista ha bajado ligeramente, y las previsiones para los próximos meses indican que va a seguir siendo así. Como nuestro objetivo no es lucrarnos (somos una cooperativa sin ánimo de lucro), sino transformar el modelo energético y tener unas tarifas justas, reflejamos el coste real, también cuando este disminuye.
                         </p>
                       % endif
+                      <p>
+                        (Este cambio de precios no está relacionado con el apagón generalizado de luz del lunes.)
+                      </p>
                       <h1>
                         Nuevos precios y comparativa con precios actuales
                       </h1>
