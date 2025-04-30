@@ -426,7 +426,7 @@ ${plantilla_header}
                       %if data['autoconsum']['compensacio']:
                         <h2>Autoproducció</h2>
                         <p>
-                          El preu de l'energia ha baixat en general, i la baixada ha estat més pronunciada durant les hores de sol. És per això que <strong>disminueix la compensació dels excedents d'autoproducció</strong>. La compensació la seguim fixant al mateix valor mitjà del cost de l'energia en hores solars (compensem l'energia excedentària al mateix valor que el que ens costaria comprar-la al mercat majorista). Te n'expliquem <a href="https://blog.somenergia.coop/?p=50304">més detalls al blog</a>.
+                          El preu de l'energia ha baixat en general, i la baixada ha estat més pronunciada durant les hores de sol. És per això que <strong>disminueix la compensació dels excedents d'autoproducció</strong>. La compensació la seguim fixant al mateix valor mitjà del cost de l'energia en hores solars (compensem l'energia excedentària al mateix valor que el que ens costaria comprar-la al mercat majorista).
                         </p>
                         <h3>Preu de compensació d'excedents d'autoproducció (en euros/kWh)</h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -965,7 +965,7 @@ ${plantilla_header}
 
                       %if data['autoconsum']['compensacio']:
                         <h2>Autoproducción</h2>
-                        <p>El precio de la energía ha bajado en general, y la bajada ha sido más pronunciada durante las horas de sol. Es por eso que <strong>disminuye la compensación de los excedentes de autoproducción</strong>. La compensación la seguimos fijando al mismo valor medio del coste de la energía en horas solares (compensamos la energía excedentaria al mismo valor que lo que nos costaría comprarla en el mercado mayorista). Te explicamos <a href="https://blog.somenergia.coop/?p=50306"> más detalles</a> en el blog.
+                        <p>El precio de la energía ha bajado en general, y la bajada ha sido más pronunciada durante las horas de sol. Es por eso que <strong>disminuye la compensación de los excedentes de autoproducción</strong>. La compensación la seguimos fijando al mismo valor medio del coste de la energía en horas solares (compensamos la energía excedentaria al mismo valor que lo que nos costaría comprarla en el mercado mayorista).
                         </p>
                         <h3>Precio de compensación de excedentes de autoproducción (en euros/kWh)</h3>
                         <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
