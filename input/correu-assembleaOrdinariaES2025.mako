@@ -696,7 +696,7 @@ Sí, sabemos que la primavera altera la sangre... y también las ganas de hacer 
 <br>
 <strong>💚 📍 Este año… ¡nos vemos en Barcelona!</strong><br>
 <br>
-Sí, lo has leído bien. ¡Cambiamos de escenario! Queremos facilitar que más personas puedan sumarse, y Barcelona nos lo pone un poco más fácil. El <strong>sábado 31 de mayo</strong>, de ⏰ <strong>9:30 a 14:00 h</strong>, nos encontraremos en el <a href="https://maps.app.goo.gl/BKsPDKkpWERCoWoL9" target="_blank"><strong>Bloc4BCN</strong></a> (Carrer de la Constitució, 19 – Sants) para decidir juntas el futuro de la cooperativa.<br>
+Sí, lo has leído bien. ¡Cambiamos de escenario! Queremos facilitar que más personas puedan sumarse, y Barcelona nos lo pone un poco más fácil. El <strong>sábado 31 de mayo</strong>, de ⏰ <strong>9:30 a 14:00 h</strong>, nos encontraremos en el <a href="https://maps.app.goo.gl/BKsPDKkpWERCoWoL9" target="_blank"><strong>Bloc4BCN</strong></a> (Calle de la Constitució, 19 – Sants) para decidir juntas el futuro de la cooperativa.<br>
 <br>
 Será una jornada para opinar, votar, reencontrarnos y... ¡compartir una buena comida!<br>
 &nbsp;
@@ -860,7 +860,7 @@ Será una jornada para opinar, votar, reencontrarnos y... ¡compartir una buena 
                     <td class="mcnCaptionLeftImageContent" align="left" valign="top">
                     
                         
-                        <img alt="" src="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/521ad22d-5870-867c-2654-e8dabbe33811.png" width="80" style="max-width: 80px; border-radius: 0%;" class="mcnImage">
+                        <img alt="" src="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/521ad22d-5870-867c-2654-e8dabbe33811.png" width="100" style="max-width: 100px; border-radius: 0%;" class="mcnImage">
                         
                     
                     </td>
@@ -920,7 +920,7 @@ Aprovecha para compartir dudas, propuestas e ideas antes de votar.<br>
 <br>
 <strong>13 – 13.30 h – Respuestas del Consejo Rector</strong> a las dudas y preguntas<br>
 <br>
-<strong>13.30 - 13.45 h – Último momento para votar </strong><br>
+<strong>13.30 – 13.45 h – Último momento para votar </strong><br>
 Tic, tac... Es hora de votar con convicción. ¡No te dejes ningún punto! También saludaremos a los espacios de seguimiento repartidos por todo el territorio antes de despedirnos.<br>
 <br>
 <strong>13.45 h – Cerramos el panel de votaciones </strong><br>
@@ -1072,7 +1072,7 @@ El momento clave: conocemos los resultados. Y nos vamos a comer (¡que ya habrá
 <br>
 Si no puedes venir, ¡no te preocupes! Tienes más opciones: 🎉<br>
 <br>
-• <strong>🏠 En los espacios de seguimiento de los Grupos Locales</strong>: Si tienes un Grupo Local cerca que ha montado uno, ¡únete a la fiesta! Consulta <a href="https://asamblea2025.somenergia.coop/#h.mbj61c7zej7s" target="_blank">aquí</a> el listado de puntos de seguimiento (los iremos actualizando).<br>
+• <strong>🏠 En los espacios de seguimiento de los Grupos Locales</strong>: Si tienes un Grupo Local cerca que ha montado uno, ¡únete a la fiesta! Consulta <a href="https://asamblea2025.somenergia.coop/#h.vgzuykb5sl4n" target="_blank">aquí</a> el listado de puntos de seguimiento (los iremos actualizando).<br>
 <br>
 • 💻 <strong>En línea:</strong> Si te queda lejos o no puedes participar presencialmente, conéctate desde donde estés y sigue la Asamblea a través del enlace <a href="https://asamblea2025.somenergia.coop/" target="_blank">asamblea2025.somenergia.coop</a>.
                         </td>
@@ -1562,7 +1562,7 @@ Queremos que estés listo para <strong>votar con toda la información a la mano<
                         
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #4D4D4D;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 150%;text-align: left;">
                         
-                            Si te falta algo o necesitas más información, <strong>todo lo que necesites está en <a href="https://asamblea2025.somenergia.coop/" target="_blank">asamblea2025.somenergia.coop</a></strong>. Allí tienes la guía completa para no perderte ni un detalle. 🔍<br>
+                            Si te falta algo o necesitas más información, <strong>todo lo que necesitas está en <a href="https://asamblea2025.somenergia.coop/" target="_blank">asamblea2025.somenergia.coop</a></strong>. Allí tienes la guía completa para no perderte ni un detalle. 🔍<br>
 <br>
 ¿Quieres añadir tus <strong>dudas</strong>, tus <strong>ideas</strong> o ver qué piensan los demás? ¡Pues no te pierdas el <a href="https://agvirtual.somenergia.coop/?locale=es" target="_blank"><strong>Participa</strong></a>! Este es el espacio donde las conversaciones previas harán que las ideas brillen aún más. 💬✨<br>
 <br>
