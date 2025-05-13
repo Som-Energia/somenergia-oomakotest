@@ -696,7 +696,7 @@ Sí, sabemos que la primavera altera la sangre... y también las ganas de hacer 
 <br>
 <strong>💚 📍 Este año… ¡nos vemos en Barcelona!</strong><br>
 <br>
-Sí, lo has leído bien. ¡Cambiamos de escenario! Queremos facilitar que más personas puedan sumarse, y Barcelona nos lo pone un poco más fácil. El <strong>sábado 31 de mayo</strong>, de ⏰ <strong>9:30 a 14:00 h</strong>, nos encontraremos en el <a href="https://maps.app.goo.gl/BKsPDKkpWERCoWoL9" target="_blank"><strong>Bloc4BCN</strong></a> (Calle de la Constitució, 19 – Sants) para decidir juntas el futuro de la cooperativa.<br>
+Sí, lo has leído bien. ¡Cambiamos de escenario! Queremos facilitar que más personas puedan sumarse, y Barcelona nos lo pone un poco más fácil. El <strong>sábado 31 de mayo</strong>, de ⏰ <strong>9:30 a 14:00 h</strong>, nos encontraremos en el <a href="https://bloc4.coop/contacte/" target="_blank"><strong>Bloc4BCN</strong></a> (Calle de la Constitució, 19 – Sants) para decidir juntas el futuro de la cooperativa.<br>
 <br>
 Será una jornada para opinar, votar, reencontrarnos y... ¡compartir una buena comida!<br>
 &nbsp;
@@ -907,25 +907,25 @@ Será una jornada para opinar, votar, reencontrarnos y... ¡compartir una buena 
                         
                             ¿Serio? Sí. ¡Pero con muy buen rollo! 😎✨<br>
 <br>
-<strong>9.30 h – Primera convocatoria</strong>. Empieza la llegada. Tanto si vienes a Barcelona como si te conectas desde lejos, es el momento de tomar café, coger sitio y prepararte. En el espacio físico, en el Bloc4BCN, habrá opciones de desayuno para todo el mundo, también sin gluten y veganas. ☕🥐<br>
+<strong>9:30 h – Primera convocatoria</strong>. Vamos llegando. Tanto si vienes a Barcelona como si te conectas desde lejos, es el momento de tomar café, coger sitio y prepararte. En el espacio físico, en el Bloc4BCN, habrá opciones de desayuno para todo el mundo, también sin gluten y veganas. ☕🥐<br>
 <br>
-<strong>10.00 h – Segunda convocatoria + Abrimos el panel de votaciones</strong>.<br>
+<strong>10:00 h – Segunda convocatoria + Abrimos el panel de votaciones</strong>.<br>
 Ahora sí, empieza la Asamblea y ya puedes hacer oír tu voz desde el panel virtual.<br>
 <br>
-<strong>10.30 – 12.30 h – ¡Entramos en materia!</strong><br>
+<strong>10:30 – 12:30 h – ¡Entramos en materia!</strong><br>
 Explicamos los puntos clave del orden del día. Toma notas, escucha y haz preguntas. Esta parte es el corazón de la Asamblea.<br>
 <br>
-<strong>12.30 – 13 h – Espacio para enviar dudas y preguntas</strong><br>
+<strong>12:30 – 13:00 h – Espacio para enviar dudas y preguntas</strong><br>
 Aprovecha para compartir dudas, propuestas e ideas antes de votar.<br>
 <br>
-<strong>13 – 13.30 h – Respuestas del Consejo Rector</strong> a las dudas y preguntas<br>
+<strong>13:00 – 13:30 h – Respuestas del Consejo Rector</strong> a las dudas y preguntas<br>
 <br>
-<strong>13.30 – 13.45 h – Último momento para votar </strong><br>
+<strong>13:30 – 13:45 h – Último momento para votar </strong><br>
 Tic, tac... Es hora de votar con convicción. ¡No te dejes ningún punto! También saludaremos a los espacios de seguimiento repartidos por todo el territorio antes de despedirnos.<br>
 <br>
-<strong>13.45 h – Cerramos el panel de votaciones </strong><br>
+<strong>13:45 h – Cerramos el panel de votaciones </strong><br>
 <br>
-<strong>14.00 h – Clausura y resultados </strong><br>
+<strong>14:00 h – Clausura y resultados </strong><br>
 El momento clave: conocemos los resultados. Y nos vamos a comer (¡que ya habrá hambre!) 😉
                         </td>
                     </tr>
@@ -1170,7 +1170,7 @@ Si no puedes venir, ¡no te preocupes! Tienes más opciones: 🎉<br>
 👉 <a href="https://agvirtual.somenergia.coop/?locale=es" target="_blank">agvirtual.somenergia.coop</a><br>
 🕙 Estará abierto el <strong>31 de mayo</strong> <strong>de 10:00 a 13:45 h</strong><br>
 <br>
-No olvides tus 🔑 <strong>claves de acceso</strong>, que son las mismas que usas para entrar en la Oficina Virtual. Si nunca has entrado, en el 🤝<a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano" target="_blank"> Centro de Ayuda</a> te explicamos cómo hacerlo. 🗳️ Y si lo prefieres, aquí te explicamos cómo votar paso a paso:<br>
+No olvides tus 🔑 <strong>claves de acceso</strong>, que son las mismas que usas para entrar en la Oficina Virtual. Si nunca has entrado, en el 🤝<a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano" target="_blank"> Centro de Ayuda</a> te explicamos cómo hacerlo. 🗳️ Y si lo prefieres, <a href="https://next.somenergia.coop/s/W3QjiYmH9SwfWQ6?dir=/&openfile=true" target="_blank" alt="Haz clic y informate de como puedes votar">aquí</a> te explicamos cómo votar paso a paso:<br>
 &nbsp;
                         </td>
                     </tr>
@@ -1422,7 +1422,7 @@ No olvides tus 🔑 <strong>claves de acceso</strong>, que son las mismas que us
                         
                             ¡EPAGs en marcha! El <strong>martes 27</strong> y el <strong>jueves 29 de mayo</strong> nos encontraremos en los <strong>Espacios de Preparación de la Asamblea General</strong> (EPAGs).<br>
 <br>
-Queremos que estés listo para <strong>votar con toda la información a la mano</strong>, así que no olvides pasar por aquí antes. Encontrarás los detalles en la web de la Asamblea, desde el listado de EPAGs hasta el formulario de inscripción.<br>
+Queremos que estés listo para <strong>votar con toda la información a mano</strong>, así que no olvides pasar por aquí antes. Encontrarás los detalles en la web de la Asamblea, desde el listado de EPAGs hasta el formulario de inscripción.<br>
 &nbsp;
                         </td>
                     </tr>
@@ -1471,7 +1471,7 @@ Queremos que estés listo para <strong>votar con toda la información a la mano<
                         
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #4D4D4D;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 150%;text-align: left;">
                         
-                            💬 Ah! Y si tienes dudas, envíalas a través del Participa en <a href="https://participa.somenergia.coop/users/sign_in?locale=es" target="_blank">participa.somenergia.coop</a>.<br>
+                            💬 ¡Ah! Y si tienes dudas, envíalas a través del Participa en <a href="https://participa.somenergia.coop/general_assemblies/SomAG2025/f/233/?locale=es" target="_blank">participa.somenergia.coop</a>.<br>
 <br>
 → Para tenerlo todo claro antes de la Asamblea, hemos preparado unos resúmenes visuales que te ayudarán a entender mejor los temas, los encuentras <a href="https://asamblea2025.somenergia.coop/#h.uyravc46zgjz" target="_blank">aquí</a>.
                         </td>
@@ -1564,7 +1564,7 @@ Queremos que estés listo para <strong>votar con toda la información a la mano<
                         
                             Si te falta algo o necesitas más información, <strong>todo lo que necesitas está en <a href="https://asamblea2025.somenergia.coop/" target="_blank">asamblea2025.somenergia.coop</a></strong>. Allí tienes la guía completa para no perderte ni un detalle. 🔍<br>
 <br>
-¿Quieres añadir tus <strong>dudas</strong>, tus <strong>ideas</strong> o ver qué piensan los demás? ¡Pues no te pierdas el <a href="https://agvirtual.somenergia.coop/?locale=es" target="_blank"><strong>Participa</strong></a>! Este es el espacio donde las conversaciones previas harán que las ideas brillen aún más. 💬✨<br>
+¿Quieres añadir tus <strong>dudas</strong>, tus <strong>ideas</strong> o ver qué piensan los demás? ¡Pues no te pierdas el <a href="https://participa.somenergia.coop/general_assemblies/SomAG2025/f/233/?locale=es" target="_blank"><strong>Participa</strong></a>! Este es el espacio donde las conversaciones previas harán que las ideas brillen aún más. 💬✨<br>
 <br>
 Y si no puedes vivir sin leer documentos, aquí tienes los Estatutos, disponibles en <a href="https://www.somenergia.coop/estatuts/Estatuts_CAT.pdf" target="_blank">catalán</a>, <a href="https://www.somenergia.coop/estatuts/Estatutos_CAST.pdf" target="_blank">castellano</a>, <a href="https://www.somenergia.coop/estatuts/Estatutos_EUS.pdf" target="_blank">euskera</a> y <a href="https://www.somenergia.coop/estatuts/Estatutos_GAL.pdf" target="_blank">gallego</a>. ¡Todo para que estés al 100% preparado/a! 📚<br>
 <br>
@@ -1607,7 +1607,7 @@ Y si no puedes vivir sin leer documentos, aquí tienes los Estatutos, disponible
                     <tbody>
                         <tr>
                             <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 16px; padding: 18px;">
-                                <a class="mcnButton " title="Visita el Participa" href="https://agvirtual.somenergia.coop/?locale=es" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #4D4D4D;">Visita el Participa</a>
+                                <a class="mcnButton " title="Visita el Participa" href="https://participa.somenergia.coop/general_assemblies/SomAG2025?locale=es" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #4D4D4D;">Visita el Participa</a>
                             </td>
                         </tr>
                     </tbody>
@@ -1776,7 +1776,7 @@ Y si no puedes vivir sin leer documentos, aquí tienes los Estatutos, disponible
                         
                             <div style="text-align: justify;">
 <div style="text-align: justify;">&nbsp;
-<p dir="ltr" style="color: #4D4D4D;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 150%;text-align: left;"><span style="font-size:12px">[ES] Información básica sobre protección de datos. Responsable: SOM ENERGIA, SCCL. (CIF F55091367). Te informamos que tus datos identificativos y los contenidos en los correos electrónicos y archivos adjuntos pueden ser incorporados a nuestras bases de datos con la finalidad de mantener relaciones profesionales y/o comerciales y serán conservados mientras se mantenga la relación. Si lo deseas, puedes ejercer tu derecho a acceder, rectificar y suprimir tus datos y otros reconocidos normativamente dirigiéndote al correo emisor o a somenergia@delegado-datos.com. Este mensaje y cualquier documento que lleve adjunto, si es el caso, puede ser confidencial y destinado únicamente a la persona, entidad o empresa a quien ha sido enviado.</span></p>
+<p dir="ltr" style="color: #4D4D4D;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 150%;text-align: left;"><span style="font-size:12px">Información básica sobre protección de datos. Responsable: SOM ENERGIA, SCCL. (CIF F55091367). Te informamos que tus datos identificativos y los contenidos en los correos electrónicos y archivos adjuntos pueden ser incorporados a nuestras bases de datos con la finalidad de mantener relaciones profesionales y/o comerciales y serán conservados mientras se mantenga la relación. Si lo deseas, puedes ejercer tu derecho a acceder, rectificar y suprimir tus datos y otros reconocidos normativamente dirigiéndote al correo emisor o a somenergia@delegado-datos.com. Este mensaje y cualquier documento que lleve adjunto, si es el caso, puede ser confidencial y destinado únicamente a la persona, entidad o empresa a quien ha sido enviado.</span></p>
 </div>
 </div>
                         </td>

@@ -696,7 +696,7 @@ Sí, sabem que la primavera altera la sang... i també les ganes de fer coses im
 <br>
 <strong>💚 📍 Aquest any…ens veiem a Barcelona!</strong><br>
 <br>
-Sí, ho has llegit bé. Canviem d’escenari! Volem facilitar que més persones s’hi puguin sumar, i Barcelona ens ho posa una mica més fàcil. El <strong>dissabte 31 de maig</strong>, de ⏰ <strong>9.30 a 14.00 h</strong>, ens trobarem al <a href="https://maps.app.goo.gl/BKsPDKkpWERCoWoL9" target="_blank"><strong>Bloc4BCN</strong></a> (Carrer de la Constitució, 19 – Sants) per decidir juntes el futur de la cooperativa.<br>
+Sí, ho has llegit bé. Canviem d’escenari! Volem facilitar que més persones s’hi puguin sumar, i Barcelona ens ho posa una mica més fàcil. El <strong>dissabte 31 de maig</strong>, de ⏰ <strong>9.30 a 14.00 h</strong>, ens trobarem al <a href="https://bloc4.coop/contacte/" target="_blank"><strong>Bloc4BCN</strong></a> (Carrer de la Constitució, 19 – Sants) per decidir juntes el futur de la cooperativa.<br>
 <br>
 Serà una jornada per dir-hi la nostra, votar, retrobar-nos i... compartir un bon dinar!<br>
 &nbsp;
@@ -1072,7 +1072,7 @@ El moment clau: coneixem els resultats. I ens n’anem al dinar (que hi haurà g
 <br>
 Si no pots venir, no et preocupis! Tens més opcions: 🎉<br>
 <br>
-• <strong>🏠 Als espais de seguiment dels Grups Locals</strong>: Si a prop tens un Grup Local que n’hagi muntat un, uneix-te a la festa! Consulta <a href="https://assemblea2025.somenergia.coop/#h.xnd0kka5nce4" target="_blank">aquí</a> el llistat dels punts de seguiment (els anirem actualitzant)<br>
+• <strong>🏠 Als espais de seguiment dels Grups Locals</strong>: Si a prop tens un Grup Local que n’hagi muntat un, uneix-te a la festa! Consulta <a href="https://assemblea2025.somenergia.coop/#h.femcjvcbwhl4" target="_blank">aquí</a> el llistat dels punts de seguiment (els anirem actualitzant)<br>
 <br>
 • 💻 <strong>En línia:</strong> Si et queda lluny o no pots participar-hi presencialment, connecta’t des d’allà on siguis i segueix l’Assemblea a través de l’enllaç <a href="http://assemblea2025.somenergia.coop" target="_blank">assemblea2025.somenergia.coop</a>.
                         </td>
@@ -1170,7 +1170,7 @@ Si no pots venir, no et preocupis! Tens més opcions: 🎉<br>
 👉 <a href="http://agvirtual.somenergia.coop" target="_blank">agvirtual.somenergia.coop</a><br>
 🕙 Estarà obert el <strong>31 de maig</strong> <strong>de 10.00 a 13.45 h</strong><br>
 <br>
-No oblidis les teves 🔑 <strong>claus d'accés</strong>, que són les mateixes que fas servir per entrar a l'Oficina Virtual. Si no hi has entrat mai, al 🤝<a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual" target="_blank"> Centre d'Ajuda</a> t’expliquem com fer-ho. 🗳️ Si ho prefereixes, aquí, t’expliquem com votar pas a pas:<br>
+No oblidis les teves 🔑 <strong>claus d'accés</strong>, que són les mateixes que fas servir per entrar a l'Oficina Virtual. Si no hi has entrat mai, al 🤝<a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual" target="_blank"> Centre d'Ajuda</a> t’expliquem com fer-ho. 🗳️ Si ho prefereixes, <a href="https://next.somenergia.coop/s/zFrrMrqqD3a6cce?dir=/&openfile=true" target="_blank" alt="Clica per saber com votar">aquí</a> t’expliquem com votar pas a pas:<br>
 &nbsp;
                         </td>
                     </tr>
@@ -1422,7 +1422,7 @@ No oblidis les teves 🔑 <strong>claus d'accés</strong>, que són les mateixes
                         
                             EPAGs en marxa! El <strong>dimarts 27</strong> i el <strong>dijous 29 de maig</strong> ens trobarem als <strong>Espais de Preparació de l'Assemblea General</strong> (EPAGs).<br>
 <br>
-Volem que estiguis a punt per <strong>votar amb tota la informació a les mans</strong>, així que no t'oblidis de passar per aquí abans. Trobaràs els detalls al web de l'Aassemblea, des del llistat d'EPAGs fins al formulari d'inscripció.<br>
+Volem que estiguis a punt per <strong>votar amb tota la informació a les mans</strong>, així que no t'oblidis de passar per aquí abans. Trobaràs els detalls al web de l'Assemblea, des del llistat d'EPAGs fins al formulari d'inscripció.<br>
 &nbsp;
                         </td>
                     </tr>
@@ -1471,9 +1471,9 @@ Volem que estiguis a punt per <strong>votar amb tota la informació a les mans</
                         
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #4D4D4D;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 150%;text-align: left;">
                         
-                            💬 Ah! I si tens dubtes, fes-los arribar a través del Participa a <a href="https://participa.somenergia.coop/general_assemblies/SomAG2025/f/233/?locale=ca " target="_blank">participa.somenergia.coop</a>.<br>
+                            💬 Ah! I si tens dubtes, fes-los arribar a través del Participa a <a href="https://participa.somenergia.coop/general_assemblies/SomAG2025/f/233/?+=&locale=ca" target="_blank">participa.somenergia.coop</a>.<br>
 <br>
-→ Per tenir-ho tot clar abans de l'Assemblea, hem preparat uns resums visuals que t’ajudaran a entendre millor els temes, els trobes <a href="https://assemblea2025.somenergia.coop/?utm_source=+Llista+per+a+proves&utm_campaign=68799a10ca-SomEnergia_maniNuclear_2017CAT_COPY_01&utm_medium=email&utm_term=0_655a135061-68799a10ca-#h.meybt3an46ja" target="_blank">aquí</a>.
+→ Per tenir-ho tot clar abans de l'Assemblea, hem preparat uns resums visuals que t’ajudaran a entendre millor els temes, els trobes <a href="https://assemblea2025.somenergia.coop/" target="_blank">aquí</a>.
                         </td>
                     </tr>
                 </tbody></table>
@@ -1591,7 +1591,7 @@ I si no pots viure sense llegir documents, aquí tens els Estatuts, disponibles 
                     <tbody>
                         <tr>
                             <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 16px; padding: 18px;">
-                                <a class="mcnButton " title="Visita el web de l'Assemblea" href="https://assemblea2024.somenergia.coop/" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #4D4D4D;">Visita el web de l'Assemblea</a>
+                                <a class="mcnButton " title="Visita el web de l'Assemblea" href="https://assemblea2025.somenergia.coop/" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #4D4D4D;">Visita el web de l'Assemblea</a>
                             </td>
                         </tr>
                     </tbody>
@@ -1607,7 +1607,7 @@ I si no pots viure sense llegir documents, aquí tens els Estatuts, disponibles 
                     <tbody>
                         <tr>
                             <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 16px; padding: 18px;">
-                                <a class="mcnButton " title="Visita el Participa" href="https://participa.somenergia.coop/general_assemblies/SomAG2024/f/220/?locale=ca" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #4D4D4D;">Visita el Participa</a>
+                                <a class="mcnButton " title="Visita el Participa" href="https://participa.somenergia.coop/general_assemblies/SomAG2024?locale=ca" target="_blank" style="font-weight: bold;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #4D4D4D;">Visita el Participa</a>
                             </td>
                         </tr>
                     </tbody>
@@ -1776,7 +1776,7 @@ I si no pots viure sense llegir documents, aquí tens els Estatuts, disponibles 
                         
                             <div style="text-align: justify;">
 <div style="text-align: justify;">&nbsp;
-<p dir="ltr" style="color: #4D4D4D;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 150%;text-align: left;"><span style="font-size:12px">[CA] Informació bàsica sobre protecció de dades. Responsable: SOM ENERGIA, SCCL. (CIF F55091367). T'informem que les teves dades identificatives i les contingudes en els correus electrònics i fitxers adjunts poden ser incorporades a les nostres bases de dades amb la finalitat de mantenir relacions professionals i/o comercials i, que seran conservades mentre es mantingui la relació. Si ho desitges, pots exercir el teu dret a accedir, rectificar i suprimir les teves dades i d'altres reconeguts normativament dirigint-te al correu emissor o a somenergia@delegado-datos.com. Aquest missatge i qualsevol document que porti adjunt, si s'escau, pot ser confidencial i destinat únicament a la persona, entitat o empresa a qui ha estat enviat.</span></p>
+<p dir="ltr" style="color: #4D4D4D;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 150%;text-align: left;"><span style="font-size:12px">Informació bàsica sobre protecció de dades. Responsable: SOM ENERGIA, SCCL. (CIF F55091367). T'informem que les teves dades identificatives i les contingudes en els correus electrònics i fitxers adjunts poden ser incorporades a les nostres bases de dades amb la finalitat de mantenir relacions professionals i/o comercials i, que seran conservades mentre es mantingui la relació. Si ho desitges, pots exercir el teu dret a accedir, rectificar i suprimir les teves dades i d'altres reconeguts normativament dirigint-te al correu emissor o a somenergia@delegado-datos.com. Aquest missatge i qualsevol document que porti adjunt, si s'escau, pot ser confidencial i destinat únicament a la persona, entitat o empresa a qui ha estat enviat.</span></p>
 </div>
 </div>
 
