@@ -915,17 +915,17 @@ Ara sí, arrenca l’Assemblea i ja pots fer sentir la teva veu des del panell v
 <strong>10.30 – 12.30h – Entrem en matèria!</strong><br>
 Expliquem els punts clau de l’ordre del dia. Pren notes, escolta i fes preguntes. Aquesta part és el cor de l’Assemblea.<br>
 <br>
-<strong>12.30 – 13 h – Espai per fer arribar dubtes i preguntes</strong><br>
+<strong>12.30 – 13.00 h – Espai per fer arribar dubtes i preguntes</strong>.<br>
 Aprofita per expressar dubtes, propostes i idees abans de votar.<br>
 <br>
-<strong>13 – 13.30 h – Resposta per part del Consell Rector</strong> dels dubtes i preguntes<br>
+<strong>13.00 – 13.30 h – Resposta per part del Consell Rector</strong> dels dubtes i preguntes.<br>
 <br>
-<strong>13.30 – 13.45 h – Últim moment per votar </strong><br>
+<strong>13.30 – 13.45 h – Últim moment per votar</strong>.<br>
 Tic, tac... És l’hora de votar amb convicció. No t’oblidis cap punt! També saludarem els espais de seguiment repartits per tot el territori abans de dir adéu.<br>
 <br>
-<strong>13.45 h – Tanquem el panell de votacions </strong><br>
+<strong>13.45 h – Tanquem el panell de votacions</strong>.<br>
 <br>
-<strong>14.00 h – Cloenda i resultats </strong><br>
+<strong>14.00 h – Cloenda i resultats</strong>.<br>
 El moment clau: coneixem els resultats. I ens n’anem al dinar (que hi haurà gana) 😉
                         </td>
                     </tr>
@@ -1473,7 +1473,7 @@ Volem que estiguis a punt per <strong>votar amb tota la informació a les mans</
                         
                             💬 Ah! I si tens dubtes, fes-los arribar a través del Participa a <a href="https://participa.somenergia.coop/general_assemblies/SomAG2025/f/233/?+=&locale=ca" target="_blank">participa.somenergia.coop</a>.<br>
 <br>
-→ Per tenir-ho tot clar abans de l'Assemblea, hem preparat uns resums visuals que t’ajudaran a entendre millor els temes, els trobes <a href="https://assemblea2025.somenergia.coop/" target="_blank">aquí</a>.
+→ Per tenir-ho tot clar abans de l'Assemblea, hem preparat uns resums visuals que t’ajudaran a entendre millor els temes, els trobes <a href="https://assemblea2025.somenergia.coop/#h.meybt3an46ja" target="_blank">aquí</a>.
                         </td>
                     </tr>
                 </tbody></table>

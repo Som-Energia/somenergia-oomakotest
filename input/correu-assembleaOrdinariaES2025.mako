@@ -915,17 +915,17 @@ Ahora sí, empieza la Asamblea y ya puedes hacer oír tu voz desde el panel virt
 <strong>10:30 – 12:30 h – ¡Entramos en materia!</strong><br>
 Explicamos los puntos clave del orden del día. Toma notas, escucha y haz preguntas. Esta parte es el corazón de la Asamblea.<br>
 <br>
-<strong>12:30 – 13:00 h – Espacio para enviar dudas y preguntas</strong><br>
+<strong>12:30 – 13:00 h – Espacio para enviar dudas y preguntas</strong>.<br>
 Aprovecha para compartir dudas, propuestas e ideas antes de votar.<br>
 <br>
-<strong>13:00 – 13:30 h – Respuestas del Consejo Rector</strong> a las dudas y preguntas<br>
+<strong>13:00 – 13:30 h – Respuestas del Consejo Rector</strong> a las dudas y preguntas.<br>
 <br>
-<strong>13:30 – 13:45 h – Último momento para votar </strong><br>
+<strong>13:30 – 13:45 h – Último momento para votar</strong>.<br>
 Tic, tac... Es hora de votar con convicción. ¡No te dejes ningún punto! También saludaremos a los espacios de seguimiento repartidos por todo el territorio antes de despedirnos.<br>
 <br>
-<strong>13:45 h – Cerramos el panel de votaciones </strong><br>
+<strong>13:45 h – Cerramos el panel de votaciones</strong>.<br>
 <br>
-<strong>14:00 h – Clausura y resultados </strong><br>
+<strong>14:00 h – Clausura y resultados</strong>.<br>
 El momento clave: conocemos los resultados. Y nos vamos a comer (¡que ya habrá hambre!) 😉
                         </td>
                     </tr>
@@ -1132,7 +1132,7 @@ Si no puedes venir, ¡no te preocupes! Tienes más opciones: 🎉<br>
                     <td valign="top" class="mcnTextContent" style="font-size: 16px; line-height: 150%; text-align: left;">
                         <div style="text-align: left;"><br>
 <br>
-<span style="font-family:arial,helvetica neue,helvetica,sans-serif"><span style="color:#AFBE3F"><span style="font-size:28px"><strong>¿Cóm puedo votar?</strong></span></span></span></div>
+<span style="font-family:arial,helvetica neue,helvetica,sans-serif"><span style="color:#AFBE3F"><span style="font-size:28px"><strong>¿Cómo puedo votar?</strong></span></span></span></div>
 
                     </td>
                 </tr>
