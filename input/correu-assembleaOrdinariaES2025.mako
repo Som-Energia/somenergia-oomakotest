@@ -1473,7 +1473,7 @@ Queremos que estés listo para <strong>votar con toda la información a mano</st
                         
                             💬 ¡Ah! Y si tienes dudas, envíalas a través del Participa en <a href="https://participa.somenergia.coop/general_assemblies/SomAG2025/f/233/?locale=es" target="_blank">participa.somenergia.coop</a>.<br>
 <br>
-→ Para tenerlo todo claro antes de la Asamblea, hemos preparado unos resúmenes visuales que te ayudarán a entender mejor los temas, los encuentras <a href="https://asamblea2025.somenergia.coop/#h.uyravc46zgjz" target="_blank">aquí</a>.
+→ Para tenerlo todo claro antes de la Asamblea, hemos preparado unos resúmenes visuales que te ayudarán a entender mejor los temas, los encuentras <a href="https://asamblea2025.somenergia.coop/#h.k79r4ji2xo2r" target="_blank">aquí</a>.
                         </td>
                     </tr>
                 </tbody></table>
