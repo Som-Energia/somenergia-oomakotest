@@ -1167,7 +1167,7 @@ Si no pots venir, no et preocupis! Tens més opcions: 🎉<br>
                         
                             Les votacions seran superfàcils gràcies al nostre <strong>panell de votacions en línia</strong>. Per participar i fer sentir la teva opinió, només has de clicar en aquest enllaç:<br>
 <br>
-👉 <a href="http://agvirtual.somenergia.coo/?locale=ca" target="_blank">agvirtual.somenergia.coop</a><br>
+👉 <a href="http://agvirtual.somenergia.coop/?locale=ca" target="_blank">agvirtual.somenergia.coop</a><br>
 🕙 Estarà obert el <strong>31 de maig</strong> <strong>de 10.00 a 13.45 h</strong><br>
 <br>
 No oblidis les teves 🔑 <strong>claus d'accés</strong>, que són les mateixes que fas servir per entrar a l'Oficina Virtual. Si no hi has entrat mai, al 🤝<a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual" target="_blank"> Centre d'Ajuda</a> t’expliquem com fer-ho. 🗳️ Si ho prefereixes, <a href="https://next.somenergia.coop/s/zFrrMrqqD3a6cce?dir=/&openfile=true" target="_blank" alt="Clica per saber com votar">aquí</a> t’expliquem com votar pas a pas:<br>
