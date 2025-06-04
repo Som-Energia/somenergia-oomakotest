@@ -97,13 +97,16 @@
 
     is_auto_uni = M101.search(object._cr, object._uid, [('sw_id', '=', object.id)]) == []
     if not is_auto_uni:
-        is_canvi_tit = object.step_ids[0].pas_id.sollicitudadm == 'S'
-        is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
+        pas = object.step_ids[0].pas_id
+        is_canvi_tit = pas.sollicitudadm == 'S' and pas.canvi_titular != 'R'
+        is_pot_tar =pas.pas_id.sollicitudadm == 'N'
         is_pot_gen = False
+        is_canvi_repartiment_msr = pas.sollicitudadm == 'S' and pas.canvi_titular == 'R'
     else:
         is_canvi_tit = False
         is_pot_tar = False
         is_pot_gen = object.step_ids[0].pas_id.sollicitudadm == 'N'
+        is_canvi_repartiment_msr = False
 
     mapaTarifes = dict(M105.fields_get(object._cr, object._uid)['tarifaATR']['selection'])
     tarifaATR = mapaTarifes[pas05.tarifaATR]
@@ -219,6 +222,8 @@
             ${canvi_tit_cat()}
         %elif is_pot_gen:
             ${pot_gen_cat()}
+        %elif is_canvi_repartiment_msr:
+            ${canvi_repartiment_msr_cat()}
         %endif
         Atentament,<br>
         <br>
@@ -290,6 +295,15 @@
     %endif
 </%def>
 
+<%def name="canvi_repartiment_msr_cat()">
+    <p>
+        El canvi en l'acord de repartiment per a la instal·lació d'autoconsum vinculada al CUPS ${object.cups_id.name} amb adreça de subministrament ${object.cups_polissa_id.cups_direccio} ha estat realitzada amb èxit.
+    </p>
+    <p>
+        Així doncs, des del <b>${date_activacio}</b> ha entrat en vigor el nou acord de repartiment per a la instal·lació d'autoconsum amb CAU xxxxxxx.
+    </p>
+</%def>
+
 
 <%def name="correu_es()">
     <body>
@@ -329,6 +343,8 @@
             ${canvi_tit_es()}
         %elif is_pot_gen:
             ${pot_gen_es()}
+        %elif is_canvi_repartiment_msr:
+            ${canvi_repartiment_msr_es()}
         %endif
         Atentamente,<br>
         <br>
@@ -469,4 +485,13 @@
             ¿Nuestro objetivo? Nos gustaría que, cuando nos conozcas un poco más, te unas a la cooperativa haciéndote socio/a. Ya somos más de 85.000 personas, que de forma colectiva hemos construido Som Energia y ¡queremos ser muchas más!
         </p></td></tr></table>
     %endif
+</%def>
+
+<%def name="canvi_repartiment_msr_es()">
+    <p>
+        El cambio en el acuerdo de reparto para la instalación de autoconsumo vinculada a tu CUPS ${object.cups_id.name} con dirección de suministro ${object.cups_polissa_id.cups_direccio} se ha completado con éxito.
+    </p>
+    <p>
+        Desde el <b>${date_activacio}</b> ha entrado en vigor el nuevo acuerdo de reparto para la instalación de autoconsumo con CAU xxxx.
+    </p>
 </%def>
