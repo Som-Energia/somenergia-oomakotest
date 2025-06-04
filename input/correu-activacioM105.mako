@@ -97,11 +97,16 @@
 
     is_auto_uni = M101.search(object._cr, object._uid, [('sw_id', '=', object.id)]) == []
     if not is_auto_uni:
-        pas = object.step_ids[0].pas_id
-        is_canvi_tit = pas.sollicitudadm == 'S' and pas.canvi_titular != 'R'
-        is_pot_tar =pas.pas_id.sollicitudadm == 'N'
+        is_canvi_tit = (
+            object.step_ids[0].pas_id.sollicitudadm == 'S' and
+            object.step_ids[0].pas_id.canvi_titular != 'R'
+        )
+        is_pot_tar = object.step_ids[0].pas_id.sollicitudadm == 'N'
         is_pot_gen = False
-        is_canvi_repartiment_msr = pas.sollicitudadm == 'S' and pas.canvi_titular == 'R'
+        is_canvi_repartiment_msr = (
+            object.step_ids[0].pas_id.sollicitudadm == 'S' and
+            object.step_ids[0].pas_id.canvi_titular == 'R'
+        )
     else:
         is_canvi_tit = False
         is_pot_tar = False
