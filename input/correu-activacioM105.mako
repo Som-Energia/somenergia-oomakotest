@@ -157,6 +157,10 @@
         is_collectiu = get_autoconsum_is_collectiu(object, pas05.dades_cau)
         is_collectiu = 'Sí' if is_collectiu else 'No'
 
+    # CAU for M105 SR
+    autoconsum_cups_ids = object.cups_polissa_id.autoconsum_cups_ids
+    cau = (autoconsum_cups_ids[0].autoconsum_id.cau if autoconsum_cups_ids else "")
+
     # Campanya canvi titular sense soci
     campanya_partner_soci_id = md_obj.get_object_reference(
         object._cr, object._uid,  'som_polissa_soci', 'res_partner_soci_ct'
@@ -305,7 +309,7 @@
         El canvi en l'acord de repartiment per a la instal·lació d'autoconsum vinculada al CUPS ${object.cups_id.name} amb adreça de subministrament ${object.cups_polissa_id.cups_direccio} ha estat realitzada amb èxit.
     </p>
     <p>
-        Així doncs, des del <b>${date_activacio}</b> ha entrat en vigor el nou acord de repartiment per a la instal·lació d'autoconsum amb CAU xxxxxxx.
+        Així doncs, des del <b>${date_activacio}</b> ha entrat en vigor el nou acord de repartiment per a la instal·lació d'autoconsum amb CAU ${cau}.
     </p>
 </%def>
 
@@ -497,6 +501,6 @@
         El cambio en el acuerdo de reparto para la instalación de autoconsumo vinculada a tu CUPS ${object.cups_id.name} con dirección de suministro ${object.cups_polissa_id.cups_direccio} se ha completado con éxito.
     </p>
     <p>
-        Desde el <b>${date_activacio}</b> ha entrado en vigor el nuevo acuerdo de reparto para la instalación de autoconsumo con CAU xxxx.
+        Desde el <b>${date_activacio}</b> ha entrado en vigor el nuevo acuerdo de reparto para la instalación de autoconsumo con CAU ${cau}.
     </p>
 </%def>
