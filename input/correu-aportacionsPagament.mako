@@ -13,7 +13,7 @@ investment_data = GenerationkwhInvestment.read(object._cr, object._uid, investme
 emission_id = investment_data['emission_id'][0]
 soci_id = investment_data['member_id'][0]
 total_amount_in_emission = GenerationkwhInvestment.get_investments_amount(object._cr, object._uid, soci_id, emission_id=emission_id)
-is_higher_5k = total_amount_in_emission > 5000
+is_higher_20k = total_amount_in_emission > 20000
 
 def render(text_to_render, object_):
     templ = Template(text_to_render)
@@ -39,8 +39,8 @@ Volem informar-te que a data d'avui hem girat l'import ${int(abs(object.amount_t
 <br/>
 T'adjuntem les condicions de la teva aportació i et recordem que per a qualsevol dubte o aclariment en relació a l’aportació realitzada pots enviar una mail a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a> o consultar el web <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a>. <br/>
 <br/>
-% if is_higher_5k:
-Recordar-te que d’acord amb la nostra política de prevenció de blanqueig de capitals, a partir de 5.000 euros d’aportació en una sola emissió, és necessari verificar l'origen dels fons aportats a Som Energia. És per això que més endavant (d’aqui unes setmanes) t’enviarem un formulari d’identificació perquè ens el signis aixi com la sol.licitud d’una serie de documentació identificativa (DNI, escriptura constitució en cas de societats…)<br/>
+% if is_higher_20k:
+Recordar-te que d’acord amb la nostra política de prevenció de blanqueig de capitals, a partir de 20.000 euros d’aportació en una sola emissió, és necessari verificar l'origen dels fons aportats a Som Energia. És per això que més endavant (d’aqui unes setmanes) t’enviarem un formulari d’identificació perquè ens el signis aixi com la sol.licitud d’una serie de documentació identificativa (DNI, escriptura constitució en cas de societats…)<br/>
 <br/>
 En cas que no ens puguèssis aportar aquesta informació, i d’acord amb aquesta política, hauriem de reemborsar-te l’import de la teva aportació.<br/>
 <br/>
@@ -65,8 +65,8 @@ Queremos informarte que a fecha de hoy hemos girado el importe de ${int(abs(obje
 <br/>
 Adjuntamos el contrato con las condiciones de tu aportación y te recordamos que para cualquier duda o aclaración en relación a la aportación realizada puedes enviar una mail a <a href="mailto:aporta@somenergia.coop">aporta@somenergia.coop</a> o consultar la web <a href="https://www.somenergia.coop">www.somenergia.coop</a>. <br/>
 <br/>
-% if is_higher_5k:
-Recordarte que de acuerdo con nuestra política de prevención de blanqueo de capitales, a partir de 5.000 euros de aportación por emisión, es necesario verificar el orígen de los fondos aportados a Som Energia. Es por eso que en unas semanas, te enviaremos un formulario de identificación para que nos firmes así como la solicitud de la documentación identificativa (DNI, escrituras constitución en caso de sociedades…)<br/>
+% if is_higher_20k:
+Recordarte que de acuerdo con nuestra política de prevención de blanqueo de capitales, a partir de 20.000 euros de aportación por emisión, es necesario verificar el orígen de los fondos aportados a Som Energia. Es por eso que en unas semanas, te enviaremos un formulario de identificación para que nos firmes así como la solicitud de la documentación identificativa (DNI, escrituras constitución en caso de sociedades…)<br/>
 <br/>
 En caso de que no pudieras aportar esta información, y de acuerdo con nuestra política en materia de prevención del blanqueo de capitales, tendríamos que reembolsarte el importe de tu aportación.<br/>
 <br/>
