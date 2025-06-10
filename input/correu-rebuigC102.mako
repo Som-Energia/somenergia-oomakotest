@@ -8,13 +8,10 @@
         )
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
-    template_id = md_obj.get_object_reference(
-                        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                    )[1]
-    text_legal = render(t_obj.read(
-        object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-        object
-    )
+    template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header')[1]
+    template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer')[1]
+    plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+    plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 
     p_obj = object.pool.get('res.partner')
 
@@ -23,42 +20,62 @@
     )['nom']) if not object.vat_enterprise() else ""
 %>
 
+${plantilla_header}
 
-<!doctype html>
-<html>
-    % if object.cups_polissa_id.titular.lang == "ca_ES":
-        ${cabecera_cat()}
-    % else:
-        ${cabecera_es()}
-    % endif
-    <body>
-        <br>
-        <br>
-        % if object.cups_polissa_id.titular.lang == "ca_ES":
-            ${salutacio_cat()}
-        % else:
-            ${salutacio_es()}
-        % endif
-        ${notificacio_text}
-        % if object.cups_polissa_id.titular.lang == "ca_ES":
-            ${footer_cat()}
-        % else:
-            ${footer_es()}
-        % endif
-        ${text_legal}
-    </body>
-</html>
-
+<table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+  <tr>
+    <td align="center">
+      <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+        <tr>
+          <td class="email-masthead">
+            <table align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" class="header">
+              <tr>
+                <th>
+                  <img src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png" alt="SOM Energia" style="height: 100px"/>
+                </th>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Email Body -->
+        <tr>
+          <td class="email-body" width="570" cellpadding="0" cellspacing="0">
+            <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+              <!-- Body content -->
+              <tr>
+                <td class="content-cell">
+                  <div class="f-fallback">
+                    % if object.cups_polissa_id.titular.lang == "ca_ES":
+                        ${cabecera_cat()}
+                        <br><br>
+                        ${salutacio_cat()}
+                        <p>${notificacio_text}</p>
+                        ${footer_cat()}
+                    % else:
+                        ${cabecera_es()}
+                        <br><br>
+                        ${salutacio_es()}
+                        <p>${notificacio_text}</p>
+                        ${footer_es()}
+                    % endif
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+${plantilla_footer}
 
 <%def name="cabecera_cat()">
     <head>
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
+        <table width="100%" frame="below">
             <tr>
                 <td height=1px>
                     <font size=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
-                </td>
-                <td valign=top rowspan="4">
-                    <align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
                 </td>
             </tr>
             <tr>
@@ -82,13 +99,10 @@
 
 <%def name="cabecera_es()">
     <head>
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
+        <table width="100%" frame="below">
             <tr>
                 <td height=2px>
                     <font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font>
-                </td>
-                <td valign=top rowspan="4">
-                    <align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
                 </td>
             </tr>
             <tr>
@@ -103,7 +117,7 @@
             </tr>
             <tr>
                 <td height=2px width=100%>
-                    <font size=1>Titular:${object.cups_polissa_id.titular.name}</font>
+                    <font size=1>Titular: ${object.cups_polissa_id.titular.name}</font>
                 </td>
             </tr>
         </table>
