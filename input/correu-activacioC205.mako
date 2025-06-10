@@ -109,16 +109,16 @@ ${plantilla_header}
 <table width="100%" frame="below">
 <tbody>
 <tr>
-<td height="2px"><span style="font-size: small;"><strong>Contracte Som Energia n&ordm; ${object.cups_polissa_id.name}</strong></span></td>
+  <td height="2px"><span style="font-size: small;"><strong>Contracte Som Energia n&ordm; ${object.cups_polissa_id.name}</strong></span></td>
 </tr>
 <tr>
-<td height="2px"><span style="font-size: xx-small;">Adre&ccedil;a punt subministrament: ${object.cups_id.direccio}</span></td>
+  <td height="2px"><span style="font-size: xx-small;">Adre&ccedil;a punt subministrament: ${object.cups_id.direccio}</span></td>
 </tr>
 <tr>
-<td height="2px"><span style="font-size: xx-small;">Codi CUPS: ${object.cups_id.name}</span></td>
+  <td height="2px"><span style="font-size: xx-small;">Codi CUPS: ${object.cups_id.name}</span></td>
 </tr>
 <tr>
-<td width="100%" height="2px"><span style="font-size: xx-small;"> Titular: ${object.cups_polissa_id.titular.name} </span></td>
+  <td width="100%" height="2px"><span style="font-size: xx-small;"> Titular: ${object.cups_polissa_id.titular.name} </span></td>
 </tr>
 </tbody>
 </table>
