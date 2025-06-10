@@ -615,6 +615,8 @@
 #   template: input/correu-rebuigC202.mako
 #   model: giscedata.switching
 #   poweremailId: giscedata_switching.notification_atr_C2_02_rebuig
+#   data:
+#     notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 #   cases:
 #     nou: 147916
 
