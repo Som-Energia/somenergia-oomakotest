@@ -24,7 +24,23 @@
             data.append((cau_name, cau_pot))
         return data
 
+    def get_autoconsum_pot_gen(object_, dades_cau):
+        sumatori_pot = 0
+        for cau in dades_cau:
+            for inst in cau.dades_instalacio_gen:
+                sumatori_pot += inst.pot_installada_gen
+        pot_installada = sumatori_pot or ' '
+        return pot_installada
+
+    def get_autoconsum_is_collectiu(object_, dades_cau):
+        for cau in dades_cau:
+            if cau.collectiu:
+                return True
+        return False
+
     p_obj = object.pool.get('res.partner')
+    cups_obj = object.pool.get('giscedata.cups.ps')
+    M105 = object.pool.get('giscedata.switching.m1.05')
     nom_titular = ' {}'.format(p_obj.separa_cognoms(
         object._cr, object._uid, object.cups_polissa_id.titular.name
         )['nom']) if not object.vat_enterprise() else ''
@@ -47,6 +63,29 @@
         object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
         object
     )
+
+    autoconsum_description = ''
+    pot_gen = ''
+    tipus_subseccio_description = ''
+    is_collectiu = 'No'
+    if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False:
+        autoconsum_description = cups_obj.get_autoconsum_description(object._cr, object._uid, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang)
+        tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object._cr, object._uid, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
+        pot_gen = get_autoconsum_pot_gen(object, pas05.dades_cau)
+        is_collectiu = get_autoconsum_is_collectiu(object, pas05.dades_cau)
+        is_collectiu = 'Sí' if is_collectiu else 'No'
+
+
+    tarifaATR = object.cups_polissa_id.tarifa.name
+    pot_deseada_ca = '\n'.join((
+        '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.periode_id.name, p.potencia)
+        for p in object.cups_polissa_id.potencies_periode
+        if p.potencia != 0
+    ))
+    pot_deseada_es = pot_deseada_ca
+    if tarifaATR == "2.0TD":
+        pot_deseada_ca = pot_deseada_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
+        pot_deseada_es = pot_deseada_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
 %>
 
 <!doctype html>
@@ -147,26 +186,38 @@
 
 <%def name="pot_gen_ca()">
     <p>
-        La sol·licitud de la modificació contractual ha estat ACTIVADA, amb data ${date_activacio}.
+        En data ${date_activacio}, s’ha activat la modificació contractual tramitada unilateralment per part de la distribuïdora.
     </p>
     <p>
-        Les condicions contractuals actuals del teu contracte amb Som Energia són:
+        Les <b>condicions contractuals actuals</b> del teu contracte amb Som Energia són:
     </p>
+    <ul>
+        <li>Tarifa: ${tarifaATR}</li>
+        <li>Potència:</li>
+        <ul>
+            <li>
+            ${pot_deseada_ca}
+            </li>
+        </ul>
+    </ul>
+    %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
     <ul>
         <li>Autoconsum:
             <ul>
                 <li>Motiu: ${motiu_modificacio}</li>
-                <li>Potència generació:
-                    <ul>
-                    % for pot_generacio in pots_generacio:
-                        <li>CAU: ${pot_generacio[0]} - ${pot_generacio[1]} kW</li>
-                    % endfor
-                    </ul>
-                </li>
+                <li>Modalitat: ${autoconsum_description} </li>
+                <li>Subsecció: ${tipus_subseccio_description} </li>
+                <li>Potència generació: ${pot_gen} kW </li>
+                <li>Col·lectiu: ${is_collectiu} </li>
+
             </ul>
         </li>
     </ul>
+    %endif
 
+    <p>
+       En la pròxima factura es veurà reflectida la modificació, i en l'Oficina Virtual en els següents dies.
+    </p>
     <p>
         Les dades del contracte que s'ha fet la modificació contractual són les següents:
     </p>
@@ -184,28 +235,39 @@
 
 <%def name="pot_gen_es()">
     <p>
-        La solicitud de la modificación contractual ha sido ACTIVADA con fecha ${date_activacio}.
+        Con fecha  ${date_activacio}, se ha activado la modificación contractual tramitada unilateralmente por parte de la distribuidora.
     </p>
     <p>
-        Las condiciones contractuales actuales de tu contrato con Som Energia son:
+        Las  <b>condiciones contractuales actuales</b> de tu contrato con Som Energia son:
     </p>
+    <ul>
+        <li>Tarifa: ${tarifaATR}</li>
+        <li>Potencia:</li>
+        <ul>
+            <li>
+            ${pot_deseada_ca}
+            </li>
+        </ul>
+    </ul>
+    %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
     <ul>
         <li>Autoconsumo:
             <ul>
-                <li>Motiu: ${motiu_modificacio}</li>
-                <li>Potencia generación:
-                    <ul>
-                    % for pot_generacio in pots_generacio:
-                        <li>CAU: ${pot_generacio[0]} - ${pot_generacio[1]} kW</li>
-                    % endfor
-                    </ul>
-                </li>
+                <li>Motivo: ${motiu_modificacio}</li>
+                <li>Modalidad: ${autoconsum_description} </li>
+                <li>Subsección: ${tipus_subseccio_description} </li>
+                <li>Potencia generación: ${pot_gen} kW </li>
+                <li>Colectivo: ${is_collectiu} </li>
+
             </ul>
         </li>
     </ul>
-
+    %endif
     <p>
-        Los datos del contrato con el que se ha hecho la modificación contractual son los siguientes:
+        En la próxima factura se verá reflejada la modificación, y en la Oficina Virtual en los siguientes días.
+    </p>
+    <p>
+        Los datos del contrato son los siguientes:
     </p>
     <ul>
         <li>Titular del contrato: ${object.cups_polissa_id.titular.name}</li>

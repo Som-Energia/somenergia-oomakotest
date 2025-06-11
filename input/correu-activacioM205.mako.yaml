@@ -6,6 +6,7 @@ to: ${object.cups_polissa_id.direccio_pagament.email}, <% mail = '{}'.format(obj
   if object.cups_polissa_id.administradora else '') %>  ${mail}
 subject_translations:
   en_US: ''
-  ca_ES: '${object.company_id.name}: Recepció d''activació modificació unilateral per part de la seva distribuidora ${object.partner_id.name}'
-  es_ES: '${object.company_id.name}: Recepción de activación modificación unilateral por parte de su distribuidora ${object.partner_id.name}'
-subject: '${object.company_id.name}: Recepció d''activació modificació unilateral per part de la seva distribuidora ${object.partner_id.name}'
+  ca_ES: 'Som Energia: Modificació activada pel Contracte ${object.polissa_ref_id.name}'
+  es_ES: 'Som Energia: Modificación activada para el contrato ${object.polissa_ref_id.name}'
+subject: 'Som Energia: Modificació activada pel Contracte ${object.polissa_ref_id.name}. Modificación activada para el contrato ${object.polissa_ref_id.name}'
+
