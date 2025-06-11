@@ -38,12 +38,13 @@
 #    cases:
 #      ca: 192
 
-#  nouSoci_destral:
-#    template: input/correu-nouSoci.mako
-#    model: somenergia.soci
-#    poweremailId: som_polissa_soci.nou_soci_mail_webforms
-#    cases:
-#      ca: som_polissa_soci.soci_0001
+# nouSoci_destral:
+#   template: input/correu-nouSoci.mako
+#   model: somenergia.soci
+#   poweremailId: som_polissa_soci.nou_soci_mail_webforms
+#   cases:
+#     es: 27
+#     ca: 129
 
 #  emailCanviTarifaIndexada:
 #    template: input/correu-emailCanviTarifaIndexada.mako
@@ -521,7 +522,7 @@
 #   model: giscedata.polissa
 #   poweremailId: som_polissa_soci.email_contracte_esborrany
 #   cases:
-#     es: 297510
+#     es: 66
 #     ca: 129
 #canviDePagador:
 #  template: input/correu-canviPagador.mako
@@ -1577,12 +1578,12 @@
 # poweremailId: 397
 # cases:
 #   ca_20: 2477030
-canviPreus202506:
- template: input/correu-canviPreus202506.mako
- model: som.enviament.massiu
- poweremailId: 465
- cases:
-   ca_20: 2477030
+# canviPreus202506:
+#  template: input/correu-canviPreus202506.mako
+#  model: som.enviament.massiu
+#  poweremailId: 465
+#  cases:
+#    ca_20: 2477030
 #situacioExcepcional2022:
 #  template: input/correu-situacioExcepcional2022.mako
 #  model: som.enviament.massiu
