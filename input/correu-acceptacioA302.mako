@@ -132,7 +132,6 @@ ${plantilla_footer}
             - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
             - Potència: <br>${pot_deseada_ca}
-            - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
         <br>
@@ -193,7 +192,6 @@ ${plantilla_footer}
             - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
             - Potencia: <br>${pot_deseada_es}
-            - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
         <br>
