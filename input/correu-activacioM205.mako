@@ -93,10 +93,14 @@
     <head>
         <meta charset='utf-8'>
     </head>
-    % if object.cups_polissa_id.titular.lang == "ca_ES":
+    % if object.cups_polissa_id.titular.lang == "ca_ES" and pas05.motiu_modificacio != '02':
         ${correu_cat()}
-    % else:
+    % elif pas05.motiu_modificacio != '02':
         ${correu_es()}
+    % elif object.cups_polissa_id.titular.lang == "ca_ES" and pas05.motiu_modificacio == '02':
+        ${correu_02_cat()}
+    % else:
+        ${correu_02_es()}
     % endif
     ${text_legal}
 </html>
@@ -279,4 +283,43 @@
     <p>
         Estamos en contacto para cualquier duda o consulta.
     </p>
+</%def>
+
+<%def name="correu_02_cat()">
+    <body>
+        <p>
+            Hola${nom_titular},
+        </p>
+        <p>
+            El canvi en l'acord de repartiment per la instal·lació d'autoconsum vinculada al CUPS ${object.cups_id.name} amb adreça de subministrament ${object.cups_id.direccio} ha estat realitzada amb èxit.
+        </p>
+        <p>
+            Així doncs, des del ${date_activacio} ha entrat en vigor el nou acord de repartiment per a la instal·lació d'autoconsum amb CAU ${pas05.dades_cau[0].cau}.
+        </p>
+        Atentament,<br>
+        <br>
+        Equip de Som Energia<br>
+        <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
+        <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
+    </body>
+</%def>
+
+
+<%def name="correu_02_es()">
+    <body>
+        <p>
+            Hola${nom_titular},
+        </p>
+        <p>
+            El cambio en el acuerdo de reparto para la instalación de autoconsumo vinculada a tu CUPS ${object.cups_id.name} con dirección de suministro ${object.cups_id.direccio} se ha completado con éxito.
+        </p>
+        <p>
+            Desde el ${date_activacio} ha entrado en vigor el nuevo acuerdo de reparto para la instalación de autoconsumo con CAU ${pas05.dades_cau[0].cau}.
+        </p>
+        Atentamente,<br>
+        <br>
+        Equipo de Som Energia<br>
+        <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
+        <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
+    </body>
 </%def>
