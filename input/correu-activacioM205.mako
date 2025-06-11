@@ -78,7 +78,7 @@
 
     tarifaATR = object.cups_polissa_id.tarifa.name
     pot_deseada_ca = '\n'.join((
-        '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.periode_id.name, p.potencia)
+        '<li> %s: %s W</li>' % (p.periode_id.name, p.potencia)
         for p in object.cups_polissa_id.potencies_periode
         if p.potencia != 0
     ))
@@ -195,13 +195,12 @@
     <p>
         Les <b>condicions contractuals actuals</b> del teu contracte amb Som Energia són:
     </p>
+    <b>
     <ul>
         <li>Tarifa: ${tarifaATR}</li>
         <li>Potència:</li>
         <ul>
-            <li>
             ${pot_deseada_ca}
-            </li>
         </ul>
     </ul>
     %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
@@ -218,7 +217,7 @@
         </li>
     </ul>
     %endif
-
+    </b>
     <p>
        En la pròxima factura es veurà reflectida la modificació, i en l'Oficina Virtual en els següents dies.
     </p>
@@ -244,13 +243,12 @@
     <p>
         Las  <b>condiciones contractuales actuales</b> de tu contrato con Som Energia son:
     </p>
+    <b>
     <ul>
         <li>Tarifa: ${tarifaATR}</li>
         <li>Potencia:</li>
         <ul>
-            <li>
             ${pot_deseada_ca}
-            </li>
         </ul>
     </ul>
     %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
@@ -267,6 +265,7 @@
         </li>
     </ul>
     %endif
+    </b>
     <p>
         En la próxima factura se verá reflejada la modificación, y en la Oficina Virtual en los siguientes días.
     </p>
