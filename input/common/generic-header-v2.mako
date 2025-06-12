@@ -1,3 +1,8 @@
+<%
+  light_logo = context.get('light_logo') or 'https://www.somenergia.coop/logo/logo_clar.svg'
+  dark_logo = context.get('dark_logo') or 'https://www.somenergia.coop/logo/logo_fosc.svg'
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -469,9 +474,9 @@
                   <tr>
                     <th>
                       <picture>
-                        <source srcset="https://www.somenergia.coop/logo/logo_fosc.svg" media="(prefers-color-scheme: light)"/>
-                        <source srcset="https://www.somenergia.coop/logo/logo_clar.svg"  media="(prefers-color-scheme: dark)"/>
-                        <img src="https://www.somenergia.coop/logo/logo_fosc.svg" alt="SOM Energia" style="height: 100px"/>
+                        <source srcset="${dark_logo}" media="(prefers-color-scheme: light)"/>
+                        <source srcset="${light_logo}"  media="(prefers-color-scheme: dark)"/>
+                        <img src="${dark_logo}" alt="SOM Energia" style="height: 100px"/>
                       </picture>
                     </th>
                   </tr>
