@@ -3,8 +3,26 @@
     data = email_o.get_data(object._cr, object._uid, object.id, context={'lang': object.partner_id.lang})
     polissa_retrocedida = data['polissa']['polissa_retrocedida']
     potencies = [float(x['potencia'].replace(',','.')) for x in data['polissa']['potencies']['contractades']]
+
+    from mako.template import Template
+    def render(text_to_render, object_):
+        templ = Template(text_to_render)
+        return templ.render_unicode(
+            object=object_,
+            dark_logo=data['comerci'].get('dark_logo'),
+            light_logo=data['comerci'].get('light_logo'),
+            format_exceptions=True
+        )
+    t_obj = object.pool.get('poweremail.templates')
+    md_obj = object.pool.get('ir.model.data')
+    template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+    template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+    plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+    plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 %>
-<div align="right"><a href="https://somenergia.coop"><img src="${data['comerci']['logo']}"/></a></div>
+
+${plantilla_header}
+
 % if data['lang'] != "es_ES":
     <p><br>Benvolgut, benvolguda,</p>
     <p>T'enviem
@@ -167,7 +185,7 @@
     </p>
     <p>Atentament,</p>
     <p>Equip de Som Energia</p>
-    <div style="text-align: center;"><a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum"><img style="width: 189px; margin-left: auto; margin-right: auto" src="https://www.somenergia.coop/factura/dubtes_socia_som_energia.png" alt="" height="182"></a></div>
+    <div style="text-align: center;"><a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum"><img style="width: 189px; margin-left: auto; margin-right: auto" src="https://www.somenergia.coop/factura/Factura_icon.png" alt="" height="182"></a></div>
     <p dir="ltr" style="text-align: center;"><a href="https://ca.support.somenergia.coop/article/926-que-puc-fer-si-estic-en-desacord-amb-la-factura-de-la-llum"><strong>Creus que la teva factura és errònia?</strong></a></p>
     </p>
 % endif
@@ -337,8 +355,9 @@
     </p>
     <p>Atentamente,</p>
     <p>Equipo de Som Energia</p>
-    <div style="text-align: center;"><a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz"><img style="width: 189px; margin-left: auto; margin-right: auto" src="https://www.somenergia.coop/factura/dubtes_socia_som_energia.png" alt="" height="182"></a></div>
+    <div style="text-align: center;"><a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz"><img style="width: 189px; margin-left: auto; margin-right: auto" src="https://www.somenergia.coop/factura/Factura_icon.png" alt="" height="182"></a></div>
     <p dir="ltr" style="text-align: center;"><strong><a href="https://es.support.somenergia.coop/article/927-que-puedo-hacer-si-estoy-en-desacuerdo-con-la-factura-de-la-luz">¿Crees que tu factura contiene errores?</a></strong></p>
     <p style="text-align: center;">&nbsp;</p>
 %endif
-<p>${data['text_correu']['text_legal']}</p>
+
+${plantilla_footer}

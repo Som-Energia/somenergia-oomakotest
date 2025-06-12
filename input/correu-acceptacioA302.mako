@@ -23,13 +23,6 @@
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
-    template_id = md_obj.get_object_reference(
-                        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                    )[1]
-    text_legal = render(t_obj.read(
-        object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-        object
-    )
     pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
     pot_deseada_ca = '\n'.join((
         '&nbsp;&nbsp;&nbsp;&nbsp;- <strong> %s: %s W</strong> <br>' % (p.name, p.potencia)
@@ -40,28 +33,29 @@
     if object.cups_polissa_id.tarifa.name == "2.0TD":
         pot_deseada_ca = pot_deseada_ca.replace("P1:", "Punta:").replace("P2:", "Vall:")
         pot_deseada_es = pot_deseada_es.replace("P1:", "Punta:").replace("P2:", "Valle:")
+
+    template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+    template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+    plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+    plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 %>
 
-<!doctype html>
-<html>
+${plantilla_header}
+
 % if object.cups_polissa_id.titular.lang == 'ca_ES':
     ${correu_cat()}
 % else:
     ${correu_es()}
 % endif
-${text_legal}
-</html>
 
+${plantilla_footer}
 
 <%def name="correu_cat()">
     <head>
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
+        <table width="100%" frame="below">
             <tr>
                 <td height=1px>
                     <font size=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
-                </td>
-                <td valign=top rowspan="4">
-                    <align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
                 </td>
             </tr>
             <tr>
@@ -105,7 +99,6 @@ ${text_legal}
             - Adreça: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
             - Potència: <br>${pot_deseada_ca}
-            - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
         <br>
@@ -119,13 +112,10 @@ ${text_legal}
 
 <%def name="correu_es()">
     <head>
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
+        <table width="100%" frame="below">
             <tr>
                 <td height=2px>
                     <font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font>
-                </td>
-                <td VALIGN=top rowspan="4">
-                    <align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
                 </td>
             </tr>
             <tr>
@@ -169,7 +159,6 @@ ${text_legal}
             - Dirección: ${object.cups_polissa_id.cups_direccio}<br>
             - CUPS: ${object.cups_id.name}<br>
             - Potencia: <br>${pot_deseada_es}
-            - Tarifa: ${object.cups_polissa_id.tarifa.name}<br>
         </p>
         <br>
         <br>
