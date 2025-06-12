@@ -11,8 +11,8 @@
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
-    template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header')[1]
-    template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer')[1]
+    template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+    template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
     plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
     plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 
@@ -23,30 +23,6 @@
 %>
 
 ${plantilla_header}
-
-<table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-  <tr>
-    <td align="center">
-      <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-        <tr>
-          <td class="email-masthead">
-            <table align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" class="header">
-              <tr>
-                <th>
-                  <img src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png" alt="SOM Energia" style="height: 100px"/>
-                </th>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <!-- Email Body -->
-        <tr>
-          <td class="email-body" width="570" cellpadding="0" cellspacing="0">
-            <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
-              <!-- Body content -->
-              <tr>
-                <td class="content-cell">
-                  <div class="f-fallback">
 
 % if object.partner_id.lang == "ca_ES":
 <p>Benvingut/da a Som Energia!<br><br></p>
@@ -143,14 +119,4 @@ ${plantilla_header}
 <p>El equipo de Som Energia<br><a href="https://www.somenergia.coop" target="_blank" rel="noopener">www.somenergia.coop</a><br><a href="http://es.support.somenergia.coop/article/471-como-puedo-contactar-con-la-cooperativa-mail-telefono-etc" target="_blank" rel="noopener">Contactar con Som Energia</a></p>
 % endif
 
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
 ${plantilla_footer}

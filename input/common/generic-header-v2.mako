@@ -20,7 +20,7 @@
     }
 
     a {
-      color: #99A43C !important;
+      color: #0c4c27 !important;
     }
 
     a img {
@@ -469,9 +469,9 @@
                   <tr>
                     <th>
                       <picture>
-                        <source srcset="https://www.somenergia.coop/logo/logo_fosc.png" media="(prefers-color-scheme: light)"/>
-                        <source srcset="https://www.somenergia.coop/logo/logo_clar.png"  media="(prefers-color-scheme: dark)"/>
-                        <img src="https://www.somenergia.coop/logo/logo_fosc.png" alt="SOM Energia" style="height: 100px"/>
+                        <source srcset="https://www.somenergia.coop/logo/logo_fosc.svg" media="(prefers-color-scheme: light)"/>
+                        <source srcset="https://www.somenergia.coop/logo/logo_clar.svg"  media="(prefers-color-scheme: dark)"/>
+                        <img src="https://www.somenergia.coop/logo/logo_fosc.svg" alt="SOM Energia" style="height: 100px"/>
                       </picture>
                     </th>
                   </tr>
