@@ -23,11 +23,15 @@ text_desistiment = render(
 )
 tarifa_a_mostrar = ""
 
-
+from gestionatr.defs import TABLA_113
 from som_polissa.giscedata_cups import TABLA_113_dict
 autoconsum_description = False
 if object.autoconsumo != '00':
-    autoconsum_description = object.autoconsumo + ' - ' + TABLA_113_dict[object.autoconsumo]
+    autoconsum_description = object.autoconsumo + ' - '
+    if object.titular.lang == 'ca_ES':
+        autoconsum_description += TABLA_113_dict[object.autoconsumo]
+    else:
+        autoconsum_description += dict(TABLA_113)[object.autoconsumo]
 
 try:
     lang = object.titular.lang
@@ -88,6 +92,10 @@ ${plantilla_header}
 <br>    - Donativo Voluntario (0,01€/kWh): Si
 %endif
 </p>
+                %if autoconsum_description:
+<p>    - Modalidad autoconsumo: ${autoconsum_description}</p>
+<p>Si tu modalidad de autoconsumo es con compensación de excedentes, también se ha activado el <a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar">Flux Solar</a>.</p>
+                %endif
 
             % if not object.observacions or 'proces: A3' not in object.observacions:
 <p>Recuerda que el titular del contrato de suministro tiene que ser el usuario efectivo de la electricidad contratada y que tiene que tener un justo título (contrato de arrendamiento, etc.) sobre el punto de suministro.</p>
