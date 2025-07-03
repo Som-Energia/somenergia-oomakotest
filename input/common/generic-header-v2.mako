@@ -1,6 +1,6 @@
 <%
-  light_logo = context.get('light_logo') or 'https://www.somenergia.coop/logo/logo_clar.svg'
-  dark_logo = context.get('dark_logo') or 'https://www.somenergia.coop/logo/logo_fosc.svg'
+  light_logo = context.get('light_logo') or 'https://www.somenergia.coop/logo/logo_clar_100px.png'
+  dark_logo = context.get('dark_logo') or 'https://www.somenergia.coop/logo/logo_fosc_100px.png'
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
