@@ -28,6 +28,15 @@
 #    poweremailId: somre_ov_module.common_template_legal_footer_representa
 #    cases: {}
 #
+generic_header_v2:
+    template: input/common/generic-header-v2.mako
+    poweremailId: som_poweremail_common_templates.common_template_header_v2
+    cases: {}
+generic_footer_v2:
+    template: input/common/generic-footer-v2.mako
+    poweremailId: som_poweremail_common_templates.common_template_footer_v2
+    cases: {}
+
 ######################################################
 ## Forms
 #
@@ -56,16 +65,16 @@ nouSoci_destral:
 ######################################################
 ## Facturació
 #
-#enviarFacturaNormal:
-#    template: input/correu-enviarFacturaNormal.mako
-#    model: giscedata.facturacio.factura
-#    poweremailId: giscedata_facturacio_comer.env_fact_via_email
-#    cases:
-#        normal_ca: 444848
-#        normal_es: 403834
-#        energetica: 5084228
-#        10pluspot_ca: 15561632
-#
+enviarFacturaNormal:
+    template: input/correu-enviarFacturaNormal.mako
+    model: giscedata.facturacio.factura
+    poweremailId: giscedata_facturacio_comer.env_fact_via_email
+    cases:
+        normal_ca: 444848
+        normal_es: 403834
+        energetica: 5084228
+        10pluspot_ca: 15561632
+
 #enviarAbonament:
 #    template: input/correu-enviarAbonament.mako
 #    model: giscedata.facturacio.factura
