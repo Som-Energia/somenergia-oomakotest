@@ -28,6 +28,15 @@
 #    poweremailId: somre_ov_module.common_template_legal_footer_representa
 #    cases: {}
 #
+#generic_header_v2:
+#    template: input/common/generic-header-v2.mako
+#    poweremailId: som_poweremail_common_templates.common_template_header_v2
+#    cases: {}
+#generic_footer_v2:
+#    template: input/common/generic-footer-v2.mako
+#    poweremailId: som_poweremail_common_templates.common_template_footer_v2
+#    cases: {}
+
 ######################################################
 ## Forms
 #
@@ -37,14 +46,15 @@
 #    poweremailId: 2
 #    cases:
 #      ca: 192
-
-#  nouSoci_destral:
-#    template: input/correu-nouSoci.mako
-#    model: somenergia.soci
-#    poweremailId: som_polissa_soci.nou_soci_mail_webforms
-#    cases:
-#      ca: som_polissa_soci.soci_0001
-
+#
+#nouSoci_destral:
+#  template: input/correu-nouSoci.mako
+#  model: somenergia.soci
+#  poweremailId: som_polissa_soci.nou_soci_mail_webforms
+#  cases:
+#    es: 27
+#    ca: 129
+#
 #  emailCanviTarifaIndexada:
 #    template: input/correu-emailCanviTarifaIndexada.mako
 #    model: giscedata.polissa
@@ -516,13 +526,21 @@
 #  poweremailId: 245 # Prod
 #  cases: {}
 #
-# contracteEsborrany:
-#   template: input/correu-contracteEsborrany.mako
-#   model: giscedata.polissa
-#   poweremailId: som_polissa_soci.email_contracte_esborrany
-#   cases:
-#     es: 297510
-#     ca: 129
+#contracteEsborrany:
+#  template: input/correu-contracteEsborrany.mako
+#  model: giscedata.polissa
+#  poweremailId: som_polissa_soci.email_contracte_esborrany
+#  cases:
+#    es: 384
+#    ca: 11
+#
+#contracteEsborranyNouSoci:
+#  template: input/correu-contracteEsborrany-nouSoci.mako
+#  model: giscedata.polissa
+#  poweremailId: som_polissa_soci.email_contracte_esborrany_nou_soci
+#  cases:
+#    es: 384
+#    ca: 11
 #canviDePagador:
 #  template: input/correu-canviPagador.mako
 #  model: giscedata.polissa
@@ -587,7 +605,7 @@
 #    02_3.0_ca: 102293
 #    02_3.0_es: 101692
 #
-#rebuig03NifNoCoincide:
+# rebuig03NifNoCoincide:
 #    template: input/rebutjos/rebuig03.mako
 #    model: giscedata.switching
 #    main_template: input/correu-rebuigC102.mako
@@ -600,55 +618,61 @@
 #            id: 723
 #            pas: 1
 #
-# rebuigC102:
-#   template: input/correu-rebuigC102.mako
-#   model: giscedata.switching
-#   poweremailId: giscedata_switching.notification_atr_C1_02_rebuig
-#   data:
-#     notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-#   cases:
-#     nou: 147916
-#     es: 193625
-#     ca: 207969
-
-# rebuigC202:
-#   template: input/correu-rebuigC202.mako
-#   model: giscedata.switching
-#   poweremailId: giscedata_switching.notification_atr_C2_02_rebuig
-#   cases:
-#     nou: 147916
-
-# rebuigC104:
-#   template: input/correu-rebuigC104.mako
-#   model: giscedata.switching
-#   poweremailId: giscedata_switching.notification_atr_C1_04
-#   cases:
-#     nou: 147916
-# #
-# rebuigC204:
-#   template: input/correu-rebuigC204.mako
-#   model: giscedata.switching
-#   poweremailId: giscedata_switching.notification_atr_C2_04
-#   cases:
-#     nou: 147916
-
-# rebuigA302:
-#   template: input/correu-rebuigA302.mako
-#   model: giscedata.switching
-#   poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
-#   data:
-#     notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-#   cases:
-#     nou: 147916
-# #
-# rebuigA304:
-#   template: input/correu-rebuigA304.mako
-#   model: giscedata.switching
-#   poweremailId: giscedata_switching.notification_atr_A3_04
-#   data:
-#     notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-#   cases:
-#     nou: 147916
+#rebuigC102:
+#  template: input/correu-rebuigC102.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_C1_02_rebuig
+#  data:
+#    notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+#  cases:
+#    nou: 147916
+#    es: 193625
+#    ca: 207969
+#
+#rebuigC202:
+#  template: input/correu-rebuigC202.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_C2_02_rebuig
+#  data:
+#    notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+#  cases:
+#    nou: 147916
+#
+#rebuigC104:
+#  template: input/correu-rebuigC104.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_C1_04
+#  data:
+#    notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+#  cases:
+#    nou: 147916
+#
+#rebuigC204:
+#  template: input/correu-rebuigC204.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_C2_04
+#  data:
+#    notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+#  cases:
+#    nou: 147916
+#
+#rebuigA302:
+#  template: input/correu-rebuigA302.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_A3_02_rebuig
+#  data:
+#    notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+#  cases:
+#    nou: 147916
+#
+#rebuigA304:
+#  template: input/correu-rebuigA304.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_A3_04
+#  data:
+#    notificacio_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+#  cases:
+#    nou: 147916
 #rebuigM102:
 #   template: input/correu-rebuigM102.mako
 #   model: giscedata.switching
@@ -684,15 +708,15 @@
 #  cases:
 #    ca: 355779
 #    es: 354382
-# acceptacioA302:
-#   template: input/correu-acceptacioA302.mako
-#   model: giscedata.switching
-#   poweremailId: giscedata_switching.notification_atr_A3_02_acceptacio
-#   cases:
-#     altaNou_ca: 361569
-#     altaNou_es: 361288
-#     tarifa30TD: 302901
-
+#acceptacioA302:
+#  template: input/correu-acceptacioA302.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_A3_02_acceptacio
+#  cases:
+#    altaNou_ca: 361569
+#    altaNou_es: 361288
+#    tarifa30TD: 302901
+#
 # acceptacioM102:
 #   template: input/correu-acceptacioM102.mako
 #   model: giscedata.switching
@@ -704,14 +728,14 @@
 #   ambActuacio_es: 29669
 #   3.0_ca: 14063
 #   3.0_es: 24832
-
-# acceptacioC102:
-#   template: input/correu-acceptacioC102.mako
-#   model: giscedata.switching
-#   poweremailId: giscedata_switching.notification_atr_C1_02_acceptacio
-#   cases:
-#     nou: 147950
-
+#
+#acceptacioC102:
+#  template: input/correu-acceptacioC102.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_C1_02_acceptacio
+#  cases:
+#    nou: 147950
+#
 # acceptacioC202:
 #   template: input/correu-acceptacioC102.mako
 #   model: giscedata.switching
@@ -885,28 +909,28 @@
 #     30TD_c2_es: 356843  #par 17345
 #     30TD_c2_ca: 356375  #par 17345
 # #
-# activacioC105_automatica:
-#   template: input/correu-activacioC105.mako
-#   model: giscedata.switching
-# #  poweremailId: 19
-#   poweremailId: giscedata_switching.notification_atr_C1_05
-#   cases:
-#     30TD_ca: 360586
-#     30TD_es: 360206
-#     20TD_es: 359468
-#     20TD_ca: 359325
-
-# activacioC205_automatica:
-#  template: input/correu-activacioC205.mako
+#activacioC105_automatica:
+#  template: input/correu-activacioC105.mako
 #  model: giscedata.switching
-# #  poweremailId: 19
-#  poweremailId: giscedata_switching.notification_atr_C2_05
+#  poweremailId: 19
+#  poweremailId: giscedata_switching.notification_atr_C1_05
 #  cases:
-#    20TD_ca: 360698  #par 17345
-#    20TD_es: 358733  #par 17345
-#    30TD_es: 356843  #par 17345
-#    30TD_ca: 356375  #par 17345
-
+#    30TD_ca: 360586
+#    30TD_es: 360206
+#    20TD_es: 359468
+#    20TD_ca: 359325
+#
+#activacioC205_automatica:
+# template: input/correu-activacioC205.mako
+# model: giscedata.switching
+#  poweremailId: 19
+# poweremailId: giscedata_switching.notification_atr_C2_05
+# cases:
+#   20TD_ca: 360698  #par 17345
+#   20TD_es: 358733  #par 17345
+#   30TD_es: 356843  #par 17345
+#   30TD_ca: 356375  #par 17345
+#
 # activacioencontraCX06_manual:
 #  template: input/correu-activacioencontraCx06-manual.mako
 #  model: giscedata.switching
@@ -921,27 +945,27 @@
 #    30A_c2_ca: 21728   #par 17324
 #    30A_c2_es: 34150   #par 31097
 #
-# activacioencontraC106_automatica:
-#   template: input/correu-activacioencontraC106.mako
-#   model: giscedata.switching
-#   #poweremailId: 21
-#   poweremailId: giscedata_switching.notification_atr_C1_06
-#   cases:
-#     20A_ca: 489 #par 1469
-#     20A_es: 9 #par 7821
-#     30A_ca: 8166 #par 12802
-#     30A_es: 11838 #par 20800
-
-# activacioencontraC206_automatica:
-#   template: input/correu-activacioencontraC206.mako
-#   model: giscedata.switching
-#   #poweremailId: 21
-#   poweremailId: giscedata_switching.notification_atr_C2_06
-#   cases:
-#     20A_ca: 1191 #par 571
-#     20A_es: 503 #par 3808
-#     30A_ca: 21728 #par 17324
-#     30A_es: 34150 #par 31097
+#activacioencontraC106_automatica:
+#  template: input/correu-activacioencontraC106.mako
+#  model: giscedata.switching
+#  #poweremailId: 21
+#  poweremailId: giscedata_switching.notification_atr_C1_06
+#  cases:
+#    20A_ca: 489 #par 1469
+#    20A_es: 9 #par 7821
+#    30A_ca: 8166 #par 12802
+#    30A_es: 11838 #par 20800
+#
+#activacioencontraC206_automatica:
+#  template: input/correu-activacioencontraC206.mako
+#  model: giscedata.switching
+#  #poweremailId: 21
+#  poweremailId: giscedata_switching.notification_atr_C2_06
+#  cases:
+#    20A_ca: 1191 #par 571
+#    20A_es: 503 #par 3808
+#    30A_ca: 21728 #par 17324
+#    30A_es: 34150 #par 31097
 #
 # activacioM105_manual:
 #   template: input/correu-activacioM105-manual.mako
@@ -1018,15 +1042,15 @@
 #
 #
 #notificacioActivacioA3_manual:
-#  template: input/correu-notificacioActivacioA3-manual.mako
-#  model: giscedata.switching
-#  poweremailId: 65
-#  #poweremailId: giscedata_switching.notification_atr_A3_05
-#  cases:
-#    2.x_ca: 42153
-#    2.x_es: 37918
-#    3.x_ca: 87927
-#    3.x_es: 93353
+# template: input/correu-notificacioActivacioA3-manual.mako
+# model: giscedata.switching
+# poweremailId: 65
+# #poweremailId: giscedata_switching.notification_atr_A3_05
+# cases:
+#   2.x_ca: 42153
+#   2.x_es: 37918
+#   3.x_ca: 87927
+#   3.x_es: 93353
 #
 #
 # notificacioActivacioA3_automatica:
@@ -1571,12 +1595,12 @@
 # poweremailId: 397
 # cases:
 #   ca_20: 2477030
-canviPreus202506:
- template: input/correu-canviPreus202506.mako
- model: som.enviament.massiu
- poweremailId: 465
- cases:
-   ca_20: 2477030
+# canviPreus202506:
+#  template: input/correu-canviPreus202506.mako
+#  model: som.enviament.massiu
+#  poweremailId: 465
+#  cases:
+#    ca_20: 2477030
 #situacioExcepcional2022:
 #  template: input/correu-situacioExcepcional2022.mako
 #  model: som.enviament.massiu

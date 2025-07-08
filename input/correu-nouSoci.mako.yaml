@@ -1,6 +1,7 @@
 cc: false
+lang: ${object.partner_id.lang}
 to: ${object.address[0].email}
-subject_translations:   
+subject_translations:
   en_US: ''
   es_ES: 'Alta como soci/a de Som Energia, SCCL'
   ca_ES: 'Alta com a soci/a de Som Energia, SCCL'

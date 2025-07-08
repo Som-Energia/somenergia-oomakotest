@@ -1,41 +1,3 @@
-
-% if object.cups_polissa_id.titular.lang == "ca_ES":
-<table width="100%" frame="below" bgcolor="#E8F1D4">
-<tbody>
-<tr>
-<td height="2px"><span style="font-size: small;"><strong>Contracte Som Energia n&ordm; ${object.cups_polissa_id.name}</strong></span></td>
-<td rowspan="4" valign="TOP"><img src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png" width="130" height="65"></td>
-</tr>
-<tr>
-<td height="2px"><span style="font-size: xx-small;">Adre&ccedil;a punt subministrament: ${object.cups_id.direccio}</span></td>
-</tr>
-<tr>
-<td height="2px"><span style="font-size: xx-small;">Codi CUPS: ${object.cups_id.name}</span></td>
-</tr>
-<tr>
-<td width="100%" height="2px"><span style="font-size: xx-small;"> Titular: ${object.cups_polissa_id.titular.name} </span></td>
-</tr>
-</tbody>
-</table>
-% else:
-<table width="100%" frame="below" bgcolor="#E8F1D4">
-<tbody>
-<tr>
-<td height="2px"><span style="font-size: small;"><strong>Contrato Som Energia n&ordm; ${object.cups_polissa_id.name}</strong></span></td>
-<td rowspan="4" valign="TOP"><img src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png" width="130" height="65"></td>
-</tr>
-<tr>
-<td height="2px"><span style="font-size: xx-small;">Direcci&oacute;n punto suministro: ${object.cups_id.direccio}</span></td>
-</tr>
-<tr>
-<td height="2px"><span style="font-size: xx-small;">C&oacute;digo CUPS: ${object.cups_id.name}</span></td>
-</tr>
-<tr>
-<td width="100%" height="2px"><span style="font-size: xx-small;">Titular:${object.cups_polissa_id.titular.name} </span></td>
-</tr>
-</tbody>
-</table>
-% endif
 <%
 import sys
 cups_obj = object.pool.get('giscedata.cups.ps')
@@ -102,8 +64,7 @@ if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa
   subministrament_essencial = True
 
 tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
-%>
-<%
+
 from mako.template import Template
 def render(text_to_render, object_):
     templ = Template(text_to_render)
@@ -113,18 +74,33 @@ def render(text_to_render, object_):
     )
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
-template_id = md_obj.get_object_reference(
-                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                )[1]
-text_legal = render(t_obj.read(
-    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-    object
-)
-
+template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 %>
-<p><br><br>Hola${nom_titular},<br><br></p>
+
+${plantilla_header}
+
 % if object.cups_polissa_id.titular.lang != "es_ES":
-<p>Ens plau comunicar-te que el proc&eacute;s de canvi de comercialitzadora ha finalitzat, <span style="color: green;"><strong>el contracte est&agrave; activat amb Som Energia</strong></span> des del ${data_activacio}.<br><br>Per a qualsevol consulta o aclariment, aquestes s&oacute;n les teves dades:</p>
+<table width="100%" frame="below">
+<tbody>
+<tr>
+  <td height="2px"><span style="font-size: small;"><strong>Contracte Som Energia n&ordm; ${object.cups_polissa_id.name}</strong></span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Adre&ccedil;a punt subministrament: ${object.cups_id.direccio}</span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Codi CUPS: ${object.cups_id.name}</span></td>
+</tr>
+<tr>
+  <td width="100%" height="2px"><span style="font-size: xx-small;"> Titular: ${object.cups_polissa_id.titular.name} </span></td>
+</tr>
+</tbody>
+</table>
+<p><br>Hola${nom_titular},<br></p>
+<p>Ens plau comunicar-te que el proc&eacute;s de canvi de comercialitzadora ha finalitzat, <strong>el contracte est&agrave; activat amb Som Energia</strong> des del ${data_activacio}.<br><br>Per a qualsevol consulta o aclariment, aquestes s&oacute;n les teves dades:</p>
 <ul>
 <li><strong>N&uacute;mero de contracte amb Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
@@ -162,7 +138,24 @@ text_legal = render(t_obj.read(
 <p><br>----------------------------------------------------------------------------------------------------</p>
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
-<p>Nos complace informarte que el proceso de cambio de comercializadora ha finalizado, <span style="color: green;"><strong>tu contrato con Som Energia est&aacute; activado </strong></span> desde el ${data_activacio}.<br><br>Los datos del nuevo contrato son:</p>
+<table width="100%" frame="below">
+<tbody>
+<tr>
+<td height="2px"><span style="font-size: small;"><strong>Contrato Som Energia n&ordm; ${object.cups_polissa_id.name}</strong></span></td>
+</tr>
+<tr>
+<td height="2px"><span style="font-size: xx-small;">Direcci&oacute;n punto suministro: ${object.cups_id.direccio}</span></td>
+</tr>
+<tr>
+<td height="2px"><span style="font-size: xx-small;">C&oacute;digo CUPS: ${object.cups_id.name}</span></td>
+</tr>
+<tr>
+<td width="100%" height="2px"><span style="font-size: xx-small;">Titular: ${object.cups_polissa_id.titular.name} </span></td>
+</tr>
+</tbody>
+</table>
+<p><br>Hola${nom_titular},<br></p>
+<p>Nos complace informarte que el proceso de cambio de comercializadora ha finalizado, <strong>tu contrato con Som Energia est&aacute; activado </strong> desde el ${data_activacio}.<br><br>Los datos del nuevo contrato son:</p>
 <ul>
 <li><strong>N&uacute;mero de contrato con Som Energia: </strong>${object.cups_polissa_id.name}</li>
 <li><strong>CUPS: </strong>${object.cups_id.name}</li>
@@ -196,4 +189,5 @@ text_legal = render(t_obj.read(
 %endif
 <p>Si tienes alguna duda, encontrar&aacute;s las preguntas m&aacute;s frecuentes en el <a href="https://es.support.somenergia.coop/"> Centro de Apoyo </a>.<br><br><br>Atentamente,<br><br>Equipo de Som Energia<br>comercializacion@somenergia.coop<br><a href="https://www.somenergia.coop">www.somenergia.coop</a></p>
 % endif
-<p><br>${text_legal}</p>
+
+${plantilla_footer}

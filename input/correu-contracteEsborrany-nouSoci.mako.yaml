@@ -1,0 +1,8 @@
+cc: false
+lang: ${object.titular.lang}
+to: ${object.direccio_pagament.email}
+subject_translations:
+  ca_ES: Contractació Som Energia ${object.name}
+  es_ES: Contratación Som Energia ${object.name}
+subject: Contractació Som Energia ${object.name} / Contratación Som Energia ${object.name}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
