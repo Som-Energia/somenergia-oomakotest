@@ -58,7 +58,7 @@ ${plantilla_footer}
     <p>Al nostre Centre d’Ajuda pots veure <strong><a href='https://ca.support.somenergia.coop/article/1221-com-vincular-un-contracte-a-una-persona-socia#vincular'>com vincular el contracte</a> a una altra persona sòcia</strong>.</p>
     <p>I si no coneixes cap altra persona sòcia, pots acostar-te a algun Grup Local o bé escriure’ns a participa@somenergia.coop.</p>
     <p>
-        Com ja et vam explicar quan vas entrar, aquesta situació especial només pot durar un any. <strong>Si no t’associes o vincules el teu contracte abans de ${data_enviament_cor}, no se’t podrà renovar el contracte d’electricitat</strong>. Aleshores:
+        Com ja et vam explicar quan vas entrar, aquesta situació especial només pot durar un any. <strong>Si no t’associes o vincules el teu contracte abans del ${data_enviament_cor}, no se’t podrà renovar el contracte d’electricitat</strong>. Aleshores:
         <ul>
         <li>El teu contracte amb la direcció de subministrament ${object.cups.direccio} es donarà de baixa amb Som Energia.</li>
         <li>Aquest contracte passarà a estar gestionat per l’empresa comercialitzadora de referència, les pots <a href='https://ca.support.somenergia.coop/article/660-la-comercialitzacio-delectricitat?#referencia'>consultar aquí</a>. Si ho prefereixes, pots gestionar tu un canvi de comercialitzadora i escollir amb quina et vols quedar.</li>
@@ -101,7 +101,7 @@ ${plantilla_footer}
     <p>En nuestro Centro de Ayuda puedes ver <strong><a href='https://es.support.somenergia.coop/article/1222-como-vincular-un-contrato-a-una-persona-socia?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano'>cómo vincular el contrato</a> a otra persona socia</strong>.</p>
     <p>Y si no conoces a otra persona socia, puedes acercarte a algún Grupo Local o escribirnos a participa@somenergia.coop.</p>
     <p>
-        Como ya te contamos cuando entraste, esta situación especial sólo puede durar un año. <strong>Si no asocias ni vinculas tu contrato antes de ${data_enviament_cor}, no se podrá renovar el contrato de electricidad</strong>. Entonces:
+        Como ya te contamos cuando entraste, esta situación especial sólo puede durar un año. <strong>Si no asocias ni vinculas tu contrato antes del ${data_enviament_cor}, no se podrá renovar el contrato de electricidad</strong>. Entonces:
         <ul>
         <li>Tu contrato con la dirección de suministro ${object.cups.direccio} se dará de baja con Som Energia.</li>
         <li>Este contrato pasará a estar gestionado por la empresa comercializadora de referencia, las puedes <a href='https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad#referencia'>consultar aquí</a>. Si lo prefieres, puedes gestionar tú un cambio de comercializadora y escoger con cuál te quieres quedar.</li>
