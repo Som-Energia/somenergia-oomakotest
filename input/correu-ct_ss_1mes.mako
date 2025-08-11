@@ -33,6 +33,8 @@ ${plantilla_header}
 ${plantilla_footer}
 
 <%def name="correu_cat()">
+    <div class="preheader">S’acaba el termini…</div>
+
     <p>Hola${nom_titular}!</p>
     <p>Com passa el temps… Ja fa quasi un any que ets a Som Energia!</p>
     <p>Què tal? Com està anant? Has tingut bones (o males) experiències, tenint una comercialitzadora elèctrica que és cooperativa?</p>
@@ -74,6 +76,8 @@ ${plantilla_footer}
 </%def>
 
 <%def name="correu_es()">
+    <div class="preheader">Se acaba el plazo…</div>
+
     <p>Hola${nom_titular}!</p>
     <p>Cómo pasa el tiempo… ¡Ya llevas casi un año en Som Energia! </p>
     <p>¿Qué tal? ¿Cómo está yendo? ¿Has tenido buenas (o malas) experiencias, teniendo una comercializadora eléctrica que es cooperativa?</p>
