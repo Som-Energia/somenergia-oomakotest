@@ -62,16 +62,16 @@ ${plantilla_footer}
     Atentament,<br>
     <br>
     Som Energia<br>
-    <a target='_blank' href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
+    <a target='_blank' href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br>
 </%def>
 
 <%def name="correu_es()">
-    <p>Hola${nom_titular}!</p>
+    <p>¡Hola${nom_titular}!</p>
     <p>Nos gusta que formes parte de Som Energia.</p>
     <p>Creemos que todavía tenemos camino por recorrer, todavía falta trabajo por hacer, para conseguir la transformación del modelo energético en uno 100% renovable, en manos de la ciudadanía. Un futuro que tenga comercializadoras con quienes puedes hablar y en quienes puedes confiar, transparentes y que no intenten exprimirte.</p>
     <p>Y creemos que tú <strong>nos puedes ayudar</strong>. Sea involucrándote en algún grupo de <a target='_blank' href='https://www.somenergia.coop/es/cooperativa/grupos-locales'>Socias Activistas</a>, sea haciendo alguna formación, o sea <strong>simplemente asociándote</strong> a Som Energia, <strong>¡todo suma!</strong></p>
     <p>Por eso no queremos decirte adiós. Se acerca la fecha de finalización de la situación excepcional en la que te encuentras, y si no te asocias o vinculas tu contrato a otra persona socia, tu contrato no se podrá renovar.</p>
-    <p class='align-center'><a class='button' target='_blank' href='https://www.somenergia.coop/es/cooperativa/asociarse'>¡Sí, quiero quedarme con Som Energia!</a></p>
+    <p class='align-center'><a class='button' target='_blank' href='https://www.somenergia.coop/es/cooperativa/asociarse'>¡Sí, quiero quedarme en Som Energia!</a></p>
     <p class='align-center'><a class='button' target='_blank' href='https://es.support.somenergia.coop/article/1222-como-vincular-un-contrato-a-una-persona-socia'>Quiero vincular el contrato a otra persona socia</a></p>
 
     <p><br>Durante este año nos has conocido y has visto cómo somos.</p>
@@ -95,5 +95,5 @@ ${plantilla_footer}
     Atentamente,<br>
     <br>
     Som Energia<br>
-    <a target='_blank' href="http://www.somenergia.coop/es">www.somenergia.coop</a>
+    <a target='_blank' href="https://www.somenergia.coop/es">www.somenergia.coop</a>
 </%def>

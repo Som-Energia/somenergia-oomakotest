@@ -70,13 +70,13 @@ ${plantilla_footer}
     Atentament,<br>
     <br>
     Som Energia<br>
-    <a target='_blank' href="www.somenergia.coop/ca">www.somenergia.coop</a><br>
+    <a target='_blank' href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br>
 </%def>
 
 <%def name="correu_es()">
     <div class="preheader">Se acaba el plazo…</div>
 
-    <p>Hola${nom_titular}!</p>
+    <p>¡Hola${nom_titular}!</p>
     <p>Cómo pasa el tiempo… ¡Ya llevas casi un año en Som Energia! </p>
     <p>¿Qué tal? ¿Cómo está yendo? ¿Has tenido buenas (o malas) experiencias, teniendo una comercializadora eléctrica que es cooperativa?</p>
     <p>¿Has realizado alguna formación? ¿Has ido a algún acto o charla? ¿Has podido conocer a alguna persona que sea socia?</p>
@@ -94,7 +94,7 @@ ${plantilla_footer}
     </p>
     <p><br>Esperamos también que nos hayas podido conocer bien, ver lo que significa que seamos una cooperativa sin ánimo de lucro, y que hayas podido comprobar que, aparte de comercializar energía 100% renovable, aplicamos los valores de <strong>transparencia</strong> y <strong>sostenibilidad</strong> y, gracias al apoyo de más de 86.000 personas y entidades socias, trabajamos cada día para transformar el modelo energético en uno <strong>100% renovable, distribuido, justo y en manos de la ciudadanía</strong>.</p>
     <p>Puesto que entraste con un cambio de titularidad, has podido disfrutar de <strong>un año especial</strong>, con un contrato de electricidad sin tener ninguna socia vinculada.</p>
-    <p><strong>Ahora, para quedarte, deberías <a target='_blank' href='https://www.somenergia.coop/es/cooperativa/asociarse'>hacerte socio/a</a>o bien que otra persona socia te acoja.</strong></p>
+    <p><strong>Ahora, para quedarte, deberías <a target='_blank' href='https://www.somenergia.coop/es/cooperativa/asociarse'>hacerte socio/a</a> o bien que otra persona socia te acoja.</strong></p>
     <p class='align-center'><a class='button' target='_blank' href='https://www.somenergia.coop/es/cooperativa/asociarse'>¡Quiero asociarme!</a></p>
     <p>Si conoces a otra persona socia, puedes pedirle que te acoja. Esto a ella no le implica nada, ni se hará responsable ni tendrá información de ningún tema relacionado con tu contrato. Simplemente debería dejarte su número de socia y DNI o NIE. Y, cuando los tengas, sigues <a target='_blank' href='https://es.support.somenergia.coop/article/1222-como-vincular-un-contrato-a-una-persona-socia?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano'>estos pasos</a>.</p>
     <p>En nuestro Centro de Ayuda puedes ver <strong><a target='_blank' href='https://es.support.somenergia.coop/article/1222-como-vincular-un-contrato-a-una-persona-socia?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano'>cómo vincular el contrato</a> a otra persona socia</strong>.</p>
@@ -113,5 +113,5 @@ ${plantilla_footer}
     Atentamente,<br>
     <br>
     Som Energia<br>
-    <a target='_blank' href="http://www.somenergia.coop/es">www.somenergia.coop</a>
+    <a target='_blank' href="https://www.somenergia.coop/es">www.somenergia.coop</a>
 </%def>
