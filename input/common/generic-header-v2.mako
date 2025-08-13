@@ -1,6 +1,9 @@
 <%
   light_logo = context.get('light_logo') or 'https://www.somenergia.coop/logo/logo_clar_100px.png'
   dark_logo = context.get('dark_logo') or 'https://www.somenergia.coop/logo/logo_fosc_100px.png'
+
+  # To only put the link in som energia mails
+  is_som_energia = light_logo == 'https://www.somenergia.coop/logo/logo_clar_100px.png'
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -473,11 +476,17 @@
                 <table align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
                   <tr>
                     <th>
-                      <picture>
-                        <source srcset="${dark_logo}" media="(prefers-color-scheme: light)"/>
-                        <source srcset="${light_logo}"  media="(prefers-color-scheme: dark)"/>
-                        <img src="${dark_logo}" alt="SOM Energia" style="height: 100px"/>
-                      </picture>
+                      % if is_som_energia:
+                        <a href="https://www.somenergia.coop" target="_blank">
+                      % endif
+                        <picture>
+                          <source srcset="${dark_logo}" media="(prefers-color-scheme: light)"/>
+                          <source srcset="${light_logo}" media="(prefers-color-scheme: dark)"/>
+                          <img src="${dark_logo}" alt="SOM Energia" style="height: 100px"/>
+                        </picture>
+                      % if is_som_energia:
+                        </a>
+                      % endif
                     </th>
                   </tr>
                 </table>
