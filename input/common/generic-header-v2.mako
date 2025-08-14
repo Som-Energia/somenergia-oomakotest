@@ -482,7 +482,7 @@
                         <picture>
                           <source srcset="${dark_logo}" media="(prefers-color-scheme: light)"/>
                           <source srcset="${light_logo}" media="(prefers-color-scheme: dark)"/>
-                          <img src="${dark_logo}" alt="SOM Energia" style="height: 100px"/>
+                          <img src="${dark_logo}" alt="Som Energia" style="height: 100px"/>
                         </picture>
                       % if is_som_energia:
                         </a>
