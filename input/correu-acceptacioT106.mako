@@ -41,11 +41,16 @@ ${plantilla_header}
 ${plantilla_footer}
 
 ## Todo: move this to a common template to permit reuse
-<%def name="social_icons()">
+<%def name="social_icons(lang)">
+<%
+  telegram_url = 'https://t.me/somenergia_es'
+  if lang == 'ca_ES':
+    telegram_url = 'https://t.me/somenergia'
+%>
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td align="center" style="padding: 10px 0;">
-      <a href="https://mastodon.social/@somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
+      <a href="https://mastodon.economiasocial.org/@SomEnergia" target="_blank" style="margin:0 10px; display:inline-block;">
         <picture>
           <source srcset="https://www.somenergia.coop/assets/social/primary/mastodon.svg" media="(prefers-color-scheme: light)"/>
           <source srcset="https://www.somenergia.coop/assets/social/mastodon.svg" media="(prefers-color-scheme: dark)"/>
@@ -73,7 +78,7 @@ ${plantilla_footer}
           <img src="https://www.somenergia.coop/assets/social/primary/x.svg" alt="X" width="32" height="32" border="0" style="display:block;"/>
         </picture>
       </a>
-      <a href="https://t.me/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
+      <a href="${telegram_url}" target="_blank" style="margin:0 10px; display:inline-block;">
         <picture>
           <source srcset="https://www.somenergia.coop/assets/social/primary/telegram.svg" media="(prefers-color-scheme: light)"/>
           <source srcset="https://www.somenergia.coop/assets/social/telegram.svg" media="(prefers-color-scheme: dark)"/>
@@ -112,7 +117,7 @@ ${plantilla_footer}
     <p>T’agraïm per avançat aquest retorn, ens serà molt útil per seguir millorant!</p>
     <br>
     <p>Ah! Que marxis no vol dir que ens perdis la pista! <strong>Podem seguir en contacte</strong> a través de les xarxes socials, aquí et deixem els enllaços:</p>
-    ${social_icons()}
+    ${social_icons(object.cups_polissa_id.titular.lang)}
     <p>Si mai canvies d’opinió, estarem encantades de rebre’t altre cop!</p>
     <br>
     <br>
@@ -137,7 +142,7 @@ ${plantilla_footer}
     <p>Te agradecemos por adelantado estas reflexiones, nos serán muy útiles para seguir mejorando.</p>
     <br>
     <p>¡Ah! ¡Que te vayas no quiere decir que nos pierdas la pista! <strong>Podemos seguir en contacto</strong> a través de las redes sociales, aquí te dejamos los enlaces:</p>
-    ${social_icons()}
+    ${social_icons(object.cups_polissa_id.titular.lang)}
     <p>Si alguna vez cambias de opinión, ¡estaremos encantadas de recibirte de nuevo!</p>
     <br>
     <br>
