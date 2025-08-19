@@ -479,6 +479,13 @@ def clean_text(text):
             </tr>
         </table>
         <div id="footer">
+            <div class="agreement_footer">
+                ${_("La contractant accepta expressament les condicions generals que s'acompanyen a continuació i que formen part integrant i inseparable d'aquest contracte, si bé les parts declaren que en cas de discrepància prevaldrà el que preveuen les condicions particulars. En cas de modificació de les condicions generals es procedirà conforme a la clàusula 12 relativa a la modificació de les mateixes")}.
+                % if polissa.state != 'esborrany':
+                    <br/>
+                    ${_("Aquestes condicions particulars es poden haver modificat després de l'activació del subministrament d'acord amb l'establert a les condicions generals")}.
+                % endif
+            </div>
             <div class="city_date">
             <%
                 if polissa.data_firma_contracte:
@@ -490,21 +497,17 @@ def clean_text(text):
                 ${_(u"a {0}".format(localize_period(data_firma, 'es_ES' )))}
             </div>
             <div style="clear:both"></div>
-                <div class="signatura">
-                    <div style="position:absolute; top: 0px; min-width:100%;">${_(u"EL CLIENT")}</div>
-                    %if lang == 'ca_ES':
-                        <img src="${addons_path}/som_polissa_condicions_generals/report/assets/acceptacio_digital_ca.png"/>
-                    %else:
-                        <img src="${addons_path}/som_polissa_condicions_generals/report/assets/acceptacio_digital_es.png"/>
-                    %endif
-
-                    <div style="position:absolute; bottom: 0px; min-width:100%;">${polissa.pagador.name}</div>
-                </div>
-                <div class="signatura">
-                    <div style="position:absolute; top: 0px; min-width:100%;">${_(u"LA COMERCIALITZADORA")}</div>
-                    <img src="${addons_path}/som_polissa_condicions_generals/report/assets/signatura_contracte.png"/>
-                    <div style="position:absolute; bottom: 0px; min-width:100%;">${company.name}</div>
-                </div>
+                % if polissa.state == 'esborrany':
+                    <div class="signatura">
+                        <div style="position:absolute; top: 0px; min-width:100%; min-height:50px">${_(u"EL CLIENT")}</div>
+                        <div style="position:absolute; bottom: 0px; min-width:100%;">${polissa.pagador.name}</div>
+                    </div>
+                    <div class="signatura">
+                        <div style="position:absolute; top: 0px; min-width:100%;">${_(u"LA COMERCIALITZADORA")}</div>
+                        <img src="${addons_path}/som_polissa_condicions_generals/report/assets/signatura_contracte.png"/>
+                        <div style="position:absolute; bottom: 0px; min-width:100%;">${company.name}</div>
+                    </div>
+                % endif
                 <div class="observacions">
                     ${polissa.print_observations or ""}
                 </div>
