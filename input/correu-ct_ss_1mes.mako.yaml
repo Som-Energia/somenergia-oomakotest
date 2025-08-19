@@ -1,0 +1,6 @@
+to: ${object.titular.address[0].email}
+subject_translations:
+  ca_ES: 'Ja fa quasi un any! 🎂'
+  es_ES: 'Ya hace casi un año… 🎂'
+subject: 'Ja fa quasi un any! 🎂'
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

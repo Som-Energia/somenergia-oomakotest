@@ -1680,6 +1680,21 @@
 #  cases:
 #    ca:
 #    es:
+# ct_ss_1mes:
+#  template: input/correu-ct_ss_1mes.mako
+#  model: giscedata.polissa
+#  poweremailId: som_sortida.email_ct_ss_1mes
+#  cases:
+#    ca: 93321
+#    es: 189319
+
+# ct_ss_15dies:
+#  template: input/correu-ct_ss_15dies.mako
+#  model: giscedata.polissa
+#  poweremailId: som_sortida.email_ct_ss_15dies
+#  cases:
+#    ca: 102605
+#    es: 355161
 
 ######################################################
 ## Representa

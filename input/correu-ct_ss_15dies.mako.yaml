@@ -1,0 +1,6 @@
+to: ${object.titular.address[0].email}
+subject_translations:
+  ca_ES: 'No volem dir-te adéu…'
+  es_ES: 'No queremos decirte adiós…'
+subject: 'No volem dir-te adéu…'
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
