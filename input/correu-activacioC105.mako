@@ -55,15 +55,24 @@ if TarifaATR == "2.0TD":
 autoconsum_description = False
 if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
   autoconsum_description = cups_obj.get_autoconsum_description(object._cr, object._uid, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang)
-  tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object._cr, object._uid, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
-  potencia_generacio_desc = get_autoconsum_pot_gen(object, pas05.dades_cau)
+  if pas05.dades_cau[0].tipus_subseccio:
+    tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object._cr, object._uid, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
+  else:
+    tipus_subseccio_description = ' '
+  if pas05.dades_cau[0].dades_instalacio_gen:
+    potencia_generacio_desc = get_autoconsum_pot_gen(object, pas05.dades_cau)
+  else:
+    potencia_generacio_desc = ' '
   colectiu_desc = get_autoconsum_is_collectiu(object, pas05.dades_cau)
 
 subministrament_essencial = False
 if object.cups_polissa_id.titular_nif[2] in ['P','Q','S'] or object.cups_polissa_id.cnae.name in ['3600', '4910', '4931', '4939', '5010', '5110', '5221', '5222', '5223', '5229', '8621', '8622', '8690', '8610', '9603']:
   subministrament_essencial = True
 
-tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
+if object.cups_polissa_id.modcontractuals_ids:
+  tarifaComer = object.cups_polissa_id.modcontractuals_ids[0].llista_preu.nom_comercial or object.cups_polissa_id.modcontractuals_ids[0].llista_preu.name
+else:
+  tarifaComer = object.cups_polissa_id.llista_preu.nom_comercial or object.cups_polissa_id.llista_preu.name
 
 from mako.template import Template
 def render(text_to_render, object_):
