@@ -1,9 +1,6 @@
-<%!
+<%
     from datetime import datetime
     from mako.template import Template
-%>
-
-<%
     def render(text_to_render, object_):
         templ = Template(text_to_render)
         return templ.render_unicode(
@@ -12,13 +9,11 @@
         )
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
-    template_id = md_obj.get_object_reference(
-                        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                    )[1]
-    text_legal = render(t_obj.read(
-        object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-        object
-    )
+    template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+    template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+    plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+    plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
+
     for step in object.step_ids:
       obj = step.pas_id
       model = obj._table_name
@@ -28,135 +23,132 @@
 
     date = datetime.strptime(pas5.data_activacio, '%Y-%m-%d')
     date = date.strftime('%d/%m/%Y')
+
+    p_obj = object.pool.get('res.partner')
+    nom_titular = ' ' + p_obj.separa_cognoms(
+        object._cr, object._uid, object.cups_polissa_id.titular.name
+    )['nom'] if not p_obj.vat_es_empresa(object._cr, object._uid, object.cups_polissa_id.titular.vat) else ""
 %>
 
-<!doctype html>
-<html>
+${plantilla_header}
+
 % if object.cups_polissa_id.titular.lang == 'ca_ES':
     ${correu_cat()}
 % else:
     ${correu_es()}
 % endif
-${text_legal}
-</html>
+
+${plantilla_footer}
+
+## Todo: move this to a common template to permit reuse
+<%def name="social_icons(lang)">
+<%
+  telegram_url = 'https://t.me/somenergia_es'
+  if lang == 'ca_ES':
+    telegram_url = 'https://t.me/somenergia'
+%>
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="center" style="padding: 10px 0;">
+      <a href="https://mastodon.economiasocial.org/@SomEnergia" target="_blank" style="margin:0 10px; display:inline-block;">
+        <picture>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/mastodon.svg" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/mastodon.svg" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/mastodon.svg" alt="Mastodon" width="32" height="32" border="0" style="display:block;"/>
+        </picture>
+      </a>
+      <a href="https://www.instagram.com/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
+        <picture>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/instagram.svg" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/instagram.svg" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/instagram.svg" alt="Instagram" width="32" height="32" border="0" style="display:block;"/>
+        </picture>
+      </a>
+      <a href="https://www.facebook.com/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
+        <picture>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/facebook.svg" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/facebook.svg" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/facebook.svg" alt="Facebook" width="32" height="32" border="0" style="display:block;"/>
+        </picture>
+      </a>
+      <a href="https://x.com/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
+        <picture>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/x.svg" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/x.svg" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/x.svg" alt="X" width="32" height="32" border="0" style="display:block;"/>
+        </picture>
+      </a>
+      <a href="${telegram_url}" target="_blank" style="margin:0 10px; display:inline-block;">
+        <picture>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/telegram.svg" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/telegram.svg" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/telegram.svg" alt="Telegram" width="32" height="32" border="0" style="display:block;"/>
+        </picture>
+      </a>
+      <a href="https://www.youtube.com/user/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
+        <picture>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/youtube.svg" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/youtube.svg" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/youtube.svg" alt="Youtube" width="32" height="32" border="0" style="display:block;"/>
+        </picture>
+      </a>
+      <a href="https://www.linkedin.com/company/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
+        <picture>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/linkedin.svg" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/linkedin.svg" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/linkedin.svg" alt="Linkedin" width="32" height="32" border="0" style="display:block;"/>
+        </picture>
+      </a>
+    </td>
+  </tr>
+</table>
+</%def>
 
 
 <%def name="correu_cat()">
-    <head>
-        <meta charset="utf-8"/>
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
-            <tr>
-                <td height=1px>
-                    <font size=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
-                </td>
-                <td valign=top rowspan="4">
-                    <align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
-                </td>
-            </tr>
-            <tr>
-                <td height=2px>
-                    <font size=1>Adreça punt subministrament: ${object.cups_id.direccio}</font>
-                </td>
-            </tr>
-            <tr>
-                <td height=2px>
-                    <font size=1>Codi CUPS: ${object.cups_id.name}</font>
-                </td>
-            </tr>
-            <tr>
-                <td height=2px width=100%>
-                    <font size=1>Titular: ${object.cups_polissa_id.titular.name}</font>
-                </td>
-            </tr>
-        </table>
-    </head>
-    <body>
-        <p>
-            Hola,
-        </p>
-
-        <p>
-            T'escrivim per informar-te que en data <b>${date}</b> s'ha realitzat el canvi de comercialitzadora que gestiona el teu contracte, i, per tant, s’ha donat de baixa de Som Energia.
-        </p>
-        <p>
-            Recorda que els canvis de comercialitzadora no representen cap afectació sobre el subministrament elèctric, ni talls, ni canvis en la potència contractada.
-        </p>
-        <p>
-            El teu contracte d'electricitat ha passat a ser gestionat per l'empresa comercialitzadora de referència, que pots consultar en <a href="http://ca.support.somenergia.coop/article/660-la-comercialitzacio-delectricitat">aquest enllaç</a>.
-        </p>
-        <p>
-            Aquest tràmit s’ha dut a terme perquè no hi havia cap persona sòcia vinculada al contracte, o bé  perquè ha finalitzat la vigència del contracte, i no s'ha renovat.
-        </p>
-        <p>
-            Gràcies per confiar amb Som Energia tot aquest temps.
-        </p>
-        <p>
-            Salutacions,
-        </p>
-        <p>
-            Equip de Som Energia <br>
-            <a href="mailto:comercialitzacio@somenergia.coop">comercialitzacio@somenergia.coop</a><br>
-            <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a>
-        </p>
-    </body>
+    <p>Hola${nom_titular},</p>
+    <p>Ens sap greu informar-te que el teu contracte ${object.cups_polissa_id.name}, amb direcció de subministrament ${object.cups_id.direccio}, número de CUPS ${object.cups_id.name} i titular ${object.cups_polissa_id.titular.name}, <strong>ja no està amb Som Energia</strong>. La data del canvi de companyia és el ${date}, i el contracte ha passat a ser gestionat per l’empresa comercialitzadora de referència.</p>
+    <p>Esperem que, durant aquest temps, hagis estat a gust i et quedin bons records de la primera cooperativa d’energia verda de l’estat.</p>
+    <p>Per part nostra,${nom_titular}, et trobarem a faltar, i <strong>t’agraïm</strong> aquest temps de confiança i camí conjunt.</p>
+    <p>Des de Som Energia seguirem treballant per a un futur més net, sostenible, just i en mans de les persones.</p>
+    <p>Com sempre que marxa algú, ens preguntem: <strong>què ha passat?</strong> Podríem haver fet quelcom perquè aquesta persona no hagués marxat? Com podríem millorar?</p>
+    <p>És per això que et volem demanar un últim favor: que ens ho expliquis responent <a target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLSf_VzfB9sJUx9co6RalNt00AlnyHbsZw0-fS2-vP1_saPtxtQ/viewform'>aquesta breu enquesta</a>, de 3 minutets.</p>
+    <p class='align-center'><a class='button' target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLSf_VzfB9sJUx9co6RalNt00AlnyHbsZw0-fS2-vP1_saPtxtQ/viewform'>Respon l’enquesta</a></p>
+    <p>T’agraïm per avançat aquest retorn, ens serà molt útil per seguir millorant!</p>
+    <br>
+    <p>Ah! Que marxis no vol dir que ens perdis la pista! <strong>Podem seguir en contacte</strong> a través de les xarxes socials, aquí et deixem els enllaços:</p>
+    ${social_icons(object.cups_polissa_id.titular.lang)}
+    <p>Si mai canvies d’opinió, estarem encantades de rebre’t altre cop!</p>
+    <br>
+    <br>
+    Moltes gràcies,<br>
+    <br>
+    Som Energia<br>
+    <a target='_blank' href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br>
+    <a target='_blank' href="tel:+34872202550">872.202.550</a><br>
 </%def>
 
 
 <%def name="correu_es()">
-    <head>
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
-            <tr>
-                <td height=2px>
-                    <font size=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font>
-                </td>
-                <td valign=top rowspan="4">
-                    <align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
-                </td>
-            </tr>
-            <tr>
-                <td height=2px>
-                    <font size=1>Dirección punto suministro: ${object.cups_id.direccio}</font>
-                </td>
-            </tr>
-            <tr>
-                <td height=2px>
-                    <font size=1>Código CUPS: ${object.cups_id.name}</font>
-                </td>
-            </tr>
-            <tr>
-                <td height=2px width=100%>
-                    <font size=1>Titular: ${object.cups_polissa_id.titular.name}</font>
-                </td>
-            </tr>
-        </table>
-    </head>
-    <body>
-        <p>
-            Hola,
-        </p>
-        <p>
-            Te escribimos para informarte que en fecha <b>${date}</b> se ha realizado el cambio de comercializadora que gestiona tu contrato, y, por lo tanto, se ha dado de baja con Som Energia.
-        </p>
-        <p>
-            Recuerda que los cambios de comercializadora no representan ninguna afectación sobre el suministro eléctrico, ni cortes, ni cambios en la potencia contratada.
-        </p>
-        <p>
-            Este contrato ha pasado a estar gestionado por la empresa comercializadora de referencia, que puedes consultar en <a href="http://es.support.somenergia.coop/article/661-la-comercialitzacio-delectricitat">este enlace</a>.
-        </p>
-        <p>
-            Este trámite se ha realizado por no haber una persona socia vinculada al contrato, o bien porque ha finalizado la vigencia del contrato, y no se ha renovado.
-        </p>
-        <p>
-            Gracias por confiar en Som Energia todo este tiempo.
-        </p>
-        <p>
-            Saludos,
-        </p>
-
-        <p>
-            Equipo de Som Energia <br>
-            <a href="mailto:comercializacion@somenergia.coop">comercializacion@somenergia.coop</a><br>
-            <a href="https://www.somenergia.coop/es">www.somenergia.coop</a>
-        </p>
-    </body>
+    <p>Hola${nom_titular},</p>
+    <p>Nos sabe mal informarte que tu contrato ${object.cups_polissa_id.name}, con dirección de suministro ${object.cups_id.direccio}, número de CUPS ${object.cups_id.name} y titular ${object.cups_polissa_id.titular.name}, <strong>ya no está con Som Energia</strong>. La fecha del cambio de compañía es el ${date}, y el contrato ha pasado a ser gestionado por la empresa comercializadora de referencia.
+</p>
+    <p>Esperamos que, durante este tiempo, hayas estado a gusto y te queden buenos recuerdos de la primera cooperativa estatal de energía verde.</p>
+    <p>Por nuestra parte,${nom_titular}, te echaremos de menos, y <strong>te agradecemos</strong> ese tiempo de confianza y camino conjunto.</p>
+    <p>Desde Som Energia seguiremos trabajando para un futuro más limpio, sostenible, justo y en manos de las personas.</p>
+    <p>Como siempre que se va alguien, nos preguntamos: <strong>¿qué ha pasado?</strong> ¿Podríamos haber hecho algo para que esa persona no se hubiera ido? ¿Cómo podríamos mejorar?</p>
+    <p>Por eso te queremos pedir un último favor: que nos lo expliques respondiendo <a target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLScgmyH-sRBsTCYs2kCOhFsZFmTiKGevxuxvyvy_Z35atLyBjA/viewform'>esta breve encuesta</a>, de 3 minutitos.</p>
+    <p class='align-center'><a class='button' target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLScgmyH-sRBsTCYs2kCOhFsZFmTiKGevxuxvyvy_Z35atLyBjA/viewform'>Responde la encuesta</a></p>
+    <p>Te agradecemos por adelantado estas reflexiones, nos serán muy útiles para seguir mejorando.</p>
+    <br>
+    <p>¡Ah! ¡Que te vayas no quiere decir que nos pierdas la pista! <strong>Podemos seguir en contacto</strong> a través de las redes sociales, aquí te dejamos los enlaces:</p>
+    ${social_icons(object.cups_polissa_id.titular.lang)}
+    <p>Si alguna vez cambias de opinión, ¡estaremos encantadas de recibirte de nuevo!</p>
+    <br>
+    <br>
+    Muchas gracias,<br>
+    <br>
+    Som Energia<br>
+    <a target='_blank' href="https://www.somenergia.coop/es">www.somenergia.coop</a><br>
+    <a target='_blank' href="tel:+34872202550">872.202.550</a><br>
 </%def>

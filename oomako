@@ -430,8 +430,8 @@ def uploadTemplate(O, case, fixture):
     headers = ns.load(fixture.template+'.yaml')
 
     template.def_to = headers.to
-    template.def_cc = headers.cc
-    template.def_bcc = headers.bcc
+    template.def_cc = getattr(headers, 'cc', '')
+    template.def_bcc = getattr(headers, 'bcc', '')
     template.def_subject = headers.subject
     template.lang = getattr(headers, 'lang', '')
     template.save()
