@@ -48,7 +48,7 @@ ${plantilla_footer}
     <p>
         <br>Lamentablement, si no t’associes o vincules el teu contracte abans del dia ${data_enviament_cor} <strong>no se’t podrà renovar el contracte d’electricitat</strong>. Aleshores:
         <ul>
-        <li>El teu contracte amb la direcció de subministrament ${object.cups.direccio} es donarà de baixa amb Som Energia.</li>
+        <li>El teu contracte ${object.name} amb la direcció de subministrament ${object.cups.direccio} i CUPS ${object.cups.name} es donarà de baixa amb Som Energia.</li>
         <li>Aquest contracte passarà a estar gestionat per l’empresa comercialitzadora de referència, les pots <a target='_blank' href='https://ca.support.somenergia.coop/article/660-la-comercialitzacio-delectricitat?#referencia'>consultar aquí</a>. Si ho prefereixes, pots gestionar tu un canvi de comercialitzadora i escollir amb quina et vols quedar.</li>
         <li><strong>En cap cas se’t farà cap tall de llum.</strong></li>
         <li>Som Energia et trobarà a faltar. Sempre tindràs les portes obertes per si mai volguessis tornar!</li>
@@ -81,7 +81,7 @@ ${plantilla_footer}
     <p>
         <br>Desafortunadamente, si no te asocias o no vinculas tu contrato antes del día ${data_enviament_cor} <strong>no se podrá renovar el contrato de electricidad</strong>. Entonces:
         <ul>
-        <li>Tu contrato con la dirección de suministro ${object.cups.direccio} se dará de baja con Som Energia.</li>
+        <li>Tu contrato ${object.name} con la dirección de suministro ${object.cups.direccio} y CUPS ${object.cups.name} se dará de baja con Som Energia.</li>
         <li>Este contrato pasará a estar gestionado por la empresa comercializadora de referencia, las puedes <a target='_blank' href='https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad#referencia'>consultar aquí</a>. Si lo prefieres, puedes gestionar tú un cambio de comercializadora y escoger con cuál te quieres quedar.</li>
         <li><strong>En ningún caso se te hará ningún corte de luz.</strong></li>
         <li>Som Energia te echará de menos. ¡Siempre tendrás las puertas abiertas por si alguna vez quieres volver!</li>
