@@ -1714,10 +1714,10 @@ Moltes gràcies per la vostra participació!</div>
 <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 300px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 <tbody><tr>
 <td valign="top" style="padding-top: 0px;padding-bottom: 9px;padding-right: 18px;padding-left: 18px;color: #404040;font-size: 14px;font-style: normal;font-weight: normal;line-height: 150%;text-align: justify;word-break: break-word;font-family: Helvetica;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-<div style="text-align:left"><span style="font-size:12px"><strong>Parc Científic i Tecnològic de la UdG</strong><br>
-<span style="color:#666666">Edifici Giroemprèn<br>
-C/ Pic de Peguera, 11<br>
-17003 Girona</span>
+<div style="text-align:left"><span style="font-size:12px">
+<span style="color:#666666">
+C/ Riu Güell, 68<br>
+17005 Girona</span>
 </span></div>
 </td>
 </tr>
@@ -3359,10 +3359,10 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 						
 						<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #404040;font-size: 14px;font-style: normal;font-weight: normal;line-height: 150%;text-align: justify;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;">
 						
-							<div style="text-align: left;"><span style="font-size:12px"><strong>Parc Científic i Tecnològic de la UdG</strong><br>
-								<span style="color:#666666">Edifici Giroemprèn<br>
-C/ Pic de Peguera, 11<br>
-17003 Girona</span><br>
+							<div style="text-align: left;"><span style="font-size:12px">
+								<span style="color:#666666">
+C/ Riu Güell, 68<br>
+17005 Girona</span><br>
 </span></div>
 
 						</td>
