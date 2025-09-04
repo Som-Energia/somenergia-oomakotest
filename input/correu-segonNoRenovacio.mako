@@ -88,7 +88,7 @@ ${text_legal}
         </p>
         <br>
         <p>
-            També cal que ens faciliteu el document dels poders notarials i que ens envieu el <strong>document SEPA</strong> adjunt complimentat i firmat. Ens l'hauríeu d'enviar amb <strong>firma digital</strong>, però si no és possible, per correu postal a: Som Energia, SCCL. Parc Científic i Tecnològic de la UdG. C/Pic de Peguera, 9 (1a planta) 17003 Girona.<br>
+            També cal que ens faciliteu el document dels poders notarials i que ens envieu el <strong>document SEPA</strong> adjunt complimentat i firmat. Ens l'hauríeu d'enviar amb <strong>firma digital</strong>, però si no és possible, per correu postal a: Som Energia, SCCL. C/Riu Güell, 68 - 17005 Girona.<br>
         </p>
         <br>
         <p>
@@ -143,7 +143,7 @@ ${text_legal}
         </p>
         <br>
         <p>
-        También será necesario que nos facilitéis el documento de los poderes notariales y que nos enviéis el <strong>documento SEPA</strong> adjunto cumplimentado y firmado. Nos lo deberíais enviar con <strong>firma digital</strong>, pero si no es posible, por correo postal a: Som Energia, SCCL. Parque Científico y Tecnológico de la UdG. C/Pic de Peguera, 9 (1ª planta) 17003 Girona.<br>
+        También será necesario que nos facilitéis el documento de los poderes notariales y que nos enviéis el <strong>documento SEPA</strong> adjunto cumplimentado y firmado. Nos lo deberíais enviar con <strong>firma digital</strong>, pero si no es posible, por correo postal a: Som Energia, SCCL. C/Riu Güell, 68 - 17005 Girona.<br>
         </p>
         <br>
         <p>

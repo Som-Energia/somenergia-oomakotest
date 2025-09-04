@@ -16,7 +16,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Quin ha de ser el rumb de Som Energia?</title>
-
+	
 <style type="text/css">
 	p{
 		margin:10px 0;
@@ -458,6 +458,9 @@
 <tbody class="mcnCaptionBlockOuter">
 	<tr>
 		<td class="mcnCaptionBlockInner" valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+			
+
+
 
 <table border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightContentOuter" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 <tbody><tr>
@@ -465,21 +468,28 @@
 		<table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightImageContentContainer" width="176" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 			<tbody><tr>
 				<td class="mcnCaptionRightImageContent" align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				
+					
 
 					<img alt="" src="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/7be0ba4c-b906-4d52-ba99-cc1578b1251e.png" width="176" style="max-width: 589px;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" class="mcnImage">
+					
+
+				
 				</td>
 			</tr>
 		</tbody></table>
 		<table class="mcnCaptionRightTextContentContainer" align="right" border="0" cellpadding="0" cellspacing="0" width="352" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 			<tbody><tr>
 				<td valign="top" class="mcnTextContent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;font-family: Helvetica;font-size: 14px;line-height: 200%;text-align: left;">
-
+					
 				</td>
 			</tr>
 		</tbody></table>
 	</td>
 </tr>
 </tbody></table>
+
+
 
 
 		</td>
@@ -489,12 +499,19 @@
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 				<tbody><tr>
-
+					
 					<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-size: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;line-height: 200%;text-align: left;">
-
+					
 						<div>
 <p dir="ltr" id="docs-internal-guid-7093126b-7fff-17c3-c7ed-a545a7283382" style="color: #666666;font-size: 18px;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;line-height: 200%;text-align: left;"><br>
 <span style="font-size:23px"><strong><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Elaborem col·lectivament el rumb de Som Energia, us hi apunteu?</span></strong></span></p>
@@ -503,7 +520,14 @@
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -511,12 +535,19 @@
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnTextContentContainer" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
 				<tbody><tr>
-
+					
 					<td class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-size: 18px;line-height: 150%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;text-align: left;" valign="top">
-
+					
 						<div>
 <p dir="ltr" id="docs-internal-guid-2d277c40-7fff-6f2f-ffb9-b32f5aaada1f" style="text-align: justify;color: #666666;font-size: 18px;line-height: 150%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Som Energia és més que una cooperativa de consum i producció d’energia renovable. És també una comunitat de persones compromeses amb la transició energètica transformadora que pretenen incidir en el seu entorn.<br>
 <br>
@@ -528,21 +559,33 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			
+			<!--[if gte mso 9]>
+			<td align="center" valign="top" ">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 				<tbody><tr>
-
+					
 					<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+					
 						<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 2px none #B0CB02;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 							<tbody><tr>
 								<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 200%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
@@ -568,7 +611,14 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if gte mso 9]>
+			</td>
+			<![endif]-->
+			
+			<!--[if gte mso 9]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -579,8 +629,11 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 				<table class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
 					<tbody><tr>
 						<td class="mcnImageContent" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
+							
+								
 									<img alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/sombra.png" style="max-width: 659px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" width="564" align="middle">
+								
+							
 						</td>
 					</tr>
 				</tbody></table>
@@ -588,16 +641,21 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 		</tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			
+			<!--[if gte mso 9]>
+			<td align="center" valign="top" ">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 				<tbody><tr>
-
+					
 					<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+					
 						<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 2px none #B0CB02;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 							<tbody><tr>
 								<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 100%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
@@ -609,7 +667,14 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if gte mso 9]>
+			</td>
+			<![endif]-->
+			
+			<!--[if gte mso 9]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -617,12 +682,19 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnTextContentContainer" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
 				<tbody><tr>
-
+					
 					<td class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;text-align: justify;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;" valign="top">
-
+					
 						<div>
 <p dir="ltr" id="docs-internal-guid-4cc721ed-7fff-8241-c9e7-9964f9b063a1" style="text-align: justify;color: #666666;font-family: Arial, &quot;helvetica neue&quot: ;, helvetica, sans-serif: ;font-size: 14px;line-height: 200%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">El dissabte 19 de setembre, el Consell Rector, Gerència i altres persones coordinadores de l’Equip Tècnic van trobar-se per tal de començar a elaborar el Pla d’acció 2021, tot prioritzant les accions que haurem de dur a terme el pròxim any.&nbsp;</span></span></p>
 
@@ -634,7 +706,14 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -645,9 +724,11 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 				<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 					<tbody><tr>
 						<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+							
+								
 									<img align="center" alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/sombra.png" width="564" style="max-width: 659px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
-
+								
+							
 						</td>
 					</tr>
 				</tbody></table>
@@ -655,16 +736,21 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 		</tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			
+			<!--[if gte mso 9]>
+			<td align="center" valign="top" ">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 				<tbody><tr>
-
+					
 					<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+					
 						<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 2px none #B0CB02;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 							<tbody><tr>
 								<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 100%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
@@ -676,7 +762,14 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if gte mso 9]>
+			</td>
+			<![endif]-->
+			
+			<!--[if gte mso 9]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -684,12 +777,19 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 				<tbody><tr>
-
+					
 					<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;">
-
+					
 						<div style="text-align: justify;">
 <p dir="ltr" id="docs-internal-guid-db99070e-7fff-f207-0ba2-c49d86231444" style="text-align: justify;color: #666666;font-family: Arial, &quot;helvetica neue&quot: ;, helvetica, sans-serif: ;font-size: 14px;line-height: 200%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><span style="font-size:14px">Segur que hi ha altres temes generals que no estan contemplats en aquest document de full de ruta i accions concretes que les persones sòcies de consum voldríeu que la cooperativa realitzés i a les quals assignar recursos.</span></span></p>
 <span style="font-family:arial,helvetica neue,helvetica,sans-serif"><span style="font-size:14px">Per aquest motiu, més enllà de tota la tasca que es realitza en el sí dels Grups Locals, us recordem que hi ha dos instruments mitjançant els quals <strong>les persones sòcies de Som Energia podeu aportar temes, reptes o propostes d'accions a explorar: els Grups Temporals de Treball (GTT) i les mocions.</strong></span></span><br>
@@ -698,7 +798,14 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -706,11 +813,19 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 				<tbody><tr>
-
+					
 					<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;">
+					
 						<div style="text-align: left;"><a id="gtts" name="gtts" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;"><span style="color:#666666"><span style="font-size:16px"><strong><span style="font-family:arial,helvetica neue,helvetica,sans-serif">&nbsp; &nbsp; &nbsp;Els Grups Temporals de Treball:</span></strong></span></span></a></div>
 
 <div>
@@ -724,7 +839,14 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -732,16 +854,31 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 				<tbody><tr>
-
+					
 					<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;font-family: Helvetica;font-size: 14px;line-height: 200%;text-align: left;">
-
+					
+						
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -749,12 +886,19 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnTextContentContainer" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
 				<tbody><tr>
-
+					
 					<td class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;" valign="top">
-
+					
 						<div style="text-align: left;"><a id="mocions" name="mocions" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;"><span style="color:#666666"><span style="font-size:16px"><strong><span style="font-family:arial,helvetica neue,helvetica,sans-serif">&nbsp; &nbsp; &nbsp;Les mocions:</span></strong></span></span></a></div>
 
 <ul dir="ltr">
@@ -765,7 +909,14 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -773,6 +924,9 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 <tbody class="mcnCaptionBlockOuter">
 	<tr>
 		<td class="mcnCaptionBlockInner" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
+			
+
+
 
 <table class="mcnCaptionRightContentOuter" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 <tbody><tr>
@@ -780,9 +934,13 @@ Per aquest motiu, aquestes persones sòcies de la cooperativa<strong> </strong>h
 		<table class="mcnCaptionRightImageContentContainer" width="264" cellspacing="0" cellpadding="0" border="0" align="left" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 			<tbody><tr>
 				<td class="mcnCaptionRightImageContent" valign="top" align="center" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				
+					
 
 					<img alt="" src="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/6666c542-5755-4a2d-b150-8806cd2b7090.png" style="max-width: 382px;border-radius: 0%;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" class="mcnImage" width="264">
+					
 
+				
 				</td>
 			</tr>
 		</tbody></table>
@@ -810,12 +968,19 @@ D’altra banda, volem posar en valor el procés de creació de la proposta de m
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnTextContentContainer" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
 				<tbody><tr>
-
+					
 					<td class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;" valign="top">
-
+					
 						<div style="text-align: justify;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Tot i que qualsevol persona sòcia pot proposar una moció, <strong>com més treballada, compartida i explorada estigui, millor</strong>. Si la proposta de moció és el resultat del treball d’un Grup Temporal de Treball, per exemple, té més possibilitats de:</span></span></div>
 
 <ul>
@@ -828,21 +993,33 @@ D’altra banda, volem posar en valor el procés de creació de la proposta de m
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			
+			<!--[if gte mso 9]>
+			<td align="center" valign="top" ">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 				<tbody><tr>
-
+					
 					<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+					
 						<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 3px solid #E0E722;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 							<tbody><tr>
 								<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;line-height: 200%;">
@@ -858,7 +1035,14 @@ D’altra banda, volem posar en valor el procés de creació de la proposta de m
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if gte mso 9]>
+			</td>
+			<![endif]-->
+			
+			<!--[if gte mso 9]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -866,12 +1050,19 @@ D’altra banda, volem posar en valor el procés de creació de la proposta de m
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 				<tbody><tr>
-
+					
 					<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;line-height: 200%;text-align: left;">
-
+					
 						<div>&nbsp;</div>
 
 <div style="text-align: justify;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Si bé aquest any només hi ha un termini de dos mesos per presentar les mocions, les eines que teniu a disposició (mocions i GTTs) permeten que aquesta sigui una tasca viva que pugui estar en funcionament tot l’any. En qualsevol moment podeu enviar un correu a <a href="mailto:participa@somenergia.coop" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;">participa@somenergia.coop</a> amb la vostra proposta i ens posem a treballar-hi!</span></span></div>
@@ -879,7 +1070,14 @@ D’altra banda, volem posar en valor el procés de creació de la proposta de m
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -887,16 +1085,31 @@ D’altra banda, volem posar en valor el procés de creació de la proposta de m
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 				<tbody><tr>
-
+					
 					<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;font-family: Helvetica;font-size: 14px;line-height: 200%;text-align: left;">
-
+					
+						
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -907,9 +1120,11 @@ D’altra banda, volem posar en valor el procés de creació de la proposta de m
 				<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 					<tbody><tr>
 						<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+							
+								
 									<img align="center" alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/sombra.png" width="564" style="max-width: 659px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
-
+								
+							
 						</td>
 					</tr>
 				</tbody></table>
@@ -917,16 +1132,21 @@ D’altra banda, volem posar en valor el procés de creació de la proposta de m
 		</tr>
 </tbody>
 </table><table class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" cellspacing="0" cellpadding="0" border="0">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 	<tr>
 		<td class="mcnBoxedTextBlockInner" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			
+			<!--[if gte mso 9]>
+			<td align="center" valign="top" ">
+			<![endif]-->
 			<table style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
 				<tbody><tr>
-
+					
 					<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+					
 						<table class="mcnTextContentContainer" style="min-width: 100% !important;border: 2px none #B0CB02;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" cellspacing="0" border="0">
 							<tbody><tr>
 								<td class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 100%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;" valign="top">
@@ -938,7 +1158,14 @@ D’altra banda, volem posar en valor el procés de creació de la proposta de m
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if gte mso 9]>
+			</td>
+			<![endif]-->
+			
+			<!--[if gte mso 9]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -946,12 +1173,19 @@ D’altra banda, volem posar en valor el procés de creació de la proposta de m
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnTextContentContainer" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
 				<tbody><tr>
-
+					
 					<td class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;" valign="top">
-
+					
 						<div style="text-align: justify;"><span style="color:666666"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Farem una trobada virtual dirigida a les persones sòcies, </span></span></span><span style="color:666666"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">per presentar el Pla d’acció del 2021 i per aclarir dubtes amb relació a les mocions i els Grups Temporals de Treball, el dimecres<strong> 28 d’octubre de 17.30 h a 19.00 h.</strong><br>
 <br>
 L'objectiu de la sessió és centrar-nos principalment en tot allò que les persones sòcies necessiteu aclarir per poder engegar els vostres processos d'aportacions mitjançant els GTTs i/o les mocions. El Pla d'acció es presenta únicament amb caràcter informatiu. La sessió la gravarem i la tindrem disponible al <a href="https://participa.somenergia.coop/" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;">Participa</a>.<br>
@@ -960,6 +1194,14 @@ L'objectiu de la sessió és centrar-nos principalment en tot allò que les pers
 					</td>
 				</tr>
 			</tbody></table>
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -983,14 +1225,31 @@ L'objectiu de la sessió és centrar-nos principalment en tot allò que les pers
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 				<tbody><tr>
-
+					
 					<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;font-family: Helvetica;font-size: 14px;line-height: 200%;text-align: left;">
+					
+						
 					</td>
 				</tr>
 			</tbody></table>
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -1001,8 +1260,11 @@ L'objectiu de la sessió és centrar-nos principalment en tot allò que les pers
 				<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 					<tbody><tr>
 						<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+							
+								
 									<img align="center" alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/sombra.png" width="564" style="max-width: 659px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
+								
+							
 						</td>
 					</tr>
 				</tbody></table>
@@ -1010,16 +1272,21 @@ L'objectiu de la sessió és centrar-nos principalment en tot allò que les pers
 		</tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			
+			<!--[if gte mso 9]>
+			<td align="center" valign="top" ">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 				<tbody><tr>
-
+					
 					<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+					
 						<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 2px none #B0CB02;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 							<tbody><tr>
 								<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 100%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
@@ -1031,7 +1298,14 @@ L'objectiu de la sessió és centrar-nos principalment en tot allò que les pers
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if gte mso 9]>
+			</td>
+			<![endif]-->
+			
+			<!--[if gte mso 9]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -1039,19 +1313,33 @@ L'objectiu de la sessió és centrar-nos principalment en tot allò que les pers
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnTextContentContainer" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
 				<tbody><tr>
-
+					
 					<td class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: justify;" valign="top">
-
+					
 						<p dir="ltr" id="docs-internal-guid-0ac07d6e-7fff-2df5-a673-52fe61760fdd" style="text-align: justify;color: #666666;font-family: Arial, &quot;helvetica neue&quot: ;, helvetica, sans-serif: ;font-size: 14px;line-height: 200%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">A la cooperativa es pot participar de diferents maneres: els Grups Locals, les compres col·lectives, aportacions de capital voluntari, etc. L’eina per vehicular la participació societària (aquella que fa referència als drets de les persones sòcies) és el Participa. És doncs, l’espai virtual on es preparen les Assemblees Generals, tenen lloc els Processos Participatius, es fan les consultes als socis i sòcies, es vehiculen les mocions, etc.&nbsp;Per accedir-hi només heu de registrar-vos amb les dades (DNI i contrasenya) de l’Oficina Virtual a <a href="http://participa.somenergia.coop" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;">participa.somenergia.coop</a>.&nbsp;</span></span><br>
 &nbsp;</p>
 
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -1059,12 +1347,19 @@ L'objectiu de la sessió és centrar-nos principalment en tot allò que les pers
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnTextContentContainer" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
 				<tbody><tr>
-
+					
 					<td class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;" valign="top">
-
+					
 						<div style="text-align: left;"><a id="gtts" name="butlleti_participa" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;"><span style="color:#666666"><span style="font-size:16px"><strong><span style="font-family:arial,helvetica neue,helvetica,sans-serif">El butlletí del Participa:</span></strong></span></span></a></div>
 
 <div>&nbsp;</div>
@@ -1074,7 +1369,14 @@ L'objectiu de la sessió és centrar-nos principalment en tot allò que les pers
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -1085,11 +1387,11 @@ L'objectiu de la sessió és centrar-nos principalment en tot allò que les pers
 				<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 					<tbody><tr>
 						<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+							
 								<a href="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/568a3131-3908-4647-a42b-632ba1a4d706.png" title="" class="" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 									<img align="center" alt="" src="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/568a3131-3908-4647-a42b-632ba1a4d706.png" width="564" style="max-width: 625px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
 								</a>
-
+							
 						</td>
 					</tr>
 				</tbody></table>
@@ -1100,12 +1402,19 @@ L'objectiu de la sessió és centrar-nos principalment en tot allò que les pers
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 				<tbody><tr>
-
+					
 					<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;line-height: 200%;text-align: left;">
-
+					
 						<div>&nbsp;</div>
 <div style="text-align: justify;"><span style="font-size:14px">
 <br>
@@ -1114,7 +1423,14 @@ Moltes gràcies per la vostra participació!</div>
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -1122,16 +1438,31 @@ Moltes gràcies per la vostra participació!</div>
 <tbody class="mcnTextBlockOuter">
 	<tr>
 		<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			  <!--[if mso]>
+			<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+			<tr>
+			<![endif]-->
+			
+			<!--[if mso]>
+			<td valign="top" width="600" style="width:600px;">
+			<![endif]-->
 			<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 				<tbody><tr>
-
+					
 					<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;font-family: Helvetica;font-size: 14px;line-height: 200%;text-align: left;">
-
+					
+						
 					</td>
 				</tr>
 			</tbody></table>
-
+			<!--[if mso]>
+			</td>
+			<![endif]-->
+			
+			<!--[if mso]>
+			</tr>
+			</table>
+			<![endif]-->
 		</td>
 	</tr>
 </tbody>
@@ -1139,25 +1470,39 @@ Moltes gràcies per la vostra participació!</div>
 						</tr>
 						<tr>
 							<td valign="top" id="templateColumns" style="background: #ffffff none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 8px;">
-
+								<!--[if (gte mso 9)|(IE)]>
+								<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+								<tr>
+								<td align="center" valign="top" width="200" style="width:200px;">
+								<![endif]-->
 								<table align="left" border="0" cellpadding="0" cellspacing="0" width="200" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 									<tbody><tr>
 										<td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
 									</tr>
 								</tbody></table>
-
+								<!--[if (gte mso 9)|(IE)]>
+								</td>
+								<td align="center" valign="top" width="200" style="width:200px;">
+								<![endif]-->
 								<table align="left" border="0" cellpadding="0" cellspacing="0" width="200" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 									<tbody><tr>
 										<td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
 									</tr>
 								</tbody></table>
-
+								<!--[if (gte mso 9)|(IE)]>
+								</td>
+								<td align="center" valign="top" width="200" style="width:200px;">
+								<![endif]-->
 								<table align="left" border="0" cellpadding="0" cellspacing="0" width="200" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 									<tbody><tr>
 										<td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
 									</tr>
 								</tbody></table>
-
+								<!--[if (gte mso 9)|(IE)]>
+								</td>
+								</tr>
+								</table>
+								<![endif]-->
 							</td>
 						</tr>
 						<tr>
@@ -1168,9 +1513,11 @@ Moltes gràcies per la vostra participació!</div>
 				<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 					<tbody><tr>
 						<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+							
+								
 									<img align="center" alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/sombra.png" width="564" style="max-width: 659px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
-
+								
+							
 						</td>
 					</tr>
 				</tbody></table>
@@ -1184,11 +1531,11 @@ Moltes gràcies per la vostra participació!</div>
 				<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 					<tbody><tr>
 						<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+							
 								<a href="https://t.me/somenergia" title="" class="" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 									<img align="center" alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/ccf5d79a-1860-4a28-96e7-c18342d233c7.png" width="564" style="max-width: 600px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
 								</a>
-
+							
 						</td>
 					</tr>
 				</tbody></table>
@@ -1209,7 +1556,16 @@ Moltes gràcies per la vostra participació!</div>
 					<table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 						<tbody><tr>
 							<td align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+								<!--[if mso]>
+								<table align="center" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+								<![endif]-->
+								
+									<!--[if mso]>
+									<td align="center" valign="top">
+									<![endif]-->
+									
+									
 										<table align="left" border="0" cellpadding="0" cellspacing="0" style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 											<tbody><tr>
 												<td valign="top" style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer">
@@ -1218,11 +1574,12 @@ Moltes gràcies per la vostra participació!</div>
 															<td align="left" valign="middle" style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																<table align="left" border="0" cellpadding="0" cellspacing="0" width="" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																	<tbody><tr>
-
+																		
 																			<td align="center" valign="middle" width="24" class="mcnFollowIconContent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																				<a href="https://www.facebook.com/somenergia" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-color-facebook-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" height="24" width="24" class=""></a>
 																			</td>
-
+																		
+																		
 																	</tr>
 																</tbody></table>
 															</td>
@@ -1231,7 +1588,16 @@ Moltes gràcies per la vostra participació!</div>
 												</td>
 											</tr>
 										</tbody></table>
-
+									
+									<!--[if mso]>
+									</td>
+									<![endif]-->
+								
+									<!--[if mso]>
+									<td align="center" valign="top">
+									<![endif]-->
+									
+									
 										<table align="left" border="0" cellpadding="0" cellspacing="0" style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 											<tbody><tr>
 												<td valign="top" style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer">
@@ -1240,12 +1606,12 @@ Moltes gràcies per la vostra participació!</div>
 															<td align="left" valign="middle" style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																<table align="left" border="0" cellpadding="0" cellspacing="0" width="" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																	<tbody><tr>
-
+																		
 																			<td align="center" valign="middle" width="24" class="mcnFollowIconContent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																				<a href="https://twitter.com/SomEnergia" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-color-twitter-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" height="24" width="24" class=""></a>
 																			</td>
-
-
+																		
+																		
 																	</tr>
 																</tbody></table>
 															</td>
@@ -1254,8 +1620,16 @@ Moltes gràcies per la vostra participació!</div>
 												</td>
 											</tr>
 										</tbody></table>
-
-
+									
+									<!--[if mso]>
+									</td>
+									<![endif]-->
+								
+									<!--[if mso]>
+									<td align="center" valign="top">
+									<![endif]-->
+									
+									
 										<table align="left" border="0" cellpadding="0" cellspacing="0" style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 											<tbody><tr>
 												<td valign="top" style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer">
@@ -1264,12 +1638,12 @@ Moltes gràcies per la vostra participació!</div>
 															<td align="left" valign="middle" style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																<table align="left" border="0" cellpadding="0" cellspacing="0" width="" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																	<tbody><tr>
-
+																		
 																			<td align="center" valign="middle" width="24" class="mcnFollowIconContent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																				<a href="http://www.youtube.com/user/SomEnergia" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-color-youtube-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" height="24" width="24" class=""></a>
 																			</td>
-
-
+																		
+																		
 																	</tr>
 																</tbody></table>
 															</td>
@@ -1278,7 +1652,16 @@ Moltes gràcies per la vostra participació!</div>
 												</td>
 											</tr>
 										</tbody></table>
-
+									
+									<!--[if mso]>
+									</td>
+									<![endif]-->
+								
+									<!--[if mso]>
+									<td align="center" valign="top">
+									<![endif]-->
+									
+									
 										<table align="left" border="0" cellpadding="0" cellspacing="0" style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 											<tbody><tr>
 												<td valign="top" style="padding-right: 0;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer">
@@ -1287,12 +1670,12 @@ Moltes gràcies per la vostra participació!</div>
 															<td align="left" valign="middle" style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																<table align="left" border="0" cellpadding="0" cellspacing="0" width="" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																	<tbody><tr>
-
+																		
 																			<td align="center" valign="middle" width="24" class="mcnFollowIconContent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																				<a href="https://www.linkedin.com/company/som-energia" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-color-linkedin-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" height="24" width="24" class=""></a>
 																			</td>
-
-
+																		
+																		
 																	</tr>
 																</tbody></table>
 															</td>
@@ -1301,7 +1684,15 @@ Moltes gràcies per la vostra participació!</div>
 												</td>
 											</tr>
 										</tbody></table>
-
+									
+									<!--[if mso]>
+									</td>
+									<![endif]-->
+								
+								<!--[if mso]>
+								</tr>
+								</table>
+								<![endif]-->
 							</td>
 						</tr>
 					</tbody></table>
@@ -1323,10 +1714,10 @@ Moltes gràcies per la vostra participació!</div>
 <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 300px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 <tbody><tr>
 <td valign="top" style="padding-top: 0px;padding-bottom: 9px;padding-right: 18px;padding-left: 18px;color: #404040;font-size: 14px;font-style: normal;font-weight: normal;line-height: 150%;text-align: justify;word-break: break-word;font-family: Helvetica;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-<div style="text-align:left"><span style="font-size:12px"><strong>Parc Científic i Tecnològic de la UdG</strong><br>
-<span style="color:#666666">Edifici Giroemprèn<br>
-C/ Pic de Peguera, 11<br>
-17003 Girona</span>
+<div style="text-align:left"><span style="font-size:12px">
+<span style="color:#666666">
+C/ Riu Güell, 68<br>
+17005 Girona</span>
 </span></div>
 </td>
 </tr>
@@ -1390,11 +1781,16 @@ C/ Pic de Peguera, 11<br>
 		</td>
 		</tr>
 		</tbody>
-		</table>
+		</table>       
 </td>
 						</tr>
 					</tbody></table>
-
+					<!--[if (gte mso 9)|(IE)]>
+					</td>
+					</tr>
+					</table>
+					<![endif]-->
+					<!-- // END TEMPLATE -->
 				</td>
 			</tr>
 		</tbody></table>
@@ -1406,12 +1802,20 @@ C/ Pic de Peguera, 11<br>
 % else:
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
-
+	<!-- NAME: 1:3 COLUMN -->
+	<!--[if gte mso 15]>
+	<xml>
+		<o:OfficeDocumentSettings>
+		<o:AllowPNG/>
+		<o:PixelsPerInch>96</o:PixelsPerInch>
+		</o:OfficeDocumentSettings>
+	</xml>
+	<![endif]-->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>¿Cuál tiene que ser el rumbo de Som Energia?</title>
-
+	
 <style type="text/css">
 	p{
 		margin:10px 0;
@@ -1826,15 +2230,20 @@ C/ Pic de Peguera, 11<br>
 
 }</style></head>
 <body style="height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #;">
-	<span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">¿Quieres participar…?</span><!-- Insertem &zwnj;&nbsp; hack per amagar el text de després -->
+	<!--[if !gte mso 9]><!----><span class="mcnPreviewText" style="display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">¿Quieres participar…?</span><!-- Insertem &zwnj;&nbsp; hack per amagar el text de després -->
 <div style="display: none; max-height: 0px; overflow: hidden;">
 	&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-	</div>
+	</div><!--<![endif]-->
 <center>
 	<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;background-color: #;">
 		<tbody><tr>
 			<td align="center" valign="top" id="bodyCell" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 10px;width: 100%;border-top: 0;">
-
+				<!-- BEGIN TEMPLATE // -->
+				<!--[if (gte mso 9)|(IE)]>
+				<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+				<tr>
+				<td align="center" valign="top" width="600" style="width:600px;">
+				<![endif]-->
 				<table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border: 0;max-width: 600px !important;">
 					<tbody><tr>
 						<td valign="top" id="templatePreheader" style="background: #ffffff none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 9px;padding-bottom: 9px;"></td>
@@ -1847,7 +2256,7 @@ C/ Pic de Peguera, 11<br>
 <tbody class="mcnCaptionBlockOuter">
 <tr>
 	<td class="mcnCaptionBlockInner" valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		
 
 
 
@@ -1857,16 +2266,20 @@ C/ Pic de Peguera, 11<br>
 	<table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightImageContentContainer" width="176" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 		<tbody><tr>
 			<td class="mcnCaptionRightImageContent" align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+			
+				
 
 				<img alt="" src="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/7be0ba4c-b906-4d52-ba99-cc1578b1251e.png" width="176" style="max-width: 589px;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" class="mcnImage">
+				
 
+			
 			</td>
 		</tr>
 	</tbody></table>
 	<table class="mcnCaptionRightTextContentContainer" align="right" border="0" cellpadding="0" cellspacing="0" width="352" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 		<tbody><tr>
 			<td valign="top" class="mcnTextContent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;font-family: Helvetica;font-size: 14px;line-height: 200%;text-align: left;">
-
+				
 			</td>
 		</tr>
 	</tbody></table>
@@ -1884,12 +2297,19 @@ C/ Pic de Peguera, 11<br>
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-size: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;line-height: 200%;text-align: left;">
-
+				
 					<div>
 <p dir="ltr" id="docs-internal-guid-7093126b-7fff-17c3-c7ed-a545a7283382" style="color: #666666;font-size: 18px;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;line-height: 200%;text-align: left;"><br>
 <span style="font-size:23px"><strong><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Elaboramos&nbsp;colectivamente el rumbo de Som Energia, ¿os apuntáis?</span></strong></span></p>
@@ -1898,7 +2318,14 @@ C/ Pic de Peguera, 11<br>
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -1906,12 +2333,19 @@ C/ Pic de Peguera, 11<br>
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-size: 18px;line-height: 150%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;text-align: left;">
-
+				
 					<div>
 <p dir="ltr" id="docs-internal-guid-2d277c40-7fff-6f2f-ffb9-b32f5aaada1f" style="text-align: justify;color: #666666;font-size: 18px;line-height: 150%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Som Energia es más que una cooperativa de consumo y&nbsp;producción de energía renovable. Es también una comunidad&nbsp;de personas comprometidas con la&nbsp;transición energética transformadora que pretenden incidir en&nbsp;su entorno.<br>
 <br>
@@ -1923,20 +2357,33 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 				</td>
 			</tr>
 		</tbody></table>
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		
+		<!--[if gte mso 9]>
+		<td align="center" valign="top" ">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 			<tbody><tr>
-
+				
 				<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+				
 					<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 2px none #B0CB02;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 						<tbody><tr>
 							<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 200%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
@@ -1962,7 +2409,14 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if gte mso 9]>
+		</td>
+		<![endif]-->
+		
+		<!--[if gte mso 9]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -1973,9 +2427,11 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 			<table class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" cellspacing="0" cellpadding="0" border="0" align="left">
 				<tbody><tr>
 					<td class="mcnImageContent" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
+						
+							
 								<img alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/sombra.png" style="max-width: 659px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" width="564" align="middle">
-
+							
+						
 					</td>
 				</tr>
 			</tbody></table>
@@ -1983,16 +2439,21 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 	</tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		
+		<!--[if gte mso 9]>
+		<td align="center" valign="top" ">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 			<tbody><tr>
-
+				
 				<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+				
 					<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 2px none #B0CB02;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 						<tbody><tr>
 							<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 100%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
@@ -2004,7 +2465,14 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if gte mso 9]>
+		</td>
+		<![endif]-->
+		
+		<!--[if gte mso 9]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2012,12 +2480,19 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;text-align: justify;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
-
+				
 					<div>
 <p dir="ltr" id="docs-internal-guid-4cc721ed-7fff-8241-c9e7-9964f9b063a1" style="text-align: justify;color: #666666;font-family: Arial, &quot;helvetica neue&quot: ;, helvetica, sans-serif: ;font-size: 14px;line-height: 200%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">El sábado&nbsp;19 de septiembre, el Consejo&nbsp;Rector, Gerencia y&nbsp;otras personas coordinadoras del Equipo Técnico se encontraron&nbsp;para empezar&nbsp;a elaborar el Plan de acción 2021,&nbsp;priorizando&nbsp;las acciones que tendremos que llevar a cabo&nbsp;el próximo año.&nbsp;</span></span></p>
 
@@ -2029,7 +2504,14 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2040,9 +2522,11 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 			<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 				<tbody><tr>
 					<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+						
+							
 								<img align="center" alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/sombra.png" width="564" style="max-width: 659px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
-
+							
+						
 					</td>
 				</tr>
 			</tbody></table>
@@ -2050,16 +2534,21 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 	</tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		
+		<!--[if gte mso 9]>
+		<td align="center" valign="top" ">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 			<tbody><tr>
-
+				
 				<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+				
 					<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 2px none #B0CB02;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 						<tbody><tr>
 							<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 100%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
@@ -2071,7 +2560,14 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if gte mso 9]>
+		</td>
+		<![endif]-->
+		
+		<!--[if gte mso 9]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2079,12 +2575,19 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;">
-
+				
 					<div style="text-align: justify;">
 <p dir="ltr" id="docs-internal-guid-db99070e-7fff-f207-0ba2-c49d86231444" style="text-align: justify;color: #666666;font-family: Arial, &quot;helvetica neue&quot: ;, helvetica, sans-serif: ;font-size: 14px;line-height: 200%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><span style="font-family:arial,helvetica neue,helvetica,sans-serif"><span style="font-size:14px">Seguro que hay otros temas generales que no están contemplados en este documento de hoja&nbsp;de ruta y&nbsp;acciones concretas que a las personas socias de consumo os gustaría&nbsp;que la cooperativa realizara&nbsp;y&nbsp;a las cuales haría falta asignar recursos.</span></span></p>
 <span style="font-family:arial,helvetica neue,helvetica,sans-serif"><span style="font-size:14px">Por este motivo, más allá de todo el trabajo que se realiza en el sí de los Grupos Locales, os recordamos que hay dos instrumentos mediante los cuales <strong>las personas socias de Som Energia podéis aportar temas, retos o propuestas de acciones a explorar: los Grupos Temporales de Trabajo (GTT) y las mociones.</strong></span></span><br>
@@ -2093,7 +2596,14 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2101,12 +2611,19 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;">
-
+				
 					<div style="text-align: left;"><a id="gtts" name="gtts" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;"><span style="color:#666666"><span style="font-size:16px"><strong><span style="font-family:arial,helvetica neue,helvetica,sans-serif">&nbsp; &nbsp; &nbsp;Los Grupos Temporales de Trabajo:</span></strong></span></span></a></div>
 
 <div>
@@ -2120,7 +2637,14 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2128,15 +2652,31 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
+				
 				<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;font-family: Helvetica;font-size: 14px;line-height: 200%;text-align: left;">
-
+				
+					
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2144,12 +2684,19 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;">
-
+				
 					<div style="text-align: left;"><a id="mocions" name="mocions" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;"><span style="color:#666666"><span style="font-size:16px"><strong><span style="font-family:arial,helvetica neue,helvetica,sans-serif">&nbsp; &nbsp; &nbsp;Las mociones:</span></strong></span></span></a></div>
 
 <ul dir="ltr">
@@ -2160,7 +2707,14 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2168,7 +2722,7 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 <tbody class="mcnCaptionBlockOuter">
 <tr>
 	<td class="mcnCaptionBlockInner" valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		
 
 
 
@@ -2178,11 +2732,13 @@ Por este motivo, estas personas socias de la cooperativa<strong> </strong>tienen
 	<table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightImageContentContainer" width="264" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 		<tbody><tr>
 			<td class="mcnCaptionRightImageContent" align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+			
+				
 
 				<img alt="" src="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/6b611b44-9e36-42c0-b3f9-430f392598a5.png" width="264" style="max-width: 388px;border-radius: 0%;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" class="mcnImage">
+				
 
-
+			
 			</td>
 		</tr>
 	</tbody></table>
@@ -2210,12 +2766,19 @@ Por otra parte, queremos poner en valor el proceso&nbsp;de creación de la propu
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;">
-
+				
 					<div style="text-align: justify;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Aunque cualquier&nbsp;persona socia puede&nbsp;proponer una moción, <strong>cuanto&nbsp;más trabajada, compartida y&nbsp;explorada esté, mejor</strong>. Si la propuesta de moción es el resultado&nbsp;del trabajo de un Grupo Temporal de Trabajo, por ejemplo, tiene&nbsp;más posibilidades de:</span></span></div>
 
 <ul>
@@ -2228,21 +2791,33 @@ Por otra parte, queremos poner en valor el proceso&nbsp;de creación de la propu
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		
+		<!--[if gte mso 9]>
+		<td align="center" valign="top" ">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 			<tbody><tr>
-
+				
 				<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+				
 					<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 3px solid #E0E722;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 						<tbody><tr>
 							<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;line-height: 200%;">
@@ -2258,7 +2833,14 @@ Por otra parte, queremos poner en valor el proceso&nbsp;de creación de la propu
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if gte mso 9]>
+		</td>
+		<![endif]-->
+		
+		<!--[if gte mso 9]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2266,12 +2848,19 @@ Por otra parte, queremos poner en valor el proceso&nbsp;de creación de la propu
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;line-height: 200%;text-align: left;">
-
+				
 					<div>&nbsp;</div>
 
 <div style="text-align: justify;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Si bien&nbsp;este año&nbsp;solamente hay un plazo de dos meses para presentar las mociones, las herramientas que tenéis a disposición (mociones y&nbsp;GTTs) permiten que esta sea&nbsp;una tarea viva que pueda&nbsp;estar en funcionamiento todo&nbsp;el año. En cualquier momento podéis&nbsp;enviar un correo&nbsp;a <a href="mailto:participa@somenergia.coop" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;">participa@somenergia.coop</a> con&nbsp;vuestra propuesta y&nbsp;nos pondremos a trabajar en ella.</span></span></div>
@@ -2279,7 +2868,14 @@ Por otra parte, queremos poner en valor el proceso&nbsp;de creación de la propu
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2287,16 +2883,31 @@ Por otra parte, queremos poner en valor el proceso&nbsp;de creación de la propu
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;font-family: Helvetica;font-size: 14px;line-height: 200%;text-align: left;">
-
+				
+					
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2307,10 +2918,11 @@ Por otra parte, queremos poner en valor el proceso&nbsp;de creación de la propu
 			<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 				<tbody><tr>
 					<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+						
+							
 								<img align="center" alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/sombra.png" width="564" style="max-width: 659px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
-
-
+							
+						
 					</td>
 				</tr>
 			</tbody></table>
@@ -2318,16 +2930,21 @@ Por otra parte, queremos poner en valor el proceso&nbsp;de creación de la propu
 	</tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		
+		<!--[if gte mso 9]>
+		<td align="center" valign="top" ">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 			<tbody><tr>
-
+				
 				<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+				
 					<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 2px none #B0CB02;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 						<tbody><tr>
 							<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 100%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
@@ -2339,7 +2956,14 @@ Por otra parte, queremos poner en valor el proceso&nbsp;de creación de la propu
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if gte mso 9]>
+		</td>
+		<![endif]-->
+		
+		<!--[if gte mso 9]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2347,12 +2971,19 @@ Por otra parte, queremos poner en valor el proceso&nbsp;de creación de la propu
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;">
-
+				
 					<div style="text-align: justify;"><span style="color:666666"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">Haremos un&nbsp;encuentro&nbsp;virtual dirigido&nbsp;a las personas socias, </span></span></span><span style="color:666666"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">para presentar el Plan de acción del 2021 y&nbsp;para aclarar dudas en&nbsp;relación a las mociones y&nbsp;los Grupos Temporales de Trabajo, el miércoles<strong>&nbsp;28 de octubre de 17:30 h a 19:00 h.</strong><br>
 <br>
 El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp;que las personas socias necesitáis&nbsp;aclarar para poder poner en marcha&nbsp;vuestros procesos de aportaciones mediante&nbsp;los GTTs y/o las mociones. El Plan de acción se&nbsp;presenta únicamente con carácter informativo. Grabaremos la sesión y&nbsp;la tendremos disponible en el <a href="https://participa.somenergia.coop/users/sign_in?locale=es" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;">Participa</a>.<br>
@@ -2361,7 +2992,14 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2385,17 +3023,31 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;font-family: Helvetica;font-size: 14px;line-height: 200%;text-align: left;">
-
-
+				
+					
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2406,11 +3058,11 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 			<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 				<tbody><tr>
 					<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
-
+						
+							
 								<img align="center" alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/sombra.png" width="564" style="max-width: 659px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
-
-
+							
+						
 					</td>
 				</tr>
 			</tbody></table>
@@ -2418,16 +3070,21 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 	</tr>
 </tbody>
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+<!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
 <tbody class="mcnBoxedTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		
+		<!--[if gte mso 9]>
+		<td align="center" valign="top" ">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
 			<tbody><tr>
-
+				
 				<td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+				
 					<table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border: 2px none #B0CB02;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 						<tbody><tr>
 							<td valign="top" class="mcnTextContent" style="padding: 18px;color: #666666;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 100%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
@@ -2439,7 +3096,14 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if gte mso 9]>
+		</td>
+		<![endif]-->
+		
+		<!--[if gte mso 9]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2447,19 +3111,33 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: justify;">
-
+				
 					<p dir="ltr" id="docs-internal-guid-0ac07d6e-7fff-2df5-a673-52fe61760fdd" style="text-align: justify;color: #666666;font-family: Arial, &quot;helvetica neue&quot: ;, helvetica, sans-serif: ;font-size: 14px;line-height: 200%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><span style="font-size:14px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">En&nbsp;la cooperativa se puede&nbsp;participar de distintas maneras: los Grupos Locales, las compras colectivas, aportaciones de capital voluntario, etc. La herramienta para vehicular la participación societaria (aquella que hace&nbsp;referencia a los derechos de las personas socias) es el Participa. Es, pues, el espacio&nbsp;virtual donde se preparan las Asambleas Generales, tienen lugar los Procesos Participativos, se&nbsp;hacen&nbsp;las consultas a los socios y&nbsp;socias, se&nbsp;vehiculan las mociones, etc.&nbsp;Para acceder,&nbsp;solamente tenéis que&nbsp;registraros con los datos (DNI y&nbsp;contraseña) de la Oficina Virtual a <a href="https://participa.somenergia.coop/users/sign_in?locale=es" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;">participa.somenergia.coop</a>.&nbsp;</span></span><br>
 &nbsp;</p>
 
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2467,12 +3145,19 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #666666;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;line-height: 200%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;">
-
+				
 					<div style="text-align: left;"><a id="gtts" name="butlleti_participa" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #b9b814;font-weight: bold;text-decoration: none;"><span style="color:#666666"><span style="font-size:16px"><strong><span style="font-family:arial,helvetica neue,helvetica,sans-serif">El boletín del Participa:</span></strong></span></span></a></div>
 
 <div>&nbsp;</div>
@@ -2482,7 +3167,14 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2493,11 +3185,11 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 			<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 				<tbody><tr>
 					<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+						
 							<a href="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/568a3131-3908-4647-a42b-632ba1a4d706.png" title="" class="" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 								<img align="center" alt="" src="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/dff1eef9-a8bd-4242-8191-58905edaf2e3.png" width="564" style="max-width: 800px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
 							</a>
-
+						
 					</td>
 				</tr>
 			</tbody></table>
@@ -2508,12 +3200,19 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 14px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;line-height: 200%;text-align: left;">
-
+				
 					<div>&nbsp;</div>
 
 <div style="text-align: justify;"><span style="font-size:14px">
@@ -2523,7 +3222,14 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2531,17 +3237,31 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 <tbody class="mcnTextBlockOuter">
 <tr>
 	<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+		  <!--[if mso]>
+		<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+		<![endif]-->
+		
+		<!--[if mso]>
+		<td valign="top" width="600" style="width:600px;">
+		<![endif]-->
 		<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 			<tbody><tr>
-
+				
 				<td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #666666;font-family: Helvetica;font-size: 14px;line-height: 200%;text-align: left;">
-
-
+				
+					
 				</td>
 			</tr>
 		</tbody></table>
-
+		<!--[if mso]>
+		</td>
+		<![endif]-->
+		
+		<!--[if mso]>
+		</tr>
+		</table>
+		<![endif]-->
 	</td>
 </tr>
 </tbody>
@@ -2549,25 +3269,39 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 					</tr>
 					<tr>
 						<td valign="top" id="templateColumns" style="background: #ffffff none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 8px;">
-
+							<!--[if (gte mso 9)|(IE)]>
+							<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+							<tr>
+							<td align="center" valign="top" width="200" style="width:200px;">
+							<![endif]-->
 							<table align="left" border="0" cellpadding="0" cellspacing="0" width="200" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 								<tbody><tr>
 									<td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
 								</tr>
 							</tbody></table>
-
+							<!--[if (gte mso 9)|(IE)]>
+							</td>
+							<td align="center" valign="top" width="200" style="width:200px;">
+							<![endif]-->
 							<table align="left" border="0" cellpadding="0" cellspacing="0" width="200" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 								<tbody><tr>
 									<td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
 								</tr>
 							</tbody></table>
-
+							<!--[if (gte mso 9)|(IE)]>
+							</td>
+							<td align="center" valign="top" width="200" style="width:200px;">
+							<![endif]-->
 							<table align="left" border="0" cellpadding="0" cellspacing="0" width="200" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 								<tbody><tr>
 									<td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
 								</tr>
 							</tbody></table>
-
+							<!--[if (gte mso 9)|(IE)]>
+							</td>
+							</tr>
+							</table>
+							<![endif]-->
 						</td>
 					</tr>
 					<tr>
@@ -2578,11 +3312,11 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 			<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 				<tbody><tr>
 					<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
-
+						
+							
 								<img align="center" alt="" src="https://gallery.mailchimp.com/56d8bf2e8806722821a650fd1/images/sombra.png" width="564" style="max-width: 659px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
-
-
+							
+						
 					</td>
 				</tr>
 			</tbody></table>
@@ -2596,11 +3330,11 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 			<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 				<tbody><tr>
 					<td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+						
 							<a href="https://t.me/somenergia_es" title="" class="" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 								<img align="center" alt="" src="https://mcusercontent.com/56d8bf2e8806722821a650fd1/images/a3718234-0b4d-42e6-9fa7-7a991ecf2f75.png" width="564" style="max-width: 600px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
 							</a>
-
+						
 					</td>
 				</tr>
 			</tbody></table>
@@ -2612,26 +3346,40 @@ El objetivo&nbsp;de la sesión es centrarnos principalmente en todo&nbsp;lo&nbsp
 	<tbody class="mcnTextBlockOuter">
 		<tr>
 			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+				  <!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<tr>
+				<![endif]-->
+				
+				<!--[if mso]>
+				<td valign="top" width="300" style="width:300px;">
+				<![endif]-->
 				<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 300px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 					<tbody><tr>
-
+						
 						<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #404040;font-size: 14px;font-style: normal;font-weight: normal;line-height: 150%;text-align: justify;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;">
-
-							<div style="text-align: left;"><span style="font-size:12px"><strong>Parc Científic i Tecnològic de la UdG</strong><br>
-								<span style="color:#666666">Edifici Giroemprèn<br>
-C/ Pic de Peguera, 11<br>
-17003 Girona</span><br>
+						
+							<div style="text-align: left;"><span style="font-size:12px">
+								<span style="color:#666666">
+C/ Riu Güell, 68<br>
+17005 Girona</span><br>
 </span></div>
 
 						</td>
 					</tr>
 				</tbody></table>
-
+				<!--[if mso]>
+				</td>
+				<![endif]-->
+				
+				<!--[if mso]>
+				<td valign="top" width="300" style="width:300px;">
+				<![endif]-->
 				<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 300px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 					<tbody><tr>
-
+						
 						<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #404040;font-size: 14px;font-style: normal;font-weight: normal;line-height: 150%;text-align: justify;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;">
-
+						
 							<div style="text-align: left;">
 <div style="color: #222222;font-family: arial, sans-serif;line-height: normal;text-align: left;"><span style="color: #555555;font-family: arial,verdana,helvetica,sans-serif;font-size: 12px;line-height: 16px;width: 350px;" valign="top"><strong>Información general de la cooperativa:</strong></span></div>
 <span style="color: #555555;font-family: arial,verdana,helvetica,sans-serif;font-size: 12px;line-height: 16px;width: 350px;text-align: left;" valign="top"><a href="http://es.support.somenergia.coop/" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight: normal;text-decoration: underline;">Preguntas frecuentes</a></span>
@@ -2648,7 +3396,14 @@ C/ Pic de Peguera, 11<br>
 						</td>
 					</tr>
 				</tbody></table>
-
+				<!--[if mso]>
+				</td>
+				<![endif]-->
+				
+				<!--[if mso]>
+				</tr>
+				</table>
+				<![endif]-->
 			</td>
 		</tr>
 	</tbody>
@@ -2657,18 +3412,29 @@ C/ Pic de Peguera, 11<br>
 	<tbody class="mcnTextBlockOuter">
 		<tr>
 			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+				  <!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<tr>
+				<td valign="top" width="300" style="width:300px;">
+				<![endif]-->
 				<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 300px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 					<tbody><tr>
-
+						
 						<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #656565;font-family: Helvetica;font-size: 12px;line-height: 150%;">
-
+						
 							<a href="http://creativecommons.org/licenses/by-sa/3.0/es/deed.ca" rel="license" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight: normal;text-decoration: underline;"><img alt="Llicència de Creative Commons" src="http://i.creativecommons.org/l/by-sa/3.0/es/88x31.png" style="border-width: 0px;float: right;border: 0;height: auto !important;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a>2020. Som Energia, SCCL.<br>
 Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.org/licenses/by-sa/3.0/es/deed.ca" rel="license" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight: normal;text-decoration: underline;">Reconocimiento-CompartirIgual 3.0 España de Creative Commons</a>
 						</td>
 					</tr>
 				</tbody></table>
-
+				<!--[if mso]>
+				</td>
+				<![endif]-->
+				
+				<!--[if mso]>
+				</tr>
+				</table>
+				<![endif]-->
 			</td>
 		</tr>
 	</tbody>
@@ -2677,29 +3443,49 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 	<tbody class="mcnTextBlockOuter">
 		<tr>
 			<td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
+				  <!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<tr>
+				<![endif]-->
+				
+				<!--[if mso]>
+				<td valign="top" width="300" style="width:300px;">
+				<![endif]-->
 				<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 300px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 					<tbody><tr>
-
+						
 						<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #404040;font-size: 14px;font-style: normal;font-weight: normal;line-height: 150%;text-align: justify;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;">
-
+						
 							<div style="text-align: left;"><span style="font-size:12px">Información sobre la participación de las personas socias en&nbsp;Som Energia.</span></div>
 
 						</td>
 					</tr>
 				</tbody></table>
-
+				<!--[if mso]>
+				</td>
+				<![endif]-->
+				
+				<!--[if mso]>
+				<td valign="top" width="300" style="width:300px;">
+				<![endif]-->
 				<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 300px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
 					<tbody><tr>
-
+						
 						<td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #404040;font-size: 14px;font-style: normal;font-weight: normal;line-height: 150%;text-align: justify;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;">
-
+						
 							<div style="text-align: left;"><span style="font-size:12px">¿No ves&nbsp;el mail&nbsp;correctamente?</span></div>
 <span style="font-size:12px"><a href="https://www.somenergia.coop/but_participa/20201020/Cual-tiene-que-ser-el-rumbo-de-Som-Energia.html" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight: normal;text-decoration: underline;">Clica aquí</a></span>
 						</td>
 					</tr>
 				</tbody></table>
-
+				<!--[if mso]>
+				</td>
+				<![endif]-->
+				
+				<!--[if mso]>
+				</tr>
+				</table>
+				<![endif]-->
 			</td>
 		</tr>
 	</tbody>
@@ -2716,8 +3502,16 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 				<table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 					<tbody><tr>
 						<td align="center" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
-
+							<!--[if mso]>
+							<table align="center" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+							<![endif]-->
+							
+								<!--[if mso]>
+								<td align="center" valign="top">
+								<![endif]-->
+								
+								
 									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 										<tbody><tr>
 											<td valign="top" style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer">
@@ -2726,12 +3520,12 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 														<td align="left" valign="middle" style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 															<table align="left" border="0" cellpadding="0" cellspacing="0" width="" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																<tbody><tr>
-
+																	
 																		<td align="center" valign="middle" width="24" class="mcnFollowIconContent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																			<a href="https://www.facebook.com/somenergia" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-color-facebook-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" height="24" width="24" class=""></a>
 																		</td>
-
-
+																	
+																	
 																</tr>
 															</tbody></table>
 														</td>
@@ -2740,7 +3534,16 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 											</td>
 										</tr>
 									</tbody></table>
-
+								
+								<!--[if mso]>
+								</td>
+								<![endif]-->
+							
+								<!--[if mso]>
+								<td align="center" valign="top">
+								<![endif]-->
+								
+								
 									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 										<tbody><tr>
 											<td valign="top" style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer">
@@ -2749,12 +3552,12 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 														<td align="left" valign="middle" style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 															<table align="left" border="0" cellpadding="0" cellspacing="0" width="" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																<tbody><tr>
-
+																	
 																		<td align="center" valign="middle" width="24" class="mcnFollowIconContent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																			<a href="https://twitter.com/SomEnergia" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-color-twitter-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" height="24" width="24" class=""></a>
 																		</td>
-
-
+																	
+																	
 																</tr>
 															</tbody></table>
 														</td>
@@ -2763,8 +3566,16 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 											</td>
 										</tr>
 									</tbody></table>
-
-
+								
+								<!--[if mso]>
+								</td>
+								<![endif]-->
+							
+								<!--[if mso]>
+								<td align="center" valign="top">
+								<![endif]-->
+								
+								
 									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 										<tbody><tr>
 											<td valign="top" style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer">
@@ -2773,12 +3584,12 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 														<td align="left" valign="middle" style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 															<table align="left" border="0" cellpadding="0" cellspacing="0" width="" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																<tbody><tr>
-
+																	
 																		<td align="center" valign="middle" width="24" class="mcnFollowIconContent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																			<a href="http://www.youtube.com/user/SomEnergia" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-color-youtube-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" height="24" width="24" class=""></a>
 																		</td>
-
-
+																	
+																	
 																</tr>
 															</tbody></table>
 														</td>
@@ -2787,8 +3598,16 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 											</td>
 										</tr>
 									</tbody></table>
-
-
+								
+								<!--[if mso]>
+								</td>
+								<![endif]-->
+							
+								<!--[if mso]>
+								<td align="center" valign="top">
+								<![endif]-->
+								
+								
 									<table align="left" border="0" cellpadding="0" cellspacing="0" style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 										<tbody><tr>
 											<td valign="top" style="padding-right: 0;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer">
@@ -2797,12 +3616,12 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 														<td align="left" valign="middle" style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 															<table align="left" border="0" cellpadding="0" cellspacing="0" width="" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																<tbody><tr>
-
+																	
 																		<td align="center" valign="middle" width="24" class="mcnFollowIconContent" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 																			<a href="https://www.linkedin.com/company/som-energia" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-color-linkedin-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" height="24" width="24" class=""></a>
 																		</td>
-
-
+																	
+																	
 																</tr>
 															</tbody></table>
 														</td>
@@ -2811,7 +3630,15 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 											</td>
 										</tr>
 									</tbody></table>
-
+								
+								<!--[if mso]>
+								</td>
+								<![endif]-->
+							
+							<!--[if mso]>
+							</tr>
+							</table>
+							<![endif]-->
 						</td>
 					</tr>
 				</tbody></table>
@@ -2828,7 +3655,12 @@ Esta obra está sujeta a una licencia de&nbsp;<a href="http://creativecommons.or
 </table></td>
 					</tr>
 				</tbody></table>
-
+				<!--[if (gte mso 9)|(IE)]>
+				</td>
+				</tr>
+				</table>
+				<![endif]-->
+				<!-- // END TEMPLATE -->
 			</td>
 		</tr>
 	</tbody></table>

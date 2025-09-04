@@ -66,7 +66,7 @@ def get_pas01(cas):
                 <br/>
                 <b>${_(u"Som Energia, SCCL")}<br/></b>
                 ${_(u"CIF: F55091367")}<br/>
-                ${_(u"Domicili: C/Pic de Peguera, 9 (1a planta) 17003, Girona")}<br/>
+                ${_(u"Domicili: C/Riu Güell, 68 - 17005, Girona")}<br/>
                 ${_(u"Adreça electrònica: info@somenergia.coop")}
             </div>
             <div id="dades_capcelera">

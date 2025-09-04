@@ -15,14 +15,14 @@
 #    poweremailId: som_poweremail_common_templates.common_template_legal_footer
 #    cases: {}
 #
-#rejection_text:
-#   template: input/common/rejection_text.mako
-#   poweremailId: som_poweremail_common_templates.common_template_rejection_text
-#   cases: {}
-#modi_rejection_text:
-#   template: input/common/modi_rejection_text.mako
-#   poweremailId: som_poweremail_common_templates.common_template_modi_rejection_text
-#   cases: {}
+rejection_text:
+   template: input/common/rejection_text.mako
+   poweremailId: som_poweremail_common_templates.common_template_rejection_text
+   cases: {}
+modi_rejection_text:
+   template: input/common/modi_rejection_text.mako
+   poweremailId: som_poweremail_common_templates.common_template_modi_rejection_text
+   cases: {}
 #legal_footer_representa:
 #    template: input/common/legal_footer_representa.mako
 #    poweremailId: somre_ov_module.common_template_legal_footer_representa
@@ -423,55 +423,55 @@
 #   cases:
 #     ca: 69398
 #     es: 265122
-#reportCondicionsParticulars:
-#  template: input/report-condicionsParticulars.mako
-#  model: giscedata.polissa
-#  reportXmlId: 527
-#  data:
-#    maxDiff: 0
-#    useErpMako: True
-#  cases:
-#      igic_vivenda: 158433
-#      igic_no_vivenda: 136877
-#      ca_N: 240991
-#      catala_s_s: 207474
-#      catala_persona_f: 128907
-#      20A_ca: 203092
-#      20A_es: 215948
-#      20DHA_ca: 208456
-#      20DHA_es: 58526
-#      20DHS_ca: 3744
-#      20DHS_es: 52378
-#      20A_e_g_es: 3847
-#      20DHA_g_ca: 86566
-#      20DHS_g_ca: 29616
-#      20DHS_g_es: 53737
-#      21A_ca: 78837
-#      21A_es: 171930
-#      21DHA_ca: 223631
-#      21DHA_es: 227116
-#      21DHS_ca: 49393
-#      21DHS_es: 60482
-#      30A_ca: 69977
-#      30A_es: 213676
-#      31A_ca: 12340
-#      31A_es: 192778
-#      20A_auto_directe_es: 262690
-#      20DHA_auto_g_es: 9398
-#      61A: 203034
-#
-#reportCondicionsParticularsCanviPreus:
-#  template: input/report-condicionsParticularsCanviPreus.mako
-#  model: giscedata.polissa
-#  reportXmlId: 1684
-#  data:
-#    maxDiff: 0
-#    useErpMako: True
-#    addons_path: /home/oriol/src/erp/server/bin/addons
-#  cases:
-#      21A_ca: 78837
-#      21A_es: 171930
-#
+reportCondicionsParticulars:
+  template: input/report-condicionsParticulars.mako
+  model: giscedata.polissa
+  reportXmlId: 527
+  data:
+    maxDiff: 0
+    useErpMako: True
+  cases:
+      igic_vivenda: 158433
+      igic_no_vivenda: 136877
+      ca_N: 240991
+      catala_s_s: 207474
+      catala_persona_f: 128907
+      20A_ca: 203092
+      20A_es: 215948
+      20DHA_ca: 208456
+      20DHA_es: 58526
+      20DHS_ca: 3744
+      20DHS_es: 52378
+      20A_e_g_es: 3847
+      20DHA_g_ca: 86566
+      20DHS_g_ca: 29616
+      20DHS_g_es: 53737
+      21A_ca: 78837
+      21A_es: 171930
+      21DHA_ca: 223631
+      21DHA_es: 227116
+      21DHS_ca: 49393
+      21DHS_es: 60482
+      30A_ca: 69977
+      30A_es: 213676
+      31A_ca: 12340
+      31A_es: 192778
+      20A_auto_directe_es: 262690
+      20DHA_auto_g_es: 9398
+      61A: 203034
+
+reportCondicionsParticularsCanviPreus:
+  template: input/report-condicionsParticularsCanviPreus.mako
+  model: giscedata.polissa
+  reportXmlId: 1684
+  data:
+    maxDiff: 0
+    useErpMako: True
+    addons_path: /home/oriol/src/erp/server/bin/addons
+  cases:
+      21A_ca: 78837
+      21A_es: 171930
+
 #reportCondicionsParticulars_destral:
 #  template: input/report-condicionsParticulars.mako
 #  model: giscedata.polissa
@@ -494,23 +494,22 @@
 #    t20TD: 19
 #    t61TD: 21
 #
-# reportCondicionsParticularsM101:
-#   template: input/report-condicionsParticularsM101.mako
-#   model: giscedata.switching
-#   reportXmlId: 1389 #R1389 T1469
-#   data:
-#     maxDiff: 0
-#     useErpMako: True
-#   cases:
-#     ca_N: 274549
-#     catala_s_s: 282778
-#     catala_persona_f: 282717
-#     2_0DHA: 236801
-#     2_0A: 236941
-#     3_0A: 237057
-#     2_1A: 238934
-#     2_1DHA: 253218
-#
+reportCondicionsParticularsM101:
+  template: input/report-condicionsParticularsM101.mako
+  model: giscedata.switching
+  reportXmlId: 1389 #R1389 T1469
+  data:
+    maxDiff: 0
+    useErpMako: True
+  cases:
+    ca_N: 274549
+    catala_s_s: 282778
+    catala_persona_f: 282717
+    2_0DHA: 236801
+    2_0A: 236941
+    3_0A: 237057
+    2_1A: 238934
+    2_1DHA: 253218
 #avisCanviHora:
 #  template: input/correu-avisCanviHora.mako
 #  model: giscedata.polissa
@@ -1107,20 +1106,20 @@
 #    ca: 304316
 #    es: 300707
 #
-#notificacioTractamentDadesGeneradorAutoconsum:
-#  template: input/correu-notificacioTractamentDadesGeneradorAutoconsum.mako
-#  model: giscedata.switching
-#  poweremailId: som_switching.notificacioTractamentDadesGeneradorAutoconsum
-#  cases:
-#    ca: 304316
-#    es: 300707
-#notificacioTractamentDadesTitularDiferentContracte:
-#  template: input/correu-notificacioTractamentDadesTitularDiferentContracte.mako
-#  model: giscedata.switching
-#  poweremailId: som_switching.notificacioTractamentDadesTitularDiferentContracte
-#  cases:
-#    ca: 304316
-#    es: 300707
+notificacioTractamentDadesGeneradorAutoconsum:
+  template: input/correu-notificacioTractamentDadesGeneradorAutoconsum.mako
+  model: giscedata.switching
+  poweremailId: som_switching.notificacioTractamentDadesGeneradorAutoconsum
+  cases:
+    ca: 304316
+    es: 300707
+notificacioTractamentDadesTitularDiferentContracte:
+  template: input/correu-notificacioTractamentDadesTitularDiferentContracte.mako
+  model: giscedata.switching
+  poweremailId: som_switching.notificacioTractamentDadesTitularDiferentContracte
+  cases:
+    ca: 304316
+    es: 300707
 #peticioDocumentacioSubministres:
 #  template: input/correu-peticioDocumentacioSubministres.mako
 #  model: res.partner
@@ -1570,14 +1569,14 @@
 ### Comunicació Socies
 ##
 # Enviament comunicat assamblea 2020
-#assambleaSocies:
-#  template: input/correu-assambleaSocies.mako
-#  model: somenergia.soci
-#  poweremailId: 310
-#  cases:
-#    cat: 192
-#    es: 101
-#
+assambleaSocies:
+  template: input/correu-assambleaSocies.mako
+  model: somenergia.soci
+  poweremailId: 310
+  cases:
+    cat: 192
+    es: 101
+
 #canviPreus:
 #  template: input/correu-canviPreus.mako
 #  model: som.enviament.massiu
@@ -1624,15 +1623,15 @@
 #  cases:
 #    ca: 491957
 #    es: 491958
-#
-#segonNoRenovacio:
-#  template: input/correu-segonNoRenovacio.mako
-#  model: som.enviament.massiu
-#  poweremailId: som_infoenergia.segon_env_no_renovacio_30
-#  cases:
-#    ca: 491957
-#    es: 491958
-#
+
+segonNoRenovacio:
+  template: input/correu-segonNoRenovacio.mako
+  model: som.enviament.massiu
+  poweremailId: som_infoenergia.segon_env_no_renovacio_30
+  cases:
+    ca: 491957
+    es: 491958
+
 #tercerNoRenovacio:
 #  template: input/correu-tercerNoRenovacio.mako
 #  model: som.enviament.massiu

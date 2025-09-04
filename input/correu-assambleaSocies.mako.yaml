@@ -1,7 +1,9 @@
+lang: ${object.partner_id.lang}
 cc: false
-to:  ${object.www_email}
-subject_translations:
-  ca_ES: Quin ha de ser el rumb de Som Energia? / ¿Cuál tiene que ser el rumbo de Som Energia?
-  es_ES: Quin ha de ser el rumb de Som Energia? / ¿Cuál tiene que ser el rumbo de Som Energia?
-subject: Quin ha de ser el rumb de Som Energia? / ¿Cuál tiene que ser el rumbo de Som Energia?
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.www_email}
+subject_translations:
+  ca_ES: Quin ha de ser el rumb de Som Energia?
+  es_ES: ¿Cuál tiene que ser el rumbo de Som Energia?
+subject: Quin ha de ser el rumb de Som Energia? / ¿Cuál tiene que ser el rumbo de
+  Som Energia?
