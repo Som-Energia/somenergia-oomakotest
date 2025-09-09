@@ -494,23 +494,22 @@
 #    t20TD: 19
 #    t61TD: 21
 #
-# reportCondicionsParticularsM101:
-#   template: input/report-condicionsParticularsM101.mako
-#   model: giscedata.switching
-#   reportXmlId: 1389 #R1389 T1469
-#   data:
-#     maxDiff: 0
-#     useErpMako: True
-#   cases:
-#     ca_N: 274549
-#     catala_s_s: 282778
-#     catala_persona_f: 282717
-#     2_0DHA: 236801
-#     2_0A: 236941
-#     3_0A: 237057
-#     2_1A: 238934
-#     2_1DHA: 253218
-#
+#reportCondicionsParticularsM101:
+#  template: input/report-condicionsParticularsM101.mako
+#  model: giscedata.switching
+#  reportXmlId: 1389 #R1389 T1469
+#  data:
+#    maxDiff: 0
+#    useErpMako: True
+#  cases:
+#    ca_N: 274549
+#    catala_s_s: 282778
+#    catala_persona_f: 282717
+#    2_0DHA: 236801
+#    2_0A: 236941
+#    3_0A: 237057
+#    2_1A: 238934
+#    2_1DHA: 253218
 #avisCanviHora:
 #  template: input/correu-avisCanviHora.mako
 #  model: giscedata.polissa
@@ -1422,7 +1421,6 @@
 #     es_baixa: 6850168
 #     ca_baixa: 6906042
 
-
 # pagamentGenericN57ContracteBaixa:
 #   template: input/correu-pagamentGenericN57ContracteBaixa.mako
 #   model: giscedata.facturacio.factura
@@ -1430,7 +1428,6 @@
 #   cases:
 #     es: 6850168
 #     ca: 6906042
-
 
 ########################################
 ## Infoenergia
