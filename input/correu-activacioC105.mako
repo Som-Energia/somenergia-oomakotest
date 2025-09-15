@@ -42,7 +42,7 @@ else:
 
 TarifaATR=dict(object.pool.get(model).fields_get(object._cr, object._uid)['tarifaATR']['selection'])[pas05.tarifaATR]
 lineesDePotencia_ca = '\n'.join((
-  '\t- <strong> %s: </strong>%s W'%(p.name, p.potencia)
+  '\t- <strong> %s: </strong>%s kW'%(p.name, p.potencia / 1000.0)
   for p in pas05.header_id.pot_ids
   if p.potencia != 0
   ))
