@@ -54,12 +54,12 @@ ${plantilla_header}
 <p align="center"><strong>El teu núm. de soci/a és: ${object.partner_id.ref | socifilter}</strong></p>
 <p align="center">Nom: ${object.name}</p>
 <p align="center">Data d'entrada: ${ingres}</p>
-<p align="center">Aportació obligatòria al capital social: 100€</p>
+<p align="center">Aportació obligatòria al capital social: 100 euros.</p>
 </fieldset></td>
 </tr>
 </tbody>
 </table>
-
+<br>
 % if has_polisses:
 <p>Com que ja tenies un contracte de llum amb la cooperativa, el passarem automàticament al teu número de soci/a.</p>
 % else:
@@ -71,13 +71,13 @@ ${plantilla_header}
 <p>Per això, esperarem uns dies abans d’explicar-te una mica més sobre la cooperativa i les opcions que se t’obren ara que t’has associat. I aleshores, t’ho explicarem de forma <strong>senzilla</strong> i <strong>clara</strong>.</p>
 <p>Mentrestant, si et ve de gust, ens podem trobar a les xarxes socials:</p>
 ${plantilla_social_links}
+<br>
 <p><strong>Si tens qualsevol dubte</strong>, ens pots trucar al 872.202.550 (t’atendrem de dilluns a divendres de 9 a 14 h) o enviar-nos un correu a info@somenergia.coop.</p>
 % if not is_company:
 <p><strong>${nom_titular}, ens fa molta il·lusió tenir-te entre nosaltres!</strong></p>
 % endif
 <p dir="ltr">&nbsp;</p>
 <p>Fins aviat,</p>
-<p>Som Energia.</p>
 
 % else:
 
@@ -91,12 +91,12 @@ ${plantilla_social_links}
 <p align="center"><strong>Tu nº. de socio/a es: ${object.partner_id.ref | socifilter}</strong></p>
 <p align="center">Nombre: ${object.name}</p>
 <p align="center">Fecha de entrada: ${ingres}</p>
-<p align="center">Aportación obligatoria en el capital social: 100 euros.</p>
+<p align="center">Aportación obligatoria al capital social: 100 euros.</p>
 </fieldset></td>
 </tr>
 </tbody>
 </table>
-
+<br>
 % if has_polisses:
 <p>Puesto que ya tenías un contrato de luz con la cooperativa, lo pasaremos automáticamente a tu número de socio/a.</p>
 % else:
@@ -108,14 +108,19 @@ ${plantilla_social_links}
 <p>Por eso, esperaremos unos días antes de contarte un poco más sobre la cooperativa y las opciones que se te abren ahora que te has asociado. Y entonces, te lo explicaremos de forma <strong>sencilla</strong> y <strong>clara</strong>.</p>
 <p>Mientras, si te apetece, nos podemos encontrar en las redes sociales:</p>
 ${plantilla_social_links}
+<br>
 <p><strong>Si tienes cualquier duda</strong>, nos puedes llamar al 872 202 550 (te atenderemos de lunes a viernes de 9 a 14 h) o enviarnos un correo a info@somenergia.coop.</p>
 % if not is_company:
 <p><strong>${nom_titular}, ¡nos hace mucha ilusión tenerte con nosotros!</strong></p>
 % endif
 <p dir="ltr">&nbsp;</p>
 <p>Hasta pronto,</p>
-<p>Som Energia.</p>
 
 % endif
+<p><a href="https://www.somenergia.coop" target="_blank"><picture>
+    <source srcset="https://www.somenergia.coop/logo/logo_fosc_100px.png" media="(prefers-color-scheme: light)"/>
+    <source srcset="https://www.somenergia.coop/logo/logo_clar_100px.png" media="(prefers-color-scheme: dark)"/>
+    <img src="https://www.somenergia.coop/logo/logo_fosc_100px.png" alt="Som Energia" style="height: 60px;"/>
+</picture></a></p>
 
 ${plantilla_footer}
