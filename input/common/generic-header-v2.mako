@@ -1,9 +1,12 @@
 <%
   light_logo = context.get('light_logo') or 'https://www.somenergia.coop/logo/logo_clar_100px.png'
   dark_logo = context.get('dark_logo') or 'https://www.somenergia.coop/logo/logo_fosc_100px.png'
+  logo_css_style = context.get('logo_css_style') or 'height: 100px; margin-bottom: 25px;'
+  logo_link = context.get('logo_link')
 
-  # To only put the link in som energia mails
-  is_som_energia = light_logo == 'https://www.somenergia.coop/logo/logo_clar_100px.png'
+  if not logo_link and light_logo == 'https://www.somenergia.coop/logo/logo_clar_100px.png':
+    # By default the logo links to Som Energia website
+    logo_link = 'https://www.somenergia.coop'
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -323,7 +326,7 @@
     /* Masthead ----------------------- */
 
     .email-masthead {
-      padding: 25px 0;
+      padding-top: 25px;
       text-align: center;
     }
 
@@ -476,15 +479,15 @@
                 <table align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
                   <tr>
                     <th>
-                      % if is_som_energia:
-                        <a href="https://www.somenergia.coop" target="_blank">
+                      % if logo_link:
+                        <a href="${logo_link}" target="_blank">
                       % endif
                         <picture>
                           <source srcset="${dark_logo}" media="(prefers-color-scheme: light)"/>
                           <source srcset="${light_logo}" media="(prefers-color-scheme: dark)"/>
-                          <img src="${dark_logo}" alt="Som Energia" style="height: 100px"/>
+                          <img src="${dark_logo}" alt="Som Energia" style="${logo_css_style}"/>
                         </picture>
-                      % if is_som_energia:
+                      % if logo_link:
                         </a>
                       % endif
                     </th>

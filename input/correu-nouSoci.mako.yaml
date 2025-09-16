@@ -3,7 +3,7 @@ lang: ${object.partner_id.lang}
 to: ${object.address[0].email}
 subject_translations:
   en_US: ''
-  es_ES: 'Alta como soci/a de Som Energia, SCCL'
-  ca_ES: 'Alta com a soci/a de Som Energia, SCCL'
-subject: Alta com a soci/a de Som Energia, SCCL
+  es_ES: '🥳 ¡Ya eres de Som Energia! ¡Bienvenido/a! 🤗'
+  ca_ES: '🥳 Ja ets de Som Energia! Benvingut/da! 🤗'
+subject: '🥳 Ja ets de Som Energia! Benvingut/da! 🤗'
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
