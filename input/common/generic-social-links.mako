@@ -11,51 +11,51 @@
     <td align="center" style="padding: 10px 0;">
       <a href="https://mastodon.economiasocial.org/@SomEnergia" target="_blank" style="margin:0 10px; display:inline-block;">
         <picture>
-          <source srcset="https://www.somenergia.coop/assets/social/primary/mastodon.svg" media="(prefers-color-scheme: light)"/>
-          <source srcset="https://www.somenergia.coop/assets/social/mastodon.svg" media="(prefers-color-scheme: dark)"/>
-          <img src="https://www.somenergia.coop/assets/social/primary/mastodon.svg" alt="Mastodon" width="32" height="32" border="0" style="display:block;"/>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/mastodon.png" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/mastodon.png" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/mastodon.png" alt="Mastodon" width="32" height="32" border="0" style="display:block;"/>
         </picture>
       </a>
       <a href="https://www.instagram.com/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
         <picture>
-          <source srcset="https://www.somenergia.coop/assets/social/primary/instagram.svg" media="(prefers-color-scheme: light)"/>
-          <source srcset="https://www.somenergia.coop/assets/social/instagram.svg" media="(prefers-color-scheme: dark)"/>
-          <img src="https://www.somenergia.coop/assets/social/primary/instagram.svg" alt="Instagram" width="32" height="32" border="0" style="display:block;"/>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/instagram.png" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/instagram.png" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/instagram.png" alt="Instagram" width="32" height="32" border="0" style="display:block;"/>
         </picture>
       </a>
       <a href="https://www.facebook.com/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
         <picture>
-          <source srcset="https://www.somenergia.coop/assets/social/primary/facebook.svg" media="(prefers-color-scheme: light)"/>
-          <source srcset="https://www.somenergia.coop/assets/social/facebook.svg" media="(prefers-color-scheme: dark)"/>
-          <img src="https://www.somenergia.coop/assets/social/primary/facebook.svg" alt="Facebook" width="32" height="32" border="0" style="display:block;"/>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/facebook.png" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/facebook.png" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/facebook.png" alt="Facebook" width="32" height="32" border="0" style="display:block;"/>
         </picture>
       </a>
       <a href="https://x.com/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
         <picture>
-          <source srcset="https://www.somenergia.coop/assets/social/primary/x.svg" media="(prefers-color-scheme: light)"/>
-          <source srcset="https://www.somenergia.coop/assets/social/x.svg" media="(prefers-color-scheme: dark)"/>
-          <img src="https://www.somenergia.coop/assets/social/primary/x.svg" alt="X" width="32" height="32" border="0" style="display:block;"/>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/x.png" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/x.png" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/x.png" alt="X" width="32" height="32" border="0" style="display:block;"/>
         </picture>
       </a>
       <a href="${telegram_url}" target="_blank" style="margin:0 10px; display:inline-block;">
         <picture>
-          <source srcset="https://www.somenergia.coop/assets/social/primary/telegram.svg" media="(prefers-color-scheme: light)"/>
-          <source srcset="https://www.somenergia.coop/assets/social/telegram.svg" media="(prefers-color-scheme: dark)"/>
-          <img src="https://www.somenergia.coop/assets/social/primary/telegram.svg" alt="Telegram" width="32" height="32" border="0" style="display:block;"/>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/telegram.png" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/telegram.png" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/telegram.png" alt="Telegram" width="32" height="32" border="0" style="display:block;"/>
         </picture>
       </a>
       <a href="https://www.youtube.com/user/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
         <picture>
-          <source srcset="https://www.somenergia.coop/assets/social/primary/youtube.svg" media="(prefers-color-scheme: light)"/>
-          <source srcset="https://www.somenergia.coop/assets/social/youtube.svg" media="(prefers-color-scheme: dark)"/>
-          <img src="https://www.somenergia.coop/assets/social/primary/youtube.svg" alt="Youtube" width="32" height="32" border="0" style="display:block;"/>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/youtube.png" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/youtube.png" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/youtube.png" alt="Youtube" width="32" height="32" border="0" style="display:block;"/>
         </picture>
       </a>
       <a href="https://www.linkedin.com/company/somenergia" target="_blank" style="margin:0 10px; display:inline-block;">
         <picture>
-          <source srcset="https://www.somenergia.coop/assets/social/primary/linkedin.svg" media="(prefers-color-scheme: light)"/>
-          <source srcset="https://www.somenergia.coop/assets/social/linkedin.svg" media="(prefers-color-scheme: dark)"/>
-          <img src="https://www.somenergia.coop/assets/social/primary/linkedin.svg" alt="Linkedin" width="32" height="32" border="0" style="display:block;"/>
+          <source srcset="https://www.somenergia.coop/assets/social/primary/linkedin.png" media="(prefers-color-scheme: light)"/>
+          <source srcset="https://www.somenergia.coop/assets/social/linkedin.png" media="(prefers-color-scheme: dark)"/>
+          <img src="https://www.somenergia.coop/assets/social/primary/linkedin.png" alt="Linkedin" width="32" height="32" border="0" style="display:block;"/>
         </picture>
       </a>
     </td>

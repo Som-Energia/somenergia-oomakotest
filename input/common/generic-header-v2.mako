@@ -477,12 +477,12 @@
             <tr>
               <td class="email-masthead">
                 <table align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
-                  <tr>
+                  <tr style="line-height: 0px; font-size: 0px;">
                     <th>
                       % if logo_link:
                         <a href="${logo_link}" target="_blank">
                       % endif
-                        <picture>
+                        <picture style="line-height: 0px;">
                           <source srcset="${dark_logo}" media="(prefers-color-scheme: light)"/>
                           <source srcset="${light_logo}" media="(prefers-color-scheme: dark)"/>
                           <img src="${dark_logo}" alt="Som Energia" style="${logo_css_style}"/>
