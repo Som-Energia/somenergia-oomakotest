@@ -45,8 +45,8 @@ ${plantilla_header}
 
 % if object.partner_id.lang == "ca_ES":
 
-<p>Hola${nom_titular_amb_coma}!!</p>
-<p>T’acabes d’associar a Som Energia! Et donem la <strong>benvinguda a la cooperativa que vol transformar el model energètic!</strong></p>
+<p>Hola${nom_titular_amb_coma}!</p>
+<p>T’acabes d’associar a Som Energia! Et donem la <strong>benvinguda a la cooperativa que vol transformar el model energètic.</strong></p>
 <p>Aquestes són les teves dades:</p>
 <table border="0" width="430" cellspacing="0" cellpadding="0" align="center">
 <tbody>
