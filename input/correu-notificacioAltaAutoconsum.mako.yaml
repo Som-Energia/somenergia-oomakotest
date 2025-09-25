@@ -1,10 +1,10 @@
+lang: ${object.cups_polissa_id.titular.lang}
 cc: ${object.cups_polissa_id.direccio_notificacio.email}, <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email
   if object.cups_polissa_id.administradora else '') %>  ${mail}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.cups_polissa_id.titular.address[0].email}
 subject_translations:
   ca_ES: Informació de dades inst.autoproducció CUPS ${object.cups_id.name}
   es_ES: Información de datos inst.autoproducción CUPS ${object.cups_id.name}
 subject: Informació de dades inst.autoproducció CUPS ${object.cups_id.name} / Información
   de datos inst.autoproducción CUPS ${object.cups_id.name}
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net
-lang: ${object.cups_polissa_id.titular.lang}
