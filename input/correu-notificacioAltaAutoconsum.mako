@@ -156,7 +156,7 @@
     </p>
     %endif
     <p>
-        En cas que la informació sigui correcta, i hagis acceptat el tràmit, podràs demanar la modificació del contracte per aplicar la modalitat triada seguint els passos que et va indicant la oficina virtual. També et permet sol·licitar alguna altra modificació del contracte com pot ser la potència, tarifa o tensió del subministrament; si vols, pots aprofitar aquest mateix tràmit per fer-ho.
+        En cas que la informació sigui correcta, i hagis acceptat el tràmit, podràs demanar la modificació del contracte per aplicar la modalitat triada seguint els passos que et va indicant la oficina virtual.
     </p>
     <p>
         Recorda que tens més informació sobre l’autoconsum, el preu  de compensació, les modalitats, i els tràmits associats al centre d’ajuda de la nostra web dins l’apartat <a href="https://ca.support.somenergia.coop/category/777-autoproduccio">Autoproducció</a>. També pots consultar en el següent enllaç les <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">condicions generals</a> de contractació que vas acceptar en el moment de contractar amb Som Energia (la clàusula 8 tracta l’autoconsum).
@@ -189,7 +189,7 @@
     </p>
     %endif
     <p>
-        En caso de que la información sea correcta, y hayas aceptado el trámite, podrás pedir la modificación del contrato para aplicar la modalidad elegida siguiendo los pasos que te va indicando la oficina virtual. También te permite solicitar alguna otra modificación del contrato como puede ser la potencia, tarifa o tensión del suministro; si quieres, puedes aprovechar este mismo trámite para hacerlo.
+        En caso de que la información sea correcta, y hayas aceptado el trámite, podrás pedir la modificación del contrato para aplicar la modalidad elegida siguiendo los pasos que te va indicando la oficina virtual.
     </p>
     <p>
         Recuerda que tienes más información sobre el autoconsumo, el precio de compensación, las modalidades, y los trámites asociados en el centro de ayuda de nuestra web dentro del apartado <a href="https://es.support.somenergia.coop/category/779-autoproduccion">Autoproducción</a>. También puedes consultar en el siguiente enlace las <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">condiciones generales</a> de contratación que aceptaste en el momento de contratar con Som Energia (la cláusula 8 trata el autoconsumo).
