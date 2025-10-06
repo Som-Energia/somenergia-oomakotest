@@ -24,7 +24,7 @@ text_desistiment = render(
 tarifa_a_mostrar = ""
 
 from gestionatr.defs import TABLA_113
-from som_polissa.giscedata_cups import TABLA_113_dict
+from som_polissa.models.giscedata_cups import TABLA_113_dict
 autoconsum_description = False
 if object.autoconsumo != '00':
     autoconsum_description = object.autoconsumo + ' - '
