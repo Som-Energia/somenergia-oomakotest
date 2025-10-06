@@ -6,6 +6,11 @@ def render(text_to_render, object_):
     return templ.render_unicode(
         object=object_,
         lang=object_.soci.lang,
+        # The clar/fosc is reversed because here refers to the background color
+        light_logo='https://www.somenergia.coop/logo/logo_header_socies_fosc.png',
+        dark_logo='https://www.somenergia.coop/logo/logo_header_socies_clar.png',
+        logo_link='https://www.somenergia.coop',
+        logo_css_style='width: 570px;',
         format_exceptions=True,
     )
 t_obj = object.pool.get('poweremail.templates')
