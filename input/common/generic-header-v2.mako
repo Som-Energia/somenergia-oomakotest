@@ -395,6 +395,12 @@
     .content-cell {
       padding: 45px;
     }
+
+    div.background-text p {
+      color: #999999;
+      font-size: 14px;
+    }
+
     /*Media Queries ------------------------------ */
 
     @media only screen and (max-width: 600px) {
