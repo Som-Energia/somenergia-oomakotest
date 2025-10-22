@@ -41,6 +41,9 @@ ${plantilla_header}
         <li>Número de factura: ${data['factura']['numero']}</li>
         <li>Període facturat: del<strong id="docs-internal-guid-6536ca4e-7fff-dbd9-04a0-3e9d7d100756"> </strong>${data['factura']['data']['inici']} al ${data['factura']['data']['fi']}</li>
         <li>Tarifa: ${data['polissa']['llista_preus']}</li>
+        % if data['polissa']['autoconsum']:
+        <li>Autoconsum: Sí</li>
+        % endif
         <li>Titular del contracte: ${data['polissa']['titular']['nom']}</li>
         <li>Número de contracte: ${data['polissa']['numero']}</li>
         <li>Codi CUPS: ${data['polissa']['cups']['codi']}</li>
@@ -210,6 +213,9 @@ ${plantilla_header}
         <li>Número de factura: ${data['factura']['numero']}</li>
         <li>Periodo facturado: del<strong id="docs-internal-guid-6536ca4e-7fff-dbd9-04a0-3e9d7d100756"> </strong>${data['factura']['data']['inici']} al ${data['factura']['data']['fi']}</li>
         <li>Tarifa: ${data['polissa']['llista_preus']}</li>
+        % if data['polissa']['autoconsum']:
+        <li>Autoconsumo: Sí</li>
+        % endif
         <li>Titular del contrato: ${data['polissa']['titular']['nom']}</li>
         <li>Número de contrato: ${data['polissa']['numero']}</li>
         <li>Código CUPS: ${data['polissa']['cups']['codi']}</li>
