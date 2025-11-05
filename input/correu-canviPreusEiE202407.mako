@@ -31,10 +31,10 @@ ${plantilla_header}
               <tr>
                 <th>
                     % if data['lang'] == "ca_ES":
-                        <a href="https://www.somenergia.coop/ca/"><img src="https://www.somenergia.coop/logo/Logotip-Som-Energia.png" alt="SOM Energia" style="height: 106px"/></a>
+                        <a href="https://www.somenergia.coop/ca/"><img src="https://www.somenergia.coop/logo/logo_fosc.png" alt="SOM Energia" style="height: 106px"/></a>
                     %endif
                     % if data['lang'] != "ca_ES":
-                        <a href="https://www.somenergia.coop/es/"><img src="https://www.somenergia.coop/logo/Logotip-Som-Energia.png" alt="SOM Energia" style="height: 106px"/></a>
+                        <a href="https://www.somenergia.coop/es/"><img src="https://www.somenergia.coop/logo/logo_fosc.png" alt="SOM Energia" style="height: 106px"/></a>
                     %endif
                 </th>
               </tr>
