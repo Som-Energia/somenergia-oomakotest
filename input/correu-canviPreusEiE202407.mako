@@ -15,7 +15,7 @@
     plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
     plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 
-    email_o = object.pool.get('report.backend.mailcanvipreus')
+    email_o = object.pool.get('report.backend.mailcanvipreus.eie')
     data = email_o.get_data(object._cr, object._uid, object.id, context={'lang': object.partner_id.lang})
 %>
 
@@ -89,13 +89,13 @@ ${plantilla_header}
                       </table>
 
                       <p>
-                        Ens posem en contacte amb vosaltres per informar-vos que <strong>a partir de l'1 d'agost aplicarem uns petits canvis en el càlcul del preu de l'energia</strong> amb la tarifa indexada. També aprofitem aquest moment per fer <strong>l'actualització anual de la franja de la cooperativa,</strong> personalitzada segons el vostre ús d'energia dels últims dotze mesos.
+                        Ens posem en contacte amb vosaltres per informar-vos que <strong>a partir de l'1 de setembre renovarem el contracte amb la tarifa indexada empresa</strong> que teniu contractada actualment i que <strong>actualitzarem el preu de la franja de la cooperativa,</strong> que correspon al nostre marge.
                       </p>
                       <h1>
-                        Canvis en el càlcul del preu de l'energia
+                        Actualització de la franja de la cooperativa
                       </h1>
                       <p>
-                        A partir de l'1 d'agost aplicarem els següents canvis en la fórmula per calcular el preu de l'energia:
+                        En la <strong>tarifa indexada empresa</strong> personalitzem el preu de la franja de la cooperativa (la variable F de la fórmula indexada que podeu consultar al <a href="https://www.somenergia.coop/ca/servicios/com-calculem-el-preu">nostre web</a>) segons el vostre ús d'energia anual. Per això, un cop a l'any, revisem el vostre ús d'energia dels últims dotze mesos i ajustem el preu de la franja (F): a major ús d'energia, el valor d'aquesta variable es redueix, i a la inversa, si l'ús ha disminuït, el seu valor s'incrementa.
                       </p>
                       <ul>
                         <li>
@@ -106,29 +106,7 @@ ${plantilla_header}
                         </li>
                       </ul>
                       <p>
-                        La nova fórmula, doncs, serà la següent:
-                      </p>
-                      <p>
-                        <strong style="font-size: 14px; text-align: center">
-                          PH = 1,015 × [(PHM + Pc + Sc + <span style="color:#7dbc09">Dsv</span> + <span style="color:#7dbc09">GdO</span> + POsOm) (1 + Perd) + FE + F] + PTD + CA
-                        </strong>
-                      </p>
-                      <p>
-                        (Al <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#formula-indexada">nostre web</a> podeu veure a què correspon cada terme).
-                      </p>
-                      %if data['canaries'] or data['balears']:
-                        <p>
-                          També <strong>modifiquem el preu de compensació dels excedents</strong> perquè sigui igual al preu que els retribueix Red Eléctrica. Aquest canvi suposarà una <strong>petita disminució del preu de compensació,</strong> ja que al preu actual del mercat insular li passarem a restar un terme anomenat Sph Auto.
-                        </p>
-                      %endif
-                      <h1>
-                        Actualització anual de la franja de la cooperativa
-                      </h1>
-                      <p>
-                        En la <strong>tarifa indexada empresa</strong> personalitzem el preu de la franja de la cooperativa (la variable F de la fórmula) segons el vostre ús d'energia anual. Per això, un cop a l'any, revisem el vostre ús d'energia dels últims dotze mesos i ajustem el preu de la franja (F): a major ús, el valor d'aquesta variable es redueix, i a la inversa, si l'ús disminueix, el seu valor s'incrementa.
-                      </p>
-                      <p>
-                        Per al vostre contracte, actualment la franja F (que també inclou els costos de les garanties d'origen 100% renovable i dels desviaments) és de ${data['dades_index']['f_antiga_eie']} €/kWh,  i a partir de l'1 d'agost (que tal com us hem explicat, correspondrà únicament al marge per la cooperativa) serà de:  <strong>${data['dades_index']['f_nova_eie']} €/kWh.</strong>
+                        Per al vostre contracte, actualment la franja F és de ${data['dades_index']['f_antiga_eie']} €/kWh,  i a partir de l'1 de setembre serà de:  <strong>${data['dades_index']['f_nova_eie']} €/kWh.</strong>
                       </p>
                       <p>
                         Aquest preu està calculat tenint en compte el vostre ús d'energia dels últims dotze mesos: <strong>${data['dades_index']['conany']} kWh.</strong>
@@ -137,7 +115,7 @@ ${plantilla_header}
                         Estimació orientativa
                       </h2>
                       <p>
-                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja F i la nova fórmula per calcular el preu de l'energia.</strong>  Tenint en compte el consum de l'últim any, el cost per als pròxims dotze mesos amb la fórmula i la franja F actual seria de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mentre que amb la nova franja i la nova fórmula seria de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En tots dos casos, l'estimació inclou el 21% d'IVA i el 5,11% d'impost especial de l'electricitat.
+                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja F.</strong> Tenint en compte l'ús de l'últim any, el cost per als pròxims dotze mesos amb la franja F actual seria de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mentre que amb la nova franja seria de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En tots dos casos, l'estimació inclou el 21% d'IVA i el 5,11% d'impost especial de l'electricitat.
                       </p>
                       <h2>Informació legal</h2>
                       <p>
@@ -208,13 +186,13 @@ ${plantilla_header}
                       </table>
 
                       <p>
-                        Nos ponemos en contacto para informaros que <strong>a partir del 1 de agosto aplicaremos unos pequeños cambios en el cálculo del precio de la energía</strong> con la tarifa indexada que tenéis contratada actualmente. También aprovechamos este momento para realizar la <strong>actualización anual de la franja de la cooperativa,</strong> personalizada según vuestro uso de energía de los últimos doce meses.
+                        Nos ponemos en contacto para informaros que <strong>a partir del 1 de septiembre renovaremos el contrato con la tarifa indexada empresa</strong> que tenéis contratada actualmente y que <strong>actualizaremos el precio de la franja de la cooperativa,</strong> que corresponde a nuestro margen.
                       </p>
                       <h1>
-                        Cambios en el cálculo del precio de la energía
+                        Actualización de la franja de la cooperativa
                       </h1>
                       <p>
-                        A partir del 1 de agosto aplicaremos los siguientes cambios en la fórmula para calcular el precio de la energía:
+                        En la <strong>tarifa indexada empresa</strong> personalizamos el precio de la franja de la cooperativa (la variable F de la fórmula indexada que podéis consultar en ) según vuestro uso de energía anual. Por este motivo, una vez al año, revisamos vuestro uso de energía de los últimos doce meses y ajustamos el precio de la franja (F): a mayor uso, el valor de esta variable se reduce, y a la inversa, si el uso ha disminuido, su valor se incrementa.
                       </p>
                       <ul>
                         <li>
@@ -225,29 +203,7 @@ ${plantilla_header}
                         </li>
                       </ul>
                       <p>
-                        La nueva fórmula, pues, será la siguiente:
-                      </p>
-                      <p>
-                        <strong style="font-size: 14px; text-align: center">
-                          PH = 1,015 × [(PHM + Pc + Sc + <span style="color:#7dbc09">Dsv</span> + <span style="color:#7dbc09">GdO</span> + POsOm) (1 + Perd) + FE + F] + PTD + CA
-                        </strong>
-                      </p>
-                      <p>
-                        (En <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/#formula-indexada">nuestra web</a> podéis ver a qué corresponde cada término).
-                      </p>
-                      %if data['canaries'] or data['balears']:
-                        <p>
-                          También <strong>modificamos el precio de compensación de los excedentes</strong> para que sea igual al precio que los retribuye Red Eléctrica. Este cambio supondrá una <strong>  ligera disminución del precio de compensación,</strong> ya que al precio actual del mercado insular le pasaremos a restar un término llamado Sph Auto.
-                        </p>
-                      %endif
-                      <h1>
-                        Actualización anual de la franja de la cooperativa
-                      </h1>
-                      <p>
-                        En la <strong>tarifa indexada empresa</strong> personalizamos el precio de la franja de la cooperativa (la variable F de la fórmula) según vuestro uso de energía anual. Por este motivo, una vez al año, revisamos vuestro uso de energía de los últimos doce meses y ajustamos el precio de la franja (F): a mayor uso, el valor de esta variable se reduce, y a la inversa, si el uso ha disminuido, su valor se incrementa.
-                      </p>
-                      <p>
-                        Para vuestro contrato, actualmente la franja F (que también incluye los costes de las garantías de origen 100% renovable y de los desvíos) es de ${data['dades_index']['f_antiga_eie']} €/kWh y a partir del 1 de agosto (que tal y como os hemos explicado, corresponderá únicamente al margen per la cooperativa) será de: <strong>${data['dades_index']['f_nova_eie']} €/kWh.</strong>
+                        Para vuestro contrato, actualmente la franja F es de ${data['dades_index']['f_antiga_eie']} €/kWh y a partir del 1 de septiembre será de: <strong>${data['dades_index']['f_nova_eie']} €/kWh.</strong>
                       </p>
                       <p>
                         Este precio está calculado teniendo en cuenta vuestro uso de energía de los últimos doce meses: <strong>${data['dades_index']['conany']} kWh.</strong>
@@ -256,7 +212,7 @@ ${plantilla_header}
                         Estimación orientativa
                       </h2>
                       <p>
-                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía con la nueva franja F y la nueva fórmula para calcular el precio de la energía.</strong> Teniendo en cuenta el consumo del último año, el coste para los próximos doce meses con la fórmula y la franja F actual sería de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mientras que con la nueva franja y la nueva fórmula seria de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En ambos casos, la estimación incluye el 21% de IVA y el 5,11% del impuesto especial de la electricidad.
+                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía con la nueva franja F.</strong> Teniendo en cuenta el uso del último año, el coste para los próximos doce meses con la franja F actual sería de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mientras que con la nueva franja sería de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En ambos casos, la estimación incluye el 21% de IVA y el 5,11% del impuesto especial de la electricidad.
                       </p>
                       <h2>Información legal</h2>
                       <p>
@@ -265,24 +221,7 @@ ${plantilla_header}
                       <p>
                         En este correo adjuntamos el contrato actualizado con los cambios aplicados. Si estáis de acuerdo, <strong>no es necesario que retornéis el documento firmado,</strong> puesto que la actualización del precio se aplica automáticamente. Igualmente, debemos informaros que si, por alguna razón, este cambio os hiciera replantear la continuidad con la cooperativa, podéis dar de baja vuestro contrato mediante un cambio de comercializadora, ya que no aplicamos penalizaciones ni cláusulas de permanencia. Asimismo, si esta es vuestra decisión, os agradeceremos que nos lo comuniquéis con un preaviso de 30 días. En este caso, facturaríamos el consumo realizado hasta la fecha de baja del contrato, con los precios vigentes en cada momento.
                       </p>
-                      <h2>Nuevo apartado web: tendencia de precios de las próximas horas</h2>
-                      <p>
-                        Para acabar, os informamos que hemos estrenado un nuevo <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/">apartado web</a> donde podéis <strong>consultar la previsión de precios de la energía en la tarifa indexada del mismo día y del día siguiente.</strong> A pesar de que los precios que mostramos están calculados con la franja general para 2.0TD, 3.0TD y 6.1TD (no vuestra franja personalizada), y que no son los precios definitivos (hay que añadir una variable que se publica con posterioridad), es <strong>útil para saber a qué horas la energía será más barata o más cara.</strong>
-                      </p>
-                      <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                        <tr>
-                          <td align="center">
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                              <tr>
-                                <td align="center">
-                                  <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/precio-hoy/" class="f-fallback button" target="_blank">Mira la pàgina</a>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                      <p>Quedamos a vuestra disposición para cualquier duda o consulta.</p>
+                     <p>Quedamos a vuestra disposición para cualquier duda o consulta.</p>
                       <p>
                         Un cordial saludo,
                       </p>
