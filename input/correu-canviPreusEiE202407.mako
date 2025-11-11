@@ -51,8 +51,6 @@ ${plantilla_header}
                   <div class="f-fallback">
                     <!-- Mail -->
                     <p>
-                      Hola,<br/>
-                    </p>
 
                     % if data['lang'] == "ca_ES":
                       <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -61,7 +59,7 @@ ${plantilla_header}
                               <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
                               <tr>
                                   <td width="50%" class="purchase_footer" valign="middle">
-                                  <p class="f-fallback purchase_total purchase_total--label">Contracte Som Energia nº</p>
+                                  <p class="f-fallback purchase_total purchase_total--label">Número de contracte</p>
                                   </td>
                                   <td width="50%" class="purchase_footer" valign="middle">
                                   <p class="f-fallback">${data['contract']['numero']}</p>
@@ -89,61 +87,39 @@ ${plantilla_header}
                       </table>
 
                       <p>
-                        Ens posem en contacte amb vosaltres per informar-vos que <strong>a partir de l'1 de setembre renovarem el contracte amb la tarifa indexada empresa</strong> que teniu contractada actualment i que <strong>actualitzarem el preu de la franja de la cooperativa,</strong> que correspon al nostre marge.
+                      Hola,
+                      </p>
+                      Ens posem en contacte amb vosaltres per informar-vos que <strong>a partir de l'1 de gener de 2026 renovarem el contracte amb la tarifa indexada empresa</strong> que teniu contractada actualment i que <strong>actualitzarem el preu de la franja de la cooperativa,</strong> que correspon al nostre marge.
                       </p>
                       <h1>
                         Actualització de la franja de la cooperativa
                       </h1>
                       <p>
-                        En la <strong>tarifa indexada empresa</strong> personalitzem el preu de la franja de la cooperativa (la variable F de la fórmula indexada que podeu consultar al <a href="https://www.somenergia.coop/ca/servicios/com-calculem-el-preu">nostre web</a>) segons el vostre ús d'energia anual. Per això, un cop a l'any, revisem el vostre ús d'energia dels últims dotze mesos i ajustem el preu de la franja (F): a major ús d'energia, el valor d'aquesta variable es redueix, i a la inversa, si l'ús ha disminuït, el seu valor s'incrementa.
+                        En la <strong>tarifa indexada empresa</strong> personalitzem el preu de la franja de la cooperativa (la variable F de la fórmula indexada que podeu consultar al <a href="https://www.somenergia.coop/ca/serveis/com-calculem-el-preu">nostre web</a>) segons el vostre ús d'energia anual. Per això, un cop a l'any, revisem el vostre ús d'energia dels últims dotze mesos i ajustem el preu de la franja: si heu augmentat l'ús d'energia, el valor d'aquesta variable es redueix, i a la inversa, si el vostre ús ha disminuït, el seu valor s'incrementa.
                       </p>
-                      <ul>
-                        <li>
-                          Traiem de la franja de la cooperativa (F) el cost de les garanties d'origen 100% renovable (GdO) i dels desviaments (Dsv) i els posem amb la resta de costos variables, de manera que la franja serà únicament el marge per la viabilitat de la cooperativa.
-                        </li>
-                        <li>
-                          Eliminen del càlcul el preu del mecanisme d'ajust del gas (PHMA), que ja no és vigent i el cost del servei d'interrumpibilitat (I), perquè és zero.
-                        </li>
-                      </ul>
-                      <p>
-                        Per al vostre contracte, actualment la franja F és de ${data['dades_index']['f_antiga_eie']} €/kWh,  i a partir de l'1 de setembre serà de:  <strong>${data['dades_index']['f_nova_eie']} €/kWh.</strong>
+                      Per al vostre contracte, actualment la franja és de ${data['dades_index']['f_antiga_eie']} €/kWh,  i <strong>a partir de l'1 de gener serà de: ${data['dades_index']['f_nova_eie']} €/kWh.</strong>
                       </p>
                       <p>
-                        Aquest preu està calculat tenint en compte el vostre ús d'energia dels últims dotze mesos: <strong>${data['dades_index']['conany']} kWh.</strong>
+                        Aquest preu està calculat tenint en compte el vostre <strong>ús d'energia dels últims dotze mesos: ${data['dades_index']['conany']} kWh.</strong>
                       </p>
                       <h2>
                         Estimació orientativa
                       </h2>
                       <p>
-                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja F.</strong> Tenint en compte l'ús de l'últim any, el cost per als pròxims dotze mesos amb la franja F actual seria de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mentre que amb la nova franja seria de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En tots dos casos, l'estimació inclou el 21% d'IVA i el 5,11% d'impost especial de l'electricitat.
+                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja.</strong> Tenint en compte l'ús de l'últim any, el cost per als pròxims dotze mesos amb la franja actual seria de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mentre que amb la nova franja seria de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En tots dos casos, l'estimació inclou el 21% d'IVA i el 5,11% d'impost especial de l'electricitat.
                       </p>
-                      <h2>Informació legal</h2>
+                      <h2>Actualització de peatges i càrrecs</h2>
                       <p>
-                        La <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/#preu-i-actualitzacio">clàusula 5.3 (ii) de les Condicions Generals</a> ens autoritza a fer aquest canvi de la part del preu no regulada.
+                        Els peatges i càrrecs regulats s'actualitzen automàticament (POSAR EL TEXT DEL CORREU GENERAL).
+                      </p>
+                      <h3>Informació legal</h3>
+                      <p>
+                        La <a href="https://back.somenergia.coop/storage/app/media/DOCS/Condicions-Generals-contracte-subministrament-energia-electrica-SomEnergia.pdf">clàusula 5.3 (ii) de les Condicions Generals</a> ens autoritza a fer aquest canvi de la part del preu no regulada.
                       </p>
                       <p>
                         En aquest correu adjuntem el contracte actualitzat amb els canvis aplicats. Si hi esteu d'acord, <strong>no cal que ens retorneu el document signat,</strong> ja que l'actualització del preu s'aplica automàticament. Igualment, hem d'informar-vos que si, per alguna raó, aquest canvi us fes replantejar la continuïtat amb la cooperativa, podríeu donar de baixa el vostre contracte mitjançant un canvi de comercialitzadora, ja que no apliquem penalitzacions ni clàusules de permanència. Tanmateix, si aquesta és la vostra decisió, us agrairem que ens ho comuniqueu amb un preavís de 30 dies. En aquest cas, facturaríem el consum realitzat fins a la data de baixa del contracte, amb els preus vigents a cada moment.
                       </p>
-                      <h2>Nou apartat web: tendència de preus de les pròximes hores</h2>
-                      <p>
-                        Per acabar, us informem que hem estrenat un nou <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/">apartat web</a> on podeu <strong>consultar la previsió dels preus de l'energia en la tarifa indexada del mateix dia i de l'endemà.</strong> Tot i que els preus que mostrem estan calculats amb la franja general per 2.0TD, 3.0TD i 6.1TD (no amb la vostra franja personalitzada), i que no són els preus definitius (caldrà afegir-hi un terme que es publica amb posterioritat), és <strong>útil per saber a quines hores l'energia serà més barata o més cara.</strong>
-                      </p>
-                      <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                        <tr>
-                          <td align="center">
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                              <tr>
-                                <td align="center">
-                                  <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/preu-avui/" class="f-fallback button" target="_blank">Mira la pàgina</a>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                      <p>
-                        Quedem a la vostra disposició per a qualsevol dubte o consulta.
-                      </p>
+                     <p>Quedem a la vostra disposició per a qualsevol dubte o consulta.</p>
                       <p>
                         Salutacions cordials,
                       </p>
@@ -158,7 +134,7 @@ ${plantilla_header}
                               <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
                               <tr>
                                   <td width="50%" class="purchase_footer" valign="middle">
-                                  <p class="f-fallback purchase_total purchase_total--label">Contrato Som Energia nº</p>
+                                  <p class="f-fallback purchase_total purchase_total--label">Número de contrato</p>
                                   </td>
                                   <td width="50%" class="purchase_footer" valign="middle">
                                   <p class="f-fallback">${data['contract']['numero']}</p>
@@ -186,37 +162,34 @@ ${plantilla_header}
                       </table>
 
                       <p>
-                        Nos ponemos en contacto para informaros que <strong>a partir del 1 de septiembre renovaremos el contrato con la tarifa indexada empresa</strong> que tenéis contratada actualmente y que <strong>actualizaremos el precio de la franja de la cooperativa,</strong> que corresponde a nuestro margen.
+                      Hola,
+                       </p>
+                        Nos ponemos en contacto para informaros que <strong>a partir del 1 de enero de 2026 renovaremos el contrato con la tarifa indexada empresa</strong> que tenéis contratada actualmente y que <strong>actualizaremos el precio de la franja de la cooperativa,</strong> que corresponde a nuestro margen.
                       </p>
                       <h1>
                         Actualización de la franja de la cooperativa
                       </h1>
                       <p>
-                        En la <strong>tarifa indexada empresa</strong> personalizamos el precio de la franja de la cooperativa (la variable F de la fórmula indexada que podéis consultar en ) según vuestro uso de energía anual. Por este motivo, una vez al año, revisamos vuestro uso de energía de los últimos doce meses y ajustamos el precio de la franja (F): a mayor uso, el valor de esta variable se reduce, y a la inversa, si el uso ha disminuido, su valor se incrementa.
+                        En la <strong>tarifa indexada empresa</strong> personalizamos el precio de la franja de la cooperativa (la variable F de la fórmula indexada que podéis consultar en <a href="https://www.somenergia.coop/es/servicios/como-calculamos-el-precio/">nuestro web</a>) según vuestro uso de energía anual. Por este motivo, una vez al año, revisamos vuestro uso de energía de los últimos doce meses y ajustamos el precio de la franja: si habéis aumentado vuestro uso, el valor de esta variable se reduce, y a la inversa, si vuestro uso ha disminuido, su valor se incrementa.
                       </p>
-                      <ul>
-                        <li>
-                          Sacamos de la franja de la cooperativa (F) el coste de las garantías de origen 100% renovable (GdO) y de los desvíos (Dsv) y los ponemos con el resto de costes variables, de manera que la franja será únicamente el margen para la viabilidad de la cooperativa.
-                        </li>
-                        <li>
-                          Eliminamos del cálculo el precio del mecanismo de ajuste del gas (PHMA), que ya no es vigente y el coste del servicio de interrumpibilidad (I), porque es cero.
-                        </li>
-                      </ul>
-                      <p>
-                        Para vuestro contrato, actualmente la franja F es de ${data['dades_index']['f_antiga_eie']} €/kWh y a partir del 1 de septiembre será de: <strong>${data['dades_index']['f_nova_eie']} €/kWh.</strong>
+                      Para vuestro contrato, actualmente la franja es de ${data['dades_index']['f_antiga_eie']} €/kWh y <strong>a partir del 1 de enero será de: ${data['dades_index']['f_nova_eie']} €/kWh.</strong>
                       </p>
                       <p>
-                        Este precio está calculado teniendo en cuenta vuestro uso de energía de los últimos doce meses: <strong>${data['dades_index']['conany']} kWh.</strong>
+                        Este precio está calculado teniendo en cuenta vuestro <strong>uso de energía de los últimos doce meses: ${data['dades_index']['conany']} kWh.</strong>
                       </p>
                       <h2>
                         Estimación orientativa
                       </h2>
                       <p>
-                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía con la nueva franja F.</strong> Teniendo en cuenta el uso del último año, el coste para los próximos doce meses con la franja F actual sería de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mientras que con la nueva franja sería de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En ambos casos, la estimación incluye el 21% de IVA y el 5,11% del impuesto especial de la electricidad.
+                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía con la nueva franja.</strong> Teniendo en cuenta el uso del último año, el coste para los próximos doce meses con la franja actual sería de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mientras que con la nueva franja sería de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En ambos casos, la estimación incluye el 21% de IVA y el 5,11% del impuesto especial de la electricidad.
                       </p>
-                      <h2>Información legal</h2>
+                       <h2>Actualización de peajes y cargos</h2>
                       <p>
-                        La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/#precio-y-actualizacion">cláusula 5.3 (ii) de las Condiciones Generales</a> nos autoriza a realizar este cambio de la parte del precio no regulada.
+                        Los peajes y cargos regulados se actualizan automáticamente (POSAR EL TEXT DEL CORREU GENERAL).
+                      </p>
+<h3>Información legal</h3>
+                      <p>
+                        La <a href="https://back.somenergia.coop/storage/app/media/DOCS/Condiciones-generales-contrato-suministro-energia-electrica-SomEnergia.pdf">cláusula 5.3 (ii) de las Condiciones Generales</a> nos autoriza a realizar este cambio de la parte del precio no regulada.
                       </p>
                       <p>
                         En este correo adjuntamos el contrato actualizado con los cambios aplicados. Si estáis de acuerdo, <strong>no es necesario que retornéis el documento firmado,</strong> puesto que la actualización del precio se aplica automáticamente. Igualmente, debemos informaros que si, por alguna razón, este cambio os hiciera replantear la continuidad con la cooperativa, podéis dar de baja vuestro contrato mediante un cambio de comercializadora, ya que no aplicamos penalizaciones ni cláusulas de permanencia. Asimismo, si esta es vuestra decisión, os agradeceremos que nos lo comuniquéis con un preaviso de 30 días. En este caso, facturaríamos el consumo realizado hasta la fecha de baja del contrato, con los precios vigentes en cada momento.
