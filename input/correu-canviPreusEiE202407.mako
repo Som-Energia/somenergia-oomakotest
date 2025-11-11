@@ -97,7 +97,7 @@ ${plantilla_header}
                       <p>
                         En la <strong>tarifa indexada empresa</strong> personalitzem el preu de la franja de la cooperativa (la variable F de la fórmula indexada que podeu consultar al <a href="https://www.somenergia.coop/ca/serveis/com-calculem-el-preu">nostre web</a>) segons el vostre ús d'energia anual. Per això, un cop a l'any, revisem el vostre ús d'energia dels últims dotze mesos i ajustem el preu de la franja: si heu augmentat l'ús d'energia, el valor d'aquesta variable es redueix, i a la inversa, si el vostre ús ha disminuït, el seu valor s'incrementa.
                       </p>
-                      Per al vostre contracte, actualment la franja és de ${data['dades_index']['f_antiga_eie']} €/kWh,  i <strong>a partir de l'1 de gener serà de: ${data['dades_index']['f_nova_eie']} €/kWh.</strong>
+                      Per al vostre contracte, actualment la franja és de ${data['dades_index']['f_antiga']} €/kWh,  i <strong>a partir de l'1 de gener serà de: ${data['dades_index']['f_nova']} €/kWh.</strong>
                       </p>
                       <p>
                         Aquest preu està calculat tenint en compte el vostre <strong>ús d'energia dels últims dotze mesos: ${data['dades_index']['conany']} kWh.</strong>
@@ -172,7 +172,7 @@ ${plantilla_header}
                       <p>
                         En la <strong>tarifa indexada empresa</strong> personalizamos el precio de la franja de la cooperativa (la variable F de la fórmula indexada que podéis consultar en <a href="https://www.somenergia.coop/es/servicios/como-calculamos-el-precio/">nuestro web</a>) según vuestro uso de energía anual. Por este motivo, una vez al año, revisamos vuestro uso de energía de los últimos doce meses y ajustamos el precio de la franja: si habéis aumentado vuestro uso, el valor de esta variable se reduce, y a la inversa, si vuestro uso ha disminuido, su valor se incrementa.
                       </p>
-                      Para vuestro contrato, actualmente la franja es de ${data['dades_index']['f_antiga_eie']} €/kWh y <strong>a partir del 1 de enero será de: ${data['dades_index']['f_nova_eie']} €/kWh.</strong>
+                      Para vuestro contrato, actualmente la franja es de ${data['dades_index']['f_antiga']} €/kWh y <strong>a partir del 1 de enero será de: ${data['dades_index']['f_nova']} €/kWh.</strong>
                       </p>
                       <p>
                         Este precio está calculado teniendo en cuenta vuestro <strong>uso de energía de los últimos doce meses: ${data['dades_index']['conany']} kWh.</strong>
