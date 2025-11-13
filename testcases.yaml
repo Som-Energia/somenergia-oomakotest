@@ -47,13 +47,15 @@
 #    cases:
 #      ca: 192
 #
-#nouSoci_destral:
+# nouSoci_destral:
 #  template: input/correu-nouSoci.mako
 #  model: somenergia.soci
 #  poweremailId: som_polissa_soci.nou_soci_mail_webforms
 #  cases:
-#    es: 27
-#    ca: 129
+#    w_polisses_es: 27
+#    w_polisses_ca: 13147
+#    wo_polisses_es: 89800
+#    wo_polisses_ca: 129
 #
 #  emailCanviTarifaIndexada:
 #    template: input/correu-emailCanviTarifaIndexada.mako
@@ -533,13 +535,15 @@
 #    es: 384
 #    ca: 11
 #
-#contracteEsborranyNouSoci:
+# contracteEsborranyNouSoci:
 #  template: input/correu-contracteEsborrany-nouSoci.mako
 #  model: giscedata.polissa
 #  poweremailId: som_polissa_soci.email_contracte_esborrany_nou_soci
 #  cases:
-#    es: 384
-#    ca: 11
+#    particular_es: 384
+#    particular_ca: 11
+#    empresa_es: 232973
+#    empresa_ca: 128024
 #canviDePagador:
 #  template: input/correu-canviPagador.mako
 #  model: giscedata.polissa
@@ -700,7 +704,7 @@
 #   poweremailId: giscedata_switching.notification_atr_B1_05
 #   cases:
 #     altaNou_ca: 116275
-#activacioT106:
+# activacioT106:
 #  template: input/correu-acceptacioT106.mako
 #  model: giscedata.switching
 #  poweremailId: giscedata_switching.notification_atr_T1_06
