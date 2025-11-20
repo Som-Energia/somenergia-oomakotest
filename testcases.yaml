@@ -1602,6 +1602,13 @@
 #  poweremailId: 465
 #  cases:
 #    ca_20: 2477030
+canviPreus202601_gkwh_no_contractes:
+ template: input/correu-canviPreus202601_gkwh_no_contractes.mako
+ model: som.enviament.massiu
+ poweremailId: 509
+ cases:
+   ca_20: 2477030
+   es_20: 2480423
 #situacioExcepcional2022:
 #  template: input/correu-situacioExcepcional2022.mako
 #  model: som.enviament.massiu
