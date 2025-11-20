@@ -90,29 +90,41 @@ ${plantilla_header}
           </table>
       </figure>
     % endif
-    ## FET FINS AQUI
-    % if data['modcon'] != "atr":
+    % if data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'atr':
       <p>
-        L'1 de juny <strong>abaixarem el preu de l'energia</strong> de les tarifes per períodes (la que tens ara, ho és). El cost de l'energia al mercat majorista ha baixat lleugerament, i les previsions per als propers mesos indiquen que seguirà així. Com que el nostre objectiu no és lucrar-nos (som una cooperativa sense ànim de lucre), sinó transformar el model energètic i tenir unes tarifes justes, hi reflectim el cost real, també quan baixa.
+        L’1 de gener modificarem els preus de les tarifes per períodes (la que tens ara, ho és). Alguns conceptes han pujat i d’altres han baixat, i el resultat final fa que, per a un contracte domèstic tipus <strong>quedi pràcticament igual</strong> (la variació és d’un augment de menys <strong>d’un 0,5%</strong>).
       </p>
+      <p>
+        A la <strong>tarifa 2.0TD períodes</strong> (la teva), el preu de l’energia disminueix una mica als períodes punta i pla, i augmenta una mica al període vall.
+      </p>
+      <p>
+        Els preus han variat tant pel cost de l’energia (l’aprovisionament), com pels altres conceptes (el que està relacionat amb les pèrdues d’energia pel trasllat per la xarxa, desviaments, certificats de garantia d’origen,...), com pel marge per a la viabilitat de la cooperativa.
+      </p>
+    % elif data['tarifa_acces'] != '2.0TD' and data['mode_facturacio'] == 'atr':
+    <p>
+      L’1 de gener modificarem els preus de les tarifes per períodes (la que tens ara, ho és). A les <strong>tarifes 3.0TD períodes i 6.1TD períodes</strong> ha variat el preu de l’energia (alguns períodes pugen i d’altres baixen) per la variació del cost de l’energia i per la variació dels altres conceptes (desviaments, coeficients de pèrdues, certificats de garantia d’origen…). El marge per a la viabilitat de la cooperativa es manté igual.
+    </p>
+    <p>
+      A continuació podeu veure els nous preus, així com una estimació aproximada de com us podria afectar en el vostre cas en concret.
+    </p>
+    % elif data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'index':
+    <p>
+      L’1 de gener modificarem els preus de la tarifa 2.0TD indexada (la que tens ara, ho és). En concret, variarà el preu de la potència, ja que hi hem augmentat lleugerament el marge per a la viabilitat de la cooperativa.
+    </p>
+    <p>
+      Aquesta variació de potència, a un contracte tipus li suposarà un augment d’uns 2 euros a l’any.
+    </p>
     % endif
+
+    <p>Et donem més detalls de les variacions a <a href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/al-gener-actualitzarem-els-preus?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquest article del blog</a>.</p>
+    <h1>
+      Nous preus i comparativa amb preus actuals
+    </h1>
     <p>
-      (Aquest canvi de preus no està relacionat amb l'apagada generalitzada de llum de dilluns.)
+      A continuació tens una taula amb els nous preus (vigents a partir de l'1 de gener), i una comparació amb els preus actuals (fins a 31 de desembre) de la tarifa que tens contractada. Els impostos aplicats són l'${data['impostos_str']}, i l'impost elèctric del 5,11%.
     </p>
-  <h1>
-    Nous preus i comparativa amb preus actuals
-  </h1>
-  %if data['modcon'] == 'atr':
-    <p>
-      A continuació tens una taula amb els nous preus (vigents a partir de l'1 de juny), i una comparació amb els preus actuals (fins a 31 de maig) de la tarifa per períodes. Els impostos aplicats són l'${data['impostos_str']}, i l'impost elèctric del 5,11%.
-    </p>
-  %else:
-    <p>
-      A continuació tens una taula amb els nous preus (vigents a partir de l'1 de juny), i una comparació amb els preus actuals (fins a 31 de maig) de la tarifa que tens contractada. Els impostos aplicats són l'${data['impostos_str']}, i l'impost elèctric del 5,11%.
-    </p>
-  %endif
-  %if data['tarifa_acces'] == '2.0TD':
     <br/>
+  %if data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'atr':
     <h1>
       Tarifa 2.0TD períodes
     </h1>
@@ -218,12 +230,157 @@ ${plantilla_header}
         </td>
       </tr>
     </table>
-    <p>
-      El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#ambit-domestic">el que ja hi havia.</a>
-    </p>
+    <h3>
+      Preu del terme de potència (en euros/kWh a l'any)
+    </h3>
+    <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td colspan="5">
+          <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="20%" class="purchase_borders" style="vertical-align: center;" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td colspan="2" width="40%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="center">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Preus actuals</strong></p>
+              </td>
+              <td colspan="2" width="40%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="center">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Preus nous</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0"></p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període punta</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període vall</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període punta</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període vall</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Sense impostos</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P2']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous']['tp']['P2']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Sense impostos</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P2']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous_imp']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous_imp']['tp']['P2']}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   %endif
-  %if data['tarifa_acces'] == '3.0TD' or data['tarifa_acces'] == '3.0TDVE' or data['tarifa_acces'] == '6.1TD':
-    <br/>
+  %if data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'index':
+    <h1>Tarifa ${data['tarifa_acces']} indexada</h1>
+    <h3>
+      Preu del terme de potència (en euros/kWh a l'any)
+    </h3>
+    <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td colspan="5">
+          <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="20%" class="purchase_borders" style="vertical-align: center;" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td colspan="2" width="40%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="center">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Preus actuals</strong></p>
+              </td>
+              <td colspan="2" width="40%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="center">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Preus nous</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0"></p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període punta</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període vall</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període punta</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període vall</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Sense impostos</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P2']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous']['tp']['P2']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Sense impostos</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P2']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous_imp']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous_imp']['tp']['P2']}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  %endif
+  %if data['tarifa_acces'] != '2.0TD' and data['mode_facturacio'] == 'atr':
     <h1>Tarifa ${data['tarifa_acces']} períodes</h1>
     <h3>Preu del terme d'energia (en euros/kWh)</h3>
     <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -390,20 +547,11 @@ ${plantilla_header}
         </td>
       </tr>
     </table>
-    %if data['tarifa_acces'] == '3.0TDVE':
     <p>
-      El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa30TDVE">el que ja hi havia</a>.
+      El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-llum/domestic-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">el que ja hi havia</a>.
     </p>
-    %elif data['tarifa_acces'] == '6.1TD':
-    <p>
-      El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa61TD">el que ja hi havia</a>.
-    </p>
-    %else:
-    <p>
-      El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-periodes/#tarifa30TD">el que ja hi havia</a>.
-    </p>
-    %endif
   %endif
+  ## FET FINS AQUÍ
   %if data['autoconsum']['compensacio']:
     <h2>Autoproducció</h2>
     <p>
@@ -637,29 +785,41 @@ ${plantilla_header}
         </table>
     </figure>
   % endif
-  ## FET FINS AQUI
-  % if data['modcon'] != "atr":
+      % if data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'atr':
+      <p>
+        El 1 de enero modificaremos los precios de las tarifas por periodos (la que tienes ahora, lo es). Algunos conceptos han subido y otros han bajado, y el resultado final hace que, para un contrato doméstico tipo <strong>quede prácticamente igual</strong> (la variación es de un aumento de menos <strong>del 0,5%</strong>).
+      </p>
+      <p>
+        En la <strong>tarifa 2.0TD periodos</strong> (la tuya), el precio de la energía disminuye un poco en los periodos punta y plano, y aumenta un poco en el periodo valle.
+      </p>
+      <p>
+        Los precios han variado tanto por el coste de la energía (el aprovisionamiento), como por los otros conceptos (el relacionado con las pérdidas de energía por el traslado por la red, desvíos, certificados de garantía de origen,...), como por el margen para la viabilidad de la cooperativa.
+      </p>
+    % elif data['tarifa_acces'] != '2.0TD' and data['mode_facturacio'] == 'atr':
     <p>
-      El 1 de junio <strong>bajaremos el precio de la energía</strong> de las tarifas por periodos (la que tienes ahora, lo es). El coste de la energía en el mercado mayorista ha bajado ligeramente, y las previsiones para los próximos meses indican que va a seguir siendo así. Como nuestro objetivo no es lucrarnos (somos una cooperativa sin ánimo de lucro), sino transformar el modelo energético y tener unas tarifas justas, reflejamos el coste real, también cuando este disminuye.
+      El 1 de enero modificaremos los precios de las tarifas por periodos (la que tienes ahora, lo es). En las <strong>tarifas 3.0TD periodos y 6.1TD periodos</strong> ha variado el precio de la energía (algunos periodos suben y otros bajan) por la variación del coste de la energía y por la variación de los otros conceptos (desvíos, coeficientes de pérdidas, certificados de garantía de origen…). El margen para la viabilidad de la cooperativa permanece igual.
     </p>
-  % endif
-  <p>
-    (Este cambio de precios no está relacionado con el apagón generalizado de luz del lunes.)
-  </p>
-  <h1>
-    Nuevos precios y comparativa con precios actuales
-  </h1>
-  %if data['modcon'] == 'atr':
     <p>
-      A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de junio) y una comparación con los precios actuales (hasta 31 de mayo) de la tarifa periodos. Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
+      A continuación puedes ver los nuevos precios, así como una estimación aproximada de cómo podría afectarte en tu caso en concreto.
     </p>
-  %else:
+    % elif data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'index':
     <p>
-      A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de junio) y una comparación con los precios actuales (hasta 31 de mayo) de la tarifa que tienes contratada. Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
+      El 1 de enero modificaremos los precios de la tarifa 2.0TD indexada (la que tienes ahora, lo es). En concreto, variará el precio de la potencia, puesto que hemos aumentado ligeramente el margen para la viabilidad de la cooperativa.
     </p>
-  %endif
+    <p>
+      Esta variación de potencia, a un contrato tipo le supondrá un aumento de unos 2 euros al año.
+    </p>
+    % endif
 
-  %if data['tarifa_acces'] == '2.0TD':
+    <p>Te damos más detalles de las variaciones en <a href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/en-enero-actualizaremos-los-precios?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">del blog</a>.</p>
+    <h1>
+      Nuevos precios y comparativa con precios actuales
+    </h1>
+    <p>
+      A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de enero) y una comparación con los precios actuales (hasta 31 de diciembre) de la tarifa que tienes contratada. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
+    </p>
+
+  %if data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'atr':
     <br/>
     <h1>
       Tarifa 2.0TD periodos
@@ -766,12 +926,157 @@ ${plantilla_header}
         </td>
       </tr>
     </table>
-    <p>
-      El precio de la potencia no ha variado, sigue siendo <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#opciones-de-la-tarifa-por-periodos">el que ya había.</a>
-    </p>
+    <h3>
+      Precio del término de potencia (en euros/kW al año)
+    </h3>
+    <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td colspan="5">
+          <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="20%" class="purchase_borders" style="vertical-align: center;" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td colspan="2" width="40%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="center">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Precios actuales</strong></p>
+              </td>
+              <td colspan="2" width="40%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="center">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Precios nuevos</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0"></p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo punta</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo valle</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo punta</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo valle</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Sin impuestos</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P2']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous']['tp']['P2']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Con impuestos</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P2']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous_imp']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous_imp']['tp']['P2']}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   %endif
-
-  %if data['tarifa_acces'] == '3.0TD' or data['tarifa_acces'] == '3.0TDVE' or data['tarifa_acces'] == '6.1TD':
+%if data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'index':
+    <h1>Tarifa ${data['tarifa_acces']} indexada</h1>
+    <h3>
+      Precio del término de potencia (en euros/kW al año)
+    </h3>
+    <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td colspan="5">
+          <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="20%" class="purchase_borders" style="vertical-align: center;" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td colspan="2" width="40%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="center">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Precios actuales</strong></p>
+              </td>
+              <td colspan="2" width="40%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="center">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Precios nuevos</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0"></p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo punta</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo valle</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo punta</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo valle</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Sin impuestos</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P2']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous']['tp']['P2']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Con impuestos</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P2']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous_imp']['tp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">${data['preus_nous_imp']['tp']['P2']}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  %endif
+  %if data['tarifa_acces'] != '2.0TD' and data['mode_facturacio'] == 'atr':
     <br/>
     <h1>Tarifa ${data['tarifa_acces']} periodos</h1>
     <h3>Precio del término de energía (en euros/kWh)</h3>
@@ -939,20 +1244,11 @@ ${plantilla_header}
         </td>
       </tr>
     </table>
-    %if data['tarifa_acces'] == '3.0TDVE':
-      <p>
-        El precio de la potencia no ha variado, sigue siendo <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#tarifa30TDVE">el que ya había</a>.
-      </p>
-    %elif data['tarifa_acces'] == '6.1TD':
-      <p>
-        El precio de la potencia no ha variado, sigue siendo <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#tarifa61TD">el que ya había</a>.
-      </p>
-    %else:
-      <p>
-        El precio de la potencia no ha variado, sigue siendo <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-periodos/#tarifa30TD">el que ya había</a>.
-      </p>
-    %endif
+    <p>
+      El precio de la potencia no ha variado, sigue siendo <a href="https://www.somenergia.coop/es/tarifas-luz/empresa-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">el que ya había</a>.
+    </p>
   %endif
+  ## FET FINS AQUÍ
 
   %if data['autoconsum']['compensacio']:
     <h2>Autoproducción</h2>
