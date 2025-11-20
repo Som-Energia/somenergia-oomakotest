@@ -551,13 +551,12 @@ ${plantilla_header}
       El preu de la potència no ha variat, segueix sent <a href="https://www.somenergia.coop/ca/tarifes-llum/domestic-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">el que ja hi havia</a>.
     </p>
   %endif
-  ## FET FINS AQUÍ
-  %if data['autoconsum']['compensacio']:
+  %if data['mode_facturacio'] == 'atr' and data['autoconsum']['compensacio']:
     <h2>Autoproducció</h2>
     <p>
-      El preu de l'energia ha baixat en general, i la baixada ha estat més pronunciada durant les hores de sol. És per això que <strong>disminueix la compensació dels excedents d'autoproducció</strong>. La compensació la seguim fixant al mateix valor mitjà del cost de l'energia en hores solars (compensem l'energia excedentària al mateix valor que el que ens costaria comprar-la al mercat majorista).
+      El preu de l’energia durant les hores de sol ha continuat baixant, i la previsió és que segueixi fent-ho. És per això que <strong>disminueix la compensació dels excedents d’autoproducció</strong>, que afecta a les persones que tingueu alguna modalitat d’autoproducció amb compensació simplificada. La compensació la seguim fixant al mateix valor mitjà del cost de l’energia en hores solars (compensem l’energia excedentària al mateix valor que el que ens costaria comprar-la al mercat majorista).
     </p>
-    <h3>Preu de compensació d'excedents d'autoproducció (en euros/kWh)</h3>
+    <h3>Preu de compensació d’excedents d’autoproducció (en euros/kWh)</h3>
     <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
       <tr>
         <td colspan="3">
@@ -601,9 +600,10 @@ ${plantilla_header}
     </table>
     <br/>
     <p>
-      Et recordem que també tens activat el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats/">Flux Solar</a>, que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada. Pots veure si tens Sols disponibles a la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a> (<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar#sols">aquí</a> t'expliquem el camí). Si és el cas, se t'aniran aplicant a les properes factures.
+      Les persones que tingueu compensació simplificada també teniu activat el <a href="https://www.somenergia.coop/ca/actualitat/cooperativa/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Flux Solar</a>, que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada. Podeu veure si tens Sols disponibles a la vostra <a href="https://oficinavirtual.somenergia.coop/ca/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Oficina Virtual</a> (<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar#sols?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquí</a> t'expliquem el camí). Si és el cas, se t'aniran aplicant a les properes factures.
     </p>
   %endif
+  ## FET FINS AQUÍ
   <h1>Estimació</h1>
   %if data['origen'] == 'pdf':
     %if data['modcon'] == 'atr' or  data['modcon'] == 'index':
@@ -1248,11 +1248,10 @@ ${plantilla_header}
       El precio de la potencia no ha variado, sigue siendo <a href="https://www.somenergia.coop/es/tarifas-luz/empresa-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">el que ya había</a>.
     </p>
   %endif
-  ## FET FINS AQUÍ
 
-  %if data['autoconsum']['compensacio']:
+  %if data['mode_facturacio'] == 'atr' and data['autoconsum']['compensacio']:
     <h2>Autoproducción</h2>
-    <p>El precio de la energía ha bajado en general, y la bajada ha sido más pronunciada durante las horas de sol. Es por eso que <strong>disminuye la compensación de los excedentes de autoproducción</strong>. La compensación la seguimos fijando al mismo valor medio del coste de la energía en horas solares (compensamos la energía excedentaria al mismo valor que lo que nos costaría comprarla en el mercado mayorista).
+    <p>El precio de la energía durante las horas de sol ha continuado bajando, y la previsión es que siga haciéndolo. Es por eso que <strong>disminuye la compensación de los excedentes de autoproducción</strong>, que afecta a las personas que tengáis alguna modalidad de autoproducción con compensación simplificada. La compensación la seguimos fijando al mismo valor medio del coste de la energía en horas solares (compensamos la energía excedentaria al mismo valor que lo que nos costaría comprarla en el mercado mayorista).
     </p>
     <h3>Precio de compensación de excedentes de autoproducción (en euros/kWh)</h3>
     <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -1298,9 +1297,10 @@ ${plantilla_header}
     </table>
     <br/>
     <p>
-      Te recordamos que también tienes activado el <a href="https://blog.somenergia.coop/som-energia/2023/10/flux-solar-la-herramienta-que-proporciona-descuentos-por-los-excedentes-de-autoproduccion-no-compensados/">Flux Solar</a>, que proporciona descuentos para los excedentes que no pueden compensarse con la compensación simplificada. Puedes ver si tienes Sols disponibles en tu <a href="https://oficinavirtual.somenergia.coop/es">Oficina Virtual</a> (<a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar#sols">aquí</a> te explicamos el camino). Si es el caso, se te irán aplicando en las próximas facturas.
+      Las personas que tengan compensación simplificada también tienen activado el <a href="https://www.somenergia.coop/es/actualidad/cooperativa/flux-solar-la-herramienta-que-proporciona-descuentos-por-los-excedentes-de-autoproduccion-no-compensados?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Flux Solar</a>, que proporciona descuentos para los excedentes que no pueden ser compensados ​​con la compensación simplificada. Puede ver si tienes Sols disponibles en su <a href="https://oficinavirtual.somenergia.coop/es/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">Oficina Virtual</a> (<a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquí</a> te explicamos el camino). Si es el caso, se te irán aplicando en las próximas facturas.
     </p>
   %endif
+  ## FET FINS AQUÍ
 
   <h1>Estimación</h1>
   %if data['origen'] == 'pdf':
