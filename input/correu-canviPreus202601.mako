@@ -795,7 +795,6 @@ ${plantilla_header}
   <p class="p-legal">
     T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d’acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d’informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te de tarifa (<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament enviant-nos una còpia del <a href="https://back.somenergia.coop/storage/app/media/DOCS/Desistiment_Plantilla_CAT.pdf?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">document de desistiment</a>, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
   </p>
-  %endif
   <br/>
   <br/>
   <p>
@@ -1563,37 +1562,29 @@ ${plantilla_header}
   <p>
     Aprovechamos para recordarte que hacia finales de año el gobierno suele hacer la <strong>actualización de los conceptos regulados</strong> de la factura (cargos, peajes…). Así pues, y tal y como está establecido, si el BOE publica alguna actualización, lo aplicaremos automáticamente. No suelen suponer modificaciones substanciales de la factura.
   </p>
-  ## FET FINS AQUÍ
   <h3 style="font-size: 16px">Información legal</h3>
   <p class="p-legal">
-    La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/#precio-y-actualizacion">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios es la cláusula 5.3 (ii).
+    %if data['mode_facturacio'] == 'atr':
+      La <a href="https://back-nova-test.somenergia.coop/storage/app/media/DOCS/Condiciones-generales-contrato-suministro-energia-electrica-SomEnergia.pdf">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios de las tarifas periodos es la cláusula 5.3 (ii).
+    %else:
+      La <a href="https://back-nova-test.somenergia.coop/storage/app/media/DOCS/Condiciones-generales-contrato-suministro-energia-electrica-SomEnergia.pdf">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios de las tarifas indexada es la cláusula 5.3 (ii).
+    %endif
   </p>
   <p class="p-legal">
     Puedes acceder al comparador de ofertas que elabora la Comisión Nacional de los Mercados y la Competencia (CNMC) a través de <a href="https://comparador.cnmc.gob.es">este enlace</a>. El comparador permite consultar y comparar las distintas ofertas vigentes de algunas de las comercializadoras del mercado libre. Ten en cuenta que las tarifas de Som Energia no están incluidas.
   </p>
-  %if data['gurb']:
-    <p class="p-legal">
-      Verás que te enviamos toda la documentación del paquete contractual (Condiciones Generales, Condiciones Específicas del servicio GURB, Condiciones particulares del contrato, y demás documentación relacionada con el servicio de GURB). Te recordamos que este cambio sólo afecta al precio de la energía de la tarifa periodos, y no afecta, por tanto, al servicio de GURB.
-    </p>
-  %endif
-  % if data['modcon'] == "atr" or data['modcon'] == "index":
-    <p class="p-legal">
-      Después de haberte compartido esta información, si este cambio de precios te hiciese replantear seguir con la modificación solicitada, podrías pedir que se pare la modificación de tarifa (escribiéndonos a <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a>) o bien podrías dar de baja tu contrato con nosotros, bien comunicándonoslo directamente, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejáramos de suministrarte energía, con los precios vigentes en cada momento.
-    </p>
-  %else:
-    <p class="p-legal">
-      Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio de precios te hiciese replantear seguir con esta tarifa, podrías cambiarte a la <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/tarifa-indexada/">tarifa indexada</a> (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">a través de tu Oficina Virtual</a>), o podrías dar de baja tu contrato con nosotros, comunicándonoslo directamente,  o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
-    </p>
-  %endif
+  <p class="p-legal">
+    Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio de precios te hiciese replantear seguir con esta tarifa, podrías cambiarte de tarifa (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">a través de tu Oficina Virtual</a>), o podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente enviándonos una copia del <a href="https://back-nova-test.somenergia.coop/storage/app/media/DOCS/Desistimiento_Plantilla_CAST.pdf?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">documento de desistimiento</a>, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
+  </p>
   <br/>
   <br/>
   <p>
     Un cordial saludo,
   </p>
   <p>
-    Equipo de Som Energia <br/>
+    Som Energia <br/>
     <a href="https://www.somenergia.coop/es">www.somenergia.coop</a>
   </p>
-
+  ## FET FINS AQUÍ
 %endif
 ${plantilla_footer}
