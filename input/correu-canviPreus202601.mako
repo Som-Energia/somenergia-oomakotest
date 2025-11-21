@@ -675,6 +675,82 @@ ${plantilla_header}
       Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-llum/domestic-indexada?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Centre d’Ajuda</a>.
     </p>
   %endif
+  %if data["te_gkwh"]:
+  <h1>Generation kWh</h1>
+  <p>
+    El preu del Generation kWh també ha variat. No es tracta del cost de l’energia, sinó que han canviat algun dels altres components del preu, com per exemple el que està relacionat amb les pèrdues d’energia pel trasllat per la xarxa.
+  </p>
+  <p>
+    Això fa que l’energia als períodes punta i pla <strong>baixi lleugerament</strong>, i el període vall quedi <strong>igual</strong>.
+  </p>
+  <h3>Generation kWh: preu del terme d’energia (en euros/kWh):</h3>
+  <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+      <td colspan="7">
+        <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="purchase_borders" style="vertical-align: center;" align="left">
+              <p class="f-fallback"  style="margin: 10px 0"></p>
+            </td>
+            <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left" colspan="3">
+              <p class="f-fallback"  style="margin: 10px 0"><strong>Preus actuals</strong></p>
+            </td>
+            <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left" colspan="3">
+              <p class="f-fallback" style="margin: 10px 0"><strong>Preus nous</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P2']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P3']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P1']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P2']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P3']}</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Amb impostos aplicats</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P2']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P3']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P1']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P2']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P3']}</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  %endif
   ## FET FINS AQUÍ
   <p>
     Al nostre blog trobaràs <a href="https://blog.somenergia.coop/?p=50300">més detalls del canvi de tarifes</a>, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l'apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de maig i els de períodes anteriors.
