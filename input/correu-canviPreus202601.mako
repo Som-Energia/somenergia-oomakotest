@@ -1583,7 +1583,7 @@ ${plantilla_header}
   </p>
   <p>
     Som Energia <br/>
-    <a href="https://www.somenergia.coop/es">www.somenergia.coop</a>
+    <a href="https://www.somenergia.coop/es?mtm_cid=20251121&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">www.somenergia.coop</a>
   </p>
   ## FET FINS AQUÍ
 %endif
