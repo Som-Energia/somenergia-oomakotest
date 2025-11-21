@@ -1602,6 +1602,19 @@
 #  poweremailId: 465
 #  cases:
 #    ca_20: 2477030
+canviPreus202601_main:
+ template: input/correu-canviPreus202601.mako
+ model: som.enviament.massiu
+ poweremailId: 510
+ cases:
+   ca_20: 2785680
+   es_20: 2785659
+   ca_20_auto: 2785501
+   es_20_auto: 2785685
+   ca_20_ind: 2785437
+   es_20_ind: 2785147
+   ca_30: 2785648
+   es_30: 2785632
 canviPreus202601_gkwh_no_contractes:
  template: input/correu-canviPreus202601_gkwh_no_contractes.mako
  model: som.enviament.massiu
