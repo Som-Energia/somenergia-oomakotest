@@ -621,18 +621,9 @@ ${plantilla_header}
       Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del cost de l’electricitat amb aquest augment de la potència, i l’hem comparat amb el cost amb la tarifa actual. L’estimació l’hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']}  kWh) i les potències que tens contractades, sense tenir en compte l’autoproducció ni Generation kWh, ni lloguer de comptador.
     </p>
   %endif
-  %if data['origen'] in ['pdf','cnmc','estadistic']:
-    <p>
-      L'estimació la pots veure sense impostos i amb impostos inclosos (l'${data['impostos_str']} i l'impost elèctric del 5,11%).
-    </p>
-  %else: # TODO: nou cas indexada 2.0TD amb corbes
-    <p>
-      En els dos casos l’estimació inclou l'${data['impostos_str']} i l’impost elèctric del 5,11%.
-    </p>
-    <p>
-      Així doncs, et mostrem a continuació l’estimació aproximada del cost anual si apliquéssim els preus actuals, i el cost anual si apliquéssim els nous preus.
-    </p>
-  %endif
+  <p>
+    L'estimació la pots veure sense impostos i amb impostos inclosos (l'${data['impostos_str']} i l'impost elèctric del 5,11%).
+  </p>
   <h3>Cost anual estimat, en euros/any, del subministrament (energia i potència):</h3>
   <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
     <tr>
@@ -679,6 +670,11 @@ ${plantilla_header}
   <p>
     Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
   </p>
+  %if False: # TODO: nou cas indexada 2.0TD amb corbes
+    <p>
+      Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-llum/domestic-indexada?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Centre d’Ajuda</a>.
+    </p>
+  %endif
   ## FET FINS AQUÍ
   <p>
     Al nostre blog trobaràs <a href="https://blog.somenergia.coop/?p=50300">més detalls del canvi de tarifes</a>, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l'apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de maig i els de períodes anteriors.
@@ -1295,45 +1291,27 @@ ${plantilla_header}
       Las personas que tengan compensación simplificada también tienen activado el <a href="https://www.somenergia.coop/es/actualidad/cooperativa/flux-solar-la-herramienta-que-proporciona-descuentos-por-los-excedentes-de-autoproduccion-no-compensados?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Flux Solar</a>, que proporciona descuentos para los excedentes que no pueden ser compensados ​​con la compensación simplificada. Puede ver si tienes Sols disponibles en su <a href="https://oficinavirtual.somenergia.coop/es/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">Oficina Virtual</a> (<a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquí</a> te explicamos el camino). Si es el caso, se te irán aplicando en las próximas facturas.
     </p>
   %endif
-  ## FET FINS AQUÍ
-
   <h1>Estimación</h1>
   %if data['origen'] == 'pdf':
-    %if data['modcon'] == 'atr' or data['modcon'] == 'index':
-      <p>
-        Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales de la tarifa periodos y si aplicáramos los precios nuevos, también de la tarifa periodos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
-      </p>
-    %else:
-      <p>
-        Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales y si aplicáramos los precios nuevos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
-      </p>
-    %endif
+    <p>
+      Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales y si aplicáramos los precios nuevos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
+    </p>
   %elif data['origen'] == 'cnmc':
-    %if data['modcon'] == 'atr' or data['modcon'] == 'index':
-      <p>
-        Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos, ambos de la tarifa periodos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador), extrapolándolos según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
-      </p>
-    %else:
-      <p>
-        Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador), extrapolándolos según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
-      </p>
-    %endif
+    <p>
+      Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador), extrapolándolos según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
+    </p>
   %elif data['origen'] == 'estadistic':
-    %if data['modcon'] == 'atr' or data['modcon'] == 'index':
-      <p>
-        Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos, ambos de la tarifa periodos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh ni alquiler de contador.
-      </p>
-    %else:
-      <p>
-        Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh ni alquiler de contador.
-      </p>
-    %endif
+    <p>
+      Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh ni alquiler de contador.
+    </p>
+  %else: # TODO: nou cas indexada 2.0TD amb corbes
+    <p>
+      Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> del coste de la electricidad con este aumento de la potencia, y lo hemos comparado con el coste con la tarifa actual. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, sin tener en cuenta la autoproducción ni Generation kWh, ni alquiler de contador.
+    </p>
   %endif
   <p>
-    La estimación la puedes ver sin impuestos y con impuestos incluidos (el ${data['impostos_str']} y el impuesto eléctrico del 5,11%).
+    La estimación la puedes ver sin impuestos y con impuestos incluidos (${data['impostos_str']} y el impuesto eléctrico del 5,11%).
   </p>
-
-
   <h3>Coste anual estimado, en euros/año, del suministro (energía y potencia):</h3>
   <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
     <tr>
@@ -1378,8 +1356,14 @@ ${plantilla_header}
   </table>
   <br/>
   <p>
-    Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año, o cambios que pueda haber en el mercado eléctrico.
+    Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año, o cambios que puedan producirse en el mercado eléctrico.
   </p>
+  %if False: # TODO: nou cas indexada 2.0TD amb corbes
+    <p>
+      Como siempre, puedes encontrar la información, precios y fórmula de la tarifa indexada en nuestra web, <a href="https://www.somenergia.coop/es/tarifas-luz/domestico-indexada/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">apartado tarifa indexada</a>, y en el <a href="https://es.support.somenergia.coop/category/1361-las-tarifas-indexadas?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Centro de Ayuda</a>.
+    </p>
+  %endif
+  ## FET FINS AQUÍ
   <p>
     En nuestro blog encontrarás <a href="https://blog.somenergia.coop/?p=50302">más detalles</a> del cambio de tarifas, y en la página web puedes consultar en cualquier momento <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/">todas las tarifas</a>.  Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">histórico de tarifas</a>, donde están también los precios vigentes hasta el 31 de mayo y los de periodos anteriores.
   </p>
