@@ -701,6 +701,29 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0"></p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Període punta</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Període pla</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Període vall</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Període punta</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Període pla</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Període vall</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
             </td>
             <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
@@ -1438,6 +1461,105 @@ ${plantilla_header}
     <p>
       Como siempre, puedes encontrar la información, precios y fórmula de la tarifa indexada en nuestra web, <a href="https://www.somenergia.coop/es/tarifas-luz/domestico-indexada/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">apartado tarifa indexada</a>, y en el <a href="https://es.support.somenergia.coop/category/1361-las-tarifas-indexadas?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Centro de Ayuda</a>.
     </p>
+  %endif
+  %if data["te_gkwh"]:
+  <h1>Generation kWh</h1>
+  <p>
+    El precio del Generation kWh también ha variado. No se trata del coste de la energía, sino que han cambiado alguno de los otros componentes del precio, como por ejemplo el que está relacionado con las pérdidas de energía por el traslado por la red.
+  </p>
+  <p>
+    Esto hace que la energía en los periodos punta y llano <strong>baje ligeramente</strong>, y el periodo valle quede <strong>igual</strong>.
+  </p>
+  <h3>Generation kWh: precio del término energético (en euros/kWh):</h3>
+  <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+      <td colspan="7">
+        <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="purchase_borders" style="vertical-align: center;" align="left">
+              <p class="f-fallback"  style="margin: 10px 0"></p>
+            </td>
+            <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left" colspan="3">
+              <p class="f-fallback"  style="margin: 10px 0"><strong>Precios actuales</strong></p>
+            </td>
+            <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left" colspan="3">
+              <p class="f-fallback" style="margin: 10px 0"><strong>Precios nuevos</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback"  style="margin: 10px 0"></p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Periodo punta</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Periodo llano</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Periodo valle</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Periodo punta</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Periodo llano</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Periodo valle</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback"  style="margin: 10px 0">Sin impuestos</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P2']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P3']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P1']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P2']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P3']}</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="margin: 10px 0">Con impuestos</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P2']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P3']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P1']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P2']}</p>
+            </td>
+            <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+              <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P3']}</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br/>
   %endif
   ## FET FINS AQUÍ
   <p>
