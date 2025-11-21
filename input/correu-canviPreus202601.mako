@@ -774,11 +774,13 @@ ${plantilla_header}
   </table>
   <br/>
   %endif
-  ## FET FINS AQUÍ
   <p>
-    Al nostre blog trobaràs <a href="https://blog.somenergia.coop/?p=50300">més detalls del canvi de tarifes</a>, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l'apartat <a href="https://www.somenergia.coop/ca/tarifes-d-electricitat/historic-de-tarifes/">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de maig i els de períodes anteriors.
+    Com et dèiem més amunt, al nostre blog trobaràs <a href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/al-gener-actualitzarem-els-preus?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">més detalls del canvi de preus</a>, i a la pàgina web pots consultar en qualsevol moment <a href="https://www.somenergia.coop/ca/tarifes-llum/domestic-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a href="https://www.somenergia.coop/ca/historic-tarifa-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.
   </p>
-
+  <p>
+    Aprofitem per recordar-te que cap a finals d’any el govern sol fer l’<strong>actualització dels conceptes regulats</strong> de la factura (càrrecs, peatges…). Així doncs, i tal com està establert, si el BOE publica alguna actualització, l’aplicarem automàticament. No solen suposar modificacions substancials de la factura.
+  </p>
+  ## FET FINS AQUÍ
   <h3 style="font-size: 16px">Informació legal</h3>
   <p class="p-legal">
     La <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/#preu-i-actualitzacio">clàusula contractual de les Condicions Generals</a> que ens autoritza a fer aquest canvi de preus és la clàusula 5.3 (ii).
