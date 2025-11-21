@@ -1563,10 +1563,13 @@ ${plantilla_header}
   </table>
   <br/>
   %endif
-  ## FET FINS AQUÍ
   <p>
-    En nuestro blog encontrarás <a href="https://blog.somenergia.coop/?p=50302">más detalles</a> del cambio de tarifas, y en la página web puedes consultar en cualquier momento <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/">todas las tarifas</a>.  Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/tarifas-de-electricidad-que-ofrecemos/historico-de-tarifas-de-electricidad/">histórico de tarifas</a>, donde están también los precios vigentes hasta el 31 de mayo y los de periodos anteriores.
+    Como te decíamos más arriba, en nuestro blog encontrarás <a href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/en-enero-actualizaremos-los-precios?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">más detalles del cambio de precios</a>, y en la página web puedes consultar en cualquier momento <a href="https://www.somenergia.coop/es/tarifas-luz/domestico-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/historico-tarifa-periodos?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">histórico de tarifas</a>, donde están también los precios vigentes hasta el 31 de diciembre y los de periodos anteriores.
   </p>
+  <p>
+    Aprovechamos para recordarte que hacia finales de año el gobierno suele hacer la <strong>actualización de los conceptos regulados</strong> de la factura (cargos, peajes…). Así pues, y tal y como está establecido, si el BOE publica alguna actualización, lo aplicaremos automáticamente. No suelen suponer modificaciones substanciales de la factura.
+  </p>
+  ## FET FINS AQUÍ
   <h3 style="font-size: 16px">Información legal</h3>
   <p class="p-legal">
     La <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/#precio-y-actualizacion">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios es la cláusula 5.3 (ii).
