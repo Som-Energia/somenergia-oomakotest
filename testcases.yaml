@@ -1622,6 +1622,14 @@ canviPreus202601_gkwh_no_contractes:
  cases:
    ca_20: 2477030
    es_20: 2480423
+canviPreus202601_ind_no20_gkwh:
+ template: input/correu-canviPreus202601_ind_no20_gkwh.mako
+ model: som.enviament.massiu
+ poweremailId: 511
+ cases:
+   ca_20: 2654316
+   es_20: 2653631
+
 #situacioExcepcional2022:
 #  template: input/correu-situacioExcepcional2022.mako
 #  model: som.enviament.massiu
