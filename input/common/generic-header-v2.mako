@@ -105,7 +105,7 @@
 
     /* Utilities ------------------------------ */
     .p-legal {
-      font-size: 12px;
+      font-size: 14px;
     }
 
     .align-right {
