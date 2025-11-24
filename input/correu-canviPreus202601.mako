@@ -21,6 +21,8 @@
 
 ${plantilla_header}
 
+<!-- MAILDEV_CODE: ${data['codi_polissa']} -->
+
 <p>
   Hola${data['nom_titular']} <br/>
 </p>
@@ -616,7 +618,7 @@ ${plantilla_header}
     <p>
       Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del que et costaria l’energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L’estimació l’hem fet en funció de la potència contractada més alta que tens (${data['potencia']} kW), l’ús d’electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh ni lloguer de comptador.
     </p>
-  %else: # TODO: nou cas indexada 2.0TD amb corbes
+  %elif data['origen'] == 'indexada':
     <p>
       Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del cost de l’electricitat amb aquest augment de la potència, i l’hem comparat amb el cost amb la tarifa actual. L’estimació l’hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']}  kWh) i les potències que tens contractades, sense tenir en compte l’autoproducció ni Generation kWh, ni lloguer de comptador.
     </p>
@@ -670,7 +672,7 @@ ${plantilla_header}
   <p>
     Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
   </p>
-  %if False: # TODO: nou cas indexada 2.0TD amb corbes
+  %if data['origen'] == 'indexada':
     <p>
       Com sempre, pots trobar la informació, els preus i la fórmula de la tarifa indexada al nostre web, <a href="https://www.somenergia.coop/ca/tarifes-llum/domestic-indexada?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">apartat tarifa indexada</a>, i al <a href="https://ca.support.somenergia.coop/category/1359-les-tarifes-indexades?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Centre d’Ajuda</a>.
     </p>
@@ -1398,7 +1400,7 @@ ${plantilla_header}
     <p>
       Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh ni alquiler de contador.
     </p>
-  %else: # TODO: nou cas indexada 2.0TD amb corbes
+  %elif data['origen'] == 'indexada':
     <p>
       Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> del coste de la electricidad con este aumento de la potencia, y lo hemos comparado con el coste con la tarifa actual. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, sin tener en cuenta la autoproducción ni Generation kWh, ni alquiler de contador.
     </p>
@@ -1452,7 +1454,7 @@ ${plantilla_header}
   <p>
     Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año, o cambios que puedan producirse en el mercado eléctrico.
   </p>
-  %if False: # TODO: nou cas indexada 2.0TD amb corbes
+  %if data['origen'] == 'indexada':
     <p>
       Como siempre, puedes encontrar la información, precios y fórmula de la tarifa indexada en nuestra web, <a href="https://www.somenergia.coop/es/tarifas-luz/domestico-indexada/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">apartado tarifa indexada</a>, y en el <a href="https://es.support.somenergia.coop/category/1361-las-tarifas-indexadas?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Centro de Ayuda</a>.
     </p>
