@@ -162,7 +162,7 @@ ${plantilla_header}
   <p>
     Esto hace que la energía en los periodos punta y llano <strong>baje ligeramente</strong>, y el periodo valle quede <strong>igual</strong>.
   </p>
-  <h3>Generation kWh: precio del término energético (en euros/kWh):</h3>
+  <h3>Generation kWh: precio del término de energía (en euros/kWh):</h3>
   <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
     <tr>
       <td colspan="7">
@@ -256,7 +256,7 @@ ${plantilla_header}
     En la web puedes consultar <a href="https://www.somenergia.coop/es/tarifas-luz/domestico-generationkwh/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">los precios de la tarifa Generation kWh</a>. Puedes compararlas con las de fechas anteriores <a href="https://www.somenergia.coop/es/historico-tarifa-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">aquí</a>.
   </p>
   <p>
-    Te recordamos que las condiciones del Generation kWh están detalladas en las <a href="https://back.somenergia.coop/storage/app/media/DOCS/Condiciones-Generales-Contrato-Autoproduccion-Colectiva-Generation-kWh-ES.pdf?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Condiciones generales de Generation de kWh</a>.
+    Te recordamos que las condiciones del Generation kWh están detalladas en las <a href="https://back.somenergia.coop/storage/app/media/DOCS/Condiciones-Generales-Contrato-Autoproduccion-Colectiva-Generation-kWh-ES.pdf?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Condiciones generales de Generation kWh</a>.
   </p>
   <p>
     Aprovechamos para darte las gracias una vez más por tu participación en el Generation kWh. Este tipo de soporte es uno de los que nos ayuda a caminar hacia la transformación energética.
