@@ -21,6 +21,8 @@
 
 ${plantilla_header}
 
+<!-- MAILDEV_CODE: ${data['codi_polissa']} -->
+
 <p>
   Hola${data['nom_titular']} <br/>
 </p>
@@ -76,7 +78,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
+              <p class="f-fallback"  style="margin: 10px 0"><strong>Sense impostos aplicats</strong></p>
             </td>
             <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
@@ -99,7 +101,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback" style="margin: 10px 0">Amb impostos aplicats</p>
+              <p class="f-fallback" style="margin: 10px 0"><strong>Amb impostos aplicats</strong></p>
             </td>
             <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
@@ -134,8 +136,6 @@ ${plantilla_header}
   <p>
     Aprofitem per donar-te les gràcies un cop més per la teva participació al Generation kWh. Aquest tipus de suport és un dels que ens ajuda a caminar cap a la transformació energètica.
   </p>
-  <br/>
-  <br/>
   <h3 style="font-size: 16px">Informació legal</h3>
   <p class="p-legal">
     Pots accedir al comparador d’ofertes que elabora la Comissió Nacional dels Mercats i la Competència (CNMC) a través d’<a href="https://comparador.cnmc.gob.es">aquest enllaç</a>. El comparador permet consultar i comparar les diferents ofertes vigents d’algunes de les comercialitzadores del mercat lliure. Tingues en compte que les tarifes de Som Energia no hi estan incloses.
@@ -203,7 +203,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">Sin impuestos</p>
+              <p class="f-fallback"  style="margin: 10px 0; font-size: 14px"><strong>Sin impuestos</strong></p>
             </td>
             <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
@@ -226,7 +226,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback" style="margin: 10px 0">Con impuestos</p>
+              <p class="f-fallback" style="margin: 10px 0; font-size: 14px"><strong>Con impuestos</strong></p>
             </td>
             <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
@@ -261,8 +261,6 @@ ${plantilla_header}
   <p>
     Aprovechamos para darte las gracias una vez más por tu participación en el Generation kWh. Este tipo de soporte es uno de los que nos ayuda a caminar hacia la transformación energética.
   </p>
-  <br/>
-  <br/>
   <h3 style="font-size: 16px">Información legal</h3>
   <p class="p-legal">
     Puedes acceder al comparador de ofertas que elabora la Comisión Nacional de los Mercados y la Competencia (CNMC) a través de <a href="https://comparador.cnmc.gob.es">este enlace</a>. El comparador permite consultar y comparar las distintas ofertas vigentes de algunas de las comercializadoras del mercado libre. Ten en cuenta que las tarifas de Som Energia no están incluidas.

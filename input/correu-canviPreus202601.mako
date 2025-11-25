@@ -1161,7 +1161,6 @@ ${plantilla_header}
     </table>
   %endif
   %if data['tarifa_acces'] != '2.0TD' and data['mode_facturacio'] == 'atr':
-    <br/>
     <h1>Tarifa ${data['tarifa_acces']} periodos</h1>
     <h3>Precio del término de energía (en euros/kWh)</h3>
     <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
