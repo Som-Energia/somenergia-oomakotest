@@ -250,6 +250,11 @@
       -premailer-cellspacing: 0;
     }
 
+    .purchase_content>tbody {
+      display: block;
+      border: 1px solid #4d4d4d;
+    }
+
     .purchase_item {
       padding: 10px 0;
       color: #51545E;

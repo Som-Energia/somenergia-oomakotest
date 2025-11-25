@@ -42,6 +42,9 @@ ${plantilla_header}
                                 <p>
                                   La tarifa ${data['tarifa_acces']} indexada augmentarà lleugerament el preu de la potència. Pots veure els <strong><a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">nous preus</a> de la tarifa 2.0TD indexada</strong> al nostre web i a <a href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/al-gener-actualitzarem-els-preus">aquest article</a> del blog.
                                 </p>
+                                <p>
+                                  T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus de la <strong>tarifa indexada</strong> que se t’aplicarà. Si hi estàs d’acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament.
+                                </p>
                               </span>
                             </p>
                         </td>
@@ -63,6 +66,9 @@ ${plantilla_header}
                             <p>
                               Els preus de la <strong>tarifa ${data['tarifa_acces']} indexada</strong> no varien. Els pots trobar <a href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">al nostre web</a>.
                             </p>
+                            <p>
+                              T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus de la <strong>tarifa indexada</strong> que se t’aplicarà. Si hi estàs d’acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament.
+                            </p>
                           </span>
                         </p>
                     </td>
@@ -83,6 +89,9 @@ ${plantilla_header}
                                 </p>
                                 <p>
                                   Els preus de la <strong>tarifa ${data['tarifa_acces']} períodes també variaran lleugerament</strong>. Pots trobar l’explicació a <a href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/al-gener-actualitzarem-els-preus?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquest article</a> del blog, i el detall dels preus els tens <a href="https://www.somenergia.coop/ca/tarifes-llum/domestic-periodes/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">al nostre web</a>.
+                                </p>
+                                <p>
+                                  T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus de la <strong>tarifa períodes</strong> que se t’aplicarà. Si hi estàs d’acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament.
                                 </p>
                             </span>
                           </p>
@@ -798,7 +807,12 @@ ${plantilla_header}
     Pots accedir al comparador d'ofertes que elabora la Comissió Nacional dels Mercats i la Competència (CNMC) a través <a href="https://comparador.cnmc.gob.es">d'aquest enllaç</a>. El comparador permet consultar i comparar les diferents ofertes vigents d'algunes de les comercialitzadores del mercat lliure. Tingues en compte que les tarifes de Som Energia no hi estan incloses.
   </p>
   <p class="p-legal">
-    T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d’acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem d’informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te de tarifa (<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament enviant-nos una còpia del <a href="https://back.somenergia.coop/storage/app/media/DOCS/Desistiment_Plantilla_CAT.pdf?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">document de desistiment</a>, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
+    %if data['modcon']:
+      Hem 
+    %else:
+      T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus. Si hi estàs d’acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament. Igualment, hem 
+    %endif
+     d’informar-te que si, per alguna raó, aquest canvi de preus et fes replantejar seguir amb aquesta tarifa, podries canviar-te de tarifa (<a href="https://ca.support.somenergia.coop/article/1344-modificacio-de-la-tarifa-de-periodes-a-indexada-i-dindexada-a-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">a través de la teva Oficina Virtual</a>), o podries donar de baixa el teu contracte amb nosaltres, bé comunicant-nos-ho directament enviant-nos una còpia del <a href="https://back.somenergia.coop/storage/app/media/DOCS/Desistiment_Plantilla_CAT.pdf?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">document de desistiment</a>, o bé mitjançant un canvi de comercialitzadora. Et recordem que a la cooperativa no apliquem penalitzacions ni clàusules de permanència en cap moment. Així doncs, si decidissis marxar, només et facturaríem el consum realitzat fins al dia en què deixem de subministrar-te energia, amb els preus vigents a cada moment.
   </p>
   <br/>
   <br/>
@@ -824,6 +838,9 @@ ${plantilla_header}
                               <p>
                                 En la tarifa ${data['tarifa_acces']} indexada aumentará ligeramente el precio de la potencia. Puedes ver los <strong><a href="https://www.somenergia.coop/es/tarifas-luz/domestico-indexada/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">nuevos precios</a> de la tarifa 2.0TD indexada</strong> en nuestra web y en <a href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/en-enero-actualizaremos-los-precios?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">este artículo</a> del blog.
                               </p>
+                              <p>
+                                Te adjuntamos en este correo tu contrato actualizado con los nuevos precios de la <strong>tarifa indexada</strong> que se te aplicará. Si estás de acuerdo, <strong>no hace falta que nos envíes el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente.
+                              </p>
                             </span>
                           </p>
                       </td>
@@ -845,6 +862,9 @@ ${plantilla_header}
                           <p>
                             Los precios de la <strong>tarifa ${data['tarifa_acces']} indexada</strong> no varien. Els pots trobar <a href="https://www.somenergia.coop/es/tarifas-luz/domestico-indexada/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">en nuestra web</a>.
                           </p>
+                          <p>
+                            Te adjuntamos en este correo tu contrato actualizado con los nuevos precios de la <strong>tarifa indexada</strong> que se te aplicará. Si estás de acuerdo, <strong>no hace falta que nos envíes el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente.
+                          </p>
                         </span>
                       </p>
                   </td>
@@ -865,6 +885,9 @@ ${plantilla_header}
                               </p>
                               <p>
                                 Los precios de <strong>la tarifa ${data['tarifa_acces']} periodos también variarán ligeramente</strong>. Puedes encontrar la explicación en <a href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/en-enero-actualizaremos-los-precios?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">este artículo</a> del blog, y el detalle de los precios los tienes <a href="https://www.somenergia.coop/es/tarifas-luz/domestico-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">en nuestra web</a>.
+                              </p>
+                              <p>
+                                Te adjuntamos en este correo tu contrato actualizado con los nuevos precios de la <strong>tarifa periodos</strong> que se te aplicará. Si estás de acuerdo, <strong>no hace falta que nos envíes el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente.
                               </p>
                           </span>
                         </p>
@@ -1580,7 +1603,12 @@ ${plantilla_header}
     Puedes acceder al comparador de ofertas que elabora la Comisión Nacional de los Mercados y la Competencia (CNMC) a través de <a href="https://comparador.cnmc.gob.es">este enlace</a>. El comparador permite consultar y comparar las distintas ofertas vigentes de algunas de las comercializadoras del mercado libre. Ten en cuenta que las tarifas de Som Energia no están incluidas.
   </p>
   <p class="p-legal">
-    Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos informarte de que si, por alguna razón, este cambio de precios te hiciese replantear seguir con esta tarifa, podrías cambiarte de tarifa (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">a través de tu Oficina Virtual</a>), o podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente enviándonos una copia del <a href="https://back-nova-test.somenergia.coop/storage/app/media/DOCS/Desistimiento_Plantilla_CAST.pdf?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">documento de desistimiento</a>, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
+    %if data['modcon']:
+    Debemos 
+    %else:
+    Te adjuntamos en este correo tu contrato actualizado con los nuevos precios. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente. Igualmente, debemos 
+    %endif
+    informarte de que si, por alguna razón, este cambio de precios te hiciese replantear seguir con esta tarifa, podrías cambiarte de tarifa (<a href="https://es.support.somenergia.coop/article/1345-modificacion-de-la-tarifa-de-periodos-a-indexada-y-de-indexada-a-periodos?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">a través de tu Oficina Virtual</a>), o podrías dar de baja tu contrato con nosotros, bien comunicándolo directamente enviándonos una copia del <a href="https://back-nova-test.somenergia.coop/storage/app/media/DOCS/Desistimiento_Plantilla_CAST.pdf?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">documento de desistimiento</a>, o bien mediante un cambio de comercializadora. Te recordamos que en la cooperativa no aplicamos penalizaciones ni cláusulas de permanencia en ningún momento. Así pues, si decidieras marcharte, sólo te facturaríamos el consumo realizado hasta el día en que dejamos de suministrarte energía, con los precios vigentes en cada momento.
   </p>
   <br/>
   <br/>
