@@ -125,7 +125,6 @@ ${plantilla_header}
     <p>
       A continuació tens una taula amb els nous preus (vigents a partir de l'1 de gener), i una comparació amb els preus actuals (fins a 31 de desembre) de la tarifa que tens contractada. Els impostos aplicats són l'${data['impostos_str']}, i l'impost elèctric del 5,11%.
     </p>
-    <br/>
   %if data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'atr':
     <h1>
       Tarifa 2.0TD períodes
@@ -269,7 +268,7 @@ ${plantilla_header}
             </tr>
             <tr>
               <td class="purchase_borders" valign="middle">
-                <p class="f-fallback" style="margin: 10px 0">Sense impostos</p>
+                <p class="f-fallback" style="margin: 10px 0"><strong>Sense impostos</strong></p>
               </td>
               <td class="purchase_borders" valign="middle">
                 <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P1']}</p>
@@ -286,7 +285,7 @@ ${plantilla_header}
             </tr>
             <tr>
               <td class="purchase_borders" valign="middle">
-                <p class="f-fallback" style="margin: 10px 0">Sense impostos</p>
+                <p class="f-fallback" style="margin: 10px 0"><strong>Amb impostos</strong></p>
               </td>
               <td class="purchase_borders" valign="middle">
                 <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P1']}</p>
@@ -345,7 +344,7 @@ ${plantilla_header}
             </tr>
             <tr>
               <td class="purchase_borders" valign="middle">
-                <p class="f-fallback" style="margin: 10px 0">Sense impostos</p>
+                <p class="f-fallback" style="margin: 10px 0"><strong>Sense impostos</strong></p>
               </td>
               <td class="purchase_borders" valign="middle">
                 <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P1']}</p>
@@ -362,7 +361,7 @@ ${plantilla_header}
             </tr>
             <tr>
               <td class="purchase_borders" valign="middle">
-                <p class="f-fallback" style="margin: 10px 0">Sense impostos</p>
+                <p class="f-fallback" style="margin: 10px 0"><strong>Amb impostos</strong></p>
               </td>
               <td class="purchase_borders" valign="middle">
                 <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P1']}</p>
@@ -602,13 +601,13 @@ ${plantilla_header}
     </table>
     <br/>
     <p>
-      Les persones que tingueu compensació simplificada també teniu activat el <a href="https://www.somenergia.coop/ca/actualitat/cooperativa/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Flux Solar</a>, que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada. Podeu veure si tens Sols disponibles a la vostra <a href="https://oficinavirtual.somenergia.coop/ca/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Oficina Virtual</a> (<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar#sols?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquí</a> t'expliquem el camí). Si és el cas, se t'aniran aplicant a les properes factures.
+      Les persones que tingueu compensació simplificada també teniu activat el <a href="https://www.somenergia.coop/ca/actualitat/cooperativa/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Flux Solar</a>, que proporciona descomptes per als excedents que no poden ser compensats amb la compensació simplificada. Podeu veure si teniu Sols disponibles a la vostra <a href="https://oficinavirtual.somenergia.coop/ca/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Oficina Virtual</a> (<a href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar#sols?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquí</a> t'expliquem el camí). Si és el cas, se t'aniran aplicant a les properes factures.
     </p>
   %endif
   <h1>Estimació</h1>
-  %if data['origen'] == 'pdf':
+  %if data['origen'] in ['pdf', 'consums_periods']:
     <p>
-      Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l’energia i la potència durant un any, si apliquéssim els preus actuals i si apliquéssim els preus nous. L’estimació l’hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció, ni Generation kWh, ni lloguer de comptador. 
+      Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l’energia i la potència durant un any, si apliquéssim els preus actuals i si apliquéssim els preus nous. L’estimació l’hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció, ni Generation kWh, ni lloguer de comptador.
     </p>
   %elif data['origen'] == 'cnmc':
     <p>
@@ -644,7 +643,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
+              <p class="f-fallback"  style="margin: 10px 0"><strong>Sense impostos aplicats</strong></p>
             </td>
             <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell']}</p>
@@ -655,7 +654,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback" style="margin: 10px 0">Amb impostos aplicats</p>
+              <p class="f-fallback" style="margin: 10px 0"><strong>Amb impostos aplicats</strong></p>
             </td>
             <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell_imp']}</p>
@@ -726,7 +725,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
+              <p class="f-fallback"  style="margin: 10px 0"><strong>Sense impostos aplicats</strong></p>
             </td>
             <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
@@ -749,7 +748,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback" style="margin: 10px 0">Amb impostos aplicats</p>
+              <p class="f-fallback" style="margin: 10px 0"><strong>Amb impostos aplicats</strong></p>
             </td>
             <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
@@ -788,7 +787,7 @@ ${plantilla_header}
     %if data['mode_facturacio'] == 'atr':
       La <a href="https://back.somenergia.coop/storage/app/media/DOCS/Condicions-Generals-contracte-subministrament-energia-electrica-SomEnergia.pdf">clàusula contractual de les Condicions Generals</a> que ens autoritza a fer aquest canvi de preus de les tarifes períodes és la clàusula 5.3 (ii).
     %else:
-      La <a href="https://back.somenergia.coop/storage/app/media/DOCS/Condicions-Generals-contracte-subministrament-energia-electrica-SomEnergia.pdf">clàusula contractual de les Condicions Generals</a> que ens autoritza a fer aquest canvi de preus de les tarifes indexada és la clàusula 5.3 (ii).
+      La <a href="https://back.somenergia.coop/storage/app/media/DOCS/Condicions-Generals-contracte-subministrament-energia-electrica-SomEnergia.pdf">clàusula contractual de les Condicions Generals</a> que ens autoritza a fer aquest canvi de preus de les tarifes indexades és la clàusula 5.3 (ii).
     %endif
   </p>
   <p class="p-legal">
@@ -806,7 +805,6 @@ ${plantilla_header}
   Som Energia <br/>
   <a href="https://www.somenergia.coop/ca?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">www.somenergia.coop</a>
   </p>
-  ## FET FINS AQUÍ
 %else: ## CASTELLANO
   % if data['modcon'] == "index" and data['tarifa_acces'] == '2.0TD':
       <figure class="table">
@@ -859,7 +857,7 @@ ${plantilla_header}
                         <p>
                           <span style="font-weight: 400;text-align: left;">
                             <p>
-                                Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} periodos</strong>, qque debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} indexada, te explicamos más abajo los cambios que le aplicaremos a partir del 1 de enero, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa indexada.
+                                Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} periodos</strong>, que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} indexada, te explicamos más abajo los cambios que le aplicaremos a partir del 1 de enero, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa indexada.
                               </p>
                               <p>
                                 Los precios de <strong>la tarifa ${data['tarifa_acces']} periodos también variarán ligeramente</strong>. Puedes encontrar la explicación en <a href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/en-enero-actualizaremos-los-precios?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">este artículo</a> del blog, y el detalle de los precios los tienes <a href="https://www.somenergia.coop/es/tarifas-luz/domestico-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">en nuestra web</a>.
@@ -877,7 +875,7 @@ ${plantilla_header}
         El 1 de enero modificaremos los precios de las tarifas por periodos (la que tienes ahora, lo es). Algunos conceptos han subido y otros han bajado, y el resultado final hace que, para un contrato doméstico tipo <strong>quede prácticamente igual</strong> (la variación es de un aumento de menos <strong>del 0,5%</strong>).
       </p>
       <p>
-        En la <strong>tarifa 2.0TD periodos</strong> (la tuya), el precio de la energía disminuye un poco en los periodos punta y plano, y aumenta un poco en el periodo valle.
+        En la <strong>tarifa 2.0TD periodos</strong> (la tuya), el precio de la energía disminuye un poco en los periodos punta y llano, y aumenta un poco en el periodo valle.
       </p>
       <p>
         Los precios han variado tanto por el coste de la energía (el aprovisionamiento), como por los otros conceptos (el relacionado con las pérdidas de energía por el traslado por la red, desvíos, certificados de garantía de origen,...), como por el margen para la viabilidad de la cooperativa.
@@ -898,16 +896,15 @@ ${plantilla_header}
     </p>
     % endif
 
-    <p>Te damos más detalles de las variaciones en <a href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/en-enero-actualizaremos-los-precios?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">del blog</a>.</p>
+    <p>Te damos más detalles de las variaciones en <a href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/en-enero-actualizaremos-los-precios?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">este artículo</a> del blog.</p>
     <h1>
       Nuevos precios y comparativa con precios actuales
     </h1>
     <p>
-      A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de enero) y una comparación con los precios actuales (hasta 31 de diciembre) de la tarifa que tienes contratada. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
+      A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de enero) y una comparación con los precios actuales (hasta 31 de diciembre) de la tarifa que tienes contratada. Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.
     </p>
 
   %if data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'atr':
-    <br/>
     <h1>
       Tarifa 2.0TD periodos
     </h1>
@@ -1050,7 +1047,7 @@ ${plantilla_header}
             </tr>
             <tr>
               <td class="purchase_borders" valign="middle">
-                <p class="f-fallback" style="margin: 10px 0">Sin impuestos</p>
+                <p class="f-fallback" style="margin: 10px 0"><strong>Sin impuestos</strong></p>
               </td>
               <td class="purchase_borders" valign="middle">
                 <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P1']}</p>
@@ -1067,7 +1064,7 @@ ${plantilla_header}
             </tr>
             <tr>
               <td class="purchase_borders" valign="middle">
-                <p class="f-fallback" style="margin: 10px 0">Con impuestos</p>
+                <p class="f-fallback" style="margin: 10px 0"><strong>Con impuestos</strong></p>
               </td>
               <td class="purchase_borders" valign="middle">
                 <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P1']}</p>
@@ -1126,7 +1123,7 @@ ${plantilla_header}
             </tr>
             <tr>
               <td class="purchase_borders" valign="middle">
-                <p class="f-fallback" style="margin: 10px 0">Sin impuestos</p>
+                <p class="f-fallback" style="margin: 10px 0"><strong>Sin impuestos</strong></p>
               </td>
               <td class="purchase_borders" valign="middle">
                 <p class="f-fallback" style="margin: 10px 0">${data['preus_antics']['tp']['P1']}</p>
@@ -1143,7 +1140,7 @@ ${plantilla_header}
             </tr>
             <tr>
               <td class="purchase_borders" valign="middle">
-                <p class="f-fallback" style="margin: 10px 0">Con impuestos</p>
+                <p class="f-fallback" style="margin: 10px 0"><strong>Con impuestos</strong></p>
               </td>
               <td class="purchase_borders" valign="middle">
                 <p class="f-fallback" style="margin: 10px 0">${data['preus_antics_imp']['tp']['P1']}</p>
@@ -1384,11 +1381,11 @@ ${plantilla_header}
     </table>
     <br/>
     <p>
-      Las personas que tengan compensación simplificada también tienen activado el <a href="https://www.somenergia.coop/es/actualidad/cooperativa/flux-solar-la-herramienta-que-proporciona-descuentos-por-los-excedentes-de-autoproduccion-no-compensados?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Flux Solar</a>, que proporciona descuentos para los excedentes que no pueden ser compensados ​​con la compensación simplificada. Puede ver si tienes Sols disponibles en su <a href="https://oficinavirtual.somenergia.coop/es/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">Oficina Virtual</a> (<a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquí</a> te explicamos el camino). Si es el caso, se te irán aplicando en las próximas facturas.
+      Las personas que tengan compensación simplificada también tienen activado el <a href="https://www.somenergia.coop/es/actualidad/cooperativa/flux-solar-la-herramienta-que-proporciona-descuentos-por-los-excedentes-de-autoproduccion-no-compensados?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Flux Solar</a>, que proporciona descuentos para los excedentes que no pueden ser compensados ​​con la compensación simplificada. Puedes ver si tienes Sols disponibles en tu <a href="https://oficinavirtual.somenergia.coop/es/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">Oficina Virtual</a> (<a href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquí</a> te explicamos el camino). Si es el caso, se te irán aplicando en las próximas facturas.
     </p>
   %endif
   <h1>Estimación</h1>
-  %if data['origen'] == 'pdf':
+  %if data['origen'] in ['pdf', 'consums_periods']:
     <p>
       Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales y si aplicáramos los precios nuevos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador.
     </p>
@@ -1426,7 +1423,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">Sin impuestos aplicados</p>
+              <p class="f-fallback"  style="margin: 10px 0"><strong>Sin impuestos aplicados</strong></p>
             </td>
             <td class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell']}</p>
@@ -1437,7 +1434,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback" style="margin: 10px 0">Con impuestos aplicados</p>
+              <p class="f-fallback" style="margin: 10px 0"><strong>Con impuestos aplicados</strong></p>
             </td>
             <td class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell_imp']}</p>
@@ -1508,7 +1505,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">Sin impuestos</p>
+              <p class="f-fallback"  style="margin: 10px 0; font-size: 14px"><strong>Sin impuestos</strong></p>
             </td>
             <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
@@ -1531,7 +1528,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback" style="margin: 10px 0">Con impuestos</p>
+              <p class="f-fallback" style="margin: 10px 0; font-size: 14px"><strong>Con impuestos</strong></p>
             </td>
             <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
@@ -1562,14 +1559,14 @@ ${plantilla_header}
     Como te decíamos más arriba, en nuestro blog encontrarás <a href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/en-enero-actualizaremos-los-precios?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">más detalles del cambio de precios</a>, y en la página web puedes consultar en cualquier momento <a href="https://www.somenergia.coop/es/tarifas-luz/domestico-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a href="https://www.somenergia.coop/es/historico-tarifa-periodos?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">histórico de tarifas</a>, donde están también los precios vigentes hasta el 31 de diciembre y los de periodos anteriores.
   </p>
   <p>
-    Aprovechamos para recordarte que hacia finales de año el gobierno suele hacer la <strong>actualización de los conceptos regulados</strong> de la factura (cargos, peajes…). Así pues, y tal y como está establecido, si el BOE publica alguna actualización, lo aplicaremos automáticamente. No suelen suponer modificaciones substanciales de la factura.
+    Aprovechamos para recordarte que hacia finales de año el gobierno suele hacer la <strong>actualización de los conceptos regulados</strong> de la factura (cargos, peajes…). Así pues, y tal y como está establecido, si el BOE publica alguna actualización, la aplicaremos automáticamente. No suelen suponer modificaciones substanciales de la factura.
   </p>
   <h3 style="font-size: 16px">Información legal</h3>
   <p class="p-legal">
     %if data['mode_facturacio'] == 'atr':
       La <a href="https://back-nova-test.somenergia.coop/storage/app/media/DOCS/Condiciones-generales-contrato-suministro-energia-electrica-SomEnergia.pdf">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios de las tarifas periodos es la cláusula 5.3 (ii).
     %else:
-      La <a href="https://back-nova-test.somenergia.coop/storage/app/media/DOCS/Condiciones-generales-contrato-suministro-energia-electrica-SomEnergia.pdf">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios de las tarifas indexada es la cláusula 5.3 (ii).
+      La <a href="https://back-nova-test.somenergia.coop/storage/app/media/DOCS/Condiciones-generales-contrato-suministro-energia-electrica-SomEnergia.pdf">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios de las tarifas indexadas es la cláusula 5.3 (ii).
     %endif
   </p>
   <p class="p-legal">
@@ -1587,6 +1584,5 @@ ${plantilla_header}
     Som Energia <br/>
     <a href="https://www.somenergia.coop/es?mtm_cid=20251121&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">www.somenergia.coop</a>
   </p>
-  ## FET FINS AQUÍ
 %endif
 ${plantilla_footer}
