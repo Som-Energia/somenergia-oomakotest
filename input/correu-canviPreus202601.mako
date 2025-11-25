@@ -104,7 +104,11 @@ ${plantilla_header}
       </p>
     % elif data['tarifa_acces'] != '2.0TD' and data['mode_facturacio'] == 'atr':
     <p>
+      %if data['tarifa_acces'] == '3.0TDVE':  # TODO: Això es podria simplificar per repetir menys text
+      L’1 de gener modificarem els preus de les tarifes per períodes (la que tens ara, ho és). A les <strong>tarifes 3.0TD períodes, 6.1TD períodes i 3.0TDVE períodes</strong> ha variat el preu de l’energia (alguns períodes pugen i d’altres baixen) per la variació del cost de l’energia i per la variació dels altres conceptes (desviaments, coeficients de pèrdues, certificats de garantia d’origen…). El marge per a la viabilitat de la cooperativa es manté igual.
+      %else:
       L’1 de gener modificarem els preus de les tarifes per períodes (la que tens ara, ho és). A les <strong>tarifes 3.0TD períodes i 6.1TD períodes</strong> ha variat el preu de l’energia (alguns períodes pugen i d’altres baixen) per la variació del cost de l’energia i per la variació dels altres conceptes (desviaments, coeficients de pèrdues, certificats de garantia d’origen…). El marge per a la viabilitat de la cooperativa es manté igual.
+      %endif
     </p>
     <p>
       A continuació podeu veure els nous preus, així com una estimació aproximada de com us podria afectar en el vostre cas en concret.
@@ -882,7 +886,11 @@ ${plantilla_header}
       </p>
     % elif data['tarifa_acces'] != '2.0TD' and data['mode_facturacio'] == 'atr':
     <p>
+      %if data['tarifa_acces'] == '3.0TDVE':  # TODO: Això es podria simplificar per repetir menys text
+      El 1 de enero modificaremos los precios de las tarifas por periodos (la que tienes ahora, lo es). En las <strong>tarifas 3.0TD periodos, 6.1TD periodos y 3.0TDVE periodos</strong> ha variado el precio de la energía (algunos periodos suben y otros bajan) por la variación del coste de la energía y por la variación de los otros conceptos (desvíos, coeficientes de pérdidas, certificados de garantía de origen…). El margen para la viabilidad de la cooperativa permanece igual.
+      %else:
       El 1 de enero modificaremos los precios de las tarifas por periodos (la que tienes ahora, lo es). En las <strong>tarifas 3.0TD periodos y 6.1TD periodos</strong> ha variado el precio de la energía (algunos periodos suben y otros bajan) por la variación del coste de la energía y por la variación de los otros conceptos (desvíos, coeficientes de pérdidas, certificados de garantía de origen…). El margen para la viabilidad de la cooperativa permanece igual.
+      %endif
     </p>
     <p>
       A continuación puedes ver los nuevos precios, así como una estimación aproximada de cómo podría afectarte en tu caso en concreto.
