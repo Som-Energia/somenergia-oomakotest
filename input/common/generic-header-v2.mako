@@ -105,7 +105,7 @@
 
     /* Utilities ------------------------------ */
     .p-legal {
-      font-size: 12px;
+      font-size: 14px;
     }
 
     .align-right {
@@ -248,6 +248,11 @@
       -premailer-width: 100%;
       -premailer-cellpadding: 0;
       -premailer-cellspacing: 0;
+    }
+
+    .purchase_content>tbody {
+      display: block;
+      border: 1px solid #4d4d4d;
     }
 
     .purchase_item {
