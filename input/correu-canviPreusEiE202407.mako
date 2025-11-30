@@ -110,20 +110,20 @@ ${plantilla_header}
                       <p>
                         En la <strong>tarifa indexada empresa</strong> personalitzem el preu de la franja de la cooperativa (la variable F de la fórmula indexada que podeu consultar al <a href="https://www.somenergia.coop/ca/serveis/com-calculem-el-preu">nostre web</a>) segons el vostre ús d'energia anual. Per això, un cop a l'any, revisem el vostre ús d'energia dels últims dotze mesos i ajustem el preu de la franja: si heu augmentat l'ús d'energia, el valor d'aquesta variable es redueix, i a la inversa, si el vostre ús ha disminuït, el seu valor s'incrementa.
                       </p>
-                      Per al vostre contracte, actualment la franja és de ${format_es_decimals((float(data['dades_index']['f_antiga']) / 1000), 5)} €/kWh,  i <strong>a partir de l'1 de gener serà de: ${format_es_decimals((float(data['dades_index']['f_nova']) / 1000), 5)} €/kWh.</strong>
+                        Per al vostre contracte, actualment la franja és de ${data['dades_index']['f_antiga_kwh']} €/kWh,  i <strong>a partir de l'1 de gener serà de: ${data['dades_index']['f_nova_kwh']} €/kWh.</strong>
                       </p>
                       <p>
-                        Aquest preu està calculat tenint en compte el vostre <strong>ús d'energia dels últims dotze mesos: ${format_es_decimals(data['dades_index']['conany'], 0)} kWh.</strong>
+                        Aquest preu està calculat tenint en compte el vostre <strong>ús d'energia dels últims dotze mesos: ${data['dades_index']['conany']} kWh.</strong>
                       </p>
                       <h2>
                         Estimació orientativa
                       </h2>
                       <p>
-                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia amb la nova franja.</strong> Tenint en compte l'ús de l'últim any, el cost per als pròxims dotze mesos amb la franja actual seria de ${format_es_decimals(data['dades_index']['import_total_anual_antiga_amb_impost'], 2)} €, mentre que amb la nova franja seria de ${format_es_decimals(data['dades_index']['import_total_anual_nova_amb_impost'], 2)} €. En tots dos casos, l'estimació inclou el 21% d'IVA i el 5,11% d'impost especial de l'electricitat.
+                        Tal com estableix la normativa, hem realitzat una <strong>estimació del cost anual de l'energia i la potència amb la nova franja.</strong> Tenint en compte l'ús de l'últim any, el cost per als pròxims dotze mesos amb la franja actual seria de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mentre que amb la nova franja seria de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En tots dos casos, l'estimació inclou el 21% d'IVA i el 5,11% d'impost especial de l'electricitat.
                       </p>
                       <h2>Actualització de peatges i càrrecs</h2>
                       <p>
-                        Els peatges i càrrecs regulats s'actualitzen automàticament (POSAR EL TEXT DEL CORREU GENERAL).
+                        Aprofitem per recordar-vos que el govern també sol actualitzar els conceptes regulats de la factura (peatges i càrrecs) l'1 de gener. Així doncs, i tal com està establert, si hi ha alguna actualització, l'aplicarem automàticament. Aquests canvis no solen suposar modificacions substancials de la factura.
                       </p>
                       <h3>Informació legal</h3>
                       <p>
@@ -185,20 +185,20 @@ ${plantilla_header}
                       <p>
                         En la <strong>tarifa indexada empresa</strong> personalizamos el precio de la franja de la cooperativa (la variable F de la fórmula indexada que podéis consultar en <a href="https://www.somenergia.coop/es/servicios/como-calculamos-el-precio/">nuestro web</a>) según vuestro uso de energía anual. Por este motivo, una vez al año, revisamos vuestro uso de energía de los últimos doce meses y ajustamos el precio de la franja: si habéis aumentado vuestro uso, el valor de esta variable se reduce, y a la inversa, si vuestro uso ha disminuido, su valor se incrementa.
                       </p>
-                      Para vuestro contrato, actualmente la franja es de ${format_es_decimals((float(data['dades_index']['f_antiga']) / 1000), 5)} €/kWh y <strong>a partir del 1 de enero será de: ${format_es_decimals((float(data['dades_index']['f_nova']) / 1000), 5)} €/kWh.</strong>
+                      Para vuestro contrato, actualmente la franja es de ${data['dades_index']['f_antiga_kwh']} €/kWh y <strong>a partir del 1 de enero será de: ${data['dades_index']['f_nova_kwh']} €/kWh.</strong>
                       </p>
                       <p>
-                        Este precio está calculado teniendo en cuenta vuestro <strong>uso de energía de los últimos doce meses: ${format_es_decimals(data['dades_index']['conany'], 0)} kWh.</strong>
+                        Este precio está calculado teniendo en cuenta vuestro <strong>uso de energía de los últimos doce meses: ${data['dades_index']['conany']} kWh.</strong>
                       </p>
                       <h2>
                         Estimación orientativa
                       </h2>
                       <p>
-                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía con la nueva franja.</strong> Teniendo en cuenta el uso del último año, el coste para los próximos doce meses con la franja actual sería de ${format_es_decimals(data['dades_index']['import_total_anual_antiga_amb_impost'], 2)} €, mientras que con la nueva franja sería de ${format_es_decimals(data['dades_index']['import_total_anual_nova_amb_impost'], 2)} €. En ambos casos, la estimación incluye el 21% de IVA y el 5,11% del impuesto especial de la electricidad.
+                        Tal como establece la normativa, hemos realizado una <strong>estimación del coste anual de la energía y la potencia con la nueva franja.</strong> Teniendo en cuenta el uso del último año, el coste para los próximos doce meses con la franja actual sería de ${data['dades_index']['import_total_anual_antiga_amb_impost']} €, mientras que con la nueva franja sería de ${data['dades_index']['import_total_anual_nova_amb_impost']} €. En ambos casos, la estimación incluye el 21% de IVA y el 5,11% del impuesto especial de la electricidad.
                       </p>
                        <h2>Actualización de peajes y cargos</h2>
                       <p>
-                        Los peajes y cargos regulados se actualizan automáticamente (POSAR EL TEXT DEL CORREU GENERAL).
+                        Aprovechamos para recordaros el gobierno también suele actualizar los conceptos regulados de la factura (peajes y cargos) el 1 de enero. Así pues, si hay alguna actualización en estos conceptos, la aplicaremos automáticamente. Estos cambios no suelen suponer modificaciones sustanciales en la factura.
                       </p>
 <h3>Información legal</h3>
                       <p>
