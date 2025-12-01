@@ -132,6 +132,9 @@ ${plantilla_header}
                       <p>
                         En aquest correu adjuntem el contracte actualitzat amb els canvis aplicats. Si hi esteu d'acord, <strong>no cal que ens retorneu el document signat,</strong> ja que l'actualització del preu s'aplica automàticament. Igualment, hem d'informar-vos que si, per alguna raó, aquest canvi us fes replantejar la continuïtat amb la cooperativa, podríeu donar de baixa el vostre contracte mitjançant un canvi de comercialitzadora, ja que no apliquem penalitzacions ni clàusules de permanència. Tanmateix, si aquesta és la vostra decisió, us agrairem que ens ho comuniqueu amb un preavís de 30 dies. En aquest cas, facturaríem el consum realitzat fins a la data de baixa del contracte, amb els preus vigents a cada moment.
                       </p>
+                      <p>
+                        Per acabar, en aquest <a href="https://comparador.cnmc.gob.es/">enllaç</a> podeu accedir al comparador d'ofertes que elabora la Comissió Nacional dels Mercats i la Competència (CNMC) per tal de consultar i comparar diferents ofertes vigents d'algunes de les comercialitzadores del mercat lliure. Tingueu en compte que les tarifes de Som Energia no hi estan incloses.
+                      </p>
                      <p>Quedem a la vostra disposició per a qualsevol dubte o consulta.</p>
                       <p>
                         Salutacions cordials,
@@ -200,12 +203,15 @@ ${plantilla_header}
                       <p>
                         Aprovechamos para recordaros el gobierno también suele actualizar los conceptos regulados de la factura (peajes y cargos) el 1 de enero. Así pues, si hay alguna actualización en estos conceptos, la aplicaremos automáticamente. Estos cambios no suelen suponer modificaciones sustanciales en la factura.
                       </p>
-<h3>Información legal</h3>
+                      <h3>Información legal</h3>
                       <p>
                         La <a href="https://back.somenergia.coop/storage/app/media/DOCS/Condiciones-generales-contrato-suministro-energia-electrica-SomEnergia.pdf">cláusula 5.3 (ii) de las Condiciones Generales</a> nos autoriza a realizar este cambio de la parte del precio no regulada.
                       </p>
                       <p>
                         En este correo adjuntamos el contrato actualizado con los cambios aplicados. Si estáis de acuerdo, <strong>no es necesario que retornéis el documento firmado,</strong> puesto que la actualización del precio se aplica automáticamente. Igualmente, debemos informaros que si, por alguna razón, este cambio os hiciera replantear la continuidad con la cooperativa, podéis dar de baja vuestro contrato mediante un cambio de comercializadora, ya que no aplicamos penalizaciones ni cláusulas de permanencia. Asimismo, si esta es vuestra decisión, os agradeceremos que nos lo comuniquéis con un preaviso de 30 días. En este caso, facturaríamos el consumo realizado hasta la fecha de baja del contrato, con los precios vigentes en cada momento.
+                      </p>
+                      <p>
+                        Finalmente, en este <a href="https://comparador.cnmc.gob.es/">enlace</a> podéis acceder al comparador de ofertas que elabora la Comisión Nacional de los Mercados y la Competencia (CNMC) para consultar y comparar diferentes ofertas vigentes de algunas de las comercializadoras del mercado libre. Tened en cuenta que las tarifas de Som Energia no están incluidas.
                       </p>
                      <p>Quedamos a vuestra disposición para cualquier duda o consulta.</p>
                       <p>
