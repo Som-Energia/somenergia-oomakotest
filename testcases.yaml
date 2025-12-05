@@ -1724,6 +1724,14 @@
 #    ca: 102605
 #    es: 355161
 
+# rebuigB102:
+#  template: input/correu-rebuigB102.mako
+#  model: giscedata.switching
+#  poweremailId: giscedata_switching.notification_atr_B1_02_rebuig
+#  cases:
+#    ca:
+#    es:
+
 ######################################################
 ## Representa
 #
