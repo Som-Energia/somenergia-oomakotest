@@ -26,13 +26,13 @@ ${plantilla_header}
     ${cabecera_cat()}
     <br><br>
     ${salutacio_cat()}
-    ## <p>${notificacio_text}</p>
+    <p>${notificacio_text_cat()}</p>
     ${footer_cat()}
 % else:
     ${cabecera_es()}
     <br><br>
     ${salutacio_es()}
-##     <p>${notificacio_text}</p>
+    <p>${notificacio_text_es()}</p>
     ${footer_es()}
 % endif
 
@@ -108,6 +108,36 @@ ${plantilla_footer}
     </p>
     <p>
         Recientemente has solicitado una baja con corte de suministro contractual para este contrato.
+    </p>
+</%def>
+
+<%def name="notificacio_text_cat()">
+    <p>
+        L'<a href="https://ca.support.somenergia.coop/article/655-les-distribuidores-d-electricitat">empresa distribuïdora</a> de la teva zona, l'encarregada de fer efectiva la baixa, ha rebutjat la teva sol·licitud amb el següent motiu:
+    </p>
+    <p>
+        <strong>Existencia de Solicitud previa en curso C2</strong>
+    </p>
+    <p>
+        Això vol dir, que per aquest punt de subministrament, també s'ha sol·licitat un canvi de comercialitzadora amb modificacions contractuals (el més probable és que es tracti d'un canvi de comercialitzadora amb canvi de titularitat). En aquest cas, l'empresa distribuïdora no tramitarà la baixa de subministrament, ja que es prioritza el canvi de companyia.
+    </p>
+    <p>
+        Ben aviat, rebràs un correu electrònic en el qual t'indicarem la data efectiva del canvi de comercialitzadora.
+    </p>
+</%def>
+
+<%def name="notificacio_text_es()">
+    <p>
+        La <a href="https://es.support.somenergia.coop/article/656-las-distribuidoras-de-electricidad">empresa distribuidora</a> de tu zona, la encargada hacer efectiva la baja, ha rechazado tu solicitud con el siguiente motivo:
+    </p>
+    <p>
+        <strong>Existencia de Solicitud previa en curso C2</strong>
+    </p>
+    <p>
+        Esto quiere decir, que para este punto de suministro, también se ha solicitado un cambio de comercializadora con modificaciones contractuales (lo más probable es que se trate de un cambio de comercializadora con cambio de titularidad). En este caso, la empresa distribuidora no tramitará la baja de suministro, ya que se prioriza el cambio de compañía.
+    </p>
+    <p>
+        En los próximos días, recibirás un correo electrónico en el que te indicaremos la fecha efectiva del cambio de comercializadora.
     </p>
 </%def>
 
