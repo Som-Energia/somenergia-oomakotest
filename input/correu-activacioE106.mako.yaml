@@ -9,3 +9,4 @@ subject_translations:
   es_ES: '${object.polissa_ref_id.name} Contrato activado'
 subject: '${object.polissa_ref_id.name} Contracte activat/Contrato activado'
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+lang: ${object.cups_polissa_id.titular.lang}

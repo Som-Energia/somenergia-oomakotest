@@ -6,4 +6,5 @@ subject_translations:
   es_ES: 'Som Energia: ${object.cups_polissa_id.name} Baja de contrato por cambio de titular'
   ca_ES: 'Som Energia: ${object.cups_polissa_id.name} Baixa de contracte per canvi de titular'
 subject: 'Som Energia: ${object.cups_polissa_id.name} Baixa de contracte per canvi de titular'
-bcc: support.17062.b8d9f4469fa4d856@helpscout.net,${object.cups_polissa_id.direccio_notificacio.email}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+lang: ${object.cups_polissa_id.titular.lang}

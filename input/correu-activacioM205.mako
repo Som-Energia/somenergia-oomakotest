@@ -39,110 +39,93 @@
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
-    template_id = md_obj.get_object_reference(
-        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-    )[1]
-
-    text_legal = render(t_obj.read(
-        object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-        object
-    )
+    template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+    template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+    plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+    plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 %>
 
-<!doctype html>
-<html>
-    <head>
-        <meta charset='utf-8'>
-    </head>
+${plantilla_header}
     % if object.cups_polissa_id.titular.lang == "ca_ES":
         ${correu_cat()}
     % else:
         ${correu_es()}
     % endif
-    ${text_legal}
-</html>
+${plantilla_footer}
 
 
 <%def name="correu_cat()">
-    <body>
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
-            <tr>
-                <td height=2px>
-                    <font size=2><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
-                </td>
-                <td valign=top rowspan="4" align="right">
-                    <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
-                </td>
-            </tr>
-            <tr>
-                <td height=2px>
-                    <font size=1> Adreça punt subministrament: ${object.cups_id.direccio}</font>
-                </td>
-            </tr>
-            <tr>
-                <td height=2px>
-                    <font size=1> Codi CUPS: ${object.cups_id.name}</font>
-                </td>
-            </tr>
-            %if is_pot_tar:
-            <tr>
-                <td height=2px width=100%>
-                    <font size=1> Titular: ${object.cups_polissa_id.titular.name}</font>
-                </td>
-            </tr>
-            %endif
-        </table>
-        <p>
-            Hola${nom_titular},
-        </p>
-        ${pot_gen_ca()}
-        Atentament,<br>
-        <br>
-        Equip de Som Energia<br>
-        <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
-        <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
-    </body>
+    <table width="100%" frame="below">
+        <tr>
+            <td height=2px>
+                <span style="font-size: small;"><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></span>
+            </td>
+        </tr>
+        <tr>
+            <td height=2px>
+                <span style="font-size: xx-small;"> Adreça punt subministrament: ${object.cups_id.direccio}</span>
+            </td>
+        </tr>
+        <tr>
+            <td height=2px>
+                <span style="font-size: xx-small;"> Codi CUPS: ${object.cups_id.name}</span>
+            </td>
+        </tr>
+        %if is_pot_tar:
+        <tr>
+            <td height=2px width=100%>
+                <span style="font-size: xx-small;"> Titular: ${object.cups_polissa_id.titular.name}</span>
+            </td>
+        </tr>
+        %endif
+    </table>
+    <p>
+        Hola${nom_titular},
+    </p>
+    ${pot_gen_ca()}
+    Atentament,<br>
+    <br>
+    Equip de Som Energia<br>
+    <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
+    <a href="http://www.somenergia.coop/ca">www.somenergia.coop</a>
 </%def>
 
 <%def name="correu_es()">
-    <body>
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
-            <tr>
-                <td height=2px>
-                    <font size=2><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font>
-                </td>
-                <td valign=top rowspan="4" align="right">
-                    <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
-                </td>
-            </tr>
-            <tr>
-                <td height=2px>
-                    <font size=1> Dirección del punto de suministro: ${object.cups_id.direccio}</font>
-                </td>
-            </tr>
-            <tr>
-                <td height=2px>
-                    <font size=1> Codigo CUPS: ${object.cups_id.name}</font>
-                </td>
-            </tr>
-            %if is_pot_tar:
-            <tr>
-                <td height=2px width=100%>
-                    <font size=1> Titular: ${object.cups_polissa_id.titular.name}</font>
-                </td>
-            </tr>
-            %endif
-        </table>
-        <p>
-            Hola${nom_titular},
-        </p>
-        ${pot_gen_es()}
-        Atentamente,<br>
-        <br>
-        Equipo de Som Energia<br>
-        <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
-        <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
-    </body>
+
+    <table width="100%" frame="below">
+        <tr>
+            <td height=2px>
+                <span style="font-size: small;"><strong> Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></span>
+            </td>
+        </tr>
+        <tr>
+            <td height=2px>
+                <span style="font-size: small;"> Dirección del punto de suministro: ${object.cups_id.direccio}</span>
+            </td>
+        </tr>
+        <tr>
+            <td height=2px>
+                <span style="font-size: small;"> Codigo CUPS: ${object.cups_id.name}</span>
+            </td>
+        </tr>
+        %if is_pot_tar:
+        <tr>
+            <td height=2px width=100%>
+                <span style="font-size: small;"> Titular: ${object.cups_polissa_id.titular.name}</span>
+            </td>
+        </tr>
+        %endif
+    </table>
+    <p>
+        Hola${nom_titular},
+    </p>
+    ${pot_gen_es()}
+    Atentamente,<br>
+    <br>
+    Equipo de Som Energia<br>
+    <a href="mailto:modifica@somenergia.coop">modifica@somenergia.coop</a><br>
+    <a href="http://www.somenergia.coop/es">www.somenergia.coop</a>
+
 </%def>
 
 <%def name="pot_gen_ca()">

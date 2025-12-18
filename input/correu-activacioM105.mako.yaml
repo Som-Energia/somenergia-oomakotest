@@ -5,10 +5,8 @@ to: ${object.polissa_ref_id.direccio_pagament.email}, <% mail = '{}'.format(obje
   if object.cups_polissa_id.administradora else '') %>  ${mail}
 subject_translations:
   en_US: ''
-  ca_ES: 'Som Energia: Modificació activada pel Contracte ${object.polissa_ref_id.name}.
-    Modificación activada para el contrato ${object.polissa_ref_id.name}'
-  es_ES: 'Som Energia: Modificació activada pel Contracte ${object.polissa_ref_id.name}.
-    Modificación activada para el contrato ${object.polissa_ref_id.name}'
+  ca_ES: 'Som Energia: Modificació activada pel Contracte ${object.polissa_ref_id.name}.'
+  es_ES: 'Som Energia: Modificación activada para el contrato ${object.polissa_ref_id.name}'
 subject: 'Som Energia: Modificació activada pel Contracte ${object.polissa_ref_id.name}.
   Modificación activada para el contrato ${object.polissa_ref_id.name}'
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net

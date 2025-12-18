@@ -1,5 +1,8 @@
 cc: false
 to: ${object.partner_id.address[0].email}
-subject_translations: {}
+subject_translations:
+  ca_ES: Recibo devuelto inversión / Rebut retornat inversió Generation kWh ${object.name}
+  es_ES: Recibo devuelto inversión / Rebut retornat inversió Generation kWh ${object.name}
 subject: Recibo devuelto inversión / Rebut retornat inversió Generation kWh ${object.name}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+lang: ${object.partner_id.lang}

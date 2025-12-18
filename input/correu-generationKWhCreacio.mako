@@ -1,7 +1,3 @@
-<!doctype html>
-<html>
-<body>
-<img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
 <%
 Soci = object.pool.get('somenergia.soci')
 Partner = object.pool.get('res.partner')
@@ -29,15 +25,12 @@ def render(text_to_render, object_):
 
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
-template_id = md_obj.get_object_reference(
-                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                )[1]
-
-text_legal = render(t_obj.read(
-    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-    object
-)
+template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 %>
+${plantilla_header}
 % if lang == "ca_ES":
 Hola ${name.split(',')[-1]},<br>
 <br>
@@ -82,7 +75,4 @@ Som Energia, SCCL<br>
 <a href="http://www.somenergia.coop">www.somenergia.coop</a><br>
 % endif
 <br>
-${text_legal}
-<br>
-</body>
-</html>
+${plantilla_footer}

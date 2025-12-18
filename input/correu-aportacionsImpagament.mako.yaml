@@ -5,3 +5,4 @@ subject_translations:
   es_ES: Recibo devuelto inversión ${object.name}
 subject: Recibo devuelto inversión / Rebut retornat inversió ${object.name}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+lang: ${object.partner_id.lang}
