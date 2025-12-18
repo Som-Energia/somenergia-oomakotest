@@ -1,22 +1,3 @@
-<!doctype html>
-<html>
-<head><meta charset='utf8'></head>
-<body>
-<table width="100%" frame="below" BGCOLOR="#F2F2F2">
-% if object.invoice_id.partner_id.lang == "ca_ES":
-<tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia nº ${object.polissa_id.name}:</strong></font></td>
-<td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr>
-<tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr>
-<tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr>
-<tr><td height = 2px width=100%><FONT SIZE=1>Titular: ${object.polissa_id.titular.name}</font></td></tr>
-% else:
-<tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.polissa_id.name}: </strong></font></td>
-<td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr>
-<tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr>
-<tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups_id.name}</font></td></tr>
-<tr><td height = 2px width=100%><FONT SIZE=1>Titular: ${object.polissa_id.titular.name}</font></td></tr>
-% endif
-</table>
 <%
 from mako.template import Template
 def render(text_to_render, object_):
@@ -27,13 +8,10 @@ def render(text_to_render, object_):
     )
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
-template_id = md_obj.get_object_reference(
-                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                )[1]
-text_legal = render(t_obj.read(
-    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-    object
-)
+template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 %>
 <%
 import datetime
@@ -59,10 +37,30 @@ try:
 except:
   nom_pagador = ''
 %>
-<br>
-Hola${nom_pagador},<br>
+
+${plantilla_header}
+
 % if object.invoice_id.partner_id.lang != "es_ES":
-<br>
+<table width="100%" frame="below">
+<tbody>
+<tr>
+  <td height="2px"><span style="font-size: small;"><strong>Contracte Som Energia nº ${object.polissa_id.name}</strong></span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Adreça punt subministrament: ${object.cups_id.direccio}</span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Codi CUPS: ${object.cups_id.name}</span></td>
+</tr>
+<tr>
+  <td width="100%" height="2px"><span style="font-size: xx-small;"> Titular: ${object.polissa_id.titular.name} </span></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+Hola ${nom_pagador},<br/>
+<br/>
 T'enviem la <B>factura d'abonament</B> d'una factura anterior d'electricitat de Som Energia, ja que les lectures facturades no eren correctes.<br>
 <br>
 Aquesta factura d'abonament anul·la la que havíem emès anteriorment per al mateix període.<br>
@@ -95,7 +93,26 @@ factura@somenergia.coop<br>
 <HR align="LEFT" size="1" width="400" color="Black" noshade>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
-<br>
+<table width="100%" frame="below">
+<tbody>
+<tr>
+  <td height="2px"><span style="font-size: small;"><strong>Contrato Som Energia nº ${object.polissa_id.name}</strong></span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Dirección punto suministro: ${object.cups_id.direccio}</span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Código CUPS: ${object.cups_id.name}</span></td>
+</tr>
+<tr>
+  <td width="100%" height="2px"><span style="font-size: xx-small;">Titular: ${object.polissa_id.titular.name} </span></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+Hola${nom_pagador},<br/>
+<br/>
 Te enviamos la <B>factura abonadora</B> de una factura anterior de electricidad de Som Energia, ya que las lecturas facturadas no eran correctas.<br>
 <br>
 Esta factura abonadora anula la que habíamos emitido anteriormente para el mismo periodo.<br>
@@ -124,7 +141,4 @@ Equipo de Som Energia<br>
 factura@somenergia.coop<br>
 <a href="http://www.somenergia.coop/">www.somenergia.coop</a><br>
 % endif
-${text_legal}
-</body>
-</html>
-</html>
+${plantilla_footer}

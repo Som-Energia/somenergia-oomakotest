@@ -94,50 +94,23 @@ if pas1:
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
-    text_desistiment = "abc"
-    text_legal = "ABC"
-    template_id = md_obj.get_object_reference(
-            object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_modi_rejection_text'
-        )[1]
 
-    text_desistiment = render(
-        t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-        object
-    )
-
-    template_id = md_obj.get_object_reference(
-        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-    )[1]
-    text_legal = render(
-        t_obj.read(object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-        object
-    )
+    template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+    template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+    text_desistiment_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_rejection_text')[1]
+    plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+    plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
+    text_desistiment = render(t_obj.read(object._cr, object._uid, [text_desistiment_id], ['def_body_text'])[0]['def_body_text'], object)
 
 %>
 
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8"/>
-    </head>
-    <body>
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
-            <tr>
-                <td valign=TOP rowspan="4" align="right">
-                    <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
-                </td>
-            </tr>
-        </table>
-        <br>
-        <br>
-        % if object.cups_polissa_id.titular.lang != "ca_ES":
-            ${correu_es()}
-        % else:
-            ${correu_cat()}
-        %endif
-        ${text_legal}
-    </body>
-</html>
+    ${plantilla_header}
+    % if object.cups_polissa_id.titular.lang != "ca_ES":
+        ${correu_es()}
+    % else:
+        ${correu_cat()}
+    %endif
+    ${plantilla_footer}
 
 <%def name="correu_cat()">
     <p>
