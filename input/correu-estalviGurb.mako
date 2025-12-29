@@ -14,14 +14,9 @@
     template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
     plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
     plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
-
-    email_o = object.pool.get('report.backend.mailcanvipreus')
-    data = email_o.get_data(object._cr, object._uid, object.id, context={'lang': object.partner_id.lang})
 %>
 
 ${plantilla_header}
-
-<!-- MAILDEV_CODE: ${data['codi_polissa']} -->
 
 <p>
   Hola${data['nom_titular']} <br/>
@@ -48,24 +43,24 @@ ${plantilla_header}
       Se t'han <strong>assignat un total de ${env['saving']['kwh_generacio_neta']} kWh</strong> d'energia.
     </li>
     <li>
-      D'aquesta energia has <strong>autoconsumit</strong> (energia que consumeixes directament quan la instal·lació està generant) <strong>${env['saving']['kwh_autoconsumits']}kWh,</strong>  que suposa un [% AUTO] de la producció assignada.
+      D'aquesta energia has <strong>autoconsumit</strong> (energia que consumeixes directament quan la instal·lació està generant) <strong>${env['saving']['kwh_autoconsumits']}kWh,</strong> que suposa un ${env['saving']['percentatge_autoconsumida']} % de la producció assignada.
     </li>
     <li>
       L'energia que no has fet servir i que ha anat a parar a la xarxa de distribució i per tant ha generat un <strong>excedent a compensar ha estat de ${env['saving']['kwh_excedents']} kWh.</strong>
     </li>
     <li>
-      L'energia autoproduïda que has rebut de la instal·lació gràcies a la teva participació a GURB ha suposat un <strong>${object.beta_percentage}%</strong> del teu consum total durant aquest temps.
+      L'energia autoproduïda que has rebut de la instal·lació gràcies a la teva participació a GURB ha suposat un <strong>${env['saving']['percentatge_autoconsum']} %</strong> del teu consum total durant aquest temps.
     </li>
     <li>
-      L'energia que has utilitzat i que no provenia de les plaques, i que per tant <strong>ha vingut de la xarxa de distribució, ha estat de ${env['saving']['estalvi_amb_impostos']} kWh.</strong>
+      L'energia que has utilitzat i que no provenia de les plaques, i que per tant <strong>ha vingut de la xarxa de distribució, ha estat de ${env['saving']['kwh_consumits']} kWh.</strong>
     </li>
     <li>
       <strong>Això t'ha suposat un estalvi total de ${env['saving']['estalvi_amb_impostos']} euros</strong> (aquest càlcul no té en compte la quota d'adhesió).
     </li>
   </ul>
-  <p>
+  <small>
     Les dades de consum són dades aportades per l’empresa de distribució elèctrica i el càlcul està fet en base a aquesta informació.
-  </p>
+  </small>
   <p>
     <strong>Com pots veure aquestes dades?</strong> A la factura mensual de Som Energia pots veure el detall de l'energia autoconsumida, l'energia consumida de xarxa i l'energia excedentària.
   </p>
@@ -112,13 +107,13 @@ ${plantilla_header}
       Se te han <strong>asignado un total de ${env['saving']['kwh_generacio_neta']} kWh</strong> de energía.
     </li>
     <li>
-      De esa energía has <strong>autoconsumido</strong> (energía que consumes directamente cuando la instalación está generando) <strong>${env['saving']['kwh_autoconsumits']} kWh,</strong> que supone un [% AUTO] de la producción asignada.
+      De esa energía has <strong>autoconsumido</strong> (energía que consumes directamente cuando la instalación está generando) <strong>${env['saving']['kwh_autoconsumits']} kWh,</strong> que supone un XX de la producción asignada.
     </li>
     <li>
       La energía que no has utilizado y que ha ido a parar a la red de distribución y por tanto ha generado un <strong>excedente a compensar ha sido de ${env['saving']['kwh_excedents']} kWh.</strong>
     </li>
     <li>
-      La energía autoproducida que ha recibido de la instalación gracias a tu participación en GURB ha supuesto un <strong>${object.beta_percentage} %</strong> de tu consumo total durante este tiempo.
+      La energía autoproducida que ha recibido de la instalación gracias a tu participación en GURB ha supuesto un <strong>${env['saving']['percentatge_autoconsum']} %</strong> de tu consumo total durante este tiempo.
     </li>
     <li>
       La energía que has utilizado y que no provenía de las placas, y que por tanto <strong>ha venido de la red de distribución, ha sido de xx kWh.</strong>
