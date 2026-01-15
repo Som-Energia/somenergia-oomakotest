@@ -7,6 +7,10 @@
             format_exceptions=True
         )
 
+    import locale
+
+    locale.setlocale(locale.LC_NUMERIC, 'ca_ES.UTF-8')
+
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
 
@@ -19,12 +23,15 @@
 ${plantilla_header}
 
 <p>
-  Hola${data['nom_titular']} <br/>
+  Hola,<br/>
 </p>
 
-% if data['lang'] == "ca_ES": # CATALÀ
+% if object.partner_id.lang == "ca_ES": # CATALÀ
   <p>
-    Aquests dies estem de celebració! Ara ja fa un any que vàrem posar en marxa <strong>el primer projecte GURB a Mataró.</strong>
+    L’equip de GURB de Som Energia hem estat treballant per donar-vos una bona notícia per començar el 2026.
+  </p>
+  <p>
+    Ara ja fa més d’un any que vàrem posar en marxa el <strong>primer projecte GURB a Mataró!</strong>
   </p>
   <p>
     Com està anant? Esperem que molt bé!
@@ -36,48 +43,44 @@ ${plantilla_header}
     Sovint, participar a GURB també comporta <strong>beneficis econòmics,</strong> ja que suposa un estalvi en la teva factura de la llum. Creiem que ara és un bon moment per fer un repàs de com està anant.
   </p>
   <p>
-    Durant el temps que portes participant al projecte i, segons la teva quota de participació (${object.beta_kw} kW):
+    Durant el temps que portes participant al projecte i, segons la teva quota de participació (${locale.format_string('%.2f', object.beta_kw, grouping=True)} kW):
   </p>
   <ul>
     <li>
-      Se t'han <strong>assignat un total de ${env['saving']['kwh_generacio_neta']} kWh</strong> d'energia.
+      Se t'han <strong>assignat un total de ${locale.format_string('%.2f', env['saving']['kwh_generacio_neta'], grouping=True)} kWh</strong> d'energia.
     </li>
     <li>
-      D'aquesta energia has <strong>autoconsumit</strong> (energia que consumeixes directament quan la instal·lació està generant) <strong>${env['saving']['kwh_autoconsumits']}kWh,</strong> que suposa un ${env['saving']['percentatge_autoconsumida']} % de la producció assignada.
+      D'aquesta energia has <strong>autoconsumit</strong> (energia que consumeixes directament quan la instal·lació està generant) <strong>${locale.format_string('%.2f', env['saving']['kwh_autoconsumits'], grouping=True)}kWh,</strong> que suposa un ${locale.format_string('%.2f', env['saving']['percentatge_autoconsumida'], grouping=True)} % de la producció assignada.
     </li>
     <li>
-      L'energia que no has fet servir i que ha anat a parar a la xarxa de distribució i per tant ha generat un <strong>excedent a compensar ha estat de ${env['saving']['kwh_excedents']} kWh.</strong>
+      L'energia que no has fet servir i que ha anat a parar a la xarxa de distribució i, per tant, ha generat un <strong>excedent a compensar ha estat de ${locale.format_string('%.2f', env['saving']['kwh_excedents'], grouping=True)} kWh.</strong>
     </li>
     <li>
-      L'energia autoproduïda que has rebut de la instal·lació gràcies a la teva participació a GURB ha suposat un <strong>${env['saving']['percentatge_autoconsum']} %</strong> del teu consum total durant aquest temps.
+      L'energia autoconsumida ha suposat un <strong>${locale.format_string('%.2f', env['saving']['percentatge_autoconsum'], grouping=True)} %</strong> del teu consum total durant aquest temps. Això significa que si no tinguessis el servei GURB, seria energia que pagaries tal com pagues l’energia procedent de la xarxa de distribució.
     </li>
     <li>
-      L'energia que has utilitzat i que no provenia de les plaques, i que per tant <strong>ha vingut de la xarxa de distribució, ha estat de ${env['saving']['kwh_consumits']} kWh.</strong>
-    </li>
-    <li>
-      <strong>Això t'ha suposat un estalvi total de ${env['saving']['estalvi_amb_impostos']} euros</strong> (aquest càlcul no té en compte la quota d'adhesió).
+      L'energia que has utilitzat i que no provenia de les plaques, i que per tant <strong>ha vingut de la xarxa de distribució, ha estat de ${locale.format_string('%.2f', env['saving']['kwh_consumits'], grouping=True)} kWh.</strong>
     </li>
   </ul>
+  <figure class="table">
+      <table style="background-color: #FFCDB5; border: 4px solid #FF632B; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+          <tbody>
+              <tr>
+                  <td>
+                    <strong>Això t'ha suposat un estalvi total de ${locale.format_string('%.2f', env['saving']['estalvi_amb_impostos'], grouping=True)} euros</strong> (aquest càlcul té en compte la quota GURB que pagues mensualment a la factura i els impostos associats).
+                </td>
+              </tr>
+          </tbody>
+      </table>
+  </figure>
   <small>
     Les dades de consum són dades aportades per l’empresa de distribució elèctrica i el càlcul està fet en base a aquesta informació.
   </small>
   <p>
-    <strong>Com pots veure aquestes dades?</strong> A la factura mensual de Som Energia pots veure el detall de l'energia autoconsumida, l'energia consumida de xarxa i l'energia excedentària.
-  </p>
-  <p>
-    <strong>I què pots fer per treure'n un major rendiment?</strong> Intentar moure al màxim els teus consums energètics a les hores solars, que són les hores de màxima producció.
-  </p>
-  <p>
-    Tingues present la teva participació per poder consumir de manera esglaonada dins d'aquestes hores: si engegues tots els electrodomèstics dins del mateix interval horari, és molt probable que amb la quantitat d'energia assignada no en tinguis prou i hauries de consumir energia de la xarxa.
-  </p>
-  <p>
-    Alguns electrodomèstics ja tenen la funció de programació horària incorporada per programar-ne el seu funcionament. Això et permetria per exemple programar la rentadora a hores solars. Si els teus aparells no tenen aquesta opció, pots comprar temporitzadors que et permetin programar electrodomèstics. També hi ha sistemes de domòtica que, de manera remota i  intel·ligent, compleixen aquesta funció.
-  </p>
-  <p>
     Volem agrair-te especialment la teva participació i la teva confiança un cop més a Som Energia. Gràcies a la teva col·laboració la cooperativa pot continuar treballant per complir la nostra missió, <strong>transformar el model energètic posant el poder en mans de la ciutadania.</strong>
   </p>
   <p>
-    Esperem que tota aquesta informació t'hagi estat útil i et resulti interessant. Altre cop, moltes gràcies per la teva confiança en la cooperativa. Si tens qualsevol dubte ens pots escriure a gurb@somenergia.coop.
+    Esperem que tota aquesta informació t'hagi estat útil i et resulti interessant. Altre cop, moltes gràcies per la teva confiança en la cooperativa. Si tens qualsevol dubte ens pots escriure a <a href="mailto:gurb@somenergia.coop">gurb@somenergia.coop</a>.
   </p>
   <p>
     Salutacions,
@@ -88,7 +91,10 @@ ${plantilla_header}
   </p>
 %else: ## CASTELLANO
   <p>
-    ¡Estos días estamos de celebración! Hace ya un año que pusimos en marcha el primer proyecto GURB en Mataró.
+    El equipo de GURB de Som Energia hemos estado trabajando para daros una buena noticia y  empezar bien el 2026.
+  </p>
+  <p>
+    ¡Ahora ya hace más de un año que pusimos en marcha el <strong>primer proyecto GURB en Mataró!</strong>
   </p>
   <p>
     ¿Cómo está yendo? ¡Esperamos que muy bien!
@@ -104,41 +110,38 @@ ${plantilla_header}
   </p>
   <ul>
     <li>
-      Se te han <strong>asignado un total de ${env['saving']['kwh_generacio_neta']} kWh</strong> de energía.
+      Se te han <strong>asignado un total de ${locale.format_string('%.2f', env['saving']['kwh_generacio_neta'], grouping=True)} kWh</strong> de energía.
     </li>
     <li>
-      De esa energía has <strong>autoconsumido</strong> (energía que consumes directamente cuando la instalación está generando) <strong>${env['saving']['kwh_autoconsumits']} kWh,</strong> que supone un XX de la producción asignada.
+      De esa energía has <strong>autoconsumido</strong> (energía que consumes directamente cuando la instalación está generando) <strong>${locale.format_string('%.2f', env['saving']['kwh_autoconsumits'], grouping=True)} kWh,</strong> que supone un ${locale.format_string('%.2f', env['saving']['percentatge_autoconsumida'], grouping=True)} % de la producción asignada.
     </li>
     <li>
-      La energía que no has utilizado y que ha ido a parar a la red de distribución y por tanto ha generado un <strong>excedente a compensar ha sido de ${env['saving']['kwh_excedents']} kWh.</strong>
+      La energía que no has utilizado y que ha ido a parar a la red de distribución y, por tanto, ha generado un <strong>excedente a compensar ha sido de ${locale.format_string('%.2f', env['saving']['kwh_excedents'], grouping=True)} kWh.</strong>
     </li>
     <li>
-      La energía autoproducida que ha recibido de la instalación gracias a tu participación en GURB ha supuesto un <strong>${env['saving']['percentatge_autoconsum']} %</strong> de tu consumo total durante este tiempo.
+      La energía autoconsumida ha supuesto un <strong>${locale.format_string('%.2f', env['saving']['percentatge_autoconsum'], grouping=True)} %</strong> de tu consumo total durante este tiempo. Esto significa que si no tuvieras el servicio GURB, sería energía que pagarías tal y como pagas la energía procedente de la red de distribución.
     </li>
     <li>
-      La energía que has utilizado y que no provenía de las placas, y que por tanto <strong>ha venido de la red de distribución, ha sido de xx kWh.</strong>
-    </li>
-    <li>
-      <strong>Esto te ha supuesto un ahorro total de ${env['saving']['estalvi_amb_impostos']} euros</strong> (este cálculo no tiene en cuenta la cuota de adhesión).
+      La energía que has utilizado y que no provenía de las placas, y que por tanto <strong>ha venido de la red de distribución, ha sido de ${locale.format_string('%.2f', env['saving']['kwh_consumits'], grouping=True)} kWh.</strong>
     </li>
   </ul>
+  <figure class="table">
+    <table style="background-color: #FFCDB5; border: 4px solid #FF632B; padding-top: 1em;padding-left: 2em;padding-right: 2em;padding-bottom: 1em;">
+        <tbody>
+            <tr>
+                <td>
+                  <strong>Esto te ha supuesto un ahorro total de ${locale.format_string('%.2f', env['saving']['estalvi_amb_impostos'], grouping=True)} euros</strong> (este cálculo tiene en cuenta la cuota GURB que pagas mensualmente en la factura y los impuestos asociados).
+                </td>
+              </tr>
+          </tbody>
+      </table>
+  </figure>
+  <small>Los datos de consumo son datos aportados por la empresa de distribución eléctrica y el cálculo está realizado en base a esta información.</small>
   <p>
-    <strong>¿Cómo puedes ver estos datos?</strong> En la factura mensual de Som Energia puedes ver el detalle de la energía autoconsumida, la energía consumida de red y la energía excedentaria.
+    Queremos agradecerte especialmente tu participación y confianza una vez más a Som Energia. Gracias a tu colaboración, la cooperativa puede seguir trabajando para cumplir con nuestra misión, <strong>transformar el modelo energético poniendo el poder en manos de la ciudadanía.</strong>
   </p>
   <p>
-    ¿Y qué puedes hacer para sacarle un mayor rendimiento? Intentar mover al máximo tus consumos energéticos en las horas solares, que son las horas de máxima producción.
-  </p>
-  <p>
-    Ten presente tu participación para poder consumir de forma escalonada dentro de estas horas: si pones en marcha todos los electrodomésticos dentro del mismo intervalo horario, es muy probable que con la cantidad de energía asignada no tengas suficiente y deberías consumir energía de la red.
-  </p>
-  <p>
-    Algunos electrodomésticos ya tienen la función de programación horaria incorporada para programar su funcionamiento. Esto te permitiría por ejemplo programar la lavadora en horas solares. Si tus aparatos no tienen esa opción, puedes comprar temporizadores que te permitan programar electrodomésticos. También existen sistemas de domótica que, de forma remota e inteligente, cumplen esta función.
-  </p>
-  <p>
-    Queremos agradecerte especialmente tu participación y confianza una vez más a Som Energia. Gracias a tu colaboración la cooperativa puede seguir trabajando para cumplir con nuestra misión, transformar el modelo energético poniendo el poder en manos de la ciudadanía.
-  </p>
-  <p>
-    Esperamos que toda esta información te haya sido útil y te resulte interesante. De nuevo, muchas gracias por tu confianza en la cooperativa. Si tienes cualquier duda puedes escribirnos a gurb@somenergia.coop.
+    Esperamos que toda esta información te haya sido útil y te resulte interesante. De nuevo, muchas gracias por tu confianza en la cooperativa. Si tienes cualquier duda puedes escribirnos a <a href="mailto:gurb@somenergia.coop">gurb@somenergia.coop</a>.
   </p>
   <p>
     Saludos,
