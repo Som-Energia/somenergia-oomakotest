@@ -76,7 +76,7 @@ ${plantilla_social_links}
 <p>Si mai canvies d’opinió, estarem encantades de rebre’t altre cop!</p>
 <br>
 <p><strong>No has estat tu?</strong></p>
-<p>Si no has sol·licitat el canvi de companyia, i aquest s’ha fet en contra de la teva voluntat, ens pots respondre aquest mateix correu i iniciarem els tràmits per tal que tornis a tenir el contracte amb Som Energia. Si el canvi de comercialitzadora s’ha realitzat de forma fraudulenta, ens pots respondre aquest mateix correu i farem les gestions corresponents per tal de retornar el teu contracte a Som Energia.</p>
+<p>Si no has sol·licitat el canvi de companyia, i aquest s’ha fet en contra de la teva voluntat, ens pots respondre aquest mateix correu i iniciarem els tràmits per tal que tornis a tenir el contracte amb Som Energia.</p>
 <br>
 <br>
 Moltes gràcies,<br>
@@ -105,7 +105,7 @@ ${plantilla_social_links}
 <p>Si alguna vez cambias de opinión, ¡estaremos encantadas de recibirte de nuevo!</p>
 <br>
 <p><strong>¿No has sido tú?</strong></p>
-<p>Si no has solicitado el cambio de compañía, y éste se ha hecho en contra de tu voluntad, puedes respondernos este mismo correo e iniciaremos los trámites para que vuelvas a tener el contrato con Som Energia. Si el cambio de comercializadora se ha realizado de forma fraudulenta, puedes respondernos este mismo correo y haremos las gestiones correspondientes para devolver tu contrato a Som Energia.</p>
+<p>Si no has solicitado el cambio de compañía, y éste se ha hecho en contra de tu voluntad, puedes respondernos este mismo correo e iniciaremos los trámites para que vuelvas a tener el contrato con Som Energia.</p>
 <br>
 <br>
 Muchas gracias,<br>
