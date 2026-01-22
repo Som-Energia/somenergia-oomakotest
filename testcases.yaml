@@ -948,7 +948,7 @@
 #    30A_c2_ca: 21728   #par 17324
 #    30A_c2_es: 34150   #par 31097
 #
-#activacioencontraC106_automatica:
+# activacioencontraC106_automatica:
 #  template: input/correu-activacioencontraC106.mako
 #  model: giscedata.switching
 #  #poweremailId: 21
@@ -958,6 +958,8 @@
 #    20A_es: 9 #par 7821
 #    30A_ca: 8166 #par 12802
 #    30A_es: 11838 #par 20800
+#    20TD_CTSS_ca: 627549
+#    20TD_CTSS_es: 617522
 #
 #activacioencontraC206_automatica:
 #  template: input/correu-activacioencontraC206.mako

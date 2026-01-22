@@ -26,6 +26,7 @@ def render(text_to_render, object_):
     templ = Template(text_to_render)
     return templ.render_unicode(
         object=object_,
+        lang=object.cups_polissa_id.titular.lang,
         format_exceptions=True
 )
 
@@ -33,41 +34,85 @@ t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
 template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
 template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+template_social_links_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_social_links')[1]
 plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
 plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
+plantilla_social_links = render(t_obj.read(object._cr, object._uid, [template_social_links_id], ['def_body_text'])[0]['def_body_text'], object)
+
+ct_ss_soci_id = md_obj.get_object_reference(
+  object._cr, object._uid, 'som_polissa_soci', 'res_partner_soci_ct'
+)[1]
+is_ct_ss = object.cups_polissa_id.soci.id == ct_ss_soci_id
+
+link_survey_ca = (
+  'https://docs.google.com/forms/d/e/1FAIpQLSeL-mHps3LER8NyNoyOMBwlYbrx1U2zf9nr7i10uk2gtpkc4g/viewform' if is_ct_ss else 'https://docs.google.com/forms/d/e/1FAIpQLSeIzBIxrPbN5mykRtkPDhg8ZbQ3CW_Z-LiHIdu4ojQugW80Ug/viewform'
+)
+link_survey_es = (
+  'https://docs.google.com/forms/d/e/1FAIpQLSf_GUQE-W3XTYubTsLvKQa7TGn1zj2BFznLMKNNWaurUik-ng/viewform' if is_ct_ss else 'https://docs.google.com/forms/d/e/1FAIpQLSfyzfNf5GIQtrUhWuOX_h0EsA_3JQYLgLI5HT3yE-8ahvnAqg/viewform'
+)
 
 %>
 
 ${plantilla_header}
 
+<p>Hola${nom_titular},</p>
 % if object.cups_polissa_id.titular.lang != "es_ES":
-<head><meta charset="utf-8" /><table width="100%" frame="below"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1> Titular: ${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
-<br><br>
-Hola${nom_titular},
-<br><br>
-<p>T&rsquo;escrivim per informar-te que ens han comunicat la baixa del teu contracte amb Som Energia. La data de canvi de companyia &eacute;s el <strong>${date}</strong></p>
-% if object.cups_polissa_id.soci:
-<p dir="ltr">Si no eres conscient que s'ha realitzat aquesta sol&middot;licitud i s'ha fet contra la teva voluntat, respon a aquest mateix correu i iniciarem els tr&agrave;mits perqu&egrave; tornis a tenir el contracte amb la cooperativa i, si &eacute;s el cas, per a realitzar la reclamaci&oacute; pertinent si el canvi de comercialitzadora es va fer de manera fraudulenta sense el teu consentiment.</p>
-<p>Si ho has fet de forma conscient, i vols passar el contracte de Som Energia a una altra comercialitzadora, no cal que facis cas d'aquest missatge perqu&egrave; sempre pots triar lliurement la teva comercialitzadora.</p>
-<p>Per &uacute;ltim, tamb&eacute; ens agradaria saber els motius que t&rsquo;han fet decidir a canviar. Ens ser&agrave; de gran ajuda con&egrave;ixer-los. Nom&eacute;s cal que dediquis un parell de minuts a respondre aquest <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIzBIxrPbN5mykRtkPDhg8ZbQ3CW_Z-LiHIdu4ojQugW80Ug/viewform">q&uuml;estionari</a>.</p>
+<p>Ens sap greu informar-te que el teu contracte ${object.cups_polissa_id.name}, amb direcció de subministrament ${object.cups_id.direccio}, número de CUPS ${object.cups_id.name} i titular ${object.cups_polissa_id.titular.name}, <strong>ja no està amb Som Energia</strong>. La data del canvi de companyia és el ${date}.</p>
+<p>Esperem que, durant aquest temps, hagis estat a gust i et quedin bons records de la primera cooperativa d’energia verda de l’estat.</p>
+% if nom_titular:
+<p>Per part nostra,${nom_titular}, et trobarem a faltar, i <strong>t’agraïm</strong> aquest temps de confiança i camí conjunt.</p>
+% else:
+<p>Per part nostra, et trobarem a faltar, i <strong>t’agraïm</strong> aquest temps de confiança i camí conjunt.</p>
 % endif
-<p>Gr&agrave;cies.<br><br>Salutacions,<br><br>Equip de Som Energia<br>comercialitzacio@somenergia.coop<br><a href="www.somenergia.coop">www.somenergia.coop</a></p>
-% endif
-% if object.cups_polissa_id.titular.lang != "ca_ES" and object.cups_polissa_id.titular.lang != "es_ES":
-----------------------------------------------------------------------------------------------------
+<p>Des de Som Energia seguirem treballant per a un futur més net, sostenible, just i en mans de les persones.</p>
+<p>Com sempre que marxa algú, ens preguntem: <strong>què ha passat?</strong> Podríem haver fet quelcom perquè aquesta persona no hagués marxat? Com podríem millorar?</p>
+<p>És per això que et volem demanar un últim favor: que ens ho expliquis responent <a target='_blank' href="${link_survey_ca}">aquesta breu enquesta</a>, de 3 minutets.</p>
+<p class='align-center'><a class='button' target='_blank' href='${link_survey_ca}'>Respon l’enquesta</a></p>
+<p>T’agraïm per avançat aquest retorn, ens serà molt útil per seguir millorant!</p>
+<br>
+<p><strong>Seguim en contacte?</strong></p>
+<p>Ah! Que marxis no vol dir que ens perdis la pista! <strong>Podem seguir en contacte</strong> a través de les xarxes socials, aquí et deixem els enllaços:</p>
+${plantilla_social_links}
+<p>Si mai canvies d’opinió, estarem encantades de rebre’t altre cop!</p>
+<br>
+<p><strong>No has estat tu?</strong></p>
+<p>Si no has sol·licitat el canvi de companyia, i aquest s’ha fet en contra de la teva voluntat, ens pots respondre aquest mateix correu i iniciarem els tràmits per tal que tornis a tenir el contracte amb Som Energia.</p>
+<br>
+<br>
+Moltes gràcies,<br>
+<br>
+Som Energia<br>
+<a target='_blank' href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br>
+<a target='_blank' href="tel:+34872202550">872.202.550</a><br>
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
-<head><meta charset="utf-8" /><table width="100%" frame="below"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Titular:${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
-<br><br>
-Hola${nom_titular},
-<br><br>
-<p>Te escribimos para informarte que nos han comunicado la baja de tu contrato con Som Energia. La fecha de cambio de compa&ntilde;ia es el <strong>${date}</strong></p>
-% if object.cups_polissa_id.soci:
-<p dir="ltr">Si no eres consciente de que se realiz&oacute; esta solicitud y se hizo contra tu voluntad, responde a este mismo correo e iniciaremos los tr&aacute;mites para que vuelvas a tener el contrato con la cooperativa y, en su caso, para realizar la reclamaci&oacute;n pertinente si el cambio de comercializadora se hizo de forma fraudulenta sin tu consentimiento.</p>
-<p>Si lo has hecho de manera consciente, y quieres pasar el contrato de Som Energia a otra comercializadora, no es necesario que atiendas a este mensaje ya que siempre puedes escoger libremente tu comercializadora.</p>
-<p>Por &uacute;ltimo, tambi&eacute;n nos gustar&iacute;a saber los motivos que te han hecho decidir por el cambio. Nos puede ser de gran ayuda conocerlos. Solo tendr&iacute;as que dedicar un par de minutos responder este <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyzfNf5GIQtrUhWuOX_h0EsA_3JQYLgLI5HT3yE-8ahvnAqg/viewform">cuestionario</a>.</p>
+<p>Nos sabe mal informarte de que tu contrato ${object.cups_polissa_id.name}, con dirección de suministro ${object.cups_id.direccio}, número de CUPS ${object.cups_id.name} y titular ${object.cups_polissa_id.titular.name}, <strong>ya no está con Som Energia</strong>. La fecha del cambio de compañía es el ${date}.</p>
+<p>Esperamos que, durante este tiempo, hayas estado a gusto y te queden buenos recuerdos de la primera cooperativa estatal de energía verde.</p>
+% if nom_titular:
+<p>Por nuestra parte,${nom_titular}, te echaremos de menos, y <strong>te agradecemos</strong> ese tiempo de confianza y camino conjunto.</p>
+% else:
+<p>Por nuestra parte, te echaremos de menos, y <strong>te agradecemos</strong> ese tiempo de confianza y camino conjunto.</p>
 % endif
-<p>Gracias.<br><br>Un saludo,<br><br>Equipo de Som Energia<br>comercializacion@somenergia.coop<br><a href="http://www.somenergia.coop/es">www.somenergia.coop</a></p>
+<p>Desde Som Energia seguiremos trabajando para un futuro más limpio, sostenible, justo y en manos de las personas.</p>
+<p>Como siempre que se va alguien, nos preguntamos: <strong>¿qué ha pasado?</strong> ¿Podríamos haber hecho algo para que esa persona no se hubiera ido? ¿Cómo podríamos mejorar?</p>
+<p>Por eso te queremos pedir un último favor: que nos lo expliques respondiendo <a target='_blank' href="${link_survey_es}">esta breve encuesta</a>, de 3 minutitos.</p>
+<p class='align-center'><a class='button' target='_blank' href='${link_survey_es}'>Responde la encuesta</a></p>
+<p>Te agradecemos por adelantado este retorno, ¡nos será muy útil para seguir mejorando!</p>
+<br>
+<p><strong>¿Seguimos en contacto?</strong></p>
+<p>¡Ah! Que te vayas no quiere decir que nos pierdas la pista. <strong>Podemos seguir en contacto</strong> a través de las redes sociales, aquí te dejamos los enlaces:</p>
+${plantilla_social_links}
+<p>Si alguna vez cambias de opinión, ¡estaremos encantadas de recibirte de nuevo!</p>
+<br>
+<p><strong>¿No has sido tú?</strong></p>
+<p>Si no has solicitado el cambio de compañía, y éste se ha hecho en contra de tu voluntad, puedes respondernos este mismo correo e iniciaremos los trámites para que vuelvas a tener el contrato con Som Energia.</p>
+<br>
+<br>
+Muchas gracias,<br>
+<br>
+Som Energia<br>
+<a target='_blank' href="https://www.somenergia.coop/es">www.somenergia.coop</a><br>
+<a target='_blank' href="tel:+34872202550">872.202.550</a><br>
 % endif
 
 ${plantilla_footer}
