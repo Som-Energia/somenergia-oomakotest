@@ -107,7 +107,7 @@ ${plantilla_footer}
         Hola${nom_titular}, <br>
     </p>
     <p>
-        Recientemente has solicitado una baja con corte de suministro contractual para este contrato.
+        Recientemente has solicitado una baja con corte de suministro para este contrato.
     </p>
 </%def>
 
