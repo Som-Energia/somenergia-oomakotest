@@ -1,5 +1,5 @@
 cc: false
-to: ${object.cups_polissa_id.titular.address[0].email},${object.cups_polissa_id.pagador.address[0].email},${object.cups_polissa_id.direccio_notificacio.email}
+to: ${object.cups_polissa_id.titular.www_email},${object.cups_polissa_id.pagador.www_email},${object.cups_polissa_id.direccio_notificacio.email}
 subject_translations:
   ca_ES: "Som Energia: Baixa contracte ${object.cups_polissa_id.name} / Baja contrato ${object.cups_polissa_id.name}"
   es_ES: "Som Energia: Baixa contracte ${object.cups_polissa_id.name} / Baja contrato ${object.cups_polissa_id.name}"

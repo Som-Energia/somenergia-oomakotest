@@ -1,0 +1,8 @@
+lang: ${object.lang_partner}
+cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.partner_id.www_email}
+subject_translations:
+  es_ES: Factura pagada ${object.number}
+  ca_ES: Factura pagada ${object.number}
+subject: Factura pagada ${object.number}

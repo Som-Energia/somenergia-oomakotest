@@ -1,6 +1,6 @@
 lang: ${object.invoice_id.partner_id.lang}
 cc: false
-to: ${object.invoice_id.partner_id.address[0].email}
+to: ${object.invoice_id.partner_id.www_email}
 subject_translations:
   es_ES: Liquidaciones intereses titulos participativos / Liquidacions interessos títols participatius
   ca_ES: Liquidacions interessos títols participatius / Liquidaciones intereses titulos mparticipativos

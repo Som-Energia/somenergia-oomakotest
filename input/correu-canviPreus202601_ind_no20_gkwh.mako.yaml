@@ -1,7 +1,7 @@
 lang: ${object.polissa_id.titular.lang}
 cc: false
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
-to: ${object.polissa_id.titular.address[0].email}, ${object.polissa_id.direccio_notificacio.email}
+to: ${object.polissa_id.titular.www_email}, ${object.polissa_id.direccio_notificacio.email}
 subject_translations:
   ca_ES: Al gener actualitzarem el preu del Generation kWh
   es_ES: En enero actualizaremos el precio del Generation kWh

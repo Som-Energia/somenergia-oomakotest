@@ -1,11 +1,3 @@
-<!doctype html>
-<html>
-% if object.invoice_id.partner_id.lang == "ca_ES":
-<head><meta charset="utf-8" /><table width="100%" frame="below" bgcolor="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia nº ${object.polissa_id.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Titular: ${object.polissa_id.titular.name}</font></td></tr></table></head>
-% else:
-<head><meta charset="utf-8" /><table width="100%" frame="below" bgcolor="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.polissa_id.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Titular: ${object.polissa_id.titular.name}</font></td></tr></table></head>
-% endif
-<body>
 <%
 from mako.template import Template
 def render(text_to_render, object_):
@@ -16,15 +8,11 @@ def render(text_to_render, object_):
     )
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
-template_id = md_obj.get_object_reference(
-                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                )[1]
-text_legal = render(t_obj.read(
-    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-    object
-)
+template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 %>
-<br/>
 <%
 try:
   p_obj = object.pool.get('res.partner')
@@ -43,9 +31,30 @@ else:
   date = datetime.strptime(object.polissa_id.data_baixa, '%Y-%m-%d')
   data_baixa = date.strftime('%d/%m/%Y')
 %>
+
+${plantilla_header}
+
+% if object.invoice_id.partner_id.lang != "es_ES":
+<table width="100%" frame="below">
+<tbody>
+<tr>
+  <td height="2px"><span style="font-size: small;"><strong>Contracte Som Energia nº ${object.polissa_id.name}</strong></span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Adreça punt subministrament: ${object.cups_id.direccio}</span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Codi CUPS: ${object.cups_id.name}</span></td>
+</tr>
+<tr>
+  <td width="100%" height="2px"><span style="font-size: xx-small;"> Titular: ${object.polissa_id.titular.name} </span></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
 Hola ${nom_pagador},<br/>
 <br/>
-% if object.invoice_id.partner_id.lang != "es_ES":
 T'escrivim per recordar-te el contracte ${object.polissa_id.name} ubicat a ${object.cups_id.direccio} es va donar de baixa de Som Energia amb data ${data_baixa}, deixant una o més factures pendents de pagament.<br>
 <br>
 Després de diversos intents sense èxit per regularitzar aquesta situació, el proper ${data_juridic} passarem el cas al servei extern de recobraments perquè emprenguin les accions que considerin oportunes.<br>
@@ -85,6 +94,26 @@ cobraments@somenergia.coop<br/>
 <HR align="LEFT" size="1" width="400" color="Black" noshade>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
+<table width="100%" frame="below">
+<tbody>
+<tr>
+  <td height="2px"><span style="font-size: small;"><strong>Contrato Som Energia nº ${object.polissa_id.name}</strong></span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Dirección punto suministro: ${object.cups_id.direccio}</span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Código CUPS: ${object.cups_id.name}</span></td>
+</tr>
+<tr>
+  <td width="100%" height="2px"><span style="font-size: xx-small;">Titular: ${object.polissa_id.titular.name} </span></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+Hola${nom_pagador},<br/>
+<br/>
 Te escribimos para recordarte que el contrato ${object.polissa_id.name} ubicado en ${object.cups_id.direccio} se dio de baja con Som Energia con fecha ${data_baixa}, dejando una o más facturas pendientes de pago.<br>
 <br>
 Después de varios intentos sin éxito para regularizar la situación, el próximo ${data_juridic} pasaremos el caso al servicio externo de recobros para que emprendan las acciones que consideren oportunas.<br>
@@ -120,6 +149,4 @@ cobros@somenergia.coop<br/>
 <br/>
 <br/>
 % endif
-${text_legal}
-</body>
-</html>
+${plantilla_footer}

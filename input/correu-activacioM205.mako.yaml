@@ -1,8 +1,8 @@
 lang: ${object.partner_id.lang}
-cc: <% mail = '{}'.format(object.cups_polissa_id.titular.address[0].email if object.cups_polissa_id.titular
+cc: <% mail = '{}'.format(object.cups_polissa_id.titular.www_email if object.cups_polissa_id.titular
   != object.cups_polissa_id.pagador else '') %> ${mail}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
-to: ${object.cups_polissa_id.direccio_pagament.email}, <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email
+to: ${object.cups_polissa_id.direccio_pagament.email}, <% mail = '{}'.format(object.cups_polissa_id.administradora.www_email
   if object.cups_polissa_id.administradora else '') %>  ${mail}
 subject_translations:
   en_US: ''

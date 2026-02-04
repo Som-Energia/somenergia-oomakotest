@@ -48,92 +48,76 @@
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
-    template_id = md_obj.get_object_reference(
-                        object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                    )[1]
+    template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+    template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+    plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+    plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 
-    text_legal = render(t_obj.read(
-        object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-        object
-    )
 %>
-<!doctype html>
-<html>
-    <head>
-        <meta charset='utf-8'>
-    </head>
-    <body>
-    % if object.cups_polissa_id.titular.lang == "ca_ES":
-        ${capcalera_cat()}
-    % else:
-        ${capcalera_es()}
-    % endif
-    <br>
-    % if d.motiu_canvi == '01' and object.cups_polissa_id.titular.lang == "ca_ES":
-        ${correu_ca_motiu_01()}
-    % elif d.motiu_canvi == '01' and object.cups_polissa_id.titular.lang == "es_ES":
-        ${correu_es_motiu_01()}
-    % elif d.motiu_canvi == '07' and object.cups_polissa_id.titular.lang == "ca_ES":
-        ${correu_ca_motiu_07()}
-    % elif d.motiu_canvi == '07' and object.cups_polissa_id.titular.lang == "es_ES":
-        ${correu_es_motiu_07()}
-    % elif d.motiu_canvi == '12' and object.cups_polissa_id.titular.lang == "ca_ES":
-        ${correu_ca_motiu_12()}
-    % elif d.motiu_canvi == '12' and object.cups_polissa_id.titular.lang == "es_ES":
-        ${correu_es_motiu_12()}
-    % elif object.cups_polissa_id.titular.lang == "ca_ES":
-        ${correu_cat()}
-    % else:
-        ${correu_es()}
-    % endif
-    ${text_legal}
-    </body>
-</html>
+${plantilla_header}
+% if object.cups_polissa_id.titular.lang == "ca_ES":
+    ${capcalera_cat()}
+% else:
+    ${capcalera_es()}
+% endif
+<br>
+% if d.motiu_canvi == '01' and object.cups_polissa_id.titular.lang == "ca_ES":
+    ${correu_ca_motiu_01()}
+% elif d.motiu_canvi == '01' and object.cups_polissa_id.titular.lang == "es_ES":
+    ${correu_es_motiu_01()}
+% elif d.motiu_canvi == '07' and object.cups_polissa_id.titular.lang == "ca_ES":
+    ${correu_ca_motiu_07()}
+% elif d.motiu_canvi == '07' and object.cups_polissa_id.titular.lang == "es_ES":
+    ${correu_es_motiu_07()}
+% elif d.motiu_canvi == '12' and object.cups_polissa_id.titular.lang == "ca_ES":
+    ${correu_ca_motiu_12()}
+% elif d.motiu_canvi == '12' and object.cups_polissa_id.titular.lang == "es_ES":
+    ${correu_es_motiu_12()}
+% elif object.cups_polissa_id.titular.lang == "ca_ES":
+    ${correu_cat()}
+% else:
+    ${correu_es()}
+% endif
+${plantilla_footer}
 
 <%def name="capcalera_cat()">
-    <table width="100%" frame="below" bgcolor="#E8F1D4">
+    <table width="100%" frame="below">
         <tr>
             <td height=2px>
-                <font size=2><strong> Contracte Som Energia nº ${polissa.name}</strong></font>
-            </td>
-            <td valign=top rowspan="4" align="right">
-                <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
+                <span style="font-size: small;"><strong> Contracte Som Energia nº ${polissa.name}</strong></span>
             </td>
         </tr>
         <tr>
             <td height=2px>
-                <font size=1> Adreça punt subministrament: ${object.cups_id.direccio}</font>
+                <span style="font-size: xx-small;"> Adreça punt subministrament: ${object.cups_id.direccio}</span>
             </td>
         </tr>
         <tr>
             <td height=2px>
-                <font size=1> Codi CUPS: ${object.cups_id.name}</font>
+                <span style="font-size: xx-small;"> Codi CUPS: ${object.cups_id.name}</span>
             </td>
         </tr>
     </table>
 </%def>
 
 <%def name="capcalera_es()">
-        <table width="100%" frame="below" bgcolor="#E8F1D4">
-            <tr>
-                <td height=2px>
-                    <font size=2><strong> Contrato Som Energia nº ${polissa.name}</strong></font>
-                </td>
-                <td valign=top rowspan="4" align="right">
-                    <img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png">
-                </td>
-            </tr>
-            <tr>
-                <td height=2px>
-                    <font size=1> Dirección del punto de suministro: ${object.cups_id.direccio}</font>
-                </td>
-            </tr>
-            <tr>
-                <td height=2px>
-                    <font size=1> Código CUPS: ${object.cups_id.name}</font>
-                </td>
-            </tr>
-        </table>
+    <table width="100%" frame="below">
+        <tr>
+            <td height=2px>
+                <span style="font-size: small;"><strong> Contrato Som Energia nº ${polissa.name}</strong></span>
+            </td>
+        </tr>
+        <tr>
+            <td height=2px>
+                <span style="font-size: small;"> Dirección del punto de suministro: ${object.cups_id.direccio}</span>
+            </td>
+        </tr>
+        <tr>
+            <td height=2px>
+                <span style="font-size: small;"> Codigo CUPS: ${object.cups_id.name}</span>
+            </td>
+        </tr>
+    </table>
 </%def>
 
 

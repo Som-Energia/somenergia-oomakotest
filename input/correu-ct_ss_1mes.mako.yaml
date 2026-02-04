@@ -1,4 +1,4 @@
-to: ${object.titular.address[0].email}
+to: ${object.titular.www_email}
 subject_translations:
   ca_ES: 'Ja fa quasi un any! 🎂'
   es_ES: 'Ya hace casi un año… 🎂'

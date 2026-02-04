@@ -1,7 +1,11 @@
-cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email if
+cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.www_email if
   object.cups_polissa_id.administradora else '') %>  ${mail}
-to: ${object.cups_polissa_id.titular.address[0].email},${object.cups_polissa_id.pagador.address[0].email},${object.cups_polissa_id.direccio_notificacio.email}
-subject_translations: {}
+to: ${object.cups_polissa_id.titular.www_email},${object.cups_polissa_id.pagador.www_email},${object.cups_polissa_id.direccio_notificacio.email}
+subject_translations:
+  ca_ES: 'Som Energia: Sol·licitud de modificació de contracte ${object.cups_polissa_id.name}.
+    Solicitud de modificación de contrato ${object.cups_polissa_id.name}.'
+  es_ES: 'Som Energia: Sol·licitud de modificació de contracte ${object.cups_polissa_id.name}.
+    Solicitud de modificación de contrato ${object.cups_polissa_id.name}.'
 subject: 'Som Energia: Sol·licitud de modificació de contracte ${object.cups_polissa_id.name}.
   Solicitud de modificación de contrato ${object.cups_polissa_id.name}.'
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net

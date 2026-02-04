@@ -1,11 +1,3 @@
-<!doctype html>
-<html>
-% if object.invoice_id.partner_id.lang == "ca_ES":
-<head><meta charset="utf-8" /><table width="100%" frame="below" bgcolor="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia nº ${object.polissa_id.name}:</strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Titular: ${object.polissa_id.titular.name}</font></td></tr></table></head>
-% else:
-<head><meta charset="utf-8" /><table width="100%" frame="below" bgcolor="#E8F1D4"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.polissa_id.name}: </strong></font></td><td VALIGN=TOP rowspan="4"><align="right"><align="right"><img width='130' height='65' src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png"></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Titular: ${object.polissa_id.titular.name}</font></td></tr></table></head>
-% endif
-<body>
 <%
 from mako.template import Template
 def render(text_to_render, object_):
@@ -16,13 +8,10 @@ def render(text_to_render, object_):
     )
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
-template_id = md_obj.get_object_reference(
-                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                )[1]
-text_legal = render(t_obj.read(
-    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-    object
-)
+template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 %>
 <%
 try:
@@ -34,9 +23,30 @@ try:
 except:
   nom_pagador = ''
 %>
-Hola${nom_pagador},<br/>
-<br/>
+
+${plantilla_header}
+
 % if object.invoice_id.partner_id.lang != "es_ES":
+<table width="100%" frame="below">
+<tbody>
+<tr>
+  <td height="2px"><span style="font-size: small;"><strong>Contracte Som Energia nº ${object.polissa_id.name}</strong></span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Adreça punt subministrament: ${object.cups_id.direccio}</span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Codi CUPS: ${object.cups_id.name}</span></td>
+</tr>
+<tr>
+  <td width="100%" height="2px"><span style="font-size: xx-small;"> Titular: ${object.polissa_id.titular.name} </span></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+Hola ${nom_pagador},<br/>
+<br/>
 Et tornem a recordar l'impagament d'aquesta factura. No hem rebut la transferència per cancel·lar el deute ni tampoc cap sol·licitud per tornar a domiciliar el cobrament. Per aquest motiu, et demanem que regularitzis la situació al més aviat possible.<br/>
 <br/>
 Com saps, Som Energia té uns recursos limitats i els impagaments poden posar en risc la continuïtat de la nostra cooperativa.<br/>
@@ -79,6 +89,26 @@ La persona titular del contracte pot acollir-se al mercat regulat (PVPC) on, en 
 <br/><HR align="LEFT" size="1" width="400" color="Black" noshade><br/>
 % endif
 % if  object.invoice_id.partner_id.lang != "ca_ES":
+<table width="100%" frame="below">
+<tbody>
+<tr>
+  <td height="2px"><span style="font-size: small;"><strong>Contrato Som Energia nº ${object.polissa_id.name}</strong></span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Dirección punto suministro: ${object.cups_id.direccio}</span></td>
+</tr>
+<tr>
+  <td height="2px"><span style="font-size: xx-small;">Código CUPS: ${object.cups_id.name}</span></td>
+</tr>
+<tr>
+  <td width="100%" height="2px"><span style="font-size: xx-small;">Titular: ${object.polissa_id.titular.name} </span></td>
+</tr>
+</tbody>
+</table>
+<br/>
+<br/>
+Hola${nom_pagador},<br/>
+<br/>
 Te volvemos a recordar el impago de esta factura. No hemos recibido la transferencia cancelando la deuda ni tampoco nos has solicitado volver a domiciliar el cobro. Por este motivo rogamos regularices la situación con la mayor brevedad posible.<br/>
 <br/>
 Como sabes, Som Energia tiene unos recursos limitados y los impagos pueden poner en riesgo la continuidad de nuestra cooperativa.<br/>
@@ -117,7 +147,4 @@ Información al consumidor:<br/>
 La persona titular del contrato puede acogerse al mercado regulado (PVPC) donde, en el caso de cumplir con los requisitos y las condiciones previstas en la normativa vigente, podrá solicitar el bono social que se aplicará en las facturas de suministro de electricidad. El bono social únicamente puede ser ofertado por las comercializadoras de referencia.</font><br/>
 <br/>
 % endif
-<br/>
-${text_legal}
-</body>
-</html>
+${plantilla_footer}

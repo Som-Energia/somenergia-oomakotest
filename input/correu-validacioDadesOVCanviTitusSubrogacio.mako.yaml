@@ -1,7 +1,10 @@
-cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.address[0].email if
+cc: <% mail = '{}'.format(object.cups_polissa_id.administradora.www_email if
   object.cups_polissa_id.administradora else '') %>  ${mail}
 to: -- definit en codi --
-subject_translations: {}
+subject_translations:
+  ca_ES: 'Som Energia: Canvi de titular. Verificació de dades. Contracte ${object.cups_polissa_id.name}'
+  es_ES: 'Som Energia: Cambio de titular. Verificación de datos. Contrato ${object.cups_polissa_id.name}'
 subject: 'Som Energia: Canvi de titular. Verificació de dades. Contracte ${object.cups_polissa_id.name}
   / Cambio de titular. Verificación de datos. Contrato ${object.cups_polissa_id.name}'
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+lang: ${object.cups_polissa_id.titular.lang}

@@ -1,5 +1,5 @@
 cc: ${object.cups_polissa_id.direccio_notificacio.email}
-to: ${object.cups_polissa_id.titular.address[0].email}
+to: ${object.cups_polissa_id.titular.www_email}
 subject_translations: {}
 subject: Rebuig dades inst.autoproducció CUPS ${object.cups_id.name} / Rechazo datos
   inst.autoproducción CUPS ${object.cups_id.name}
