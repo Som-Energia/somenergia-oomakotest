@@ -91,7 +91,7 @@ ${plantilla_header}
 % else:
     ${salutacio_es()}
 % endif
-## ${notificacio_text}
+${notificacio_text}
 % if object.cups_polissa_id.titular.lang == "ca_ES":
     ${footer_cat()}
 % else:
