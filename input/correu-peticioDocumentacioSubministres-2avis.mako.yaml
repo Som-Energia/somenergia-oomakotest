@@ -1,6 +1,6 @@
-cc: <% mail = '{}'.format(object.administradora.address[0].email if object.administradora
+cc: <% mail = '{}'.format(object.administradora.www_email if object.administradora
   else '') %>  ${mail}
-to: ${object.titular.address[0].email},${object.pagador.address[0].email},${object.direccio_notificacio.email}
+to: ${object.titular.www_email},${object.pagador.www_email},${object.direccio_notificacio.email}
 subject_translations:
   ca_ES: 'Segon avís: requeriment butlletí elèctric Endesa Distribució / Segundo aviso:
     requerimiento boletín eléctrico Endesa Distribución'

@@ -1,5 +1,5 @@
 cc: false
-to: ${object.partner_id.address[0].email}
+to: ${object.partner_id.www_email}
 subject_translations:
   ca_ES: Rebut retornat inversió ${object.name}
   es_ES: Recibo devuelto inversión ${object.name}

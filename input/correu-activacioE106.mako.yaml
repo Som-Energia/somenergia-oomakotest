@@ -1,7 +1,7 @@
-cc: <% mail = '{}'.format(object.polissa_ref_id.titular.address[0].email if object.polissa_ref_id.titular
+cc: <% mail = '{}'.format(object.polissa_ref_id.titular.www_email if object.polissa_ref_id.titular
   != object.polissa_ref_id.pagador else '') %> ${mail}
 to: ${object.polissa_ref_id.direccio_pagament.email},${object.cups_polissa_id.direccio_notificacio.email},<%
-  mail = '{}'.format(object.polissa_ref_id.administradora.address[0].email if object.cups_polissa_id.administradora
+  mail = '{}'.format(object.polissa_ref_id.administradora.www_email if object.cups_polissa_id.administradora
   else '') %>  ${mail}
 subject_translations:
   en_US: ''

@@ -1,6 +1,6 @@
 lang: ${object.partner_id.lang}
 cc: ${object.polissa_id.titular.www_email}, correo@certificado.lleida.net,<% mail
-  = '{}'.format(object.polissa_id.administradora.address[0].email if object.polissa_id.administradora
+  = '{}'.format(object.polissa_id.administradora.www_email if object.polissa_id.administradora
   else '') %>  ${mail}
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}

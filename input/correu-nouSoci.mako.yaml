@@ -1,6 +1,6 @@
 cc: false
 lang: ${object.partner_id.lang}
-to: ${object.address[0].email}
+to: ${object.www_email}
 subject_translations:
   en_US: ''
   es_ES: '🥳 ¡Ya eres de Som Energia! ¡Bienvenido/a! 🤗'
