@@ -1,12 +1,12 @@
 <%
     lang = False
     # Hack to render only the legal footer paragraf of the language of the template object
-    if object.__hasattr__('step_ids') and len(object.step_ids) > 0 and object.step_ids[0].pas_id.dades_client.lang and object.__hasattr__('proces_id') and object.proces_id.name == 'M1':
-        lang = object.step_ids[0].pas_id.dades_client.lang
-    elif object.__hasattr__('titular') and object.titular and object.titular.lang:
+    if object.__hasattr__('titular') and object.titular and object.titular.lang:
         lang = object.titular.lang
     elif object.__hasattr__('polissa_id') and object.polissa_id and object.polissa_id.__hasattr__('titular') and object.polissa_id.titular and object.polissa_id.titular.lang:
         lang = object.polissa_id.titular.lang
+    elif (object.__hasattr__('proces_id') and object.proces_id.name == 'M1') and object.__hasattr__('step_ids') and len(object.step_ids) > 0 and object.step_ids[0].pas_id.dades_client.lang:
+        lang = object.step_ids[0].pas_id.dades_client.lang
     elif object.__hasattr__('cups_polissa_id') and object.cups_polissa_id and object.cups_polissa_id.__hasattr__('titular') and object.cups_polissa_id.titular and object.cups_polissa_id.titular.lang:
         lang = object.cups_polissa_id.titular.lang
     elif object.__hasattr__('member_id') and object.member_id and object.member_id.__hasattr__('partner_id') and object.member_id.partner_id and object.member_id.partner_id.lang:

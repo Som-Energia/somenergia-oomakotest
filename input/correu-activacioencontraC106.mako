@@ -41,7 +41,28 @@ plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_i
 ${plantilla_header}
 
 % if object.cups_polissa_id.titular.lang != "es_ES":
-<head><meta charset="utf-8" /><table width="100%" frame="below"><tr><td height = 2px><FONT SIZE=2><strong>Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></font></td></tr><tr><td height = 2px><FONT SIZE=1>Adreça punt subministrament: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Codi CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1> Titular: ${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
+<table width="100%" frame="below">
+  <tr>
+      <td height=2px>
+          <span style="font-size: small;"><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px>
+          <span style="font-size: xx-small;"> Adreça punt subministrament: ${object.cups_id.direccio}</span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px>
+          <span style="font-size: xx-small;"> Codi CUPS: ${object.cups_id.name}</span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px width=100%>
+          <span style="font-size: xx-small;"> Titular: ${object.cups_polissa_id.titular.name}</span>
+      </td>
+  </tr>
+</table>
 <br><br>
 Hola${nom_titular},
 <br><br>
@@ -57,7 +78,28 @@ Hola${nom_titular},
 ----------------------------------------------------------------------------------------------------
 % endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
-<head><meta charset="utf-8" /><table width="100%" frame="below"><tr><td height = 2px><FONT SIZE=2><strong>Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></font></td></tr><tr><td height = 2px><FONT SIZE=1>Dirección punto suministro: ${object.cups_id.direccio}</font></td></tr><tr><td height = 2px><FONT SIZE=1>Código CUPS: ${object.cups_id.name}</font></td></tr><tr><td height = 2px width=100%><FONT SIZE=1>Titular:${object.cups_polissa_id.titular.name} </font></td></tr></table></head><body>
+<table width="100%" frame="below">
+  <tr>
+      <td height=2px>
+          <span style="font-size: small;"><strong> Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px>
+          <span style="font-size: small;"> Dirección del punto de suministro: ${object.cups_id.direccio}</span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px>
+          <span style="font-size: small;"> Codigo CUPS: ${object.cups_id.name}</span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px width=100%>
+          <span style="font-size: small;"> Titular: ${object.cups_polissa_id.titular.name}</span>
+      </td>
+  </tr>
+</table>
 <br><br>
 Hola${nom_titular},
 <br><br>
