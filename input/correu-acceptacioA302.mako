@@ -42,11 +42,11 @@
 
 ${plantilla_header}
 
-## % if object.cups_polissa_id.titular.lang == 'ca_ES':
-##     ${correu_cat()}
-## % else:
-##     ${correu_es()}
-## % endif
+% if object.cups_polissa_id.titular.lang == 'ca_ES':
+    ${correu_cat()}
+% else:
+    ${correu_es()}
+% endif
 
 ${plantilla_footer}
 
