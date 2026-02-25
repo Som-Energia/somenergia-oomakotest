@@ -59,10 +59,6 @@ Com a conseqüència, aviat se’t pot remetre un requeriment fefaent de pagamen
 <br/>
 En cas de no abonar-se la quantitat deguda, en un termini de  2 mesos a partir de la notificació d’aquest requeriment, l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
 <br/>
-% if not pobresa_energetica:
-  Et comuniquem que s'aplicarà automàticament, a la propera factura, un càrrec de 4 € + IVA, en concepte de despeses de gestió de l'impagament.<br/>
-% endif
-<br/>
 <br/>
 <U>Resum de la factura</U><br/>
 <br/>
@@ -157,8 +153,6 @@ Te informamos que ha vencido el período de pago de la factura emitida que detal
 Como consecuencia, pronto se te puede remitir un requerimiento fehaciente de pago.​<br/>
 <br/>
 En el caso de no abonar la cantidad debida, en un plazo de 2 meses a partir de la notificación de este requerimiento, la empresa distribuidora puede suspender el suministro de electricidad.​<br/>
-<br/>
-Te comunicamos que se aplicará automáticamente, en la próxima factura, un cargo de 4€ + IVA en concepto de gastos de gestión del impago.<br/>
 <br/>
 <br/>
 <U>Resumen de la factura</U><br/>
