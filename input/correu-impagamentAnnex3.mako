@@ -156,7 +156,9 @@ De no abonarse la cantidad adeudada en un plazo de 2 meses a partir de la notifi
 <br/>
 Siempre prevaldrá la fecha de notificación del primer requerimiento de factura impagada.<br/>
 <br/>
-Te comunicamos que se aplicará automáticamente, en la próxima factura, un cargo de 4€ + IVA en concepto de gastos de gestión del impago.<br/>
+% if not pobresa_energetica:
+  Te comunicamos que se aplicará automáticamente, en la próxima factura, un cargo de 4€ + IVA en concepto de gastos de gestión del impago.<br/>
+% endif
 <br/>
 <br/>
 <U>Resumen de la factura</U><br/>
