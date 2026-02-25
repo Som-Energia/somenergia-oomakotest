@@ -1,7 +1,7 @@
 lang: ${object.partner_id.lang}
 cc: false
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
-to: ${object.partner_id.address[0].email}
+to: ${object.partner_id.www_email}
 subject_translations:
   es_ES: "Generation kWh: liquidación ${str(int(object.date_invoice[:4])-1)} y amortización ${object.date_invoice[:4]} (Ref. ${object.origin or ''})"
   ca_ES: "Generation kWh: liquidació ${str(int(object.date_invoice[:4])-1)} i amortització ${object.date_invoice[:4]} (Ref. ${object.origin or ''})"

@@ -1,4 +1,4 @@
-cc: <% mail = '{}'.format(object.polissa_id.administradora.address[0].email if object.polissa_id.administradora
+cc: <% mail = '{}'.format(object.polissa_id.administradora.www_email if object.polissa_id.administradora
   else '') %>  ${mail}
 to: ${object.polissa_id.direccio_notificacio.email}
 subject_translations:

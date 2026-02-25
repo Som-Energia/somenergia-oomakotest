@@ -1,6 +1,6 @@
 lang: ${object.partner_id.lang}
 cc: false
-to: ${object.partner_id.address[0].email}
+to: ${object.partner_id.www_email}
 subject_translations:
   ca_ES: Càrrec Capital Social Ref. ${object.name}
   es_ES: Cargo Capital Social Ref. ${object.name}

@@ -1,4 +1,4 @@
-cc: <% mail = '{}'.format(object.administradora.address[0].email if object.administradora else '') %>  ${mail}
+cc: <% mail = '{}'.format(object.administradora.www_email if object.administradora else '') %>  ${mail}
 to: ${object.pagador_email}
 subject_translations:
   ca_ES: Infoenergia - Tancament d’any 2019 (contracte ${object.name})

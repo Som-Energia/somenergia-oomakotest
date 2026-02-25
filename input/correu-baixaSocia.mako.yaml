@@ -1,7 +1,7 @@
 lang: false
 cc: false
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
-to: ${object.partner_id.address[0].email}
+to: ${object.partner_id.www_email}
 subject_translations:
   es_ES: Confirmació baixa persona sòcia / Confirmación baja persona socia
 subject: Confirmació baixa persona sòcia / Confirmación baja persona socia

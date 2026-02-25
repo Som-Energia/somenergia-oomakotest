@@ -50,19 +50,42 @@ link_survey_ca = (
 link_survey_es = (
   'https://docs.google.com/forms/d/e/1FAIpQLSf_GUQE-W3XTYubTsLvKQa7TGn1zj2BFznLMKNNWaurUik-ng/viewform' if is_ct_ss else 'https://docs.google.com/forms/d/e/1FAIpQLSfyzfNf5GIQtrUhWuOX_h0EsA_3JQYLgLI5HT3yE-8ahvnAqg/viewform'
 )
-
 %>
 
 ${plantilla_header}
 
-<p>Hola${nom_titular},</p>
 % if object.cups_polissa_id.titular.lang != "es_ES":
+<table width="100%" frame="below">
+  <tr>
+      <td height=2px>
+          <span style="font-size: small;"><strong> Contracte Som Energia nº ${object.cups_polissa_id.name}</strong></span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px>
+          <span style="font-size: xx-small;"> Adreça punt subministrament: ${object.cups_id.direccio}</span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px>
+          <span style="font-size: xx-small;"> Codi CUPS: ${object.cups_id.name}</span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px width=100%>
+          <span style="font-size: xx-small;"> Titular: ${object.cups_polissa_id.titular.name}</span>
+      </td>
+  </tr>
+</table>
+<br><br>
+Hola${nom_titular},
+<br><br>
 <p>Ens sap greu informar-te que el teu contracte ${object.cups_polissa_id.name}, amb direcció de subministrament ${object.cups_id.direccio}, número de CUPS ${object.cups_id.name} i titular ${object.cups_polissa_id.titular.name}, <strong>ja no està amb Som Energia</strong>. La data del canvi de companyia és el ${date}.</p>
 <p>Esperem que, durant aquest temps, hagis estat a gust i et quedin bons records de la primera cooperativa d’energia verda de l’estat.</p>
 % if nom_titular:
 <p>Per part nostra,${nom_titular}, et trobarem a faltar, i <strong>t’agraïm</strong> aquest temps de confiança i camí conjunt.</p>
 % else:
-<p>Per part nostra, et trobarem a faltar, i <strong>t’agraïm</strong> aquest temps de confiança i camí conjunt.</p>
+<p>Per part nostra, et trobarem a faltar, i <strong>t’agraïm</strong> aquest temps de confiança i camí conjunt.</p>% endif
 % endif
 <p>Des de Som Energia seguirem treballant per a un futur més net, sostenible, just i en mans de les persones.</p>
 <p>Com sempre que marxa algú, ens preguntem: <strong>què ha passat?</strong> Podríem haver fet quelcom perquè aquesta persona no hagués marxat? Com podríem millorar?</p>
@@ -85,7 +108,35 @@ Som Energia<br>
 <a target='_blank' href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br>
 <a target='_blank' href="tel:+34872202550">872.202.550</a><br>
 % endif
+% if object.cups_polissa_id.titular.lang != "ca_ES" and object.cups_polissa_id.titular.lang != "es_ES":
+----------------------------------------------------------------------------------------------------
+% endif
 % if object.cups_polissa_id.titular.lang != "ca_ES":
+<table width="100%" frame="below">
+  <tr>
+      <td height=2px>
+          <span style="font-size: small;"><strong> Contrato Som Energia nº ${object.cups_polissa_id.name}</strong></span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px>
+          <span style="font-size: small;"> Dirección del punto de suministro: ${object.cups_id.direccio}</span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px>
+          <span style="font-size: small;"> Codigo CUPS: ${object.cups_id.name}</span>
+      </td>
+  </tr>
+  <tr>
+      <td height=2px width=100%>
+          <span style="font-size: small;"> Titular: ${object.cups_polissa_id.titular.name}</span>
+      </td>
+  </tr>
+</table>
+<br><br>
+Hola${nom_titular},
+<br><br>
 <p>Nos sabe mal informarte de que tu contrato ${object.cups_polissa_id.name}, con dirección de suministro ${object.cups_id.direccio}, número de CUPS ${object.cups_id.name} y titular ${object.cups_polissa_id.titular.name}, <strong>ya no está con Som Energia</strong>. La fecha del cambio de compañía es el ${date}.</p>
 <p>Esperamos que, durante este tiempo, hayas estado a gusto y te queden buenos recuerdos de la primera cooperativa estatal de energía verde.</p>
 % if nom_titular:
@@ -105,7 +156,7 @@ ${plantilla_social_links}
 <p>Si alguna vez cambias de opinión, ¡estaremos encantadas de recibirte de nuevo!</p>
 <br>
 <p><strong>¿No has sido tú?</strong></p>
-<p>Si no has solicitado el cambio de compañía, y éste se ha hecho en contra de tu voluntad, puedes respondernos este mismo correo e iniciaremos los trámites para que vuelvas a tener el contrato con Som Energia.</p>
+<p>Si no has solicitado el cambio de compañía, y éste se ha hecho en contra de tu voluntad, puedes respondernos este mismo correo e iniciaremos los trámites para que vuelvas a tener el contrato con Som Energia. Si el cambio de comercializadora se ha realizado de forma fraudulenta, puedes respondernos este mismo correo y haremos las gestiones correspondientes para devolver tu contrato a Som Energia.</p>
 <br>
 <br>
 Muchas gracias,<br>

@@ -44,24 +44,14 @@ def render(text_to_render, object_):
     )
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
-template_id = md_obj.get_object_reference(
-                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                )[1]
-text_legal = render(t_obj.read(
-    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-    object
-)
+template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 %>
-<!doctype html>
-<head><meta charset="utf-8"/></head>
-<body>
-<table width="100%">
-<tbody>
-<tr>
-<td rowspan="4" align="right" valign="TOP"><img src="https://www.somenergia.coop/wp-content/uploads/2014/11/logo-somenergia.png" width="130" height="65"></td>
-</tr>
-</tbody>
-</table>
+
+${plantilla_header}
+
 % if object.partner_id.lang == "es_ES":
 <p><br>Hola, ${object.partner_id.name.split(',')[-1]},</p>
 <p>El proyecto Generation kWh, en el que participas desde el día ${date}, te permite acceder a la tarifa Generation kWh. Dado que esta tarifa no depende del mercado, sino de la gesti&oacute;n y mantenimiento de nuestras plantas, el a&ntilde;o pasado fue considerablemente m&aacute;s econ&oacute;mica que la tarifa est&aacute;ndar, que sufri&oacute; la subida de los precios de la energ&iacute;a en el mercado.</p>
@@ -120,7 +110,4 @@ text_legal = render(t_obj.read(
 <p dir="ltr">Som Energia.</p>
 <p dir="ltr"><a href="http://links.somenergia.coop/ls/click?upn=83HzMisLio5Lsskq9pHZ0zr-2BDJKbwOfu4-2Bz9vzCUm2Y2-2BZtOmBDzJmVgy6-2BaBwvtE-Sc_-2BHB8d5C343hfLp7ljYtulZRPdYJjccH-2By-2F0RP75QR3-2FKTPuW1Vuj-2Fk31dntYYC6WarvZHNGJ83OumvxPwFYGS2A5XdMPsZj-2F0rH59cywyKNs3-2FjrwYs-2FcMamy-2F7O7fWg-2BtDSX3kuEJj4YWosMLyowg4sOjqlmw3GUxDASn9hA1QxwVnArFDUiEiSKn7wME9PYdDwIX-2FASv4W5xulqjTKsQ2KkL-2FHHgIfk0iBncmog161XmbLAwdUz45UDvWghEaJ">www.somenergia.coop</a></p>
 % endif
-<p>&nbsp;</p>
-<p>${text_legal}</p>
-</body>
-</html>
+${plantilla_footer}

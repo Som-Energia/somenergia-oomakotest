@@ -1,5 +1,5 @@
 cc: false
-to: ${object.member_id.partner_id.address[0].email}
+to: ${object.member_id.partner_id.www_email}
 subject_translations:
   ca_ES: Transmisión de aportación al capital social Som Enegia Ref. ${object.name}
   es_ES: Transmissió d'aportació al capital social Som Enegia Ref. ${object.name}

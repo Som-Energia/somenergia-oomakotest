@@ -1,6 +1,9 @@
-lang: false
+lang: ${object.partner_id.lang}
 cc: false
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
-subject_translations: {}
+subject_translations:
+  en_US: ''
+  ca_ES: 'Pagament factura ${object.number} de Som Energia'
+  es_ES: 'Pago Factura ${object.number} de Som Energia'
 subject: Pagament factura / Pago Factura ${object.number} de Som Energia

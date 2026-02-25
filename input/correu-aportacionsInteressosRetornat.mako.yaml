@@ -1,0 +1,8 @@
+lang: ${object.partner_id.lang}
+cc: false
+to: ${object.partner_id.www_email}
+subject_translations:
+  ca_ES: Devolució transferència ${object.number} / Devolución transferencia ${object.number}
+  es_ES: Devolució transferència ${object.number} / Devolución transferencia ${object.number}
+subject: Devolució transferència ${object.number} / Devolución transferencia ${object.number}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net

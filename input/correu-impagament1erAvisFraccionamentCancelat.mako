@@ -1,13 +1,11 @@
 <%
 from mako.template import Template
-
 def render(text_to_render, object_):
     templ = Template(text_to_render)
     return templ.render_unicode(
         object=object_,
         format_exceptions=True
     )
-
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
 template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
@@ -20,11 +18,9 @@ pobresa_id = md_obj.get_object_reference(
 )[1]
 if pobresa_id and object.polissa_id.category_id and pobresa_id in [x.id for x in object.polissa_id.category_id]:
   pobresa_energetica = True
+
 %>
 <%
-import datetime
-data_venciment = (datetime.date.today() + datetime.timedelta(days=20)).strftime("%d-%m-%Y")
-
 try:
   p_obj = object.pool.get('res.partner')
   if not p_obj.vat_es_empresa(object._cr, object._uid,'object.partner_id.vat'):
@@ -58,17 +54,15 @@ ${plantilla_header}
 <br/>
 Hola ${nom_pagador},<br/>
 <br/>
-Mitjançant aquest document, se’t requereix el pagament de les quantitats degudes en concepte de consum d’energia elèctrica.<br/>
+Vam enviar el rebut d’una de les quotes del fraccionament acordat prèviament de la factura d'electricitat a la teva entitat bancària, però ens l'ha retornat. Així doncs, <b>el fraccionament ha quedat cancel·lat i l’acord ja no és vàlid</b>. Hauràs de pagar l’import pendent total de la/les factura/es. <br/>
 <br/>
-Actualment, no has satisfet el pagament de la factura que et detallem en aquest correu.<br/>
+Per tal de regularitzar la totalitat de la factura, pots fer-ho mitjançant:<br/>
+<ul>
+  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li><br/>
+  <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
+</ul>
 <br/>
-En cas de no abonar-se la quantitat deguda, a partir del dia ${data_venciment} l’empresa distribuïdora et pot suspendre el subministrament d’electricitat.<br/>
-<br/>
-Sempre prevaldrà la data de notificació del primer requeriment de factura impagada.<br/>
-<br/>
-% if not pobresa_energetica:
-  Et comuniquem que s'aplicarà automàticament, a la propera factura, un càrrec de 4 € + IVA en concepte de despeses de gestió de l'impagament.<br/>
-% endif
+Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Què fer si una factura queda impagada?</a><br/>
 <br/>
 <br/>
 <U>Resum de la factura</U><br/>
@@ -81,12 +75,7 @@ Sempre prevaldrà la data de notificació del primer requeriment de factura impa
 - Import pendent: ${object.invoice_id.residual}€<br/>
 % endif
 <br/>
-Per tal de regularitzar-la, pots fer-ho mitjançant:<br/>
-<ul>
-  <li>Targeta de dèbit/crèdit a través de la teva <a href="https://oficinavirtual.somenergia.coop/ca/">Oficina Virtual</a>. Si no hi has accedit mai, pots consultar <a href="https://ca.support.somenergia.coop/article/109-com-puc-accedir-a-l-oficina-virtual">aquest article.</a></li><br/>
-  <li>El document adjunt amb codi de barres: online amb targeta mitjançant l’enllaç que trobaràs sota el codi de barres del document o bé en els caixers de l'entitat <a href="https://www3.caixabank.es/apl/localizador/caixamaps/index_ca.html">CaixaBank</a>. </li>
-</ul>
-Al següent article t’expliquem amb més detall com funcionen aquests dos mètodes de pagament: <a href="https://ca.support.somenergia.coop/article/773-pagament-mitjancant-codi-de-barres-n57">Què fer si una factura queda impagada?</a><br/>
+T'informem que si et trobes en una situació de vulnerabilitat econòmica, i en compliment de la legislació vigent (Reial decret 897/2017, de 6 d'octubre, pel qual es regula la figura del consumidor vulnerable, el bo social i altres mesures de protecció per als consumidors domèstics d'energia elèctrica), el teu contracte hauria de passar a la comercialitzadora de referència per poder-te acollir al bo social. Som Energia no el pot aplicar per llei, malgrat que el financi.<br/>
 <br/>
 Si ets una persona electrodependent o bé en el teu punt de subministrament hi viu alguna persona que ho sigui, envia’ns el certificat d’empadronament i el certificat mèdic oficial que ho acrediti a cobraments@somenergia.coop<br/>
 <br/>
@@ -94,10 +83,10 @@ Cordialment,<br/>
 <br/>
 Equip de Som Energia<br/>
 cobraments@somenergia.coop<br/>
-<a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br/>
+<a href="www.somenergia.coop/ca">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
-Si compliu els requisits per ser consumidor vulnerable, podeu sol·licitar a una de les empreses comercialitzadores de referència acollir-se al bo social, que suposa un descompte sobre el preu voluntari per al petit consumidor (PVPC). El canvi de modalitat en el contracte per passar a PVPC, sempre que no es modifiquin els paràmetres que recull el contracte d’accés de tercers a la xarxa, s’ha de portar a terme sense cap tipus de penalització ni cost addicional. Sempre que s’hagin acreditat els requisits per ser consumidor vulnerable, un cop acollit al PVPC, en cas que no s’hagi abonat la quantitat deguda, havent passat 2 mesos des de la data assenyalada anteriorment l’empresa distribuïdora adaptarà durant 6 mesos addicionals la potència del teu habitatge a un subministrament mínim vital de 3,5 kW, durant els quals el teu subministrament no podrà ser suspès.<br/>
+Si compliu els requisits per ser consumidor vulnerable, podeu sol·licitar a una de les empreses comercialitzadores de referència acollir-se al bo social, que suposa un descompte sobre el preu voluntari per al petit consumidor (PVPC). El canvi de modalitat en el contracte per passar a PVPC, sempre que no es modifiquin els paràmetres que recull el contracte d’accés de tercers a la xarxa, s’ha de portar a terme sense cap tipus de penalització ni cost addicional. Un cop acollit al PVPC, i sempre que s’hagin acreditat els requisits per ser consumidor vulnerable, en cas que no s’hagi abonat la quantitat deguda, havent passat 4 mesos des de la recepció de requeriment fefaent de pagament, s’adaptarà la seva potència, durant 6 mesos addicionals, a un subministrament mínim vital de 3,5 kW. Durant aquest període no es podrà suspendre el subministrament. <br/>
 <br/>
 L’enllaç a la pàgina web de la CNMC, en la qual trobareu les dades necessàries per contactar amb la comercialitzadora de referència, és el següent: <a href="https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados">https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados</a><br/>
 <br/>
@@ -129,7 +118,7 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 <a href="https://blog.somenergia.coop/grupos-locales/aragon/2018/03/el-nuevo-bono-social/">El nuevo Bono Social</a><br/>
 <a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">Acceso a las tablas de pensiones mínimas</a><br/>
 <a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">¿Qué es el PVPC?</a><br/>
-<a href="https://www.minetad.gob.es/energia/bono-social/Paginas/preguntas-fr<br/>ecuentes-bono-social.aspx#contenido">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br/>
+<a href="http://www.minetad.gob.es/energia/bono-social/Paginas/preguntas-fr<br/>ecuentes-bono-social.aspx#contenido">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br/>
 </font>
 <br/>
 % endif
@@ -155,35 +144,28 @@ En cas que un consumidor que compleixi els requisits per percebre el bo social i
 </table>
 <br/>
 <br/>
-Hola${nom_pagador},<br/>
+Hola ${nom_pagador},<br/>
 <br/>
-Mediante la presente se te requiere el pago de las cantidades adeudadas en concepto de consumo de energía eléctrica.<br/>
+Hace unos días enviamos el recibo de una de las cuotas del fraccionamiento acordado previamente de la factura de electricidad a tu entidad bancaria, pero nos lo ha devuelto. Así pues, el fraccionamiento ha quedado cancelado y el acuerdo ya no es válido. Deberás abonar el importe total de la/s factura/s.<br/>
 <br/>
-Actualmente, no has satisfecho el pago de la factura que te detallamos en este correo.<br/>
-<br/>
-De no abonarse la cantidad adeudada, a partir del día <b>${data_venciment}</b> la empresa distribuidora podrá suspender tu suministro de electricidad.<br/>
-<br/>
-Siempre prevaldrá la fecha de notificación del primer requerimiento de factura impagada.<br/>
-<br/>
-Te comunicamos que se aplicará automáticamente, en la próxima factura, un cargo de 4€ + IVA en concepto de gastos de gestión del impago.<br/>
-<br/>
-<br/>
-<U>Resumen de la factura</U><br/>
-<br/>
-- Número factura: <b>${object.number}</b><br/>
-- Fecha factura: ${object.invoice_id.date_invoice}<br/>
-- Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
-- <b>Importe total: ${object.invoice_id.amount_total}</b>€<br/>
-% if object.invoice_id.amount_total != object.invoice_id.residual:
-- <B>Importe pendiente: ${object.invoice_id.residual}€</B><br/>
-% endif
-<br/>
-Para regularizarla, puedes hacerlo mediante:<br/>
+Para regularizar la totalidad de la factura, puedes hacerlo mediante:<br/>
 <ul>
   <li>Tarjeta de débito/crédito a través de tu <a href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a>. Si no has accedido nunca, puedes consultar <a href="https://es.support.somenergia.coop/article/165-como-puedo-acceder-a-la-oficina-virtual">este artículo.</a></li><br/>
   <li>El documento adjunto con código de barras: online con tarjeta mediante el enlace que encontrarás bajo el código de barras del documento o bien en los cajeros de la entidad <a href="https://www2.caixabank.es/apl/localizador/caixamaps/index_es.html">CaixaBank</a>. </li>
 </ul>
 En el siguiente artículo te explicamos con más detalle como funcionan estos dos métodos de pago: <a href="https://es.support.somenergia.coop/article/774-pago-mediante-codigo-de-barras-n57">¿Qué hacer si una factura queda impagada?</a><br/>
+<br/>
+<U>Resumen de la factura</U><br/>
+<br/>
+- Número factura: ${object.number}<br/>
+- Fecha factura: ${object.invoice_id.date_invoice}<br/>
+- Periodo del  ${object.data_inici} al  ${object.data_final}<br/>
+- Importe total: ${object.invoice_id.amount_total}€<br/>
+% if object.invoice_id.amount_total != object.invoice_id.residual:
+- Importe pendiente: ${object.invoice_id.residual}€<br/>
+% endif
+<br/>
+Te informamos que si te encuentras en una situación de vulnerabilidad económica, y en cumplimiento de la legislación vigente (Real Decreto 897/2017, de 6 de ocutbre, por el cual se regula la figura del consumidor vulnerable, el bono social y otras medidas de protección para los consumidores domésticos de energía eléctrica), tu contrato tendría que pasar a la comercializadora de referencia para poderte acoger al bono social. Som Energia no lo puede aplicar por ley, a pesar de que lo financia.<br/>
 <br/>
 Si eres una persona electrodependiente o bien en tu punto de suministro vive alguna persona que lo sea, envíanos el certificado de empadronamiento y el certificado médico oficial que lo acredite a cobros@somenergia.coop<br/>
 <br/>
@@ -191,10 +173,10 @@ Saludos,<br/>
 <br/>
 Equipo de Som Energia<br/>
 cobros@somenergia.coop<br/>
-<a href="https://www.somenergia.coop">www.somenergia.coop</a><br/>
+<a href="http://www.somenergia.coop">www.somenergia.coop</a><br/>
 <br/>
 <font size="1" style="color:grey">
-Si usted cumple los requisitos para ser consumidor vulnerable, puede solicitar a una de las empresas comercializadoras de referencia acogerse al bono social, que supone un descuento sobre el precio voluntario para el pequeño consumidor (PVPC). El cambio de modalidad en el contrato para pasar a PVPC, siempre que no se modifiquen los parámetros recogidos en el contrato de acceso de terceros a la red, se llevará a cabo sin ningún tipo de penalización ni coste adicional. Siempre que se hayan acreditado los requisitos para ser consumidor vulnerable, una vez acogido al PVPC, de no haber sido abonada la cantidad adeudada, transcurridos 2 meses desde la fecha señalada anteriormente la empresa distribuidora adaptará durante 6 meses adicionales la potencia de su hogar a un suministro mínimo vital de 3,5 kW, durante los cuales su suministro tampoco podrá ser suspendido. <br/>
+Si usted cumple los requisitos para ser consumidor vulnerable, puede solicitar a una de las empresas comercializadoras de referencia acogerse al bono social, que supone un descuento sobre el precio voluntario para el pequeño consumidor (PVPC). El cambio de modalidad en el contrato para pasar a PVPC, siempre que no se modifiquen los parámetros recogidos en el contrato de acceso de terceros a la red, se llevará a cabo sin ningún tipo de penalización ni coste adicional. Una vez acogido al PVPC, y siempre que se hayan acreditado los requisitos para ser consumidor vulnerable, de no haber sido abonada la cantidad adeudada, transcurridos cuatro meses desde la recepción del requerimiento fehaciente de pago, se adaptará su potencia, durante otros seis meses adicionales, a un suministro mínimo vital de 3,5 kW. Durante este tiempo no podrá ser suspendido su suministro.<br/>
 <br/>
 El enlace a la página web de la CNMC donde encontrará los datos necesarios para contactar con la comercializadora de referencia es el siguiente: <a href="https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados">https://www.cnmc.es/ambitos-de-actuacion/energia/mercado-electrico#listados</a><br/>
 <br/>
@@ -225,7 +207,7 @@ En el caso de que un consumidor que cumpla los requisitos para percibir el bono 
 <a href="https://blog.somenergia.coop/grupos-locales/aragon/2018/03/el-nuevo-bono-social/">El nuevo Bono Social</a><br/>
 <a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">Acceso a las tablas de pensiones mínimas</a><br/>
 <a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">¿Qué es el PVPC?</a><br/>
-<a href="https://www.minetad.gob.es/energia/bono-social/Paginas/preguntas-frecuentes-bono-social.aspx#contenido">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br/>
+<a href="http://www.minetad.gob.es/energia/bono-social/Paginas/preguntas-frecuentes-bono-social.aspx#contenido">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br/>
 </font><br/>
 <br/>
 % endif

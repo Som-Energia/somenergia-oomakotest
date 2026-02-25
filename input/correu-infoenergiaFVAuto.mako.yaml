@@ -1,5 +1,5 @@
 cc: false
-to: ${object.titular.address[0].email}
+to: ${object.titular.www_email}
 subject_translations:
   ca_ES: '[Informe] Quin potencial d’autoproducció tens? (contracte ${object.name})'
   es_ES: '[Informe] ¿Qué potencial de autoproducción tienes? (contrato ${object.name})'

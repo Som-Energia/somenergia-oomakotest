@@ -1,0 +1,7 @@
+lang: ${object.polissa_id.titular.lang}
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.address_invoice_id.email}, ${object.polissa_id.direccio_notificacio.email}
+subject_translations:
+  ca_ES: "[FACTURA IMPAGADA - FRACCIONAMENT CANCEL·LAT] Som Energia factura ${object.number}"
+  es_ES: "[FACTURA IMPAGADA - FRACCIONAMIENTO CANCELADO] Som Energia factura ${object.number}"
+subject: "[FACTURA IMPAGADA - FRACCIONAMENT CANCEL·LAT] Som Energia factura ${object.number}"

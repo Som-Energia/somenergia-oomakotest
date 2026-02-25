@@ -1,5 +1,5 @@
 cc: false
-to: ${object.partner_id.address[0].email}
+to: ${object.partner_id.www_email}
 subject_translations:
   es_ES: Certificado retenciones intereses aportaciones voluntarias 2014 / Certificat
     retencions interessos aportacions voluntàries 2014
