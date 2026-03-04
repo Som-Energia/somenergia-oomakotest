@@ -46,20 +46,6 @@
         )[-1]
         return Polissa.read(object_._cr, object_._uid, new_contract_id, [])['name']
 
-    def get_autoconsum_description(object_, auto_consum, lang):
-        dades_cau_obj = object_.pool.get('giscedata.switching.datos.cau')
-        tipus_autoconsum = dict(
-            dades_cau_obj.fields_get(object_._cr, object_._uid, context={'lang': lang}
-        )['tipus_autoconsum']['selection'])
-
-        return auto_consum + " - " + tipus_autoconsum[auto_consum]
-
-    def get_auto_tipus_subseccio_description(object_, tipus_subseccio, lang):
-        dades_cau_obj = object_.pool.get('giscedata.switching.datos.cau')
-        # TODO: Get translations with from som_polissa.giscedata_cups import TABLA_133_dict)
-        tipus_subseccio_text = TABLA_133_dict[lang].get(str(tipus_subseccio), '')
-        return tipus_subseccio + " - " + tipus_subseccio_text
-
     def get_autoconsum_pot_gen(object_, dades_cau):
         sumatori_pot = 0
         for cau in dades_cau:
@@ -92,6 +78,7 @@
     md_obj = object.pool.get('ir.model.data')
     M101 = object.pool.get('giscedata.switching.m1.01')
     M105 = object.pool.get('giscedata.switching.m1.05')
+    cups_obj = object.pool.get('giscedata.cups.ps')
     pas05 = object.step_ids[-1].pas_id if len(object.step_ids) > 0 else None
     pas01 = object.step_ids[0].pas_id if len(object.step_ids) > 0 else None
 
@@ -147,12 +134,8 @@
     tipus_subseccio_description = ''
     is_collectiu = 'No'
     if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False:
-        autoconsum_description = get_autoconsum_description(
-            object, pas05.dades_cau[0].tipus_autoconsum, polissa.titular.lang
-        )
-        tipus_subseccio_description = get_auto_tipus_subseccio_description(
-            object, pas05.dades_cau[0].tipus_subseccio, polissa.titular.lang
-        )
+        autoconsum_description = cups_obj.get_autoconsum_description(object._cr, object._uid, pas05.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang)
+        tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object._cr, object._uid, pas05.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
         pot_gen = get_autoconsum_pot_gen(object, pas05.dades_cau)
         is_collectiu = get_autoconsum_is_collectiu(object, pas05.dades_cau)
         is_collectiu = 'Sí' if is_collectiu else 'No'
