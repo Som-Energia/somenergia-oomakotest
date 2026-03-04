@@ -33,13 +33,6 @@ def get_tension_type(object_, pas1, lang):
         return THREEPHASE[lang]
     return MONOPHASE[lang]
 
-
-def get_autoconsum_description(object_, auto_consum, lang):
-    M101 = object_.pool.get('giscedata.switching.m1.01')
-    tipus_autoconsum = dict(M101.fields_get(object_._cr, object_._uid, context={'lang': lang})['tipus_autoconsum']['selection'])
-
-    return auto_consum + " - " + tipus_autoconsum[auto_consum]
-
 def is_canvi_potencia(object_, pas1):
     polissa_pots = {
         d.periode_id.name: int(d.potencia * 1000)
@@ -58,12 +51,26 @@ def is_canvi_tarifa(object_, pas1):
     pol_tarifa_codi = object_.cups_polissa_id.tarifa.codi_ocsum
     return pas1.tarifaATR != pol_tarifa_codi
 
+def get_autoconsum_pot_gen(object_, dades_cau):
+    sumatori_pot = 0
+    for cau in dades_cau:
+        for inst in cau.dades_instalacio_gen:
+            sumatori_pot += inst.pot_installada_gen
+    pot_installada = sumatori_pot or ' '
+    return pot_installada
+
+def get_autoconsum_is_collectiu(object_, dades_cau):
+    for cau in dades_cau:
+        if cau.collectiu:
+            return True
+    return False
 
 tipus_tensio = False
 if pas1:
     _is_canvi_tarifa = is_canvi_tarifa(object, pas1)
 
     PasM101 = object.pool.get('giscedata.switching.m1.01')
+    cups_obj = object.pool.get('giscedata.cups.ps')
     mapaTarifes = dict(PasM101.fields_get(object._cr, object._uid)['tarifaATR']['selection'])
     tarifaATR = mapaTarifes[pas1.tarifaATR]
 
@@ -87,10 +94,16 @@ if pas1:
         lang = object.cups_polissa_id.titular.lang
         tipus_tensio = get_tension_type(object, pas1, lang)
 
-    nou_autoconsum = False
-    if pas1.tipus_autoconsum is not False:
-        if object.cups_polissa_id.autoconsumo != pas1.tipus_autoconsum:
-            nou_autoconsum = get_autoconsum_description(object, pas1.tipus_autoconsum, object.cups_polissa_id.titular.lang)
+    autoconsum_description = ''
+    pot_gen = ''
+    tipus_subseccio_description = ''
+    is_collectiu = 'No'
+    if pas1.dades_cau and pas1.dades_cau[0].tipus_autoconsum is not False:
+        autoconsum_description = cups_obj.get_autoconsum_description(object._cr, object._uid, pas1.dades_cau[0].tipus_autoconsum, object.cups_polissa_id.titular.lang)
+        tipus_subseccio_description = cups_obj.get_auto_tipus_subseccio_description(object._cr, object._uid, pas1.dades_cau[0].tipus_subseccio, object.cups_polissa_id.titular.lang)
+        pot_gen = get_autoconsum_pot_gen(object, pas1.dades_cau)
+        is_collectiu = get_autoconsum_is_collectiu(object, pas1.dades_cau)
+        is_collectiu = 'Sí' if is_collectiu else 'No'
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')
@@ -104,13 +117,13 @@ if pas1:
 
 %>
 
-    ${plantilla_header}
-    % if object.cups_polissa_id.titular.lang != "ca_ES":
-        ${correu_es()}
-    % else:
-        ${correu_cat()}
-    %endif
-    ${plantilla_footer}
+${plantilla_header}
+% if object.cups_polissa_id.titular.lang != "ca_ES":
+    ${correu_es()}
+% else:
+    ${correu_cat()}
+%endif
+${plantilla_footer}
 
 <%def name="correu_cat()">
     <p>
@@ -138,8 +151,17 @@ if pas1:
         %if tipus_tensio:
         - Tensió desitjada: ${tipus_tensio}
         %endif
-        %if nou_autoconsum:
-        - Autoconsum desitjat: ${nou_autoconsum}
+        %if pas1.dades_cau and pas1.dades_cau[0].tipus_autoconsum is not False and pas1.dades_cau[0].tipus_autoconsum != '00':
+            <ul>
+                <li>Autoconsum:
+                    <ul>
+                        <li>Modalitat: ${autoconsum_description} </li>
+                        <li>Subsecció: ${tipus_subseccio_description} </li>
+                        <li>Potència generació: ${pot_gen} kW </li>
+                        <li>Col·lectiu: ${is_collectiu} </li>
+                    </ul>
+                </li>
+            </ul>
         %endif
     </p>
     <p>
@@ -185,8 +207,17 @@ if pas1:
         %if tipus_tensio:
         - Tensión deseada: ${tipus_tensio}
         %endif
-        %if nou_autoconsum:
-        - Autoconsumo deseado: ${nou_autoconsum}
+        %if pas1.dades_cau and pas1.dades_cau[0].tipus_autoconsum is not False and pas1.dades_cau[0].tipus_autoconsum != '00':
+            <ul>
+                <li>Autoconsumo:
+                    <ul>
+                        <li>Modalidad: ${autoconsum_description} </li>
+                        <li>Subsección: ${tipus_subseccio_description} </li>
+                        <li>Potencia generación: ${pot_gen} kW </li>
+                        <li>Colectivo: ${is_collectiu} </li>
+                    </ul>
+                </li>
+            </ul>
         %endif
     </p>
     <p>
