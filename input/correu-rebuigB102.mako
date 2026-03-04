@@ -66,7 +66,7 @@ ${plantilla_footer}
     </head>
 </%def>
 
-<<%def name="cabecera_es()">
+<%def name="cabecera_es()">
     <head>
         <table width="100%" frame="below">
             <tr>
