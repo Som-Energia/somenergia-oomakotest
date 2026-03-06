@@ -170,14 +170,14 @@ ${plantilla_footer}
 
 <%def name="pot_gen_ca()">
     <p>
-        En data ${date_activacio}, s’ha activat la modificació contractual tramitada unilateralment per part de la distribuïdora.
+        En data ${date_activacio}, <font color="green"><strong>s’ha activat la modificació contractual</strong></font> tramitada unilateralment per part de la distribuïdora.
     </p>
     <p>
         Les <b>condicions contractuals actuals</b> del teu contracte amb Som Energia són:
     </p>
     <ul>
-        <li>Tarifa: ${tarifaATR}</li>
-        <li>Potència:</li>
+        <li><strong>Tarifa: ${tarifaATR}</strong></li>
+        <li><strong>Potència:</strong></li>
         <ul>
             <li>
             ${pot_deseada_ca}
@@ -186,14 +186,13 @@ ${plantilla_footer}
     </ul>
     %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
     <ul>
-        <li>Autoconsum:
+        <li><strong>Autoconsum:</strong>
             <ul>
-                <li>Motiu: ${motiu_modificacio}</li>
-                <li>Modalitat: ${autoconsum_description} </li>
-                <li>Subsecció: ${tipus_subseccio_description} </li>
-                <li>Potència generació: ${pot_gen} kW </li>
-                <li>Col·lectiu: ${is_collectiu} </li>
-
+                <li><strong>Motiu: ${motiu_modificacio}</strong></li>
+                <li><strong>Modalitat: ${autoconsum_description}</strong> </li>
+                <li><strong>Subsecció: ${tipus_subseccio_description} </strong></li>
+                <li><strong>Potència generació: ${pot_gen} kW </strong></li>
+                <li><strong>Col·lectiu: ${is_collectiu} </strong></li>
             </ul>
         </li>
     </ul>
@@ -225,8 +224,8 @@ ${plantilla_footer}
         Las  <b>condiciones contractuales actuales</b> de tu contrato con Som Energia son:
     </p>
     <ul>
-        <li>Tarifa: ${tarifaATR}</li>
-        <li>Potencia:</li>
+        <li><strong>Tarifa: ${tarifaATR}</strong></li>
+        <li><strong>Potencia:</strong></li>
         <ul>
             <li>
             ${pot_deseada_ca}
@@ -235,14 +234,13 @@ ${plantilla_footer}
     </ul>
     %if pas05.dades_cau and pas05.dades_cau[0].tipus_autoconsum is not False and pas05.dades_cau[0].tipus_autoconsum != '00':
     <ul>
-        <li>Autoconsumo:
+        <li><strong>Autoconsumo</strong>:
             <ul>
-                <li>Motivo: ${motiu_modificacio}</li>
-                <li>Modalidad: ${autoconsum_description} </li>
-                <li>Subsección: ${tipus_subseccio_description} </li>
-                <li>Potencia generación: ${pot_gen} kW </li>
-                <li>Colectivo: ${is_collectiu} </li>
-
+                <li><strong>Motivo: ${motiu_modificacio}</strong></li>
+                <li><strong>Modalidad: ${autoconsum_description}</strong> </li>
+                <li><strong>Subsección: ${tipus_subseccio_description} </strong></li>
+                <li><strong>Potencia generación: ${pot_gen} kW </strong></li>
+                <li><strong>Colectivo: ${is_collectiu} </strong></li>
             </ul>
         </li>
     </ul>

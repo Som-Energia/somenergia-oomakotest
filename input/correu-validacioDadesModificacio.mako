@@ -142,23 +142,23 @@ ${plantilla_footer}
     <p>
         Dades de la sol·licitud: <br>
         %if _is_canvi_tarifa:
-        - Tarifa d'accés: ${tarifaATR} <br>
+        - <strong>Tarifa d'accés: ${tarifaATR} </strong><br>
         %endif
         %if _is_canvi_potencia:
-        - Potències desitjades: <br>
+        - <strong>Potències desitjades: </strong><br>
         ${pot_deseada_ca}
         %endif
         %if tipus_tensio:
-        - Tensió desitjada: ${tipus_tensio}
+        - <strong>Tensió desitjada: ${tipus_tensio}</strong>
         %endif
         %if pas1.dades_cau and pas1.dades_cau[0].tipus_autoconsum is not False and pas1.dades_cau[0].tipus_autoconsum != '00':
             <ul>
-                <li>Autoconsum:
+                <li><strong>Autoconsum:</strong>
                     <ul>
-                        <li>Modalitat: ${autoconsum_description} </li>
-                        <li>Subsecció: ${tipus_subseccio_description} </li>
-                        <li>Potència generació: ${pot_gen} kW </li>
-                        <li>Col·lectiu: ${is_collectiu} </li>
+                        <li><strong>Modalitat: ${autoconsum_description}</strong> </li>
+                        <li><strong>Subsecció: ${tipus_subseccio_description} </strong></li>
+                        <li><strong>Potència generació: ${pot_gen} kW </strong></li>
+                        <li><strong>Col·lectiu: ${is_collectiu} </strong></li>
                     </ul>
                 </li>
             </ul>
@@ -198,23 +198,23 @@ ${plantilla_footer}
     <p>
         Datos de la solicitud:<br>
         %if _is_canvi_tarifa:
-        - Tarifa de acceso: ${tarifaATR}<br>
+        - <strong>Tarifa de acceso: ${tarifaATR}</strong><br>
         %endif
         %if _is_canvi_potencia:
-        - Potencias deseadas: <br>
+        - <strong>Potencias deseadas: </strong><br>
         ${pot_deseada_es}
         %endif
         %if tipus_tensio:
-        - Tensión deseada: ${tipus_tensio}
+        - <strong>Tensión deseada: ${tipus_tensio}</strong>
         %endif
         %if pas1.dades_cau and pas1.dades_cau[0].tipus_autoconsum is not False and pas1.dades_cau[0].tipus_autoconsum != '00':
             <ul>
-                <li>Autoconsumo:
+                <li><strong>Autoconsumo:</strong>
                     <ul>
-                        <li>Modalidad: ${autoconsum_description} </li>
-                        <li>Subsección: ${tipus_subseccio_description} </li>
-                        <li>Potencia generación: ${pot_gen} kW </li>
-                        <li>Colectivo: ${is_collectiu} </li>
+                        <li><strong>Modalidad: ${autoconsum_description}</strong> </li>
+                        <li><strong>Subsección: ${tipus_subseccio_description} </strong></li>
+                        <li><strong>Potencia generación: ${pot_gen} kW </strong></li>
+                        <li><strong>Colectivo: ${is_collectiu} </strong></li>
                     </ul>
                 </li>
             </ul>

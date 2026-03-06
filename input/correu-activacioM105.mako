@@ -13,25 +13,6 @@
         'es_ES': "Monofásica"
     }
 
-    TABLA_133_dict = {
-        'ca_ES': {
-            '10': "Sense excedents No acollit a compensació",
-            '11': "Sense excedents acollit a compensació",
-            '20': "Amb excedents no acollits a compensació",
-            '21': "Amb excedents acollits a compensació",
-            '00': "Sense autoconsum",
-            '0C': "Baixa com a membre d'autoconsum col·lectiu",
-        },
-        'es_ES': {
-            '10': "Sin excedentes No acogido a compensación",
-            '11': "Sin excedentes acogido a compensación",
-            '20': "Con excedentes no acogidos a compensación",
-            '21': "Con excedentes acogidos a compensación",
-            '00': "Sin autoconsumo",
-            '0C': "Baja como miembro de autoconsumo colectivo",
-        }
-    }
-
     def render(text_to_render, object_):
         templ = Template(text_to_render)
         return templ.render_unicode(
