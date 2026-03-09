@@ -118,11 +118,10 @@ En tot cas, perquè un consumidor sigui considerat vulnerable ha d’acreditar e
 <br/>
 En cas que un consumidor que compleixi els requisits per percebre el bo social i vulgui sol·licitar-ne l’aplicació no figuri com a titular del punt de subministrament d’electricitat en vigor, la sol·licitud de modificació de titularitat del contracte de subministrament d’electricitat es pot fer de manera simultània a la sol·licitud del bo social. En aquest cas, no s’aplica el que disposa l’article 83.5 del Reial decret 1955/2000, d’1 de desembre, pel qual es regulen les activitats de transport, distribució, comercialització, subministrament d’electricitat i procediments d’autorització d’instal·lacions d’energia elèctrica, sobre la revisió de les instal·lacions de més de vint anys.<br/>
 <br/>
-<a href="https://ca.support.somenergia.coop/article/171-que-es-el-bo-social">El Bo Social. Article a Som Energia</a><br/>
-<a href="https://blog.somenergia.coop/grupos-locales/aragon/2018/03/el-nuevo-bono-social/">El nuevo Bono Social</a><br/>
-<a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">Acceso a las tablas de pensiones mínimas</a><br/>
-<a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">¿Qué es el PVPC?</a><br/>
-<a href="http://www.minetad.gob.es/energia/bono-social/Paginas/preguntas-fr<br/>ecuentes-bono-social.aspx#contenido">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br/>
+<a target='_blank' href="https://ca.support.somenergia.coop/article/171-que-es-el-bo-social">El Bo Social. Article a Som Energia</a><br />
+<a target='_blank' href="https://ca.support.somenergia.coop/article/868-que-cal-fer-si-et-trobes-en-una-situacio-de-pobresa-o-vulnerabilitat-energetica">Què cal fer si et trobes en situació de pobresa o vulnerabilitat energètica?</a><br />
+<a target='_blank' href="https://ca.support.somenergia.coop/article/660-la-comercialitzacio-delectricitat?utm_source=linkidiomes&utm_medium=cda&utm_campaign=catal%C3%A0">Què és el PVPC?</a><br />
+<a target='_blank' href="https://www.miteco.gob.es/es/energia/pobreza-energetica/pe-001/preguntas-frecuentes-bono-social.html">Preguntes freqüents sobre el bo social a la Web del Ministeri d’Energia.</a><br />
 </font>
 <br/>
 % endif
@@ -214,11 +213,10 @@ En todo caso, para que un consumidor sea considerado vulnerable deberá acredita
 <br/>
 En el caso de que un consumidor que cumpla los requisitos para percibir el bono social y quiera solicitar su aplicación, no figure como titular del punto de suministro de electricidad en vigor, la solicitud de modificación de titularidad del contrato de suministro de electricidad se podrá realizar de forma simultánea a la solicitud del bono social. En este caso, no se aplicará lo dispuesto en el artículo 83.5 del Real Decreto 1955/2000, de 1 de diciembre, por el que se regulan las actividades de transporte, distribución, comercialización, suministro de electricidad y procedimientos de autorización de instalaciones de energía eléctrica, sobre la revisión de las instalaciones de más de veinte años.<br/>
 <br/>
-<a href="https://es.support.somenergia.coop/article/208-que-es-el-bono-social">El Bono Social. Artículo en Som Energia</a><br/>
-<a href="https://blog.somenergia.coop/grupos-locales/aragon/2018/03/el-nuevo-bono-social/">El nuevo Bono Social</a><br/>
-<a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">Acceso a las tablas de pensiones mínimas</a><br/>
-<a href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">¿Qué es el PVPC?</a><br/>
-<a href="http://www.minetad.gob.es/energia/bono-social/Paginas/preguntas-frecuentes-bono-social.aspx#contenido">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br/>
+<a target='_blank' href="https://es.support.somenergia.coop/article/208-que-es-el-bono-social">El Bono Social. Artículo en Som Energia</a><br />
+<a target='_blank' href="https://es.support.somenergia.coop/article/869-que-hacer-si-te-encuentras-en-situacion-de-pobreza-o-vulnerabilidad-energetica">¿Què hacer si te encuentras en situación de pobreza o vulnerabilidad energética?</a><br />
+<a target='_blank' href="https://es.support.somenergia.coop/article/661-la-comercializacion-de-electricidad">¿Qué es el PVPC?</a><br />
+<a target='_blank' href="https://www.miteco.gob.es/es/energia/pobreza-energetica/pe-001/preguntas-frecuentes-bono-social.html">Preguntas frecuentes sobre el bono social en la Web del Ministerio de Energía.</a><br />
 </font><br/>
 <br/>
 % endif
