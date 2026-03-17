@@ -1,0 +1,8 @@
+lang: ${object.partner_id.lang}
+to: ${object.partner_id.address[0].email}
+cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+subject_translations:
+  ca_ES: Certificat de retenció sobre el rendiment de Generation kWh
+  es_ES: Certificado de retención sobre el rendimiento de GenerationkWh
+subject: Certificat de retenció sobre el rendiment de GenerationkWh / Certificado de retención sobre el rendimiento de GenerationkWh
