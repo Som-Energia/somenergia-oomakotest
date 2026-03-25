@@ -41,168 +41,259 @@ ${plantilla_header}
     A continuació, podràs veure la comparativa dels preus actuals amb els nous preus. Els impostos aplicats són l'${data['impostos_str']}, i l’impost elèctric del 0,5%, en els dos casos amb les rebaixes d’impostos que ha aprovat el Govern.
   </p>
   <h3>Generation kWh: preu del terme d’energia (en euros/kWh):</h3>
-  <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-    <tr>
-      <td colspan="4">
-        <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
-          <tr>
-            <td width="25%" class="purchase_borders" style="vertical-align: center;" align="left">
-              <p class="f-fallback"  style="margin: 10px 0"></p>
-            </td>
-            <td width="10%" class="purchase_borders" style="vertical-align: center;" align="left">
-              <p class="f-fallback"  style="margin: 10px 0"></p>
-            </td>
-            <td width="32.5%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="left">
-              <p class="f-fallback"  style="margin: 10px 0"><strong>Preus actuals</strong></p>
-            </td>
-            <td width="32.5%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="left">
-              <p class="f-fallback" style="margin: 10px 0"><strong>Preus nous</strong></p>
-            </td>
-          </tr>
+  %if data['tarifa_acces'] == '2.0TD':
+    <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td colspan="7">
+          <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="purchase_borders" style="vertical-align: center;" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left" colspan="3">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Preus actuals</strong></p>
+              </td>
+              <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left" colspan="3">
+                <p class="f-fallback" style="margin: 10px 0"><strong>Preus nous</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0"></p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període punta</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període pla</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període vall</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període punta</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període pla</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Període vall</p>
+              </td>
+            </tr>
+            <tr>
+              <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Sense impostos aplicats</strong></p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P2']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P3']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P1']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P2']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P3']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0"><strong>Amb impostos aplicats</strong></p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P2']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P3']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P1']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P2']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P3']}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  %else:
+    <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td colspan="4">
+          <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="25%" class="purchase_borders" style="vertical-align: center;" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td width="10%" class="purchase_borders" style="vertical-align: center;" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td width="32.5%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Preus actuals</strong></p>
+              </td>
+              <td width="32.5%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="left">
+                <p class="f-fallback" style="margin: 10px 0"><strong>Preus nous</strong></p>
+              </td>
+            </tr>
 
-          <tr>
-            <td class="purchase_borders" style="vertical-align: left;" valign="middle" rowspan=6>
-              <p class="f-fallback"  style="margin: 10px 0;"><strong>Sense impostos aplicats</strong></p>
-            </td>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P1</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P1']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P2</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P2']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P2']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P3</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P3']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P3']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P4</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P4']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P4']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P5</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P5']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P5']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P6</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P6']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P6']}</p>
-            </td>
-          </tr>
+            <tr>
+              <td class="purchase_borders" style="vertical-align: left;" valign="middle" rowspan=6>
+                <p class="f-fallback"  style="margin: 10px 0;"><strong>Sense impostos aplicats</strong></p>
+              </td>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P1</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P1']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P2</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P2']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P2']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P3</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P3']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P3']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P4</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P4']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P4']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P5</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P5']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P5']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P6</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P6']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P6']}</p>
+              </td>
+            </tr>
 
-          <tr>
-            <td class="purchase_borders" style="vertical-align: left;" valign="middle" rowspan=6>
-              <p class="f-fallback"  style="margin: 10px 0;"><strong>Amb impostos aplicats</strong></p>
-            </td>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P1</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P1']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P2</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P2']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P2']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P3</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P3']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P3']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P4</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P4']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P4']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P5</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P5']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P5']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P6</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P6']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P6']}</p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+            <tr>
+              <td class="purchase_borders" style="vertical-align: left;" valign="middle" rowspan=6>
+                <p class="f-fallback"  style="margin: 10px 0;"><strong>Amb impostos aplicats</strong></p>
+              </td>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P1</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P1']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P2</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P2']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P2']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P3</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P3']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P3']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P4</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P4']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P4']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P5</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P5']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P5']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P6</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P6']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P6']}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  %endif
   <br/>
   <p>
     Al web pots consultar <a href="https://www.somenergia.coop/ca/tarifes-llum/domestic-generationkwh?mtm_cid=20260330&mtm_campaign=canvi-preus-5-26&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">els preus de la tarifa Generation kWh</a>. Pots comparar-les amb les de dates anteriors <a href="https://www.somenergia.coop/ca/historic-tarifa-periodes?mtm_cid=20260330&mtm_campaign=canvi-preus-5-26&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquí</a>.
@@ -243,169 +334,260 @@ ${plantilla_header}
     A continuación podrás ver la comparativa de los precios actuales con los nuevos precios. Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 0,5%, en ambos casos con las rebajas de impuestos que ha aprobado el Gobierno.
   </p>
   <h3>Generation kWh: precio del término de energía (en euros/kWh):</h3>
-  <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-    <tr>
-      <td colspan="4">
-        <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+  %if data['tarifa_acces'] == '2.0TD':
+    <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td colspan="7">
+          <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="purchase_borders" style="vertical-align: center;" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left" colspan="3">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Precios actuales</strong></p>
+              </td>
+              <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left" colspan="3">
+                <p class="f-fallback" style="margin: 10px 0"><strong>Precios nuevos</strong></p>
+              </td>
+            </tr>
+            <tr>
+              <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo punta</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo llano</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo valle</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo punta</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo llano</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0">Periodo valle</p>
+              </td>
+            </tr>
+            <tr>
+              <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0; font-size: 14px"><strong>Sin impuestos</strong></p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P2']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation']['P3']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P1']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P2']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation']['P3']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td width="16%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="margin: 10px 0; font-size: 14px"><strong>Con impuestos</strong></p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P2']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_antics_generation_imp']['P3']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P1']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P2']}</p>
+              </td>
+              <td width="14%" class="purchase_borders" style="vertical-align: center;" valign="middle">
+                <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preus_nous_generation_imp']['P3']}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  %else:
+    <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td colspan="4">
+          <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
 
-          <tr>
-            <td width="25%" class="purchase_borders" style="vertical-align: center;" align="left">
-              <p class="f-fallback"  style="margin: 10px 0"></p>
-            </td>
-            <td width="10%" class="purchase_borders" style="vertical-align: center;" align="left">
-              <p class="f-fallback"  style="margin: 10px 0"></p>
-            </td>
-            <td width="32.5%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="left">
-              <p class="f-fallback"  style="margin: 10px 0"><strong>Precios actuales</strong></p>
-            </td>
-            <td width="32.5%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="left">
-              <p class="f-fallback" style="margin: 10px 0"><strong>Precios nuevos</strong></p>
-            </td>
-          </tr>
+            <tr>
+              <td width="25%" class="purchase_borders" style="vertical-align: center;" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td width="10%" class="purchase_borders" style="vertical-align: center;" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"></p>
+              </td>
+              <td width="32.5%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="left">
+                <p class="f-fallback"  style="margin: 10px 0"><strong>Precios actuales</strong></p>
+              </td>
+              <td width="32.5%" class="purchase_borders" style="padding-left: 0px; text-align: center" align="left">
+                <p class="f-fallback" style="margin: 10px 0"><strong>Precios nuevos</strong></p>
+              </td>
+            </tr>
 
-          <tr>
-            <td class="purchase_borders" style="vertical-align: left;" valign="middle" rowspan=6>
-              <p class="f-fallback"  style="margin: 10px 0;"><strong>Sin impuestos aplicados</strong></p>
-            </td>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P1</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P1']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P2</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P2']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P2']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P3</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P3']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P3']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P4</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P4']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P4']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P5</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P5']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P5']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P6</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P6']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P6']}</p>
-            </td>
-          </tr>
+            <tr>
+              <td class="purchase_borders" style="vertical-align: left;" valign="middle" rowspan=6>
+                <p class="f-fallback"  style="margin: 10px 0;"><strong>Sin impuestos aplicados</strong></p>
+              </td>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P1</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P1']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P1']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P2</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P2']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P2']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P3</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P3']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P3']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P4</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P4']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P4']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P5</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P5']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P5']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P6</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation']['P6']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation']['P6']}</p>
+              </td>
+            </tr>
 
-          <tr>
-            <td class="purchase_borders" style="vertical-align: left;" valign="middle" rowspan=6>
-              <p class="f-fallback"  style="margin: 10px 0;"><strong>Con impuestos aplicados</strong></p>
-            </td>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P1</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P1']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P2</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P2']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P2']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P3</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P3']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P3']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P4</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P4']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P4']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P5</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P5']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P5']}</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">P6</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P6']}</p>
-            </td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P6']}</p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+            <tr>
+              <td class="purchase_borders" style="vertical-align: left;" valign="middle" rowspan=6>
+                <p class="f-fallback"  style="margin: 10px 0;"><strong>Con impuestos aplicados</strong></p>
+              </td>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P1</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P1']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P1']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P2</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P2']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P2']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P3</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P3']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P3']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P4</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P4']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P4']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P5</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P5']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P5']}</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="purchase_borders" style="text-align: center; white-space: nowrap;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">P6</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_antics_generation_imp']['P6']}</p>
+              </td>
+              <td class="purchase_borders" style="text-align: center;" valign="middle">
+                <p class="f-fallback"  style="margin: 10px 0">${data['preus_nous_generation_imp']['P6']}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  %endif
   <br/>
   <p>
     En la web puedes consultar <a href="https://www.somenergia.coop/ca/tarifes-llum/domestic-generationkwh?mtm_cid=20260330&mtm_campaign=canvi-preus-5-26&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">los precios de la tarifa Generation kWh</a>. Puedes compararlas con las de fechas anteriores <a href="https://www.somenergia.coop/es/historico-tarifa-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">aquí</a>.
