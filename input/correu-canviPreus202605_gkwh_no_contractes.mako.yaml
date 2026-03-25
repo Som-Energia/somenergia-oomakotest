@@ -1,0 +1,8 @@
+lang: ${object.partner_id.lang}
+cc: false
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+to: ${object.partner_id.www_email}
+subject_translations:
+  ca_ES: Actualizació de la forma de calcular la tarifa Generation kWH
+  es_ES: Actualización de la forma de calcular la tarifa Generation kWH
+subject: Actualizació de la forma de calcular la tarifa Generation kWH / Actualización de la forma de calcular la tarifa Generation kWH
