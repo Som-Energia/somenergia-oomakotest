@@ -71,7 +71,11 @@ ${plantilla_header}
     </h1>
     <p>Aquí tens una taula amb els nous preus (vigents a partir de l’1 de maig), i una comparació amb els preus actuals (fins a 30 d’abril) de la tarifa que tens contractada. Recorda que als nous preus ja no hi ha aplicats els Serveis d’Ajust, que se’t sumaran a part a la factura.</p>
     <p>
-      Els impostos aplicats són l'${data['impostos_str']}, i l’impost elèctric del 0,5%, en els dos casos amb les rebaixes d’impostos que ha aprovat el Govern.
+      %if data['iva_reduit']:
+      Els impostos aplicats són l'${data['impostos_str']} i l’impost elèctric del 0,5%, en els dos casos amb les rebaixes d’impostos que ha aprovat el Govern.
+      %else:
+      Els impostos aplicats són l'${data['impostos_str']} i l’impost elèctric del 0,5%, aquest últim amb la rebaixa aprovada pel Govern.
+      %endif
     </p>
   %if data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'atr':
     <h1>
@@ -741,7 +745,7 @@ ${plantilla_header}
 
   <p>El 1 de mayo actualizaremos los precios de las tarifas por períodos (la que tienes ahora). Ante el actual contexto de inestabilidad geopolítica, debemos actualizar los nuestros precios al alza.</p>
   %if data['iva_reduit']:
-    <p>Sin embargo, las nuevas medidas del Gobierno (<strong>rebaja del IVA al 10% y del Impuesto Eléctrico al 0,5%</strong>), <strong>ayudará a mitigar</strong> el aumento del precio de la energía.</p>
+    <p>Sin embargo, las nuevas medidas del Gobierno (<strong>rebaja del IVA al 10% y del Impuesto Eléctrico al 0,5%</strong>), <strong>ayudarán a mitigar</strong> el aumento del precio de la energía.</p>
   %else:
     <p>Sin embargo, las nuevas medidas del Gobierno (<strong>rebaja del Impuesto Eléctrico al 0,5%</strong>), <strong>ayudarán a mitigar</strong> el aumento del precio de la energía. </p>
   %endif
@@ -761,7 +765,11 @@ ${plantilla_header}
     Aquí tienes una tabla con los nuevos precios (vigentes a partir del 1 de mayo), y una comparación con los precios actuales (hasta el 30 de abril) de la tarifa que tienes contratada. Recuerda que a los nuevos precios ya no están aplicados los Servicios de Ajuste, que se te sumarán aparte en la factura.
   </p>
   <p>
-    Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 0,5%, en ambos casos con las rebajas de impuestos que ha aprobado el Gobierno.
+    %if data['iva_reduit']:
+    Los impuestos aplicados son el ${data['impostos_str']} y el impuesto eléctrico del 0,5%, en ambos casos con las rebajas de impuestos que ha aprobado el Gobierno.
+    %else:
+    Los impuestos aplicados son el ${data['impostos_str']} y el impuesto eléctrico del 0,5%, en este último con la rebaja aprobada por el Gobierno.
+    %endif
   </p>
 
   %if data['tarifa_acces'] == '2.0TD' and data['mode_facturacio'] == 'atr':

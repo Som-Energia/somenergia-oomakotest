@@ -38,7 +38,12 @@ ${plantilla_header}
     Vols conèixer tots els detalls? Llegeix l’article sencer <strong><a target="_blank" href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-de-maig">aquí</a></strong>.
   </p>
   <p>
-    A continuació, podràs veure la comparativa dels preus actuals amb els nous preus. Els impostos aplicats són l'${data['impostos_str']}, i l’impost elèctric del 0,5%, en els dos casos amb les rebaixes d’impostos que ha aprovat el Govern.
+    A continuació, podràs veure la comparativa dels preus actuals amb els nous preus. 
+    %if data['iva_reduit']:
+    Els impostos aplicats són l'${data['impostos_str']} i l’impost elèctric del 0,5%, en els dos casos amb les rebaixes d’impostos que ha aprovat el Govern.
+    %else:
+    Els impostos aplicats són l'${data['impostos_str']} i l’impost elèctric del 0,5%, aquest últim amb la rebaixa aprovada pel Govern.
+    %endif
   </p>
   <h3>Generation kWh: preu del terme d’energia (en euros/kWh):</h3>
   %if data['tarifa_acces'] == '2.0TD':
@@ -331,7 +336,12 @@ ${plantilla_header}
     ¿Quieres conocer todos los detalles? Lee el artículo entero <strong><a target="_blank" href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-de-mayo">aquí</a></strong>.
   </p>
   <p>
-    A continuación podrás ver la comparativa de los precios actuales con los nuevos precios. Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 0,5%, en ambos casos con las rebajas de impuestos que ha aprobado el Gobierno.
+    A continuación podrás ver la comparativa de los precios actuales con los nuevos precios. 
+    %if data['iva_reduit']:
+    Los impuestos aplicados son el ${data['impostos_str']} y el impuesto eléctrico del 0,5%, en ambos casos con las rebajas de impuestos que ha aprobado el Gobierno.
+    %else:
+    Los impuestos aplicados son el ${data['impostos_str']} y el impuesto eléctrico del 0,5%, en este último con la rebaja aprobada por el Gobierno.
+    %endif
   </p>
   <h3>Generation kWh: precio del término de energía (en euros/kWh):</h3>
   %if data['tarifa_acces'] == '2.0TD':
