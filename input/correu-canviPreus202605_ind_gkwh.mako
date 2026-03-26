@@ -590,7 +590,7 @@ ${plantilla_header}
   %endif
   <br/>
   <p>
-    En la web puedes consultar <a href="https://www.somenergia.coop/ca/tarifes-llum/domestic-generationkwh?mtm_cid=20260330&mtm_campaign=canvi-preus-5-26&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">los precios de la tarifa Generation kWh</a>. Puedes compararlas con las de fechas anteriores <a href="https://www.somenergia.coop/es/historico-tarifa-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">aquí</a>.
+    En la web puedes consultar <a href="https://www.somenergia.coop/es/tarifas-luz/domestico-generationkwh?mtm_cid=20260330&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">los precios de la tarifa Generation kWh</a>. Puedes compararlas con las de fechas anteriores <a href="https://www.somenergia.coop/es/historico-tarifa-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">aquí</a>.
   </p>
   <p>
     Te recordamos que las condiciones del Generation kWh están detalladas en las <a href="https://back.somenergia.coop/storage/app/media/DOCS/Condiciones-Generales-Contrato-Autoproduccion-Colectiva-Generation-kWh-ES.pdf?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Condiciones generales de Generation kWh</a>.

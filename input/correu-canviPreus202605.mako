@@ -52,10 +52,10 @@ ${plantilla_header}
     % endif
 
     <p>L’1 de maig actualitzarem els preus de les tarifes per períodes (la que tens ara). Davant l’actual context d’inestabilitat geopolítica, hem d’actualitzar els nostres preus a l’alça.</p>
-    %if data['potencia'] < 10:
+    %if data['iva_reduit']:
       <p>Tot i això, les noves mesures del Govern (<strong>rebaixa de l’IVA al 10% i de l'Impost Elèctric al 0,5%</strong>), <strong>ajudaran a atenuar</strong> l’augment del preu de l’energia.</p>
     %else:
-      <p>Tot i això, les noves mesures del Govern (rebaixa de l’Impost Elèctric al 0,5%), ajudaran a atenuar l’augment del preu de l’energia.</p>
+      <p>Tot i això, les noves mesures del Govern (rebaixa de l’Impost Elèctric al 0,5%), <strong>ajudaran a atenuar</strong> l’augment del preu de l’energia.</p>
     %endif
 
     <p>Et donem més detalls: els preus varien pels motius següents:</p>
@@ -64,12 +64,12 @@ ${plantilla_header}
       <li><strong>Serveis d’Ajust:</strong> Són costos obligatoris que fixa Red Eléctrica Española (REE) per assegurar el correcte funcionament de la xarxa. Fins ara, dins el preu de l’energia incloíem una previsió del preu d’aquests Serveis d’Ajust, però ara aplicarem a cada factura l’import que marqui REE. Com que cada hora tenen un import diferent que no coneixem amb antelació, i depèn de la situació geopolítica, te’l cobrarem a part. Ho fem per responsabilitat: per no cobrar-te de més "per si de cas" ni posar en risc la viabilitat de la cooperativa davant d'uns costos que no podem preveure. Per orientar-te, la mitjana d’aquest preu el mes de març ha sigut de 0,028 €/kWh.</li>
     </ul></p>
     <p>Vols conèixer tots els detalls? Llegeix l’article sencer <strong><a target="_blank" href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-de-maig?mtm_cid=20260330&mtm_campaign=canvi-preus-5-26&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquí</a></strong>.</p>
-    <p>A continuació, podràs veure el detall dels nous preus i l'estimació del que pagaràs:</p>
+    <p>A continuació, podràs veure el detall dels nous preus i l'estimació del que pagaràs.</p>
 
     <h1>
       Nous preus i comparativa amb preus actuals
     </h1>
-    <p>A continuació tens una taula amb els nous preus (vigents a partir de l’1 de maig), i una comparació amb els preus actuals (fins a 30 d’abril) de la tarifa que tens contractada. Recorda que als nous preus ja no hi ha aplicats els Serveis d’Ajust, que se’t sumaran a part a la factura.</p>
+    <p>Aquí tens una taula amb els nous preus (vigents a partir de l’1 de maig), i una comparació amb els preus actuals (fins a 30 d’abril) de la tarifa que tens contractada. Recorda que als nous preus ja no hi ha aplicats els Serveis d’Ajust, que se’t sumaran a part a la factura.</p>
     <p>
       Els impostos aplicats són l'${data['impostos_str']}, i l’impost elèctric del 0,5%, en els dos casos amb les rebaixes d’impostos que ha aprovat el Govern.
     </p>
@@ -419,7 +419,7 @@ ${plantilla_header}
   %if data["te_gkwh"]:
   <h1>Generation kWh</h1>
   <p>
-    Respecte a la tarifa Generation, que tu també tens, <strong>et protegeix de part d’aquesta pujada</strong>, ja que el seu preu es calcula segons els costos reals de generació de les plantes i no li afecta la pujada dels combustibles fòssils. L’únic canvi que veuràs és que els Serveis d’Ajust fixats per REE passen a cobrar-se a part, tal com t'hem explicat al principi.
+    Respecte a la tarifa Generation kWh, que tu també tens, <strong>et protegeix de part d’aquesta pujada</strong>, ja que el seu preu es calcula segons els costos reals de generació de les plantes i no li afecta la pujada dels combustibles fòssils. L’únic canvi que veuràs és que els Serveis d’Ajust fixats per REE passen a cobrar-se a part, tal com t'hem explicat al principi.
   </p>
   <p>
     A continuació pots veure com queden els preus de la tarifa Generation kWh amb el canvi dels Serveis d’Ajust.
@@ -740,10 +740,10 @@ ${plantilla_header}
   % endif
 
   <p>El 1 de mayo actualizaremos los precios de las tarifas por períodos (la que tienes ahora). Ante el actual contexto de inestabilidad geopolítica, debemos actualizar los nuestros precios al alza.</p>
-  %if data['potencia'] < 10:
+  %if data['iva_reduit']:
     <p>Sin embargo, las nuevas medidas del Gobierno (<strong>rebaja del IVA al 10% y del Impuesto Eléctrico al 0,5%</strong>), <strong>ayudará a mitigar</strong> el aumento del precio de la energía.</p>
   %else:
-    <p>Sin embargo, las nuevas medidas del Gobierno (rebaja del Impuesto Eléctrico al 0,5%), ayudarán a mitigar el aumento del precio de la energía. </p>
+    <p>Sin embargo, las nuevas medidas del Gobierno (<strong>rebaja del Impuesto Eléctrico al 0,5%</strong>), <strong>ayudarán a mitigar</strong> el aumento del precio de la energía. </p>
   %endif
 
   <p>Te damos más detalles: los precios varían por los siguientes motivos:</p>
@@ -752,13 +752,13 @@ ${plantilla_header}
     <li><strong>Servicios de Ajuste</strong>: Son costes obligatorios que fija Red Eléctrica Española (REE) para asegurar el correcto funcionamiento de la red. Hasta ahora, dentro del precio de la energía incluíamos una previsión del precio de estos Servicios de Ajuste, pero ahora aplicaremos a cada factura el importe que marque REE. Debido a que cada hora tienen un importe diferente que no conocemos con antelación, y depende de la situación geopolítica, te lo cobraremos aparte. Lo hacemos por responsabilidad: por no cobrarte de más "por si acaso" ni poner en riesgo la viabilidad de la cooperativa ante unos costes que no podemos prever. Para orientarte, la media de este precio en marzo ha sido de 0,028 €/kWh.</li>
   </ul></p>
   <p>¿Quieres conocer todos los detalles? Lee el artículo entero <strong><a target="_blank" href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-de-mayo?mtm_cid=20260330&mtm_campaign=canvi-preus-5-26&mtm_medium=L&mtm_content=es&mtm_source=emailerp">aquí</a></strong>.</p>
-  <p>A continuación, podrás ver el detalle de los nuevos precios y la estimación de lo que vas a pagar:</p>
+  <p>A continuación, podrás ver el detalle de los nuevos precios y la estimación de lo que vas a pagar.</p>
 
   <h1>
     Nuevos precios y comparativa con precios actuales
   </h1>
   <p>
-    A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de mayo), y una comparación con los precios actuales (hasta 30 de abril) de la tarifa que tienes contratada. Recuerda que a los nuevos precios ya no están aplicados los Servicios de Ajuste, que se te sumarán aparte en la factura.
+    Aquí tienes una tabla con los nuevos precios (vigentes a partir del 1 de mayo), y una comparación con los precios actuales (hasta el 30 de abril) de la tarifa que tienes contratada. Recuerda que a los nuevos precios ya no están aplicados los Servicios de Ajuste, que se te sumarán aparte en la factura.
   </p>
   <p>
     Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 0,5%, en ambos casos con las rebajas de impuestos que ha aprobado el Gobierno.
@@ -1110,7 +1110,7 @@ ${plantilla_header}
   %if data["te_gkwh"]:
   <h1>Generation kWh</h1>
   <p>
-    Respecto a la tarifa Generation, que tu también tienes, <strong>te protege de parte de esta subida</strong>, ya que su precio se calcula según los costes reales de generación de las plantas y no le afecta la subida de los combustibles fósiles. El único cambio que verás es que los <strong>Servicios de Ajuste</strong> fijados por REE pasan a cobrarse aparte, tal y como te hemos explicado al principio.
+    Respecto a la tarifa Generation kWh, que tu también tienes, <strong>te protege de parte de esta subida</strong>, ya que su precio se calcula según los costes reales de generación de las plantas y no le afecta la subida de los combustibles fósiles. El único cambio que verás es que los <strong>Servicios de Ajuste</strong> fijados por REE pasan a cobrarse aparte, tal y como te hemos explicado al principio.
   </p>
   <p>
     A continuación puedes ver cómo quedan los precios de la tarifa Generation kWh con el cambio de los Servicios de Ajuste.
