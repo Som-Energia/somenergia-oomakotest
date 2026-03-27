@@ -66,9 +66,19 @@ ${plantilla_header}
     <br>
     <strong>Ajustar la potència contractada és la primera mesura d'estalvi</strong>. Us convidem a llegir l'informe i optimitzar el vostre contracte, si s'escau.<br>
     <br>
-    Aprofitem l'avinentesa per informar-vos que, segons el Real decret 88/2026 aprovat recentment, <strong>a partir del mes d'agost es podran demanar modificacions temporals de la potència contractada</strong> per diferents intervals de temps (trimestral, mensual, diari i horari).<br>
+    Aprofitem l'avinentesa per informar-vos d'un parell de canvis normatius aprovats recentment sobre les modificacions de potència:<br>
+    <ul>
+        <li>
+        Per una banda, el Reial decret 88/2026 estableix que <strong>a partir del mes d'agost es podran demanar modificacions temporals de la potència contractada</strong> per diferents intervals de temps (trimestral, mensual, diari i horari).
+        </li>
+        <li>
+        Per altra banda, el Reial decret-llei 7/2026 permet a les <strong>empreses i persones d'alta al RETA demanar més d'un canvi de potències durant aquest any 2026 sense cost,</strong> excepte si augmenta la potència màxima contractada, si cal canviar el comptador i si hi ha supervisió de les instal·lacions.
+        </li>
+    </ul>
     <br>
-    Tot i això, encara han de fer el desplegament d'aquesta mesura. Des de Som Energia us continuarem informant de les novetats normatives que puguin sorgir.<br>
+    Així doncs, si sou una empresa o esteu donats d'alta al RETA, <u>us recomanem aprofitar la gratuïtat del tràmit per ajustar la potència del vostre contracte.</u><br>
+    <br>
+    Des de Som Energia us continuarem informant de les novetats normatives que puguin sorgir.<br>
     <br>
     <p>Moltes gràcies per la vostra confiança.<br></p>
     <p>Bona energia!<br><br></p>
@@ -123,9 +133,19 @@ ${plantilla_header}
     <br>
     <strong>Ajustar la potencia es la primera medida de ahorro</strong>. Os invitamos a leer el informe y optimizar vuestro contrato, si procede.<br>
     <br>
-    Aprovechamos para informaros que, según el Real decreto 88/2026 aprobado recientemente, <strong>a partir del mes de agosto se podrán solicitar modificaciones temporales de la potencia contratada</strong> para diferentes intervalos de tiempo (trimestral, mensual, diario y horario).<br>
+    Aprovechamos para informaros de un par de cambios normativos aprobados recientemente sobre las modificaciones de potencia:<br>
+    <ul>
+        <li>
+        Por un lado, el Real decreto 88/2026 establece que <strong>a partir del mes de agosto se podrán solicitar modificaciones temporales de la potencia contratada</strong> para diferentes intervalos de tiempo (trimestral, mensual, diario y horario). 
+        </li>
+        <li>
+        Por otro lado, el Real decreto-ley 7/2026 permite a las <strong>empresas y personas de alta al RETA pedir más de un cambio de potencias durante este año 2026 sin coste,</strong> excepto si se aumenta la potencia máxima contratada, si se requiere cambiar el contador y si hay supervisión de las instalaciones.
+        </li>
+    </ul>
     <br>
-    No obstante, está pendiente de hacer el desarrollo de esta medida. Desde Som Energia os continuaremos informando de les novedades normativas que puedan surgir.<br>
+    En este sentido, si sois una empresa o estáis de alta al RETA, <u>os recomendamos aprovechar la gratuidad del trámite para ajustar la potencia de vuestro contrato.</u><br>
+    <br>
+    Desde Som Energia os continuaremos informando de les novedades normativas que puedan surgir.<br>
     <br>
     <p>Muchas gracias por vuestra confianza.<br></p>
     <p>¡Buena energía!<br><br></p>
