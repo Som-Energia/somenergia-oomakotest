@@ -1123,9 +1123,15 @@ ${plantilla_header}
   <p>
     A continuación puedes ver cómo quedan los precios de la tarifa Generation kWh con el cambio de los Servicios de Ajuste.
   </p>
-  <p>
-    Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 0,5%, en ambos casos con las rebajas de impuestos que ha aprobado el Gobierno.
-  </p>
+  %if data['iva_reduit']:
+    <p>
+      Los impuestos aplicados son el ${data['impostos_str']}, y el impuesto eléctrico del 0,5%, en ambos casos con las rebajas de impuestos que ha aprobado el Gobierno.
+    </p>
+  %else:
+    <p>
+      Los impuestos aplicados son el ${data['impostos_str']} y el impuesto eléctrico del 0,5%, en este último con la rebaja aprobada por el Gobierno.
+    </p>
+  %endif
   <h3>Generation kWh: precio del término energético (en euros/kWh):</h3>
   %if data['tarifa_acces'] == '2.0TD':
     <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
