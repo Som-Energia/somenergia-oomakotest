@@ -360,19 +360,19 @@ ${plantilla_header}
   <h1>Estimació</h1>
   %if data['origen'] in ['pdf', 'consums_periods']:
     <p>
-      Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l’energia i la potència durant un any, si apliquéssim els preus actuals i si apliquéssim els preus nous. L’estimació l’hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció, ni Generation kWh, ni lloguer de comptador. Sí que inclou el cost dels Serveis d’Ajust (el terme que t’explicàvem a l’inici que ara ja serà un concepte a part). Com que no coneixem el cost d’aquests Serveis d’Ajust, estimem un preu similar al preu mitjà del mes de març, que va ser de 0,028 €/kWh.
+      Tal com estableix la normativa, hem fet <strong>una estimació de caràcter orientatiu</strong> del que et costaria l’energia i la potència durant un any, si apliquéssim els preus actuals i si apliquéssim els preus nous. L’estimació l’hem fet a partir de les dades que tenim respecte al que has consumit de la xarxa elèctrica durant els últims 12 mesos (aproximadament ${data['consum_total']} kWh) i les potències que tens contractades, i sense autoproducció, ni Generation kWh, ni lloguer de comptador. <strong>Atenció! Sí que inclou el cost dels Serveis d’Ajust</strong> (el terme que t’explicàvem a l’inici que ara ja serà un concepte a part). Com que no coneixem el cost d’aquests Serveis d’Ajust, estimem un preu similar al preu mitjà del mes de març, que va ser de 0,028 €/kWh.
     </p>
   %elif data['origen'] == 'cnmc':
     <p>
-      Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del que et costaria l’energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L’estimació l’hem fet a partir de les dades que tenim dels teus consums anteriors, sense tenir en compte autoproducció ni Generation kWh ni lloguer de comptador. Sí que inclou el cost dels Serveis d’Ajust, el terme que t’explicàvem a l’inici que ara ja serà un concepte a part. Com que no coneixem el cost d’aquests Serveis d’Ajust, estimem un preu similar al preu mitjà del mes de març, que va ser de 0,028 €/kWh. Aquestes dades les hem extrapolat segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n’hem obtingut un consum anual, que és el que fem servir per a la comparació.
+      Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del que et costaria l’energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L’estimació l’hem fet a partir de les dades que tenim dels teus consums anteriors, sense tenir en compte autoproducció ni Generation kWh ni lloguer de comptador. <strong>Atenció! Sí que inclou el cost dels Serveis d’Ajust</strong>, el terme que t’explicàvem a l’inici que ara ja serà un concepte a part. Com que no coneixem el cost d’aquests Serveis d’Ajust, estimem un preu similar al preu mitjà del mes de març, que va ser de 0,028 €/kWh. Aquestes dades les hem extrapolat segons el consum mitjà que sol haver-hi a cada mes (segons dades de la Comissió Nacional dels Mercats i la Competència). Amb això n’hem obtingut un consum anual, que és el que fem servir per a la comparació.
     </p>
   %elif data['origen'] == 'estadistic':
     <p>
-      Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del que et costaria l’energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L’estimació l’hem fet en funció de la potència contractada més alta que tens (${data['potencia']} kW), l’ús d’electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh ni lloguer de comptador. Sí que inclou el cost dels Serveis d’Ajust (el terme que t’explicàvem a l’inici que ara ja serà un concepte a part). Com que no coneixem el cost d’aquests Serveis d’Ajust, estimem un preu similar al preu mitjà del mes de març, que va ser de 0,028 €/kWh.
+      Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del que et costaria l’energia i la potència durant un any, aplicant-hi els preus actuals i els preus nous. L’estimació l’hem fet en funció de la potència contractada més alta que tens (${data['potencia']} kW), l’ús d’electricitat que sol haver-hi amb aquesta potència i agafant de referència un contracte estàndard, sense autoproducció ni Generation kWh ni lloguer de comptador. <strong>Atenció! Sí que inclou el cost dels Serveis d’Ajust</strong> (el terme que t’explicàvem a l’inici que ara ja serà un concepte a part). Com que no coneixem el cost d’aquests Serveis d’Ajust, estimem un preu similar al preu mitjà del mes de març, que va ser de 0,028 €/kWh.
     </p>
   %endif
   <p>
-    L'estimació la pots veure sense impostos i amb impostos inclosos (l'${data['impostos_str']} i l'impost elèctric del 0,5%).
+    L'estimació la pots veure sense impostos i amb impostos inclosos (l'${data['impostos_str']} i l'impost elèctric del 0,5%). Com et dèiem, <strong>aquesta reducció d’impostos ajudarà a atenuar l’augment del preu de l’energia</strong> i del cobrament a part dels Serveis d’Ajust.
   </p>
   <h3>Cost anual estimat, en euros/any, del subministrament (energia i potència):</h3>
   <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -418,7 +418,7 @@ ${plantilla_header}
   </table>
   <br/>
   <p>
-    Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric.
+    Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric o en el context geopolític.
   </p>
   %if data["te_gkwh"]:
   <h1>Generation kWh</h1>
@@ -429,7 +429,11 @@ ${plantilla_header}
     A continuació pots veure com queden els preus de la tarifa Generation kWh amb el canvi dels Serveis d’Ajust.
   </p>
   <p>
-    Els impostos aplicats són l'${data['impostos_str']}, i l’impost elèctric del 0,5%, en els dos casos amb les rebaixes d’impostos que ha aprovat el Govern.
+    %if data['iva_reduit']:
+    Els impostos aplicats són l'${data['impostos_str']} i l’impost elèctric del 0,5%, en els dos casos amb les rebaixes d’impostos que ha aprovat el Govern.
+    %else:
+    Els impostos aplicats són l'${data['impostos_str']} i l’impost elèctric del 0,5%, aquest últim amb la rebaixa aprovada pel Govern.
+    %endif
   </p>
   <h3>Generation kWh: preu del terme d’energia (en euros/kWh):</h3>
   %if data['tarifa_acces'] == '2.0TD':
@@ -1055,19 +1059,19 @@ ${plantilla_header}
   <h1>Estimación</h1>
   %if data['origen'] in ['pdf', 'consums_periods']:
     <p>
-      Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales y si aplicáramos los precios nuevos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador. Sí incluye el coste de los Servicios de Ajuste (el término que te contábamos al inicio que ahora ya será un concepto aparte). Como no conocemos el coste de estos Servicios de Ajuste, estimamos un precio similar al precio medio de marzo, que fue de 0,028 €/kWh.
+      Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales y si aplicáramos los precios nuevos. La estimación la hemos hecho a partir de los datos que tenemos respecto a lo consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y sin autoproducción, ni Generation kWh, ni alquiler de contador. <strong>¡Atención! Sí incluye el coste de los Servicios de Ajuste</strong> (el término que te contábamos al inicio que ahora ya será un concepto aparte). Como no conocemos el coste de estos Servicios de Ajuste, estimamos un precio similar al precio medio de marzo, que fue de 0,028 €/kWh.
     </p>
   %elif data['origen'] == 'cnmc':
     <p>
-      Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores, sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador. Sí incluye el coste de los Servicios de Ajuste, el término que te contábamos al inicio que ahora ya será un concepto aparte. Como no conocemos el coste de estos Servicios de Ajuste, estimamos un precio similar al precio medio de marzo, que fue de 0,028 €/kWh. Estos datos los hemos extrapolado según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
+      Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores, sin tener en cuenta autoproducción ni Generation kWh ni alquiler de contador. <strong>¡Atención! Sí incluye el coste de los Servicios de Ajuste</strong>, el término que te contábamos al inicio que ahora ya será un concepto aparte. Como no conocemos el coste de estos Servicios de Ajuste, estimamos un precio similar al precio medio de marzo, que fue de 0,028 €/kWh. Estos datos los hemos extrapolado según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.
     </p>
   %elif data['origen'] == 'estadistic':
     <p>
-      Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh ni alquiler de contador. Sí incluye el coste de los Servicios de Ajuste (el término que te contábamos al inicio que ahora ya será un concepto aparte). Como no conocemos el coste de estos Servicios de Ajuste, estimamos un precio similar al precio medio de marzo, que fue de 0,028 €/kWh.
+      Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin autoproducción ni Generation kWh ni alquiler de contador. <strong>¡Atención! Sí incluye el coste de los Servicios de Ajuste</strong> (el término que te contábamos al inicio que ahora ya será un concepto aparte). Como no conocemos el coste de estos Servicios de Ajuste, estimamos un precio similar al precio medio de marzo, que fue de 0,028 €/kWh.
     </p>
   %endif
   <p>
-    La estimación la puedes ver sin impuestos y con impuestos incluidos (${data['impostos_str']} y el impuesto eléctrico del 0,5%).
+    La estimación la puedes ver sin impuestos y con impuestos incluidos (${data['impostos_str']} y el impuesto eléctrico del 0,5%). Como te decíamos, <strong>esta reducción de impuestos ayudará a atenuar el aumento del precio de la energía</strong> y del cobro aparte de los Servicios de Ajuste.
   </p>
   <h3>Coste anual estimado, en euros/año, del suministro (energía y potencia):</h3>
   <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -1113,7 +1117,7 @@ ${plantilla_header}
   </table>
   <br/>
   <p>
-    Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año, o cambios que puedan producirse en el mercado eléctrico.
+    Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año, o cambios que puedan producirse en el mercado eléctrico o en el contexto geopolítico.
   </p>
   %if data["te_gkwh"]:
   <h1>Generation kWh</h1>
