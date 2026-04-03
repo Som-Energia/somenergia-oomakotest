@@ -1,0 +1,7 @@
+cc: false
+to: ${env['signature']['recipient']['email']}
+subject_translations:
+  ca_ES: Recordatori firma contracte amb Som Energia
+  es_ES: Recordatorio firma contrato con Som Energia
+subject: Recordatori firma contracte amb Som Energia / Recordatorio firma contrato con Som Energia
+bcc:
