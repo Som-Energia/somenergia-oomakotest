@@ -39,7 +39,7 @@
     nom_nou_titular = get_nom_cognoms(object, pas01.dades_client)
 
     cut_vat = hide_code(pas01.codi_document, 0, 4)
-    cut_iban = hide_code(pas01.bank.iban, 0, 8)
+    cut_iban = pas01.bank.iban[-4:].rjust(len(pas01.bank.iban), '*')
 
     t_obj = object.pool.get('poweremail.templates')
     md_obj = object.pool.get('ir.model.data')

@@ -45,7 +45,7 @@ Benvolgut/da${nom_pagador},<br/>
 Et confirmem que hem rebut correctament la teva sol•licitud per fer una aportació voluntària al capital social de Som Energia, amb les següents dades:<br/>
 <br/>
 Soci/Sòcia: ${name}<br/>
-Compte de càrrec: ${iban[:-4]}****<br/>
+Compte de càrrec: ${iban[-4:].rjust(len(iban), '*')}<br/>
 Import aportació: ${int(abs(amount_currency))} €<br/>
 <br/>
 % if es_empresa:
@@ -93,7 +93,7 @@ Apreciado/a${nom_pagador},<br/>
 Te confirmamos que hemos recibido correctamente tu solicitud para realizar una aportación voluntaria al capital social de Som Energia, con los siguientes datos:<br/>
 <br/>
 Socio/a: ${name}<br/>
-Cuenta de cargo: ${iban[:-4]}****<br/>
+Cuenta de cargo: ${iban[-4:].rjust(len(iban), '*')}<br/>
 Importe aportación: ${int(abs(amount_currency))} €<br/>
 <br/>
 % if es_empresa:
