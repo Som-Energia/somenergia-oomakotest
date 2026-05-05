@@ -1,6 +1,3 @@
-<!doctype html>
-<body>
-<img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"/>
 <%
 from mako.template import Template
 import datetime
@@ -14,15 +11,13 @@ def render(text_to_render, object_):
 
 t_obj = object.pool.get('poweremail.templates')
 md_obj = object.pool.get('ir.model.data')
-template_id = md_obj.get_object_reference(
-                    object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_legal_footer'
-                )[1]
-text_legal = render(t_obj.read(
-    object._cr, object._uid, [template_id], ['def_body_text'])[0]['def_body_text'],
-    object
-)
+template_header_id = md_obj.get_object_reference(object._cr, object._uid, 'som_poweremail_common_templates', 'common_template_header_v2')[1]
+template_footer_id = md_obj.get_object_reference(object._cr, object._uid,  'som_poweremail_common_templates', 'common_template_footer_v2')[1]
+plantilla_header = render(t_obj.read(object._cr, object._uid, [template_header_id], ['def_body_text'])[0]['def_body_text'], object)
+plantilla_footer = render(t_obj.read(object._cr, object._uid, [template_footer_id], ['def_body_text'])[0]['def_body_text'], object)
 previous_year = str(datetime.date.today().year - 1)
 %>
+${plantilla_header}
 % if object.partner_id.lang != "es_ES":
 <br>
 <p>Benvolgut/da,</p>
@@ -55,6 +50,4 @@ previous_year = str(datetime.date.today().year - 1)
 <p><a href="https://www.somenergia.coop">www.somenergia.coop</a></p>
 % endif
 <br>
-${text_legal}
-</body>
-</html>
+${plantilla_footer}
