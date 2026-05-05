@@ -35,7 +35,11 @@ ${plantilla_header}
     % if polissa_retrocedida:
         <p>Aquest mes has rebut més d'una factura a causa d'un endarreriment de les factures, o perquè la distribuïdora ens ha enviat lectures d'un període més curt. Si vols, podem canviar la data de venciment per cobrar-la quan et vagi millor.</p>
     % endif
-    <p dir="ltr">Durant els pròxims dies carregarem l'import d'aquesta factura al compte corrent associat a aquest contracte.</p>
+    % if data['factura']['hasBlockedPayment']:
+        <p dir="ltr">Et recordem que el teu contracte té el cobrament de les factures bloquejat, i per tant no cobrarem la factura fins a haver esgotat les vies de reclamació.</p>
+    % else:
+        <p dir="ltr">Durant els pròxims dies carregarem l'import d'aquesta factura al compte corrent associat a aquest contracte.</p>
+    % endif
     <p dir="ltr"><span style="text-decoration: underline;"><strong>Resum de la factura</strong></span></p>
     <ul>
         <li>Número de factura: ${data['factura']['numero']}</li>
@@ -178,6 +182,11 @@ ${plantilla_header}
             </p>
         <br>
     % endif
+    <p dir="ltr"><span style="text-decoration: none;"><strong>📢 Cal que actualitzis les teves dades de contacte!</strong></span></p>
+    <p dir="ltr">
+        Per garantir una comunicació més àgil i eficient, et recomanem <strong>revisar i actualitzar les teves dades de contacte (telèfon i correu electrònic) a l’<a href="https://oficinavirtual.somenergia.coop/ca/?mtm_cid=20251101&mtm_campaign=actualitzar-dades&mtm_medium=S&mtm_content=ca&mtm_source=emailerp">Oficina Virtual</a>.</strong> Per modificar les teves dades, un cop hagis accedit a l’Oficina Virtual, només cal que vagis a la part superior dreta, facis clic sobre la teva foto de perfil (on apareix el teu nom) i s’obrirà un menú desplegable. Allà hi trobaràs l’opció “Modificar les meves dades”.<br>
+        Aquestes dades les facilitem, per llei, a l’empresa distribuïdora de la teva zona, que les utilitza per a mantenir-te informat/da en cas d’incidències o treballs a la xarxa, així com d’altres comunicacions relacionades amb el teu punt de subministrament. Moltes gràcies!
+    </p>
     <p dir="ltr"><span style="text-decoration: none;"><strong>Avís sobre estafes</strong></span></p>
     <p dir="ltr">
         Últimament ha crescut el nombre d'<strong>estafes i trucades fraudulentes al mercat elèctric</strong>. Sovint acaben en un canvi de companyia no desitjat per la persona titular del contracte, i en ocasions, qui truca fa referència a alguna legislació o nova normativa, actualització de dades, canvi de comptador o altres.
@@ -206,7 +215,11 @@ ${plantilla_header}
     % if polissa_retrocedida:
         <p>Este mes has recibido más de una factura debido a un retraso de las facturas, o porque la distribuidora nos ha enviado lecturas de un período más corto. Si quieres, podemos cambiar la fecha de vencimiento para cobrarla cuando te vaya mejor.</p>
     % endif
-    <p dir="ltr">Durante los próximos días cargaremos el importe de esta factura en el número de cuenta asociado a este contrato.</p>
+    % if data['factura']['hasBlockedPayment']:
+        <p dir="ltr">Te recordamos que tu contrato tiene el cobro de las facturas bloqueado, y por tanto no cobraremos la factura hasta haber agotado las vías de reclamación.</p>
+    % else:
+        <p dir="ltr">Durante los próximos días cargaremos el importe de esta factura en el número de cuenta asociado a este contrato.</p>
+    % endif
     <p dir="ltr"><span style="text-decoration: underline;"><strong>Resumen de la factura</strong></span></p>
     <ul>
         <li>Número de factura: ${data['factura']['numero']}</li>
@@ -351,6 +364,11 @@ ${plantilla_header}
             </p>
         <br>
     % endif
+    <p dir="ltr"><span style="text-decoration: none;"><strong>📢 ¡Es necesario que actualices tus datos de contacto!</strong></span></p>
+    <p dir="ltr">
+        Para garantizar una comunicación más ágil y eficiente, te recomendamos <strong>revisar y actualizar tus datos de contacto (teléfono y correo electrónico) en la <a href="https://oficinavirtual.somenergia.coop/es/?mtm_cid=20251101&mtm_campaign=actualitzar-dades&mtm_medium=S&mtm_content=es&mtm_source=emailerp">Oficina Virtual</a>.</strong> Para modificarlos, una vez hayas accedido a la Oficina Virtual, solo tienes que ir a la parte superior derecha, hacer clic sobre tu foto de perfil (donde aparece tu nombre) y se abrirá un menú desplegable. Allí encontrarás la opción “Modificar mis datos”.<br>
+        Estos datos se facilitan, por ley, a la empresa distribuidora de tu zona, que los utiliza para mantenerte informado/a en caso de incidencias o trabajos en la red, así como para otras comunicaciones relacionadas con tu punto de suministro. ¡Muchas gracias!
+    </p>
     <p dir="ltr"><span style="text-decoration: none;"><strong>Aviso sobre estafas</strong></span></p>
     <p dir="ltr">
         Últimamente ha crecido el número de <strong>estafas y llamadas fraudulentas en el mercado eléctrico</strong>. A menudo terminan en un cambio de compañía no deseado por la persona titular del contrato, y en ocasiones, quien llama hace referencia a alguna legislación o nueva normativa, actualización de datos, cambio de contador u otros.
