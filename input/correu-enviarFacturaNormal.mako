@@ -35,7 +35,7 @@ ${plantilla_header}
     % if polissa_retrocedida:
         <p>Aquest mes has rebut més d'una factura a causa d'un endarreriment de les factures, o perquè la distribuïdora ens ha enviat lectures d'un període més curt. Si vols, podem canviar la data de venciment per cobrar-la quan et vagi millor.</p>
     % endif
-    % if data['polissa']['hasBlockedPayment']:
+    % if data['factura']['hasBlockedPayment']:
         <p dir="ltr">Et recordem que el teu contracte té el cobrament de les factures bloquejat, i per tant no cobrarem la factura fins a haver esgotat les vies de reclamació.</p>
     % else:
         <p dir="ltr">Durant els pròxims dies carregarem l'import d'aquesta factura al compte corrent associat a aquest contracte.</p>
@@ -215,7 +215,7 @@ ${plantilla_header}
     % if polissa_retrocedida:
         <p>Este mes has recibido más de una factura debido a un retraso de las facturas, o porque la distribuidora nos ha enviado lecturas de un período más corto. Si quieres, podemos cambiar la fecha de vencimiento para cobrarla cuando te vaya mejor.</p>
     % endif
-    % if data['polissa']['hasBlockedPayment']:
+    % if data['factura']['hasBlockedPayment']:
         <p dir="ltr">Te recordamos que tu contrato tiene el cobro de las facturas bloqueado, y por tanto no cobraremos la factura hasta haber agotado las vías de reclamación.</p>
     % else:
         <p dir="ltr">Durante los próximos días cargaremos el importe de esta factura en el número de cuenta asociado a este contrato.</p>
