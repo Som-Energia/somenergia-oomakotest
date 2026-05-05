@@ -29,7 +29,7 @@ Aquest mes  farà  5 anys de la teva compra de títols participatius de SOM ENER
 <br />
 Com que es tracta d’una inversió amb venciment a 5 anys, procedirem a realitzar-te la transferència de l’import invertit al següent número de compte:<br />
 <br />
-IBAN: ${object.bank_id.printable_iban[:-4]}****<br />
+IBAN: ${object.bank_id.printable_iban[-4:].rjust(len(object.bank_id.printable_iban), '*')}<br />
 <br />
 Siusplau, verifica que el compte bancari és correcte i si s’ha de modificar contesta aquest correu el més aviat possible informant-nos del nou compte on vulguis que et fem la transferència.<br />
 <br />
@@ -53,7 +53,7 @@ Este mes hará 5 años de tu compra de títulos participativos de SOM ENERGIA SC
 <br />
 Cómo se trata de una inversión con vencimiento a 5 años, procederemos a realizarte la transferencia del importe invertido al siguiente número de cuenta:<br />
 <br />
-IBAN: ${object.bank_id.printable_iban[:-4]}****<br />
+IBAN: ${object.bank_id.printable_iban[-4:].rjust(len(object.bank_id.printable_iban), '*')}<br />
 <br />
 Por favor, verifica que la cuenta bancaria es la correcta y si se tiene que modificar contesta este correo lo antes posible informando de la nueva cuenta dónde quieras que te hagamos la transferencia.<br />
 <br />

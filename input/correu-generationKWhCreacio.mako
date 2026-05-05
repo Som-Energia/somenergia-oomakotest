@@ -37,7 +37,7 @@ Hola ${name.split(',')[-1]},<br>
 Et confirmem que hem rebut correctament la teva sol·licitud per fer una aportació als projectes de la Generació kWh, amb les següents dades:<br>
 <br>
 Soci/Sòcia: ${name}<br>
-Compte de càrrec: ${iban[:-4]}****<br>
+Compte de càrrec: ${iban[-4:].rjust(len(iban), '*')}<br>
 Import aportació: ${int(abs(amount_currency))} €<br>
 <br>
 En els propers dies rebràs el càrrec bancari en aquest compte, si us plau verifica que totes les dades facilitades són correctes i que disposes dels diners que hi vols invertir, per tal que no hi hagi cap incidència en el gir del rebut.<br>
@@ -60,7 +60,7 @@ Hola ${name.split(',')[-1]},<br>
 Te confirmamos que hemos recibido correctamente tu solicitud para hacer una aportación en los proyectos de la Generación kWh, con los siguientes datos:<br>
 <br>
 Socio/Socia: ${name}<br>
-Cuenta de cargo: ${iban[:-4]}****<br>
+Cuenta de cargo: ${iban[-4:].rjust(len(iban), '*')}<br>
 Importe aportación: ${int(abs(amount_currency))} €<br>
 <br>
 En los próximos días recibirás el cargo bancario en esta cuenta, por favor verifica que todos los datos facilitados son correctos y que dispones del dinero que quieres invertir, para que no haya ninguna incidencia en el giro del recibo.<br>
