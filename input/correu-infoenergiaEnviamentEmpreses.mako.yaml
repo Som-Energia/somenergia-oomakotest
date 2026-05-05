@@ -1,10 +1,8 @@
-cc: <% mail = '{}'.format(object.administradora.www_email if object.administradora else '') %>  ${mail}
-to: ${object.pagador_email}
+cc: false
+to: ${object.polissa_id.titular.www_email}
 subject_translations:
-  ca_ES: Informe energètic personalitzat pel teu contracte ${object.name} amb tarifa
-    ${object.tarifa_codi} - Servei Infoenergia
-  es_ES: Informe energético personalizado para tu contrato ${object.name}  con tarifa
-    ${object.tarifa_codi}  -  Servicio Infoenergía
-subject: Informe energètic personalitzat pel teu contracte ${object.name} amb tarifa
-  ${object.tarifa_codi} - Servei Infoenergia
+  ca_ES: '[Som Energia] Podeu optimitzar les potències del vostre contracte ${object.polissa_id.name} per estalviar?'
+  es_ES: '[Som Energia] ¿Podéis optimizar las potencias de vuestro contrato ${object.polissa_id.name} para ahorrar?'
+subject: '[Som Energia] Podeu optimitzar les potències del vostre contracte ${object.polissa_id.name} per estalviar?'
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
+lang: ${object.polissa_id.titular.lang}
