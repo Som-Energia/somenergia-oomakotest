@@ -7,7 +7,7 @@ codiGenKkh = "GKWHXXX" # TODO obtain from erp
 dataInversioISO = "2017-05-30" # TODO obtain from erp
 pagamentNum = "1 de 24"
 importTotal = object.amount_total
-numCuenta = (object.partner_bank.acc_number or '').replace(' ', '-')
+numCuenta = (object.partner_bank.acc_number or '').replace(' ', '')[-4:].rjust(len((object.partner_bank.acc_number or '').replace(' ', '')), '*')
 
 dataInversio = datetime.datetime.strptime(dataInversioISO,"%Y-%m-%d").strftime("%d/%m/%Y")
 

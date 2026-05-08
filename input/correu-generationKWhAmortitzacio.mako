@@ -28,7 +28,7 @@ nominal_amount = investment_obj[0]['nshares']*100
 amount_amortization = nominal_amount*4/100
 num_amortization = int(investment_obj[0]['amortized_amount']/amount_amortization)
 partner_bank = object.partner_bank.iban
-bank_account = ' '.join(partner_bank[i:i+4] for i in xrange(0,len(partner_bank),4))
+bank_account = partner_bank[-4:].rjust(len(partner_bank), '*')
 
 Invoice = object.pool.get('account.invoice')
 invoice_obj = Invoice.browse(object._cr, object._uid, object.id)

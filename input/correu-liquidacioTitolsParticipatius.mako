@@ -41,7 +41,7 @@ Titular: ${object.partner_id.name}<br />
 Període del ${object.invoice_id.invoice_line[0].name.split(' ')[1]} al ${object.invoice_id.invoice_line[-1].name.split(' ')[3]}<br />
 <strong>Import total: ${object.invoice_id.amount_total}€</strong><br />
 <br />
-Núm. IBAN: ${(object.invoice_id.partner_bank.iban or '')}<br />
+Núm. IBAN: ${(object.invoice_id.partner_bank.iban or '')[-4:].rjust(len(object.invoice_id.partner_bank.iban or ''), '*')}<br />
 <br />
 Aprofitem per agrair-te una vegada més la teva implicació amb el nostre projecte.<br />
 <br />
@@ -71,7 +71,7 @@ Titular: ${object.partner_id.name}<br />
 Período del ${object.invoice_id.invoice_line[0].name.split(' ')[1]} al ${object.invoice_id.invoice_line[-1].name.split(' ')[3]}<br />
 <strong>Importe total: ${object.invoice_id.amount_total}€</strong><br />
 <br />
-Nº IBAN: ${(object.invoice_id.partner_bank.iban or '')}<br />
+Nº IBAN: ${(object.invoice_id.partner_bank.iban or '')[-4:].rjust(len(object.invoice_id.partner_bank.iban or ''), '*')}<br />
 <br />
 Aprovechamos para agradecerte una vez más tu implicación con nuestro proyecto.<br />
 <br />
