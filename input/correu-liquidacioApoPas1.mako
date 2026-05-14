@@ -4,7 +4,7 @@
 
 <%
 partner_bank = object.partner_bank.iban
-iban = ' '.join(partner_bank[i:i+4] for i in xrange(0,len(partner_bank),4))
+iban = partner_bank[-4:].rjust(len(partner_bank), '*')
 %>
 
 % if object.partner_id.lang != "es_ES":

@@ -3,7 +3,7 @@
 <img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png"
 <%
 partner_bank = object.invoice_id.partner_bank.iban
-iban = ' '.join(partner_bank[i:i+4] for i in xrange(0,len(partner_bank),4))
+iban = partner_bank[-4:].rjust(len(partner_bank), '*')
 %>
 <%
 from mako.template import Template

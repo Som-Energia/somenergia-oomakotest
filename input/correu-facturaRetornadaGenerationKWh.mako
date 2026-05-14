@@ -2,7 +2,7 @@
 % if object.partner_id.lang != "ca_ES":
 Saludos ${object.partner_id.name},
 
-El banco nos ha devuelto el recibo del Generation kWh XXGKWHXXX que nos realizaste el ${object.date_invoice} a la cuenta ${(object.partner_bank.acc_number or '').replace(' ', '-')}
+El banco nos ha devuelto el recibo del Generation kWh XXGKWHXXX que nos realizaste el ${object.date_invoice} a la cuenta ${(object.partner_bank.iban or '')[-4:].rjust(len(object.partner_bank.iban or ''), '*')}
  
 Te agradecemos que nos indiques como hacer el pago.
 
@@ -18,7 +18,7 @@ www.somenergia.coop
 % if object.partner_id.lang != "es_ES":
 Salutacions ${object.partner_id.name},
 
-El banc ens ha retornart el rebut del Generartion kWh XXGKWHXXX que ens vas fer el ${object.date_invoice} al compte ${(object.partner_bank.acc_number or '').replace(' ', '-')}
+El banc ens ha retornart el rebut del Generartion kWh XXGKWHXXX que ens vas fer el ${object.date_invoice} al compte ${(object.partner_bank.iban or '')[-4:].rjust(len(object.partner_bank.iban or ''), '*')}
 
 T'agraim que ens indiquis com fer el pagament.
 
