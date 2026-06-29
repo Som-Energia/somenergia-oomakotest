@@ -74,7 +74,7 @@ ${plantilla_header}
 <p><img alt="Esquema cambio comercialitzadora" src="https://www.somenergia.coop/wpsom/static/email/esquema_canvi_comer_CA.png" style="width: 475px;"/></p>
             % if not object.observacions or 'proces: A3' not in object.observacions:
 <p>El procés de canvi de comercialitzadora consta de tres passos:</p>
-<p><strong>1. Enviament de la sol·licitud a la distribuïdora.</strong> És el pas en què estem actualment. Enviem la petició de canvi de comercialitzadora amb totes les dades que ens has facilitat.</p>
+<p><strong>1. Enviament de la sol·licitud a la distribuïdora.</strong> És el pas en què estem actualment. Enviem la petició de canvi de comercialitzadora amb totes les dades que ens has facilitat. Si vols triar el dia del canvi de companyia, respon aquest correu immediatament i indica la data exacta. Recorda que la data ha de ser dins dels pròxims 30 dies naturals.</p>
 <p><strong>2. Recepció de la resposta per part de la distribuïdora.</strong> En un període màxim d'una setmana, la distribuïdora confirmarà si podem continuar amb el tràmit. Si necessitem alguna altra gestió per la teva part, t'avisarem.</p>
 <p><strong>3. Activació del contracte.</strong> Quan la distribuïdora ens confirmi que el contracte ja està <strong>actiu</strong> amb la cooperativa, t'ho comunicarem per correu electrònic. A partir d'aquell moment ja facturarem des de Som Energia, però tingues en compte que encara rebràs l'última factura de la teva antiga comercialitzadora amb el consum acumulat fins al dia exacte del canvi (en cap cas es duplicarà el cobrament).</p>
             % else:
@@ -126,7 +126,7 @@ ${plantilla_header}
 <p><img alt="Esquema cambio comercializadora" src="https://www.somenergia.coop/wpsom/static/email/esquema_canvi_comer_ES.png" style="width: 475px;"/></p>
 % if not object.observacions or 'proces: A3' not in object.observacions:
 <p>El proceso de cambio de comercializadora consta de tres pasos:</p>
-<p><strong>1. Envío de la solicitud a la distribuidora.</strong> Es el paso en el que estamos en estos momentos. Enviamos la petición de cambio de comercializadora con los datos que nos has facilitado.</p>
+<p><strong>1. Envío de la solicitud a la distribuidora.</strong> Es el paso en el que estamos en estos momentos. Enviamos la petición de cambio de comercializadora con los datos que nos has facilitado. Si quieres elegir el día de cambio de compañía, contesta este correo inmediatamente e indica la fecha exacta. Recuerda que la fecha ha de ser dentro de los siguientes 30 días naturales.</p>
 <p><strong>2. Recepción de la respuesta por parte de la distribuidora.</strong> En un periodo máximo de una semana, la distribuidora confirmará si podemos continuar con el trámite. Si necesitamos alguna otra gestión por tu parte, te avisaremos.</p>
 <p><strong>3. Activación del contrato.</strong> Una vez la distribuidora nos confirme que el contrato ya está <strong>activo</strong> con la cooperativa, te lo comunicaremos por correo electrónico. A partir de ese momento ya facturaremos desde Som Energia, pero ten en cuenta que aún recibirás la última factura de tu antigua comercializadora con el consumo acumulado hasta el día exacto del cambio (en ningún caso se duplicará el cobro).</p>
 % else:
