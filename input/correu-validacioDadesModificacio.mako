@@ -171,7 +171,7 @@ ${plantilla_footer}
         En els propers dies rebràs un correu electrònic en què t’informarem de l’estat de la teva sol·licitud.
     </p>
     <p>
-        En un termini de 24 h enviarem la teva sol·licitud a la distribuïdora de la teva zona, l’encarregada de validar i fer efectiva la teva sol·licitud. En el cas que detectis algun error, respon aquest mateix correu electrònic al més aviat possible.
+        En un termini de 24 h enviarem la teva sol·licitud a la distribuïdora de la teva zona, l’encarregada de validar i fer efectiva la teva sol·licitud. En el cas que detectis algun error o bé que la sol·licitud no hagi estat efectuada per tu, respon aquest mateix correu electrònic al més aviat possible.
     </p>
     ${text_desistiment}
     Fins ben aviat,<br>
@@ -227,7 +227,7 @@ ${plantilla_footer}
         En los próximos días recibirás un correo electrónico en el que te informaremos del estado de tu solicitud.<br>
     </p>
     <p>
-        En un plazo de 24 horas enviaremos la solicitud a la distribuidora de tu zona, la encargada de validar y hacer efectiva tu solicitud. En el caso que detectes algún error, responde este mismo correo electrónico lo antes posible.<br>
+        En un plazo de 24 horas enviaremos la solicitud a la distribuidora de tu zona, la encargada de validar y hacer efectiva tu solicitud. En el caso que detectes algún error o que la solicitud no haya sido realizada por ti, responde este mismo correo electrónico lo antes posible.<br>
     </p>
     ${text_desistiment}
     Hasta pronto,<br>
