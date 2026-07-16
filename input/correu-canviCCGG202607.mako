@@ -89,7 +89,7 @@ ${plantilla_header}
   </table>
 
   <ul>
-    <li><strong>Errors de facturació de la distribuïdora (Clàusula 5.6):</strong> Si, per un error en la facturació de peatges i càrrecs, la distribuïdora factura menys quantitat de la que et tocava, haurà de fraccionar el pagament (màxim en 10 mesos). Si factura més quantitat de la que tocava, haurà de retornar l'import de la factura abonat de més amb interessos corresponents (interès legal + 1,5%).</li>
+    <li><strong>Errors de facturació de la distribuïdora (Clàusula 5.6):</strong> Si, per un error en la facturació de peatges i càrrecs que correspongui a l'energia consumida, la distribuïdora factura menys quantitat de la que et tocava, haurà de fraccionar el pagament (màxim en 10 mesos). Si factura més quantitat de la que tocava, haurà de retornar l'import de la factura abonat de més amb interessos corresponents (interès legal + 1,5%).</li>
     <li><strong>Errors de facturació de Som Energia (Clàusula 7.4):</strong> Si per errors només imputables a Som Energia et cobrem menys energia de la que tocava, la diferència de preu pendent d'abonar es fraccionarà en diverses factures mensuals (màxim 1 any enrere); si cobrem de més, es torna tot l'import cobrat de més amb els interessos corresponents (interès legal + 1,5%).</li>
     <li><strong>Pagament amb targeta (Clàusula 7.7):</strong> S'activa l'opció de pagar amb targeta des del formulari de contractació, sense cap recàrrec, així com la signatura del mandat SEPA.</li>
   </ul>
@@ -228,7 +228,6 @@ ${plantilla_header}
   </table>
 
   <ul>
-    <!-- FIXME: el redactado difiere de la versión catalana, que no concreta "la energía consumida". -->
     <li><strong>Errores de facturación de la distribuidora (Cláusula 5.6):</strong> Si, por un error en la facturación de peajes y cargos que corresponda a la energía consumida, la distribuidora factura menos cantidad de la que te correspondía, deberá fraccionar el pago (máximo en 10 meses). Si factura más cantidad de la que correspondía, deberá devolver el importe de la factura abonado de más con los intereses correspondientes (interés legal + 1,5%).</li>
     <!-- FIXME: el redactado difiere de la versión catalana, que dice "energía de la que tocaba". -->
     <li><strong>Errores de facturación de Som Energia (Cláusula 7.4):</strong> Si por errores imputables únicamente a Som Energia te facturamos menos energía de la consumida, la diferencia de precio pendiente de abono se fraccionará en varias facturas mensuales (máximo 1 año atrás); si facturamos de más, se devolverá la totalidad del importe cobrado en exceso con los intereses correspondientes (interés legal + 1,5%).</li>
