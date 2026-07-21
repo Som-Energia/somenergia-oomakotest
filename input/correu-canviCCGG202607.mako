@@ -87,10 +87,10 @@ ${plantilla_header}
       </td>
     </tr>
   </table>
-
+  <br/>
   <ul>
     <li><strong>Errors de facturació de la distribuïdora (Clàusula 5.6):</strong> Si, per un error en la facturació de peatges i càrrecs que correspongui a l'energia consumida, la distribuïdora factura menys quantitat de la que et tocava, haurà de fraccionar el pagament (màxim en 10 mesos). Si factura més quantitat de la que tocava, haurà de retornar l'import de la factura abonat de més amb interessos corresponents (interès legal + 1,5%).</li>
-    <li><strong>Errors de facturació de Som Energia (Clàusula 7.4):</strong> Si per errors només imputables a Som Energia et cobrem menys energia de la que tocava, la diferència de preu pendent d'abonar es fraccionarà en diverses factures mensuals (màxim 1 any enrere); si cobrem de més, es torna tot l'import cobrat de més amb els interessos corresponents (interès legal + 1,5%).</li>
+    <li><strong>Errors de facturació de Som Energia (Clàusula 7.4):</strong> Si per errors només imputables a Som Energia et cobrem menys energia de la consumida, la diferència de preu pendent d'abonar es fraccionarà en diverses factures mensuals (màxim 1 any enrere); si cobrem de més, es torna tot l'import cobrat de més amb els interessos corresponents (interès legal + 1,5%).</li>
     <li><strong>Pagament amb targeta (Clàusula 7.7):</strong> S'activa l'opció de pagar amb targeta des del formulari de contractació, sense cap recàrrec, així com la signatura del mandat SEPA.</li>
   </ul>
 
@@ -159,8 +159,7 @@ ${plantilla_header}
 
   <p>Com sempre, si tens qualsevol dubte pots posar-te en <a target="_blank" href="https://www.somenergia.coop/ca/contacte">contacte</a> amb nosaltres.</p>
 
-  <!-- FIXME: revisar els paràmetres de campanya; el valor actual correspon a una campanya de canvi de preus de 2025. -->
-  <p>Si no desitges continuar amb el contracte, pots sol·licitar la baixa o canviar de comercialitzadora en qualsevol moment bé comunicant-nos-ho directament enviant-nos una còpia del <a target="_blank" href="https://back.somenergia.coop/storage/app/media/DOCS/Desistiment_Plantilla_CAT.pdf?mtm_cid=20251127&amp;mtm_campaign=canvi-preus&amp;mtm_medium=L&amp;mtm_content=ca&amp;mtm_source=emailerp">document de desistiment</a>, o bé mitjançant un canvi de comercialitzadora. Recorda que a Som Energia no tenim clàusules de permanència ni penalitzacions; si decidissis marxar, només es facturarà el consum realitzat fins al darrer dia amb els preus vigents en cada moment.</p>
+  <p>Si no desitges continuar amb el contracte, pots sol·licitar la baixa o canviar de comercialitzadora en qualsevol moment bé comunicant-nos-ho directament enviant-nos una còpia del <a target="_blank" href="https://back.somenergia.coop/storage/app/media/DOCS/Desistiment_Plantilla_CAT.pdf">document de desistiment</a>, o bé mitjançant un canvi de comercialitzadora. Recorda que a Som Energia no tenim clàusules de permanència ni penalitzacions; si decidissis marxar, només es facturarà el consum realitzat fins al darrer dia amb els preus vigents en cada moment.</p>
 
   <br/>
   <p>Una salutació cordial,</p>
@@ -226,10 +225,9 @@ ${plantilla_header}
       </td>
     </tr>
   </table>
-
+  <br/>
   <ul>
     <li><strong>Errores de facturación de la distribuidora (Cláusula 5.6):</strong> Si, por un error en la facturación de peajes y cargos que corresponda a la energía consumida, la distribuidora factura menos cantidad de la que te correspondía, deberá fraccionar el pago (máximo en 10 meses). Si factura más cantidad de la que correspondía, deberá devolver el importe de la factura abonado de más con los intereses correspondientes (interés legal + 1,5%).</li>
-    <!-- FIXME: el redactado difiere de la versión catalana, que dice "energía de la que tocaba". -->
     <li><strong>Errores de facturación de Som Energia (Cláusula 7.4):</strong> Si por errores imputables únicamente a Som Energia te facturamos menos energía de la consumida, la diferencia de precio pendiente de abono se fraccionará en varias facturas mensuales (máximo 1 año atrás); si facturamos de más, se devolverá la totalidad del importe cobrado en exceso con los intereses correspondientes (interés legal + 1,5%).</li>
     <li><strong>Pago con tarjeta (Cláusula 7.7):</strong> Se habilita la opción de pagar con tarjeta desde el formulario de contratación, sin ningún recargo, así como la firma del mandato SEPA.</li>
   </ul>
@@ -299,7 +297,6 @@ ${plantilla_header}
 
   <p>Como siempre, si tienes cualquier duda puedes ponerte en <a target="_blank" href="https://www.somenergia.coop/es/contacto">contacto</a> con nosotros.</p>
 
-  <!-- FIXME: este enlace no incluye parámetros de campaña, a diferencia del enlace catalán, que conserva parámetros de una campaña antigua. -->
   <p>Si no deseas continuar con el contrato, puedes solicitar la baja o cambiar de comercializadora en cualquier momento, ya sea comunicándonoslo directamente mediante el envío de una copia del <a target="_blank" href="https://back.somenergia.coop/storage/app/media/DOCS/Desistimiento_Plantilla_CAST.pdf">documento de desistimiento</a>, o bien a través de un cambio de comercializadora. Recuerda que en Som Energia no existen cláusulas de permanencia ni penalizaciones; si decidieras marcharte, solo se facturará el consumo realizado hasta el último día, con los precios vigentes en cada momento.</p>
 
   <br/>
