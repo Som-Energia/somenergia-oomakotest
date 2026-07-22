@@ -104,7 +104,7 @@ ${plantilla_header}
   <ul>
     <li><strong>Gestor d'autoconsum (Clàusula 8):</strong> Podràs delegar tràmits a un gestor d'autoconsum, sempre que estigui autoritzat formalment.</li>
     <li><strong>Ajustos de saldo al Flux Solar (Clàusula 8.6):</strong> Si la distribuïdora corregeix una lectura antiga, regularitzarem el teu saldo de Sols en les factures següents.</li>
-    <li><strong>Canvis de contracte amb Flux Solar (Clàusula 8.6):</strong> En cas de baixa, canvi de comercialitzadora, traspàs <strong>o subrogació</strong>, els Sols acumulats es perdran automàticament. L'única excepció on es conserven és si el canvi de titular es fa per defunció o per fusió d'empreses.</li>
+    <li><strong>Canvis de contracte amb Flux Solar (Clàusula 8.6):</strong> En cas de baixa, canvi de comercialitzadora, traspàs o subrogació, els Sols acumulats es perdran automàticament. L'única excepció on es conserven és si el canvi de titular es fa per defunció o per fusió d'empreses.</li>
   </ul>
 
   <h1>5. Modificacions del contracte i flexibilitat</h1>
@@ -135,7 +135,7 @@ ${plantilla_header}
   % endif
 
   % if data['gurb']:
-    <h1>Projecte GURB</h1>
+    <h1>GURB (Generació Urbana Compartida)</h1>
     <ul>
       <li><strong>Més d'un autoconsum (Clàusula 2):</strong> Ara és compatible tenir GURB i un altre autoconsum (individual o col·lectiu), sempre que Som Energia sigui la comercialitzadora d'almenys un dels teus contractes.</li>
       <li><strong>Ampliació a 5 km (Clàusula 6.1 ii):</strong> El radi per poder participar s'amplia de 2 a 5 quilòmetres, facilitant que mantinguis el servei si et mudes de casa.</li>
@@ -241,8 +241,8 @@ ${plantilla_header}
   <h1>4. Contratos con autoconsumo</h1>
   <ul>
     <li><strong>Gestor de autoconsumo (Cláusula 8):</strong> Podrás delegar trámites en un gestor de autoconsumo, siempre que esté formalmente autorizado.</li>
-    <li><strong>Ajustes de saldo en Flux Solar (Cláusula 8.6):</strong> Si la distribuidora corrige una lectura antigua, regularizaremos tu saldo de Soles en las facturas siguientes.</li>
-    <li><strong>Cambios de contrato con Flux Solar (Cláusula 8.6):</strong> En caso de baja, cambio de comercializadora, traspaso <strong>o subrogación</strong>, los Soles acumulados se perderán automáticamente. La única excepción en la que se conservan es cuando el cambio de titular se produce por fallecimiento o por fusión de empresas.</li>
+    <li><strong>Ajustes de saldo en Flux Solar (Cláusula 8.6):</strong> Si la distribuidora corrige una lectura antigua, regularizaremos tu saldo de Sols en las facturas siguientes.</li>
+    <li><strong>Cambios de contrato con Flux Solar (Cláusula 8.6):</strong> En caso de baja, cambio de comercializadora, traspaso o subrogación, los Sols acumulados se perderán automáticamente. La única excepción en la que se conservan es cuando el cambio de titular se produce por fallecimiento o por fusión de empresas.</li>
   </ul>
 
   <h1>5. Modificaciones del contrato y flexibilidad</h1>
@@ -273,7 +273,7 @@ ${plantilla_header}
   % endif
 
   % if data['gurb']:
-    <h1>Proyecto GURB</h1>
+    <h1>GURB (Generación Urbana Compartida)</h1>
     <ul>
       <li><strong>Más de un autoconsumo (Cláusula 2):</strong> Ahora es compatible tener GURB y otro autoconsumo (individual o colectivo), siempre que Som Energia sea la comercializadora de al menos uno de tus contratos.</li>
       <li><strong>Ampliación a 5 km (Cláusula 6.1 ii):</strong> El radio para poder participar se amplía de 2 a 5 kilómetros, facilitando que mantengas el servicio si cambias de domicilio.</li>
