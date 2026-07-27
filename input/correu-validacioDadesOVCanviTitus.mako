@@ -78,7 +78,7 @@
     </tbody>
     </table>
     <p>
-        Benvolguts/des,
+        Hola,
     </p>
     <p>
         Us informem que hem rebut correctament la sol·licitud de contractació ${object.polissa_ref_id.name} per canvi de titular del punt de subministrament amb CUPS ${object.cups_id.name}.
@@ -87,7 +87,7 @@
         En el cas que detecteu qualsevol error en el resum de dades següent agraïrem que ens ho comuniqueu el més aviat possible contestant aquest mateix correu.
     </p>
     <p>
-        <b>Si tot és correcte no és necessari que contesteu</b> i la gestió es durà a terme en un màxim de cinc dies hàbils.<br>
+        <b>Si has fet la sol·licitud i tot és correcte, no és necessari que contesteu</b> i la gestió es durà a terme en un màxim de cinc dies hàbils.<br>
     </p>
     <p>
         Et recordem que, com es detalla a les nostres <a href="https://www.somenergia.coop/ca/condicions-del-contracte-de-som-energia/">Condicions Generals</a>, el contracte de subministrament té caràcter personal, de forma que la persona titular manifesta i garanteix que és la usuària efectiva de l’energia elèctrica subministrada.
@@ -127,7 +127,7 @@
     </tbody>
     </table>
     <p>
-        Estimados/as,
+        Hola,
     </p>
     <p>
             Os informamos que hemos recibido correctamente la solicitud de contratación ${object.polissa_ref_id.name} por cambio de titular del punto de suministro con CUPS ${object.cups_id.name}.
@@ -136,7 +136,7 @@
             En caso de detectar cualquier error en el resumen de datos siguiente agradeceremos que nos lo comuniquen lo antes posible contestando este mismo correo.
     </p>
     <p>
-            <b>Si todo es correcto no es necesario que lo hagáis</b> y la gestión se llevará a cabo en un plazo máximo de cinco días hábiles.
+            <b>Si has realizado la solicitud y todo es correcto no es necesario que contestes</b> y la gestión se llevará a cabo en un plazo máximo de cinco días hábiles.
     </p>
     <p>
             Te recordamos que, como recogen nuestras <a href="https://www.somenergia.coop/es/condiciones-del-contrato-de-som-energia/">Condiciones Generales</a>, el contrato de suministro tiene carácter personal, de forma que la persona titular manifiesta y garantiza que es la usuaria efectiva de la energía eléctrica suministrada.
