@@ -3,6 +3,6 @@ cc: false
 bcc: support.17062.b8d9f4469fa4d856@helpscout.net
 to: ${object.invoice_id.address_invoice_id.email}
 subject_translations:
-  es_ES: Liquidación intereses aportación voluntaria 2022
-  ca_ES: Liquidació interessos aportació voluntària 2022
-subject: Liquidación intereses aportación voluntaria 2022
+  es_ES: Liquidación intereses aportación voluntaria 2026
+  ca_ES: Liquidació interessos aportació voluntària 2026
+subject: Liquidación intereses aportación voluntaria 2026
