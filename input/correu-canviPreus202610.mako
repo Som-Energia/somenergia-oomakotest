@@ -39,7 +39,7 @@ ${plantilla_header}
                                   Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que s'hauria de produir en les pròximes setmanes. Igualment, com que encara estàs amb la tarifa ${data['tarifa_acces']} períodes, t'expliquem més avall els canvis de preu que hi aplicarem a partir de l'1 d'octubre, i que t'afectaran si, per algun motiu, el teu contracte segueix amb la tarifa de períodes.
                                 </p>
                                 <p>
-                                  Els preus de la tarifa indexada no varien. Els pots trobar <a target="_blank" href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">al nostre web</a>.
+                                  Els preus de la <strong>tarifa indexada</strong> no varien. Els pots trobar <a target="_blank" href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">al nostre web</a>.
                                 </p>
                               </span>
                             </p>
@@ -51,13 +51,13 @@ ${plantilla_header}
     % endif
 
     %if data['tarifa_acces'] == '2.0TD':
-      <p>El pròxim 1 d'octubre actualitzem els preus de la tarifa per períodes (la que tens contractada actualment). Les tensions al mercat energètic derivades dels conflictes globals i la inestabilitat geopolítica fa mesos que estan encarint el cost de l'electricitat i ens obliguen a actualitzar les tarifes.</p>
+      <p>El pròxim 1 d'octubre actualitzem els preus de la <strong>tarifa per períodes</strong> (la que tens contractada actualment). Les tensions al mercat energètic derivades dels conflictes globals i la inestabilitat geopolítica fa mesos que estan encarint el cost de l'electricitat i ens obliguen a actualitzar les tarifes.</p>
     %else:
-      <p>El pròxim 1 d'octubre actualitzem els preus de les tarifes ${data['tarifa_acces']} períodes (la que tens contractada actualment). Les tensions al mercat energètic derivades dels conflictes globals i la inestabilitat geopolítica fa mesos que estan encarint el cost de l'electricitat i ens obliguen a actualitzar les tarifes.</p>
+      <p>El pròxim 1 d'octubre actualitzem els preus de les <strong>tarifes ${data['tarifa_acces']} períodes</strong> (la que tens contractada actualment). Les tensions al mercat energètic derivades dels conflictes globals i la inestabilitat geopolítica fa mesos que estan encarint el cost de l'electricitat i ens obliguen a actualitzar les tarifes.</p>
     %endif
-    <p>L'energia que produïm a les nostres instal·lacions fotovoltaiques no s'ha encarit. El que ha augmentat és el cost de l'energia que hem de comprar al mercat per cobrir la part del consum que encara no podem generar nosaltres mateixos.</p>
+    <p><strong>L'energia que produïm a les nostres instal·lacions fotovoltaiques no s'ha encarit.</strong> El que ha augmentat és el cost de l'energia que hem de comprar al mercat per cobrir la part del consum que encara no podem generar nosaltres mateixos.</p>
     <p>Com a projecte sense ànim de lucre, ajustem el preu només el mínim indispensable per garantir la salut econòmica de la cooperativa i continuar avançant junts cap a la transició energètica.</p>
-    <p>Vols conèixer tots els detalls? Llegeix l'article sencer <strong><a target="_blank" href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-octubre?mtm_cid=20260827&mtm_campaign=canvitarifesAgo&mtm_medium=S&mtm_content=ca&mtm_source=emailerp">aquí</a></strong>.</p>
+    <p>Vols conèixer tots els detalls? Llegeix l'article sencer <a target="_blank" href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-octubre?mtm_cid=20260827&mtm_campaign=canvitarifesAgo&mtm_medium=S&mtm_content=ca&mtm_source=emailerp">aquí</a>.</p>
     <p>A continuació et detallem els canvis.</p>
 
     <h1>
@@ -346,7 +346,7 @@ ${plantilla_header}
   %endif
   %if data['autoconsum']['compensacio'] and data['mode_facturacio'] == 'atr':
     <h1>Autoproducció</h1>
-    <p>En el cas de l'autoproducció, mantenim la compensació dels excedents. El preu de l'energia durant les hores de sol no ha variat i, per tant, tampoc ho fa el valor amb el qual es compensen els excedents de les persones que teniu contractada alguna modalitat d'autoproducció amb compensació simplificada.</p>
+    <p>En el cas de l'autoproducció, <strong>mantenim la compensació dels excedents</strong>. El preu de l'energia durant les hores de sol no ha variat i, per tant, tampoc ho fa el valor amb el qual es compensen els excedents de les persones que teniu contractada alguna modalitat d'autoproducció amb compensació simplificada.</p>
     <p>Recordeu que teniu activat el <a target="_blank" href="https://www.somenergia.coop/ca/actualitat/cooperativa/flux-solar-leina-que-proporciona-descomptes-pels-excedents-dautoproduccio-no-compensats?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Flux Solar</a>, que us permet obtenir descomptes pels excedents que no es poden compensar mitjançant la compensació simplificada. Podeu consultar si teniu Sols disponibles a l'<a target="_blank" href="https://oficinavirtual.somenergia.coop/ca/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">Oficina Virtual</a> (<a target="_blank" href="https://ca.support.somenergia.coop/article/1371-que-es-el-flux-solar#sols?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">aquí us expliquem el camí</a>). Si en teniu, s'aniran aplicant automàticament a les properes factures.</p>
   %endif
 
@@ -377,15 +377,15 @@ ${plantilla_header}
               <p class="f-fallback"  style="margin: 10px 0"></p>
             </td>
             <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left">
-              <p class="f-fallback"  style="margin: 10px 0"><strong>Cost estimat amb els preus actuals</strong></p>
+              <p class="f-fallback"  style="margin: 10px 0">Cost estimat amb els preus actuals</p>
             </td>
             <td class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left">
-              <p class="f-fallback" style="margin: 10px 0"><strong>Cost estimat amb els nous preus</strong></p>
+              <p class="f-fallback" style="margin: 10px 0">Cost estimat amb els nous preus</p>
             </td>
           </tr>
           <tr>
             <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0"><strong>Sense impostos aplicats</strong></p>
+              <p class="f-fallback"  style="margin: 10px 0">Sense impostos aplicats</p>
             </td>
             <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell']}</p>
@@ -396,7 +396,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback" style="margin: 10px 0"><strong>Amb impostos aplicats</strong></p>
+              <p class="f-fallback" style="margin: 10px 0">Amb impostos aplicats</p>
             </td>
             <td width="33%" class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell_imp']}</p>
@@ -414,7 +414,7 @@ ${plantilla_header}
     Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l'ús d'energia que finalment facis, altres variacions de preus durant l'any, o canvis que hi pugui haver al mercat elèctric o en el context geopolític.
   </p>
    <p>
-    Com et dèiem més amunt, al nostre blog trobaràs <a target="_blank" href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-octubre?mtm_cid=20260827&mtm_campaign=canvitarifesAgo&mtm_medium=S&mtm_content=ca&mtm_source=emailerp">més detalls del canvi de preus</a>, i a la pàgina web pots consultar en qualsevol moment <a target="_blank" href="https://www.somenergia.coop/ca/tarifes-llum/domestic-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a target="_blank" href="https://www.somenergia.coop/ca/historic-tarifa-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">històric de tarifes</a>, on hi ha també els preus vigents fins al 30 de setembre i els de períodes anteriors.
+    Com et dèiem més amunt, al nostre <a target="_blank" href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-octubre?mtm_cid=20260827&mtm_campaign=canvitarifesAgo&mtm_medium=S&mtm_content=ca&mtm_source=emailerp">blog</a> trobaràs més detalls del canvi de preus, i a la pàgina web pots consultar en qualsevol moment <a target="_blank" href="https://www.somenergia.coop/ca/tarifes-llum/domestic-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a target="_blank" href="https://www.somenergia.coop/ca/historic-tarifa-periodes?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=ca&mtm_source=emailerp">històric de tarifes</a>, on hi ha també els preus vigents fins al 30 de setembre i els de períodes anteriors.
   </p>
   <h3 style="font-size: 16px">Informació legal</h3>
   <p class="p-legal">
@@ -454,7 +454,7 @@ ${plantilla_header}
                                 Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} periodos, te explicamos más abajo los cambios de precio que le aplicaremos a partir del 1 de octubre, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa de periodos.
                               </p>
                               <p>
-                                Los precios de la tarifa indexada no varían. Los puedes encontrar en <a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/domestico-indexada">nuestra web</a>.
+                                Los precios de la <strong>tarifa indexada</strong> no varían. Los puedes encontrar en <a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/domestico-indexada">nuestra web</a>.
                               </p>
                             </span>
                           </p>
@@ -466,13 +466,16 @@ ${plantilla_header}
   % endif
 
   %if data['tarifa_acces'] == '2.0TD':
-    <p>El próximo 1 de octubre actualizamos los precios de la tarifa por periodos (la que tienes contratada actualmente). Las tensiones en el mercado energético derivadas de los conflictos globales y la inestabilidad geopolítica llevan meses encareciendo el coste de la electricidad y nos obligan a actualizar las tarifas.</p>
+    <p>El próximo 1 de octubre actualizamos los precios de la <strong>tarifa por periodos</strong> (la que tienes contratada actualmente). Las tensiones en el mercado energético derivadas de los conflictos globales y la inestabilidad geopolítica llevan meses encareciendo el coste de la electricidad y nos obligan a actualizar las tarifas.</p>
   %else:
-    <p>El próximo 1 de octubre actualizamos los precios de las tarifas ${data['tarifa_acces']} periodos (la que tienes contratada actualmente). Las tensiones en el mercado energético derivadas de los conflictos globales y la inestabilidad geopolítica llevan meses encareciendo el coste de la electricidad y nos obligan a actualizar las tarifas.</p>
+    <p>El próximo 1 de octubre actualizamos los precios de las <strong>tarifas ${data['tarifa_acces']} periodos</strong> (la que tienes contratada actualmente). Las tensiones en el mercado energético derivadas de los conflictos globales y la inestabilidad geopolítica llevan meses encareciendo el coste de la electricidad y nos obligan a actualizar las tarifas.</p>
   %endif
-  <p>La energía que producimos en nuestras instalaciones fotovoltaicas no se ha encarecido. Lo que ha aumentado es el coste de la energía que tenemos que comprar en el mercado para cubrir la parte del consumo que todavía no podemos generar nosotros mismos.</p>
+  <p><strong>La energía que producimos en nuestras instalaciones fotovoltaicas no se ha encarecido.</strong> Lo que ha aumentado es el coste de la energía que tenemos que comprar en el mercado para cubrir la parte del consumo que todavía no podemos generar nosotros mismos.</p>
   <p>Como proyecto sin ánimo de lucro, ajustamos el precio solo lo mínimo indispensable para garantizar la salud económica de la cooperativa y seguir avanzando juntas hacia la transición energética.</p>
-  <p>¿Quieres conocer todos los detalles? Lee el artículo completo <strong><a target="_blank" href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-octubre?mtm_cid=20260827&mtm_campaign=cambiotarifasAgo&mtm_medium=S&mtm_content=es&mtm_source=emailerp">aquí</a></strong>.</p>
+  %if data['tarifa_acces'] != '2.0TD':
+    <p>A continuación puedes ver los nuevos precios, así como una estimación aproximada de cómo podría afectarte en tu caso en concreto.</p>
+  %endif
+  <p>¿Quieres conocer todos los detalles? Lee el artículo completo <a target="_blank" href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-octubre?mtm_cid=20260827&mtm_campaign=cambiotarifasAgo&mtm_medium=S&mtm_content=es&mtm_source=emailerp">aquí</a>.</p>
   <p>A continuación te detallamos los cambios.</p>
 
   <h1>
@@ -762,7 +765,7 @@ ${plantilla_header}
 
   %if data['autoconsum']['compensacio'] and data['mode_facturacio'] == 'atr':
     <h1>Autoproducción</h1>
-    <p>En el caso de la autoproducción, mantenemos la compensación de los excedentes. El precio de la energía durante las horas de sol no ha variado y, por tanto, tampoco lo hace el valor con el que se compensan los excedentes de las personas que tenéis contratada alguna modalidad de autoproducción con compensación simplificada.</p>
+    <p>En el caso de la autoproducción, <strong>mantenemos la compensación de los excedentes</strong>. El precio de la energía durante las horas de sol no ha variado y, por tanto, tampoco lo hace el valor con el que se compensan los excedentes de las personas que tenéis contratada alguna modalidad de autoproducción con compensación simplificada.</p>
     <p>Recordad que tenéis activado el <a target="_blank" href="https://www.somenergia.coop/es/actualidad/cooperativa/flux-solar-la-herramienta-que-proporciona-descuentos-por-los-excedentes-de-autoproduccion-no-compensados">Flux Solar</a>, que os permite obtener descuentos por los excedentes que no se pueden compensar mediante la compensación simplificada. Podéis consultar si tenéis Sols disponibles en la <a target="_blank" href="https://oficinavirtual.somenergia.coop/es/">Oficina Virtual</a> (<a target="_blank" href="https://es.support.somenergia.coop/article/1372-que-es-el-flux-solar?utm_source=linkidiomes&utm_medium=cda&utm_campaign=castellano">aquí os explicamos el proceso</a>). Si tenéis, se irán aplicando automáticamente en las próximas facturas.</p>
   %endif
 
@@ -793,15 +796,15 @@ ${plantilla_header}
               <p class="f-fallback"  style="margin: 10px 0"></p>
             </td>
             <td width="38%" class="purchase_borders" style="padding-left: 5px; padding-right: 5px; 0px; text-align: center" align="left">
-              <p class="f-fallback"  style="margin: 10px 0"><strong>Coste estimado con los precios actuales</strong></p>
+              <p class="f-fallback"  style="margin: 10px 0">Coste estimado con los precios actuales</p>
             </td>
             <td width="38%" class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center" align="left">
-              <p class="f-fallback" style="margin: 10px 0"><strong>Coste estimado con los nuevos precios</strong></p>
+              <p class="f-fallback" style="margin: 10px 0">Coste estimado con los nuevos precios</p>
             </td>
           </tr>
           <tr>
             <td class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback"  style="margin: 10px 0"><strong>Sin impuestos aplicados</strong></p>
+              <p class="f-fallback"  style="margin: 10px 0">Sin impuestos aplicados</p>
             </td>
             <td class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell']}</p>
@@ -812,7 +815,7 @@ ${plantilla_header}
           </tr>
           <tr>
             <td class="purchase_borders" style="vertical-align: center;" valign="middle">
-              <p class="f-fallback" style="margin: 10px 0"><strong>Con impuestos aplicados</strong></p>
+              <p class="f-fallback" style="margin: 10px 0">Con impuestos aplicados</p>
             </td>
             <td class="purchase_borders" style="vertical-align: center;" valign="middle">
               <p class="f-fallback" style="text-align: center; padding-left: 0; margin: 10px 0">${data['preu_vell_imp']}</p>
@@ -830,7 +833,7 @@ ${plantilla_header}
     Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año, o cambios que puedan producirse en el mercado eléctrico o en el contexto geopolítico.
   </p>
    <p>
-    Como te decíamos más arriba, en nuestro blog encontrarás <a target="_blank" href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-octubre?mtm_cid=20260827&mtm_campaign=cambiotarifasAgo&mtm_medium=S&mtm_content=es&mtm_source=emailerp">más detalles del cambio de precios</a>, y en la página web puedes consultar en cualquier momento <a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/domestico-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a target="_blank" href="https://www.somenergia.coop/es/historico-tarifa-periodos?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">histórico de tarifas</a>, donde están también los precios vigentes hasta el 30 de septiembre y los de periodos anteriores.
+    Como te decíamos más arriba, en nuestro <a target="_blank" href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-octubre?mtm_cid=20260827&mtm_campaign=cambiotarifasAgo&mtm_medium=S&mtm_content=es&mtm_source=emailerp">blog</a> encontrarás más detalles del cambio de precios, y en la página web puedes consultar en cualquier momento <a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/domestico-periodos/?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a target="_blank" href="https://www.somenergia.coop/es/historico-tarifa-periodos?mtm_cid=20251127&mtm_campaign=canvi-preus&mtm_medium=L&mtm_content=es&mtm_source=emailerp">histórico de tarifas</a>, donde están también los precios vigentes hasta el 30 de septiembre y los de periodos anteriores.
   </p>
   <h3 style="font-size: 16px">Información legal</h3>
   <p class="p-legal">
