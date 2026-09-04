@@ -1451,6 +1451,14 @@
 #     es: 6850168
 #     ca: 6906042
 
+impagamentTargeta:
+  template: input/correu-impagamentTargeta.mako
+  model: giscedata.facturacio.factura
+  poweremailId: som_card_payment.email_card_payment_failure
+  cases:
+    ca: 7834586
+    es: 7721398
+
 ########################################
 ## Infoenergia
 #
