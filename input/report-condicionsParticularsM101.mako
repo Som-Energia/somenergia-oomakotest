@@ -108,11 +108,9 @@ def get_pas01(cas):
             <h2 style="font-size: 13px;">${_(u"CONDICIONS PARTICULARS DEL CONTRACTE DE SUBMINISTRAMENT D'ENERGIA ELÈCTRICA DE BAIXA TENSIÓ")}</h2>
         </div>
 
-        %if polissa.state == 'esborrany':
-            <div class="titol2" style="text-align: center; color: orange">
-                <h2 style="font-size: 13px;">${_(" - LES DADES D'AQUEST CONTRACTE ESTAN PENDENTS DE VALIDACIÓ - ")}</h2>
-            </div>
-        %endif
+        <div class="titol2" style="text-align: center; color: orange">
+            <h2 style="font-size: 13px;">${_(" - LES DADES D'AQUEST CONTRACTE ESTAN PENDENTS DE VALIDACIÓ - ")}</h2>
+        </div>
 
         <%
             dades_client = pas01.pas_id.dades_client
@@ -446,6 +444,9 @@ def get_pas01(cas):
             </tr>
         </table>
         <div id="footer">
+            <div class="agreement_footer">
+                ${_("La contractant accepta expressament les condicions generals que s'acompanyen a continuació i que formen part integrant i inseparable d'aquest contracte, si bé les parts declaren que en cas de discrepància prevaldrà el que preveuen les condicions particulars. En cas de modificació de les condicions generals es procedirà conforme a la clàusula 12 relativa a la modificació de les mateixes.")}
+            </div>
             <div class="city_date">
             <%
                 if polissa.data_firma_contracte:
@@ -458,13 +459,7 @@ def get_pas01(cas):
             </div>
             <div style="clear:both"></div>
                 <div class="signatura">
-                    <div style="position:absolute; top: 0px; min-width:100%;">${_(u"EL CLIENT")}</div>
-                    %if lang == 'ca_ES':
-                        <img src="${addons_path}/som_polissa_condicions_generals/report/assets/acceptacio_digital_ca.png"/>
-                    %else:
-                        <img src="${addons_path}/som_polissa_condicions_generals/report/assets/acceptacio_digital_es.png"/>
-                    %endif
-
+                    <div style="position:absolute; top: 0px; min-width:100%; min-height:50px">${_(u"EL CLIENT")}</div>
                     <div style="position:absolute; bottom: 0px; min-width:100%;">${client_name}</div>
                 </div>
                 <div class="signatura">
