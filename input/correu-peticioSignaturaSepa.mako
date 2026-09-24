@@ -30,11 +30,11 @@
 
 ${plantilla_header}
 
-% if object.cups_polissa_id.titular.lang == "ca_ES":
+% if object.titular.lang == "ca_ES":
     <p>Hola,</p>
     <p>Gràcies per contactar amb nosaltres.</p>
     <p>En relació amb la teva petició de canvi de compte bancari del contracte
-    ${object.cups_polissa_id.name} situat a ${object.cups_polissa_id.cups_direccio},
+    ${object.name} situat a ${object.cups.direccio},
     t'informem que per finalitzar l'actualització d'aquesta dada, cal que facis
     clic a l'enllaç següent per signar el document SEPA:</p>
 
@@ -61,7 +61,7 @@ ${plantilla_header}
     <p>Hola,</p>
     <p>¡Gracias por contactar con nosotros!</p>
     <p>En relación con tu petición de cambio de cuenta bancaria del contrato
-    ${object.cups_polissa_id.name} situado en ${object.cups_polissa_id.cups_direccio},
+    ${object.name} situado en ${object.cups.direccio},
     te informamos que para finalizar la actualización de este dato, solo
     necesitas hacer clic en el siguiente enlace para firmar el documento SEPA:</p>
 
