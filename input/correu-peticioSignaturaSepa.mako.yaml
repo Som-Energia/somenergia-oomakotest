@@ -1,0 +1,7 @@
+cc: false
+to: ${object.cups_polissa_id.titular.www_email}
+subject_translations:
+  ca_ES: Petició signatura SEPA
+  es_ES: Petición firma SEPA
+subject: Petició signatura SEPA
+lang: ${object.cups_polissa_id.titular.lang}
