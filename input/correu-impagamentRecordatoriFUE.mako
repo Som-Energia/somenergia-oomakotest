@@ -41,6 +41,8 @@ Aquest correu electrònic és per recordar-te, en nom i representació de Som En
 <br />
 Cordialment,<br />
 <br />
+<strong>En el cas que rebis resposta per part de l'administració, pots respondre aquest correu adjuntant la resolució.</strong><br />
+<br />
 Equip de Som Energia<br />
 cobraments@somenergia.coop<br />
 <a href="https://www.somenergia.coop/ca">www.somenergia.coop</a><br />
@@ -72,6 +74,8 @@ Hola,<br/>
 Este correo electrónico es para recordarte, en nombre y representación de Som Energia, SCCL, y al objeto de interrumpir el plazo de prescripción, que quedan por pagar las siguientes facturas ${object.number} a favor de Som Energia. Te reiteramos que, para proceder al pago, te puedes poner en contacto con <a href="mailto:cobros@somenergia.coop">cobros@somenergia.coop</a><br />
 <br />
 Cordialmente,<br />
+<br />
+<strong>En el caso de que recibas respuesta por parte de la administración, puedes responder a este correo adjuntando la resolución.</strong><br />
 <br />
 Equipo de Som Energia<br />
 cobros@somenergia.coop<br />
