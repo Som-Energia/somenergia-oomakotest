@@ -1605,6 +1605,21 @@ impagamentTargeta:
 #    cat: 192
 #    es: 101
 #
+canviPreusReutilitzable:
+  template: input/correu-canviPreus-reutilitzable.mako
+  fixtureRenderer: price_change
+  cases:
+    ca_20_pdf: {lang: ca_ES, tariff: 2.0TD, origin: pdf}
+    es_30_cnmc: {lang: es_ES, tariff: 3.0TD, origin: cnmc}
+    ca_61_statistical: {lang: ca_ES, tariff: 6.1TD, origin: estadistic}
+    es_20_autoconsum: {lang: es_ES, compensation: true, origin: consums_periods}
+    ca_pending: {lang: ca_ES, modcon: index}
+    es_indexed: {lang: es_ES, mode: index, origin: indexada}
+    ca_generation: {lang: ca_ES, generation: true}
+    es_generation_no_data: {lang: es_ES, generation: true, generation_origin: no_data}
+    ca_canaries: {lang: ca_ES, tax: IGIC del 3%}
+    es_balears: {lang: es_ES, tax: IVA del 21%}
+
 #canviPreus:
 #  template: input/correu-canviPreus.mako
 #  model: som.enviament.massiu
