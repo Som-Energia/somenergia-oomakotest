@@ -10,10 +10,14 @@ import subprocess
 from yamlns import namespace as ns
 from consolemsg import step, error, success, fail, warn
 
-from configdb import ooop as remoteErpConfig
-from configdb import psycopg as dbcfg
+try:
+    from configdb import ooop as remoteErpConfig
+    from configdb import psycopg as dbcfg
+except ImportError:
+    remoteErpConfig = None
+    dbcfg = None
 
-dbcfg = ns(dbcfg)
+dbcfg = ns(dbcfg or {})
 
 testcases = ns.load("testcases.yaml")
 
@@ -45,6 +49,8 @@ args = parser.parse_args(sys.argv[1:]) # Warning: if no arguments does exit
 sys.argv = sys.argv[:1]
 
 def GetOOOP():
+    if remoteErpConfig is None:
+        raise RuntimeError('configdb is required for remote ERP commands')
     from ooop import OOOP
     return OOOP(**remoteErpConfig)
 
@@ -145,7 +151,10 @@ def renderMako(template, model, id, data, uid=1):
                 'db': dbcfg.database,
             }
             import mako.template
-            result = mako.template.Template(makoinput).render_unicode(
+            from tools import config
+            from template_lookup import addon_template_lookup
+            lookup = addon_template_lookup(config['addons_path'])
+            result = mako.template.Template(makoinput, lookup=lookup).render_unicode(
                 object=obj,
                 peobject=obj,
                 env=env,
@@ -252,7 +261,10 @@ def makeB2bTestCase(testCaseName, id) :
         data = self.fixture.get('data', {})
         self.maxDiff = data.get('maxDiff', None)
 
-        if 'rejectId' in self.fixture:
+        if self.fixture.get('fixtureRenderer') == 'price_change':
+            from price_change_fixtures import render_case
+            output = render_case(self.fixture.template, id)
+        elif 'rejectId' in self.fixture:
             output_reject = renderMakoReject(
                 self.fixture.template,
                 self.fixture.model,
@@ -323,6 +335,8 @@ def makeB2bTestCase(testCaseName, id) :
 
 def addDataDrivenTestCases():
     for testCase, fixture in testcases.items() :
+        if args.testcases and testCase not in args.testcases:
+            continue
         klassname = 'Test_B2B_{0}'.format(testCase)
         # Dynamically create a TestCase Subclass with all the test
         testMethods = dict([
@@ -340,10 +354,16 @@ def addDataDrivenTestCases():
 
 def test():
     filterEmptyTestcases()
+    filterArgsnotInTestcases()
     addDataDrivenTestCases()
     global db, pool
-    if db is None or pool is None :
-        db, pool = loadErp(dbcfg)
+    selected = [fixture for name, fixture in testcases.items()
+                if not args.testcases or name in args.testcases]
+    if any(not fixture.get('fixtureRenderer') for fixture in selected):
+        if db is None or pool is None:
+            if not dbcfg:
+                raise RuntimeError('configdb is required for ERP-backed tests')
+            db, pool = loadErp(dbcfg)
     unittest.TestCase.__str__ = unittest.TestCase.id
     sys.argv.append("--verbose"); print sys.argv
     unittest.main()
@@ -531,6 +551,9 @@ def listrejecttemplates():
 
 def iterTestCases():
     for testCaseName, fixture in testcases.items():
+        if (getattr(args, 'testcases', None)
+                and testCaseName not in args.testcases):
+            continue
         for testMethod, id in fixture.cases.items():
             yield testCaseName+'.'+testMethod, fixture, id
 

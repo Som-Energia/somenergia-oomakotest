@@ -1,0 +1,8 @@
+lang: ${object.pool.get('report.backend.mailcanvipreus').get_lang(object._cr, object._uid, object.id)}
+cc: false
+bcc: false
+to: ${object.polissa_id.titular.www_email}, ${object.polissa_id.direccio_notificacio.email}
+subject_translations:
+  ca_ES: "${object.pool.get('report.backend.mailcanvipreus').get_campaign_subject(object._cr, object._uid, object.id)}"
+  es_ES: "${object.pool.get('report.backend.mailcanvipreus').get_campaign_subject(object._cr, object._uid, object.id)}"
+subject: "${object.pool.get('report.backend.mailcanvipreus').get_campaign_subject(object._cr, object._uid, object.id)}"
