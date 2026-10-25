@@ -1,0 +1,8 @@
+lang: ${object.lang}
+cc: 
+to: ${object.www_email},
+subject_translations:
+  ca_ES: "🥳 Ja ets de Som Energia! Benvingut/da! 🤗 "
+  es_ES: "🥳 Ja ets de Som Energia! Benvingut/da! 🤗 "
+subject: "🥳 Ja ets de Som Energia! Benvingut/da! 🤗 / "
+bcc: support.17062.b8d9f4469fa4d856@helpscout.net
