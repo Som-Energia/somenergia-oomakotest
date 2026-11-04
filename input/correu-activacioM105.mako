@@ -144,7 +144,7 @@
 %>
 
 ${plantilla_header}
-% if object.cups_polissa_id.titular.lang == "ca_ES":
+% if object.polissa_ref_id.titular.lang == "ca_ES":
     ${correu_cat()}
 % else:
     ${correu_es()}
