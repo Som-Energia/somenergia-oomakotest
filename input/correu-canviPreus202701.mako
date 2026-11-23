@@ -76,7 +76,7 @@ ${plantilla_header}
 
 % if data['modcon'] in ['index', 'atr']:
     <figure class="table">
-      <table style="background-color: #D3E5C3; border: 4px solid #657557; padding-top: 1em; padding-left: 2em; padding-right: 2em; padding-bottom: 1em;">
+      <table style="background-color: #e3e8df; padding-top: 1em; padding-left: 2em; padding-right: 2em; padding-bottom: 1em;">
         <tbody>
           <tr>
             <td>
