@@ -19,6 +19,11 @@
     data = email_o.get_data(object._cr, object._uid, object.id, context={'lang': object.partner_id.lang})
 
     ca = data['lang'] == 'ca_ES'
+    url_noticia = (
+        'https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-gener?mtm_campaign=canvi_tarifes&mtm_source=tarifes&mtm_medium=email&lead_tag=canvi_tarifes'
+        if ca else
+        'https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-enero?mtm_campaign=cambio_tarifas&mtm_source=tarifas&mtm_medium=email&lead_tag=cambio_tarifas'
+    )
     es_20 = data['tarifa_acces'] == '2.0TD'
     indexada = data['mode_facturacio'] == 'index'
     periodes_energia = [('P1', 'Punta'), ('P2', 'Pla' if ca else 'Llano'), ('P3', 'Vall' if ca else 'Valle')] if es_20 else [('P{}'.format(i), 'P{}'.format(i)) for i in range(1, 7)]
@@ -68,6 +73,33 @@
     </table>
 </%def>
 
+<%def name="taula_estimacio(estimacio, ca)">
+    <table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+        <td colspan="3">
+          <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="24%" class="purchase_borders"><p class="f-fallback" style="margin: 10px 0"></p></td>
+              <td width="38%" class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                <p class="f-fallback" style="margin: 10px 0">${'Cost estimat amb els preus actuals' if ca else 'Coste estimado con los precios actuales'}</p>
+              </td>
+              <td width="38%" class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center;">
+                <p class="f-fallback" style="margin: 10px 0">${'Cost estimat amb els nous preus' if ca else 'Coste estimado con los nuevos precios'}</p>
+              </td>
+            </tr>
+            % for etiqueta, antic, nou in [(('Sense impostos' if ca else 'Sin impuestos'), 'preu_vell', 'preu_nou'), (('Amb impostos' if ca else 'Con impuestos'), 'preu_vell_imp', 'preu_nou_imp')]:
+              <tr>
+                <td class="purchase_borders" valign="middle"><p class="f-fallback" style="margin: 10px 0">${etiqueta}</p></td>
+                <td class="purchase_borders" style="text-align: center;" valign="middle"><p class="f-fallback" style="margin: 10px 0">${estimacio[antic]}</p></td>
+                <td class="purchase_borders" style="text-align: center;" valign="middle"><p class="f-fallback" style="margin: 10px 0">${estimacio[nou]}</p></td>
+              </tr>
+            % endfor
+          </table>
+        </td>
+      </tr>
+    </table>
+</%def>
+
 ${plantilla_header}
 
 <!-- MAILDEV_CODE: ${data['codi_polissa']} -->
@@ -82,30 +114,30 @@ ${plantilla_header}
             <td>
               % if ca:
                 % if data['modcon'] == 'index':
-                  <p>Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que s'hauria de produir en les pròximes setmanes. Igualment, com que encara estàs amb la tarifa ${data['tarifa_acces']} períodes, t'expliquem més avall els canvis de preu que hi aplicarem a partir de l'1 de gener, i que t'afectaran si, per algun motiu, el teu contracte segueix amb la tarifa de períodes.</p>
+                  <p>Sabem que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que s'hauria de produir en les pròximes setmanes. Igualment, com que encara estàs amb la tarifa ${data['tarifa_acces']} períodes, t'expliquem més avall els canvis de preu que hi aplicarem a partir de l'1 de gener, i que t'afectaran si, per algun motiu, el teu contracte segueix amb la tarifa de períodes.</p>
                   % if es_20:
-                    <p>La tarifa ${data['tarifa_acces']} indexada augmentarà lleugerament el preu de la potència. Pots veure els <strong><a target="_blank" href="https://www.somenergia.coop/ca/tarifes-llum/domestic-indexada">nous preus de la tarifa 2.0TD indexada</a></strong> al nostre web i a <a target="_blank" href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-gener">aquest article</a> del blog.</p>
+                    <p>La tarifa ${data['tarifa_acces']} indexada augmentarà lleugerament el preu de la potència. Pots veure els <strong><a target="_blank" href="https://www.somenergia.coop/ca/tarifes-llum/domestic-indexada">nous preus de la tarifa 2.0TD indexada</a></strong> al nostre web i a <a target="_blank" href="${url_noticia | h}">aquest article</a> del blog.</p>
                   % else:
-                    <p>Els preus de la <strong>tarifa ${data['tarifa_acces']} indexada</strong> no varien. Els pots trobar <a target="_blank" href="https://www.somenergia.coop/ca/tarifes-delectricitat-que-oferim/tarifa-indexada/#opcions-de-la-tarifa-indexada">al nostre web</a>.</p>
+                    <p>La <strong>tarifa ${data['tarifa_acces']} indexada</strong> augmentarà lleugerament el preu de la potència. Pots veure els nous preus de la <strong><a target="_blank" href="https://www.somenergia.coop/ca/tarifes-llum/empresa-indexada">tarifa indexada al nostre web</a></strong> i a <a target="_blank" href="${url_noticia | h}">aquest article</a> del blog.</p>
                   % endif
                 % else:
-                  <p>Som conscients que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} períodes</strong>, que s'hauria de produir en les pròximes setmanes. Igualment, com que encara estàs amb la tarifa ${data['tarifa_acces']} indexada, t'expliquem més avall els canvis de preu que hi aplicarem a partir de l'1 de gener, i que t'afectaran si, per algun motiu, el teu contracte segueix amb la tarifa indexada.</p>
-                  <p>Els preus de la <strong>tarifa ${data['tarifa_acces']} períodes també variaran</strong>. Pots trobar l'explicació a <a target="_blank" href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-gener">aquest article</a> del blog, i el detall dels preus els tens <a target="_blank" href="https://www.somenergia.coop/ca/tarifes-llum/domestic-periodes">al nostre web</a>.</p>
+                  <p>Sabem que el teu contracte està pendent d'un canvi de tarifa cap a la <strong>tarifa ${data['tarifa_acces']} períodes</strong>, que s'hauria de produir en les pròximes setmanes. Igualment, com que encara estàs amb la tarifa ${data['tarifa_acces']} indexada, t'expliquem més avall els canvis de preu que hi aplicarem a partir de l'1 de gener, i que t'afectaran si, per algun motiu, el teu contracte segueix amb la tarifa indexada.</p>
+                  <p>La <strong>tarifa ${data['tarifa_acces']} períodes</strong> augmentarà lleugerament el preu de l’energia i de la potència. Pots veure els nous preus de la <strong><a target="_blank" href="https://www.somenergia.coop/ca/tarifes-llum/domestic-periodes">tarifa ${data['tarifa_acces']} períodes al nostre web</a></strong> i a <a target="_blank" href="${url_noticia | h}">aquest article</a> del blog.</p>
                 % endif
                 <p>T’adjuntem en aquest correu el teu contracte actualitzat amb els nous preus de la <strong>tarifa ${'indexada' if data['modcon'] == 'index' else 'períodes'}</strong> que se t’aplicarà. Si hi estàs d’acord, <strong>no cal que ens retornis el document signat</strong>, ja que l'actualització dels preus de les nostres tarifes s'aplica automàticament.</p>
               % else:
                 % if data['modcon'] == 'index':
-                  <p>Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} periodos, te explicamos más abajo los cambios de precio que le aplicaremos a partir del 1 de enero, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa de periodos.</p>
+                  <p>Sabemos que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} indexada</strong>, que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} períodos, te explicamos más abajo los cambios de precio que le aplicaremos a partir del 1 de enero, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa de períodos.</p>
                   % if es_20:
-                    <p>En la tarifa ${data['tarifa_acces']} indexada aumentará ligeramente el precio de la potencia. Puedes ver los <strong><a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/domestico-indexada">nuevos precios de la tarifa 2.0TD indexada</a></strong> en nuestra web y en <a target="_blank" href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-enero">este artículo</a> del blog.</p>
+                    <p>La tarifa ${data['tarifa_acces']} indexada aumentará ligeramente el precio de la potencia. Puedes ver los nuevos precios de la <strong><a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/domestico-indexada">tarifa 2.0TD indexada en nuestra web</a></strong> y en <a target="_blank" href="${url_noticia | h}">este artículo</a> del blog.</p>
                   % else:
-                    <p>Los precios de la <strong>tarifa ${data['tarifa_acces']} indexada</strong> no varían. Los puedes encontrar en <a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/empresa-indexada">nuestra web</a>.</p>
+                    <p>La tarifa ${data['tarifa_acces']} indexada aumentará ligeramente el precio de la potencia. Puedes ver los nuevos precios de la <strong><a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/empresa-indexada">tarifa indexada en nuestra web</a></strong> y en <a target="_blank" href="${url_noticia | h}">este artículo</a> del blog.</p>
                   % endif
                 % else:
-                  <p>Somos conscientes de que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} periodos</strong>, que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} indexada, te explicamos más abajo los cambios de precio que le aplicaremos a partir del 1 de enero, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa indexada.</p>
-                  <p>Los precios de la <strong>tarifa ${data['tarifa_acces']} periodos también variarán</strong>. Puedes encontrar la explicación en <a target="_blank" href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-enero">este artículo</a> del blog, y el detalle de los precios lo tienes en <a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/domestico-periodos">nuestra web</a>.</p>
+                  <p>Sabemos que tu contrato está pendiente de un cambio de tarifa hacia la <strong>tarifa ${data['tarifa_acces']} períodos</strong>, que debería producirse en las próximas semanas. Igualmente, como todavía estás con la tarifa ${data['tarifa_acces']} indexada, te explicamos más abajo los cambios de precio que le aplicaremos a partir del 1 de enero, y que te afectarán si, por algún motivo, tu contrato sigue con la tarifa indexada.</p>
+                  <p>La <strong>tarifa ${data['tarifa_acces']} períodos</strong> aumentará ligeramente el precio de la energía y de la potencia. Puedes ver los nuevos precios de la <strong><a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/domestico-periodos">tarifa ${data['tarifa_acces']} períodos en nuestra web</a></strong> y en <a target="_blank" href="${url_noticia | h}">este artículo</a> del blog.</p>
                 % endif
-                <p>Te adjuntamos en este correo tu contrato actualizado con los nuevos precios de la <strong>tarifa ${'indexada' if data['modcon'] == 'index' else 'periodos'}</strong> que se te aplicará. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, puesto que la actualización de los precios de nuestras tarifas se aplica automáticamente.</p>
+                <p>Te adjuntamos en este correo tu contrato actualizado con los nuevos precios de la <strong>tarifa ${'indexada' if data['modcon'] == 'index' else 'períodos'}</strong> que se te aplicará. Si estás de acuerdo, <strong>no es necesario que nos devuelvas el documento firmado</strong>, ya que la actualización de los precios de nuestras tarifas se aplica automáticamente.</p>
               % endif
             </td>
           </tr>
@@ -128,7 +160,7 @@ ${plantilla_header}
       % endif
       <p>Com a entitat sense ànim de lucre, recordem que sempre <strong>traslladem únicament els costos reals</strong> per ajustar els preus al mínim indispensable.</p>
     % endif
-    <p>Vols conèixer-ne tots els detalls? Llegeix l'article sencer <a target="_blank" href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-gener">aquí</a>.</p>
+    <p>Vols conèixer-ne tots els detalls? Llegeix l'article sencer <a target="_blank" href="${url_noticia | h}">aquí</a>.</p>
     <p>A continuació et detallem els canvis.</p>
 
     <h1>Nous preus i comparativa amb preus actuals</h1>
@@ -147,7 +179,7 @@ ${plantilla_header}
       % endif
       <p>Como entidad sin ánimo de lucro, recordamos que siempre <strong>trasladamos únicamente los costes reales</strong> para ajustar los precios al mínimo indispensable.</p>
     % endif
-    <p>¿Quieres conocer todos los detalles? Lee el artículo entero <a target="_blank" href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-enero">aquí</a>.</p>
+    <p>¿Quieres conocer todos los detalles? Lee el artículo entero <a target="_blank" href="${url_noticia | h}">aquí</a>.</p>
     <p>A continuación te detallamos los cambios.</p>
 
     <h1>Nuevos precios y comparativa con precios actuales</h1>
@@ -194,7 +226,7 @@ ${plantilla_header}
     % if data['origen'] in ['pdf', 'consums_periods']:
       <p>Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, si aplicáramos los precios actuales y si aplicáramos los precios nuevos. La estimación la hemos realizado a partir de los datos que tenemos respecto a lo que has consumido de la red eléctrica durante los últimos 12 meses (aproximadamente ${data['consum_total']} kWh) y las potencias que tienes contratadas, y no incluye el alquiler de contador, ni los costes de los Servicios de Ajuste.</p>
     % elif data['origen'] == 'cnmc':
-      <p>Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los precios nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta ni el alquiler de contador, ni los costes de los Servicios de Ajuste), extrapolándolos según el consumo medio que suele haber en cada mes (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.</p>
+      <p>Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los precios nuevos. La estimación la hemos hecho a partir de los datos que tenemos de tus consumos anteriores (sin tener en cuenta ni el alquiler de contador, ni los costes de los Servicios de Ajuste), extrapolándolos al resto de los meses (según datos de la Comisión Nacional de los Mercados y la Competencia). Con esto hemos obtenido un consumo anual, que es el que utilizamos para la comparación.</p>
     % elif data['origen'] == 'estadistic':
       <p>Tal y como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> de lo que te costaría la energía y la potencia durante un año, aplicando los precios actuales y los nuevos. La estimación la hemos hecho en función de la potencia contratada más alta que tienes (${data['potencia']} kW), el uso de electricidad que suele haber con esta potencia y cogiendo de referencia un contrato estándar, sin el alquiler de contador ni los Servicios de Ajuste.</p>
     % elif data['origen'] == 'indexada':
@@ -204,30 +236,7 @@ ${plantilla_header}
     <p><strong>Coste anual estimado, en euros/año, del suministro (energía y potencia):</strong></p>
 % endif
 
-<table class="purchase" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-  <tr>
-    <td colspan="3">
-      <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
-        <tr>
-          <td width="24%" class="purchase_borders"><p class="f-fallback" style="margin: 10px 0"></p></td>
-          <td width="38%" class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center;">
-            <p class="f-fallback" style="margin: 10px 0">${'Cost estimat amb els preus actuals' if ca else 'Coste estimado con los precios actuales'}</p>
-          </td>
-          <td width="38%" class="purchase_borders" style="padding-left: 5px; padding-right: 5px; text-align: center;">
-            <p class="f-fallback" style="margin: 10px 0">${'Cost estimat amb els nous preus' if ca else 'Coste estimado con los nuevos precios'}</p>
-          </td>
-        </tr>
-        % for etiqueta, antic, nou in [(('Sense impostos' if ca else 'Sin impuestos'), 'preu_vell', 'preu_nou'), (('Amb impostos' if ca else 'Con impuestos'), 'preu_vell_imp', 'preu_nou_imp')]:
-          <tr>
-            <td class="purchase_borders" valign="middle"><p class="f-fallback" style="margin: 10px 0">${etiqueta}</p></td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle"><p class="f-fallback" style="margin: 10px 0">${data[antic]}</p></td>
-            <td class="purchase_borders" style="text-align: center;" valign="middle"><p class="f-fallback" style="margin: 10px 0">${data[nou]}</p></td>
-          </tr>
-        % endfor
-      </table>
-    </td>
-  </tr>
-</table>
+${taula_estimacio(data, ca)}
 <br/>
 
 % if ca:
@@ -256,10 +265,39 @@ ${plantilla_header}
       <p><strong>Generation kWh: precio del término de energía (en euros/kWh)</strong></p>
     % endif
     ${taula_preus(data['preus_antics_generation'], data['preus_nous_generation'], data['preus_antics_generation_imp'], data['preus_nous_generation_imp'], periodes_energia, ca)}
+    <% estimacio_gkwh = data['gkwh_estimation'] %>
+    % if estimacio_gkwh['origen'] in ['full_data', 'partial_data']:
+      % if ca:
+        <h1>Estimació</h1>
+        % if estimacio_gkwh['origen'] == 'full_data':
+          <p>Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del cost de l’electricitat, i l’hem comparat amb el cost que pagaves fins ara. Així doncs, l’estimació l’hem fet a partir de les dades que tenim respecte al que has consumit aplicant la tarifa complementària Generation kWh durant els últims 12 mesos (aproximadament ${estimacio_gkwh['consum_total']} kWh), sense el lloguer de comptador ni els Serveis d’Ajust.</p>
+        % else:
+          <p>Tal com estableix la normativa, hem fet una <strong>estimació de caràcter orientatiu</strong> del cost de l’electricitat, aplicant-hi els preus actuals i els preus nous. L’estimació l’hem fet a partir de les dades que tenim respecte als teus consums anteriors aplicant la tarifa complementària Generation kWh (aproximadament ${estimacio_gkwh['consum_total']} kWh), sense el lloguer de comptador ni els Serveis d’Ajust i extrapolant-les a la resta de mesos. Amb això n’hem obtingut un consum anual, que és el que fem servir per a la comparació.</p>
+        % endif
+        <p>L’estimació la pots veure sense impostos i amb impostos inclosos (l’${data['impostos_str']} i l’impost elèctric del 5,11%).</p>
+        <p><strong>Cost anual estimat, en euros/any, del subministrament d’energia:</strong></p>
+      % else:
+        <h1>Estimación</h1>
+        % if estimacio_gkwh['origen'] == 'full_data':
+          <p>Tal como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> del coste de la electricidad, y la hemos comparado con el coste que pagabas hasta ahora. Así pues, la estimación la hemos hecho a partir de los datos que teníamos respecto a lo que has consumido aplicando la tarifa complementaria Generation kWh durante los últimos 12 meses (aproximadamente ${estimacio_gkwh['consum_total']} kWh) sin alquiler de contador ni los Servicios de Ajuste.</p>
+        % else:
+          <p>Tal como establece la normativa, hemos hecho una <strong>estimación de carácter orientativo</strong> del coste de la electricidad, aplicando los precios actuales y los precios nuevos. La estimación la hemos hecho a partir de los datos que teníamos respecto a tus consumos anteriores aplicando la tarifa complementaria Generation kWh (aproximadamente ${estimacio_gkwh['consum_total']} kWh) sin alquiler de contador ni los Servicios de Ajuste y extrapolando según el consumo medio que suele haber cada mes. Con esto, hemos obtenido un consumo anual, que es el que utilizamos para la comparación.</p>
+        % endif
+        <p>La estimación la puedes ver sin impuestos y con impuestos incluidos (${data['impostos_str']} y el impuesto eléctrico del 5,11%).</p>
+        <p><strong>Coste anual estimado, en euros/año, del suministro de energía:</strong></p>
+      % endif
+      ${taula_estimacio(estimacio_gkwh, ca)}
+      <br/>
+      % if ca:
+        <p>Tingues en compte que això són estimacions aproximades, i que els imports finals <strong>dependran de circumstàncies</strong> que no podem preveure, com per exemple els horaris i l’ús d’energia que finalment facis, altres variacions de preus durant l’any, o canvis que hi pugui haver al mercat elèctric.</p>
+      % else:
+        <p>Ten en cuenta que esto son estimaciones aproximadas, y que los importes finales <strong>dependerán de circunstancias</strong> que no podemos prever, como por ejemplo los horarios y el uso de energía que finalmente hagas, otras variaciones de precios durante el año, o cambios que puedan producirse en el mercado eléctrico.</p>
+      % endif
+    % endif
 % endif
 
 % if ca:
-    <p>Com et dèiem més amunt, al nostre <a target="_blank" href="https://www.somenergia.coop/ca/actualitat/tarifes-sector-electric/actualizacio-tarifes-1-gener">blog</a> trobaràs més detalls del canvi de preus, i a la pàgina web pots consultar en qualsevol moment <a target="_blank" href="https://www.somenergia.coop/ca/tarifes-llum/domestic-periodes">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a target="_blank" href="https://www.somenergia.coop/ca/historic-tarifa-periodes">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.</p>
+    <p>Com et dèiem més amunt, al nostre <a target="_blank" href="${url_noticia | h}">blog</a> trobaràs més detalls del canvi de preus, i a la pàgina web pots consultar en qualsevol moment <a target="_blank" href="https://www.somenergia.coop/ca/tarifes-llum/domestic-periodes">totes les tarifes</a>. Si vols fer-ne comparacions, pots accedir a l’apartat <a target="_blank" href="https://www.somenergia.coop/ca/historic-tarifa-periodes">històric de tarifes</a>, on hi ha també els preus vigents fins al 31 de desembre i els de períodes anteriors.</p>
 
     <h1 style="font-size: 16px">Informació legal</h1>
     <p class="p-legal">La <a target="_blank" href="https://back.somenergia.coop/storage/app/media/DOCS/legal/ca/CCGG/Condicions-Generals-contracte-subministrament-energia-electrica-SomEnergia.pdf">clàusula contractual de les Condicions Generals</a> que ens autoritza a fer aquest canvi de preus de les tarifes ${'indexada' if indexada else 'períodes'} és la clàusula 3.3.</p>
@@ -277,7 +315,7 @@ ${plantilla_header}
     <p>Una salutació cordial,</p>
     <p>Som Energia <br/><a href="https://www.somenergia.coop/ca">www.somenergia.coop</a></p>
 % else:
-    <p>Como te decíamos más arriba, en nuestro <a target="_blank" href="https://www.somenergia.coop/es/actualidad/tarifas-sector-electrico/actualizacion-tarifas-1-enero">blog</a> encontrarás más detalles del cambio de precios, y en la página web puedes consultar en cualquier momento <a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/domestico-periodos">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a target="_blank" href="https://www.somenergia.coop/es/historico-tarifa-periodos">histórico de tarifas</a>, donde están también los precios vigentes hasta el 31 de diciembre y los de períodos anteriores.</p>
+    <p>Como te decíamos más arriba, en nuestro <a target="_blank" href="${url_noticia | h}">blog</a> encontrarás más detalles del cambio de precios, y en la página web puedes consultar en cualquier momento <a target="_blank" href="https://www.somenergia.coop/es/tarifas-luz/domestico-periodos">todas las tarifas</a>. Si quieres hacer comparaciones, puedes acceder al apartado <a target="_blank" href="https://www.somenergia.coop/es/historico-tarifa-periodos">histórico de tarifas</a>, donde están también los precios vigentes hasta el 31 de diciembre y los de períodos anteriores.</p>
 
     <h1 style="font-size: 16px">Información legal</h1>
     <p class="p-legal">La <a target="_blank" href="https://back.somenergia.coop/storage/app/media/DOCS/legal/es/CCGG/Condiciones-Generales-contrato-suministro-energia-electrica-SomEnergia.pdf">cláusula contractual de las Condiciones Generales</a> que nos autoriza a realizar este cambio de precios de las tarifas ${'indexada' if indexada else 'periodos'} es la cláusula 3.3.</p>
