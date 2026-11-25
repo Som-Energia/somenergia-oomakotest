@@ -146,7 +146,7 @@ ${plantilla_header}
 
 % if ca:
     % if indexada:
-      <p>L’1 de gener modificarem els preus de la tarifa 2.0TD indexada (la que tens ara contractada).</p>
+      <p>L’1 de gener modificarem els preus de la <strong>tarifa 2.0TD indexada</strong> (la que tens ara contractada).</p>
       <p>En concret, variarà el preu de la potència, ja que hi hem augmentat lleugerament el marge per a la viabilitat de la cooperativa.</p>
     % else:
       % if es_20:
@@ -165,7 +165,7 @@ ${plantilla_header}
     <p>A continuació tens una taula amb els nous preus (vigents a partir de l’1 de gener del 2027), i una comparació amb els preus actuals (fins a 31 de desembre del 2026) de la tarifa que tens contractada. Els impostos aplicats són l’${data['impostos_str']}, i l’impost elèctric del 5,11%.</p>
 % else:
     % if indexada:
-      <p>El 1 de enero modificaremos los precios de la tarifa indexada 2.0TD (la que tienes contratada actualmente).</p>
+      <p>El 1 de enero modificaremos los precios de la <strong>tarifa indexada 2.0TD</strong> (la que tienes contratada actualmente).</p>
       <p>En concreto, variará el precio de la potencia, puesto que hemos aumentado ligeramente el margen para la viabilidad de la cooperativa.</p>
     % else:
       % if es_20:
@@ -181,7 +181,7 @@ ${plantilla_header}
     <p>A continuación te detallamos los cambios.</p>
 
     <h1>Nuevos precios y comparativa con precios actuales</h1>
-    <p>A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de enero de 2027), y una comparación con los precios actuales (hasta 31 de diciembre de 2026) de la tarifa que tienes contratada. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.</p>
+    <p>A continuación tienes una tabla con los nuevos precios (vigentes a partir del 1 de enero de 2027), y una comparación con los precios actuales (hasta el 31 de diciembre de 2026) de la tarifa que tienes contratada. Los impuestos aplicados son ${data['impostos_str']}, y el impuesto eléctrico del 5,11%.</p>
 % endif
 
 % if not indexada:
@@ -192,6 +192,7 @@ ${plantilla_header}
     <h2>Tarifa indexada 2.0TD</h2>
 % endif
 % if es_20:
+    <br/>
     <p><strong>${'Preu del terme de potència (en euros/kW a l’any)' if ca else 'Precio del término de potencia (en euros/kW al año)'}</strong></p>
     ${taula_preus(data['preus_antics']['tp'], data['preus_nous']['tp'], data['preus_antics_imp']['tp'], data['preus_nous_imp']['tp'], periodes_potencia, ca)}
 % endif
